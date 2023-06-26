@@ -1,4 +1,4 @@
-# AliV2rayCollector
+# AliV2Gram - Telegram V2ray Collector
 
 [![Collect Configs](https://github.com/alihusainsorathiya/v2gram/actions/workflows/php.yml/badge.svg)](https://github.com/alihusainsorathiya/v2gram/actions/workflows/php.yml)
 
