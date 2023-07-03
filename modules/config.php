@@ -2,6 +2,7 @@
 date_default_timezone_set("Asia/Tehran");
 
 $Channel = [
+    "Argotaz"
     "AlienVPN402",
 "aries_init",
 "azadi_az_inja_migzare",
@@ -19,6 +20,7 @@ $Channel = [
 "free4allVPN",
 "freeconfigv2",
 "FreeIranT",
+"freeiranweb",
 "freev2raygood",
 "hashmakvpn",
 "hassan_saboorii",
@@ -111,6 +113,7 @@ $Types = [
 "customv2ray" => ["vmess", "vless"],
 "daorzadannet" => ["vmess", "vless"],
 "DarkVPNpro" => ["vless"],
+"freeiranweb" => ["vless"],
 "DirectVPN" => ["trojan"],
 "EXOGAMERS" => ["vless"],
 "FalconPolV2rayNG" => ["vless"],
@@ -134,6 +137,7 @@ $Types = [
 "lagvpn13" => ["vless"],
 "LegenderY_Servers" => ["vless"],
 "LoRd_uL4mo" => ["vmess", "vless"],
+"Argotaz" => ["vmess", "vless"],
 "lrnbymaa" => ["vless"],
 "MehradLearn" => ["vless"],
 "MsV2ray" => ["vless"],
