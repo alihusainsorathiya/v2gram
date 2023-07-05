@@ -95,6 +95,7 @@ $Types = [
     "rayvps" => ["vless"],
     "free1_vpn" => ["vmess", "vless", "vless"],
     "Parsashonam" => ["vless"],
+    "hiddifyV2ray" => ["vmess","vless"],
     
 ];
 

@@ -76,7 +76,7 @@ function get_config($channel, $type)
                             $flag = "🚩";
                         }
                         $the_config["ps"] =
-                            "@" . $channel . "|" . $flag . "|" . ping($ip, $port);
+                            "@" . $channel . "| AHS -" . $flag . "|" . ping($ip, $port);
                         if (count($the_config) !== 1) {
                             $final_config = encode_vmess($the_config);
                             $final_data[$key]["channel"]['username'] = $channel;
@@ -120,7 +120,7 @@ function get_config($channel, $type)
                             $type = "reality";
                         } else {
                             $the_config["hash"] =
-                                "@" . $channel . "|" . $flag . "|" . ping($ip, $port);
+                                "@" . $channel . "| AHS -" . $flag . "|" . ping($ip, $port);
                         }
                         $final_config = buildProxyUrl($the_config, "vless");
                         $final_data[$key]["channel"]['username'] = $channel;
@@ -149,7 +149,7 @@ function get_config($channel, $type)
                             $flag = "🚩";
                         }
                         $the_config["hash"] =
-                            $flag . "|@" . $channel . "|" . ping($ip, $port);
+                            $flag . "|@" . $channel . "| AHS -" . ping($ip, $port);
                         $final_config = buildProxyUrl($the_config);
                         $final_data[$key]["channel"]['username'] = $channel;
                         $final_data[$key]["channel"]['title'] = $channels_assets[$channel]['title'];
@@ -173,7 +173,7 @@ function get_config($channel, $type)
                             $flag = "🚩";
                         }
                         $the_config["name"] =
-                            "@" . $channel . "|" . $flag . "|" . ping($ip, $port);
+                            "@" . $channel . "| AHS -" . $flag . "|" . ping($ip, $port);
                         $final_config = BuildShadowsocks($the_config);
                         $final_data[$key]["channel"]['username'] = $channel;
                         $final_data[$key]["channel"]['title'] = $channels_assets[$channel]['title'];

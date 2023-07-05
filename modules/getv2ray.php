@@ -39,7 +39,7 @@ function get_v2ray($channel, $type, $output_format = "text")
                         } else {
                             $flag = "🏴";
                         }
-                        $config["ps"] = $flag . "|" . $channel . "|" . $p;
+                        $config["ps"] = $flag . "|" . $channel . "| AHS -" . $p;
                         if (count($config) !== 1) {
                             $final_config = encode_vmess($config);
                             $match_inverted[] = $final_config;
