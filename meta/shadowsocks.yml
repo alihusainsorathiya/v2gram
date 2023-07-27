@@ -1,0 +1,182 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: "@free4allVPN| AHS -🇬🇧|114.36"
+    server: 212.102.53.79
+    port: 443
+    type: ss
+    cipher: aes-128-gcm
+    password: shadowsocks
+    udp: true
+  - name: "@free4allVPN| AHS -🇬🇧|109.77"
+    server: 212.102.53.198
+    port: 443
+    type: ss
+    cipher: aes-128-gcm
+    password: shadowsocks
+    udp: true
+  - name: "@proxyymeliii| AHS -🇬🇧|106.48"
+    server: 51.68.206.229
+    port: 8080
+    type: ss
+    cipher: aes-256-gcm
+    password: KixLvKzwjekG00rm
+    udp: true
+  - name: "@vmess_vless_v2rayng| AHS -🇫🇷|139.4"
+    server: 54.36.174.181
+    port: 6679
+    type: ss
+    cipher: aes-256-gcm
+    password: TEzjfAYq2IjtuoS
+    udp: true
+  - name: "@OutlineVpnOfficial| AHS -🇺🇦|203.75"
+    server: ak1815.www.outline.network.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou
+    port: 444
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: Chayf4Frea
+    udp: true
+  - name: "@OutlineVpnOfficial| AHS -🇺🇸|55.9"
+    server: ak1816.www.outline.network.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou
+    port: 8090
+    type: ss
+    cipher: aes-256-gcm
+    password: PCnnH6SQSnfoS27
+    udp: true
+  - name: "@OutlineVpnOfficial| AHS -🇦🇪|285.47"
+    server: ak1817.www.outline.network.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou
+    port: 64827
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: 5bS9pA4Y5L2ZpKmfHj5EsZ
+    udp: true
+  - name: "@AlienVPN402| AHS -🇳🇱|120.4"
+    server: 185.88.140.58
+    port: 8080
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: qGjmI8WQlF0tfhDbkLqGdN
+    udp: true
+  - name: "@AlienVPN402| AHS -🇫🇷|106.81"
+    server: 195.154.185.174
+    port: 989
+    type: ss
+    cipher: aes-256-cfb
+    password: f8f7aCzcPKbsF8p3
+    udp: true
+  - name: "@AlienVPN402| AHS -🇱🇺|130.78"
+    server: 92.38.163.53
+    port: 989
+    type: ss
+    cipher: aes-256-cfb
+    password: f8f7aCzcPKbsF8p3
+    udp: true
+  - name: "@yaney_01| AHS -🇺🇸|40.97"
+    server: 104.168.13.80
+    port: 8080
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: Epl46de5ryftug88ePd
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - "@free4allVPN| AHS -🇬🇧|114.36"
+      - "@free4allVPN| AHS -🇬🇧|109.77"
+      - "@proxyymeliii| AHS -🇬🇧|106.48"
+      - "@vmess_vless_v2rayng| AHS -🇫🇷|139.4"
+      - "@OutlineVpnOfficial| AHS -🇺🇦|203.75"
+      - "@OutlineVpnOfficial| AHS -🇺🇸|55.9"
+      - "@OutlineVpnOfficial| AHS -🇦🇪|285.47"
+      - "@AlienVPN402| AHS -🇳🇱|120.4"
+      - "@AlienVPN402| AHS -🇫🇷|106.81"
+      - "@AlienVPN402| AHS -🇱🇺|130.78"
+      - "@yaney_01| AHS -🇺🇸|40.97"
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@free4allVPN| AHS -🇬🇧|114.36"
+      - "@free4allVPN| AHS -🇬🇧|109.77"
+      - "@proxyymeliii| AHS -🇬🇧|106.48"
+      - "@vmess_vless_v2rayng| AHS -🇫🇷|139.4"
+      - "@OutlineVpnOfficial| AHS -🇺🇦|203.75"
+      - "@OutlineVpnOfficial| AHS -🇺🇸|55.9"
+      - "@OutlineVpnOfficial| AHS -🇦🇪|285.47"
+      - "@AlienVPN402| AHS -🇳🇱|120.4"
+      - "@AlienVPN402| AHS -🇫🇷|106.81"
+      - "@AlienVPN402| AHS -🇱🇺|130.78"
+      - "@yaney_01| AHS -🇺🇸|40.97"
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - "@free4allVPN| AHS -🇬🇧|114.36"
+      - "@free4allVPN| AHS -🇬🇧|109.77"
+      - "@proxyymeliii| AHS -🇬🇧|106.48"
+      - "@vmess_vless_v2rayng| AHS -🇫🇷|139.4"
+      - "@OutlineVpnOfficial| AHS -🇺🇦|203.75"
+      - "@OutlineVpnOfficial| AHS -🇺🇸|55.9"
+      - "@OutlineVpnOfficial| AHS -🇦🇪|285.47"
+      - "@AlienVPN402| AHS -🇳🇱|120.4"
+      - "@AlienVPN402| AHS -🇫🇷|106.81"
+      - "@AlienVPN402| AHS -🇱🇺|130.78"
+      - "@yaney_01| AHS -🇺🇸|40.97"
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@free4allVPN| AHS -🇬🇧|114.36"
+      - "@free4allVPN| AHS -🇬🇧|109.77"
+      - "@proxyymeliii| AHS -🇬🇧|106.48"
+      - "@vmess_vless_v2rayng| AHS -🇫🇷|139.4"
+      - "@OutlineVpnOfficial| AHS -🇺🇦|203.75"
+      - "@OutlineVpnOfficial| AHS -🇺🇸|55.9"
+      - "@OutlineVpnOfficial| AHS -🇦🇪|285.47"
+      - "@AlienVPN402| AHS -🇳🇱|120.4"
+      - "@AlienVPN402| AHS -🇫🇷|106.81"
+      - "@AlienVPN402| AHS -🇱🇺|130.78"
+      - "@yaney_01| AHS -🇺🇸|40.97"
+rules:
+  - MATCH,MANUAL
