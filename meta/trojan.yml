@@ -32,7 +32,15 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@ConfigsHUB| AHS -151.92"
+  - name: "|@PrivateVPNs| AHS -87.56"
+    server: 54.216.163.19
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trj.rollingnext.co.uk
+    udp: true
+  - name: "|@PrivateVPNs| AHS -153.28"
     server: 13.50.61.37
     port: 22222
     type: trojan
@@ -40,7 +48,87 @@ proxies:
     skip-cert-verify: true
     sni: trj.rollingnext.co.uk
     udp: true
-  - name: "|@yaney_01| AHS -350.18"
+  - name: "|@PrivateVPNs| AHS -164.56"
+    server: 16.16.245.192
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trj.rollingnext.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -94.22"
+    server: 3.66.139.89
+    port: 22222
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trj.rollingnext.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -149.63"
+    server: 13.49.124.45
+    port: 22222
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trj.rollingnext.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -160.94"
+    server: 13.49.247.240
+    port: 22222
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trj.rollingnext.co.uk
+    udp: true
+  - name: "|@oneclickvpnkeys| AHS -9.14"
+    server: 45.131.4.240
+    port: 443
+    type: trojan
+    password: d8fd35e7-25f7-452d-852a-6ad1cfb3c9b8
+    skip-cert-verify: true
+    sni: sftp.pardazesh.tech
+    network: ws
+    ws-opts:
+      path: /1C1eEyrBbGr0r2HZ1tSkA
+      headers:
+        Host: sftp.pardazesh.tech
+    udp: true
+  - name: "|@xrayzxn| AHS -549.4"
+    server: amin.karkas1.ir
+    port: 443
+    type: trojan
+    password: e6b506e9-2d37-40cb-aff9-35678d0e6c69
+    skip-cert-verify: true
+    sni: amin.karkas1.ir
+    network: grpc
+    grpc-opts:
+      grpc-service-name: 6vuNVgOFnqUEvj0rcXIcStL
+    udp: true
+  - name: "|@xrayzxn| AHS -451.54"
+    server: amin.karkas1.ir
+    port: 443
+    type: trojan
+    password: db19fc68-c027-4641-a8eb-eed3e1065c8a
+    skip-cert-verify: true
+    sni: amin.karkas1.ir
+    network: grpc
+    grpc-opts:
+      grpc-service-name: 6vuNVgOFnqUEvj0rcXIcStL
+    udp: true
+  - name: "|@xrayzxn| AHS -548.5"
+    server: amin.karkas1.ir
+    port: 443
+    type: trojan
+    password: 11ae0edd-2f63-4495-8683-037abbda9986
+    skip-cert-verify: true
+    sni: amin.karkas1.ir
+    network: ws
+    ws-opts:
+      path: /6vuNVgOFnqUEvj0sNkGkxxW7
+      headers:
+        Host: amin.karkas1.ir
+    udp: true
+  - name: "|@yaney_01| AHS -322.99"
     server: vpnpool.stablize.top
     port: 443
     type: trojan
@@ -48,7 +136,7 @@ proxies:
     skip-cert-verify: true
     sni: ap.stablize.top
     udp: true
-  - name: "|@yaney_01| AHS -197.77"
+  - name: "|@yaney_01| AHS -296.61"
     server: vpnhat.stablize.top
     port: 443
     type: trojan
@@ -56,7 +144,7 @@ proxies:
     skip-cert-verify: true
     sni: ap.stablize.top
     udp: true
-  - name: "|@yaney_01| AHS -146.43"
+  - name: "|@yaney_01| AHS -402.84"
     server: vpnpool.stablize.top
     port: 443
     type: trojan
@@ -68,10 +156,19 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@ConfigsHUB| AHS -151.92"
-      - "|@yaney_01| AHS -350.18"
-      - "|@yaney_01| AHS -197.77"
-      - "|@yaney_01| AHS -146.43"
+      - "|@PrivateVPNs| AHS -87.56"
+      - "|@PrivateVPNs| AHS -153.28"
+      - "|@PrivateVPNs| AHS -164.56"
+      - "|@DirectVPN| AHS -94.22"
+      - "|@DirectVPN| AHS -149.63"
+      - "|@DirectVPN| AHS -160.94"
+      - "|@oneclickvpnkeys| AHS -9.14"
+      - "|@xrayzxn| AHS -549.4"
+      - "|@xrayzxn| AHS -451.54"
+      - "|@xrayzxn| AHS -548.5"
+      - "|@yaney_01| AHS -322.99"
+      - "|@yaney_01| AHS -296.61"
+      - "|@yaney_01| AHS -402.84"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -82,28 +179,55 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@ConfigsHUB| AHS -151.92"
-      - "|@yaney_01| AHS -350.18"
-      - "|@yaney_01| AHS -197.77"
-      - "|@yaney_01| AHS -146.43"
+      - "|@PrivateVPNs| AHS -87.56"
+      - "|@PrivateVPNs| AHS -153.28"
+      - "|@PrivateVPNs| AHS -164.56"
+      - "|@DirectVPN| AHS -94.22"
+      - "|@DirectVPN| AHS -149.63"
+      - "|@DirectVPN| AHS -160.94"
+      - "|@oneclickvpnkeys| AHS -9.14"
+      - "|@xrayzxn| AHS -549.4"
+      - "|@xrayzxn| AHS -451.54"
+      - "|@xrayzxn| AHS -548.5"
+      - "|@yaney_01| AHS -322.99"
+      - "|@yaney_01| AHS -296.61"
+      - "|@yaney_01| AHS -402.84"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@ConfigsHUB| AHS -151.92"
-      - "|@yaney_01| AHS -350.18"
-      - "|@yaney_01| AHS -197.77"
-      - "|@yaney_01| AHS -146.43"
+      - "|@PrivateVPNs| AHS -87.56"
+      - "|@PrivateVPNs| AHS -153.28"
+      - "|@PrivateVPNs| AHS -164.56"
+      - "|@DirectVPN| AHS -94.22"
+      - "|@DirectVPN| AHS -149.63"
+      - "|@DirectVPN| AHS -160.94"
+      - "|@oneclickvpnkeys| AHS -9.14"
+      - "|@xrayzxn| AHS -549.4"
+      - "|@xrayzxn| AHS -451.54"
+      - "|@xrayzxn| AHS -548.5"
+      - "|@yaney_01| AHS -322.99"
+      - "|@yaney_01| AHS -296.61"
+      - "|@yaney_01| AHS -402.84"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@ConfigsHUB| AHS -151.92"
-      - "|@yaney_01| AHS -350.18"
-      - "|@yaney_01| AHS -197.77"
-      - "|@yaney_01| AHS -146.43"
+      - "|@PrivateVPNs| AHS -87.56"
+      - "|@PrivateVPNs| AHS -153.28"
+      - "|@PrivateVPNs| AHS -164.56"
+      - "|@DirectVPN| AHS -94.22"
+      - "|@DirectVPN| AHS -149.63"
+      - "|@DirectVPN| AHS -160.94"
+      - "|@oneclickvpnkeys| AHS -9.14"
+      - "|@xrayzxn| AHS -549.4"
+      - "|@xrayzxn| AHS -451.54"
+      - "|@xrayzxn| AHS -548.5"
+      - "|@yaney_01| AHS -322.99"
+      - "|@yaney_01| AHS -296.61"
+      - "|@yaney_01| AHS -402.84"
 rules:
   - MATCH,MANUAL
