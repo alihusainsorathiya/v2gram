@@ -1,0 +1,217 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: "|@PrivateVPNs| AHS -71.21"
+    server: 99.81.26.118
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trj.rollingnext.co.uk
+    udp: true
+  - name: "|@PrivateVPNs| AHS -160.8"
+    server: 51.20.59.234
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trj.rollingnext.co.uk
+    udp: true
+  - name: "|@PrivateVPNs| AHS -110.04"
+    server: 16.16.103.109
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trj.rollingnext.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -92.85"
+    server: 18.198.110.45
+    port: 22222
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trj.rollingnext.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -109.51"
+    server: 13.53.99.107
+    port: 22222
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trj.rollingnext.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -109.68"
+    server: 13.51.68.209
+    port: 22222
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trj.rollingnext.co.uk
+    udp: true
+  - name: "|@oneclickvpnkeys| AHS -75.8"
+    server: 52.214.196.127
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trj.rollingnext.co.uk
+    udp: true
+  - name: "|@v2ray_swhil| AHS -102.25"
+    server: de.vpncustomize.website
+    port: 443
+    type: trojan
+    password: wO09RVvNFf
+    skip-cert-verify: true
+    sni: de.vpncustomize.website
+    udp: true
+  - name: "|@v2ray1_ng| AHS -92.63"
+    server: 195.201.113.253
+    port: 443
+    type: trojan
+    password: 8NB5swfDbs
+    skip-cert-verify: true
+    sni: de.vpncustomize.website
+    udp: true
+  - name: "|@v2ray1_ng| AHS -92.47"
+    server: 116.203.9.26
+    port: 443
+    type: trojan
+    password: MSv52GMOzQ
+    skip-cert-verify: true
+    sni: de1.vpncustomize.website
+    udp: true
+  - name: "|@yaney_01| AHS -275.07"
+    server: vpnpool.stablize.top
+    port: 443
+    type: trojan
+    password: 1d77bc32-ea1e-4c9d-8db2-440340d96f12
+    skip-cert-verify: true
+    sni: ap.stablize.top
+    udp: true
+  - name: "|@yaney_01| AHS -276.61"
+    server: vpnhat.stablize.top
+    port: 443
+    type: trojan
+    password: 124a8baf-5335-43d4-b13f-c3fc03360458
+    skip-cert-verify: true
+    sni: ap.stablize.top
+    udp: true
+  - name: "|@yaney_01| AHS -156.9"
+    server: vpnpool.stablize.top
+    port: 443
+    type: trojan
+    password: 124a8baf-5335-43d4-b13f-c3fc03360458
+    skip-cert-verify: true
+    sni: ap.stablize.top
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - "|@PrivateVPNs| AHS -71.21"
+      - "|@PrivateVPNs| AHS -160.8"
+      - "|@PrivateVPNs| AHS -110.04"
+      - "|@DirectVPN| AHS -92.85"
+      - "|@DirectVPN| AHS -109.51"
+      - "|@DirectVPN| AHS -109.68"
+      - "|@oneclickvpnkeys| AHS -75.8"
+      - "|@v2ray_swhil| AHS -102.25"
+      - "|@v2ray1_ng| AHS -92.63"
+      - "|@v2ray1_ng| AHS -92.47"
+      - "|@yaney_01| AHS -275.07"
+      - "|@yaney_01| AHS -276.61"
+      - "|@yaney_01| AHS -156.9"
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "|@PrivateVPNs| AHS -71.21"
+      - "|@PrivateVPNs| AHS -160.8"
+      - "|@PrivateVPNs| AHS -110.04"
+      - "|@DirectVPN| AHS -92.85"
+      - "|@DirectVPN| AHS -109.51"
+      - "|@DirectVPN| AHS -109.68"
+      - "|@oneclickvpnkeys| AHS -75.8"
+      - "|@v2ray_swhil| AHS -102.25"
+      - "|@v2ray1_ng| AHS -92.63"
+      - "|@v2ray1_ng| AHS -92.47"
+      - "|@yaney_01| AHS -275.07"
+      - "|@yaney_01| AHS -276.61"
+      - "|@yaney_01| AHS -156.9"
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - "|@PrivateVPNs| AHS -71.21"
+      - "|@PrivateVPNs| AHS -160.8"
+      - "|@PrivateVPNs| AHS -110.04"
+      - "|@DirectVPN| AHS -92.85"
+      - "|@DirectVPN| AHS -109.51"
+      - "|@DirectVPN| AHS -109.68"
+      - "|@oneclickvpnkeys| AHS -75.8"
+      - "|@v2ray_swhil| AHS -102.25"
+      - "|@v2ray1_ng| AHS -92.63"
+      - "|@v2ray1_ng| AHS -92.47"
+      - "|@yaney_01| AHS -275.07"
+      - "|@yaney_01| AHS -276.61"
+      - "|@yaney_01| AHS -156.9"
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "|@PrivateVPNs| AHS -71.21"
+      - "|@PrivateVPNs| AHS -160.8"
+      - "|@PrivateVPNs| AHS -110.04"
+      - "|@DirectVPN| AHS -92.85"
+      - "|@DirectVPN| AHS -109.51"
+      - "|@DirectVPN| AHS -109.68"
+      - "|@oneclickvpnkeys| AHS -75.8"
+      - "|@v2ray_swhil| AHS -102.25"
+      - "|@v2ray1_ng| AHS -92.63"
+      - "|@v2ray1_ng| AHS -92.47"
+      - "|@yaney_01| AHS -275.07"
+      - "|@yaney_01| AHS -276.61"
+      - "|@yaney_01| AHS -156.9"
+rules:
+  - MATCH,MANUAL
