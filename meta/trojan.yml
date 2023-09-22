@@ -1,0 +1,150 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: "|@PrivateVPNs| AHS -71.04"
+    server: 18.203.1.79
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trj.rollingnext.co.uk
+    udp: true
+  - name: "|@PrivateVPNs| AHS -157.87"
+    server: 13.51.61.163
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trj.rollingnext.co.uk
+    udp: true
+  - name: "|@PrivateVPNs| AHS -107.82"
+    server: 16.170.91.105
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trj.rollingnext.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -92.65"
+    server: 18.156.116.178
+    port: 22222
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trj.rollingnext.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -108.66"
+    server: 16.170.48.174
+    port: 22222
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trj.rollingnext.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -107.81"
+    server: 16.171.189.89
+    port: 22222
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trj.rollingnext.co.uk
+    udp: true
+  - name: "|@oneclickvpnkeys| AHS -5.77"
+    server: h.migmig.sbs
+    port: 443
+    type: trojan
+    password: a8c2ef2a-6596-4b9d-ad9c-4a8f1b546dce
+    skip-cert-verify: true
+    sni: h.migmig.sbs
+    network: ws
+    ws-opts:
+      path: /ecWgPu75ewsDeHNpZGkceZ
+      headers:
+        Host: h.migmig.sbs
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - "|@PrivateVPNs| AHS -71.04"
+      - "|@PrivateVPNs| AHS -157.87"
+      - "|@PrivateVPNs| AHS -107.82"
+      - "|@DirectVPN| AHS -92.65"
+      - "|@DirectVPN| AHS -108.66"
+      - "|@DirectVPN| AHS -107.81"
+      - "|@oneclickvpnkeys| AHS -5.77"
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "|@PrivateVPNs| AHS -71.04"
+      - "|@PrivateVPNs| AHS -157.87"
+      - "|@PrivateVPNs| AHS -107.82"
+      - "|@DirectVPN| AHS -92.65"
+      - "|@DirectVPN| AHS -108.66"
+      - "|@DirectVPN| AHS -107.81"
+      - "|@oneclickvpnkeys| AHS -5.77"
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - "|@PrivateVPNs| AHS -71.04"
+      - "|@PrivateVPNs| AHS -157.87"
+      - "|@PrivateVPNs| AHS -107.82"
+      - "|@DirectVPN| AHS -92.65"
+      - "|@DirectVPN| AHS -108.66"
+      - "|@DirectVPN| AHS -107.81"
+      - "|@oneclickvpnkeys| AHS -5.77"
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "|@PrivateVPNs| AHS -71.04"
+      - "|@PrivateVPNs| AHS -157.87"
+      - "|@PrivateVPNs| AHS -107.82"
+      - "|@DirectVPN| AHS -92.65"
+      - "|@DirectVPN| AHS -108.66"
+      - "|@DirectVPN| AHS -107.81"
+      - "|@oneclickvpnkeys| AHS -5.77"
+rules:
+  - MATCH,MANUAL
