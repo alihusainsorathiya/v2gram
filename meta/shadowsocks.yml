@@ -1,0 +1,160 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: "@free4allVPN| AHS -🇸🇬|170.86"
+    server: 52.220.160.254
+    port: 443
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: w6uwzHPGUMIQU39vU1FYBU
+    udp: true
+  - name: "@free4allVPN| AHS -🇮🇪|153"
+    server: 54.220.133.34
+    port: 443
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: 5Ib9l2M6FC7SayRNmutDuF
+    udp: true
+  - name: "@OutlineVpnOfficial| AHS -🇦🇺|231.69"
+    server: www.outline.network.ak1880.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou
+    port: 51348
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: TijFgHjOtM7B4cP90
+    udp: true
+  - name: "@OutlineVpnOfficial| AHS -🇫🇮|263.53"
+    server: www.outline.network.ak1882.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou
+    port: 51348
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: yimkuHGFb6Dwpcsid2
+    udp: true
+  - name: "@AlienVPN402| AHS -🇩🇪|157.41"
+    server: 145.239.1.100
+    port: 443
+    type: ss
+    cipher: aes-256-gcm
+    password: pKEW8JPByTVTLtM
+    udp: true
+  - name: "@AlienVPN402| AHS -🇱🇺|156.79"
+    server: 92.38.163.53
+    port: 989
+    type: ss
+    cipher: aes-256-cfb
+    password: f8f7aCzcPKbsF8p3
+    udp: true
+  - name: "@AlienVPN402| AHS -🇩🇪|157.61"
+    server: 145.239.1.100
+    port: 8080
+    type: ss
+    cipher: aes-256-gcm
+    password: KixLvKzwjekG00rm
+    udp: true
+  - name: "@bright_vpn| AHS -🇬🇧|170.65"
+    server: 212.102.53.198
+    port: 443
+    type: ss
+    cipher: aes-128-gcm
+    password: shadowsocks
+    udp: true
+  - name: "@bright_vpn| AHS -🇫🇷|163.82"
+    server: 51.178.87.37
+    port: 810
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: G!yBwPWH3Vao
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - "@free4allVPN| AHS -🇸🇬|170.86"
+      - "@free4allVPN| AHS -🇮🇪|153"
+      - "@OutlineVpnOfficial| AHS -🇦🇺|231.69"
+      - "@OutlineVpnOfficial| AHS -🇫🇮|263.53"
+      - "@AlienVPN402| AHS -🇩🇪|157.41"
+      - "@AlienVPN402| AHS -🇱🇺|156.79"
+      - "@AlienVPN402| AHS -🇩🇪|157.61"
+      - "@bright_vpn| AHS -🇬🇧|170.65"
+      - "@bright_vpn| AHS -🇫🇷|163.82"
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@free4allVPN| AHS -🇸🇬|170.86"
+      - "@free4allVPN| AHS -🇮🇪|153"
+      - "@OutlineVpnOfficial| AHS -🇦🇺|231.69"
+      - "@OutlineVpnOfficial| AHS -🇫🇮|263.53"
+      - "@AlienVPN402| AHS -🇩🇪|157.41"
+      - "@AlienVPN402| AHS -🇱🇺|156.79"
+      - "@AlienVPN402| AHS -🇩🇪|157.61"
+      - "@bright_vpn| AHS -🇬🇧|170.65"
+      - "@bright_vpn| AHS -🇫🇷|163.82"
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - "@free4allVPN| AHS -🇸🇬|170.86"
+      - "@free4allVPN| AHS -🇮🇪|153"
+      - "@OutlineVpnOfficial| AHS -🇦🇺|231.69"
+      - "@OutlineVpnOfficial| AHS -🇫🇮|263.53"
+      - "@AlienVPN402| AHS -🇩🇪|157.41"
+      - "@AlienVPN402| AHS -🇱🇺|156.79"
+      - "@AlienVPN402| AHS -🇩🇪|157.61"
+      - "@bright_vpn| AHS -🇬🇧|170.65"
+      - "@bright_vpn| AHS -🇫🇷|163.82"
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@free4allVPN| AHS -🇸🇬|170.86"
+      - "@free4allVPN| AHS -🇮🇪|153"
+      - "@OutlineVpnOfficial| AHS -🇦🇺|231.69"
+      - "@OutlineVpnOfficial| AHS -🇫🇮|263.53"
+      - "@AlienVPN402| AHS -🇩🇪|157.41"
+      - "@AlienVPN402| AHS -🇱🇺|156.79"
+      - "@AlienVPN402| AHS -🇩🇪|157.61"
+      - "@bright_vpn| AHS -🇬🇧|170.65"
+      - "@bright_vpn| AHS -🇫🇷|163.82"
+rules:
+  - MATCH,MANUAL
