@@ -32,23 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@PrivateVPNs| AHS -160.53"
-    server: 3.120.81.8
-    port: 22222
-    type: trojan
-    password: telegram-id-privatevpns
-    skip-cert-verify: true
-    sni: trj.rollingnext.co.uk
-    udp: true
-  - name: "|@PrivateVPNs| AHS -153.47"
-    server: 35.180.248.197
-    port: 22222
-    type: trojan
-    password: telegram-id-privatevpns
-    skip-cert-verify: true
-    sni: trj.rollingnext.co.uk
-    udp: true
-  - name: "|@PrivateVPNs| AHS -147.29"
+  - name: "|@PrivateVPNs| AHS -145.29"
     server: 18.169.55.212
     port: 22222
     type: trojan
@@ -56,15 +40,23 @@ proxies:
     skip-cert-verify: true
     sni: trj.rollingnext.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -146.3"
-    server: 18.169.125.137
+  - name: "|@PrivateVPNs| AHS -174.74"
+    server: 16.16.228.197
     port: 22222
     type: trojan
-    password: telegram-id-directvpn
+    password: telegram-id-privatevpns
     skip-cert-verify: true
     sni: trj.rollingnext.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -136.64"
+  - name: "|@PrivateVPNs| AHS -136.38"
+    server: 18.200.223.142
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trj.rollingnext.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -136.99"
     server: 52.17.146.65
     port: 22222
     type: trojan
@@ -72,7 +64,7 @@ proxies:
     skip-cert-verify: true
     sni: trj.rollingnext.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -20.87"
+  - name: "|@DirectVPN| AHS -21.51"
     server: 44.231.29.152
     port: 22222
     type: trojan
@@ -80,7 +72,15 @@ proxies:
     skip-cert-verify: true
     sni: trj.rollingnext.co.uk
     udp: true
-  - name: "|@v2ray1_ng| AHS -141.76"
+  - name: "|@DirectVPN| AHS -67.74"
+    server: 3.12.75.7
+    port: 22222
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trj.rollingnext.co.uk
+    udp: true
+  - name: "|@v2ray1_ng| AHS -147.92"
     server: 198.244.252.93
     port: 443
     type: trojan
@@ -92,13 +92,13 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@PrivateVPNs| AHS -160.53"
-      - "|@PrivateVPNs| AHS -153.47"
-      - "|@PrivateVPNs| AHS -147.29"
-      - "|@DirectVPN| AHS -146.3"
-      - "|@DirectVPN| AHS -136.64"
-      - "|@DirectVPN| AHS -20.87"
-      - "|@v2ray1_ng| AHS -141.76"
+      - "|@PrivateVPNs| AHS -145.29"
+      - "|@PrivateVPNs| AHS -174.74"
+      - "|@PrivateVPNs| AHS -136.38"
+      - "|@DirectVPN| AHS -136.99"
+      - "|@DirectVPN| AHS -21.51"
+      - "|@DirectVPN| AHS -67.74"
+      - "|@v2ray1_ng| AHS -147.92"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -109,37 +109,37 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -160.53"
-      - "|@PrivateVPNs| AHS -153.47"
-      - "|@PrivateVPNs| AHS -147.29"
-      - "|@DirectVPN| AHS -146.3"
-      - "|@DirectVPN| AHS -136.64"
-      - "|@DirectVPN| AHS -20.87"
-      - "|@v2ray1_ng| AHS -141.76"
+      - "|@PrivateVPNs| AHS -145.29"
+      - "|@PrivateVPNs| AHS -174.74"
+      - "|@PrivateVPNs| AHS -136.38"
+      - "|@DirectVPN| AHS -136.99"
+      - "|@DirectVPN| AHS -21.51"
+      - "|@DirectVPN| AHS -67.74"
+      - "|@v2ray1_ng| AHS -147.92"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@PrivateVPNs| AHS -160.53"
-      - "|@PrivateVPNs| AHS -153.47"
-      - "|@PrivateVPNs| AHS -147.29"
-      - "|@DirectVPN| AHS -146.3"
-      - "|@DirectVPN| AHS -136.64"
-      - "|@DirectVPN| AHS -20.87"
-      - "|@v2ray1_ng| AHS -141.76"
+      - "|@PrivateVPNs| AHS -145.29"
+      - "|@PrivateVPNs| AHS -174.74"
+      - "|@PrivateVPNs| AHS -136.38"
+      - "|@DirectVPN| AHS -136.99"
+      - "|@DirectVPN| AHS -21.51"
+      - "|@DirectVPN| AHS -67.74"
+      - "|@v2ray1_ng| AHS -147.92"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -160.53"
-      - "|@PrivateVPNs| AHS -153.47"
-      - "|@PrivateVPNs| AHS -147.29"
-      - "|@DirectVPN| AHS -146.3"
-      - "|@DirectVPN| AHS -136.64"
-      - "|@DirectVPN| AHS -20.87"
-      - "|@v2ray1_ng| AHS -141.76"
+      - "|@PrivateVPNs| AHS -145.29"
+      - "|@PrivateVPNs| AHS -174.74"
+      - "|@PrivateVPNs| AHS -136.38"
+      - "|@DirectVPN| AHS -136.99"
+      - "|@DirectVPN| AHS -21.51"
+      - "|@DirectVPN| AHS -67.74"
+      - "|@v2ray1_ng| AHS -147.92"
 rules:
   - MATCH,MANUAL
