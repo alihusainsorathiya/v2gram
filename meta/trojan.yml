@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@PrivateVPNs| AHS -87.32"
+  - name: "|@PrivateVPNs| AHS -94.73"
     server: 18.192.17.220
     port: 22222
     type: trojan
@@ -40,7 +40,7 @@ proxies:
     skip-cert-verify: true
     sni: trj.rollingnext.co.uk
     udp: true
-  - name: "|@PrivateVPNs| AHS -83.16"
+  - name: "|@PrivateVPNs| AHS -84.93"
     server: 15.236.2.155
     port: 22222
     type: trojan
@@ -48,7 +48,7 @@ proxies:
     skip-cert-verify: true
     sni: trj.rollingnext.co.uk
     udp: true
-  - name: "|@PrivateVPNs| AHS -76.3"
+  - name: "|@PrivateVPNs| AHS -83.73"
     server: 18.135.19.4
     port: 22222
     type: trojan
@@ -56,7 +56,7 @@ proxies:
     skip-cert-verify: true
     sni: trj.rollingnext.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -106.61"
+  - name: "|@DirectVPN| AHS -110.82"
     server: 16.16.136.13
     port: 22222
     type: trojan
@@ -64,7 +64,7 @@ proxies:
     skip-cert-verify: true
     sni: trj.rollingnext.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -89.66"
+  - name: "|@DirectVPN| AHS -94.11"
     server: 3.125.71.228
     port: 22222
     type: trojan
@@ -72,7 +72,7 @@ proxies:
     skip-cert-verify: true
     sni: trj.rollingnext.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -89.53"
+  - name: "|@DirectVPN| AHS -95.51"
     server: 3.74.185.51
     port: 22222
     type: trojan
@@ -80,16 +80,58 @@ proxies:
     skip-cert-verify: true
     sni: trj.rollingnext.co.uk
     udp: true
+  - name: "|@ConfigsHUB| AHS -6.19"
+    server: aws-fr-paris-1.f1cflineb.com
+    port: 443
+    type: trojan
+    password: your_password
+    skip-cert-verify: true
+    sni: aws-fr-paris-1.f1cflineb.com
+    network: ws
+    ws-opts:
+      path: /f1rocket
+      headers:
+        Host: aws-fr-paris-1.f1cflineb.com
+    udp: true
+  - name: "|@ConfigsHUB| AHS -7.05"
+    server: aws-us-oregon-1.f1cflinea.com
+    port: 443
+    type: trojan
+    password: your_password
+    skip-cert-verify: true
+    sni: aws-us-oregon-1.f1cflinea.com
+    network: ws
+    ws-opts:
+      path: /f1rocket
+      headers:
+        Host: aws-us-oregon-1.f1cflinea.com
+    udp: true
+  - name: "|@ConfigsHUB| AHS -6.72"
+    server: aws-sg-1.f1cflinea.com
+    port: 443
+    type: trojan
+    password: your_password
+    skip-cert-verify: true
+    sni: aws-sg-1.f1cflinea.com
+    network: ws
+    ws-opts:
+      path: /f1rocket
+      headers:
+        Host: aws-sg-1.f1cflinea.com
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@PrivateVPNs| AHS -87.32"
-      - "|@PrivateVPNs| AHS -83.16"
-      - "|@PrivateVPNs| AHS -76.3"
-      - "|@DirectVPN| AHS -106.61"
-      - "|@DirectVPN| AHS -89.66"
-      - "|@DirectVPN| AHS -89.53"
+      - "|@PrivateVPNs| AHS -94.73"
+      - "|@PrivateVPNs| AHS -84.93"
+      - "|@PrivateVPNs| AHS -83.73"
+      - "|@DirectVPN| AHS -110.82"
+      - "|@DirectVPN| AHS -94.11"
+      - "|@DirectVPN| AHS -95.51"
+      - "|@ConfigsHUB| AHS -6.19"
+      - "|@ConfigsHUB| AHS -7.05"
+      - "|@ConfigsHUB| AHS -6.72"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -100,34 +142,43 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -87.32"
-      - "|@PrivateVPNs| AHS -83.16"
-      - "|@PrivateVPNs| AHS -76.3"
-      - "|@DirectVPN| AHS -106.61"
-      - "|@DirectVPN| AHS -89.66"
-      - "|@DirectVPN| AHS -89.53"
+      - "|@PrivateVPNs| AHS -94.73"
+      - "|@PrivateVPNs| AHS -84.93"
+      - "|@PrivateVPNs| AHS -83.73"
+      - "|@DirectVPN| AHS -110.82"
+      - "|@DirectVPN| AHS -94.11"
+      - "|@DirectVPN| AHS -95.51"
+      - "|@ConfigsHUB| AHS -6.19"
+      - "|@ConfigsHUB| AHS -7.05"
+      - "|@ConfigsHUB| AHS -6.72"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@PrivateVPNs| AHS -87.32"
-      - "|@PrivateVPNs| AHS -83.16"
-      - "|@PrivateVPNs| AHS -76.3"
-      - "|@DirectVPN| AHS -106.61"
-      - "|@DirectVPN| AHS -89.66"
-      - "|@DirectVPN| AHS -89.53"
+      - "|@PrivateVPNs| AHS -94.73"
+      - "|@PrivateVPNs| AHS -84.93"
+      - "|@PrivateVPNs| AHS -83.73"
+      - "|@DirectVPN| AHS -110.82"
+      - "|@DirectVPN| AHS -94.11"
+      - "|@DirectVPN| AHS -95.51"
+      - "|@ConfigsHUB| AHS -6.19"
+      - "|@ConfigsHUB| AHS -7.05"
+      - "|@ConfigsHUB| AHS -6.72"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -87.32"
-      - "|@PrivateVPNs| AHS -83.16"
-      - "|@PrivateVPNs| AHS -76.3"
-      - "|@DirectVPN| AHS -106.61"
-      - "|@DirectVPN| AHS -89.66"
-      - "|@DirectVPN| AHS -89.53"
+      - "|@PrivateVPNs| AHS -94.73"
+      - "|@PrivateVPNs| AHS -84.93"
+      - "|@PrivateVPNs| AHS -83.73"
+      - "|@DirectVPN| AHS -110.82"
+      - "|@DirectVPN| AHS -94.11"
+      - "|@DirectVPN| AHS -95.51"
+      - "|@ConfigsHUB| AHS -6.19"
+      - "|@ConfigsHUB| AHS -7.05"
+      - "|@ConfigsHUB| AHS -6.72"
 rules:
   - MATCH,MANUAL
