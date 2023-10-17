@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@PrivateVPNs| AHS -122.06"
+  - name: "|@PrivateVPNs| AHS -93.03"
     server: 3.72.218.30
     port: 22222
     type: trojan
@@ -40,7 +40,7 @@ proxies:
     skip-cert-verify: true
     sni: trj.rollingnext.co.uk
     udp: true
-  - name: "|@PrivateVPNs| AHS -113.59"
+  - name: "|@PrivateVPNs| AHS -142.46"
     server: 15.188.190.49
     port: 22222
     type: trojan
@@ -48,7 +48,7 @@ proxies:
     skip-cert-verify: true
     sni: trj.rollingnext.co.uk
     udp: true
-  - name: "|@PrivateVPNs| AHS -108.44"
+  - name: "|@PrivateVPNs| AHS -81.45"
     server: 3.11.213.110
     port: 22222
     type: trojan
@@ -56,7 +56,7 @@ proxies:
     skip-cert-verify: true
     sni: trj.rollingnext.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -138.98"
+  - name: "|@DirectVPN| AHS -111.23"
     server: 51.20.195.221
     port: 22222
     type: trojan
@@ -64,7 +64,7 @@ proxies:
     skip-cert-verify: true
     sni: trj.rollingnext.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -121.54"
+  - name: "|@DirectVPN| AHS -92.48"
     server: 18.195.65.11
     port: 22222
     type: trojan
@@ -72,7 +72,7 @@ proxies:
     skip-cert-verify: true
     sni: trj.rollingnext.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -121.76"
+  - name: "|@DirectVPN| AHS -93.41"
     server: 3.77.222.182
     port: 22222
     type: trojan
@@ -80,16 +80,58 @@ proxies:
     skip-cert-verify: true
     sni: trj.rollingnext.co.uk
     udp: true
+  - name: "|@ConfigsHUB| AHS -244.7"
+    server: aws-za-capetown-1.f1rocketnode.com
+    port: 443
+    type: trojan
+    password: your_password
+    skip-cert-verify: true
+    sni: aws-za-capetown-1.f1rocketnode.com
+    network: ws
+    ws-opts:
+      path: /f1rocket
+      headers:
+        Host: aws-za-capetown-1.f1rocketnode.com
+    udp: true
+  - name: "|@ConfigsHUB| AHS -5.97"
+    server: x4.mehdimoghaddam.fun
+    port: 2096
+    type: trojan
+    password: GmOUswOWsd
+    skip-cert-verify: true
+    sni: x5.mehdimoghaddam.fun
+    network: ws
+    ws-opts:
+      path: /FORWARDV2RAY
+      headers:
+        Host: x5.mehdimoghaddam.fun
+    udp: true
+  - name: "|@ConfigsHUB| AHS -236.95"
+    server: aws-aus-sydney-1.f1rocketnode.com
+    port: 443
+    type: trojan
+    password: your_password
+    skip-cert-verify: true
+    sni: aws-aus-sydney-1.f1rocketnode.com
+    network: ws
+    ws-opts:
+      path: /f1rocket
+      headers:
+        Host: aws-aus-sydney-1.f1rocketnode.com
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@PrivateVPNs| AHS -122.06"
-      - "|@PrivateVPNs| AHS -113.59"
-      - "|@PrivateVPNs| AHS -108.44"
-      - "|@DirectVPN| AHS -138.98"
-      - "|@DirectVPN| AHS -121.54"
-      - "|@DirectVPN| AHS -121.76"
+      - "|@PrivateVPNs| AHS -93.03"
+      - "|@PrivateVPNs| AHS -142.46"
+      - "|@PrivateVPNs| AHS -81.45"
+      - "|@DirectVPN| AHS -111.23"
+      - "|@DirectVPN| AHS -92.48"
+      - "|@DirectVPN| AHS -93.41"
+      - "|@ConfigsHUB| AHS -244.7"
+      - "|@ConfigsHUB| AHS -5.97"
+      - "|@ConfigsHUB| AHS -236.95"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -100,34 +142,43 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -122.06"
-      - "|@PrivateVPNs| AHS -113.59"
-      - "|@PrivateVPNs| AHS -108.44"
-      - "|@DirectVPN| AHS -138.98"
-      - "|@DirectVPN| AHS -121.54"
-      - "|@DirectVPN| AHS -121.76"
+      - "|@PrivateVPNs| AHS -93.03"
+      - "|@PrivateVPNs| AHS -142.46"
+      - "|@PrivateVPNs| AHS -81.45"
+      - "|@DirectVPN| AHS -111.23"
+      - "|@DirectVPN| AHS -92.48"
+      - "|@DirectVPN| AHS -93.41"
+      - "|@ConfigsHUB| AHS -244.7"
+      - "|@ConfigsHUB| AHS -5.97"
+      - "|@ConfigsHUB| AHS -236.95"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@PrivateVPNs| AHS -122.06"
-      - "|@PrivateVPNs| AHS -113.59"
-      - "|@PrivateVPNs| AHS -108.44"
-      - "|@DirectVPN| AHS -138.98"
-      - "|@DirectVPN| AHS -121.54"
-      - "|@DirectVPN| AHS -121.76"
+      - "|@PrivateVPNs| AHS -93.03"
+      - "|@PrivateVPNs| AHS -142.46"
+      - "|@PrivateVPNs| AHS -81.45"
+      - "|@DirectVPN| AHS -111.23"
+      - "|@DirectVPN| AHS -92.48"
+      - "|@DirectVPN| AHS -93.41"
+      - "|@ConfigsHUB| AHS -244.7"
+      - "|@ConfigsHUB| AHS -5.97"
+      - "|@ConfigsHUB| AHS -236.95"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -122.06"
-      - "|@PrivateVPNs| AHS -113.59"
-      - "|@PrivateVPNs| AHS -108.44"
-      - "|@DirectVPN| AHS -138.98"
-      - "|@DirectVPN| AHS -121.54"
-      - "|@DirectVPN| AHS -121.76"
+      - "|@PrivateVPNs| AHS -93.03"
+      - "|@PrivateVPNs| AHS -142.46"
+      - "|@PrivateVPNs| AHS -81.45"
+      - "|@DirectVPN| AHS -111.23"
+      - "|@DirectVPN| AHS -92.48"
+      - "|@DirectVPN| AHS -93.41"
+      - "|@ConfigsHUB| AHS -244.7"
+      - "|@ConfigsHUB| AHS -5.97"
+      - "|@ConfigsHUB| AHS -236.95"
 rules:
   - MATCH,MANUAL
