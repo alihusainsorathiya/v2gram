@@ -1,0 +1,127 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: "@free4allVPN| AHS -🇨🇦|89.81"
+    server: ca.yangon.club
+    port: 443
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: IlCzYXZ1KkDC90brbUtoRz
+    udp: true
+  - name: "@VmessProtocol| AHS -🇬🇧|94.92"
+    server: 13.87.75.155
+    port: 46130
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: mTypilmjidrr6dQYaOGHf7
+    udp: true
+  - name: "@AlienVPN402| AHS -🇫🇷|109.16"
+    server: 141.95.126.100
+    port: 443
+    type: ss
+    cipher: aes-256-cfb
+    password: asdKkaskJKfnsa
+    udp: true
+  - name: "@V2rayngninja| AHS -🇷🇺|143.32"
+    server: 81.176.239.56
+    port: 51348
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: z08jLl546HGfs09JlNnlbNT
+    udp: true
+  - name: "@bright_vpn| AHS -🇬🇧|144.01"
+    server: 212.102.53.198
+    port: 443
+    type: ss
+    cipher: aes-128-gcm
+    password: shadowsocks
+    udp: true
+  - name: "@bright_vpn| AHS -🇫🇷|108.81"
+    server: 51.178.87.37
+    port: 810
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: G!yBwPWH3Vao
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - "@free4allVPN| AHS -🇨🇦|89.81"
+      - "@VmessProtocol| AHS -🇬🇧|94.92"
+      - "@AlienVPN402| AHS -🇫🇷|109.16"
+      - "@V2rayngninja| AHS -🇷🇺|143.32"
+      - "@bright_vpn| AHS -🇬🇧|144.01"
+      - "@bright_vpn| AHS -🇫🇷|108.81"
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@free4allVPN| AHS -🇨🇦|89.81"
+      - "@VmessProtocol| AHS -🇬🇧|94.92"
+      - "@AlienVPN402| AHS -🇫🇷|109.16"
+      - "@V2rayngninja| AHS -🇷🇺|143.32"
+      - "@bright_vpn| AHS -🇬🇧|144.01"
+      - "@bright_vpn| AHS -🇫🇷|108.81"
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - "@free4allVPN| AHS -🇨🇦|89.81"
+      - "@VmessProtocol| AHS -🇬🇧|94.92"
+      - "@AlienVPN402| AHS -🇫🇷|109.16"
+      - "@V2rayngninja| AHS -🇷🇺|143.32"
+      - "@bright_vpn| AHS -🇬🇧|144.01"
+      - "@bright_vpn| AHS -🇫🇷|108.81"
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@free4allVPN| AHS -🇨🇦|89.81"
+      - "@VmessProtocol| AHS -🇬🇧|94.92"
+      - "@AlienVPN402| AHS -🇫🇷|109.16"
+      - "@V2rayngninja| AHS -🇷🇺|143.32"
+      - "@bright_vpn| AHS -🇬🇧|144.01"
+      - "@bright_vpn| AHS -🇫🇷|108.81"
+rules:
+  - MATCH,MANUAL
