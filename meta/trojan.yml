@@ -1,0 +1,157 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: "|@PrivateVPNs| AHS -66.74"
+    server: 54.247.79.186
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trj.rollingnext.co.uk
+    udp: true
+  - name: "|@PrivateVPNs| AHS -107.82"
+    server: 51.20.221.167
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trj.rollingnext.co.uk
+    udp: true
+  - name: "|@PrivateVPNs| AHS -108.16"
+    server: 51.20.171.253
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trj.rollingnext.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -174.76"
+    server: 16.171.180.235
+    port: 22222
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trj.rollingnext.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -87.87"
+    server: 52.59.75.225
+    port: 22222
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trj.rollingnext.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -83.58"
+    server: 13.37.139.112
+    port: 22222
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trj.rollingnext.co.uk
+    udp: true
+  - name: "|@VmessProtocol| AHS -64.09"
+    server: 208.115.233.80
+    port: 443
+    type: trojan
+    password: 52c020954a
+    skip-cert-verify: true
+    sni: usa2.connecton.surf
+    udp: true
+  - name: "|@VmessProtocol| AHS -130.32"
+    server: p1.09vpn.com
+    port: 2083
+    type: trojan
+    password: u7888632354
+    skip-cert-verify: true
+    sni: ""
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - "|@PrivateVPNs| AHS -66.74"
+      - "|@PrivateVPNs| AHS -107.82"
+      - "|@PrivateVPNs| AHS -108.16"
+      - "|@DirectVPN| AHS -174.76"
+      - "|@DirectVPN| AHS -87.87"
+      - "|@DirectVPN| AHS -83.58"
+      - "|@VmessProtocol| AHS -64.09"
+      - "|@VmessProtocol| AHS -130.32"
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "|@PrivateVPNs| AHS -66.74"
+      - "|@PrivateVPNs| AHS -107.82"
+      - "|@PrivateVPNs| AHS -108.16"
+      - "|@DirectVPN| AHS -174.76"
+      - "|@DirectVPN| AHS -87.87"
+      - "|@DirectVPN| AHS -83.58"
+      - "|@VmessProtocol| AHS -64.09"
+      - "|@VmessProtocol| AHS -130.32"
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - "|@PrivateVPNs| AHS -66.74"
+      - "|@PrivateVPNs| AHS -107.82"
+      - "|@PrivateVPNs| AHS -108.16"
+      - "|@DirectVPN| AHS -174.76"
+      - "|@DirectVPN| AHS -87.87"
+      - "|@DirectVPN| AHS -83.58"
+      - "|@VmessProtocol| AHS -64.09"
+      - "|@VmessProtocol| AHS -130.32"
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "|@PrivateVPNs| AHS -66.74"
+      - "|@PrivateVPNs| AHS -107.82"
+      - "|@PrivateVPNs| AHS -108.16"
+      - "|@DirectVPN| AHS -174.76"
+      - "|@DirectVPN| AHS -87.87"
+      - "|@DirectVPN| AHS -83.58"
+      - "|@VmessProtocol| AHS -64.09"
+      - "|@VmessProtocol| AHS -130.32"
+rules:
+  - MATCH,MANUAL
