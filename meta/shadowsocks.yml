@@ -1,0 +1,149 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: "@free4allVPN| AHS -🇨🇦|257.95"
+    server: ca.yangon.club
+    port: 443
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: zJ8vRrq61sLAQTg2IYGhKz
+    udp: true
+  - name: "@VmessProtocol| AHS -🇦🇺|202.98"
+    server: au.doushimeng.com
+    port: 24652
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: 0c6d40c3-c1d2-41cb-aee8-4d99bc478bbb
+    udp: true
+  - name: "@OutlineVpnOfficial| AHS -🇨🇳|272.44"
+    server: www.outline.network.ak1998.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou
+    port: 2443
+    type: ss
+    cipher: aes-256-gcm
+    password: fADaYEiqou
+    udp: true
+  - name: "@OutlineVpnOfficial| AHS -🇺🇸|122.23"
+    server: www.outline.network.ak2000.fr8678825324247b8176d59f83c30bd94d23d2e3ac5cd4a743bkwqeikvdyufr.cyou
+    port: 2443
+    type: ss
+    cipher: aes-256-gcm
+    password: F+eM0SV9+4NTpCceBYIwkx931Ftq9s10oXdvpg/tIM8=
+    udp: true
+  - name: "@AlienVPN402| AHS -🇫🇷|110.95"
+    server: 162.19.204.80
+    port: 443
+    type: ss
+    cipher: aes-256-cfb
+    password: asdKkaskJKfnsa
+    udp: true
+  - name: "@AlienVPN402| AHS -🇫🇷|111.21"
+    server: 162.19.19.210
+    port: 443
+    type: ss
+    cipher: aes-256-cfb
+    password: asdKkaskJKfnsa
+    udp: true
+  - name: "@AlienVPN402| AHS -🇫🇷|105.38"
+    server: 145.239.1.100
+    port: 5003
+    type: ss
+    cipher: aes-256-gcm
+    password: g5MeD6Ft3CWlJId
+    udp: true
+  - name: "@bright_vpn| AHS -🇬🇧|144.26"
+    server: 212.102.53.198
+    port: 443
+    type: ss
+    cipher: aes-128-gcm
+    password: shadowsocks
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - "@free4allVPN| AHS -🇨🇦|257.95"
+      - "@VmessProtocol| AHS -🇦🇺|202.98"
+      - "@OutlineVpnOfficial| AHS -🇨🇳|272.44"
+      - "@OutlineVpnOfficial| AHS -🇺🇸|122.23"
+      - "@AlienVPN402| AHS -🇫🇷|110.95"
+      - "@AlienVPN402| AHS -🇫🇷|111.21"
+      - "@AlienVPN402| AHS -🇫🇷|105.38"
+      - "@bright_vpn| AHS -🇬🇧|144.26"
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@free4allVPN| AHS -🇨🇦|257.95"
+      - "@VmessProtocol| AHS -🇦🇺|202.98"
+      - "@OutlineVpnOfficial| AHS -🇨🇳|272.44"
+      - "@OutlineVpnOfficial| AHS -🇺🇸|122.23"
+      - "@AlienVPN402| AHS -🇫🇷|110.95"
+      - "@AlienVPN402| AHS -🇫🇷|111.21"
+      - "@AlienVPN402| AHS -🇫🇷|105.38"
+      - "@bright_vpn| AHS -🇬🇧|144.26"
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - "@free4allVPN| AHS -🇨🇦|257.95"
+      - "@VmessProtocol| AHS -🇦🇺|202.98"
+      - "@OutlineVpnOfficial| AHS -🇨🇳|272.44"
+      - "@OutlineVpnOfficial| AHS -🇺🇸|122.23"
+      - "@AlienVPN402| AHS -🇫🇷|110.95"
+      - "@AlienVPN402| AHS -🇫🇷|111.21"
+      - "@AlienVPN402| AHS -🇫🇷|105.38"
+      - "@bright_vpn| AHS -🇬🇧|144.26"
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@free4allVPN| AHS -🇨🇦|257.95"
+      - "@VmessProtocol| AHS -🇦🇺|202.98"
+      - "@OutlineVpnOfficial| AHS -🇨🇳|272.44"
+      - "@OutlineVpnOfficial| AHS -🇺🇸|122.23"
+      - "@AlienVPN402| AHS -🇫🇷|110.95"
+      - "@AlienVPN402| AHS -🇫🇷|111.21"
+      - "@AlienVPN402| AHS -🇫🇷|105.38"
+      - "@bright_vpn| AHS -🇬🇧|144.26"
+rules:
+  - MATCH,MANUAL
