@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@PrivateVPNs| AHS -146.12"
+  - name: "|@PrivateVPNs| AHS -98.23"
     server: 13.41.112.191
     port: 22222
     type: trojan
@@ -40,7 +40,7 @@ proxies:
     skip-cert-verify: true
     sni: trj.rollingnext.co.uk
     udp: true
-  - name: "|@PrivateVPNs| AHS -136.46"
+  - name: "|@PrivateVPNs| AHS -87.32"
     server: 52.51.243.33
     port: 22222
     type: trojan
@@ -48,7 +48,7 @@ proxies:
     skip-cert-verify: true
     sni: trj.rollingnext.co.uk
     udp: true
-  - name: "|@PrivateVPNs| AHS -172.52"
+  - name: "|@PrivateVPNs| AHS -115.88"
     server: 3.251.101.115
     port: 22222
     type: trojan
@@ -56,7 +56,7 @@ proxies:
     skip-cert-verify: true
     sni: trj.rollingnext.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -173.94"
+  - name: "|@DirectVPN| AHS -168.91"
     server: 51.20.11.185
     port: 22222
     type: trojan
@@ -64,7 +64,7 @@ proxies:
     skip-cert-verify: true
     sni: trj.rollingnext.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -157.87"
+  - name: "|@DirectVPN| AHS -110.06"
     server: 18.185.146.213
     port: 22222
     type: trojan
@@ -72,7 +72,15 @@ proxies:
     skip-cert-verify: true
     sni: trj.rollingnext.co.uk
     udp: true
-  - name: "|@yaney_01| AHS -78.04"
+  - name: "|@DirectVPN| AHS -109.89"
+    server: 3.124.247.162
+    port: 22222
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trj.rollingnext.co.uk
+    udp: true
+  - name: "|@yaney_01| AHS -28.96"
     server: 68.233.121.121
     port: 40003
     type: trojan
@@ -80,7 +88,7 @@ proxies:
     skip-cert-verify: true
     sni: ""
     udp: true
-  - name: "|@yaney_01| AHS -133.86"
+  - name: "|@yaney_01| AHS -178.86"
     server: 64.110.90.224
     port: 40003
     type: trojan
@@ -92,13 +100,14 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@PrivateVPNs| AHS -146.12"
-      - "|@PrivateVPNs| AHS -136.46"
-      - "|@PrivateVPNs| AHS -172.52"
-      - "|@DirectVPN| AHS -173.94"
-      - "|@DirectVPN| AHS -157.87"
-      - "|@yaney_01| AHS -78.04"
-      - "|@yaney_01| AHS -133.86"
+      - "|@PrivateVPNs| AHS -98.23"
+      - "|@PrivateVPNs| AHS -87.32"
+      - "|@PrivateVPNs| AHS -115.88"
+      - "|@DirectVPN| AHS -168.91"
+      - "|@DirectVPN| AHS -110.06"
+      - "|@DirectVPN| AHS -109.89"
+      - "|@yaney_01| AHS -28.96"
+      - "|@yaney_01| AHS -178.86"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -109,37 +118,40 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -146.12"
-      - "|@PrivateVPNs| AHS -136.46"
-      - "|@PrivateVPNs| AHS -172.52"
-      - "|@DirectVPN| AHS -173.94"
-      - "|@DirectVPN| AHS -157.87"
-      - "|@yaney_01| AHS -78.04"
-      - "|@yaney_01| AHS -133.86"
+      - "|@PrivateVPNs| AHS -98.23"
+      - "|@PrivateVPNs| AHS -87.32"
+      - "|@PrivateVPNs| AHS -115.88"
+      - "|@DirectVPN| AHS -168.91"
+      - "|@DirectVPN| AHS -110.06"
+      - "|@DirectVPN| AHS -109.89"
+      - "|@yaney_01| AHS -28.96"
+      - "|@yaney_01| AHS -178.86"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@PrivateVPNs| AHS -146.12"
-      - "|@PrivateVPNs| AHS -136.46"
-      - "|@PrivateVPNs| AHS -172.52"
-      - "|@DirectVPN| AHS -173.94"
-      - "|@DirectVPN| AHS -157.87"
-      - "|@yaney_01| AHS -78.04"
-      - "|@yaney_01| AHS -133.86"
+      - "|@PrivateVPNs| AHS -98.23"
+      - "|@PrivateVPNs| AHS -87.32"
+      - "|@PrivateVPNs| AHS -115.88"
+      - "|@DirectVPN| AHS -168.91"
+      - "|@DirectVPN| AHS -110.06"
+      - "|@DirectVPN| AHS -109.89"
+      - "|@yaney_01| AHS -28.96"
+      - "|@yaney_01| AHS -178.86"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -146.12"
-      - "|@PrivateVPNs| AHS -136.46"
-      - "|@PrivateVPNs| AHS -172.52"
-      - "|@DirectVPN| AHS -173.94"
-      - "|@DirectVPN| AHS -157.87"
-      - "|@yaney_01| AHS -78.04"
-      - "|@yaney_01| AHS -133.86"
+      - "|@PrivateVPNs| AHS -98.23"
+      - "|@PrivateVPNs| AHS -87.32"
+      - "|@PrivateVPNs| AHS -115.88"
+      - "|@DirectVPN| AHS -168.91"
+      - "|@DirectVPN| AHS -110.06"
+      - "|@DirectVPN| AHS -109.89"
+      - "|@yaney_01| AHS -28.96"
+      - "|@yaney_01| AHS -178.86"
 rules:
   - MATCH,MANUAL
