@@ -32,49 +32,56 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@proxyymeliii| AHS -🇬🇧|93.96"
+  - name: "@proxyymeliii| AHS -🇬🇧|128.77"
     server: 52.142.161.9
     port: 34424
     type: ss
     cipher: chacha20-ietf-poly1305
     password: 64LbKHnB3IO759ueEnhgMG
     udp: true
-  - name: "@VmessProtocol| AHS -🇬🇧|95.6"
-    server: 52.142.146.57
-    port: 50395
-    type: ss
-    cipher: chacha20-ietf-poly1305
-    password: zpgPBiYXEhOwgwpCTaoTui
-    udp: true
-  - name: "@VmessProtocol| AHS -🇺🇸|115.13"
+  - name: "@VmessProtocol| AHS -🇺🇸|152.18"
     server: 94.131.12.58
     port: 26669
     type: ss
     cipher: chacha20-ietf-poly1305
     password: B0ry56X2AxfFgcgI7sHDWD
     udp: true
-  - name: "@AlienVPN402| AHS -🇫🇷|110.71"
+  - name: "@VmessProtocol| AHS -🇹🇼|513.6"
+    server: ty11.twty.dynu.net
+    port: 2203
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: 7b039abd-ad30-4ce4-a876-0a97a3ccaf74
+    udp: true
+  - name: "@VmessProtocol| AHS -🇸🇬|197.32"
+    server: sg.qrfly.link
+    port: 20702
+    type: ss
+    cipher: aes-128-gcm
+    password: b264e44a-578c-4ce6-bb8d-cd31ae33201f
+    udp: true
+  - name: "@AlienVPN402| AHS -🇫🇷|160.12"
     server: 162.19.83.12
     port: 443
     type: ss
     cipher: aes-256-cfb
     password: asdKkaskJKfnsa
     udp: true
-  - name: "@AlienVPN402| AHS -🇫🇷|100.33"
+  - name: "@AlienVPN402| AHS -🇫🇷|144.06"
     server: 149.202.82.172
     port: 5600
     type: ss
     cipher: aes-256-gcm
     password: Y6R9pAtvxxzmGC
     udp: true
-  - name: "@bright_vpn| AHS -🇬🇧|95.7"
+  - name: "@bright_vpn| AHS -🇬🇧|135.87"
     server: 212.102.53.198
     port: 443
     type: ss
     cipher: aes-128-gcm
     password: shadowsocks
     udp: true
-  - name: "@bright_vpn| AHS -🇫🇷|106.97"
+  - name: "@bright_vpn| AHS -🇫🇷|151.02"
     server: 51.178.87.37
     port: 810
     type: ss
@@ -85,13 +92,14 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@proxyymeliii| AHS -🇬🇧|93.96"
-      - "@VmessProtocol| AHS -🇬🇧|95.6"
-      - "@VmessProtocol| AHS -🇺🇸|115.13"
-      - "@AlienVPN402| AHS -🇫🇷|110.71"
-      - "@AlienVPN402| AHS -🇫🇷|100.33"
-      - "@bright_vpn| AHS -🇬🇧|95.7"
-      - "@bright_vpn| AHS -🇫🇷|106.97"
+      - "@proxyymeliii| AHS -🇬🇧|128.77"
+      - "@VmessProtocol| AHS -🇺🇸|152.18"
+      - "@VmessProtocol| AHS -🇹🇼|513.6"
+      - "@VmessProtocol| AHS -🇸🇬|197.32"
+      - "@AlienVPN402| AHS -🇫🇷|160.12"
+      - "@AlienVPN402| AHS -🇫🇷|144.06"
+      - "@bright_vpn| AHS -🇬🇧|135.87"
+      - "@bright_vpn| AHS -🇫🇷|151.02"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -102,37 +110,40 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@proxyymeliii| AHS -🇬🇧|93.96"
-      - "@VmessProtocol| AHS -🇬🇧|95.6"
-      - "@VmessProtocol| AHS -🇺🇸|115.13"
-      - "@AlienVPN402| AHS -🇫🇷|110.71"
-      - "@AlienVPN402| AHS -🇫🇷|100.33"
-      - "@bright_vpn| AHS -🇬🇧|95.7"
-      - "@bright_vpn| AHS -🇫🇷|106.97"
+      - "@proxyymeliii| AHS -🇬🇧|128.77"
+      - "@VmessProtocol| AHS -🇺🇸|152.18"
+      - "@VmessProtocol| AHS -🇹🇼|513.6"
+      - "@VmessProtocol| AHS -🇸🇬|197.32"
+      - "@AlienVPN402| AHS -🇫🇷|160.12"
+      - "@AlienVPN402| AHS -🇫🇷|144.06"
+      - "@bright_vpn| AHS -🇬🇧|135.87"
+      - "@bright_vpn| AHS -🇫🇷|151.02"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@proxyymeliii| AHS -🇬🇧|93.96"
-      - "@VmessProtocol| AHS -🇬🇧|95.6"
-      - "@VmessProtocol| AHS -🇺🇸|115.13"
-      - "@AlienVPN402| AHS -🇫🇷|110.71"
-      - "@AlienVPN402| AHS -🇫🇷|100.33"
-      - "@bright_vpn| AHS -🇬🇧|95.7"
-      - "@bright_vpn| AHS -🇫🇷|106.97"
+      - "@proxyymeliii| AHS -🇬🇧|128.77"
+      - "@VmessProtocol| AHS -🇺🇸|152.18"
+      - "@VmessProtocol| AHS -🇹🇼|513.6"
+      - "@VmessProtocol| AHS -🇸🇬|197.32"
+      - "@AlienVPN402| AHS -🇫🇷|160.12"
+      - "@AlienVPN402| AHS -🇫🇷|144.06"
+      - "@bright_vpn| AHS -🇬🇧|135.87"
+      - "@bright_vpn| AHS -🇫🇷|151.02"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@proxyymeliii| AHS -🇬🇧|93.96"
-      - "@VmessProtocol| AHS -🇬🇧|95.6"
-      - "@VmessProtocol| AHS -🇺🇸|115.13"
-      - "@AlienVPN402| AHS -🇫🇷|110.71"
-      - "@AlienVPN402| AHS -🇫🇷|100.33"
-      - "@bright_vpn| AHS -🇬🇧|95.7"
-      - "@bright_vpn| AHS -🇫🇷|106.97"
+      - "@proxyymeliii| AHS -🇬🇧|128.77"
+      - "@VmessProtocol| AHS -🇺🇸|152.18"
+      - "@VmessProtocol| AHS -🇹🇼|513.6"
+      - "@VmessProtocol| AHS -🇸🇬|197.32"
+      - "@AlienVPN402| AHS -🇫🇷|160.12"
+      - "@AlienVPN402| AHS -🇫🇷|144.06"
+      - "@bright_vpn| AHS -🇬🇧|135.87"
+      - "@bright_vpn| AHS -🇫🇷|151.02"
 rules:
   - MATCH,MANUAL
