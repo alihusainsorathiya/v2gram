@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@WomanLifeFreedomVPN|🇩🇪|108.4
+  - name: REALITY|@WomanLifeFreedomVPN|🇩🇪|143.32
     server: icloud.wlftest.xyz
     port: 443
     type: vless
@@ -43,7 +43,7 @@ proxies:
     skip-cert-verify: true
     servername: www.icloud.com
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|93.84
+  - name: REALITY|@internet4iran|🇩🇪|145.76
     server: 88.99.121.221
     port: 443
     type: vless
@@ -54,7 +54,7 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@customv2ray|🇩🇪|93.64
+  - name: REALITY|@customv2ray|🇩🇪|142.72
     server: 23.88.116.162
     port: 443
     type: vless
@@ -67,7 +67,20 @@ proxies:
     grpc-opts:
       grpc-service-name: "%40ipV2Ray"
     udp: true
-  - name: REALITY|@v2rayNG_Matsuri|🇸🇪|139.05
+  - name: REALITY|@UnlimitedDev|🇫🇮|unavailable
+    server: 3bia-to3.unlimiteddev.shop
+    port: 443
+    type: vless
+    uuid: 0ed632f1-ce5f-4584-946e-8379b79a6bc0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ftp.debian.org
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "%40UnlimitedDev"
+    udp: true
+  - name: REALITY|@v2rayNG_Matsuri|🇸🇪|207.27
     server: 16.16.198.128
     port: 8443
     type: vless
@@ -78,7 +91,7 @@ proxies:
     skip-cert-verify: true
     servername: coinmarketcap.com
     udp: true
-  - name: REALITY|@kiava|🇸🇪|145.34
+  - name: REALITY|@kiava|🇸🇪|211.28
     server: 16.16.80.200
     port: 8443
     type: vless
@@ -89,7 +102,20 @@ proxies:
     skip-cert-verify: true
     servername: coinmarketcap.com
     udp: true
-  - name: REALITY|@V2rayngninja|🇳🇱|114.33
+  - name: REALITY|@vpn_tehran|🇩🇪|142.54
+    server: 23.88.116.162
+    port: 443
+    type: vless
+    uuid: c084e53f-c642-4339-b163-0f972a2893b7
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: greenpepper.ir
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "%40ipV2Ray"
+    udp: true
+  - name: REALITY|@V2rayngninja|🇳🇱|174.31
     server: h1.bestvipserviceirr.xyz
     port: 443
     type: vless
@@ -106,12 +132,14 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|108.4
-      - REALITY|@internet4iran|🇩🇪|93.84
-      - REALITY|@customv2ray|🇩🇪|93.64
-      - REALITY|@v2rayNG_Matsuri|🇸🇪|139.05
-      - REALITY|@kiava|🇸🇪|145.34
-      - REALITY|@V2rayngninja|🇳🇱|114.33
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|143.32
+      - REALITY|@internet4iran|🇩🇪|145.76
+      - REALITY|@customv2ray|🇩🇪|142.72
+      - REALITY|@UnlimitedDev|🇫🇮|unavailable
+      - REALITY|@v2rayNG_Matsuri|🇸🇪|207.27
+      - REALITY|@kiava|🇸🇪|211.28
+      - REALITY|@vpn_tehran|🇩🇪|142.54
+      - REALITY|@V2rayngninja|🇳🇱|174.31
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -122,34 +150,40 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|108.4
-      - REALITY|@internet4iran|🇩🇪|93.84
-      - REALITY|@customv2ray|🇩🇪|93.64
-      - REALITY|@v2rayNG_Matsuri|🇸🇪|139.05
-      - REALITY|@kiava|🇸🇪|145.34
-      - REALITY|@V2rayngninja|🇳🇱|114.33
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|143.32
+      - REALITY|@internet4iran|🇩🇪|145.76
+      - REALITY|@customv2ray|🇩🇪|142.72
+      - REALITY|@UnlimitedDev|🇫🇮|unavailable
+      - REALITY|@v2rayNG_Matsuri|🇸🇪|207.27
+      - REALITY|@kiava|🇸🇪|211.28
+      - REALITY|@vpn_tehran|🇩🇪|142.54
+      - REALITY|@V2rayngninja|🇳🇱|174.31
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|108.4
-      - REALITY|@internet4iran|🇩🇪|93.84
-      - REALITY|@customv2ray|🇩🇪|93.64
-      - REALITY|@v2rayNG_Matsuri|🇸🇪|139.05
-      - REALITY|@kiava|🇸🇪|145.34
-      - REALITY|@V2rayngninja|🇳🇱|114.33
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|143.32
+      - REALITY|@internet4iran|🇩🇪|145.76
+      - REALITY|@customv2ray|🇩🇪|142.72
+      - REALITY|@UnlimitedDev|🇫🇮|unavailable
+      - REALITY|@v2rayNG_Matsuri|🇸🇪|207.27
+      - REALITY|@kiava|🇸🇪|211.28
+      - REALITY|@vpn_tehran|🇩🇪|142.54
+      - REALITY|@V2rayngninja|🇳🇱|174.31
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|108.4
-      - REALITY|@internet4iran|🇩🇪|93.84
-      - REALITY|@customv2ray|🇩🇪|93.64
-      - REALITY|@v2rayNG_Matsuri|🇸🇪|139.05
-      - REALITY|@kiava|🇸🇪|145.34
-      - REALITY|@V2rayngninja|🇳🇱|114.33
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|143.32
+      - REALITY|@internet4iran|🇩🇪|145.76
+      - REALITY|@customv2ray|🇩🇪|142.72
+      - REALITY|@UnlimitedDev|🇫🇮|unavailable
+      - REALITY|@v2rayNG_Matsuri|🇸🇪|207.27
+      - REALITY|@kiava|🇸🇪|211.28
+      - REALITY|@vpn_tehran|🇩🇪|142.54
+      - REALITY|@V2rayngninja|🇳🇱|174.31
 rules:
   - MATCH,MANUAL
