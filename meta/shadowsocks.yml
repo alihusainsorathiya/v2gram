@@ -32,21 +32,28 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@AlienVPN402| AHS -🇫🇷|149.98"
+  - name: "@VmessProtocol| AHS -🇷🇺|103.15"
+    server: 77.246.101.245
+    port: 1165
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: yx-P9aygNM-V-boO1UGQeg
+    udp: true
+  - name: "@AlienVPN402| AHS -🇫🇷|106.91"
     server: 162.19.83.12
     port: 443
     type: ss
     cipher: aes-256-cfb
     password: asdKkaskJKfnsa
     udp: true
-  - name: "@AlienVPN402| AHS -🇫🇷|146.25"
+  - name: "@AlienVPN402| AHS -🇫🇷|99.12"
     server: 149.202.82.172
     port: 5600
     type: ss
     cipher: aes-256-gcm
     password: Y6R9pAtvxxzmGC
     udp: true
-  - name: "@bright_vpn| AHS -🇬🇧|142.19"
+  - name: "@bright_vpn| AHS -🇬🇧|93.46"
     server: 212.102.53.198
     port: 443
     type: ss
@@ -57,9 +64,10 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@AlienVPN402| AHS -🇫🇷|149.98"
-      - "@AlienVPN402| AHS -🇫🇷|146.25"
-      - "@bright_vpn| AHS -🇬🇧|142.19"
+      - "@VmessProtocol| AHS -🇷🇺|103.15"
+      - "@AlienVPN402| AHS -🇫🇷|106.91"
+      - "@AlienVPN402| AHS -🇫🇷|99.12"
+      - "@bright_vpn| AHS -🇬🇧|93.46"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -70,25 +78,28 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@AlienVPN402| AHS -🇫🇷|149.98"
-      - "@AlienVPN402| AHS -🇫🇷|146.25"
-      - "@bright_vpn| AHS -🇬🇧|142.19"
+      - "@VmessProtocol| AHS -🇷🇺|103.15"
+      - "@AlienVPN402| AHS -🇫🇷|106.91"
+      - "@AlienVPN402| AHS -🇫🇷|99.12"
+      - "@bright_vpn| AHS -🇬🇧|93.46"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@AlienVPN402| AHS -🇫🇷|149.98"
-      - "@AlienVPN402| AHS -🇫🇷|146.25"
-      - "@bright_vpn| AHS -🇬🇧|142.19"
+      - "@VmessProtocol| AHS -🇷🇺|103.15"
+      - "@AlienVPN402| AHS -🇫🇷|106.91"
+      - "@AlienVPN402| AHS -🇫🇷|99.12"
+      - "@bright_vpn| AHS -🇬🇧|93.46"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@AlienVPN402| AHS -🇫🇷|149.98"
-      - "@AlienVPN402| AHS -🇫🇷|146.25"
-      - "@bright_vpn| AHS -🇬🇧|142.19"
+      - "@VmessProtocol| AHS -🇷🇺|103.15"
+      - "@AlienVPN402| AHS -🇫🇷|106.91"
+      - "@AlienVPN402| AHS -🇫🇷|99.12"
+      - "@bright_vpn| AHS -🇬🇧|93.46"
 rules:
   - MATCH,MANUAL
