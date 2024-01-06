@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@prrofile_purple|🇬🇧|78.13
+  - name: REALITY|@prrofile_purple|🇬🇧|95.57
     server: 138.68.176.193
     port: 44229
     type: vless
@@ -45,7 +45,7 @@ proxies:
     grpc-opts:
       grpc-service-name: "%40SABZ_V2RAY%2C%40SABZ_V2RAY%2C%40SABZ_V2RAY%2C%40SABZ_V2RAY%2C%40SABZ_V2RAY%2C%40SABZ_V2RAY%2C%40SABZ_V2RAY%2C%40SABZ_V2RAY%2C%40SABZ_V2RAY%2C%40SABZ_V2RAY%2C%40SABZ_V2RAY%2C%40SABZ_V2RAY%2C%40SABZ_V2RAY%2C%40SABZ_V2RAY"
     udp: true
-  - name: REALITY|@WomanLifeFreedomVPN|🇩🇪|163.47
+  - name: REALITY|@WomanLifeFreedomVPN|🇩🇪|157.34
     server: icloud.wlftest.xyz
     port: 443
     type: vless
@@ -56,7 +56,7 @@ proxies:
     skip-cert-verify: true
     servername: www.icloud.com
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|93.06
+  - name: REALITY|@internet4iran|🇩🇪|112.65
     server: 88.99.121.221
     port: 443
     type: vless
@@ -67,27 +67,55 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@ipV2Ray|🇮🇷|115.96
-    server: 37.27.36.48
+  - name: REALITY|@ipV2Ray|🇩🇪|110.22
+    server: 49.13.19.113
     port: 443
     type: vless
-    uuid: c5f24aea-6e99-43f5-84e4-1a2e5f61e9b6
+    uuid: 5ca228a7-0989-41be-9128-544ae8e5167b
     cipher: auto
     tls: false
     skip-cert-verify: true
-    servername: www.forcespeed.fun
+    servername: www.speedq.fun
     network: grpc
     grpc-opts:
       grpc-service-name: "%40ipV2Ray"
+    udp: true
+  - name: REALITY|@V2RayTz|🇩🇪|136.65
+    server: 93-Join.V2RayTz.sbs
+    port: 443
+    type: vless
+    uuid: 5ca228a7-0989-41be-9128-544ae8e5167b
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: www.speedq.fun
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "%40ipV2Ray"
+    udp: true
+  - name: REALITY|@ConfigsHUB|🇺🇦|136.53
+    server: tr2.v2speed.tech
+    port: 8443
+    type: vless
+    uuid: 061ffb6d-529b-4a92-8972-14def5dea589
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: tr.proxmox.com
+    network: grpc
+    grpc-opts:
+      grpc-service-name: /
     udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@prrofile_purple|🇬🇧|78.13
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|163.47
-      - REALITY|@internet4iran|🇩🇪|93.06
-      - REALITY|@ipV2Ray|🇮🇷|115.96
+      - REALITY|@prrofile_purple|🇬🇧|95.57
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|157.34
+      - REALITY|@internet4iran|🇩🇪|112.65
+      - REALITY|@ipV2Ray|🇩🇪|110.22
+      - REALITY|@V2RayTz|🇩🇪|136.65
+      - REALITY|@ConfigsHUB|🇺🇦|136.53
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -98,28 +126,34 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@prrofile_purple|🇬🇧|78.13
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|163.47
-      - REALITY|@internet4iran|🇩🇪|93.06
-      - REALITY|@ipV2Ray|🇮🇷|115.96
+      - REALITY|@prrofile_purple|🇬🇧|95.57
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|157.34
+      - REALITY|@internet4iran|🇩🇪|112.65
+      - REALITY|@ipV2Ray|🇩🇪|110.22
+      - REALITY|@V2RayTz|🇩🇪|136.65
+      - REALITY|@ConfigsHUB|🇺🇦|136.53
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@prrofile_purple|🇬🇧|78.13
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|163.47
-      - REALITY|@internet4iran|🇩🇪|93.06
-      - REALITY|@ipV2Ray|🇮🇷|115.96
+      - REALITY|@prrofile_purple|🇬🇧|95.57
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|157.34
+      - REALITY|@internet4iran|🇩🇪|112.65
+      - REALITY|@ipV2Ray|🇩🇪|110.22
+      - REALITY|@V2RayTz|🇩🇪|136.65
+      - REALITY|@ConfigsHUB|🇺🇦|136.53
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@prrofile_purple|🇬🇧|78.13
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|163.47
-      - REALITY|@internet4iran|🇩🇪|93.06
-      - REALITY|@ipV2Ray|🇮🇷|115.96
+      - REALITY|@prrofile_purple|🇬🇧|95.57
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|157.34
+      - REALITY|@internet4iran|🇩🇪|112.65
+      - REALITY|@ipV2Ray|🇩🇪|110.22
+      - REALITY|@V2RayTz|🇩🇪|136.65
+      - REALITY|@ConfigsHUB|🇺🇦|136.53
 rules:
   - MATCH,MANUAL
