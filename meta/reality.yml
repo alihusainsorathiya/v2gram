@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@WomanLifeFreedomVPN|🇩🇪|135.09
+  - name: REALITY|@WomanLifeFreedomVPN|🇩🇪|132.96
     server: icloud.wlftest.xyz
     port: 443
     type: vless
@@ -43,7 +43,7 @@ proxies:
     skip-cert-verify: true
     servername: www.icloud.com
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|109.96
+  - name: REALITY|@internet4iran|🇩🇪|110.43
     server: 88.99.121.221
     port: 443
     type: vless
@@ -54,7 +54,7 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@customv2ray|🇸🇪|120.14
+  - name: REALITY|@customv2ray|🇸🇪|169.83
     server: 13.49.158.209
     port: 2083
     type: vless
@@ -65,7 +65,7 @@ proxies:
     skip-cert-verify: true
     servername: www.cdn.amazon.com
     udp: true
-  - name: REALITY|@v2rayNG_Matsuri|🇸🇪|182.78
+  - name: REALITY|@v2rayNG_Matsuri|🇸🇪|173.46
     server: 16.16.195.81
     port: 2083
     type: vless
@@ -76,7 +76,7 @@ proxies:
     skip-cert-verify: true
     servername: www.cdn.amazon.com
     udp: true
-  - name: REALITY|@hassan_saboorii|🇩🇪|109.85
+  - name: REALITY|@hassan_saboorii|🇩🇪|110.31
     server: 49.13.126.64
     port: 2096
     type: vless
@@ -89,7 +89,20 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@VmessProtocol|🇸🇪|119.83
+  - name: REALITY|@ipV2Ray|🇩🇪|110.23
+    server: 49.13.49.240
+    port: 443
+    type: vless
+    uuid: b79fcb6b-5da4-494b-9ecc-d65d3ebcf7fe
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: greenpepper.ir
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "%40ipV2Ray"
+    udp: true
+  - name: REALITY|@VmessProtocol|🇸🇪|121.63
     server: 16.16.100.61
     port: 2083
     type: vless
@@ -104,12 +117,13 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|135.09
-      - REALITY|@internet4iran|🇩🇪|109.96
-      - REALITY|@customv2ray|🇸🇪|120.14
-      - REALITY|@v2rayNG_Matsuri|🇸🇪|182.78
-      - REALITY|@hassan_saboorii|🇩🇪|109.85
-      - REALITY|@VmessProtocol|🇸🇪|119.83
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|132.96
+      - REALITY|@internet4iran|🇩🇪|110.43
+      - REALITY|@customv2ray|🇸🇪|169.83
+      - REALITY|@v2rayNG_Matsuri|🇸🇪|173.46
+      - REALITY|@hassan_saboorii|🇩🇪|110.31
+      - REALITY|@ipV2Ray|🇩🇪|110.23
+      - REALITY|@VmessProtocol|🇸🇪|121.63
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -120,34 +134,37 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|135.09
-      - REALITY|@internet4iran|🇩🇪|109.96
-      - REALITY|@customv2ray|🇸🇪|120.14
-      - REALITY|@v2rayNG_Matsuri|🇸🇪|182.78
-      - REALITY|@hassan_saboorii|🇩🇪|109.85
-      - REALITY|@VmessProtocol|🇸🇪|119.83
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|132.96
+      - REALITY|@internet4iran|🇩🇪|110.43
+      - REALITY|@customv2ray|🇸🇪|169.83
+      - REALITY|@v2rayNG_Matsuri|🇸🇪|173.46
+      - REALITY|@hassan_saboorii|🇩🇪|110.31
+      - REALITY|@ipV2Ray|🇩🇪|110.23
+      - REALITY|@VmessProtocol|🇸🇪|121.63
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|135.09
-      - REALITY|@internet4iran|🇩🇪|109.96
-      - REALITY|@customv2ray|🇸🇪|120.14
-      - REALITY|@v2rayNG_Matsuri|🇸🇪|182.78
-      - REALITY|@hassan_saboorii|🇩🇪|109.85
-      - REALITY|@VmessProtocol|🇸🇪|119.83
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|132.96
+      - REALITY|@internet4iran|🇩🇪|110.43
+      - REALITY|@customv2ray|🇸🇪|169.83
+      - REALITY|@v2rayNG_Matsuri|🇸🇪|173.46
+      - REALITY|@hassan_saboorii|🇩🇪|110.31
+      - REALITY|@ipV2Ray|🇩🇪|110.23
+      - REALITY|@VmessProtocol|🇸🇪|121.63
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|135.09
-      - REALITY|@internet4iran|🇩🇪|109.96
-      - REALITY|@customv2ray|🇸🇪|120.14
-      - REALITY|@v2rayNG_Matsuri|🇸🇪|182.78
-      - REALITY|@hassan_saboorii|🇩🇪|109.85
-      - REALITY|@VmessProtocol|🇸🇪|119.83
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|132.96
+      - REALITY|@internet4iran|🇩🇪|110.43
+      - REALITY|@customv2ray|🇸🇪|169.83
+      - REALITY|@v2rayNG_Matsuri|🇸🇪|173.46
+      - REALITY|@hassan_saboorii|🇩🇪|110.31
+      - REALITY|@ipV2Ray|🇩🇪|110.23
+      - REALITY|@VmessProtocol|🇸🇪|121.63
 rules:
   - MATCH,MANUAL
