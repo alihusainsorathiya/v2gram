@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@WomanLifeFreedomVPN|🇩🇪|167.1
+  - name: REALITY|@WomanLifeFreedomVPN|🇩🇪|166.28
     server: icloud.wlftest.xyz
     port: 443
     type: vless
@@ -43,7 +43,7 @@ proxies:
     skip-cert-verify: true
     servername: www.icloud.com
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|159.33
+  - name: REALITY|@internet4iran|🇩🇪|158.33
     server: 88.99.121.221
     port: 443
     type: vless
@@ -54,7 +54,18 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@ipV2Ray|🇩🇪|158.39
+  - name: REALITY|@v2rayNG_Matsuri|🇸🇪|168.98
+    server: 16.171.22.224
+    port: 2083
+    type: vless
+    uuid: 23758119-cf33-4269-fb50-bc04930d356a
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: www.cdn.amazon.com
+    udp: true
+  - name: REALITY|@ipV2Ray|🇩🇪|158.21
     server: 49.13.128.239
     port: 443
     type: vless
@@ -67,7 +78,7 @@ proxies:
     grpc-opts:
       grpc-service-name: "%40ipV2Ray"
     udp: true
-  - name: REALITY|@VmessProtocol|🇷🇺|214.35
+  - name: REALITY|@VmessProtocol|🇷🇺|209.51
     server: 5.42.86.225
     port: 2058
     type: vless
@@ -80,14 +91,29 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
+  - name: REALITY|@ConfigsHUB|🇵🇰|159.23
+    server: 168.119.187.147
+    port: 2053
+    type: vless
+    uuid: 946cc327-619e-44bf-a7f0-fd001dd9c833
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "%40croownvpn"
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|167.1
-      - REALITY|@internet4iran|🇩🇪|159.33
-      - REALITY|@ipV2Ray|🇩🇪|158.39
-      - REALITY|@VmessProtocol|🇷🇺|214.35
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|166.28
+      - REALITY|@internet4iran|🇩🇪|158.33
+      - REALITY|@v2rayNG_Matsuri|🇸🇪|168.98
+      - REALITY|@ipV2Ray|🇩🇪|158.21
+      - REALITY|@VmessProtocol|🇷🇺|209.51
+      - REALITY|@ConfigsHUB|🇵🇰|159.23
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -98,28 +124,34 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|167.1
-      - REALITY|@internet4iran|🇩🇪|159.33
-      - REALITY|@ipV2Ray|🇩🇪|158.39
-      - REALITY|@VmessProtocol|🇷🇺|214.35
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|166.28
+      - REALITY|@internet4iran|🇩🇪|158.33
+      - REALITY|@v2rayNG_Matsuri|🇸🇪|168.98
+      - REALITY|@ipV2Ray|🇩🇪|158.21
+      - REALITY|@VmessProtocol|🇷🇺|209.51
+      - REALITY|@ConfigsHUB|🇵🇰|159.23
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|167.1
-      - REALITY|@internet4iran|🇩🇪|159.33
-      - REALITY|@ipV2Ray|🇩🇪|158.39
-      - REALITY|@VmessProtocol|🇷🇺|214.35
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|166.28
+      - REALITY|@internet4iran|🇩🇪|158.33
+      - REALITY|@v2rayNG_Matsuri|🇸🇪|168.98
+      - REALITY|@ipV2Ray|🇩🇪|158.21
+      - REALITY|@VmessProtocol|🇷🇺|209.51
+      - REALITY|@ConfigsHUB|🇵🇰|159.23
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|167.1
-      - REALITY|@internet4iran|🇩🇪|159.33
-      - REALITY|@ipV2Ray|🇩🇪|158.39
-      - REALITY|@VmessProtocol|🇷🇺|214.35
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|166.28
+      - REALITY|@internet4iran|🇩🇪|158.33
+      - REALITY|@v2rayNG_Matsuri|🇸🇪|168.98
+      - REALITY|@ipV2Ray|🇩🇪|158.21
+      - REALITY|@VmessProtocol|🇷🇺|209.51
+      - REALITY|@ConfigsHUB|🇵🇰|159.23
 rules:
   - MATCH,MANUAL
