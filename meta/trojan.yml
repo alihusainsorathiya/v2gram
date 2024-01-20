@@ -32,15 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@PrivateVPNs| AHS -118.26"
-    server: 34.248.8.33
-    port: 22222
-    type: trojan
-    password: telegram-id-privatevpns
-    skip-cert-verify: true
-    sni: trojan.miwan.co.uk
-    udp: true
-  - name: "|@PrivateVPNs| AHS -156.01"
+  - name: "|@PrivateVPNs| AHS -160.13"
     server: 51.21.84.2
     port: 22222
     type: trojan
@@ -48,7 +40,7 @@ proxies:
     skip-cert-verify: true
     sni: trojan.miwan.co.uk
     udp: true
-  - name: "|@PrivateVPNs| AHS -205.05"
+  - name: "|@PrivateVPNs| AHS -161.38"
     server: 16.170.51.88
     port: 22222
     type: trojan
@@ -56,15 +48,15 @@ proxies:
     skip-cert-verify: true
     sni: trojan.miwan.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -156.74"
-    server: 51.21.114.225
+  - name: "|@PrivateVPNs| AHS -92.44"
+    server: 3.73.245.33
     port: 22222
     type: trojan
-    password: telegram-id-directvpn
+    password: telegram-id-privatevpns
     skip-cert-verify: true
     sni: trojan.miwan.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -151.45"
+  - name: "|@DirectVPN| AHS -108.51"
     server: 51.20.111.65
     port: 22222
     type: trojan
@@ -72,15 +64,15 @@ proxies:
     skip-cert-verify: true
     sni: trojan.miwan.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -136.38"
-    server: 52.47.119.220
+  - name: "|@DirectVPN| AHS -86.07"
+    server: 15.188.222.166
     port: 22222
     type: trojan
     password: telegram-id-directvpn
     skip-cert-verify: true
     sni: trojan.miwan.co.uk
     udp: true
-  - name: "|@oneclickvpnkeys| AHS -222.18"
+  - name: "|@oneclickvpnkeys| AHS -210.56"
     server: 139.84.144.10
     port: 443
     type: trojan
@@ -88,7 +80,7 @@ proxies:
     skip-cert-verify: true
     sni: www.gpt123.one
     udp: true
-  - name: "|@VmessProtocol| AHS -222.29"
+  - name: "|@VmessProtocol| AHS -210.08"
     server: 139.84.144.10
     port: 443
     type: trojan
@@ -96,15 +88,7 @@ proxies:
     skip-cert-verify: true
     sni: www.gpt123.one
     udp: true
-  - name: "|@yaney_01| AHS -unavailable"
-    server: 103.214.68.57
-    port: 10003
-    type: trojan
-    password: 6x8HcghsjS
-    skip-cert-verify: true
-    sni: yes998.chickenkiller.com
-    udp: true
-  - name: "|@yaney_01| AHS -402.06"
+  - name: "|@yaney_01| AHS -456.14"
     server: 103.154.63.16
     port: 443
     type: trojan
@@ -116,16 +100,14 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@PrivateVPNs| AHS -118.26"
-      - "|@PrivateVPNs| AHS -156.01"
-      - "|@PrivateVPNs| AHS -205.05"
-      - "|@DirectVPN| AHS -156.74"
-      - "|@DirectVPN| AHS -151.45"
-      - "|@DirectVPN| AHS -136.38"
-      - "|@oneclickvpnkeys| AHS -222.18"
-      - "|@VmessProtocol| AHS -222.29"
-      - "|@yaney_01| AHS -unavailable"
-      - "|@yaney_01| AHS -402.06"
+      - "|@PrivateVPNs| AHS -160.13"
+      - "|@PrivateVPNs| AHS -161.38"
+      - "|@PrivateVPNs| AHS -92.44"
+      - "|@DirectVPN| AHS -108.51"
+      - "|@DirectVPN| AHS -86.07"
+      - "|@oneclickvpnkeys| AHS -210.56"
+      - "|@VmessProtocol| AHS -210.08"
+      - "|@yaney_01| AHS -456.14"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -136,46 +118,40 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -118.26"
-      - "|@PrivateVPNs| AHS -156.01"
-      - "|@PrivateVPNs| AHS -205.05"
-      - "|@DirectVPN| AHS -156.74"
-      - "|@DirectVPN| AHS -151.45"
-      - "|@DirectVPN| AHS -136.38"
-      - "|@oneclickvpnkeys| AHS -222.18"
-      - "|@VmessProtocol| AHS -222.29"
-      - "|@yaney_01| AHS -unavailable"
-      - "|@yaney_01| AHS -402.06"
+      - "|@PrivateVPNs| AHS -160.13"
+      - "|@PrivateVPNs| AHS -161.38"
+      - "|@PrivateVPNs| AHS -92.44"
+      - "|@DirectVPN| AHS -108.51"
+      - "|@DirectVPN| AHS -86.07"
+      - "|@oneclickvpnkeys| AHS -210.56"
+      - "|@VmessProtocol| AHS -210.08"
+      - "|@yaney_01| AHS -456.14"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@PrivateVPNs| AHS -118.26"
-      - "|@PrivateVPNs| AHS -156.01"
-      - "|@PrivateVPNs| AHS -205.05"
-      - "|@DirectVPN| AHS -156.74"
-      - "|@DirectVPN| AHS -151.45"
-      - "|@DirectVPN| AHS -136.38"
-      - "|@oneclickvpnkeys| AHS -222.18"
-      - "|@VmessProtocol| AHS -222.29"
-      - "|@yaney_01| AHS -unavailable"
-      - "|@yaney_01| AHS -402.06"
+      - "|@PrivateVPNs| AHS -160.13"
+      - "|@PrivateVPNs| AHS -161.38"
+      - "|@PrivateVPNs| AHS -92.44"
+      - "|@DirectVPN| AHS -108.51"
+      - "|@DirectVPN| AHS -86.07"
+      - "|@oneclickvpnkeys| AHS -210.56"
+      - "|@VmessProtocol| AHS -210.08"
+      - "|@yaney_01| AHS -456.14"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -118.26"
-      - "|@PrivateVPNs| AHS -156.01"
-      - "|@PrivateVPNs| AHS -205.05"
-      - "|@DirectVPN| AHS -156.74"
-      - "|@DirectVPN| AHS -151.45"
-      - "|@DirectVPN| AHS -136.38"
-      - "|@oneclickvpnkeys| AHS -222.18"
-      - "|@VmessProtocol| AHS -222.29"
-      - "|@yaney_01| AHS -unavailable"
-      - "|@yaney_01| AHS -402.06"
+      - "|@PrivateVPNs| AHS -160.13"
+      - "|@PrivateVPNs| AHS -161.38"
+      - "|@PrivateVPNs| AHS -92.44"
+      - "|@DirectVPN| AHS -108.51"
+      - "|@DirectVPN| AHS -86.07"
+      - "|@oneclickvpnkeys| AHS -210.56"
+      - "|@VmessProtocol| AHS -210.08"
+      - "|@yaney_01| AHS -456.14"
 rules:
   - MATCH,MANUAL
