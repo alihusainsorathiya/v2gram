@@ -32,15 +32,15 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@PrivateVPNs| AHS -174.92"
-    server: 13.51.226.183
+  - name: "|@PrivateVPNs| AHS -108.89"
+    server: 18.195.57.61
     port: 22222
     type: trojan
     password: telegram-id-privatevpns
     skip-cert-verify: true
     sni: trojan.miwan.co.uk
     udp: true
-  - name: "|@PrivateVPNs| AHS -170.05"
+  - name: "|@PrivateVPNs| AHS -160.52"
     server: 35.158.252.181
     port: 22222
     type: trojan
@@ -48,15 +48,15 @@ proxies:
     skip-cert-verify: true
     sni: trojan.miwan.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -174.33"
-    server: 35.181.126.234
+  - name: "|@PrivateVPNs| AHS -104.52"
+    server: 13.39.211.218
     port: 22222
     type: trojan
-    password: telegram-id-directvpn
+    password: telegram-id-privatevpns
     skip-cert-verify: true
-    sni: trj.rollingnext.co.uk
+    sni: trojan.miwan.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -174.13"
+  - name: "|@DirectVPN| AHS -112.92"
     server: 3.9.41.110
     port: 22222
     type: trojan
@@ -64,7 +64,7 @@ proxies:
     skip-cert-verify: true
     sni: trj.rollingnext.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -170.44"
+  - name: "|@DirectVPN| AHS -88.46"
     server: 54.78.90.55
     port: 22222
     type: trojan
@@ -72,7 +72,15 @@ proxies:
     skip-cert-verify: true
     sni: trj.rollingnext.co.uk
     udp: true
-  - name: "|@VmessProtocol| AHS -170.1"
+  - name: "|@DirectVPN| AHS -97.91"
+    server: 44.226.30.52
+    port: 22222
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trj.rollingnext.co.uk
+    udp: true
+  - name: "|@VmessProtocol| AHS -207.67"
     server: 149.28.151.140
     port: 443
     type: trojan
@@ -80,7 +88,7 @@ proxies:
     skip-cert-verify: true
     sni: www.gpt123.one
     udp: true
-  - name: "|@vpn_tehran| AHS -2.04"
+  - name: "|@vpn_tehran| AHS -2.6"
     server: 104.16.123.175
     port: 2083
     type: trojan
@@ -93,7 +101,7 @@ proxies:
       headers:
         Host: cdn13.cdn2cdn.com
     udp: true
-  - name: "|@vpn_tehran| AHS -1.86"
+  - name: "|@vpn_tehran| AHS -2.44"
     server: 104.16.125.175
     port: 2083
     type: trojan
@@ -106,7 +114,7 @@ proxies:
       headers:
         Host: cdn13.cdn2cdn.com
     udp: true
-  - name: "|@vpn_tehran| AHS -2.3"
+  - name: "|@vpn_tehran| AHS -2.12"
     server: 104.16.124.175
     port: 2083
     type: trojan
@@ -123,15 +131,16 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@PrivateVPNs| AHS -174.92"
-      - "|@PrivateVPNs| AHS -170.05"
-      - "|@DirectVPN| AHS -174.33"
-      - "|@DirectVPN| AHS -174.13"
-      - "|@DirectVPN| AHS -170.44"
-      - "|@VmessProtocol| AHS -170.1"
-      - "|@vpn_tehran| AHS -2.04"
-      - "|@vpn_tehran| AHS -1.86"
-      - "|@vpn_tehran| AHS -2.3"
+      - "|@PrivateVPNs| AHS -108.89"
+      - "|@PrivateVPNs| AHS -160.52"
+      - "|@PrivateVPNs| AHS -104.52"
+      - "|@DirectVPN| AHS -112.92"
+      - "|@DirectVPN| AHS -88.46"
+      - "|@DirectVPN| AHS -97.91"
+      - "|@VmessProtocol| AHS -207.67"
+      - "|@vpn_tehran| AHS -2.6"
+      - "|@vpn_tehran| AHS -2.44"
+      - "|@vpn_tehran| AHS -2.12"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -142,43 +151,46 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -174.92"
-      - "|@PrivateVPNs| AHS -170.05"
-      - "|@DirectVPN| AHS -174.33"
-      - "|@DirectVPN| AHS -174.13"
-      - "|@DirectVPN| AHS -170.44"
-      - "|@VmessProtocol| AHS -170.1"
-      - "|@vpn_tehran| AHS -2.04"
-      - "|@vpn_tehran| AHS -1.86"
-      - "|@vpn_tehran| AHS -2.3"
+      - "|@PrivateVPNs| AHS -108.89"
+      - "|@PrivateVPNs| AHS -160.52"
+      - "|@PrivateVPNs| AHS -104.52"
+      - "|@DirectVPN| AHS -112.92"
+      - "|@DirectVPN| AHS -88.46"
+      - "|@DirectVPN| AHS -97.91"
+      - "|@VmessProtocol| AHS -207.67"
+      - "|@vpn_tehran| AHS -2.6"
+      - "|@vpn_tehran| AHS -2.44"
+      - "|@vpn_tehran| AHS -2.12"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@PrivateVPNs| AHS -174.92"
-      - "|@PrivateVPNs| AHS -170.05"
-      - "|@DirectVPN| AHS -174.33"
-      - "|@DirectVPN| AHS -174.13"
-      - "|@DirectVPN| AHS -170.44"
-      - "|@VmessProtocol| AHS -170.1"
-      - "|@vpn_tehran| AHS -2.04"
-      - "|@vpn_tehran| AHS -1.86"
-      - "|@vpn_tehran| AHS -2.3"
+      - "|@PrivateVPNs| AHS -108.89"
+      - "|@PrivateVPNs| AHS -160.52"
+      - "|@PrivateVPNs| AHS -104.52"
+      - "|@DirectVPN| AHS -112.92"
+      - "|@DirectVPN| AHS -88.46"
+      - "|@DirectVPN| AHS -97.91"
+      - "|@VmessProtocol| AHS -207.67"
+      - "|@vpn_tehran| AHS -2.6"
+      - "|@vpn_tehran| AHS -2.44"
+      - "|@vpn_tehran| AHS -2.12"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -174.92"
-      - "|@PrivateVPNs| AHS -170.05"
-      - "|@DirectVPN| AHS -174.33"
-      - "|@DirectVPN| AHS -174.13"
-      - "|@DirectVPN| AHS -170.44"
-      - "|@VmessProtocol| AHS -170.1"
-      - "|@vpn_tehran| AHS -2.04"
-      - "|@vpn_tehran| AHS -1.86"
-      - "|@vpn_tehran| AHS -2.3"
+      - "|@PrivateVPNs| AHS -108.89"
+      - "|@PrivateVPNs| AHS -160.52"
+      - "|@PrivateVPNs| AHS -104.52"
+      - "|@DirectVPN| AHS -112.92"
+      - "|@DirectVPN| AHS -88.46"
+      - "|@DirectVPN| AHS -97.91"
+      - "|@VmessProtocol| AHS -207.67"
+      - "|@vpn_tehran| AHS -2.6"
+      - "|@vpn_tehran| AHS -2.44"
+      - "|@vpn_tehran| AHS -2.12"
 rules:
   - MATCH,MANUAL
