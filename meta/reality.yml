@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@WomanLifeFreedomVPN|🇩🇪|139.78
+  - name: REALITY|@WomanLifeFreedomVPN|🇩🇪|95.74
     server: icloud.wlftest.xyz
     port: 443
     type: vless
@@ -43,7 +43,7 @@ proxies:
     skip-cert-verify: true
     servername: www.icloud.com
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|110.33
+  - name: REALITY|@internet4iran|🇩🇪|94.4
     server: 88.99.121.221
     port: 443
     type: vless
@@ -54,7 +54,7 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@ipV2Ray|🇳🇱|102.35
+  - name: REALITY|@ipV2Ray|🇳🇱|86.3
     server: 159.223.234.160
     port: 443
     type: vless
@@ -67,7 +67,7 @@ proxies:
     grpc-opts:
       grpc-service-name: "%40ipV2Ray"
     udp: true
-  - name: REALITY|@v2ray1_ng|🇩🇪|112.14
+  - name: REALITY|@v2ray1_ng|🇩🇪|unavailable
     server: 161.35.17.40
     port: 443
     type: vless
@@ -80,7 +80,7 @@ proxies:
     grpc-opts:
       grpc-service-name: "%40ipV2Ray"
     udp: true
-  - name: REALITY|@vpn_tehran|🇫🇮|133.51
+  - name: REALITY|@vpn_tehran|🇫🇮|130.99
     server: fi-01.allhub.ltd
     port: 443
     type: vless
@@ -93,15 +93,29 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
+  - name: REALITY|@ConfigsHUB|🇳🇱|unavailable
+    server: 167.99.34.101
+    port: 443
+    type: vless
+    uuid: 4328c347-04a0-469d-b3e4-e824e19d6554
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: wagadtoha.com
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "%40ipV2Ray"
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|139.78
-      - REALITY|@internet4iran|🇩🇪|110.33
-      - REALITY|@ipV2Ray|🇳🇱|102.35
-      - REALITY|@v2ray1_ng|🇩🇪|112.14
-      - REALITY|@vpn_tehran|🇫🇮|133.51
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|95.74
+      - REALITY|@internet4iran|🇩🇪|94.4
+      - REALITY|@ipV2Ray|🇳🇱|86.3
+      - REALITY|@v2ray1_ng|🇩🇪|unavailable
+      - REALITY|@vpn_tehran|🇫🇮|130.99
+      - REALITY|@ConfigsHUB|🇳🇱|unavailable
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -112,31 +126,34 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|139.78
-      - REALITY|@internet4iran|🇩🇪|110.33
-      - REALITY|@ipV2Ray|🇳🇱|102.35
-      - REALITY|@v2ray1_ng|🇩🇪|112.14
-      - REALITY|@vpn_tehran|🇫🇮|133.51
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|95.74
+      - REALITY|@internet4iran|🇩🇪|94.4
+      - REALITY|@ipV2Ray|🇳🇱|86.3
+      - REALITY|@v2ray1_ng|🇩🇪|unavailable
+      - REALITY|@vpn_tehran|🇫🇮|130.99
+      - REALITY|@ConfigsHUB|🇳🇱|unavailable
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|139.78
-      - REALITY|@internet4iran|🇩🇪|110.33
-      - REALITY|@ipV2Ray|🇳🇱|102.35
-      - REALITY|@v2ray1_ng|🇩🇪|112.14
-      - REALITY|@vpn_tehran|🇫🇮|133.51
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|95.74
+      - REALITY|@internet4iran|🇩🇪|94.4
+      - REALITY|@ipV2Ray|🇳🇱|86.3
+      - REALITY|@v2ray1_ng|🇩🇪|unavailable
+      - REALITY|@vpn_tehran|🇫🇮|130.99
+      - REALITY|@ConfigsHUB|🇳🇱|unavailable
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|139.78
-      - REALITY|@internet4iran|🇩🇪|110.33
-      - REALITY|@ipV2Ray|🇳🇱|102.35
-      - REALITY|@v2ray1_ng|🇩🇪|112.14
-      - REALITY|@vpn_tehran|🇫🇮|133.51
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|95.74
+      - REALITY|@internet4iran|🇩🇪|94.4
+      - REALITY|@ipV2Ray|🇳🇱|86.3
+      - REALITY|@v2ray1_ng|🇩🇪|unavailable
+      - REALITY|@vpn_tehran|🇫🇮|130.99
+      - REALITY|@ConfigsHUB|🇳🇱|unavailable
 rules:
   - MATCH,MANUAL
