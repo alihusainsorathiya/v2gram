@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@WomanLifeFreedomVPN|🇩🇪|181.06
+  - name: REALITY|@WomanLifeFreedomVPN|🇩🇪|107.65
     server: icloud.wlftest.xyz
     port: 443
     type: vless
@@ -43,7 +43,7 @@ proxies:
     skip-cert-verify: true
     servername: www.icloud.com
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|159.63
+  - name: REALITY|@internet4iran|🇩🇪|93.98
     server: 88.99.121.221
     port: 443
     type: vless
@@ -54,40 +54,52 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@ipV2Ray|🇩🇪|157.85
-    server: 195.201.91.198
+  - name: REALITY|@ipV2Ray|🇮🇷|92.09
+    server: 128.140.41.104
     port: 443
     type: vless
     uuid: 021e1111-e6d9-4f6c-a1b8-03a70b6e4540
     cipher: auto
     tls: false
     skip-cert-verify: true
-    servername: mail.nareezacademy.com
+    servername: nareezacademy.com
     network: grpc
     grpc-opts:
       grpc-service-name: "%40ipV2Ray"
     udp: true
-  - name: REALITY|@v2ray_swhil|🇺🇸|63.92
-    server: 5.161.111.235
-    port: 25365
+  - name: REALITY|@vpn_tehran|🇫🇮|271.3
+    server: fi-01.allhub.ltd
+    port: 443
     type: vless
-    uuid: 44f3f9d5-4d4f-4090-8300-c74950118251
+    uuid: 9e6e8844-5eca-4e7e-b02e-235234521658
     cipher: auto
     tls: false
     skip-cert-verify: true
-    servername: sourceforge.net
+    servername: www.speedtest.net
     network: grpc
     grpc-opts:
-      grpc-service-name: "%40ZEDMODEON"
+      grpc-service-name: /
+    udp: true
+  - name: REALITY|@ConfigsHUB|🇩🇪|93.63
+    server: 167.235.219.99
+    port: 443
+    type: vless
+    uuid: 1dbd6492-6780-4795-9fe4-f858d5c4c660
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: ftp.debian.org
     udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|181.06
-      - REALITY|@internet4iran|🇩🇪|159.63
-      - REALITY|@ipV2Ray|🇩🇪|157.85
-      - REALITY|@v2ray_swhil|🇺🇸|63.92
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|107.65
+      - REALITY|@internet4iran|🇩🇪|93.98
+      - REALITY|@ipV2Ray|🇮🇷|92.09
+      - REALITY|@vpn_tehran|🇫🇮|271.3
+      - REALITY|@ConfigsHUB|🇩🇪|93.63
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -98,28 +110,31 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|181.06
-      - REALITY|@internet4iran|🇩🇪|159.63
-      - REALITY|@ipV2Ray|🇩🇪|157.85
-      - REALITY|@v2ray_swhil|🇺🇸|63.92
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|107.65
+      - REALITY|@internet4iran|🇩🇪|93.98
+      - REALITY|@ipV2Ray|🇮🇷|92.09
+      - REALITY|@vpn_tehran|🇫🇮|271.3
+      - REALITY|@ConfigsHUB|🇩🇪|93.63
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|181.06
-      - REALITY|@internet4iran|🇩🇪|159.63
-      - REALITY|@ipV2Ray|🇩🇪|157.85
-      - REALITY|@v2ray_swhil|🇺🇸|63.92
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|107.65
+      - REALITY|@internet4iran|🇩🇪|93.98
+      - REALITY|@ipV2Ray|🇮🇷|92.09
+      - REALITY|@vpn_tehran|🇫🇮|271.3
+      - REALITY|@ConfigsHUB|🇩🇪|93.63
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|181.06
-      - REALITY|@internet4iran|🇩🇪|159.63
-      - REALITY|@ipV2Ray|🇩🇪|157.85
-      - REALITY|@v2ray_swhil|🇺🇸|63.92
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|107.65
+      - REALITY|@internet4iran|🇩🇪|93.98
+      - REALITY|@ipV2Ray|🇮🇷|92.09
+      - REALITY|@vpn_tehran|🇫🇮|271.3
+      - REALITY|@ConfigsHUB|🇩🇪|93.63
 rules:
   - MATCH,MANUAL
