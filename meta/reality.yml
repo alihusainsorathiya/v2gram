@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@azadi_az_inja_migzare|🇬🇧|74
+  - name: REALITY|@azadi_az_inja_migzare|🇬🇧|114.54
     server: 51.195.148.69
     port: 6639
     type: vless
@@ -43,7 +43,7 @@ proxies:
     skip-cert-verify: true
     servername: presshill.com
     udp: true
-  - name: REALITY|@WomanLifeFreedomVPN|🇩🇪|99.14
+  - name: REALITY|@WomanLifeFreedomVPN|🇩🇪|137.48
     server: icloud.wlftest.xyz
     port: 443
     type: vless
@@ -54,7 +54,7 @@ proxies:
     skip-cert-verify: true
     servername: www.icloud.com
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|93.52
+  - name: REALITY|@internet4iran|🇩🇪|95.61
     server: 88.99.121.221
     port: 443
     type: vless
@@ -65,7 +65,20 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@ipV2Ray|🇩🇪|91.06
+  - name: REALITY|@ipV2Ray|🇳🇱|85.73
+    server: 159.223.209.183
+    port: 443
+    type: vless
+    uuid: 047fc688-3374-4dca-ab3d-d90ef410dcbb
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: "%2A.cloudflare.com"
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "%40ipV2Ray"
+    udp: true
+  - name: REALITY|@v2ray1_ng|🇩🇪|99.38
     server: 116.203.58.130
     port: 443
     type: vless
@@ -82,10 +95,11 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@azadi_az_inja_migzare|🇬🇧|74
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|99.14
-      - REALITY|@internet4iran|🇩🇪|93.52
-      - REALITY|@ipV2Ray|🇩🇪|91.06
+      - REALITY|@azadi_az_inja_migzare|🇬🇧|114.54
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|137.48
+      - REALITY|@internet4iran|🇩🇪|95.61
+      - REALITY|@ipV2Ray|🇳🇱|85.73
+      - REALITY|@v2ray1_ng|🇩🇪|99.38
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -96,28 +110,31 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@azadi_az_inja_migzare|🇬🇧|74
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|99.14
-      - REALITY|@internet4iran|🇩🇪|93.52
-      - REALITY|@ipV2Ray|🇩🇪|91.06
+      - REALITY|@azadi_az_inja_migzare|🇬🇧|114.54
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|137.48
+      - REALITY|@internet4iran|🇩🇪|95.61
+      - REALITY|@ipV2Ray|🇳🇱|85.73
+      - REALITY|@v2ray1_ng|🇩🇪|99.38
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@azadi_az_inja_migzare|🇬🇧|74
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|99.14
-      - REALITY|@internet4iran|🇩🇪|93.52
-      - REALITY|@ipV2Ray|🇩🇪|91.06
+      - REALITY|@azadi_az_inja_migzare|🇬🇧|114.54
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|137.48
+      - REALITY|@internet4iran|🇩🇪|95.61
+      - REALITY|@ipV2Ray|🇳🇱|85.73
+      - REALITY|@v2ray1_ng|🇩🇪|99.38
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@azadi_az_inja_migzare|🇬🇧|74
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|99.14
-      - REALITY|@internet4iran|🇩🇪|93.52
-      - REALITY|@ipV2Ray|🇩🇪|91.06
+      - REALITY|@azadi_az_inja_migzare|🇬🇧|114.54
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|137.48
+      - REALITY|@internet4iran|🇩🇪|95.61
+      - REALITY|@ipV2Ray|🇳🇱|85.73
+      - REALITY|@v2ray1_ng|🇩🇪|99.38
 rules:
   - MATCH,MANUAL
