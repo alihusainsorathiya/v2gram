@@ -32,7 +32,20 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@WomanLifeFreedomVPN|🇩🇪|107.83
+  - name: REALITY|@prrofile_purple|🇳🇱|152.36
+    server: 194.87.216.59
+    port: 38487
+    type: vless
+    uuid: 95c16ffd-caa5-4bfd-8401-21097ff54871
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: wwwV2ray.rabinhood.net
+    network: grpc
+    grpc-opts:
+      grpc-service-name: /
+    udp: true
+  - name: REALITY|@WomanLifeFreedomVPN|🇩🇪|169.06
     server: icloud.wlftest.xyz
     port: 443
     type: vless
@@ -43,7 +56,7 @@ proxies:
     skip-cert-verify: true
     servername: www.icloud.com
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|94.04
+  - name: REALITY|@internet4iran|🇩🇪|160.19
     server: 88.99.121.221
     port: 443
     type: vless
@@ -54,7 +67,7 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@ShadowProxy66|🇯🇵|407
+  - name: REALITY|@ShadowProxy66|🇯🇵|111.01
     server: jpegwdzrw.xqc.best
     port: 20005
     type: vless
@@ -65,41 +78,42 @@ proxies:
     skip-cert-verify: true
     servername: www.timeto.com
     udp: true
-  - name: REALITY|@ipV2Ray|🇳🇱|85.59
-    server: 146.190.17.120
+  - name: REALITY|@ipV2Ray|🇫🇮|174.93
+    server: 65.108.52.226
     port: 443
     type: vless
-    uuid: 8558f681-519e-40c3-8cc8-aea8e850d34a
+    uuid: 48e4001a-53ac-44b0-a65f-e9d3dcaeebcf
     cipher: auto
     tls: false
     skip-cert-verify: true
-    servername: "%2A.biro.nl"
+    servername: "%2A.hetzner.com"
     network: grpc
     grpc-opts:
       grpc-service-name: "%40ipV2Ray"
     udp: true
-  - name: REALITY|@v2ray1_ng|🇩🇪|92.23
-    server: 128.140.98.35
-    port: 51645
+  - name: REALITY|@V2RayTz|🇫🇮|174.98
+    server: 65.108.52.226
+    port: 443
     type: vless
-    uuid: 1e41626f-174b-45bd-bd0d-89b85392c6e5
+    uuid: 605ccdf2-fc23-472a-af35-d529f1163c8b
     cipher: auto
     tls: false
     skip-cert-verify: true
-    servername: discord.com
+    servername: "%2A.hetzner.com"
     network: grpc
     grpc-opts:
-      grpc-service-name: /
+      grpc-service-name: "%40ipV2Ray"
     udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|107.83
-      - REALITY|@internet4iran|🇩🇪|94.04
-      - REALITY|@ShadowProxy66|🇯🇵|407
-      - REALITY|@ipV2Ray|🇳🇱|85.59
-      - REALITY|@v2ray1_ng|🇩🇪|92.23
+      - REALITY|@prrofile_purple|🇳🇱|152.36
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|169.06
+      - REALITY|@internet4iran|🇩🇪|160.19
+      - REALITY|@ShadowProxy66|🇯🇵|111.01
+      - REALITY|@ipV2Ray|🇫🇮|174.93
+      - REALITY|@V2RayTz|🇫🇮|174.98
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -110,31 +124,34 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|107.83
-      - REALITY|@internet4iran|🇩🇪|94.04
-      - REALITY|@ShadowProxy66|🇯🇵|407
-      - REALITY|@ipV2Ray|🇳🇱|85.59
-      - REALITY|@v2ray1_ng|🇩🇪|92.23
+      - REALITY|@prrofile_purple|🇳🇱|152.36
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|169.06
+      - REALITY|@internet4iran|🇩🇪|160.19
+      - REALITY|@ShadowProxy66|🇯🇵|111.01
+      - REALITY|@ipV2Ray|🇫🇮|174.93
+      - REALITY|@V2RayTz|🇫🇮|174.98
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|107.83
-      - REALITY|@internet4iran|🇩🇪|94.04
-      - REALITY|@ShadowProxy66|🇯🇵|407
-      - REALITY|@ipV2Ray|🇳🇱|85.59
-      - REALITY|@v2ray1_ng|🇩🇪|92.23
+      - REALITY|@prrofile_purple|🇳🇱|152.36
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|169.06
+      - REALITY|@internet4iran|🇩🇪|160.19
+      - REALITY|@ShadowProxy66|🇯🇵|111.01
+      - REALITY|@ipV2Ray|🇫🇮|174.93
+      - REALITY|@V2RayTz|🇫🇮|174.98
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|107.83
-      - REALITY|@internet4iran|🇩🇪|94.04
-      - REALITY|@ShadowProxy66|🇯🇵|407
-      - REALITY|@ipV2Ray|🇳🇱|85.59
-      - REALITY|@v2ray1_ng|🇩🇪|92.23
+      - REALITY|@prrofile_purple|🇳🇱|152.36
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|169.06
+      - REALITY|@internet4iran|🇩🇪|160.19
+      - REALITY|@ShadowProxy66|🇯🇵|111.01
+      - REALITY|@ipV2Ray|🇫🇮|174.93
+      - REALITY|@V2RayTz|🇫🇮|174.98
 rules:
   - MATCH,MANUAL
