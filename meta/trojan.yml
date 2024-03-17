@@ -32,7 +32,15 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@PrivateVPNs| AHS -175.34"
+  - name: "|@PrivateVPNs| AHS -210.21"
+    server: 51.21.77.215
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@PrivateVPNs| AHS -158.33"
     server: 16.16.42.61
     port: 22222
     type: trojan
@@ -40,7 +48,7 @@ proxies:
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@PrivateVPNs| AHS -150.87"
+  - name: "|@PrivateVPNs| AHS -144"
     server: 18.197.187.142
     port: 22222
     type: trojan
@@ -48,7 +56,7 @@ proxies:
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -169.83"
+  - name: "|@DirectVPN| AHS -158.05"
     server: 51.21.53.242
     port: 22222
     type: trojan
@@ -56,7 +64,7 @@ proxies:
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -152.07"
+  - name: "|@DirectVPN| AHS -139.87"
     server: 15.237.229.55
     port: 22222
     type: trojan
@@ -64,7 +72,7 @@ proxies:
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -151.46"
+  - name: "|@DirectVPN| AHS -142.23"
     server: 13.39.169.65
     port: 22222
     type: trojan
@@ -72,7 +80,7 @@ proxies:
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@v2ray_swhil| AHS -1.81"
+  - name: "|@v2ray_swhil| AHS -16.3"
     server: 104.16.123.175
     port: 2083
     type: trojan
@@ -85,7 +93,7 @@ proxies:
       headers:
         Host: cdn13.cdn2cdn.com
     udp: true
-  - name: "|@VmessProtocol| AHS -2.4"
+  - name: "|@VmessProtocol| AHS -9.17"
     server: 1-vmessprotocol-channel-join-for-more-likethis.v2rayng.cfd
     port: 2053
     type: trojan
@@ -98,7 +106,7 @@ proxies:
       headers:
         Host: 1-vmessprotocol-channel-join-for-more-likethis.v2rayng.cfd
     udp: true
-  - name: "|@VmessProtocol| AHS -2.19"
+  - name: "|@VmessProtocol| AHS -9.04"
     server: 1-vmessprotocol-channel-join-for-more-likethis.v2rayng.cfd
     port: 2053
     type: trojan
@@ -111,7 +119,7 @@ proxies:
       headers:
         Host: 1-vmessprotocol-channel-join-for-more-likethis.v2rayng.cfd
     udp: true
-  - name: "|@VmessProtocol| AHS -2.18"
+  - name: "|@VmessProtocol| AHS -9.3"
     server: 1-vmessprotocol-channel-join-for-more-likethis.v2rayng.cfd
     port: 2053
     type: trojan
@@ -124,7 +132,7 @@ proxies:
       headers:
         Host: 1-vmessprotocol-channel-join-for-more-likethis.v2rayng.cfd
     udp: true
-  - name: "|@ovpn2| AHS -1.72"
+  - name: "|@ovpn2| AHS -8.62"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -141,16 +149,17 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@PrivateVPNs| AHS -175.34"
-      - "|@PrivateVPNs| AHS -150.87"
-      - "|@DirectVPN| AHS -169.83"
-      - "|@DirectVPN| AHS -152.07"
-      - "|@DirectVPN| AHS -151.46"
-      - "|@v2ray_swhil| AHS -1.81"
-      - "|@VmessProtocol| AHS -2.4"
-      - "|@VmessProtocol| AHS -2.19"
-      - "|@VmessProtocol| AHS -2.18"
-      - "|@ovpn2| AHS -1.72"
+      - "|@PrivateVPNs| AHS -210.21"
+      - "|@PrivateVPNs| AHS -158.33"
+      - "|@PrivateVPNs| AHS -144"
+      - "|@DirectVPN| AHS -158.05"
+      - "|@DirectVPN| AHS -139.87"
+      - "|@DirectVPN| AHS -142.23"
+      - "|@v2ray_swhil| AHS -16.3"
+      - "|@VmessProtocol| AHS -9.17"
+      - "|@VmessProtocol| AHS -9.04"
+      - "|@VmessProtocol| AHS -9.3"
+      - "|@ovpn2| AHS -8.62"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -161,46 +170,49 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -175.34"
-      - "|@PrivateVPNs| AHS -150.87"
-      - "|@DirectVPN| AHS -169.83"
-      - "|@DirectVPN| AHS -152.07"
-      - "|@DirectVPN| AHS -151.46"
-      - "|@v2ray_swhil| AHS -1.81"
-      - "|@VmessProtocol| AHS -2.4"
-      - "|@VmessProtocol| AHS -2.19"
-      - "|@VmessProtocol| AHS -2.18"
-      - "|@ovpn2| AHS -1.72"
+      - "|@PrivateVPNs| AHS -210.21"
+      - "|@PrivateVPNs| AHS -158.33"
+      - "|@PrivateVPNs| AHS -144"
+      - "|@DirectVPN| AHS -158.05"
+      - "|@DirectVPN| AHS -139.87"
+      - "|@DirectVPN| AHS -142.23"
+      - "|@v2ray_swhil| AHS -16.3"
+      - "|@VmessProtocol| AHS -9.17"
+      - "|@VmessProtocol| AHS -9.04"
+      - "|@VmessProtocol| AHS -9.3"
+      - "|@ovpn2| AHS -8.62"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@PrivateVPNs| AHS -175.34"
-      - "|@PrivateVPNs| AHS -150.87"
-      - "|@DirectVPN| AHS -169.83"
-      - "|@DirectVPN| AHS -152.07"
-      - "|@DirectVPN| AHS -151.46"
-      - "|@v2ray_swhil| AHS -1.81"
-      - "|@VmessProtocol| AHS -2.4"
-      - "|@VmessProtocol| AHS -2.19"
-      - "|@VmessProtocol| AHS -2.18"
-      - "|@ovpn2| AHS -1.72"
+      - "|@PrivateVPNs| AHS -210.21"
+      - "|@PrivateVPNs| AHS -158.33"
+      - "|@PrivateVPNs| AHS -144"
+      - "|@DirectVPN| AHS -158.05"
+      - "|@DirectVPN| AHS -139.87"
+      - "|@DirectVPN| AHS -142.23"
+      - "|@v2ray_swhil| AHS -16.3"
+      - "|@VmessProtocol| AHS -9.17"
+      - "|@VmessProtocol| AHS -9.04"
+      - "|@VmessProtocol| AHS -9.3"
+      - "|@ovpn2| AHS -8.62"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -175.34"
-      - "|@PrivateVPNs| AHS -150.87"
-      - "|@DirectVPN| AHS -169.83"
-      - "|@DirectVPN| AHS -152.07"
-      - "|@DirectVPN| AHS -151.46"
-      - "|@v2ray_swhil| AHS -1.81"
-      - "|@VmessProtocol| AHS -2.4"
-      - "|@VmessProtocol| AHS -2.19"
-      - "|@VmessProtocol| AHS -2.18"
-      - "|@ovpn2| AHS -1.72"
+      - "|@PrivateVPNs| AHS -210.21"
+      - "|@PrivateVPNs| AHS -158.33"
+      - "|@PrivateVPNs| AHS -144"
+      - "|@DirectVPN| AHS -158.05"
+      - "|@DirectVPN| AHS -139.87"
+      - "|@DirectVPN| AHS -142.23"
+      - "|@v2ray_swhil| AHS -16.3"
+      - "|@VmessProtocol| AHS -9.17"
+      - "|@VmessProtocol| AHS -9.04"
+      - "|@VmessProtocol| AHS -9.3"
+      - "|@ovpn2| AHS -8.62"
 rules:
   - MATCH,MANUAL
