@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@V2rayNGn|🇩🇪|135.4
+  - name: REALITY|@V2rayNGn|🇩🇪|110.4
     server: 116.202.28.240
     port: 777
     type: vless
@@ -43,7 +43,7 @@ proxies:
     skip-cert-verify: true
     servername: arzdigital.com
     udp: true
-  - name: REALITY|@WomanLifeFreedomVPN|🇩🇪|138.14
+  - name: REALITY|@WomanLifeFreedomVPN|🇩🇪|158.06
     server: icloud.wlftest.xyz
     port: 443
     type: vless
@@ -54,7 +54,7 @@ proxies:
     skip-cert-verify: true
     servername: www.icloud.com
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|135.81
+  - name: REALITY|@internet4iran|🇩🇪|110.04
     server: 88.99.121.221
     port: 443
     type: vless
@@ -65,7 +65,20 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@vpn_tehran|🇳🇱|146.71
+  - name: REALITY|@VmessProtocol|🇬🇧|99.68
+    server: 45.140.167.94
+    port: 8443
+    type: vless
+    uuid: a62b1ebe-21cc-468f-aa0e-98d212881d33
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: 104.21.70.42
+    network: grpc
+    grpc-opts:
+      grpc-service-name: grpc
+    udp: true
+  - name: REALITY|@vpn_tehran|🇳🇱|unavailable
     server: 185.142.238.222
     port: 8443
     type: vless
@@ -80,10 +93,11 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@V2rayNGn|🇩🇪|135.4
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|138.14
-      - REALITY|@internet4iran|🇩🇪|135.81
-      - REALITY|@vpn_tehran|🇳🇱|146.71
+      - REALITY|@V2rayNGn|🇩🇪|110.4
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|158.06
+      - REALITY|@internet4iran|🇩🇪|110.04
+      - REALITY|@VmessProtocol|🇬🇧|99.68
+      - REALITY|@vpn_tehran|🇳🇱|unavailable
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -94,28 +108,31 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@V2rayNGn|🇩🇪|135.4
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|138.14
-      - REALITY|@internet4iran|🇩🇪|135.81
-      - REALITY|@vpn_tehran|🇳🇱|146.71
+      - REALITY|@V2rayNGn|🇩🇪|110.4
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|158.06
+      - REALITY|@internet4iran|🇩🇪|110.04
+      - REALITY|@VmessProtocol|🇬🇧|99.68
+      - REALITY|@vpn_tehran|🇳🇱|unavailable
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@V2rayNGn|🇩🇪|135.4
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|138.14
-      - REALITY|@internet4iran|🇩🇪|135.81
-      - REALITY|@vpn_tehran|🇳🇱|146.71
+      - REALITY|@V2rayNGn|🇩🇪|110.4
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|158.06
+      - REALITY|@internet4iran|🇩🇪|110.04
+      - REALITY|@VmessProtocol|🇬🇧|99.68
+      - REALITY|@vpn_tehran|🇳🇱|unavailable
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@V2rayNGn|🇩🇪|135.4
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|138.14
-      - REALITY|@internet4iran|🇩🇪|135.81
-      - REALITY|@vpn_tehran|🇳🇱|146.71
+      - REALITY|@V2rayNGn|🇩🇪|110.4
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|158.06
+      - REALITY|@internet4iran|🇩🇪|110.04
+      - REALITY|@VmessProtocol|🇬🇧|99.68
+      - REALITY|@vpn_tehran|🇳🇱|unavailable
 rules:
   - MATCH,MANUAL
