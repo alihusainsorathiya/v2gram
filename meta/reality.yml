@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@WomanLifeFreedomVPN|🇩🇪|112.57
+  - name: REALITY|@WomanLifeFreedomVPN|🇩🇪|179.22
     server: icloud.wlftest.xyz
     port: 443
     type: vless
@@ -43,7 +43,7 @@ proxies:
     skip-cert-verify: true
     servername: www.icloud.com
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|110.9
+  - name: REALITY|@internet4iran|🇩🇪|145.74
     server: 88.99.121.221
     port: 443
     type: vless
@@ -54,24 +54,12 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@vpn_tehran|🇳🇱|unavailable
-    server: 185.142.238.222
-    port: 8443
-    type: vless
-    uuid: ae5aed77-be23-4f6c-bd51-c73745038952
-    cipher: auto
-    tls: false
-    flow: xtls-rprx-vision
-    skip-cert-verify: true
-    servername: maps.google.com
-    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|112.57
-      - REALITY|@internet4iran|🇩🇪|110.9
-      - REALITY|@vpn_tehran|🇳🇱|unavailable
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|179.22
+      - REALITY|@internet4iran|🇩🇪|145.74
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -82,25 +70,22 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|112.57
-      - REALITY|@internet4iran|🇩🇪|110.9
-      - REALITY|@vpn_tehran|🇳🇱|unavailable
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|179.22
+      - REALITY|@internet4iran|🇩🇪|145.74
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|112.57
-      - REALITY|@internet4iran|🇩🇪|110.9
-      - REALITY|@vpn_tehran|🇳🇱|unavailable
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|179.22
+      - REALITY|@internet4iran|🇩🇪|145.74
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|112.57
-      - REALITY|@internet4iran|🇩🇪|110.9
-      - REALITY|@vpn_tehran|🇳🇱|unavailable
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|179.22
+      - REALITY|@internet4iran|🇩🇪|145.74
 rules:
   - MATCH,MANUAL
