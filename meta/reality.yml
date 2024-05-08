@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@WomanLifeFreedomVPN|🇩🇪|107.67
+  - name: REALITY|@WomanLifeFreedomVPN|🇩🇪|168.41
     server: icloud.wlftest.xyz
     port: 443
     type: vless
@@ -43,7 +43,7 @@ proxies:
     skip-cert-verify: true
     servername: www.icloud.com
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|93.19
+  - name: REALITY|@internet4iran|🇩🇪|159.86
     server: 88.99.121.221
     port: 443
     type: vless
@@ -54,7 +54,17 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@VmessProtocol|🇳🇱|87.29
+  - name: REALITY|@vless_vmess|🇫🇷|191.07
+    server: 141.95.75.212
+    port: 443
+    type: vless
+    uuid: 200e059b-51ec-4825-8e95-5e49db5d22ad
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: analytics.google.com
+    udp: true
+  - name: REALITY|@VmessProtocol|🇳🇱|147.02
     server: 185.142.238.222
     port: 8443
     type: vless
@@ -69,9 +79,10 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|107.67
-      - REALITY|@internet4iran|🇩🇪|93.19
-      - REALITY|@VmessProtocol|🇳🇱|87.29
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|168.41
+      - REALITY|@internet4iran|🇩🇪|159.86
+      - REALITY|@vless_vmess|🇫🇷|191.07
+      - REALITY|@VmessProtocol|🇳🇱|147.02
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -82,25 +93,28 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|107.67
-      - REALITY|@internet4iran|🇩🇪|93.19
-      - REALITY|@VmessProtocol|🇳🇱|87.29
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|168.41
+      - REALITY|@internet4iran|🇩🇪|159.86
+      - REALITY|@vless_vmess|🇫🇷|191.07
+      - REALITY|@VmessProtocol|🇳🇱|147.02
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|107.67
-      - REALITY|@internet4iran|🇩🇪|93.19
-      - REALITY|@VmessProtocol|🇳🇱|87.29
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|168.41
+      - REALITY|@internet4iran|🇩🇪|159.86
+      - REALITY|@vless_vmess|🇫🇷|191.07
+      - REALITY|@VmessProtocol|🇳🇱|147.02
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇩🇪|107.67
-      - REALITY|@internet4iran|🇩🇪|93.19
-      - REALITY|@VmessProtocol|🇳🇱|87.29
+      - REALITY|@WomanLifeFreedomVPN|🇩🇪|168.41
+      - REALITY|@internet4iran|🇩🇪|159.86
+      - REALITY|@vless_vmess|🇫🇷|191.07
+      - REALITY|@VmessProtocol|🇳🇱|147.02
 rules:
   - MATCH,MANUAL
