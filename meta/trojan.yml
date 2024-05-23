@@ -32,23 +32,31 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@PrivateVPNs| AHS -102.04"
-    server: 13.36.190.97
+  - name: "|@PrivateVPNs| AHS -96.64"
+    server: 3.8.68.57
     port: 22222
     type: trojan
     password: telegram-id-privatevpns
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@PrivateVPNs| AHS -97.84"
-    server: 13.43.12.223
+  - name: "|@PrivateVPNs| AHS -90.06"
+    server: 54.77.201.92
     port: 22222
     type: trojan
     password: telegram-id-privatevpns
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -96.62"
+  - name: "|@PrivateVPNs| AHS -86.8"
+    server: 63.35.119.175
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -98.55"
     server: 18.170.160.1
     port: 22222
     type: trojan
@@ -56,7 +64,23 @@ proxies:
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@ovpn2| AHS -2.42"
+  - name: "|@DirectVPN| AHS -87.44"
+    server: 63.34.222.198
+    port: 22222
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -87.11"
+    server: 52.16.91.189
+    port: 22222
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@ovpn2| AHS -2.62"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -69,7 +93,7 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
-  - name: "|@vpn_tehran| AHS -2.24"
+  - name: "|@vpn_tehran| AHS -1.87"
     server: 104.16.159.3
     port: 443
     type: trojan
@@ -86,11 +110,14 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@PrivateVPNs| AHS -102.04"
-      - "|@PrivateVPNs| AHS -97.84"
-      - "|@DirectVPN| AHS -96.62"
-      - "|@ovpn2| AHS -2.42"
-      - "|@vpn_tehran| AHS -2.24"
+      - "|@PrivateVPNs| AHS -96.64"
+      - "|@PrivateVPNs| AHS -90.06"
+      - "|@PrivateVPNs| AHS -86.8"
+      - "|@DirectVPN| AHS -98.55"
+      - "|@DirectVPN| AHS -87.44"
+      - "|@DirectVPN| AHS -87.11"
+      - "|@ovpn2| AHS -2.62"
+      - "|@vpn_tehran| AHS -1.87"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -101,31 +128,40 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -102.04"
-      - "|@PrivateVPNs| AHS -97.84"
-      - "|@DirectVPN| AHS -96.62"
-      - "|@ovpn2| AHS -2.42"
-      - "|@vpn_tehran| AHS -2.24"
+      - "|@PrivateVPNs| AHS -96.64"
+      - "|@PrivateVPNs| AHS -90.06"
+      - "|@PrivateVPNs| AHS -86.8"
+      - "|@DirectVPN| AHS -98.55"
+      - "|@DirectVPN| AHS -87.44"
+      - "|@DirectVPN| AHS -87.11"
+      - "|@ovpn2| AHS -2.62"
+      - "|@vpn_tehran| AHS -1.87"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@PrivateVPNs| AHS -102.04"
-      - "|@PrivateVPNs| AHS -97.84"
-      - "|@DirectVPN| AHS -96.62"
-      - "|@ovpn2| AHS -2.42"
-      - "|@vpn_tehran| AHS -2.24"
+      - "|@PrivateVPNs| AHS -96.64"
+      - "|@PrivateVPNs| AHS -90.06"
+      - "|@PrivateVPNs| AHS -86.8"
+      - "|@DirectVPN| AHS -98.55"
+      - "|@DirectVPN| AHS -87.44"
+      - "|@DirectVPN| AHS -87.11"
+      - "|@ovpn2| AHS -2.62"
+      - "|@vpn_tehran| AHS -1.87"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -102.04"
-      - "|@PrivateVPNs| AHS -97.84"
-      - "|@DirectVPN| AHS -96.62"
-      - "|@ovpn2| AHS -2.42"
-      - "|@vpn_tehran| AHS -2.24"
+      - "|@PrivateVPNs| AHS -96.64"
+      - "|@PrivateVPNs| AHS -90.06"
+      - "|@PrivateVPNs| AHS -86.8"
+      - "|@DirectVPN| AHS -98.55"
+      - "|@DirectVPN| AHS -87.44"
+      - "|@DirectVPN| AHS -87.11"
+      - "|@ovpn2| AHS -2.62"
+      - "|@vpn_tehran| AHS -1.87"
 rules:
   - MATCH,MANUAL
