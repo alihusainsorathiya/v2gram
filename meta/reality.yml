@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@WomanLifeFreedomVPN|🇺🇸|3.94
+  - name: REALITY|@WomanLifeFreedomVPN|🇺🇸|4.99
     server: icloud.wlftest.xyz
     port: 443
     type: vless
@@ -43,7 +43,7 @@ proxies:
     skip-cert-verify: true
     servername: www.icloud.com
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|110.54
+  - name: REALITY|@internet4iran|🇩🇪|113.67
     server: 88.99.121.221
     port: 443
     type: vless
@@ -54,7 +54,7 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@kiava|🇩🇪|107.67
+  - name: REALITY|@kiava|🇩🇪|109.96
     server: 3.120.224.79
     port: 2083
     type: vless
@@ -65,13 +65,25 @@ proxies:
     skip-cert-verify: true
     servername: www.datacamp.co.uk
     udp: true
+  - name: REALITY|@VmessProtocol|🇺🇸|35.48
+    server: 104.168.107.230
+    port: 6722
+    type: vless
+    uuid: 3934f954-59f9-4f8e-9eb8-cdc50fd026d8
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: js.hsforms.net
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇺🇸|3.94
-      - REALITY|@internet4iran|🇩🇪|110.54
-      - REALITY|@kiava|🇩🇪|107.67
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|4.99
+      - REALITY|@internet4iran|🇩🇪|113.67
+      - REALITY|@kiava|🇩🇪|109.96
+      - REALITY|@VmessProtocol|🇺🇸|35.48
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -82,25 +94,28 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇺🇸|3.94
-      - REALITY|@internet4iran|🇩🇪|110.54
-      - REALITY|@kiava|🇩🇪|107.67
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|4.99
+      - REALITY|@internet4iran|🇩🇪|113.67
+      - REALITY|@kiava|🇩🇪|109.96
+      - REALITY|@VmessProtocol|🇺🇸|35.48
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇺🇸|3.94
-      - REALITY|@internet4iran|🇩🇪|110.54
-      - REALITY|@kiava|🇩🇪|107.67
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|4.99
+      - REALITY|@internet4iran|🇩🇪|113.67
+      - REALITY|@kiava|🇩🇪|109.96
+      - REALITY|@VmessProtocol|🇺🇸|35.48
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇺🇸|3.94
-      - REALITY|@internet4iran|🇩🇪|110.54
-      - REALITY|@kiava|🇩🇪|107.67
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|4.99
+      - REALITY|@internet4iran|🇩🇪|113.67
+      - REALITY|@kiava|🇩🇪|109.96
+      - REALITY|@VmessProtocol|🇺🇸|35.48
 rules:
   - MATCH,MANUAL
