@@ -32,18 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@Outline_Vpn|🇹🇷|136.53
-    server: 80.253.255.10
-    port: 443
-    type: vless
-    uuid: 7c7af2de-bb97-429f-ac3c-8ef849717491
-    cipher: auto
-    tls: false
-    flow: xtls-rprx-vision
-    skip-cert-verify: true
-    servername: www.upci.org
-    udp: true
-  - name: REALITY|@WomanLifeFreedomVPN|🇺🇸|29.82
+  - name: REALITY|@WomanLifeFreedomVPN|🇺🇸|149.46
     server: icloud.wlftest.xyz
     port: 443
     type: vless
@@ -54,7 +43,7 @@ proxies:
     skip-cert-verify: true
     servername: www.icloud.com
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|110.5
+  - name: REALITY|@internet4iran|🇩🇪|137.6
     server: 88.99.121.221
     port: 443
     type: vless
@@ -69,9 +58,8 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@Outline_Vpn|🇹🇷|136.53
-      - REALITY|@WomanLifeFreedomVPN|🇺🇸|29.82
-      - REALITY|@internet4iran|🇩🇪|110.5
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|149.46
+      - REALITY|@internet4iran|🇩🇪|137.6
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -82,25 +70,22 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@Outline_Vpn|🇹🇷|136.53
-      - REALITY|@WomanLifeFreedomVPN|🇺🇸|29.82
-      - REALITY|@internet4iran|🇩🇪|110.5
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|149.46
+      - REALITY|@internet4iran|🇩🇪|137.6
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@Outline_Vpn|🇹🇷|136.53
-      - REALITY|@WomanLifeFreedomVPN|🇺🇸|29.82
-      - REALITY|@internet4iran|🇩🇪|110.5
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|149.46
+      - REALITY|@internet4iran|🇩🇪|137.6
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@Outline_Vpn|🇹🇷|136.53
-      - REALITY|@WomanLifeFreedomVPN|🇺🇸|29.82
-      - REALITY|@internet4iran|🇩🇪|110.5
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|149.46
+      - REALITY|@internet4iran|🇩🇪|137.6
 rules:
   - MATCH,MANUAL
