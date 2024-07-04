@@ -32,7 +32,18 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@internet4iran|🇩🇪|159.78
+  - name: REALITY|@WomanLifeFreedomVPN|🇺🇸|15.12
+    server: icloud.wlftest.xyz
+    port: 443
+    type: vless
+    uuid: 85399fea-2ee3-51b5-ad4e-d8b78a2cf1d9
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: www.icloud.com
+    udp: true
+  - name: REALITY|@internet4iran|🇩🇪|93.41
     server: 88.99.121.221
     port: 443
     type: vless
@@ -47,7 +58,8 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@internet4iran|🇩🇪|159.78
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|15.12
+      - REALITY|@internet4iran|🇩🇪|93.41
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -58,19 +70,22 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|159.78
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|15.12
+      - REALITY|@internet4iran|🇩🇪|93.41
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@internet4iran|🇩🇪|159.78
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|15.12
+      - REALITY|@internet4iran|🇩🇪|93.41
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|159.78
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|15.12
+      - REALITY|@internet4iran|🇩🇪|93.41
 rules:
   - MATCH,MANUAL
