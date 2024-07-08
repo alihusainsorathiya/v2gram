@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@WomanLifeFreedomVPN|🇺🇸|7.35
+  - name: REALITY|@WomanLifeFreedomVPN|🇺🇸|6.69
     server: icloud.wlftest.xyz
     port: 443
     type: vless
@@ -43,7 +43,7 @@ proxies:
     skip-cert-verify: true
     servername: www.icloud.com
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|90.53
+  - name: REALITY|@internet4iran|🇩🇪|90.68
     server: 88.99.121.221
     port: 443
     type: vless
@@ -54,12 +54,26 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
+  - name: REALITY|@V2RayTz|🇩🇪|90
+    server: 49.13.213.242
+    port: 443
+    type: vless
+    uuid: 1674a989-a705-494e-8a3e-541d7e398d14
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: www.speedtest.net
+    network: grpc
+    grpc-opts:
+      grpc-service-name: Telegram%3A%40NUFiLTER-Telegram%3A%40NUFiLTER-Telegram%3A%40NUFiLTER-Telegram%3A%40NUFiLTER-Telegram%3A%40NUFiLTER-Telegram%3A%40NUFiLTER-Telegram%3A%40NUFiLTER-Telegram%3A%40NUFiLTER-Telegram%3A%40NUFiLTER-Telegram%3A%40NUFiLTER-Telegram%3A%40NUFiLTER
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇺🇸|7.35
-      - REALITY|@internet4iran|🇩🇪|90.53
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|6.69
+      - REALITY|@internet4iran|🇩🇪|90.68
+      - REALITY|@V2RayTz|🇩🇪|90
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -70,22 +84,25 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇺🇸|7.35
-      - REALITY|@internet4iran|🇩🇪|90.53
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|6.69
+      - REALITY|@internet4iran|🇩🇪|90.68
+      - REALITY|@V2RayTz|🇩🇪|90
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇺🇸|7.35
-      - REALITY|@internet4iran|🇩🇪|90.53
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|6.69
+      - REALITY|@internet4iran|🇩🇪|90.68
+      - REALITY|@V2RayTz|🇩🇪|90
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇺🇸|7.35
-      - REALITY|@internet4iran|🇩🇪|90.53
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|6.69
+      - REALITY|@internet4iran|🇩🇪|90.68
+      - REALITY|@V2RayTz|🇩🇪|90
 rules:
   - MATCH,MANUAL
