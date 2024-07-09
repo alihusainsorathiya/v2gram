@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@WomanLifeFreedomVPN|🇺🇸|19.64
+  - name: REALITY|@WomanLifeFreedomVPN|🇺🇸|138.86
     server: icloud.wlftest.xyz
     port: 443
     type: vless
@@ -43,7 +43,7 @@ proxies:
     skip-cert-verify: true
     servername: www.icloud.com
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|110.31
+  - name: REALITY|@internet4iran|🇩🇪|169.84
     server: 88.99.121.221
     port: 443
     type: vless
@@ -54,12 +54,23 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
+  - name: REALITY|@ConfigsHUB|🇩🇪|157.64
+    server: 23.88.102.54
+    port: 443
+    type: vless
+    uuid: b028c0d0-836b-4ab2-b14e-cb6c30c3f583
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: anti-theft.eset.com
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇺🇸|19.64
-      - REALITY|@internet4iran|🇩🇪|110.31
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|138.86
+      - REALITY|@internet4iran|🇩🇪|169.84
+      - REALITY|@ConfigsHUB|🇩🇪|157.64
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -70,22 +81,25 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇺🇸|19.64
-      - REALITY|@internet4iran|🇩🇪|110.31
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|138.86
+      - REALITY|@internet4iran|🇩🇪|169.84
+      - REALITY|@ConfigsHUB|🇩🇪|157.64
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇺🇸|19.64
-      - REALITY|@internet4iran|🇩🇪|110.31
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|138.86
+      - REALITY|@internet4iran|🇩🇪|169.84
+      - REALITY|@ConfigsHUB|🇩🇪|157.64
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@WomanLifeFreedomVPN|🇺🇸|19.64
-      - REALITY|@internet4iran|🇩🇪|110.31
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|138.86
+      - REALITY|@internet4iran|🇩🇪|169.84
+      - REALITY|@ConfigsHUB|🇩🇪|157.64
 rules:
   - MATCH,MANUAL
