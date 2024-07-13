@@ -32,20 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@azadi_az_inja_migzare|🇺🇸|149.88
-    server: 45.152.112.218
-    port: 2083
-    type: vless
-    uuid: 163c97c1-8466-4889-aa50-6b79bb439c63
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: www.speedtest.net
-    network: grpc
-    grpc-opts:
-      grpc-service-name: /
-    udp: true
-  - name: REALITY|@internet4iran|🇩🇪|159.54
+  - name: REALITY|@internet4iran|🇩🇪|159.61
     server: 88.99.121.221
     port: 443
     type: vless
@@ -56,12 +43,22 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
+  - name: REALITY|@ConfigsHUB|🇫🇮|176.75
+    server: 65.108.220.44
+    port: 2087
+    type: vless
+    uuid: 50a24f6f-3190-477f-bccf-35289131ce5d
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: www.speedtest.net
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@azadi_az_inja_migzare|🇺🇸|149.88
-      - REALITY|@internet4iran|🇩🇪|159.54
+      - REALITY|@internet4iran|🇩🇪|159.61
+      - REALITY|@ConfigsHUB|🇫🇮|176.75
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -72,22 +69,22 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@azadi_az_inja_migzare|🇺🇸|149.88
-      - REALITY|@internet4iran|🇩🇪|159.54
+      - REALITY|@internet4iran|🇩🇪|159.61
+      - REALITY|@ConfigsHUB|🇫🇮|176.75
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@azadi_az_inja_migzare|🇺🇸|149.88
-      - REALITY|@internet4iran|🇩🇪|159.54
+      - REALITY|@internet4iran|🇩🇪|159.61
+      - REALITY|@ConfigsHUB|🇫🇮|176.75
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@azadi_az_inja_migzare|🇺🇸|149.88
-      - REALITY|@internet4iran|🇩🇪|159.54
+      - REALITY|@internet4iran|🇩🇪|159.61
+      - REALITY|@ConfigsHUB|🇫🇮|176.75
 rules:
   - MATCH,MANUAL

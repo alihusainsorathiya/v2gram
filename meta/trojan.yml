@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@PrivateVPNs| AHS -158.35"
+  - name: "|@PrivateVPNs| AHS -175.92"
     server: 18.135.86.14
     port: 22222
     type: trojan
@@ -40,7 +40,7 @@ proxies:
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@PrivateVPNs| AHS -136.19"
+  - name: "|@PrivateVPNs| AHS -136.52"
     server: 52.212.109.149
     port: 22222
     type: trojan
@@ -48,7 +48,7 @@ proxies:
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@PrivateVPNs| AHS -177.13"
+  - name: "|@PrivateVPNs| AHS -178.19"
     server: 52.209.100.49
     port: 22222
     type: trojan
@@ -56,7 +56,7 @@ proxies:
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -174.9"
+  - name: "|@DirectVPN| AHS -175.1"
     server: 51.20.229.128
     port: 22222
     type: trojan
@@ -64,7 +64,7 @@ proxies:
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -176.47"
+  - name: "|@DirectVPN| AHS -158.76"
     server: 3.76.73.224
     port: 22222
     type: trojan
@@ -72,7 +72,7 @@ proxies:
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -158"
+  - name: "|@DirectVPN| AHS -176.56"
     server: 18.185.247.2
     port: 22222
     type: trojan
@@ -80,7 +80,7 @@ proxies:
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@ovpn2| AHS -1.73"
+  - name: "|@ovpn2| AHS -2.34"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -93,17 +93,54 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
+  - name: "|@ConfigsHUB| AHS -1.88"
+    server: 162.159.136.232
+    port: 8443
+    type: trojan
+    password: auto
+    skip-cert-verify: true
+    sni: e9464f45.trauma-2r4.pages.dev
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: e9464f45.trauma-2r4.pages.dev
+    udp: true
+  - name: "|@ConfigsHUB| AHS -2.12"
+    server: 172.67.68.157
+    port: 443
+    type: trojan
+    password: auto
+    skip-cert-verify: true
+    sni: e9464f45.trauma-2r4.pages.dev
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: e9464f45.trauma-2r4.pages.dev
+    udp: true
+  - name: "|@yaney_01| AHS -unavailable"
+    server: df.xiguajiasu.xyz
+    port: 46002
+    type: trojan
+    password: 4ea1d07c-41c2-42b5-954d-414fee051856
+    skip-cert-verify: true
+    sni: ""
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@PrivateVPNs| AHS -158.35"
-      - "|@PrivateVPNs| AHS -136.19"
-      - "|@PrivateVPNs| AHS -177.13"
-      - "|@DirectVPN| AHS -174.9"
-      - "|@DirectVPN| AHS -176.47"
-      - "|@DirectVPN| AHS -158"
-      - "|@ovpn2| AHS -1.73"
+      - "|@PrivateVPNs| AHS -175.92"
+      - "|@PrivateVPNs| AHS -136.52"
+      - "|@PrivateVPNs| AHS -178.19"
+      - "|@DirectVPN| AHS -175.1"
+      - "|@DirectVPN| AHS -158.76"
+      - "|@DirectVPN| AHS -176.56"
+      - "|@ovpn2| AHS -2.34"
+      - "|@ConfigsHUB| AHS -1.88"
+      - "|@ConfigsHUB| AHS -2.12"
+      - "|@yaney_01| AHS -unavailable"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -114,37 +151,46 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -158.35"
-      - "|@PrivateVPNs| AHS -136.19"
-      - "|@PrivateVPNs| AHS -177.13"
-      - "|@DirectVPN| AHS -174.9"
-      - "|@DirectVPN| AHS -176.47"
-      - "|@DirectVPN| AHS -158"
-      - "|@ovpn2| AHS -1.73"
+      - "|@PrivateVPNs| AHS -175.92"
+      - "|@PrivateVPNs| AHS -136.52"
+      - "|@PrivateVPNs| AHS -178.19"
+      - "|@DirectVPN| AHS -175.1"
+      - "|@DirectVPN| AHS -158.76"
+      - "|@DirectVPN| AHS -176.56"
+      - "|@ovpn2| AHS -2.34"
+      - "|@ConfigsHUB| AHS -1.88"
+      - "|@ConfigsHUB| AHS -2.12"
+      - "|@yaney_01| AHS -unavailable"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@PrivateVPNs| AHS -158.35"
-      - "|@PrivateVPNs| AHS -136.19"
-      - "|@PrivateVPNs| AHS -177.13"
-      - "|@DirectVPN| AHS -174.9"
-      - "|@DirectVPN| AHS -176.47"
-      - "|@DirectVPN| AHS -158"
-      - "|@ovpn2| AHS -1.73"
+      - "|@PrivateVPNs| AHS -175.92"
+      - "|@PrivateVPNs| AHS -136.52"
+      - "|@PrivateVPNs| AHS -178.19"
+      - "|@DirectVPN| AHS -175.1"
+      - "|@DirectVPN| AHS -158.76"
+      - "|@DirectVPN| AHS -176.56"
+      - "|@ovpn2| AHS -2.34"
+      - "|@ConfigsHUB| AHS -1.88"
+      - "|@ConfigsHUB| AHS -2.12"
+      - "|@yaney_01| AHS -unavailable"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -158.35"
-      - "|@PrivateVPNs| AHS -136.19"
-      - "|@PrivateVPNs| AHS -177.13"
-      - "|@DirectVPN| AHS -174.9"
-      - "|@DirectVPN| AHS -176.47"
-      - "|@DirectVPN| AHS -158"
-      - "|@ovpn2| AHS -1.73"
+      - "|@PrivateVPNs| AHS -175.92"
+      - "|@PrivateVPNs| AHS -136.52"
+      - "|@PrivateVPNs| AHS -178.19"
+      - "|@DirectVPN| AHS -175.1"
+      - "|@DirectVPN| AHS -158.76"
+      - "|@DirectVPN| AHS -176.56"
+      - "|@ovpn2| AHS -2.34"
+      - "|@ConfigsHUB| AHS -1.88"
+      - "|@ConfigsHUB| AHS -2.12"
+      - "|@yaney_01| AHS -unavailable"
 rules:
   - MATCH,MANUAL
