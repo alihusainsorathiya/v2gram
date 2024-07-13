@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@azadi_az_inja_migzare|🇺🇸|80.06
+  - name: REALITY|@azadi_az_inja_migzare|🇺🇸|83.12
     server: 45.152.112.218
     port: 2083
     type: vless
@@ -45,7 +45,7 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|89.85
+  - name: REALITY|@internet4iran|🇩🇪|93.37
     server: 88.99.121.221
     port: 443
     type: vless
@@ -56,7 +56,7 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@v2rayNG_Matsuri|🇹🇷|126.38
+  - name: REALITY|@v2rayNG_Matsuri|🇹🇷|144.6
     server: 77.92.145.153
     port: 443
     type: vless
@@ -66,13 +66,27 @@ proxies:
     skip-cert-verify: true
     servername: google.com
     udp: true
+  - name: REALITY|@VmessProtocol|🇮🇷|171.48
+    server: 185.135.47.150
+    port: 2053
+    type: vless
+    uuid: dbaea6f8-e79b-44cc-85b8-7855581947b1
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: discordapp.com
+    network: grpc
+    grpc-opts:
+      grpc-service-name: xyz
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@azadi_az_inja_migzare|🇺🇸|80.06
-      - REALITY|@internet4iran|🇩🇪|89.85
-      - REALITY|@v2rayNG_Matsuri|🇹🇷|126.38
+      - REALITY|@azadi_az_inja_migzare|🇺🇸|83.12
+      - REALITY|@internet4iran|🇩🇪|93.37
+      - REALITY|@v2rayNG_Matsuri|🇹🇷|144.6
+      - REALITY|@VmessProtocol|🇮🇷|171.48
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -83,25 +97,28 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@azadi_az_inja_migzare|🇺🇸|80.06
-      - REALITY|@internet4iran|🇩🇪|89.85
-      - REALITY|@v2rayNG_Matsuri|🇹🇷|126.38
+      - REALITY|@azadi_az_inja_migzare|🇺🇸|83.12
+      - REALITY|@internet4iran|🇩🇪|93.37
+      - REALITY|@v2rayNG_Matsuri|🇹🇷|144.6
+      - REALITY|@VmessProtocol|🇮🇷|171.48
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@azadi_az_inja_migzare|🇺🇸|80.06
-      - REALITY|@internet4iran|🇩🇪|89.85
-      - REALITY|@v2rayNG_Matsuri|🇹🇷|126.38
+      - REALITY|@azadi_az_inja_migzare|🇺🇸|83.12
+      - REALITY|@internet4iran|🇩🇪|93.37
+      - REALITY|@v2rayNG_Matsuri|🇹🇷|144.6
+      - REALITY|@VmessProtocol|🇮🇷|171.48
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@azadi_az_inja_migzare|🇺🇸|80.06
-      - REALITY|@internet4iran|🇩🇪|89.85
-      - REALITY|@v2rayNG_Matsuri|🇹🇷|126.38
+      - REALITY|@azadi_az_inja_migzare|🇺🇸|83.12
+      - REALITY|@internet4iran|🇩🇪|93.37
+      - REALITY|@v2rayNG_Matsuri|🇹🇷|144.6
+      - REALITY|@VmessProtocol|🇮🇷|171.48
 rules:
   - MATCH,MANUAL
