@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@azadi_az_inja_migzare|🇺🇸|150.02
+  - name: REALITY|@azadi_az_inja_migzare|🇺🇸|101
     server: 45.152.112.218
     port: 2083
     type: vless
@@ -45,7 +45,7 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|159.7
+  - name: REALITY|@internet4iran|🇩🇪|110.79
     server: 88.99.121.221
     port: 443
     type: vless
@@ -56,24 +56,12 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@ConfigsHUB|🇩🇪|151.89
-    server: 45.63.117.10
-    port: 8080
-    type: vless
-    uuid: e3e5f5fa-862d-4246-8fdf-59ab37d6415c
-    cipher: auto
-    tls: false
-    flow: xtls-rprx-vision
-    skip-cert-verify: true
-    servername: www.coinmarketcap.com
-    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@azadi_az_inja_migzare|🇺🇸|150.02
-      - REALITY|@internet4iran|🇩🇪|159.7
-      - REALITY|@ConfigsHUB|🇩🇪|151.89
+      - REALITY|@azadi_az_inja_migzare|🇺🇸|101
+      - REALITY|@internet4iran|🇩🇪|110.79
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -84,25 +72,22 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@azadi_az_inja_migzare|🇺🇸|150.02
-      - REALITY|@internet4iran|🇩🇪|159.7
-      - REALITY|@ConfigsHUB|🇩🇪|151.89
+      - REALITY|@azadi_az_inja_migzare|🇺🇸|101
+      - REALITY|@internet4iran|🇩🇪|110.79
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@azadi_az_inja_migzare|🇺🇸|150.02
-      - REALITY|@internet4iran|🇩🇪|159.7
-      - REALITY|@ConfigsHUB|🇩🇪|151.89
+      - REALITY|@azadi_az_inja_migzare|🇺🇸|101
+      - REALITY|@internet4iran|🇩🇪|110.79
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@azadi_az_inja_migzare|🇺🇸|150.02
-      - REALITY|@internet4iran|🇩🇪|159.7
-      - REALITY|@ConfigsHUB|🇩🇪|151.89
+      - REALITY|@azadi_az_inja_migzare|🇺🇸|101
+      - REALITY|@internet4iran|🇩🇪|110.79
 rules:
   - MATCH,MANUAL
