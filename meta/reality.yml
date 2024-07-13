@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@azadi_az_inja_migzare|🇺🇸|100.79
+  - name: REALITY|@azadi_az_inja_migzare|🇺🇸|81.07
     server: 45.152.112.218
     port: 2083
     type: vless
@@ -45,7 +45,7 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|110.64
+  - name: REALITY|@internet4iran|🇩🇪|94.18
     server: 88.99.121.221
     port: 443
     type: vless
@@ -56,26 +56,12 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@VmessProtocol|🇮🇷|194.46
-    server: 185.135.47.150
-    port: 2053
-    type: vless
-    uuid: dbaea6f8-e79b-44cc-85b8-7855581947b1
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: discordapp.com
-    network: grpc
-    grpc-opts:
-      grpc-service-name: xyz
-    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@azadi_az_inja_migzare|🇺🇸|100.79
-      - REALITY|@internet4iran|🇩🇪|110.64
-      - REALITY|@VmessProtocol|🇮🇷|194.46
+      - REALITY|@azadi_az_inja_migzare|🇺🇸|81.07
+      - REALITY|@internet4iran|🇩🇪|94.18
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -86,25 +72,22 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@azadi_az_inja_migzare|🇺🇸|100.79
-      - REALITY|@internet4iran|🇩🇪|110.64
-      - REALITY|@VmessProtocol|🇮🇷|194.46
+      - REALITY|@azadi_az_inja_migzare|🇺🇸|81.07
+      - REALITY|@internet4iran|🇩🇪|94.18
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@azadi_az_inja_migzare|🇺🇸|100.79
-      - REALITY|@internet4iran|🇩🇪|110.64
-      - REALITY|@VmessProtocol|🇮🇷|194.46
+      - REALITY|@azadi_az_inja_migzare|🇺🇸|81.07
+      - REALITY|@internet4iran|🇩🇪|94.18
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@azadi_az_inja_migzare|🇺🇸|100.79
-      - REALITY|@internet4iran|🇩🇪|110.64
-      - REALITY|@VmessProtocol|🇮🇷|194.46
+      - REALITY|@azadi_az_inja_migzare|🇺🇸|81.07
+      - REALITY|@internet4iran|🇩🇪|94.18
 rules:
   - MATCH,MANUAL
