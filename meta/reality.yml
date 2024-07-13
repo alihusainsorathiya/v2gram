@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@internet4iran|🇩🇪|159.69
+  - name: REALITY|@internet4iran|🇩🇪|159.77
     server: 88.99.121.221
     port: 443
     type: vless
@@ -43,7 +43,7 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@v2rayNG_Matsuri|🇹🇷|197.05
+  - name: REALITY|@v2rayNG_Matsuri|🇹🇷|196.15
     server: 77.92.145.153
     port: 443
     type: vless
@@ -53,12 +53,26 @@ proxies:
     skip-cert-verify: true
     servername: google.com
     udp: true
+  - name: REALITY|@ConfigsHUB|🇺🇸|150.46
+    server: 45.152.112.218
+    port: 2083
+    type: vless
+    uuid: 163c97c1-8466-4889-aa50-6b79bb439c63
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: www.speedtest.net
+    network: grpc
+    grpc-opts:
+      grpc-service-name: /
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@internet4iran|🇩🇪|159.69
-      - REALITY|@v2rayNG_Matsuri|🇹🇷|197.05
+      - REALITY|@internet4iran|🇩🇪|159.77
+      - REALITY|@v2rayNG_Matsuri|🇹🇷|196.15
+      - REALITY|@ConfigsHUB|🇺🇸|150.46
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -69,22 +83,25 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|159.69
-      - REALITY|@v2rayNG_Matsuri|🇹🇷|197.05
+      - REALITY|@internet4iran|🇩🇪|159.77
+      - REALITY|@v2rayNG_Matsuri|🇹🇷|196.15
+      - REALITY|@ConfigsHUB|🇺🇸|150.46
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@internet4iran|🇩🇪|159.69
-      - REALITY|@v2rayNG_Matsuri|🇹🇷|197.05
+      - REALITY|@internet4iran|🇩🇪|159.77
+      - REALITY|@v2rayNG_Matsuri|🇹🇷|196.15
+      - REALITY|@ConfigsHUB|🇺🇸|150.46
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|159.69
-      - REALITY|@v2rayNG_Matsuri|🇹🇷|197.05
+      - REALITY|@internet4iran|🇩🇪|159.77
+      - REALITY|@v2rayNG_Matsuri|🇹🇷|196.15
+      - REALITY|@ConfigsHUB|🇺🇸|150.46
 rules:
   - MATCH,MANUAL
