@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@internet4iran|🇩🇪|93.38
+  - name: REALITY|@internet4iran|🇩🇪|110.63
     server: 88.99.121.221
     port: 443
     type: vless
@@ -43,22 +43,11 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@VmessProtocol|🇷🇺|121.52
-    server: 31.24.251.160
-    port: 443
-    type: vless
-    uuid: ba96ceff-bf8d-4467-a232-70458896dd87
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: google.com
-    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@internet4iran|🇩🇪|93.38
-      - REALITY|@VmessProtocol|🇷🇺|121.52
+      - REALITY|@internet4iran|🇩🇪|110.63
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -69,22 +58,19 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|93.38
-      - REALITY|@VmessProtocol|🇷🇺|121.52
+      - REALITY|@internet4iran|🇩🇪|110.63
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@internet4iran|🇩🇪|93.38
-      - REALITY|@VmessProtocol|🇷🇺|121.52
+      - REALITY|@internet4iran|🇩🇪|110.63
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|93.38
-      - REALITY|@VmessProtocol|🇷🇺|121.52
+      - REALITY|@internet4iran|🇩🇪|110.63
 rules:
   - MATCH,MANUAL
