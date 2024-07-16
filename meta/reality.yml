@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@internet4iran|🇩🇪|89.97
+  - name: REALITY|@internet4iran|🇩🇪|159.38
     server: 88.99.121.221
     port: 443
     type: vless
@@ -43,7 +43,7 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@vless_vmess|🇬🇧|78.46
+  - name: REALITY|@vless_vmess|🇬🇧|149.2
     server: 45.140.167.94
     port: 2096
     type: vless
@@ -54,12 +54,26 @@ proxies:
     skip-cert-verify: true
     servername: 2606%3A4700%3A4700%3A%3A1111
     udp: true
+  - name: REALITY|@proxy_kafee|🇮🇹|165.3
+    server: 185.247.184.115
+    port: 2096
+    type: vless
+    uuid: 16747acc-95c8-44ba-9b66-3d8a0c035347
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: dash.cloudflare.com
+    network: grpc
+    grpc-opts:
+      grpc-service-name: /
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@internet4iran|🇩🇪|89.97
-      - REALITY|@vless_vmess|🇬🇧|78.46
+      - REALITY|@internet4iran|🇩🇪|159.38
+      - REALITY|@vless_vmess|🇬🇧|149.2
+      - REALITY|@proxy_kafee|🇮🇹|165.3
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -70,22 +84,25 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|89.97
-      - REALITY|@vless_vmess|🇬🇧|78.46
+      - REALITY|@internet4iran|🇩🇪|159.38
+      - REALITY|@vless_vmess|🇬🇧|149.2
+      - REALITY|@proxy_kafee|🇮🇹|165.3
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@internet4iran|🇩🇪|89.97
-      - REALITY|@vless_vmess|🇬🇧|78.46
+      - REALITY|@internet4iran|🇩🇪|159.38
+      - REALITY|@vless_vmess|🇬🇧|149.2
+      - REALITY|@proxy_kafee|🇮🇹|165.3
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|89.97
-      - REALITY|@vless_vmess|🇬🇧|78.46
+      - REALITY|@internet4iran|🇩🇪|159.38
+      - REALITY|@vless_vmess|🇬🇧|149.2
+      - REALITY|@proxy_kafee|🇮🇹|165.3
 rules:
   - MATCH,MANUAL
