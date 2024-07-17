@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@internet4iran|🇩🇪|90.44
+  - name: REALITY|@internet4iran|🇩🇪|159.81
     server: 88.99.121.221
     port: 443
     type: vless
@@ -43,25 +43,25 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@VmessProtocol|🇮🇹|88.97
-    server: 185.247.184.147
-    port: 2060
+  - name: REALITY|@VmessProtocol|🇸🇪|178.71
+    server: 77.221.143.183
+    port: 33000
     type: vless
-    uuid: 4a60a8e0-b51d-41ae-8500-1b0b6724c6e6
+    uuid: d5e775de-0530-4062-a654-25dd2ba648d2
     cipher: auto
     tls: false
     skip-cert-verify: true
-    servername: dash.cloudflare.com
+    servername: www.speedtest.net
     network: grpc
     grpc-opts:
-      grpc-service-name: /
+      grpc-service-name: b
     udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@internet4iran|🇩🇪|90.44
-      - REALITY|@VmessProtocol|🇮🇹|88.97
+      - REALITY|@internet4iran|🇩🇪|159.81
+      - REALITY|@VmessProtocol|🇸🇪|178.71
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -72,22 +72,22 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|90.44
-      - REALITY|@VmessProtocol|🇮🇹|88.97
+      - REALITY|@internet4iran|🇩🇪|159.81
+      - REALITY|@VmessProtocol|🇸🇪|178.71
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@internet4iran|🇩🇪|90.44
-      - REALITY|@VmessProtocol|🇮🇹|88.97
+      - REALITY|@internet4iran|🇩🇪|159.81
+      - REALITY|@VmessProtocol|🇸🇪|178.71
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|90.44
-      - REALITY|@VmessProtocol|🇮🇹|88.97
+      - REALITY|@internet4iran|🇩🇪|159.81
+      - REALITY|@VmessProtocol|🇸🇪|178.71
 rules:
   - MATCH,MANUAL
