@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@PrivateVPNs| AHS -174.6"
+  - name: "|@PrivateVPNs| AHS -78.08"
     server: 3.254.46.183
     port: 22222
     type: trojan
@@ -40,7 +40,7 @@ proxies:
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@PrivateVPNs| AHS -133.25"
+  - name: "|@PrivateVPNs| AHS -74.23"
     server: 54.155.250.236
     port: 22222
     type: trojan
@@ -48,15 +48,7 @@ proxies:
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -78.09"
-    server: 15.222.111.200
-    port: 22222
-    type: trojan
-    password: telegram-id-directvpn
-    skip-cert-verify: true
-    sni: trojan.burgerip.co.uk
-    udp: true
-  - name: "|@DirectVPN| AHS -78.48"
+  - name: "|@DirectVPN| AHS -23.75"
     server: 3.97.144.181
     port: 22222
     type: trojan
@@ -64,7 +56,7 @@ proxies:
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -93.7"
+  - name: "|@DirectVPN| AHS -28.23"
     server: 3.23.148.74
     port: 22222
     type: trojan
@@ -72,7 +64,15 @@ proxies:
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@ovpn2| AHS -1.56"
+  - name: "|@DirectVPN| AHS -40.58"
+    server: 3.141.251.167
+    port: 22222
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@ovpn2| AHS -5.31"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -85,16 +85,25 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
+  - name: "|@yaney_01| AHS -215.24"
+    server: df.xiguajiasu.xyz
+    port: 46002
+    type: trojan
+    password: 4ea1d07c-41c2-42b5-954d-414fee051856
+    skip-cert-verify: true
+    sni: ""
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@PrivateVPNs| AHS -174.6"
-      - "|@PrivateVPNs| AHS -133.25"
-      - "|@DirectVPN| AHS -78.09"
-      - "|@DirectVPN| AHS -78.48"
-      - "|@DirectVPN| AHS -93.7"
-      - "|@ovpn2| AHS -1.56"
+      - "|@PrivateVPNs| AHS -78.08"
+      - "|@PrivateVPNs| AHS -74.23"
+      - "|@DirectVPN| AHS -23.75"
+      - "|@DirectVPN| AHS -28.23"
+      - "|@DirectVPN| AHS -40.58"
+      - "|@ovpn2| AHS -5.31"
+      - "|@yaney_01| AHS -215.24"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -105,34 +114,37 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -174.6"
-      - "|@PrivateVPNs| AHS -133.25"
-      - "|@DirectVPN| AHS -78.09"
-      - "|@DirectVPN| AHS -78.48"
-      - "|@DirectVPN| AHS -93.7"
-      - "|@ovpn2| AHS -1.56"
+      - "|@PrivateVPNs| AHS -78.08"
+      - "|@PrivateVPNs| AHS -74.23"
+      - "|@DirectVPN| AHS -23.75"
+      - "|@DirectVPN| AHS -28.23"
+      - "|@DirectVPN| AHS -40.58"
+      - "|@ovpn2| AHS -5.31"
+      - "|@yaney_01| AHS -215.24"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@PrivateVPNs| AHS -174.6"
-      - "|@PrivateVPNs| AHS -133.25"
-      - "|@DirectVPN| AHS -78.09"
-      - "|@DirectVPN| AHS -78.48"
-      - "|@DirectVPN| AHS -93.7"
-      - "|@ovpn2| AHS -1.56"
+      - "|@PrivateVPNs| AHS -78.08"
+      - "|@PrivateVPNs| AHS -74.23"
+      - "|@DirectVPN| AHS -23.75"
+      - "|@DirectVPN| AHS -28.23"
+      - "|@DirectVPN| AHS -40.58"
+      - "|@ovpn2| AHS -5.31"
+      - "|@yaney_01| AHS -215.24"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -174.6"
-      - "|@PrivateVPNs| AHS -133.25"
-      - "|@DirectVPN| AHS -78.09"
-      - "|@DirectVPN| AHS -78.48"
-      - "|@DirectVPN| AHS -93.7"
-      - "|@ovpn2| AHS -1.56"
+      - "|@PrivateVPNs| AHS -78.08"
+      - "|@PrivateVPNs| AHS -74.23"
+      - "|@DirectVPN| AHS -23.75"
+      - "|@DirectVPN| AHS -28.23"
+      - "|@DirectVPN| AHS -40.58"
+      - "|@ovpn2| AHS -5.31"
+      - "|@yaney_01| AHS -215.24"
 rules:
   - MATCH,MANUAL
