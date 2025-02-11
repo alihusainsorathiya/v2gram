@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@free4allVPN| AHS -🚩|4.58"
+  - name: "@free4allVPN| AHS -🚩|4.12"
     server: 104.17.221.248
     port: 80
     type: vmess
@@ -48,7 +48,39 @@ proxies:
       headers:
         Host: chunchuan.kejixiaoqi666.store
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|3.5"
+  - name: "@vpnfail_v2ray| AHS -🇺🇸|70.88"
+    server: 198.200.48.229
+    port: 37006
+    type: vmess
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 64
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: ""
+    udp: true
+  - name: "@vpnfail_v2ray| AHS -🇺🇸|70.61"
+    server: 38.33.34.38
+    port: 36002
+    type: vmess
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 64
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: ""
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|3.07"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -64,7 +96,7 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@ShadowProxy66| AHS -🇸🇬|208.11"
+  - name: "@ShadowProxy66| AHS -🇸🇬|206.41"
     server: 20.205.176.167
     port: 54550
     type: vmess
@@ -75,7 +107,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@ShadowProxy66| AHS -🇸🇬|225.36"
+  - name: "@ShadowProxy66| AHS -🇸🇬|311.83"
     server: 194.233.72.228
     port: 27575
     type: vmess
@@ -90,10 +122,12 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@free4allVPN| AHS -🚩|4.58"
-      - "@v2rayvmess| AHS -🇺🇸|3.5"
-      - "@ShadowProxy66| AHS -🇸🇬|208.11"
-      - "@ShadowProxy66| AHS -🇸🇬|225.36"
+      - "@free4allVPN| AHS -🚩|4.12"
+      - "@vpnfail_v2ray| AHS -🇺🇸|70.88"
+      - "@vpnfail_v2ray| AHS -🇺🇸|70.61"
+      - "@v2rayvmess| AHS -🇺🇸|3.07"
+      - "@ShadowProxy66| AHS -🇸🇬|206.41"
+      - "@ShadowProxy66| AHS -🇸🇬|311.83"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -104,28 +138,34 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@free4allVPN| AHS -🚩|4.58"
-      - "@v2rayvmess| AHS -🇺🇸|3.5"
-      - "@ShadowProxy66| AHS -🇸🇬|208.11"
-      - "@ShadowProxy66| AHS -🇸🇬|225.36"
+      - "@free4allVPN| AHS -🚩|4.12"
+      - "@vpnfail_v2ray| AHS -🇺🇸|70.88"
+      - "@vpnfail_v2ray| AHS -🇺🇸|70.61"
+      - "@v2rayvmess| AHS -🇺🇸|3.07"
+      - "@ShadowProxy66| AHS -🇸🇬|206.41"
+      - "@ShadowProxy66| AHS -🇸🇬|311.83"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@free4allVPN| AHS -🚩|4.58"
-      - "@v2rayvmess| AHS -🇺🇸|3.5"
-      - "@ShadowProxy66| AHS -🇸🇬|208.11"
-      - "@ShadowProxy66| AHS -🇸🇬|225.36"
+      - "@free4allVPN| AHS -🚩|4.12"
+      - "@vpnfail_v2ray| AHS -🇺🇸|70.88"
+      - "@vpnfail_v2ray| AHS -🇺🇸|70.61"
+      - "@v2rayvmess| AHS -🇺🇸|3.07"
+      - "@ShadowProxy66| AHS -🇸🇬|206.41"
+      - "@ShadowProxy66| AHS -🇸🇬|311.83"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@free4allVPN| AHS -🚩|4.58"
-      - "@v2rayvmess| AHS -🇺🇸|3.5"
-      - "@ShadowProxy66| AHS -🇸🇬|208.11"
-      - "@ShadowProxy66| AHS -🇸🇬|225.36"
+      - "@free4allVPN| AHS -🚩|4.12"
+      - "@vpnfail_v2ray| AHS -🇺🇸|70.88"
+      - "@vpnfail_v2ray| AHS -🇺🇸|70.61"
+      - "@v2rayvmess| AHS -🇺🇸|3.07"
+      - "@ShadowProxy66| AHS -🇸🇬|206.41"
+      - "@ShadowProxy66| AHS -🇸🇬|311.83"
 rules:
   - MATCH,MANUAL
