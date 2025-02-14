@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@free4allVPN| AHS -🚩|2.87"
+  - name: "@free4allVPN| AHS -🚩|2.22"
     server: 104.17.221.248
     port: 80
     type: vmess
@@ -48,7 +48,23 @@ proxies:
       headers:
         Host: chunchuan.kejixiaoqi666.store
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|2.43"
+  - name: "@vpnfail_v2ray| AHS -🇺🇸|8.25"
+    server: vc.fly.dev
+    port: 443
+    type: vmess
+    uuid: 35379219-6535-4f2e-a4fe-3e44f61e0eee
+    alterId: 32
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: vc.fly.dev
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: vc.fly.dev
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|1.78"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -64,7 +80,7 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@ShadowProxy66| AHS -🇸🇬|223.36"
+  - name: "@ShadowProxy66| AHS -🇸🇬|168.05"
     server: 20.205.176.167
     port: 54550
     type: vmess
@@ -75,7 +91,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@ShadowProxy66| AHS -🇲🇽|49.83"
+  - name: "@ShadowProxy66| AHS -🇲🇽|55.69"
     server: 79.127.229.54
     port: 18000
     type: vmess
@@ -86,7 +102,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@ShadowProxy66| AHS -🇮🇩|237.88"
+  - name: "@ShadowProxy66| AHS -🇮🇩|184.23"
     server: 103.67.79.157
     port: 45365
     type: vmess
@@ -97,7 +113,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@hope_net| AHS -🚩|2.86"
+  - name: "@hope_net| AHS -🚩|2.74"
     server: russia.com
     port: 8080
     type: vmess
@@ -117,12 +133,13 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@free4allVPN| AHS -🚩|2.87"
-      - "@v2rayvmess| AHS -🇺🇸|2.43"
-      - "@ShadowProxy66| AHS -🇸🇬|223.36"
-      - "@ShadowProxy66| AHS -🇲🇽|49.83"
-      - "@ShadowProxy66| AHS -🇮🇩|237.88"
-      - "@hope_net| AHS -🚩|2.86"
+      - "@free4allVPN| AHS -🚩|2.22"
+      - "@vpnfail_v2ray| AHS -🇺🇸|8.25"
+      - "@v2rayvmess| AHS -🇺🇸|1.78"
+      - "@ShadowProxy66| AHS -🇸🇬|168.05"
+      - "@ShadowProxy66| AHS -🇲🇽|55.69"
+      - "@ShadowProxy66| AHS -🇮🇩|184.23"
+      - "@hope_net| AHS -🚩|2.74"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -133,34 +150,37 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@free4allVPN| AHS -🚩|2.87"
-      - "@v2rayvmess| AHS -🇺🇸|2.43"
-      - "@ShadowProxy66| AHS -🇸🇬|223.36"
-      - "@ShadowProxy66| AHS -🇲🇽|49.83"
-      - "@ShadowProxy66| AHS -🇮🇩|237.88"
-      - "@hope_net| AHS -🚩|2.86"
+      - "@free4allVPN| AHS -🚩|2.22"
+      - "@vpnfail_v2ray| AHS -🇺🇸|8.25"
+      - "@v2rayvmess| AHS -🇺🇸|1.78"
+      - "@ShadowProxy66| AHS -🇸🇬|168.05"
+      - "@ShadowProxy66| AHS -🇲🇽|55.69"
+      - "@ShadowProxy66| AHS -🇮🇩|184.23"
+      - "@hope_net| AHS -🚩|2.74"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@free4allVPN| AHS -🚩|2.87"
-      - "@v2rayvmess| AHS -🇺🇸|2.43"
-      - "@ShadowProxy66| AHS -🇸🇬|223.36"
-      - "@ShadowProxy66| AHS -🇲🇽|49.83"
-      - "@ShadowProxy66| AHS -🇮🇩|237.88"
-      - "@hope_net| AHS -🚩|2.86"
+      - "@free4allVPN| AHS -🚩|2.22"
+      - "@vpnfail_v2ray| AHS -🇺🇸|8.25"
+      - "@v2rayvmess| AHS -🇺🇸|1.78"
+      - "@ShadowProxy66| AHS -🇸🇬|168.05"
+      - "@ShadowProxy66| AHS -🇲🇽|55.69"
+      - "@ShadowProxy66| AHS -🇮🇩|184.23"
+      - "@hope_net| AHS -🚩|2.74"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@free4allVPN| AHS -🚩|2.87"
-      - "@v2rayvmess| AHS -🇺🇸|2.43"
-      - "@ShadowProxy66| AHS -🇸🇬|223.36"
-      - "@ShadowProxy66| AHS -🇲🇽|49.83"
-      - "@ShadowProxy66| AHS -🇮🇩|237.88"
-      - "@hope_net| AHS -🚩|2.86"
+      - "@free4allVPN| AHS -🚩|2.22"
+      - "@vpnfail_v2ray| AHS -🇺🇸|8.25"
+      - "@v2rayvmess| AHS -🇺🇸|1.78"
+      - "@ShadowProxy66| AHS -🇸🇬|168.05"
+      - "@ShadowProxy66| AHS -🇲🇽|55.69"
+      - "@ShadowProxy66| AHS -🇮🇩|184.23"
+      - "@hope_net| AHS -🚩|2.74"
 rules:
   - MATCH,MANUAL
