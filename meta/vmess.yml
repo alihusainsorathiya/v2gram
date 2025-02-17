@@ -1,0 +1,187 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: "@free4allVPN| AHS -🚩|1.59"
+    server: 104.17.221.248
+    port: 80
+    type: vmess
+    uuid: e6543319-0574-42ac-b778-1c4325d626f5
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: chunchuan.kejixiaoqi666.store
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: chunchuan.kejixiaoqi666.store
+    udp: true
+  - name: "@prrofile_purple| AHS -🚩|1.95"
+    server: WwW.sPEeDtEsT.NeT
+    port: 2096
+    type: vmess
+    uuid: 49c03ce8-ec69-474e-b796-4acb6f611c52
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: api3.waltonweb.ir
+    network: grpc
+    grpc-opts:
+      grpc-service-name: /
+    udp: true
+  - name: "@vpnfail_v2ray| AHS -🇺🇸|70.73"
+    server: 38.174.190.80
+    port: 38007
+    type: vmess
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 64
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /path/102206282005
+      headers:
+        Host: ""
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|1.67"
+    server: id-lb.vhax.net
+    port: 80
+    type: vmess
+    uuid: 6fea1649-425b-4092-bf53-29792152c925
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: zoom.us
+    network: ws
+    ws-opts:
+      path: /sshkit/Arsham85231/6347d08022b91/
+      headers:
+        Host: zoom.us
+    udp: true
+  - name: "@ShadowProxy66| AHS -🇺🇸|2.02"
+    server: 15.204.248.92
+    port: 30562
+    type: vmess
+    uuid: 82466715-6a58-4046-a363-a0d18e5b2ab4
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@ShadowProxy66| AHS -🇺🇦|106.78"
+    server: 104.252.127.152
+    port: 32288
+    type: vmess
+    uuid: 84c77664-1156-473f-a1e3-876623fb840d
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@ShadowProxy66| AHS -🇩🇪|95.93"
+    server: 88.198.172.25
+    port: 15145
+    type: vmess
+    uuid: e7eb472e-dc83-49d5-be5e-82a79a2124ee
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: grpc
+    grpc-opts:
+      grpc-service-name: JbiB8V66V78Hf5bivfsis8vH
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - "@free4allVPN| AHS -🚩|1.59"
+      - "@prrofile_purple| AHS -🚩|1.95"
+      - "@vpnfail_v2ray| AHS -🇺🇸|70.73"
+      - "@v2rayvmess| AHS -🇺🇸|1.67"
+      - "@ShadowProxy66| AHS -🇺🇸|2.02"
+      - "@ShadowProxy66| AHS -🇺🇦|106.78"
+      - "@ShadowProxy66| AHS -🇩🇪|95.93"
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@free4allVPN| AHS -🚩|1.59"
+      - "@prrofile_purple| AHS -🚩|1.95"
+      - "@vpnfail_v2ray| AHS -🇺🇸|70.73"
+      - "@v2rayvmess| AHS -🇺🇸|1.67"
+      - "@ShadowProxy66| AHS -🇺🇸|2.02"
+      - "@ShadowProxy66| AHS -🇺🇦|106.78"
+      - "@ShadowProxy66| AHS -🇩🇪|95.93"
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - "@free4allVPN| AHS -🚩|1.59"
+      - "@prrofile_purple| AHS -🚩|1.95"
+      - "@vpnfail_v2ray| AHS -🇺🇸|70.73"
+      - "@v2rayvmess| AHS -🇺🇸|1.67"
+      - "@ShadowProxy66| AHS -🇺🇸|2.02"
+      - "@ShadowProxy66| AHS -🇺🇦|106.78"
+      - "@ShadowProxy66| AHS -🇩🇪|95.93"
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@free4allVPN| AHS -🚩|1.59"
+      - "@prrofile_purple| AHS -🚩|1.95"
+      - "@vpnfail_v2ray| AHS -🇺🇸|70.73"
+      - "@v2rayvmess| AHS -🇺🇸|1.67"
+      - "@ShadowProxy66| AHS -🇺🇸|2.02"
+      - "@ShadowProxy66| AHS -🇺🇦|106.78"
+      - "@ShadowProxy66| AHS -🇩🇪|95.93"
+rules:
+  - MATCH,MANUAL
