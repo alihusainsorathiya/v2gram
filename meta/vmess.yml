@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@free4allVPN| AHS -🚩|2.42"
+  - name: "@free4allVPN| AHS -🚩|9.53"
     server: 104.17.221.248
     port: 80
     type: vmess
@@ -48,7 +48,7 @@ proxies:
       headers:
         Host: chunchuan.kejixiaoqi666.store
     udp: true
-  - name: "@prrofile_purple| AHS -🇺🇸|296.74"
+  - name: "@prrofile_purple| AHS -🇺🇸|341.95"
     server: biiia-vpn-whal.fast.hosting-ip.com
     port: 80
     type: vmess
@@ -64,7 +64,39 @@ proxies:
       headers:
         Host: cat.IR.
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|2.22"
+  - name: "@vpnfail_v2ray| AHS -🇫🇷|396.13"
+    server: az05.beyondy.cfd
+    port: 443
+    type: vmess
+    uuid: 3f638f34-8dba-4186-bc43-2716a7ddd4be
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: az05.beyondy.cfd
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: az05.beyondy.cfd
+    udp: true
+  - name: "@vpnfail_v2ray| AHS -🇺🇸|8.76"
+    server: vc.fly.dev
+    port: 443
+    type: vmess
+    uuid: 35379219-6535-4f2e-a4fe-3e44f61e0eee
+    alterId: 32
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: vc.fly.dev
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: vc.fly.dev
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|9.23"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -80,30 +112,32 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@hope_net| AHS -🚩|2.47"
-    server: 198.41.209.70
-    port: 2086
+  - name: "@hope_net| AHS -🇺🇸|9.23"
+    server: 23.224.152.62
+    port: 31909
     type: vmess
-    uuid: f518cff0-ee41-3cde-a453-9f3fbccd7ff8
+    uuid: a5e99fc4-5b87-4312-aa8a-52cad1971b92
     alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: true
-    servername: 100-57-35-141.s2.db-link02.top
-    network: ws
-    ws-opts:
-      path: /
-      headers:
-        Host: 100-57-35-141.s2.db-link02.top
+    servername: ""
+    network: http
+    http-opts:
+      method: GET
+      path:
+        - /
     udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@free4allVPN| AHS -🚩|2.42"
-      - "@prrofile_purple| AHS -🇺🇸|296.74"
-      - "@v2rayvmess| AHS -🇺🇸|2.22"
-      - "@hope_net| AHS -🚩|2.47"
+      - "@free4allVPN| AHS -🚩|9.53"
+      - "@prrofile_purple| AHS -🇺🇸|341.95"
+      - "@vpnfail_v2ray| AHS -🇫🇷|396.13"
+      - "@vpnfail_v2ray| AHS -🇺🇸|8.76"
+      - "@v2rayvmess| AHS -🇺🇸|9.23"
+      - "@hope_net| AHS -🇺🇸|9.23"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -114,28 +148,34 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@free4allVPN| AHS -🚩|2.42"
-      - "@prrofile_purple| AHS -🇺🇸|296.74"
-      - "@v2rayvmess| AHS -🇺🇸|2.22"
-      - "@hope_net| AHS -🚩|2.47"
+      - "@free4allVPN| AHS -🚩|9.53"
+      - "@prrofile_purple| AHS -🇺🇸|341.95"
+      - "@vpnfail_v2ray| AHS -🇫🇷|396.13"
+      - "@vpnfail_v2ray| AHS -🇺🇸|8.76"
+      - "@v2rayvmess| AHS -🇺🇸|9.23"
+      - "@hope_net| AHS -🇺🇸|9.23"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@free4allVPN| AHS -🚩|2.42"
-      - "@prrofile_purple| AHS -🇺🇸|296.74"
-      - "@v2rayvmess| AHS -🇺🇸|2.22"
-      - "@hope_net| AHS -🚩|2.47"
+      - "@free4allVPN| AHS -🚩|9.53"
+      - "@prrofile_purple| AHS -🇺🇸|341.95"
+      - "@vpnfail_v2ray| AHS -🇫🇷|396.13"
+      - "@vpnfail_v2ray| AHS -🇺🇸|8.76"
+      - "@v2rayvmess| AHS -🇺🇸|9.23"
+      - "@hope_net| AHS -🇺🇸|9.23"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@free4allVPN| AHS -🚩|2.42"
-      - "@prrofile_purple| AHS -🇺🇸|296.74"
-      - "@v2rayvmess| AHS -🇺🇸|2.22"
-      - "@hope_net| AHS -🚩|2.47"
+      - "@free4allVPN| AHS -🚩|9.53"
+      - "@prrofile_purple| AHS -🇺🇸|341.95"
+      - "@vpnfail_v2ray| AHS -🇫🇷|396.13"
+      - "@vpnfail_v2ray| AHS -🇺🇸|8.76"
+      - "@v2rayvmess| AHS -🇺🇸|9.23"
+      - "@hope_net| AHS -🇺🇸|9.23"
 rules:
   - MATCH,MANUAL
