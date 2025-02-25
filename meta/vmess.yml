@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@free4allVPN| AHS -🚩|2.57"
+  - name: "@free4allVPN| AHS -🚩|6.8"
     server: 104.17.221.248
     port: 80
     type: vmess
@@ -48,7 +48,7 @@ proxies:
       headers:
         Host: chunchuan.kejixiaoqi666.store
     udp: true
-  - name: "@prrofile_purple| AHS -🇺🇸|106.17"
+  - name: "@prrofile_purple| AHS -🇺🇸|unavailable"
     server: 150.241.221.64
     port: 18000
     type: vmess
@@ -59,7 +59,23 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|2.38"
+  - name: "@vpnfail_v2ray| AHS -🇩🇪|90.86"
+    server: 57.129.25.20
+    port: 443
+    type: vmess
+    uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+    alterId: 1
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: 57.129.25.20
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: 57.129.25.20
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|5.93"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -75,7 +91,7 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@v2ray1_ng| AHS -🚩|2.65"
+  - name: "@v2ray1_ng| AHS -🚩|6.43"
     server: 104.31.16.9
     port: 2053
     type: vmess
@@ -91,7 +107,7 @@ proxies:
       headers:
         Host: qurantv.quranir.com
     udp: true
-  - name: "@hope_net| AHS -🇨🇳|240.96"
+  - name: "@hope_net| AHS -🇨🇳|247.14"
     server: 112.132.212.19
     port: 50004
     type: vmess
@@ -102,7 +118,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@hope_net| AHS -🇺🇸|313.21"
+  - name: "@hope_net| AHS -🇺🇸|438.81"
     server: 137.175.39.195
     port: 38002
     type: vmess
@@ -122,12 +138,13 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@free4allVPN| AHS -🚩|2.57"
-      - "@prrofile_purple| AHS -🇺🇸|106.17"
-      - "@v2rayvmess| AHS -🇺🇸|2.38"
-      - "@v2ray1_ng| AHS -🚩|2.65"
-      - "@hope_net| AHS -🇨🇳|240.96"
-      - "@hope_net| AHS -🇺🇸|313.21"
+      - "@free4allVPN| AHS -🚩|6.8"
+      - "@prrofile_purple| AHS -🇺🇸|unavailable"
+      - "@vpnfail_v2ray| AHS -🇩🇪|90.86"
+      - "@v2rayvmess| AHS -🇺🇸|5.93"
+      - "@v2ray1_ng| AHS -🚩|6.43"
+      - "@hope_net| AHS -🇨🇳|247.14"
+      - "@hope_net| AHS -🇺🇸|438.81"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -138,34 +155,37 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@free4allVPN| AHS -🚩|2.57"
-      - "@prrofile_purple| AHS -🇺🇸|106.17"
-      - "@v2rayvmess| AHS -🇺🇸|2.38"
-      - "@v2ray1_ng| AHS -🚩|2.65"
-      - "@hope_net| AHS -🇨🇳|240.96"
-      - "@hope_net| AHS -🇺🇸|313.21"
+      - "@free4allVPN| AHS -🚩|6.8"
+      - "@prrofile_purple| AHS -🇺🇸|unavailable"
+      - "@vpnfail_v2ray| AHS -🇩🇪|90.86"
+      - "@v2rayvmess| AHS -🇺🇸|5.93"
+      - "@v2ray1_ng| AHS -🚩|6.43"
+      - "@hope_net| AHS -🇨🇳|247.14"
+      - "@hope_net| AHS -🇺🇸|438.81"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@free4allVPN| AHS -🚩|2.57"
-      - "@prrofile_purple| AHS -🇺🇸|106.17"
-      - "@v2rayvmess| AHS -🇺🇸|2.38"
-      - "@v2ray1_ng| AHS -🚩|2.65"
-      - "@hope_net| AHS -🇨🇳|240.96"
-      - "@hope_net| AHS -🇺🇸|313.21"
+      - "@free4allVPN| AHS -🚩|6.8"
+      - "@prrofile_purple| AHS -🇺🇸|unavailable"
+      - "@vpnfail_v2ray| AHS -🇩🇪|90.86"
+      - "@v2rayvmess| AHS -🇺🇸|5.93"
+      - "@v2ray1_ng| AHS -🚩|6.43"
+      - "@hope_net| AHS -🇨🇳|247.14"
+      - "@hope_net| AHS -🇺🇸|438.81"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@free4allVPN| AHS -🚩|2.57"
-      - "@prrofile_purple| AHS -🇺🇸|106.17"
-      - "@v2rayvmess| AHS -🇺🇸|2.38"
-      - "@v2ray1_ng| AHS -🚩|2.65"
-      - "@hope_net| AHS -🇨🇳|240.96"
-      - "@hope_net| AHS -🇺🇸|313.21"
+      - "@free4allVPN| AHS -🚩|6.8"
+      - "@prrofile_purple| AHS -🇺🇸|unavailable"
+      - "@vpnfail_v2ray| AHS -🇩🇪|90.86"
+      - "@v2rayvmess| AHS -🇺🇸|5.93"
+      - "@v2ray1_ng| AHS -🚩|6.43"
+      - "@hope_net| AHS -🇨🇳|247.14"
+      - "@hope_net| AHS -🇺🇸|438.81"
 rules:
   - MATCH,MANUAL
