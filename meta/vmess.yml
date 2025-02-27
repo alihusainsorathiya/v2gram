@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@free4allVPN| AHS -🚩|2.01"
+  - name: "@free4allVPN| AHS -🚩|3.05"
     server: 104.17.221.248
     port: 80
     type: vmess
@@ -48,23 +48,18 @@ proxies:
       headers:
         Host: chunchuan.kejixiaoqi666.store
     udp: true
-  - name: "@vpnfail_v2ray| AHS -🇫🇷|107.36"
-    server: 146.19.168.161
-    port: 443
+  - name: "@vpnfail_v2ray| AHS -🇸🇪|166.11"
+    server: 169.150.208.83
+    port: 18000
     type: vmess
-    uuid: 3f638f34-8dba-4186-bc43-2716a7ddd4be
+    uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
     alterId: 0
     cipher: auto
-    tls: true
+    tls: false
     skip-cert-verify: true
-    servername: az05.beyondy.cfd
-    network: ws
-    ws-opts:
-      path: /link
-      headers:
-        Host: az05.beyondy.cfd
+    servername: ""
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|2.13"
+  - name: "@v2rayvmess| AHS -🇺🇸|3.25"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -91,7 +86,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@v2ray1_ng| AHS -🇺🇸|3.04"
+  - name: "@v2ray1_ng| AHS -🇺🇸|2.38"
     server: 91.107.171.73
     port: 80
     type: vmess
@@ -110,27 +105,32 @@ proxies:
         Host:
           - fast.com
     udp: true
-  - name: "@hope_net| AHS -🇺🇿|165.1"
-    server: 92.223.44.168
-    port: 20118
+  - name: "@hope_net| AHS -🚩|2.76"
+    server: 104.31.16.9
+    port: 2053
     type: vmess
-    uuid: e9f666fb-12d9-4f1b-e9e6-3e48e615e714
+    uuid: ad3d0eb7-24a6-403b-9225-feeacb8219b9
     alterId: 0
     cipher: auto
-    tls: false
+    tls: true
     skip-cert-verify: true
-    servername: ""
+    servername: qurantv.quranir.com
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: qurantv.quranir.com
     udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@free4allVPN| AHS -🚩|2.01"
-      - "@vpnfail_v2ray| AHS -🇫🇷|107.36"
-      - "@v2rayvmess| AHS -🇺🇸|2.13"
+      - "@free4allVPN| AHS -🚩|3.05"
+      - "@vpnfail_v2ray| AHS -🇸🇪|166.11"
+      - "@v2rayvmess| AHS -🇺🇸|3.25"
       - "@v2ray1_ng| AHS -🇺🇸|unavailable"
-      - "@v2ray1_ng| AHS -🇺🇸|3.04"
-      - "@hope_net| AHS -🇺🇿|165.1"
+      - "@v2ray1_ng| AHS -🇺🇸|2.38"
+      - "@hope_net| AHS -🚩|2.76"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -141,34 +141,34 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@free4allVPN| AHS -🚩|2.01"
-      - "@vpnfail_v2ray| AHS -🇫🇷|107.36"
-      - "@v2rayvmess| AHS -🇺🇸|2.13"
+      - "@free4allVPN| AHS -🚩|3.05"
+      - "@vpnfail_v2ray| AHS -🇸🇪|166.11"
+      - "@v2rayvmess| AHS -🇺🇸|3.25"
       - "@v2ray1_ng| AHS -🇺🇸|unavailable"
-      - "@v2ray1_ng| AHS -🇺🇸|3.04"
-      - "@hope_net| AHS -🇺🇿|165.1"
+      - "@v2ray1_ng| AHS -🇺🇸|2.38"
+      - "@hope_net| AHS -🚩|2.76"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@free4allVPN| AHS -🚩|2.01"
-      - "@vpnfail_v2ray| AHS -🇫🇷|107.36"
-      - "@v2rayvmess| AHS -🇺🇸|2.13"
+      - "@free4allVPN| AHS -🚩|3.05"
+      - "@vpnfail_v2ray| AHS -🇸🇪|166.11"
+      - "@v2rayvmess| AHS -🇺🇸|3.25"
       - "@v2ray1_ng| AHS -🇺🇸|unavailable"
-      - "@v2ray1_ng| AHS -🇺🇸|3.04"
-      - "@hope_net| AHS -🇺🇿|165.1"
+      - "@v2ray1_ng| AHS -🇺🇸|2.38"
+      - "@hope_net| AHS -🚩|2.76"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@free4allVPN| AHS -🚩|2.01"
-      - "@vpnfail_v2ray| AHS -🇫🇷|107.36"
-      - "@v2rayvmess| AHS -🇺🇸|2.13"
+      - "@free4allVPN| AHS -🚩|3.05"
+      - "@vpnfail_v2ray| AHS -🇸🇪|166.11"
+      - "@v2rayvmess| AHS -🇺🇸|3.25"
       - "@v2ray1_ng| AHS -🇺🇸|unavailable"
-      - "@v2ray1_ng| AHS -🇺🇸|3.04"
-      - "@hope_net| AHS -🇺🇿|165.1"
+      - "@v2ray1_ng| AHS -🇺🇸|2.38"
+      - "@hope_net| AHS -🚩|2.76"
 rules:
   - MATCH,MANUAL
