@@ -1,0 +1,208 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: REALITY|@ProxyFn|🇨🇭|170.6
+    server: 193.168.144.46
+    port: 443
+    type: vless
+    uuid: cdb38f5b-12c3-414b-eacd-a635dc633701
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: mega.io
+    network: grpc
+    grpc-opts:
+      grpc-service-name: /
+    udp: true
+  - name: REALITY|@prrofile_purple|🇩🇪|159.3
+    server: 185.161.251.211
+    port: 1633
+    type: vless
+    uuid: d4008461-be09-43b4-bc77-8a6d55fe84d0
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: stackoverflow.com
+    udp: true
+  - name: REALITY|@WomanLifeFreedomVPN|🇺🇸|40.6
+    server: icloud.wlftest.xyz
+    port: 443
+    type: vless
+    uuid: 85399fea-2ee3-51b5-ad4e-d8b78a2cf1d9
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: www.icloud.com
+    udp: true
+  - name: REALITY|@internet4iran|🇩🇪|161.07
+    server: 128.140.49.220
+    port: 443
+    type: vless
+    uuid: a0660613-bab4-456f-91b7-b8923788ed3d
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: www.speedtest.net
+    udp: true
+  - name: REALITY|@ipV2Ray|🇩🇪|161.47
+    server: s2.vact.ir
+    port: 443
+    type: vless
+    uuid: ba492ba1-a51a-467e-8b41-09d01e023de4
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: www.cdn77.com
+    network: grpc
+    grpc-opts:
+      grpc-service-name: Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray
+    udp: true
+  - name: REALITY|@lrnbymaa|🇩🇪|397.45
+    server: g.soskom.ir
+    port: 26528
+    type: vless
+    uuid: 5a4359fc-6f48-496a-8c59-cadc35e47c3d
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: yahoo.com
+    network: grpc
+    grpc-opts:
+      grpc-service-name: /
+    udp: true
+  - name: REALITY|@proxy_kafee|🇩🇪|631.45
+    server: Wedbaz.Gr.iphone-shopp.ir
+    port: 1001
+    type: vless
+    uuid: b1842291-3535-4d29-9455-303e33da37c3
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: stackoverflow.com
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "%2F%40VpnWedBaZ----------%40VpnWedBaZ-----------%40VpnWedBaZ----%40VpnWedBaZ-------%40VpnWedBaz-----%40VpnWedBaZ----------%40VpnWedBaZ-----------%40VpnWedBaZ----%40VpnWedBaZ-------%40VpnWedBaz-----%40VpnWedBaZ----------%40VpnWedBaZ-----------%40VpnWedBaZ----%40VpnWedBaZ-------%40VpnWedBaz"
+    udp: true
+  - name: REALITY|@free1_vpn|🇩🇪|393.45
+    server: s1.vact.ir
+    port: 443
+    type: vless
+    uuid: 47418bfd-d50e-4a23-bac9-ab2de615ef5b
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: www.cdn77.com
+    network: grpc
+    grpc-opts:
+      grpc-service-name: Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray-Telegram-ipV2Ray
+    udp: true
+  - name: REALITY|@freeiranvpn|🇫🇮|178.44
+    server: 37.27.197.171
+    port: 443
+    type: vless
+    uuid: 86e3084e-feac-4b2f-a09c-32259fefd31d
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: tgju.org
+    network: grpc
+    grpc-opts:
+      grpc-service-name: /
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - REALITY|@ProxyFn|🇨🇭|170.6
+      - REALITY|@prrofile_purple|🇩🇪|159.3
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|40.6
+      - REALITY|@internet4iran|🇩🇪|161.07
+      - REALITY|@ipV2Ray|🇩🇪|161.47
+      - REALITY|@lrnbymaa|🇩🇪|397.45
+      - REALITY|@proxy_kafee|🇩🇪|631.45
+      - REALITY|@free1_vpn|🇩🇪|393.45
+      - REALITY|@freeiranvpn|🇫🇮|178.44
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - REALITY|@ProxyFn|🇨🇭|170.6
+      - REALITY|@prrofile_purple|🇩🇪|159.3
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|40.6
+      - REALITY|@internet4iran|🇩🇪|161.07
+      - REALITY|@ipV2Ray|🇩🇪|161.47
+      - REALITY|@lrnbymaa|🇩🇪|397.45
+      - REALITY|@proxy_kafee|🇩🇪|631.45
+      - REALITY|@free1_vpn|🇩🇪|393.45
+      - REALITY|@freeiranvpn|🇫🇮|178.44
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - REALITY|@ProxyFn|🇨🇭|170.6
+      - REALITY|@prrofile_purple|🇩🇪|159.3
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|40.6
+      - REALITY|@internet4iran|🇩🇪|161.07
+      - REALITY|@ipV2Ray|🇩🇪|161.47
+      - REALITY|@lrnbymaa|🇩🇪|397.45
+      - REALITY|@proxy_kafee|🇩🇪|631.45
+      - REALITY|@free1_vpn|🇩🇪|393.45
+      - REALITY|@freeiranvpn|🇫🇮|178.44
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - REALITY|@ProxyFn|🇨🇭|170.6
+      - REALITY|@prrofile_purple|🇩🇪|159.3
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|40.6
+      - REALITY|@internet4iran|🇩🇪|161.07
+      - REALITY|@ipV2Ray|🇩🇪|161.47
+      - REALITY|@lrnbymaa|🇩🇪|397.45
+      - REALITY|@proxy_kafee|🇩🇪|631.45
+      - REALITY|@free1_vpn|🇩🇪|393.45
+      - REALITY|@freeiranvpn|🇫🇮|178.44
+rules:
+  - MATCH,MANUAL
