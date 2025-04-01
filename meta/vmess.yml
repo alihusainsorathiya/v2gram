@@ -1,0 +1,201 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: "@free4allVPN| AHS -🚩|6.21"
+    server: 104.17.221.248
+    port: 80
+    type: vmess
+    uuid: e6543319-0574-42ac-b778-1c4325d626f5
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: chunchuan.kejixiaoqi666.store
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: chunchuan.kejixiaoqi666.store
+    udp: true
+  - name: "@free4allVPN| AHS -🚩|6.52"
+    server: 104.18.149.76
+    port: 443
+    type: vmess
+    uuid: de94cc0a-0592-4969-b1fc-97ea8f0ea0b3
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: us.kkp.me.eu.org
+    network: ws
+    ws-opts:
+      path: /aa
+      headers:
+        Host: us.kkp.me.eu.org
+    udp: true
+  - name: "@free4allVPN| AHS -🇸🇬|249.57"
+    server: 62.146.232.153
+    port: 53144
+    type: vmess
+    uuid: 13e13a3e-e981-4eea-a9fc-13e50628fd9b
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@prrofile_purple| AHS -🇩🇪|87.81"
+    server: 23.158.56.184
+    port: 22324
+    type: vmess
+    uuid: 04621bae-ab36-11ec-b909-0242ac120002
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@vpnfail_v2ray| AHS -🇫🇷|87.44"
+    server: 51.77.20.131
+    port: 22324
+    type: vmess
+    uuid: 04621bae-ab36-11ec-b909-0242ac120002
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|6.12"
+    server: id-lb.vhax.net
+    port: 80
+    type: vmess
+    uuid: 6fea1649-425b-4092-bf53-29792152c925
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: zoom.us
+    network: ws
+    ws-opts:
+      path: /sshkit/Arsham85231/6347d08022b91/
+      headers:
+        Host: zoom.us
+    udp: true
+  - name: "@v2ray1_ng| AHS -🇨🇭|101.86"
+    server: 186.190.215.93
+    port: 22324
+    type: vmess
+    uuid: 04621bae-ab36-11ec-b909-0242ac120002
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@hope_net| AHS -🇸🇬|278.92"
+    server: 217.142.187.146
+    port: 23452
+    type: vmess
+    uuid: 786eeff8-126a-4d90-827d-da5d9410f0d4
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: westsg2-ddns.oraclenat.cc
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: westsg2-ddns.oraclenat.cc
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - "@free4allVPN| AHS -🚩|6.21"
+      - "@free4allVPN| AHS -🚩|6.52"
+      - "@free4allVPN| AHS -🇸🇬|249.57"
+      - "@prrofile_purple| AHS -🇩🇪|87.81"
+      - "@vpnfail_v2ray| AHS -🇫🇷|87.44"
+      - "@v2rayvmess| AHS -🇺🇸|6.12"
+      - "@v2ray1_ng| AHS -🇨🇭|101.86"
+      - "@hope_net| AHS -🇸🇬|278.92"
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@free4allVPN| AHS -🚩|6.21"
+      - "@free4allVPN| AHS -🚩|6.52"
+      - "@free4allVPN| AHS -🇸🇬|249.57"
+      - "@prrofile_purple| AHS -🇩🇪|87.81"
+      - "@vpnfail_v2ray| AHS -🇫🇷|87.44"
+      - "@v2rayvmess| AHS -🇺🇸|6.12"
+      - "@v2ray1_ng| AHS -🇨🇭|101.86"
+      - "@hope_net| AHS -🇸🇬|278.92"
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - "@free4allVPN| AHS -🚩|6.21"
+      - "@free4allVPN| AHS -🚩|6.52"
+      - "@free4allVPN| AHS -🇸🇬|249.57"
+      - "@prrofile_purple| AHS -🇩🇪|87.81"
+      - "@vpnfail_v2ray| AHS -🇫🇷|87.44"
+      - "@v2rayvmess| AHS -🇺🇸|6.12"
+      - "@v2ray1_ng| AHS -🇨🇭|101.86"
+      - "@hope_net| AHS -🇸🇬|278.92"
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@free4allVPN| AHS -🚩|6.21"
+      - "@free4allVPN| AHS -🚩|6.52"
+      - "@free4allVPN| AHS -🇸🇬|249.57"
+      - "@prrofile_purple| AHS -🇩🇪|87.81"
+      - "@vpnfail_v2ray| AHS -🇫🇷|87.44"
+      - "@v2rayvmess| AHS -🇺🇸|6.12"
+      - "@v2ray1_ng| AHS -🇨🇭|101.86"
+      - "@hope_net| AHS -🇸🇬|278.92"
+rules:
+  - MATCH,MANUAL
