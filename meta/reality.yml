@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@ProxyFn|🇨🇭|111.21
+  - name: REALITY|@ProxyFn|🇨🇭|90.25
     server: 193.168.144.46
     port: 443
     type: vless
@@ -45,7 +45,7 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@prrofile_purple|🇨🇭|116.27
+  - name: REALITY|@prrofile_purple|🇨🇭|98.74
     server: 37.156.46.65
     port: 6718
     type: vless
@@ -56,7 +56,7 @@ proxies:
     skip-cert-verify: true
     servername: stackoverflow.com
     udp: true
-  - name: REALITY|@WomanLifeFreedomVPN|🇺🇸|64.18
+  - name: REALITY|@WomanLifeFreedomVPN|🇺🇸|unavailable
     server: icloud.wlftest.xyz
     port: 443
     type: vless
@@ -67,7 +67,7 @@ proxies:
     skip-cert-verify: true
     servername: www.icloud.com
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|114.75
+  - name: REALITY|@internet4iran|🇩🇪|98.4
     server: 128.140.49.220
     port: 443
     type: vless
@@ -78,7 +78,20 @@ proxies:
     skip-cert-verify: true
     servername: www.speedtest.net
     udp: true
-  - name: REALITY|@freeiranvpn|🇫🇮|132.9
+  - name: REALITY|@hope_net|🇩🇪|93.2
+    server: 209.38.184.211
+    port: 13867
+    type: vless
+    uuid: a24be91e-81d7-4e91-9a32-d258daf1afa9
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: www.speedtest.net
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "%40VPNAZADLAND"
+    udp: true
+  - name: REALITY|@freeiranvpn|🇫🇮|117.91
     server: 37.27.197.171
     port: 443
     type: vless
@@ -95,11 +108,12 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|111.21
-      - REALITY|@prrofile_purple|🇨🇭|116.27
-      - REALITY|@WomanLifeFreedomVPN|🇺🇸|64.18
-      - REALITY|@internet4iran|🇩🇪|114.75
-      - REALITY|@freeiranvpn|🇫🇮|132.9
+      - REALITY|@ProxyFn|🇨🇭|90.25
+      - REALITY|@prrofile_purple|🇨🇭|98.74
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|unavailable
+      - REALITY|@internet4iran|🇩🇪|98.4
+      - REALITY|@hope_net|🇩🇪|93.2
+      - REALITY|@freeiranvpn|🇫🇮|117.91
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -110,31 +124,34 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|111.21
-      - REALITY|@prrofile_purple|🇨🇭|116.27
-      - REALITY|@WomanLifeFreedomVPN|🇺🇸|64.18
-      - REALITY|@internet4iran|🇩🇪|114.75
-      - REALITY|@freeiranvpn|🇫🇮|132.9
+      - REALITY|@ProxyFn|🇨🇭|90.25
+      - REALITY|@prrofile_purple|🇨🇭|98.74
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|unavailable
+      - REALITY|@internet4iran|🇩🇪|98.4
+      - REALITY|@hope_net|🇩🇪|93.2
+      - REALITY|@freeiranvpn|🇫🇮|117.91
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|111.21
-      - REALITY|@prrofile_purple|🇨🇭|116.27
-      - REALITY|@WomanLifeFreedomVPN|🇺🇸|64.18
-      - REALITY|@internet4iran|🇩🇪|114.75
-      - REALITY|@freeiranvpn|🇫🇮|132.9
+      - REALITY|@ProxyFn|🇨🇭|90.25
+      - REALITY|@prrofile_purple|🇨🇭|98.74
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|unavailable
+      - REALITY|@internet4iran|🇩🇪|98.4
+      - REALITY|@hope_net|🇩🇪|93.2
+      - REALITY|@freeiranvpn|🇫🇮|117.91
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|111.21
-      - REALITY|@prrofile_purple|🇨🇭|116.27
-      - REALITY|@WomanLifeFreedomVPN|🇺🇸|64.18
-      - REALITY|@internet4iran|🇩🇪|114.75
-      - REALITY|@freeiranvpn|🇫🇮|132.9
+      - REALITY|@ProxyFn|🇨🇭|90.25
+      - REALITY|@prrofile_purple|🇨🇭|98.74
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|unavailable
+      - REALITY|@internet4iran|🇩🇪|98.4
+      - REALITY|@hope_net|🇩🇪|93.2
+      - REALITY|@freeiranvpn|🇫🇮|117.91
 rules:
   - MATCH,MANUAL
