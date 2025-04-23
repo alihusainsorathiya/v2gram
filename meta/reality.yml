@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@ProxyFn|🇨🇭|156.57
+  - name: REALITY|@ProxyFn|🇨🇭|90.53
     server: 193.168.144.46
     port: 443
     type: vless
@@ -45,18 +45,7 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@prrofile_purple|🇮🇷|317.05
-    server: local.connectix-d1.info
-    port: 44444
-    type: vless
-    uuid: de2d7b84-bd3c-4966-8a8b-a059bcc810bd
-    cipher: auto
-    tls: false
-    flow: xtls-rprx-vision
-    skip-cert-verify: true
-    servername: www.speedtest.net
-    udp: true
-  - name: REALITY|@WomanLifeFreedomVPN|🇺🇸|40.52
+  - name: REALITY|@WomanLifeFreedomVPN|🇺🇸|22.37
     server: icloud.wlftest.xyz
     port: 443
     type: vless
@@ -67,7 +56,7 @@ proxies:
     skip-cert-verify: true
     servername: www.icloud.com
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|162.35
+  - name: REALITY|@internet4iran|🇩🇪|92.52
     server: 128.140.49.220
     port: 443
     type: vless
@@ -78,7 +67,20 @@ proxies:
     skip-cert-verify: true
     servername: www.speedtest.net
     udp: true
-  - name: REALITY|@free1_vpn|🇩🇪|154.21
+  - name: REALITY|@vpn_tehran|🇩🇪|unavailable
+    server: 212.95.40.109
+    port: 7594
+    type: vless
+    uuid: 2a219df1-a04b-4424-bfd2-cb37aeb10b2c
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: dash.cloudflare.com
+    network: grpc
+    grpc-opts:
+      grpc-service-name: 7594vless
+    udp: true
+  - name: REALITY|@free1_vpn|🇩🇪|unavailable
     server: 91.107.219.8
     port: 443
     type: vless
@@ -89,7 +91,7 @@ proxies:
     skip-cert-verify: true
     servername: direct.pdownloaddigikala.ir
     udp: true
-  - name: REALITY|@freeiranvpn|🇫🇮|170.9
+  - name: REALITY|@freeiranvpn|🇫🇮|115.13
     server: 37.27.197.171
     port: 443
     type: vless
@@ -106,12 +108,12 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|156.57
-      - REALITY|@prrofile_purple|🇮🇷|317.05
-      - REALITY|@WomanLifeFreedomVPN|🇺🇸|40.52
-      - REALITY|@internet4iran|🇩🇪|162.35
-      - REALITY|@free1_vpn|🇩🇪|154.21
-      - REALITY|@freeiranvpn|🇫🇮|170.9
+      - REALITY|@ProxyFn|🇨🇭|90.53
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|22.37
+      - REALITY|@internet4iran|🇩🇪|92.52
+      - REALITY|@vpn_tehran|🇩🇪|unavailable
+      - REALITY|@free1_vpn|🇩🇪|unavailable
+      - REALITY|@freeiranvpn|🇫🇮|115.13
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -122,34 +124,34 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|156.57
-      - REALITY|@prrofile_purple|🇮🇷|317.05
-      - REALITY|@WomanLifeFreedomVPN|🇺🇸|40.52
-      - REALITY|@internet4iran|🇩🇪|162.35
-      - REALITY|@free1_vpn|🇩🇪|154.21
-      - REALITY|@freeiranvpn|🇫🇮|170.9
+      - REALITY|@ProxyFn|🇨🇭|90.53
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|22.37
+      - REALITY|@internet4iran|🇩🇪|92.52
+      - REALITY|@vpn_tehran|🇩🇪|unavailable
+      - REALITY|@free1_vpn|🇩🇪|unavailable
+      - REALITY|@freeiranvpn|🇫🇮|115.13
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|156.57
-      - REALITY|@prrofile_purple|🇮🇷|317.05
-      - REALITY|@WomanLifeFreedomVPN|🇺🇸|40.52
-      - REALITY|@internet4iran|🇩🇪|162.35
-      - REALITY|@free1_vpn|🇩🇪|154.21
-      - REALITY|@freeiranvpn|🇫🇮|170.9
+      - REALITY|@ProxyFn|🇨🇭|90.53
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|22.37
+      - REALITY|@internet4iran|🇩🇪|92.52
+      - REALITY|@vpn_tehran|🇩🇪|unavailable
+      - REALITY|@free1_vpn|🇩🇪|unavailable
+      - REALITY|@freeiranvpn|🇫🇮|115.13
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|156.57
-      - REALITY|@prrofile_purple|🇮🇷|317.05
-      - REALITY|@WomanLifeFreedomVPN|🇺🇸|40.52
-      - REALITY|@internet4iran|🇩🇪|162.35
-      - REALITY|@free1_vpn|🇩🇪|154.21
-      - REALITY|@freeiranvpn|🇫🇮|170.9
+      - REALITY|@ProxyFn|🇨🇭|90.53
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|22.37
+      - REALITY|@internet4iran|🇩🇪|92.52
+      - REALITY|@vpn_tehran|🇩🇪|unavailable
+      - REALITY|@free1_vpn|🇩🇪|unavailable
+      - REALITY|@freeiranvpn|🇫🇮|115.13
 rules:
   - MATCH,MANUAL
