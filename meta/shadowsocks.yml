@@ -1,0 +1,116 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: "@VmessProtocol| AHS -🇫🇷|82.66"
+    server: 45.158.171.60
+    port: 8080
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: "@VmessProtocol| AHS -🇱🇹|81.98"
+    server: 45.87.175.65
+    port: 8080
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: "@AlienVPN402| AHS -🇫🇷|89.04"
+    server: 162.19.83.12
+    port: 443
+    type: ss
+    cipher: aes-256-cfb
+    password: asdKkaskJKfnsa
+    udp: true
+  - name: "@fnet00| AHS -🇳🇱|82.64"
+    server: 89.23.103.21
+    port: 51584
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: oYQ8JwEldYn4KT2gfZ6eNl
+    udp: true
+  - name: "@fnet00| AHS -🇲🇩|82.72"
+    server: 86.104.74.243
+    port: 14255
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: fDDmH4QefmWqMJ8UURZrGh
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - "@VmessProtocol| AHS -🇫🇷|82.66"
+      - "@VmessProtocol| AHS -🇱🇹|81.98"
+      - "@AlienVPN402| AHS -🇫🇷|89.04"
+      - "@fnet00| AHS -🇳🇱|82.64"
+      - "@fnet00| AHS -🇲🇩|82.72"
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@VmessProtocol| AHS -🇫🇷|82.66"
+      - "@VmessProtocol| AHS -🇱🇹|81.98"
+      - "@AlienVPN402| AHS -🇫🇷|89.04"
+      - "@fnet00| AHS -🇳🇱|82.64"
+      - "@fnet00| AHS -🇲🇩|82.72"
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - "@VmessProtocol| AHS -🇫🇷|82.66"
+      - "@VmessProtocol| AHS -🇱🇹|81.98"
+      - "@AlienVPN402| AHS -🇫🇷|89.04"
+      - "@fnet00| AHS -🇳🇱|82.64"
+      - "@fnet00| AHS -🇲🇩|82.72"
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@VmessProtocol| AHS -🇫🇷|82.66"
+      - "@VmessProtocol| AHS -🇱🇹|81.98"
+      - "@AlienVPN402| AHS -🇫🇷|89.04"
+      - "@fnet00| AHS -🇳🇱|82.64"
+      - "@fnet00| AHS -🇲🇩|82.72"
+rules:
+  - MATCH,MANUAL
