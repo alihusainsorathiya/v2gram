@@ -1,0 +1,191 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: "|@PrivateVPNs| AHS -91.8"
+    server: 3.127.213.136
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@PrivateVPNs| AHS -85.6"
+    server: 15.237.241.92
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -90.46"
+    server: 3.127.213.136
+    port: 22222
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -85.91"
+    server: 15.237.241.92
+    port: 22222
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@VmessProtocol| AHS -95.99"
+    server: 141.227.128.69
+    port: 1935
+    type: trojan
+    password: utF6JLQd2x
+    skip-cert-verify: true
+    sni: x1es-ovh.devefun.net
+    udp: true
+  - name: "|@ovpn2| AHS -1.81"
+    server: 162.159.138.232
+    port: 443
+    type: trojan
+    password: dQDQCtns4R
+    skip-cert-verify: true
+    sni: fadaei.movieland.top
+    network: ws
+    ws-opts:
+      path: static34528
+      headers:
+        Host: fadaei.movieland.top
+    udp: true
+  - name: "|@vpn_tehran| AHS -2.14"
+    server: 104.21.112.1
+    port: 443
+    type: trojan
+    password: psycho
+    skip-cert-verify: true
+    sni: pSYcho.sUeX12.IR
+    network: ws
+    ws-opts:
+      path: /trv9KENu5FqbFAtPFq?ed=2560
+      headers:
+        Host: psycho.suex12.ir
+    udp: true
+  - name: "|@yaney_01| AHS -386.23"
+    server: df.xiguajiasu.xyz
+    port: 46002
+    type: trojan
+    password: 4ea1d07c-41c2-42b5-954d-414fee051856
+    skip-cert-verify: true
+    sni: ""
+    udp: true
+  - name: "|@v2rayngrit| AHS -147.18"
+    server: 57.129.89.172
+    port: 1935
+    type: trojan
+    password: pqlnPNu423
+    skip-cert-verify: true
+    sni: x1-germany-ovh-v2.devefun.net
+    udp: true
+  - name: "|@v2rayngrit| AHS -134.25"
+    server: 57.128.165.173
+    port: 1935
+    type: trojan
+    password: klZqKyxq0H
+    skip-cert-verify: true
+    sni: x1-england-ovh-v2.devefun.net
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - "|@PrivateVPNs| AHS -91.8"
+      - "|@PrivateVPNs| AHS -85.6"
+      - "|@DirectVPN| AHS -90.46"
+      - "|@DirectVPN| AHS -85.91"
+      - "|@VmessProtocol| AHS -95.99"
+      - "|@ovpn2| AHS -1.81"
+      - "|@vpn_tehran| AHS -2.14"
+      - "|@yaney_01| AHS -386.23"
+      - "|@v2rayngrit| AHS -147.18"
+      - "|@v2rayngrit| AHS -134.25"
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "|@PrivateVPNs| AHS -91.8"
+      - "|@PrivateVPNs| AHS -85.6"
+      - "|@DirectVPN| AHS -90.46"
+      - "|@DirectVPN| AHS -85.91"
+      - "|@VmessProtocol| AHS -95.99"
+      - "|@ovpn2| AHS -1.81"
+      - "|@vpn_tehran| AHS -2.14"
+      - "|@yaney_01| AHS -386.23"
+      - "|@v2rayngrit| AHS -147.18"
+      - "|@v2rayngrit| AHS -134.25"
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - "|@PrivateVPNs| AHS -91.8"
+      - "|@PrivateVPNs| AHS -85.6"
+      - "|@DirectVPN| AHS -90.46"
+      - "|@DirectVPN| AHS -85.91"
+      - "|@VmessProtocol| AHS -95.99"
+      - "|@ovpn2| AHS -1.81"
+      - "|@vpn_tehran| AHS -2.14"
+      - "|@yaney_01| AHS -386.23"
+      - "|@v2rayngrit| AHS -147.18"
+      - "|@v2rayngrit| AHS -134.25"
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "|@PrivateVPNs| AHS -91.8"
+      - "|@PrivateVPNs| AHS -85.6"
+      - "|@DirectVPN| AHS -90.46"
+      - "|@DirectVPN| AHS -85.91"
+      - "|@VmessProtocol| AHS -95.99"
+      - "|@ovpn2| AHS -1.81"
+      - "|@vpn_tehran| AHS -2.14"
+      - "|@yaney_01| AHS -386.23"
+      - "|@v2rayngrit| AHS -147.18"
+      - "|@v2rayngrit| AHS -134.25"
+rules:
+  - MATCH,MANUAL
