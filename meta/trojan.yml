@@ -1,0 +1,222 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: "|@PrivateVPNs| AHS -108.26"
+    server: 3.76.154.155
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@PrivateVPNs| AHS -135.6"
+    server: 13.37.64.182
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@PrivateVPNs| AHS -84.65"
+    server: 15.236.121.158
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -135.75"
+    server: 3.76.154.155
+    port: 22223
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -132.44"
+    server: 13.37.64.182
+    port: 22223
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -85.08"
+    server: 15.236.121.158
+    port: 22223
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@ovpn2| AHS -5.56"
+    server: 162.159.138.232
+    port: 443
+    type: trojan
+    password: dQDQCtns4R
+    skip-cert-verify: true
+    sni: fadaei.movieland.top
+    network: ws
+    ws-opts:
+      path: static34528
+      headers:
+        Host: fadaei.movieland.top
+    udp: true
+  - name: "|@yaney_01| AHS -402.95"
+    server: df.xiguajiasu.xyz
+    port: 46002
+    type: trojan
+    password: 4ea1d07c-41c2-42b5-954d-414fee051856
+    skip-cert-verify: true
+    sni: ""
+    udp: true
+  - name: "|@hope_net| AHS -5.73"
+    server: 104.21.112.1
+    port: 443
+    type: trojan
+    password: ad4a124c-12fb-4467-9ad0-dc6d9b509ac0
+    skip-cert-verify: true
+    sni: 7bhui.191262.xyz
+    udp: true
+  - name: "|@hope_net| AHS -6.49"
+    server: tasnim.andishehnegariran.ir
+    port: 2053
+    type: trojan
+    password: s1G6gpTJG20X
+    skip-cert-verify: true
+    sni: tasnim.andishehnegariran.ir
+    udp: true
+  - name: "|@hope_net| AHS -5.68"
+    server: 167.68.4.10
+    port: 2096
+    type: trojan
+    password: Aimer
+    skip-cert-verify: true
+    sni: epccj.ambercc.filegear-sg.me
+    udp: true
+  - name: "|@v2rayngrit| AHS -93.93"
+    server: 57.129.89.172
+    port: 1935
+    type: trojan
+    password: pqlnPNu423
+    skip-cert-verify: true
+    sni: x1-germany-ovh-v2.devefun.net
+    udp: true
+  - name: "|@v2rayngrit| AHS -78.66"
+    server: 57.128.165.173
+    port: 1935
+    type: trojan
+    password: klZqKyxq0H
+    skip-cert-verify: true
+    sni: x1-england-ovh-v2.devefun.net
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - "|@PrivateVPNs| AHS -108.26"
+      - "|@PrivateVPNs| AHS -135.6"
+      - "|@PrivateVPNs| AHS -84.65"
+      - "|@DirectVPN| AHS -135.75"
+      - "|@DirectVPN| AHS -132.44"
+      - "|@DirectVPN| AHS -85.08"
+      - "|@ovpn2| AHS -5.56"
+      - "|@yaney_01| AHS -402.95"
+      - "|@hope_net| AHS -5.73"
+      - "|@hope_net| AHS -6.49"
+      - "|@hope_net| AHS -5.68"
+      - "|@v2rayngrit| AHS -93.93"
+      - "|@v2rayngrit| AHS -78.66"
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "|@PrivateVPNs| AHS -108.26"
+      - "|@PrivateVPNs| AHS -135.6"
+      - "|@PrivateVPNs| AHS -84.65"
+      - "|@DirectVPN| AHS -135.75"
+      - "|@DirectVPN| AHS -132.44"
+      - "|@DirectVPN| AHS -85.08"
+      - "|@ovpn2| AHS -5.56"
+      - "|@yaney_01| AHS -402.95"
+      - "|@hope_net| AHS -5.73"
+      - "|@hope_net| AHS -6.49"
+      - "|@hope_net| AHS -5.68"
+      - "|@v2rayngrit| AHS -93.93"
+      - "|@v2rayngrit| AHS -78.66"
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - "|@PrivateVPNs| AHS -108.26"
+      - "|@PrivateVPNs| AHS -135.6"
+      - "|@PrivateVPNs| AHS -84.65"
+      - "|@DirectVPN| AHS -135.75"
+      - "|@DirectVPN| AHS -132.44"
+      - "|@DirectVPN| AHS -85.08"
+      - "|@ovpn2| AHS -5.56"
+      - "|@yaney_01| AHS -402.95"
+      - "|@hope_net| AHS -5.73"
+      - "|@hope_net| AHS -6.49"
+      - "|@hope_net| AHS -5.68"
+      - "|@v2rayngrit| AHS -93.93"
+      - "|@v2rayngrit| AHS -78.66"
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "|@PrivateVPNs| AHS -108.26"
+      - "|@PrivateVPNs| AHS -135.6"
+      - "|@PrivateVPNs| AHS -84.65"
+      - "|@DirectVPN| AHS -135.75"
+      - "|@DirectVPN| AHS -132.44"
+      - "|@DirectVPN| AHS -85.08"
+      - "|@ovpn2| AHS -5.56"
+      - "|@yaney_01| AHS -402.95"
+      - "|@hope_net| AHS -5.73"
+      - "|@hope_net| AHS -6.49"
+      - "|@hope_net| AHS -5.68"
+      - "|@v2rayngrit| AHS -93.93"
+      - "|@v2rayngrit| AHS -78.66"
+rules:
+  - MATCH,MANUAL
