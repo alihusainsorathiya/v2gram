@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@ProxyFn|🇨🇭|128.13
+  - name: REALITY|@ProxyFn|🇨🇭|112.59
     server: 193.168.144.46
     port: 443
     type: vless
@@ -45,7 +45,7 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@WomanLifeFreedomVPN|🇺🇸|105.43
+  - name: REALITY|@WomanLifeFreedomVPN|🇺🇸|64.04
     server: icloud.wlftest.xyz
     port: 443
     type: vless
@@ -56,7 +56,7 @@ proxies:
     skip-cert-verify: true
     servername: www.icloud.com
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|126.41
+  - name: REALITY|@internet4iran|🇩🇪|114.15
     server: 128.140.49.220
     port: 443
     type: vless
@@ -67,7 +67,7 @@ proxies:
     skip-cert-verify: true
     servername: www.speedtest.net
     udp: true
-  - name: REALITY|@proxystore11|🇮🇷|385.76
+  - name: REALITY|@proxystore11|🇮🇷|371.69
     server: local.connectix-d1.info
     port: 44444
     type: vless
@@ -78,14 +78,25 @@ proxies:
     skip-cert-verify: true
     servername: www.speedtest.net
     udp: true
+  - name: REALITY|@hope_net|🇩🇪|109.88
+    server: 134.122.92.59
+    port: 443
+    type: vless
+    uuid: e6753c44-94c0-4c55-9ead-1d80ad26f9d7
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: www.cdn77.com
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|128.13
-      - REALITY|@WomanLifeFreedomVPN|🇺🇸|105.43
-      - REALITY|@internet4iran|🇩🇪|126.41
-      - REALITY|@proxystore11|🇮🇷|385.76
+      - REALITY|@ProxyFn|🇨🇭|112.59
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|64.04
+      - REALITY|@internet4iran|🇩🇪|114.15
+      - REALITY|@proxystore11|🇮🇷|371.69
+      - REALITY|@hope_net|🇩🇪|109.88
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -96,28 +107,31 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|128.13
-      - REALITY|@WomanLifeFreedomVPN|🇺🇸|105.43
-      - REALITY|@internet4iran|🇩🇪|126.41
-      - REALITY|@proxystore11|🇮🇷|385.76
+      - REALITY|@ProxyFn|🇨🇭|112.59
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|64.04
+      - REALITY|@internet4iran|🇩🇪|114.15
+      - REALITY|@proxystore11|🇮🇷|371.69
+      - REALITY|@hope_net|🇩🇪|109.88
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|128.13
-      - REALITY|@WomanLifeFreedomVPN|🇺🇸|105.43
-      - REALITY|@internet4iran|🇩🇪|126.41
-      - REALITY|@proxystore11|🇮🇷|385.76
+      - REALITY|@ProxyFn|🇨🇭|112.59
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|64.04
+      - REALITY|@internet4iran|🇩🇪|114.15
+      - REALITY|@proxystore11|🇮🇷|371.69
+      - REALITY|@hope_net|🇩🇪|109.88
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|128.13
-      - REALITY|@WomanLifeFreedomVPN|🇺🇸|105.43
-      - REALITY|@internet4iran|🇩🇪|126.41
-      - REALITY|@proxystore11|🇮🇷|385.76
+      - REALITY|@ProxyFn|🇨🇭|112.59
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|64.04
+      - REALITY|@internet4iran|🇩🇪|114.15
+      - REALITY|@proxystore11|🇮🇷|371.69
+      - REALITY|@hope_net|🇩🇪|109.88
 rules:
   - MATCH,MANUAL
