@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@v2ray1_ng| AHS -83.2"
+  - name: "|@v2ray1_ng| AHS -103.96"
     server: 94.131.20.3
     port: 443
     type: trojan
@@ -40,7 +40,7 @@ proxies:
     skip-cert-verify: true
     sni: chop-wrist-bud.stark-industries.solutions
     udp: true
-  - name: "|@ovpn2| AHS -1.69"
+  - name: "|@ovpn2| AHS -2.32"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -53,7 +53,7 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
-  - name: "|@yaney_01| AHS -429.59"
+  - name: "|@yaney_01| AHS -148.66"
     server: df.xiguajiasu.xyz
     port: 46002
     type: trojan
@@ -61,28 +61,44 @@ proxies:
     skip-cert-verify: true
     sni: ""
     udp: true
-  - name: "|@hope_net| AHS -2.24"
-    server: 104.16.83.176
+  - name: "|@hope_net| AHS -2.43"
+    server: 104.17.180.185
     port: 443
     type: trojan
-    password: Ng35283528
+    password: uV8u9Q41e2
     skip-cert-verify: true
-    sni: c2.validbv3528.eu.org
-    udp: true
-  - name: "|@hope_net| AHS -1.69"
-    server: 104.20.19.168
-    port: 2087
-    type: trojan
-    password: vip
-    skip-cert-verify: true
-    sni: heihu880.pages.dev
+    sni: DieGo.DIEgoMAraDOnA.iR.
     network: ws
     ws-opts:
-      path: ""
+      path: /
       headers:
-        Host: heihu880.pages.dev
+        Host: DieGo.DIEgoMAraDOnA.iR.
     udp: true
-  - name: "|@v2rayngrit| AHS -160.49"
+  - name: "|@hope_net| AHS -107.97"
+    server: 95.179.246.122
+    port: 443
+    type: trojan
+    password: mainssh-niwrhf87
+    skip-cert-verify: true
+    sni: getgrpc.mainssh.xyz
+    network: grpc
+    grpc-opts:
+      grpc-service-name: /
+    udp: true
+  - name: "|@hope_net| AHS -3.09"
+    server: 172.67.163.123
+    port: 443
+    type: trojan
+    password: tb5PqFczGQ
+    skip-cert-verify: true
+    sni: DieGo.DIEgoMAraDOnA.iR.
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: DieGo.DIEgoMAraDOnA.iR.
+    udp: true
+  - name: "|@v2rayngrit| AHS -169.22"
     server: 57.129.89.172
     port: 1935
     type: trojan
@@ -94,12 +110,13 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@v2ray1_ng| AHS -83.2"
-      - "|@ovpn2| AHS -1.69"
-      - "|@yaney_01| AHS -429.59"
-      - "|@hope_net| AHS -2.24"
-      - "|@hope_net| AHS -1.69"
-      - "|@v2rayngrit| AHS -160.49"
+      - "|@v2ray1_ng| AHS -103.96"
+      - "|@ovpn2| AHS -2.32"
+      - "|@yaney_01| AHS -148.66"
+      - "|@hope_net| AHS -2.43"
+      - "|@hope_net| AHS -107.97"
+      - "|@hope_net| AHS -3.09"
+      - "|@v2rayngrit| AHS -169.22"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -110,34 +127,37 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@v2ray1_ng| AHS -83.2"
-      - "|@ovpn2| AHS -1.69"
-      - "|@yaney_01| AHS -429.59"
-      - "|@hope_net| AHS -2.24"
-      - "|@hope_net| AHS -1.69"
-      - "|@v2rayngrit| AHS -160.49"
+      - "|@v2ray1_ng| AHS -103.96"
+      - "|@ovpn2| AHS -2.32"
+      - "|@yaney_01| AHS -148.66"
+      - "|@hope_net| AHS -2.43"
+      - "|@hope_net| AHS -107.97"
+      - "|@hope_net| AHS -3.09"
+      - "|@v2rayngrit| AHS -169.22"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@v2ray1_ng| AHS -83.2"
-      - "|@ovpn2| AHS -1.69"
-      - "|@yaney_01| AHS -429.59"
-      - "|@hope_net| AHS -2.24"
-      - "|@hope_net| AHS -1.69"
-      - "|@v2rayngrit| AHS -160.49"
+      - "|@v2ray1_ng| AHS -103.96"
+      - "|@ovpn2| AHS -2.32"
+      - "|@yaney_01| AHS -148.66"
+      - "|@hope_net| AHS -2.43"
+      - "|@hope_net| AHS -107.97"
+      - "|@hope_net| AHS -3.09"
+      - "|@v2rayngrit| AHS -169.22"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@v2ray1_ng| AHS -83.2"
-      - "|@ovpn2| AHS -1.69"
-      - "|@yaney_01| AHS -429.59"
-      - "|@hope_net| AHS -2.24"
-      - "|@hope_net| AHS -1.69"
-      - "|@v2rayngrit| AHS -160.49"
+      - "|@v2ray1_ng| AHS -103.96"
+      - "|@ovpn2| AHS -2.32"
+      - "|@yaney_01| AHS -148.66"
+      - "|@hope_net| AHS -2.43"
+      - "|@hope_net| AHS -107.97"
+      - "|@hope_net| AHS -3.09"
+      - "|@v2rayngrit| AHS -169.22"
 rules:
   - MATCH,MANUAL
