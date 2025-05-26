@@ -1,0 +1,165 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: "|@v2ray1_ng| AHS -130.35"
+    server: 94.131.20.3
+    port: 443
+    type: trojan
+    password: 3482c71a-d01c-4ae5-b454-fa8cb3785f66
+    skip-cert-verify: true
+    sni: chop-wrist-bud.stark-industries.solutions
+    udp: true
+  - name: "|@ovpn2| AHS -8.87"
+    server: 162.159.138.232
+    port: 443
+    type: trojan
+    password: dQDQCtns4R
+    skip-cert-verify: true
+    sni: fadaei.movieland.top
+    network: ws
+    ws-opts:
+      path: static34528
+      headers:
+        Host: fadaei.movieland.top
+    udp: true
+  - name: "|@yaney_01| AHS -110.38"
+    server: df.xiguajiasu.xyz
+    port: 46002
+    type: trojan
+    password: 4ea1d07c-41c2-42b5-954d-414fee051856
+    skip-cert-verify: true
+    sni: ""
+    udp: true
+  - name: "|@hope_net| AHS -8.7"
+    server: 172.67.144.126
+    port: 443
+    type: trojan
+    password: 895552fa-6284-4c1d-ba00-3944e0c7c626
+    skip-cert-verify: true
+    sni: CFR56ty7890.288288.sHOP
+    network: ws
+    ws-opts:
+      path: /By7cEmOrNRS58yeduy9AOG
+      headers:
+        Host: cfr56ty7890.288288.shop
+    udp: true
+  - name: "|@hope_net| AHS -8.74"
+    server: 104.18.42.98
+    port: 443
+    type: trojan
+    password: 6884d714-d3c4-4b49-aa20-767ea92837d6
+    skip-cert-verify: true
+    sni: icecream.955850.xyz
+    network: ws
+    ws-opts:
+      path: /proxyip=45.67.215.153:443
+      headers:
+        Host: icecream.955850.xyz
+    udp: true
+  - name: "|@hope_net| AHS -8.85"
+    server: 27.50.49.209
+    port: 2087
+    type: trojan
+    password: Aimer
+    skip-cert-verify: true
+    sni: epcca.ambercc.filegear-sg.me
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: epcca.ambercc.filegear-sg.me
+    udp: true
+  - name: "|@v2rayngrit| AHS -195.84"
+    server: 57.129.89.172
+    port: 1935
+    type: trojan
+    password: pqlnPNu423
+    skip-cert-verify: true
+    sni: x1-germany-ovh-v2.devefun.net
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - "|@v2ray1_ng| AHS -130.35"
+      - "|@ovpn2| AHS -8.87"
+      - "|@yaney_01| AHS -110.38"
+      - "|@hope_net| AHS -8.7"
+      - "|@hope_net| AHS -8.74"
+      - "|@hope_net| AHS -8.85"
+      - "|@v2rayngrit| AHS -195.84"
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "|@v2ray1_ng| AHS -130.35"
+      - "|@ovpn2| AHS -8.87"
+      - "|@yaney_01| AHS -110.38"
+      - "|@hope_net| AHS -8.7"
+      - "|@hope_net| AHS -8.74"
+      - "|@hope_net| AHS -8.85"
+      - "|@v2rayngrit| AHS -195.84"
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - "|@v2ray1_ng| AHS -130.35"
+      - "|@ovpn2| AHS -8.87"
+      - "|@yaney_01| AHS -110.38"
+      - "|@hope_net| AHS -8.7"
+      - "|@hope_net| AHS -8.74"
+      - "|@hope_net| AHS -8.85"
+      - "|@v2rayngrit| AHS -195.84"
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "|@v2ray1_ng| AHS -130.35"
+      - "|@ovpn2| AHS -8.87"
+      - "|@yaney_01| AHS -110.38"
+      - "|@hope_net| AHS -8.7"
+      - "|@hope_net| AHS -8.74"
+      - "|@hope_net| AHS -8.85"
+      - "|@v2rayngrit| AHS -195.84"
+rules:
+  - MATCH,MANUAL
