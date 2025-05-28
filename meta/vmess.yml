@@ -1,0 +1,231 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: "@vpnfail_v2ray| AHS -🇫🇷|109.89"
+    server: 104.21.48.160
+    port: 443
+    type: vmess
+    uuid: e537f2f5-2a0c-4f59-92c9-832ca6433bf3
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: irvideo.cfd
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: irvideo.cfd
+    udp: true
+  - name: "@vpnfail_v2ray| AHS -🇫🇷|118.35"
+    server: irvideo.cfd
+    port: 443
+    type: vmess
+    uuid: e537f2f5-2a0c-4f59-92c9-832ca6433bf3
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: irvideo.cfd
+    network: ws
+    ws-opts:
+      path: /linkws
+      headers:
+        Host: irvideo.cfd
+    udp: true
+  - name: "@vpnfail_v2ray| AHS -🇩🇪|94.71"
+    server: 57.129.28.65
+    port: 443
+    type: vmess
+    uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: kapelleng.com
+    network: ws
+    ws-opts:
+      path: /linkvws
+      headers:
+        Host: kapelleng.com
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|2.81"
+    server: id-lb.vhax.net
+    port: 80
+    type: vmess
+    uuid: 6fea1649-425b-4092-bf53-29792152c925
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: zoom.us
+    network: ws
+    ws-opts:
+      path: /sshkit/Arsham85231/6347d08022b91/
+      headers:
+        Host: zoom.us
+    udp: true
+  - name: "@ShadowProxy66| AHS -🇫🇮|4712.53"
+    server: 104.19.150.10
+    port: 80
+    type: vmess
+    uuid: d70f5f8e-7694-4dff-95ef-cc1472e315dc
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: google.whatsapp.snapp.torob.basalam.sarzamiiinahang.ir.
+    network: ws
+    ws-opts:
+      path: /d3d3LmlyYW5ob3N0LmNvbQ==?ed=2560
+      headers:
+        Host: google.whatsapp.snapp.torob.basalam.sarzamiiinahang.ir.
+    udp: true
+  - name: "@ShadowProxy66| AHS -🇺🇸|18.93"
+    server: 172.232.11.243
+    port: 47781
+    type: vmess
+    uuid: 0041dada-22bc-4c80-f655-d32c9faecbc8
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@vpn_tehran| AHS -🇨🇾|91.86"
+    server: 45.12.138.82
+    port: 54757
+    type: vmess
+    uuid: cde9f074-c930-4aa3-a558-46bbc9d0a5a1
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@free1_vpn| AHS -🇫🇷|94.85"
+    server: 5.196.29.123
+    port: 2082
+    type: vmess
+    uuid: 112ac36f-3f53-4e26-8371-d25c028e1b9a
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: ""
+    udp: true
+  - name: "@v2rayngrit| AHS -🇺🇸|113.8"
+    server: 57.129.64.238
+    port: 443
+    type: vmess
+    uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: kapelleng.com
+    network: ws
+    ws-opts:
+      path: /linkvws
+      headers:
+        Host: kapelleng.com
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - "@vpnfail_v2ray| AHS -🇫🇷|109.89"
+      - "@vpnfail_v2ray| AHS -🇫🇷|118.35"
+      - "@vpnfail_v2ray| AHS -🇩🇪|94.71"
+      - "@v2rayvmess| AHS -🇺🇸|2.81"
+      - "@ShadowProxy66| AHS -🇫🇮|4712.53"
+      - "@ShadowProxy66| AHS -🇺🇸|18.93"
+      - "@vpn_tehran| AHS -🇨🇾|91.86"
+      - "@free1_vpn| AHS -🇫🇷|94.85"
+      - "@v2rayngrit| AHS -🇺🇸|113.8"
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@vpnfail_v2ray| AHS -🇫🇷|109.89"
+      - "@vpnfail_v2ray| AHS -🇫🇷|118.35"
+      - "@vpnfail_v2ray| AHS -🇩🇪|94.71"
+      - "@v2rayvmess| AHS -🇺🇸|2.81"
+      - "@ShadowProxy66| AHS -🇫🇮|4712.53"
+      - "@ShadowProxy66| AHS -🇺🇸|18.93"
+      - "@vpn_tehran| AHS -🇨🇾|91.86"
+      - "@free1_vpn| AHS -🇫🇷|94.85"
+      - "@v2rayngrit| AHS -🇺🇸|113.8"
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - "@vpnfail_v2ray| AHS -🇫🇷|109.89"
+      - "@vpnfail_v2ray| AHS -🇫🇷|118.35"
+      - "@vpnfail_v2ray| AHS -🇩🇪|94.71"
+      - "@v2rayvmess| AHS -🇺🇸|2.81"
+      - "@ShadowProxy66| AHS -🇫🇮|4712.53"
+      - "@ShadowProxy66| AHS -🇺🇸|18.93"
+      - "@vpn_tehran| AHS -🇨🇾|91.86"
+      - "@free1_vpn| AHS -🇫🇷|94.85"
+      - "@v2rayngrit| AHS -🇺🇸|113.8"
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@vpnfail_v2ray| AHS -🇫🇷|109.89"
+      - "@vpnfail_v2ray| AHS -🇫🇷|118.35"
+      - "@vpnfail_v2ray| AHS -🇩🇪|94.71"
+      - "@v2rayvmess| AHS -🇺🇸|2.81"
+      - "@ShadowProxy66| AHS -🇫🇮|4712.53"
+      - "@ShadowProxy66| AHS -🇺🇸|18.93"
+      - "@vpn_tehran| AHS -🇨🇾|91.86"
+      - "@free1_vpn| AHS -🇫🇷|94.85"
+      - "@v2rayngrit| AHS -🇺🇸|113.8"
+rules:
+  - MATCH,MANUAL
