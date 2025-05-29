@@ -1,0 +1,138 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: "@free4allVPN| AHS -🇯🇵|132.01"
+    server: 149.22.87.240
+    port: 443
+    type: ss
+    cipher: aes-128-gcm
+    password: shadowsocks7
+    udp: true
+  - name: "@free4allVPN| AHS -🇺🇸|14.22"
+    server: 156.146.38.170
+    port: 443
+    type: ss
+    cipher: aes-128-gcm
+    password: shadowsocks7
+    udp: true
+  - name: "@VmessProtocol| AHS -🇱🇹|114.14"
+    server: 45.87.175.35
+    port: 8080
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
+    udp: true
+  - name: "@VmessProtocol| AHS -🇫🇷|111.92"
+    server: 45.158.171.146
+    port: 8080
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: 1RWwXhwfAB5gAEozU4G2Pg
+    udp: true
+  - name: "@v2rayngrit| AHS -🇹🇷|214.55"
+    server: 185.39.204.12
+    port: 16297
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: G0o2hE4eLuR2wwyFao0lsJ
+    udp: true
+  - name: "@v2rayngrit| AHS -🇳🇱|118.25"
+    server: 103.106.1.92
+    port: 23492
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: yMX9WGPgUEcRZmlaa0YHHC
+    udp: true
+  - name: "@v2rayngrit| AHS -🇬🇧|108.31"
+    server: 85.210.120.237
+    port: 443
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: Bog0ELmMM9DSxDdQ
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - "@free4allVPN| AHS -🇯🇵|132.01"
+      - "@free4allVPN| AHS -🇺🇸|14.22"
+      - "@VmessProtocol| AHS -🇱🇹|114.14"
+      - "@VmessProtocol| AHS -🇫🇷|111.92"
+      - "@v2rayngrit| AHS -🇹🇷|214.55"
+      - "@v2rayngrit| AHS -🇳🇱|118.25"
+      - "@v2rayngrit| AHS -🇬🇧|108.31"
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@free4allVPN| AHS -🇯🇵|132.01"
+      - "@free4allVPN| AHS -🇺🇸|14.22"
+      - "@VmessProtocol| AHS -🇱🇹|114.14"
+      - "@VmessProtocol| AHS -🇫🇷|111.92"
+      - "@v2rayngrit| AHS -🇹🇷|214.55"
+      - "@v2rayngrit| AHS -🇳🇱|118.25"
+      - "@v2rayngrit| AHS -🇬🇧|108.31"
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - "@free4allVPN| AHS -🇯🇵|132.01"
+      - "@free4allVPN| AHS -🇺🇸|14.22"
+      - "@VmessProtocol| AHS -🇱🇹|114.14"
+      - "@VmessProtocol| AHS -🇫🇷|111.92"
+      - "@v2rayngrit| AHS -🇹🇷|214.55"
+      - "@v2rayngrit| AHS -🇳🇱|118.25"
+      - "@v2rayngrit| AHS -🇬🇧|108.31"
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@free4allVPN| AHS -🇯🇵|132.01"
+      - "@free4allVPN| AHS -🇺🇸|14.22"
+      - "@VmessProtocol| AHS -🇱🇹|114.14"
+      - "@VmessProtocol| AHS -🇫🇷|111.92"
+      - "@v2rayngrit| AHS -🇹🇷|214.55"
+      - "@v2rayngrit| AHS -🇳🇱|118.25"
+      - "@v2rayngrit| AHS -🇬🇧|108.31"
+rules:
+  - MATCH,MANUAL
