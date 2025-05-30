@@ -1,0 +1,161 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: "@vpnfail_v2ray| AHS -🇺🇸|26.94"
+    server: 134.195.198.147
+    port: 443
+    type: vmess
+    uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: inna.cfd
+    network: ws
+    ws-opts:
+      path: /linkvws
+      headers:
+        Host: inna.cfd
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|3.13"
+    server: id-lb.vhax.net
+    port: 80
+    type: vmess
+    uuid: 6fea1649-425b-4092-bf53-29792152c925
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: zoom.us
+    network: ws
+    ws-opts:
+      path: /sshkit/Arsham85231/6347d08022b91/
+      headers:
+        Host: zoom.us
+    udp: true
+  - name: "@v2ray1_ng| AHS -🇫🇮|382.44"
+    server: 104.19.150.10
+    port: 80
+    type: vmess
+    uuid: d70f5f8e-7694-4dff-95ef-cc1472e315dc
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: google.whatsapp.snapp.torob.basalam.sarzamiiinahang.ir.
+    network: ws
+    ws-opts:
+      path: /d3d3LmlyYW5ob3N0LmNvbQ==?ed=2560
+      headers:
+        Host: google.whatsapp.snapp.torob.basalam.sarzamiiinahang.ir.
+    udp: true
+  - name: "@v2rayngrit| AHS -🇫🇷|118.98"
+    server: 5.196.29.123
+    port: 2082
+    type: vmess
+    uuid: 112ac36f-3f53-4e26-8371-d25c028e1b9a
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: ""
+    udp: true
+  - name: "@v2rayngrit| AHS -🇺🇸|187.81"
+    server: 57.129.64.238
+    port: 443
+    type: vmess
+    uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: kapelleng.com
+    network: ws
+    ws-opts:
+      path: /linkvws
+      headers:
+        Host: kapelleng.com
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - "@vpnfail_v2ray| AHS -🇺🇸|26.94"
+      - "@v2rayvmess| AHS -🇺🇸|3.13"
+      - "@v2ray1_ng| AHS -🇫🇮|382.44"
+      - "@v2rayngrit| AHS -🇫🇷|118.98"
+      - "@v2rayngrit| AHS -🇺🇸|187.81"
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@vpnfail_v2ray| AHS -🇺🇸|26.94"
+      - "@v2rayvmess| AHS -🇺🇸|3.13"
+      - "@v2ray1_ng| AHS -🇫🇮|382.44"
+      - "@v2rayngrit| AHS -🇫🇷|118.98"
+      - "@v2rayngrit| AHS -🇺🇸|187.81"
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - "@vpnfail_v2ray| AHS -🇺🇸|26.94"
+      - "@v2rayvmess| AHS -🇺🇸|3.13"
+      - "@v2ray1_ng| AHS -🇫🇮|382.44"
+      - "@v2rayngrit| AHS -🇫🇷|118.98"
+      - "@v2rayngrit| AHS -🇺🇸|187.81"
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@vpnfail_v2ray| AHS -🇺🇸|26.94"
+      - "@v2rayvmess| AHS -🇺🇸|3.13"
+      - "@v2ray1_ng| AHS -🇫🇮|382.44"
+      - "@v2rayngrit| AHS -🇫🇷|118.98"
+      - "@v2rayngrit| AHS -🇺🇸|187.81"
+rules:
+  - MATCH,MANUAL
