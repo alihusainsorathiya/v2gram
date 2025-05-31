@@ -32,18 +32,55 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@vpnfail_v2ray| AHS -🇨🇭|137.73"
-    server: 186.190.215.193
-    port: 22324
+  - name: "@vpnfail_v2ray| AHS -🇺🇸|21.47"
+    server: 134.195.198.147
+    port: 443
     type: vmess
-    uuid: 04621bae-ab36-11ec-b909-0242ac120002
+    uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
     alterId: 0
     cipher: auto
-    tls: false
+    tls: true
     skip-cert-verify: true
-    servername: ""
+    servername: inna.cfd
+    network: ws
+    ws-opts:
+      path: /linkvws
+      headers:
+        Host: inna.cfd
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|14.6"
+  - name: "@vpnfail_v2ray| AHS -🇫🇷|177.04"
+    server: irvideo.cfd
+    port: 443
+    type: vmess
+    uuid: e537f2f5-2a0c-4f59-92c9-832ca6433bf3
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: irvideo.cfd
+    network: ws
+    ws-opts:
+      path: /linkws
+      headers:
+        Host: irvideo.cfd
+    udp: true
+  - name: "@vpnfail_v2ray| AHS -🇫🇷|517.5"
+    server: 132.145.232.171
+    port: 443
+    type: vmess
+    uuid: 9b456c2a-f2c1-45e1-87a9-b7628b04bb24
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: beyonddsz.cfd
+    network: ws
+    ws-opts:
+      path: /linkws
+      headers:
+        Host: beyonddsz.cfd
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|2.85"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -59,7 +96,18 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@free1_vpn| AHS -🇫🇮|406.02"
+  - name: "@v2ray1_ng| AHS -🇨🇾|118.38"
+    server: 45.12.138.82
+    port: 54757
+    type: vmess
+    uuid: cde9f074-c930-4aa3-a558-46bbc9d0a5a1
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@free1_vpn| AHS -🇫🇮|242.62"
     server: 104.19.150.10
     port: 80
     type: vmess
@@ -75,37 +123,16 @@ proxies:
       headers:
         Host: google.whatsapp.snapp.torob.basalam.sarzamiiinahang.ir.
     udp: true
-  - name: "@free1_vpn| AHS -🇨🇾|unavailable"
-    server: 45.12.138.82
-    port: 54757
-    type: vmess
-    uuid: cde9f074-c930-4aa3-a558-46bbc9d0a5a1
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: ""
-    udp: true
-  - name: "@v2rayngrit| AHS -🇨🇦|39.05"
-    server: 51.79.86.182
-    port: 42610
-    type: vmess
-    uuid: e0957ca6-f613-4017-ff3c-effd1da8871a
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: ""
-    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@vpnfail_v2ray| AHS -🇨🇭|137.73"
-      - "@v2rayvmess| AHS -🇺🇸|14.6"
-      - "@free1_vpn| AHS -🇫🇮|406.02"
-      - "@free1_vpn| AHS -🇨🇾|unavailable"
-      - "@v2rayngrit| AHS -🇨🇦|39.05"
+      - "@vpnfail_v2ray| AHS -🇺🇸|21.47"
+      - "@vpnfail_v2ray| AHS -🇫🇷|177.04"
+      - "@vpnfail_v2ray| AHS -🇫🇷|517.5"
+      - "@v2rayvmess| AHS -🇺🇸|2.85"
+      - "@v2ray1_ng| AHS -🇨🇾|118.38"
+      - "@free1_vpn| AHS -🇫🇮|242.62"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -116,31 +143,34 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@vpnfail_v2ray| AHS -🇨🇭|137.73"
-      - "@v2rayvmess| AHS -🇺🇸|14.6"
-      - "@free1_vpn| AHS -🇫🇮|406.02"
-      - "@free1_vpn| AHS -🇨🇾|unavailable"
-      - "@v2rayngrit| AHS -🇨🇦|39.05"
+      - "@vpnfail_v2ray| AHS -🇺🇸|21.47"
+      - "@vpnfail_v2ray| AHS -🇫🇷|177.04"
+      - "@vpnfail_v2ray| AHS -🇫🇷|517.5"
+      - "@v2rayvmess| AHS -🇺🇸|2.85"
+      - "@v2ray1_ng| AHS -🇨🇾|118.38"
+      - "@free1_vpn| AHS -🇫🇮|242.62"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@vpnfail_v2ray| AHS -🇨🇭|137.73"
-      - "@v2rayvmess| AHS -🇺🇸|14.6"
-      - "@free1_vpn| AHS -🇫🇮|406.02"
-      - "@free1_vpn| AHS -🇨🇾|unavailable"
-      - "@v2rayngrit| AHS -🇨🇦|39.05"
+      - "@vpnfail_v2ray| AHS -🇺🇸|21.47"
+      - "@vpnfail_v2ray| AHS -🇫🇷|177.04"
+      - "@vpnfail_v2ray| AHS -🇫🇷|517.5"
+      - "@v2rayvmess| AHS -🇺🇸|2.85"
+      - "@v2ray1_ng| AHS -🇨🇾|118.38"
+      - "@free1_vpn| AHS -🇫🇮|242.62"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@vpnfail_v2ray| AHS -🇨🇭|137.73"
-      - "@v2rayvmess| AHS -🇺🇸|14.6"
-      - "@free1_vpn| AHS -🇫🇮|406.02"
-      - "@free1_vpn| AHS -🇨🇾|unavailable"
-      - "@v2rayngrit| AHS -🇨🇦|39.05"
+      - "@vpnfail_v2ray| AHS -🇺🇸|21.47"
+      - "@vpnfail_v2ray| AHS -🇫🇷|177.04"
+      - "@vpnfail_v2ray| AHS -🇫🇷|517.5"
+      - "@v2rayvmess| AHS -🇺🇸|2.85"
+      - "@v2ray1_ng| AHS -🇨🇾|118.38"
+      - "@free1_vpn| AHS -🇫🇮|242.62"
 rules:
   - MATCH,MANUAL
