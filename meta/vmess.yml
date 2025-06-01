@@ -32,18 +32,39 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@vpnfail_v2ray| AHS -🇫🇷|171.74"
-    server: 135.125.182.74
-    port: 28213
+  - name: "@vpnfail_v2ray| AHS -🇫🇷|unavailable"
+    server: 172.67.170.103
+    port: 443
     type: vmess
-    uuid: 81852771-76fb-4e94-e4f1-4e37a698a49a
+    uuid: 76221bfb-e92f-4e80-81c5-6fe48f50ac0b
     alterId: 0
     cipher: auto
-    tls: false
+    tls: true
     skip-cert-verify: true
-    servername: ""
+    servername: glweidf.sbs
+    network: ws
+    ws-opts:
+      path: /linkws
+      headers:
+        Host: glweidf.sbs
     udp: true
-  - name: "@vpn_ioss| AHS -🇨🇾|157.54"
+  - name: "@vpnfail_v2ray| AHS -🇫🇷|152.62"
+    server: kapelleng.com
+    port: 443
+    type: vmess
+    uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: kapelleng.com
+    network: ws
+    ws-opts:
+      path: /linkvws
+      headers:
+        Host: kapelleng.com
+    udp: true
+  - name: "@vpn_ioss| AHS -🇨🇾|87.69"
     server: 45.12.138.82
     port: 54757
     type: vmess
@@ -54,7 +75,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@vpn_ioss| AHS -🇫🇮|176.58"
+  - name: "@vpn_ioss| AHS -🇫🇮|113.19"
     server: 157.180.113.6
     port: 29301
     type: vmess
@@ -65,7 +86,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@vpn_ioss| AHS -🇫🇮|179.89"
+  - name: "@vpn_ioss| AHS -🇫🇮|113.56"
     server: 157.180.124.81
     port: 29301
     type: vmess
@@ -76,7 +97,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|2.38"
+  - name: "@v2rayvmess| AHS -🇺🇸|2.07"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -92,7 +113,18 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@ShadowProxy66| AHS -🇬🇧|164.54"
+  - name: "@ShadowProxy66| AHS -🇫🇷|89.73"
+    server: 135.125.182.74
+    port: 28213
+    type: vmess
+    uuid: 81852771-76fb-4e94-e4f1-4e37a698a49a
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@ShadowProxy66| AHS -🇬🇧|88.21"
     server: 37.221.125.159
     port: 33940
     type: vmess
@@ -103,7 +135,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@v2rayngrit| AHS -🇨🇦|76.6"
+  - name: "@v2rayngrit| AHS -🇨🇦|18.02"
     server: 51.79.86.182
     port: 42610
     type: vmess
@@ -114,29 +146,19 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@v2rayngrit| AHS -🇬🇧|142.04"
-    server: 51.38.64.209
-    port: 44023
-    type: vmess
-    uuid: 7da457da-ed0f-437d-c81d-6c35885bbea3
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: ""
-    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@vpnfail_v2ray| AHS -🇫🇷|171.74"
-      - "@vpn_ioss| AHS -🇨🇾|157.54"
-      - "@vpn_ioss| AHS -🇫🇮|176.58"
-      - "@vpn_ioss| AHS -🇫🇮|179.89"
-      - "@v2rayvmess| AHS -🇺🇸|2.38"
-      - "@ShadowProxy66| AHS -🇬🇧|164.54"
-      - "@v2rayngrit| AHS -🇨🇦|76.6"
-      - "@v2rayngrit| AHS -🇬🇧|142.04"
+      - "@vpnfail_v2ray| AHS -🇫🇷|unavailable"
+      - "@vpnfail_v2ray| AHS -🇫🇷|152.62"
+      - "@vpn_ioss| AHS -🇨🇾|87.69"
+      - "@vpn_ioss| AHS -🇫🇮|113.19"
+      - "@vpn_ioss| AHS -🇫🇮|113.56"
+      - "@v2rayvmess| AHS -🇺🇸|2.07"
+      - "@ShadowProxy66| AHS -🇫🇷|89.73"
+      - "@ShadowProxy66| AHS -🇬🇧|88.21"
+      - "@v2rayngrit| AHS -🇨🇦|18.02"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -147,40 +169,43 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@vpnfail_v2ray| AHS -🇫🇷|171.74"
-      - "@vpn_ioss| AHS -🇨🇾|157.54"
-      - "@vpn_ioss| AHS -🇫🇮|176.58"
-      - "@vpn_ioss| AHS -🇫🇮|179.89"
-      - "@v2rayvmess| AHS -🇺🇸|2.38"
-      - "@ShadowProxy66| AHS -🇬🇧|164.54"
-      - "@v2rayngrit| AHS -🇨🇦|76.6"
-      - "@v2rayngrit| AHS -🇬🇧|142.04"
+      - "@vpnfail_v2ray| AHS -🇫🇷|unavailable"
+      - "@vpnfail_v2ray| AHS -🇫🇷|152.62"
+      - "@vpn_ioss| AHS -🇨🇾|87.69"
+      - "@vpn_ioss| AHS -🇫🇮|113.19"
+      - "@vpn_ioss| AHS -🇫🇮|113.56"
+      - "@v2rayvmess| AHS -🇺🇸|2.07"
+      - "@ShadowProxy66| AHS -🇫🇷|89.73"
+      - "@ShadowProxy66| AHS -🇬🇧|88.21"
+      - "@v2rayngrit| AHS -🇨🇦|18.02"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@vpnfail_v2ray| AHS -🇫🇷|171.74"
-      - "@vpn_ioss| AHS -🇨🇾|157.54"
-      - "@vpn_ioss| AHS -🇫🇮|176.58"
-      - "@vpn_ioss| AHS -🇫🇮|179.89"
-      - "@v2rayvmess| AHS -🇺🇸|2.38"
-      - "@ShadowProxy66| AHS -🇬🇧|164.54"
-      - "@v2rayngrit| AHS -🇨🇦|76.6"
-      - "@v2rayngrit| AHS -🇬🇧|142.04"
+      - "@vpnfail_v2ray| AHS -🇫🇷|unavailable"
+      - "@vpnfail_v2ray| AHS -🇫🇷|152.62"
+      - "@vpn_ioss| AHS -🇨🇾|87.69"
+      - "@vpn_ioss| AHS -🇫🇮|113.19"
+      - "@vpn_ioss| AHS -🇫🇮|113.56"
+      - "@v2rayvmess| AHS -🇺🇸|2.07"
+      - "@ShadowProxy66| AHS -🇫🇷|89.73"
+      - "@ShadowProxy66| AHS -🇬🇧|88.21"
+      - "@v2rayngrit| AHS -🇨🇦|18.02"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@vpnfail_v2ray| AHS -🇫🇷|171.74"
-      - "@vpn_ioss| AHS -🇨🇾|157.54"
-      - "@vpn_ioss| AHS -🇫🇮|176.58"
-      - "@vpn_ioss| AHS -🇫🇮|179.89"
-      - "@v2rayvmess| AHS -🇺🇸|2.38"
-      - "@ShadowProxy66| AHS -🇬🇧|164.54"
-      - "@v2rayngrit| AHS -🇨🇦|76.6"
-      - "@v2rayngrit| AHS -🇬🇧|142.04"
+      - "@vpnfail_v2ray| AHS -🇫🇷|unavailable"
+      - "@vpnfail_v2ray| AHS -🇫🇷|152.62"
+      - "@vpn_ioss| AHS -🇨🇾|87.69"
+      - "@vpn_ioss| AHS -🇫🇮|113.19"
+      - "@vpn_ioss| AHS -🇫🇮|113.56"
+      - "@v2rayvmess| AHS -🇺🇸|2.07"
+      - "@ShadowProxy66| AHS -🇫🇷|89.73"
+      - "@ShadowProxy66| AHS -🇬🇧|88.21"
+      - "@v2rayngrit| AHS -🇨🇦|18.02"
 rules:
   - MATCH,MANUAL
