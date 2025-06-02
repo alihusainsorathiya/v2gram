@@ -32,7 +32,31 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@VmessProtocol| AHS -152.2"
+  - name: "|@PrivateVPNs| AHS -85.42"
+    server: 13.39.166.196
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -86.13"
+    server: 13.39.166.196
+    port: 22223
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@v2ray1_ng| AHS -123.53"
+    server: 45.159.251.33
+    port: 443
+    type: trojan
+    password: 0fc9c5ff-9531-4178-966f-7d958e1df64b
+    skip-cert-verify: true
+    sni: eats-rigor-judge.stark-industries.solutions
+    udp: true
+  - name: "|@v2ray1_ng| AHS -86.52"
     server: 94.131.20.3
     port: 443
     type: trojan
@@ -40,7 +64,7 @@ proxies:
     skip-cert-verify: true
     sni: chop-wrist-bud.stark-industries.solutions
     udp: true
-  - name: "|@ovpn2| AHS -1.66"
+  - name: "|@ovpn2| AHS -5.51"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -53,7 +77,7 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
-  - name: "|@yaney_01| AHS -288.76"
+  - name: "|@yaney_01| AHS -443.26"
     server: df.xiguajiasu.xyz
     port: 46002
     type: trojan
@@ -61,7 +85,7 @@ proxies:
     skip-cert-verify: true
     sni: ""
     udp: true
-  - name: "|@hope_net| AHS -1.79"
+  - name: "|@hope_net| AHS -5.8"
     server: 185.16.110.113
     port: 443
     type: trojan
@@ -74,7 +98,7 @@ proxies:
       headers:
         Host: icecream.955850.xyz
     udp: true
-  - name: "|@v2rayngrit| AHS -194.8"
+  - name: "|@v2rayngrit| AHS -140.56"
     server: 57.129.89.172
     port: 1935
     type: trojan
@@ -86,11 +110,14 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@VmessProtocol| AHS -152.2"
-      - "|@ovpn2| AHS -1.66"
-      - "|@yaney_01| AHS -288.76"
-      - "|@hope_net| AHS -1.79"
-      - "|@v2rayngrit| AHS -194.8"
+      - "|@PrivateVPNs| AHS -85.42"
+      - "|@DirectVPN| AHS -86.13"
+      - "|@v2ray1_ng| AHS -123.53"
+      - "|@v2ray1_ng| AHS -86.52"
+      - "|@ovpn2| AHS -5.51"
+      - "|@yaney_01| AHS -443.26"
+      - "|@hope_net| AHS -5.8"
+      - "|@v2rayngrit| AHS -140.56"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -101,31 +128,40 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@VmessProtocol| AHS -152.2"
-      - "|@ovpn2| AHS -1.66"
-      - "|@yaney_01| AHS -288.76"
-      - "|@hope_net| AHS -1.79"
-      - "|@v2rayngrit| AHS -194.8"
+      - "|@PrivateVPNs| AHS -85.42"
+      - "|@DirectVPN| AHS -86.13"
+      - "|@v2ray1_ng| AHS -123.53"
+      - "|@v2ray1_ng| AHS -86.52"
+      - "|@ovpn2| AHS -5.51"
+      - "|@yaney_01| AHS -443.26"
+      - "|@hope_net| AHS -5.8"
+      - "|@v2rayngrit| AHS -140.56"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@VmessProtocol| AHS -152.2"
-      - "|@ovpn2| AHS -1.66"
-      - "|@yaney_01| AHS -288.76"
-      - "|@hope_net| AHS -1.79"
-      - "|@v2rayngrit| AHS -194.8"
+      - "|@PrivateVPNs| AHS -85.42"
+      - "|@DirectVPN| AHS -86.13"
+      - "|@v2ray1_ng| AHS -123.53"
+      - "|@v2ray1_ng| AHS -86.52"
+      - "|@ovpn2| AHS -5.51"
+      - "|@yaney_01| AHS -443.26"
+      - "|@hope_net| AHS -5.8"
+      - "|@v2rayngrit| AHS -140.56"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@VmessProtocol| AHS -152.2"
-      - "|@ovpn2| AHS -1.66"
-      - "|@yaney_01| AHS -288.76"
-      - "|@hope_net| AHS -1.79"
-      - "|@v2rayngrit| AHS -194.8"
+      - "|@PrivateVPNs| AHS -85.42"
+      - "|@DirectVPN| AHS -86.13"
+      - "|@v2ray1_ng| AHS -123.53"
+      - "|@v2ray1_ng| AHS -86.52"
+      - "|@ovpn2| AHS -5.51"
+      - "|@yaney_01| AHS -443.26"
+      - "|@hope_net| AHS -5.8"
+      - "|@v2rayngrit| AHS -140.56"
 rules:
   - MATCH,MANUAL
