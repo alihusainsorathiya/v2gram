@@ -1,0 +1,221 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: "@prrofile_purple| AHS -🇺🇸|96.98"
+    server: 142.4.119.72
+    port: 57118
+    type: vmess
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@vpnfail_v2ray| AHS -🇨🇭|137.04"
+    server: 23.166.88.183
+    port: 22324
+    type: vmess
+    uuid: 04621bae-ab36-11ec-b909-0242ac120002
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@vpnfail_v2ray| AHS -🇵🇱|114.41"
+    server: 57.129.28.65
+    port: 443
+    type: vmess
+    uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: kapelleng.com
+    network: ws
+    ws-opts:
+      path: /linkvws
+      headers:
+        Host: kapelleng.com
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|14.98"
+    server: id-lb.vhax.net
+    port: 80
+    type: vmess
+    uuid: 6fea1649-425b-4092-bf53-29792152c925
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: zoom.us
+    network: ws
+    ws-opts:
+      path: /sshkit/Arsham85231/6347d08022b91/
+      headers:
+        Host: zoom.us
+    udp: true
+  - name: "@v2ray1_ng| AHS -🇫🇮|155.45"
+    server: 157.180.89.239
+    port: 29301
+    type: vmess
+    uuid: 45a92d77-d948-4df2-b55f-1b05c9d94f7f
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@vpn_tehran| AHS -🇨🇾|120.6"
+    server: 45.12.138.82
+    port: 54757
+    type: vmess
+    uuid: cde9f074-c930-4aa3-a558-46bbc9d0a5a1
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@v2ray_vpn_ir| AHS -🇨🇭|137.31"
+    server: 186.190.215.193
+    port: 22324
+    type: vmess
+    uuid: 04621bae-ab36-11ec-b909-0242ac120002
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@v2rayngrit| AHS -🇨🇦|39"
+    server: 51.79.86.182
+    port: 42610
+    type: vmess
+    uuid: e0957ca6-f613-4017-ff3c-effd1da8871a
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@v2rayngrit| AHS -🇬🇧|112.55"
+    server: 51.38.64.209
+    port: 44023
+    type: vmess
+    uuid: 7da457da-ed0f-437d-c81d-6c35885bbea3
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@v2rayngrit| AHS -🇫🇷|126.64"
+    server: 135.125.182.74
+    port: 28213
+    type: vmess
+    uuid: 81852771-76fb-4e94-e4f1-4e37a698a49a
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - "@prrofile_purple| AHS -🇺🇸|96.98"
+      - "@vpnfail_v2ray| AHS -🇨🇭|137.04"
+      - "@vpnfail_v2ray| AHS -🇵🇱|114.41"
+      - "@v2rayvmess| AHS -🇺🇸|14.98"
+      - "@v2ray1_ng| AHS -🇫🇮|155.45"
+      - "@vpn_tehran| AHS -🇨🇾|120.6"
+      - "@v2ray_vpn_ir| AHS -🇨🇭|137.31"
+      - "@v2rayngrit| AHS -🇨🇦|39"
+      - "@v2rayngrit| AHS -🇬🇧|112.55"
+      - "@v2rayngrit| AHS -🇫🇷|126.64"
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@prrofile_purple| AHS -🇺🇸|96.98"
+      - "@vpnfail_v2ray| AHS -🇨🇭|137.04"
+      - "@vpnfail_v2ray| AHS -🇵🇱|114.41"
+      - "@v2rayvmess| AHS -🇺🇸|14.98"
+      - "@v2ray1_ng| AHS -🇫🇮|155.45"
+      - "@vpn_tehran| AHS -🇨🇾|120.6"
+      - "@v2ray_vpn_ir| AHS -🇨🇭|137.31"
+      - "@v2rayngrit| AHS -🇨🇦|39"
+      - "@v2rayngrit| AHS -🇬🇧|112.55"
+      - "@v2rayngrit| AHS -🇫🇷|126.64"
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - "@prrofile_purple| AHS -🇺🇸|96.98"
+      - "@vpnfail_v2ray| AHS -🇨🇭|137.04"
+      - "@vpnfail_v2ray| AHS -🇵🇱|114.41"
+      - "@v2rayvmess| AHS -🇺🇸|14.98"
+      - "@v2ray1_ng| AHS -🇫🇮|155.45"
+      - "@vpn_tehran| AHS -🇨🇾|120.6"
+      - "@v2ray_vpn_ir| AHS -🇨🇭|137.31"
+      - "@v2rayngrit| AHS -🇨🇦|39"
+      - "@v2rayngrit| AHS -🇬🇧|112.55"
+      - "@v2rayngrit| AHS -🇫🇷|126.64"
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@prrofile_purple| AHS -🇺🇸|96.98"
+      - "@vpnfail_v2ray| AHS -🇨🇭|137.04"
+      - "@vpnfail_v2ray| AHS -🇵🇱|114.41"
+      - "@v2rayvmess| AHS -🇺🇸|14.98"
+      - "@v2ray1_ng| AHS -🇫🇮|155.45"
+      - "@vpn_tehran| AHS -🇨🇾|120.6"
+      - "@v2ray_vpn_ir| AHS -🇨🇭|137.31"
+      - "@v2rayngrit| AHS -🇨🇦|39"
+      - "@v2rayngrit| AHS -🇬🇧|112.55"
+      - "@v2rayngrit| AHS -🇫🇷|126.64"
+rules:
+  - MATCH,MANUAL
