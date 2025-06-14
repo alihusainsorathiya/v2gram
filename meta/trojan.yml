@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@VmessProtocol| AHS -83.19"
+  - name: "|@VmessProtocol| AHS -102.33"
     server: 94.131.20.3
     port: 443
     type: trojan
@@ -40,7 +40,7 @@ proxies:
     skip-cert-verify: true
     sni: chop-wrist-bud.stark-industries.solutions
     udp: true
-  - name: "|@ovpn2| AHS -1.76"
+  - name: "|@ovpn2| AHS -2.24"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -53,7 +53,7 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
-  - name: "|@yaney_01| AHS -385.44"
+  - name: "|@yaney_01| AHS -395.4"
     server: df.xiguajiasu.xyz
     port: 46002
     type: trojan
@@ -61,15 +61,31 @@ proxies:
     skip-cert-verify: true
     sni: ""
     udp: true
-  - name: "|@hope_net| AHS -1.9"
-    server: 104.21.96.1
+  - name: "|@hope_net| AHS -159.59"
+    server: guy-trace-lyric.stark-industries.solutions
     port: 443
     type: trojan
-    password: ad4a124c-12fb-4467-9ad0-dc6d9b509ac0
+    password: 3482c71a-d01c-4ae5-b454-fa8cb3785f66
     skip-cert-verify: true
-    sni: 7nnn.191262.xyz
+    sni: ""
     udp: true
-  - name: "|@v2rayngrit| AHS -90.08"
+  - name: "|@hope_net| AHS -126.42"
+    server: nacho-rerun-crepe.stark-industries.solutions
+    port: 443
+    type: trojan
+    password: 3482c71a-d01c-4ae5-b454-fa8cb3785f66
+    skip-cert-verify: true
+    sni: nacho-rerun-crepe.stark-industries.solutions
+    udp: true
+  - name: "|@hope_net| AHS -102.76"
+    server: 94.131.20.3
+    port: 443
+    type: trojan
+    password: 3482c71a-d01c-4ae5-b454-fa8cb3785f66
+    skip-cert-verify: true
+    sni: nacho-rerun-crepe.stark-industries.solutions
+    udp: true
+  - name: "|@v2rayngrit| AHS -106.51"
     server: 57.129.89.172
     port: 1935
     type: trojan
@@ -81,11 +97,13 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@VmessProtocol| AHS -83.19"
-      - "|@ovpn2| AHS -1.76"
-      - "|@yaney_01| AHS -385.44"
-      - "|@hope_net| AHS -1.9"
-      - "|@v2rayngrit| AHS -90.08"
+      - "|@VmessProtocol| AHS -102.33"
+      - "|@ovpn2| AHS -2.24"
+      - "|@yaney_01| AHS -395.4"
+      - "|@hope_net| AHS -159.59"
+      - "|@hope_net| AHS -126.42"
+      - "|@hope_net| AHS -102.76"
+      - "|@v2rayngrit| AHS -106.51"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -96,31 +114,37 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@VmessProtocol| AHS -83.19"
-      - "|@ovpn2| AHS -1.76"
-      - "|@yaney_01| AHS -385.44"
-      - "|@hope_net| AHS -1.9"
-      - "|@v2rayngrit| AHS -90.08"
+      - "|@VmessProtocol| AHS -102.33"
+      - "|@ovpn2| AHS -2.24"
+      - "|@yaney_01| AHS -395.4"
+      - "|@hope_net| AHS -159.59"
+      - "|@hope_net| AHS -126.42"
+      - "|@hope_net| AHS -102.76"
+      - "|@v2rayngrit| AHS -106.51"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@VmessProtocol| AHS -83.19"
-      - "|@ovpn2| AHS -1.76"
-      - "|@yaney_01| AHS -385.44"
-      - "|@hope_net| AHS -1.9"
-      - "|@v2rayngrit| AHS -90.08"
+      - "|@VmessProtocol| AHS -102.33"
+      - "|@ovpn2| AHS -2.24"
+      - "|@yaney_01| AHS -395.4"
+      - "|@hope_net| AHS -159.59"
+      - "|@hope_net| AHS -126.42"
+      - "|@hope_net| AHS -102.76"
+      - "|@v2rayngrit| AHS -106.51"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@VmessProtocol| AHS -83.19"
-      - "|@ovpn2| AHS -1.76"
-      - "|@yaney_01| AHS -385.44"
-      - "|@hope_net| AHS -1.9"
-      - "|@v2rayngrit| AHS -90.08"
+      - "|@VmessProtocol| AHS -102.33"
+      - "|@ovpn2| AHS -2.24"
+      - "|@yaney_01| AHS -395.4"
+      - "|@hope_net| AHS -159.59"
+      - "|@hope_net| AHS -126.42"
+      - "|@hope_net| AHS -102.76"
+      - "|@v2rayngrit| AHS -106.51"
 rules:
   - MATCH,MANUAL
