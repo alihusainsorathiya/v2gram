@@ -1,0 +1,196 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: "@free4allVPN| AHS -🚩|15.28"
+    server: 172.66.168.209
+    port: 443
+    type: vmess
+    uuid: 5428dcc2-9950-4404-b8a5-9dac82acb210
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: maXNEtVIP-usA-VP3.nETKH3.SiTE
+    network: ws
+    ws-opts:
+      path: /linkws
+      headers:
+        Host: maXNEtVIP-usA-VP3.nETKH3.SiTE
+    udp: true
+  - name: "@free4allVPN| AHS -🚩|15.4"
+    server: us01.sh-cloudflare.sbs
+    port: 8443
+    type: vmess
+    uuid: f10598e2-c606-4945-bfde-e5730756a2dd
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: us01.sh-cloudflare.sbs
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: us01.sh-cloudflare.sbs
+    udp: true
+  - name: "@vpnfail_v2ray| AHS -🇫🇷|unavailable"
+    server: 172.67.170.13
+    port: 443
+    type: vmess
+    uuid: 76221bfb-e92f-4e80-81c5-6fe48f50ac0b
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: glweidf.sbs
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: glweidf.sbs
+    udp: true
+  - name: "@vpnfail_v2ray| AHS -🇺🇸|70.49"
+    server: kapelleng.com
+    port: 443
+    type: vmess
+    uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: kapelleng.com
+    network: ws
+    ws-opts:
+      path: /linkvws
+      headers:
+        Host: kapelleng.com
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|15.13"
+    server: id-lb.vhax.net
+    port: 80
+    type: vmess
+    uuid: 6fea1649-425b-4092-bf53-29792152c925
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: zoom.us
+    network: ws
+    ws-opts:
+      path: /sshkit/Arsham85231/6347d08022b91/
+      headers:
+        Host: zoom.us
+    udp: true
+  - name: "@v2rayngrit| AHS -🇬🇧|118.19"
+    server: 51.38.64.209
+    port: 44023
+    type: vmess
+    uuid: 7da457da-ed0f-437d-c81d-6c35885bbea3
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@v2ray_confings2| AHS -🇩🇪|188.25"
+    server: 188.114.96.1
+    port: 443
+    type: vmess
+    uuid: f584de15-2034-4170-a723-f48c2bae5e0f
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: afrhms16v.bestxray.buzz
+    network: ws
+    ws-opts:
+      path: /linkws
+      headers:
+        Host: afrhms16v.bestxray.buzz
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - "@free4allVPN| AHS -🚩|15.28"
+      - "@free4allVPN| AHS -🚩|15.4"
+      - "@vpnfail_v2ray| AHS -🇫🇷|unavailable"
+      - "@vpnfail_v2ray| AHS -🇺🇸|70.49"
+      - "@v2rayvmess| AHS -🇺🇸|15.13"
+      - "@v2rayngrit| AHS -🇬🇧|118.19"
+      - "@v2ray_confings2| AHS -🇩🇪|188.25"
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@free4allVPN| AHS -🚩|15.28"
+      - "@free4allVPN| AHS -🚩|15.4"
+      - "@vpnfail_v2ray| AHS -🇫🇷|unavailable"
+      - "@vpnfail_v2ray| AHS -🇺🇸|70.49"
+      - "@v2rayvmess| AHS -🇺🇸|15.13"
+      - "@v2rayngrit| AHS -🇬🇧|118.19"
+      - "@v2ray_confings2| AHS -🇩🇪|188.25"
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - "@free4allVPN| AHS -🚩|15.28"
+      - "@free4allVPN| AHS -🚩|15.4"
+      - "@vpnfail_v2ray| AHS -🇫🇷|unavailable"
+      - "@vpnfail_v2ray| AHS -🇺🇸|70.49"
+      - "@v2rayvmess| AHS -🇺🇸|15.13"
+      - "@v2rayngrit| AHS -🇬🇧|118.19"
+      - "@v2ray_confings2| AHS -🇩🇪|188.25"
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@free4allVPN| AHS -🚩|15.28"
+      - "@free4allVPN| AHS -🚩|15.4"
+      - "@vpnfail_v2ray| AHS -🇫🇷|unavailable"
+      - "@vpnfail_v2ray| AHS -🇺🇸|70.49"
+      - "@v2rayvmess| AHS -🇺🇸|15.13"
+      - "@v2rayngrit| AHS -🇬🇧|118.19"
+      - "@v2ray_confings2| AHS -🇩🇪|188.25"
+rules:
+  - MATCH,MANUAL
