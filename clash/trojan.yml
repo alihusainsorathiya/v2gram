@@ -19,42 +19,33 @@ dns:
   fallback: [https://101.101.101.101/dns-query, https://public.dns.iij.jp/dns-query, https://208.67.220.220/dns-query]
   fallback-filter: {geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32, 223.75.236.241/32, 182.43.124.6/32, 106.74.25.198/32], domain: [+.bianyuan.xyz, +.happynothings031.xyz, +.jsdelivr.net, +.proton.me]}
 proxies:
-  - {name: "|@PrivateVPNs| AHS -151.02", server: 13.37.117.180, port: 22222, type: trojan, password: telegram-id-privatevpns, sni: trojan.burgerip.co.uk, skip-cert-verify: false, udp: true}
-  - {name: "|@DirectVPN| AHS -125.19", server: 13.37.117.180, port: 22223, type: trojan, password: telegram-id-directvpn, sni: trojan.burgerip.co.uk, skip-cert-verify: false, udp: true}
-  - {name: "|@ovpn2| AHS -2.24", server: 162.159.138.232, port: 443, type: trojan, password: dQDQCtns4R, sni: fadaei.movieland.top, skip-cert-verify: false, network: ws, ws-opts: {path: static34528, headers: {Host: fadaei.movieland.top}}, udp: true}
-  - {name: "|@yaney_01| AHS -707.51", server: df.xiguajiasu.xyz, port: 46002, type: trojan, password: 4ea1d07c-41c2-42b5-954d-414fee051856, skip-cert-verify: false, udp: true}
-  - {name: "|@hope_net| AHS -2.14", server: 162.120.94.23, port: 2087, type: trojan, password: Aimer, sni: epcca.ambercc.filegear-sg.me, skip-cert-verify: false, network: ws, ws-opts: {path: "%2F%3Fed%3D2560", headers: {Host: epcca.ambercc.filegear-sg.me}}, udp: true}
-  - {name: "|@hope_net| AHS -24.25", server: 89.187.181.179, port: 43118, type: trojan, password: ypDt8RkT7J, skip-cert-verify: false, udp: true}
-  - {name: "|@v2rayngrit| AHS -112.23", server: 57.129.89.172, port: 1935, type: trojan, password: pqlnPNu423, sni: x1-germany-ovh-v2.devefun.net, skip-cert-verify: false, udp: true}
-  - {name: "|@v2rayngrit| AHS -100.04", server: 94.131.20.3, port: 443, type: trojan, password: 3482c71a-d01c-4ae5-b454-fa8cb3785f66, sni: chop-wrist-bud.stark-industries.solutions, skip-cert-verify: false, udp: true}
+  - {name: "|@v2ray1_ng| AHS -152.64", server: x11-amsterdam-scaleway-v2-c88f0.devefun.org, port: 1935, type: trojan, password: Bm92516VO0, sni: x11-amsterdam-scaleway-v2-c88f0.devefun.org, skip-cert-verify: false, udp: true}
+  - {name: "|@ovpn2| AHS -1.52", server: 162.159.138.232, port: 443, type: trojan, password: dQDQCtns4R, sni: fadaei.movieland.top, skip-cert-verify: false, network: ws, ws-opts: {path: static34528, headers: {Host: fadaei.movieland.top}}, udp: true}
+  - {name: "|@yaney_01| AHS -106.7", server: df.xiguajiasu.xyz, port: 46002, type: trojan, password: 4ea1d07c-41c2-42b5-954d-414fee051856, skip-cert-verify: false, udp: true}
+  - {name: "|@hope_net| AHS -105.21", server: 147.79.20.239, port: 443, type: trojan, password: Aimer, sni: epccd.ambercc.filegear-sg.me, skip-cert-verify: false, udp: true}
+  - {name: "|@v2rayngrit| AHS -152.14", server: 94.131.20.3, port: 443, type: trojan, password: 3482c71a-d01c-4ae5-b454-fa8cb3785f66, sni: chop-wrist-bud.stark-industries.solutions, skip-cert-verify: false, udp: true}
 proxy-groups:
   - name: 🚀 MANUAL
     type: select
     proxies:
       - ♻️ AUTO SELECT
       - DIRECT
-      - "|@PrivateVPNs| AHS -151.02"
-      - "|@DirectVPN| AHS -125.19"
-      - "|@ovpn2| AHS -2.24"
-      - "|@yaney_01| AHS -707.51"
-      - "|@hope_net| AHS -2.14"
-      - "|@hope_net| AHS -24.25"
-      - "|@v2rayngrit| AHS -112.23"
-      - "|@v2rayngrit| AHS -100.04"
+      - "|@v2ray1_ng| AHS -152.64"
+      - "|@ovpn2| AHS -1.52"
+      - "|@yaney_01| AHS -106.7"
+      - "|@hope_net| AHS -105.21"
+      - "|@v2rayngrit| AHS -152.14"
   - name: ♻️ AUTO SELECT
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     proxies:
-      - "|@PrivateVPNs| AHS -151.02"
-      - "|@DirectVPN| AHS -125.19"
-      - "|@ovpn2| AHS -2.24"
-      - "|@yaney_01| AHS -707.51"
-      - "|@hope_net| AHS -2.14"
-      - "|@hope_net| AHS -24.25"
-      - "|@v2rayngrit| AHS -112.23"
-      - "|@v2rayngrit| AHS -100.04"
+      - "|@v2ray1_ng| AHS -152.64"
+      - "|@ovpn2| AHS -1.52"
+      - "|@yaney_01| AHS -106.7"
+      - "|@hope_net| AHS -105.21"
+      - "|@v2rayngrit| AHS -152.14"
   - name: 🎯 GLOBAL DIRECT
     type: select
     proxies:
@@ -72,14 +63,11 @@ proxy-groups:
       - 🚀 MANUAL
       - 🎯 GLOBAL DIRECT
       - ♻️ AUTO SELECT
-      - "|@PrivateVPNs| AHS -151.02"
-      - "|@DirectVPN| AHS -125.19"
-      - "|@ovpn2| AHS -2.24"
-      - "|@yaney_01| AHS -707.51"
-      - "|@hope_net| AHS -2.14"
-      - "|@hope_net| AHS -24.25"
-      - "|@v2rayngrit| AHS -112.23"
-      - "|@v2rayngrit| AHS -100.04"
+      - "|@v2ray1_ng| AHS -152.64"
+      - "|@ovpn2| AHS -1.52"
+      - "|@yaney_01| AHS -106.7"
+      - "|@hope_net| AHS -105.21"
+      - "|@v2rayngrit| AHS -152.14"
 rules:
   - DOMAIN-SUFFIX,acl4.ssr,🎯 GLOBAL DIRECT
   - DOMAIN-SUFFIX,ip6-localhost,🎯 GLOBAL DIRECT
