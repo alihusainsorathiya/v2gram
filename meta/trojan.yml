@@ -32,23 +32,39 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@PrivateVPNs| AHS -107.44"
-    server: 18.197.223.180
+  - name: "|@PrivateVPNs| AHS -267.87"
+    server: 63.177.165.127
     port: 22222
     type: trojan
     password: telegram-id-privatevpns
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -106.2"
-    server: 18.197.223.180
+  - name: "|@PrivateVPNs| AHS -161.12"
+    server: 15.236.173.146
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -191"
+    server: 63.177.165.127
     port: 22223
     type: trojan
     password: telegram-id-directvpn
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@ovpn2| AHS -2.69"
+  - name: "|@DirectVPN| AHS -171.84"
+    server: 15.236.173.146
+    port: 22223
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@ovpn2| AHS -14.3"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -61,7 +77,7 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
-  - name: "|@yaney_01| AHS -387.4"
+  - name: "|@yaney_01| AHS -134.14"
     server: df.xiguajiasu.xyz
     port: 46002
     type: trojan
@@ -69,7 +85,15 @@ proxies:
     skip-cert-verify: true
     sni: ""
     udp: true
-  - name: "|@v2rayngrit| AHS -103.15"
+  - name: "|@hope_net| AHS -185.24"
+    server: 20.255.74.102
+    port: 443
+    type: trojan
+    password: 8aab51da-6b67-4bd2-b6e6-5ab3008cf53e
+    skip-cert-verify: true
+    sni: jp.iamnotagoodman.com
+    udp: true
+  - name: "|@v2rayngrit| AHS -104.39"
     server: 94.131.20.3
     port: 443
     type: trojan
@@ -81,11 +105,14 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@PrivateVPNs| AHS -107.44"
-      - "|@DirectVPN| AHS -106.2"
-      - "|@ovpn2| AHS -2.69"
-      - "|@yaney_01| AHS -387.4"
-      - "|@v2rayngrit| AHS -103.15"
+      - "|@PrivateVPNs| AHS -267.87"
+      - "|@PrivateVPNs| AHS -161.12"
+      - "|@DirectVPN| AHS -191"
+      - "|@DirectVPN| AHS -171.84"
+      - "|@ovpn2| AHS -14.3"
+      - "|@yaney_01| AHS -134.14"
+      - "|@hope_net| AHS -185.24"
+      - "|@v2rayngrit| AHS -104.39"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -96,31 +123,40 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -107.44"
-      - "|@DirectVPN| AHS -106.2"
-      - "|@ovpn2| AHS -2.69"
-      - "|@yaney_01| AHS -387.4"
-      - "|@v2rayngrit| AHS -103.15"
+      - "|@PrivateVPNs| AHS -267.87"
+      - "|@PrivateVPNs| AHS -161.12"
+      - "|@DirectVPN| AHS -191"
+      - "|@DirectVPN| AHS -171.84"
+      - "|@ovpn2| AHS -14.3"
+      - "|@yaney_01| AHS -134.14"
+      - "|@hope_net| AHS -185.24"
+      - "|@v2rayngrit| AHS -104.39"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@PrivateVPNs| AHS -107.44"
-      - "|@DirectVPN| AHS -106.2"
-      - "|@ovpn2| AHS -2.69"
-      - "|@yaney_01| AHS -387.4"
-      - "|@v2rayngrit| AHS -103.15"
+      - "|@PrivateVPNs| AHS -267.87"
+      - "|@PrivateVPNs| AHS -161.12"
+      - "|@DirectVPN| AHS -191"
+      - "|@DirectVPN| AHS -171.84"
+      - "|@ovpn2| AHS -14.3"
+      - "|@yaney_01| AHS -134.14"
+      - "|@hope_net| AHS -185.24"
+      - "|@v2rayngrit| AHS -104.39"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -107.44"
-      - "|@DirectVPN| AHS -106.2"
-      - "|@ovpn2| AHS -2.69"
-      - "|@yaney_01| AHS -387.4"
-      - "|@v2rayngrit| AHS -103.15"
+      - "|@PrivateVPNs| AHS -267.87"
+      - "|@PrivateVPNs| AHS -161.12"
+      - "|@DirectVPN| AHS -191"
+      - "|@DirectVPN| AHS -171.84"
+      - "|@ovpn2| AHS -14.3"
+      - "|@yaney_01| AHS -134.14"
+      - "|@hope_net| AHS -185.24"
+      - "|@v2rayngrit| AHS -104.39"
 rules:
   - MATCH,MANUAL
