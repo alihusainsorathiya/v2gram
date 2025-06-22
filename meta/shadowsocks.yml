@@ -32,21 +32,28 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@free4allVPN| AHS -🇭🇰|191.69"
+  - name: "@free4allVPN| AHS -🇭🇰|184.65"
     server: 156.225.22.213
     port: 552
     type: ss
     cipher: aes-128-gcm
     password: rGDbiF7gtx5TWt4r4VjneQ==
     udp: true
-  - name: "@free4allVPN| AHS -🇦🇹|120.97"
+  - name: "@free4allVPN| AHS -🇦🇹|105.8"
     server: 5.181.21.194
     port: 18660
     type: ss
     cipher: chacha20-ietf-poly1305
     password: pV5BAzqLZosOfuIrkyoadT
     udp: true
-  - name: "@v2rayngrit| AHS -🇺🇸|155.32"
+  - name: "@free4allVPN| AHS -🇸🇬|208.11"
+    server: 13.251.200.231
+    port: 8443
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: rkqZEu5xt3ayDLCc3BTINn
+    udp: true
+  - name: "@v2rayngrit| AHS -🇺🇸|142.19"
     server: 94.131.21.174
     port: 54075
     type: ss
@@ -57,9 +64,10 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@free4allVPN| AHS -🇭🇰|191.69"
-      - "@free4allVPN| AHS -🇦🇹|120.97"
-      - "@v2rayngrit| AHS -🇺🇸|155.32"
+      - "@free4allVPN| AHS -🇭🇰|184.65"
+      - "@free4allVPN| AHS -🇦🇹|105.8"
+      - "@free4allVPN| AHS -🇸🇬|208.11"
+      - "@v2rayngrit| AHS -🇺🇸|142.19"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -70,25 +78,28 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@free4allVPN| AHS -🇭🇰|191.69"
-      - "@free4allVPN| AHS -🇦🇹|120.97"
-      - "@v2rayngrit| AHS -🇺🇸|155.32"
+      - "@free4allVPN| AHS -🇭🇰|184.65"
+      - "@free4allVPN| AHS -🇦🇹|105.8"
+      - "@free4allVPN| AHS -🇸🇬|208.11"
+      - "@v2rayngrit| AHS -🇺🇸|142.19"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@free4allVPN| AHS -🇭🇰|191.69"
-      - "@free4allVPN| AHS -🇦🇹|120.97"
-      - "@v2rayngrit| AHS -🇺🇸|155.32"
+      - "@free4allVPN| AHS -🇭🇰|184.65"
+      - "@free4allVPN| AHS -🇦🇹|105.8"
+      - "@free4allVPN| AHS -🇸🇬|208.11"
+      - "@v2rayngrit| AHS -🇺🇸|142.19"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@free4allVPN| AHS -🇭🇰|191.69"
-      - "@free4allVPN| AHS -🇦🇹|120.97"
-      - "@v2rayngrit| AHS -🇺🇸|155.32"
+      - "@free4allVPN| AHS -🇭🇰|184.65"
+      - "@free4allVPN| AHS -🇦🇹|105.8"
+      - "@free4allVPN| AHS -🇸🇬|208.11"
+      - "@v2rayngrit| AHS -🇺🇸|142.19"
 rules:
   - MATCH,MANUAL
