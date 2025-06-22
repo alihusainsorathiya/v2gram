@@ -32,42 +32,58 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@free4allVPN| AHS -🇭🇰|220.6"
-    server: 156.225.22.213
-    port: 552
-    type: ss
-    cipher: aes-128-gcm
-    password: rGDbiF7gtx5TWt4r4VjneQ==
-    udp: true
-  - name: "@free4allVPN| AHS -🇦🇹|92.14"
+  - name: "@free4allVPN| AHS -🇦🇹|158.28"
     server: 5.181.21.194
     port: 18660
     type: ss
     cipher: chacha20-ietf-poly1305
     password: pV5BAzqLZosOfuIrkyoadT
     udp: true
-  - name: "@free4allVPN| AHS -🇸🇬|230.21"
+  - name: "@free4allVPN| AHS -🇸🇬|169.88"
     server: 13.251.200.231
     port: 8443
     type: ss
     cipher: chacha20-ietf-poly1305
     password: rkqZEu5xt3ayDLCc3BTINn
     udp: true
-  - name: "@v2rayngrit| AHS -🇺🇸|126.13"
+  - name: "@free4allVPN| AHS -🇨🇦|34.22"
+    server: direct.yangon.ca
+    port: 8444
+    type: ss
+    cipher: 2022-blake3-aes-256-gcm
+    password: PsWpcwX8vpWCVFv3s2WEJmHneo5fha9Ucon0rmvOSi8=
+    udp: true
+  - name: "@hope_net| AHS -🇨🇳|186.24"
+    server: 113.99.143.13
+    port: 8761
+    type: ss
+    cipher: rc4-md5
+    password: efanccyun
+    udp: true
+  - name: "@v2rayngrit| AHS -🇺🇸|198.19"
     server: 94.131.21.174
     port: 54075
     type: ss
     cipher: chacha20-ietf-poly1305
     password: o38yuvzSe3m5aDNpHtUPH1zGwbGEXXMDsGwVaub2SYEmHUa2WGZUjiezX3Vvva9CCzpjxYtuJLgKsSnsyKBf9ciPVba3y4o37
     udp: true
+  - name: "@v2rayngrit| AHS -🇭🇰|160.43"
+    server: 156.225.22.213
+    port: 552
+    type: ss
+    cipher: aes-128-gcm
+    password: rGDbiF7gtx5TWt4r4VjneQ==
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@free4allVPN| AHS -🇭🇰|220.6"
-      - "@free4allVPN| AHS -🇦🇹|92.14"
-      - "@free4allVPN| AHS -🇸🇬|230.21"
-      - "@v2rayngrit| AHS -🇺🇸|126.13"
+      - "@free4allVPN| AHS -🇦🇹|158.28"
+      - "@free4allVPN| AHS -🇸🇬|169.88"
+      - "@free4allVPN| AHS -🇨🇦|34.22"
+      - "@hope_net| AHS -🇨🇳|186.24"
+      - "@v2rayngrit| AHS -🇺🇸|198.19"
+      - "@v2rayngrit| AHS -🇭🇰|160.43"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -78,28 +94,34 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@free4allVPN| AHS -🇭🇰|220.6"
-      - "@free4allVPN| AHS -🇦🇹|92.14"
-      - "@free4allVPN| AHS -🇸🇬|230.21"
-      - "@v2rayngrit| AHS -🇺🇸|126.13"
+      - "@free4allVPN| AHS -🇦🇹|158.28"
+      - "@free4allVPN| AHS -🇸🇬|169.88"
+      - "@free4allVPN| AHS -🇨🇦|34.22"
+      - "@hope_net| AHS -🇨🇳|186.24"
+      - "@v2rayngrit| AHS -🇺🇸|198.19"
+      - "@v2rayngrit| AHS -🇭🇰|160.43"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@free4allVPN| AHS -🇭🇰|220.6"
-      - "@free4allVPN| AHS -🇦🇹|92.14"
-      - "@free4allVPN| AHS -🇸🇬|230.21"
-      - "@v2rayngrit| AHS -🇺🇸|126.13"
+      - "@free4allVPN| AHS -🇦🇹|158.28"
+      - "@free4allVPN| AHS -🇸🇬|169.88"
+      - "@free4allVPN| AHS -🇨🇦|34.22"
+      - "@hope_net| AHS -🇨🇳|186.24"
+      - "@v2rayngrit| AHS -🇺🇸|198.19"
+      - "@v2rayngrit| AHS -🇭🇰|160.43"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@free4allVPN| AHS -🇭🇰|220.6"
-      - "@free4allVPN| AHS -🇦🇹|92.14"
-      - "@free4allVPN| AHS -🇸🇬|230.21"
-      - "@v2rayngrit| AHS -🇺🇸|126.13"
+      - "@free4allVPN| AHS -🇦🇹|158.28"
+      - "@free4allVPN| AHS -🇸🇬|169.88"
+      - "@free4allVPN| AHS -🇨🇦|34.22"
+      - "@hope_net| AHS -🇨🇳|186.24"
+      - "@v2rayngrit| AHS -🇺🇸|198.19"
+      - "@v2rayngrit| AHS -🇭🇰|160.43"
 rules:
   - MATCH,MANUAL
