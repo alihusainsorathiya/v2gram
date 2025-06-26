@@ -32,15 +32,23 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@v2ray1_ng| AHS -108.81"
-    server: 104.248.18.1
-    port: 1935
+  - name: "|@PrivateVPNs| AHS -140.81"
+    server: 13.37.38.184
+    port: 22222
     type: trojan
-    password: 6gZh2JbfhQ
+    password: telegram-id-privatevpns
     skip-cert-verify: true
-    sni: x1-germany-digitalocean-v2.devefun.org
+    sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@ovpn2| AHS -2.59"
+  - name: "|@DirectVPN| AHS -138.69"
+    server: 13.37.38.184
+    port: 22223
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@ovpn2| AHS -1.94"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -53,7 +61,7 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
-  - name: "|@yaney_01| AHS -468.36"
+  - name: "|@yaney_01| AHS -416.98"
     server: df.xiguajiasu.xyz
     port: 46002
     type: trojan
@@ -61,28 +69,20 @@ proxies:
     skip-cert-verify: true
     sni: ""
     udp: true
-  - name: "|@hope_net| AHS -55.67"
-    server: 35.167.93.200
+  - name: "|@hope_net| AHS -1.97"
+    server: 104.16.159.6
     port: 443
     type: trojan
-    password: Aimer
+    password: 669d0ac7b5b64ebbb1abb75d5d540a5c
     skip-cert-verify: true
-    sni: ngepy.ambercc.filegear-sg.me
-    udp: true
-  - name: "|@hope_net| AHS -25.53"
-    server: 162.159.44.82
-    port: 443
-    type: trojan
-    password: Aimer
-    skip-cert-verify: true
-    sni: agepy.ambercc.filegear-sg.me
+    sni: bangladeshipatri.com
     network: ws
     ws-opts:
-      path: /?ed=2560
+      path: /6b777a91
       headers:
-        Host: agepy.ambercc.filegear-sg.me
+        Host: bangladeshipatri.com
     udp: true
-  - name: "|@v2rayngrit| AHS -103.04"
+  - name: "|@v2rayngrit| AHS -82.57"
     server: 94.131.20.3
     port: 443
     type: trojan
@@ -94,12 +94,12 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@v2ray1_ng| AHS -108.81"
-      - "|@ovpn2| AHS -2.59"
-      - "|@yaney_01| AHS -468.36"
-      - "|@hope_net| AHS -55.67"
-      - "|@hope_net| AHS -25.53"
-      - "|@v2rayngrit| AHS -103.04"
+      - "|@PrivateVPNs| AHS -140.81"
+      - "|@DirectVPN| AHS -138.69"
+      - "|@ovpn2| AHS -1.94"
+      - "|@yaney_01| AHS -416.98"
+      - "|@hope_net| AHS -1.97"
+      - "|@v2rayngrit| AHS -82.57"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -110,34 +110,34 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@v2ray1_ng| AHS -108.81"
-      - "|@ovpn2| AHS -2.59"
-      - "|@yaney_01| AHS -468.36"
-      - "|@hope_net| AHS -55.67"
-      - "|@hope_net| AHS -25.53"
-      - "|@v2rayngrit| AHS -103.04"
+      - "|@PrivateVPNs| AHS -140.81"
+      - "|@DirectVPN| AHS -138.69"
+      - "|@ovpn2| AHS -1.94"
+      - "|@yaney_01| AHS -416.98"
+      - "|@hope_net| AHS -1.97"
+      - "|@v2rayngrit| AHS -82.57"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@v2ray1_ng| AHS -108.81"
-      - "|@ovpn2| AHS -2.59"
-      - "|@yaney_01| AHS -468.36"
-      - "|@hope_net| AHS -55.67"
-      - "|@hope_net| AHS -25.53"
-      - "|@v2rayngrit| AHS -103.04"
+      - "|@PrivateVPNs| AHS -140.81"
+      - "|@DirectVPN| AHS -138.69"
+      - "|@ovpn2| AHS -1.94"
+      - "|@yaney_01| AHS -416.98"
+      - "|@hope_net| AHS -1.97"
+      - "|@v2rayngrit| AHS -82.57"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@v2ray1_ng| AHS -108.81"
-      - "|@ovpn2| AHS -2.59"
-      - "|@yaney_01| AHS -468.36"
-      - "|@hope_net| AHS -55.67"
-      - "|@hope_net| AHS -25.53"
-      - "|@v2rayngrit| AHS -103.04"
+      - "|@PrivateVPNs| AHS -140.81"
+      - "|@DirectVPN| AHS -138.69"
+      - "|@ovpn2| AHS -1.94"
+      - "|@yaney_01| AHS -416.98"
+      - "|@hope_net| AHS -1.97"
+      - "|@v2rayngrit| AHS -82.57"
 rules:
   - MATCH,MANUAL
