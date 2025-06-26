@@ -32,7 +32,15 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@ovpn2| AHS -1.71"
+  - name: "|@v2ray1_ng| AHS -108.58"
+    server: 104.248.18.1
+    port: 1935
+    type: trojan
+    password: 6gZh2JbfhQ
+    skip-cert-verify: true
+    sni: x1-germany-digitalocean-v2.devefun.org
+    udp: true
+  - name: "|@ovpn2| AHS -2.47"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -45,7 +53,7 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
-  - name: "|@yaney_01| AHS -406.36"
+  - name: "|@yaney_01| AHS -498.11"
     server: df.xiguajiasu.xyz
     port: 46002
     type: trojan
@@ -53,12 +61,27 @@ proxies:
     skip-cert-verify: true
     sni: ""
     udp: true
+  - name: "|@hope_net| AHS -2.15"
+    server: 162.159.153.7
+    port: 443
+    type: trojan
+    password: 71ed6628-5870-4d19-8a52-f2a3ba3d4898
+    skip-cert-verify: true
+    sni: vbbb.ylks2024.us.kg
+    network: ws
+    ws-opts:
+      path: /youlingkaishi
+      headers:
+        Host: vbbb.ylks2024.us.kg
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@ovpn2| AHS -1.71"
-      - "|@yaney_01| AHS -406.36"
+      - "|@v2ray1_ng| AHS -108.58"
+      - "|@ovpn2| AHS -2.47"
+      - "|@yaney_01| AHS -498.11"
+      - "|@hope_net| AHS -2.15"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -69,22 +92,28 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@ovpn2| AHS -1.71"
-      - "|@yaney_01| AHS -406.36"
+      - "|@v2ray1_ng| AHS -108.58"
+      - "|@ovpn2| AHS -2.47"
+      - "|@yaney_01| AHS -498.11"
+      - "|@hope_net| AHS -2.15"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@ovpn2| AHS -1.71"
-      - "|@yaney_01| AHS -406.36"
+      - "|@v2ray1_ng| AHS -108.58"
+      - "|@ovpn2| AHS -2.47"
+      - "|@yaney_01| AHS -498.11"
+      - "|@hope_net| AHS -2.15"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@ovpn2| AHS -1.71"
-      - "|@yaney_01| AHS -406.36"
+      - "|@v2ray1_ng| AHS -108.58"
+      - "|@ovpn2| AHS -2.47"
+      - "|@yaney_01| AHS -498.11"
+      - "|@hope_net| AHS -2.15"
 rules:
   - MATCH,MANUAL
