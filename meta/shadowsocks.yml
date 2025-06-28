@@ -32,34 +32,34 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@free4allVPN| AHS -🇯🇵|108.32"
+  - name: "@free4allVPN| AHS -🇯🇵|132.52"
     server: 149.22.87.241
     port: 443
     type: ss
     cipher: aes-128-gcm
     password: shadowsocks7
     udp: true
-  - name: "@hope_net| AHS -🇺🇸|8.5"
-    server: 23.185.248.13
-    port: 17003
+  - name: "@hope_net| AHS -🇪🇸|135.74"
+    server: 45.154.206.192
+    port: 990
     type: ss
-    cipher: aes-256-gcm
-    password: PO156F4FRXFM1UOT
+    cipher: chacha20-ietf-poly1305
+    password: f8f7aCzcPKbsF8p3
     udp: true
-  - name: "@hope_net| AHS -🇯🇵|109.15"
-    server: 156.231.104.14
-    port: 18004
+  - name: "@hope_net| AHS -🇸🇬|197.8"
+    server: 154.196.244.13
+    port: 16003
     type: ss
     cipher: aes-256-gcm
-    password: 84XAJL8SYU5DFEO1
+    password: 9NCWDRVU7TA5Y3VQ
     udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@free4allVPN| AHS -🇯🇵|108.32"
-      - "@hope_net| AHS -🇺🇸|8.5"
-      - "@hope_net| AHS -🇯🇵|109.15"
+      - "@free4allVPN| AHS -🇯🇵|132.52"
+      - "@hope_net| AHS -🇪🇸|135.74"
+      - "@hope_net| AHS -🇸🇬|197.8"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -70,25 +70,25 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@free4allVPN| AHS -🇯🇵|108.32"
-      - "@hope_net| AHS -🇺🇸|8.5"
-      - "@hope_net| AHS -🇯🇵|109.15"
+      - "@free4allVPN| AHS -🇯🇵|132.52"
+      - "@hope_net| AHS -🇪🇸|135.74"
+      - "@hope_net| AHS -🇸🇬|197.8"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@free4allVPN| AHS -🇯🇵|108.32"
-      - "@hope_net| AHS -🇺🇸|8.5"
-      - "@hope_net| AHS -🇯🇵|109.15"
+      - "@free4allVPN| AHS -🇯🇵|132.52"
+      - "@hope_net| AHS -🇪🇸|135.74"
+      - "@hope_net| AHS -🇸🇬|197.8"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@free4allVPN| AHS -🇯🇵|108.32"
-      - "@hope_net| AHS -🇺🇸|8.5"
-      - "@hope_net| AHS -🇯🇵|109.15"
+      - "@free4allVPN| AHS -🇯🇵|132.52"
+      - "@hope_net| AHS -🇪🇸|135.74"
+      - "@hope_net| AHS -🇸🇬|197.8"
 rules:
   - MATCH,MANUAL
