@@ -32,26 +32,18 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@free4allVPN| AHS -🇯🇵|104.78"
+  - name: "@free4allVPN| AHS -🇯🇵|104.92"
     server: 149.22.87.241
     port: 443
     type: ss
     cipher: aes-128-gcm
     password: shadowsocks7
     udp: true
-  - name: "@hope_net| AHS -🇯🇵|107.58"
-    server: 156.231.104.13
-    port: 18003
-    type: ss
-    cipher: aes-256-gcm
-    password: QCK38XJJU4WIUYRK
-    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@free4allVPN| AHS -🇯🇵|104.78"
-      - "@hope_net| AHS -🇯🇵|107.58"
+      - "@free4allVPN| AHS -🇯🇵|104.92"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -62,22 +54,19 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@free4allVPN| AHS -🇯🇵|104.78"
-      - "@hope_net| AHS -🇯🇵|107.58"
+      - "@free4allVPN| AHS -🇯🇵|104.92"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@free4allVPN| AHS -🇯🇵|104.78"
-      - "@hope_net| AHS -🇯🇵|107.58"
+      - "@free4allVPN| AHS -🇯🇵|104.92"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@free4allVPN| AHS -🇯🇵|104.78"
-      - "@hope_net| AHS -🇯🇵|107.58"
+      - "@free4allVPN| AHS -🇯🇵|104.92"
 rules:
   - MATCH,MANUAL
