@@ -32,7 +32,55 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@ovpn2| AHS -1.75"
+  - name: "|@PrivateVPNs| AHS -97.4"
+    server: 18.192.158.151
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@PrivateVPNs| AHS -134.55"
+    server: 13.39.183.191
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@PrivateVPNs| AHS -86.75"
+    server: 15.236.216.91
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -127.23"
+    server: 18.192.158.151
+    port: 22223
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -130.5"
+    server: 13.39.183.191
+    port: 22223
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -107.4"
+    server: 15.236.216.91
+    port: 22223
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@ovpn2| AHS -1.5"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -45,7 +93,7 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
-  - name: "|@yaney_01| AHS -107.67"
+  - name: "|@yaney_01| AHS -472.42"
     server: df.xiguajiasu.xyz
     port: 46002
     type: trojan
@@ -53,26 +101,18 @@ proxies:
     skip-cert-verify: true
     sni: ""
     udp: true
-  - name: "|@hope_net| AHS -2.46"
-    server: 135.84.64.36
-    port: 2083
-    type: trojan
-    password: Aimer
-    skip-cert-verify: true
-    sni: ngepx.ambercc.filegear-sg.me
-    network: ws
-    ws-opts:
-      path: ""
-      headers:
-        Host: ngepx.ambercc.filegear-sg.me
-    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@ovpn2| AHS -1.75"
-      - "|@yaney_01| AHS -107.67"
-      - "|@hope_net| AHS -2.46"
+      - "|@PrivateVPNs| AHS -97.4"
+      - "|@PrivateVPNs| AHS -134.55"
+      - "|@PrivateVPNs| AHS -86.75"
+      - "|@DirectVPN| AHS -127.23"
+      - "|@DirectVPN| AHS -130.5"
+      - "|@DirectVPN| AHS -107.4"
+      - "|@ovpn2| AHS -1.5"
+      - "|@yaney_01| AHS -472.42"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -83,25 +123,40 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@ovpn2| AHS -1.75"
-      - "|@yaney_01| AHS -107.67"
-      - "|@hope_net| AHS -2.46"
+      - "|@PrivateVPNs| AHS -97.4"
+      - "|@PrivateVPNs| AHS -134.55"
+      - "|@PrivateVPNs| AHS -86.75"
+      - "|@DirectVPN| AHS -127.23"
+      - "|@DirectVPN| AHS -130.5"
+      - "|@DirectVPN| AHS -107.4"
+      - "|@ovpn2| AHS -1.5"
+      - "|@yaney_01| AHS -472.42"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@ovpn2| AHS -1.75"
-      - "|@yaney_01| AHS -107.67"
-      - "|@hope_net| AHS -2.46"
+      - "|@PrivateVPNs| AHS -97.4"
+      - "|@PrivateVPNs| AHS -134.55"
+      - "|@PrivateVPNs| AHS -86.75"
+      - "|@DirectVPN| AHS -127.23"
+      - "|@DirectVPN| AHS -130.5"
+      - "|@DirectVPN| AHS -107.4"
+      - "|@ovpn2| AHS -1.5"
+      - "|@yaney_01| AHS -472.42"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@ovpn2| AHS -1.75"
-      - "|@yaney_01| AHS -107.67"
-      - "|@hope_net| AHS -2.46"
+      - "|@PrivateVPNs| AHS -97.4"
+      - "|@PrivateVPNs| AHS -134.55"
+      - "|@PrivateVPNs| AHS -86.75"
+      - "|@DirectVPN| AHS -127.23"
+      - "|@DirectVPN| AHS -130.5"
+      - "|@DirectVPN| AHS -107.4"
+      - "|@ovpn2| AHS -1.5"
+      - "|@yaney_01| AHS -472.42"
 rules:
   - MATCH,MANUAL
