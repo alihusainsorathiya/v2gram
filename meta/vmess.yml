@@ -1,0 +1,196 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: "@free4allVPN| AHS -🚩|2.52"
+    server: 104.17.176.171
+    port: 8080
+    type: vmess
+    uuid: 6cbc9c78-1cb1-57d4-a999-e2f4e34c1e03
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ke7hz36ewz-4515017473.mashallahbet.com
+    network: ws
+    ws-opts:
+      path: /nasnet/cdn
+      headers:
+        Host: ke7hz36ewz-4515017473.mashallahbet.com
+    udp: true
+  - name: "@free4allVPN| AHS -🇸🇬|183.64"
+    server: 194.233.72.228
+    port: 27575
+    type: vmess
+    uuid: 16509262-dbe2-43ba-99ce-07913d2a18b4
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@free4allVPN| AHS -🇸🇬|168.85"
+    server: 192.53.113.156
+    port: 10002
+    type: vmess
+    uuid: 036a28c3-5c8d-4df3-a79b-9da622640f2b
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@Jeyksatan| AHS -🇨🇦|64.49"
+    server: 51.79.86.182
+    port: 42610
+    type: vmess
+    uuid: e0957ca6-f613-4017-ff3c-effd1da8871a
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|2.42"
+    server: id-lb.vhax.net
+    port: 80
+    type: vmess
+    uuid: 6fea1649-425b-4092-bf53-29792152c925
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: zoom.us
+    network: ws
+    ws-opts:
+      path: /sshkit/Arsham85231/6347d08022b91/
+      headers:
+        Host: zoom.us
+    udp: true
+  - name: "@v2rayngrit| AHS -🇯🇵|102.57"
+    server: 5.253.41.147
+    port: 27750
+    type: vmess
+    uuid: 4b1992cc-8e7c-4003-a45f-a28c3e6f6fa8
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@v2rayngrit| AHS -🇺🇸|1.97"
+    server: 142.4.119.72
+    port: 57118
+    type: vmess
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@v2ray_confings2| AHS -🇩🇪|176.3"
+    server: 188.114.96.1
+    port: 443
+    type: vmess
+    uuid: f584de15-2034-4170-a723-f48c2bae5e0f
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: afrhms16v.bestxray.buzz
+    network: ws
+    ws-opts:
+      path: /linkws
+      headers:
+        Host: afrhms16v.bestxray.buzz
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - "@free4allVPN| AHS -🚩|2.52"
+      - "@free4allVPN| AHS -🇸🇬|183.64"
+      - "@free4allVPN| AHS -🇸🇬|168.85"
+      - "@Jeyksatan| AHS -🇨🇦|64.49"
+      - "@v2rayvmess| AHS -🇺🇸|2.42"
+      - "@v2rayngrit| AHS -🇯🇵|102.57"
+      - "@v2rayngrit| AHS -🇺🇸|1.97"
+      - "@v2ray_confings2| AHS -🇩🇪|176.3"
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@free4allVPN| AHS -🚩|2.52"
+      - "@free4allVPN| AHS -🇸🇬|183.64"
+      - "@free4allVPN| AHS -🇸🇬|168.85"
+      - "@Jeyksatan| AHS -🇨🇦|64.49"
+      - "@v2rayvmess| AHS -🇺🇸|2.42"
+      - "@v2rayngrit| AHS -🇯🇵|102.57"
+      - "@v2rayngrit| AHS -🇺🇸|1.97"
+      - "@v2ray_confings2| AHS -🇩🇪|176.3"
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - "@free4allVPN| AHS -🚩|2.52"
+      - "@free4allVPN| AHS -🇸🇬|183.64"
+      - "@free4allVPN| AHS -🇸🇬|168.85"
+      - "@Jeyksatan| AHS -🇨🇦|64.49"
+      - "@v2rayvmess| AHS -🇺🇸|2.42"
+      - "@v2rayngrit| AHS -🇯🇵|102.57"
+      - "@v2rayngrit| AHS -🇺🇸|1.97"
+      - "@v2ray_confings2| AHS -🇩🇪|176.3"
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@free4allVPN| AHS -🚩|2.52"
+      - "@free4allVPN| AHS -🇸🇬|183.64"
+      - "@free4allVPN| AHS -🇸🇬|168.85"
+      - "@Jeyksatan| AHS -🇨🇦|64.49"
+      - "@v2rayvmess| AHS -🇺🇸|2.42"
+      - "@v2rayngrit| AHS -🇯🇵|102.57"
+      - "@v2rayngrit| AHS -🇺🇸|1.97"
+      - "@v2ray_confings2| AHS -🇩🇪|176.3"
+rules:
+  - MATCH,MANUAL
