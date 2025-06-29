@@ -1,0 +1,94 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: "@free4allVPN| AHS -🇯🇵|105"
+    server: 149.22.87.241
+    port: 443
+    type: ss
+    cipher: aes-128-gcm
+    password: shadowsocks7
+    udp: true
+  - name: "@hope_net| AHS -🇯🇵|105.44"
+    server: 149.22.87.240
+    port: 443
+    type: ss
+    cipher: aes-128-gcm
+    password: shadowsocks
+    udp: true
+  - name: "@v2rayngrit| AHS -🇦🇪|242.46"
+    server: 158.255.77.34
+    port: 35390
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: BAdQSwzquOXD2rgRjJgTdh
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - "@free4allVPN| AHS -🇯🇵|105"
+      - "@hope_net| AHS -🇯🇵|105.44"
+      - "@v2rayngrit| AHS -🇦🇪|242.46"
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@free4allVPN| AHS -🇯🇵|105"
+      - "@hope_net| AHS -🇯🇵|105.44"
+      - "@v2rayngrit| AHS -🇦🇪|242.46"
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - "@free4allVPN| AHS -🇯🇵|105"
+      - "@hope_net| AHS -🇯🇵|105.44"
+      - "@v2rayngrit| AHS -🇦🇪|242.46"
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@free4allVPN| AHS -🇯🇵|105"
+      - "@hope_net| AHS -🇯🇵|105.44"
+      - "@v2rayngrit| AHS -🇦🇪|242.46"
+rules:
+  - MATCH,MANUAL
