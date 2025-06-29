@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@ovpn2| AHS -1.8"
+  - name: "|@ovpn2| AHS -5.47"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -45,7 +45,7 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
-  - name: "|@yaney_01| AHS -304.6"
+  - name: "|@yaney_01| AHS -161.37"
     server: df.xiguajiasu.xyz
     port: 46002
     type: trojan
@@ -53,12 +53,21 @@ proxies:
     skip-cert-verify: true
     sni: ""
     udp: true
+  - name: "|@hope_net| AHS -105.11"
+    server: nextstepcareer.online
+    port: 443
+    type: trojan
+    password: 4732adfa16c6450bbef87264e41332db
+    skip-cert-verify: true
+    sni: ""
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@ovpn2| AHS -1.8"
-      - "|@yaney_01| AHS -304.6"
+      - "|@ovpn2| AHS -5.47"
+      - "|@yaney_01| AHS -161.37"
+      - "|@hope_net| AHS -105.11"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -69,22 +78,25 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@ovpn2| AHS -1.8"
-      - "|@yaney_01| AHS -304.6"
+      - "|@ovpn2| AHS -5.47"
+      - "|@yaney_01| AHS -161.37"
+      - "|@hope_net| AHS -105.11"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@ovpn2| AHS -1.8"
-      - "|@yaney_01| AHS -304.6"
+      - "|@ovpn2| AHS -5.47"
+      - "|@yaney_01| AHS -161.37"
+      - "|@hope_net| AHS -105.11"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@ovpn2| AHS -1.8"
-      - "|@yaney_01| AHS -304.6"
+      - "|@ovpn2| AHS -5.47"
+      - "|@yaney_01| AHS -161.37"
+      - "|@hope_net| AHS -105.11"
 rules:
   - MATCH,MANUAL
