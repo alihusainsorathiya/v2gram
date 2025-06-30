@@ -32,7 +32,15 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@ovpn2| AHS -1.92"
+  - name: "|@PrivateVPNs| AHS -157.67"
+    server: 13.37.59.91
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@ovpn2| AHS -15.14"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -45,7 +53,7 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
-  - name: "|@yaney_01| AHS -298.54"
+  - name: "|@yaney_01| AHS -134.55"
     server: df.xiguajiasu.xyz
     port: 46002
     type: trojan
@@ -53,12 +61,27 @@ proxies:
     skip-cert-verify: true
     sni: ""
     udp: true
+  - name: "|@hope_net| AHS -14.98"
+    server: 104.21.84.200
+    port: 443
+    type: trojan
+    password: NISHIKUITAN111
+    skip-cert-verify: true
+    sni: zb.ylks.xyz
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: zb.ylks.xyz
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@ovpn2| AHS -1.92"
-      - "|@yaney_01| AHS -298.54"
+      - "|@PrivateVPNs| AHS -157.67"
+      - "|@ovpn2| AHS -15.14"
+      - "|@yaney_01| AHS -134.55"
+      - "|@hope_net| AHS -14.98"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -69,22 +92,28 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@ovpn2| AHS -1.92"
-      - "|@yaney_01| AHS -298.54"
+      - "|@PrivateVPNs| AHS -157.67"
+      - "|@ovpn2| AHS -15.14"
+      - "|@yaney_01| AHS -134.55"
+      - "|@hope_net| AHS -14.98"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@ovpn2| AHS -1.92"
-      - "|@yaney_01| AHS -298.54"
+      - "|@PrivateVPNs| AHS -157.67"
+      - "|@ovpn2| AHS -15.14"
+      - "|@yaney_01| AHS -134.55"
+      - "|@hope_net| AHS -14.98"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@ovpn2| AHS -1.92"
-      - "|@yaney_01| AHS -298.54"
+      - "|@PrivateVPNs| AHS -157.67"
+      - "|@ovpn2| AHS -15.14"
+      - "|@yaney_01| AHS -134.55"
+      - "|@hope_net| AHS -14.98"
 rules:
   - MATCH,MANUAL
