@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@ovpn2| AHS -2.09"
+  - name: "|@ovpn2| AHS -5.56"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -45,7 +45,7 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
-  - name: "|@yaney_01| AHS -408.59"
+  - name: "|@yaney_01| AHS -162.59"
     server: df.xiguajiasu.xyz
     port: 46002
     type: trojan
@@ -53,7 +53,20 @@ proxies:
     skip-cert-verify: true
     sni: ""
     udp: true
-  - name: "|@azadnet| AHS -2.66"
+  - name: "|@hope_net| AHS -5.47"
+    server: 198.41.202.175
+    port: 443
+    type: trojan
+    password: bpb-trojan
+    skip-cert-verify: true
+    sni: bpb.my79801.com
+    network: ws
+    ws-opts:
+      path: /tr
+      headers:
+        Host: bpb.my79801.com
+    udp: true
+  - name: "|@azadnet| AHS -6.2"
     server: www.digitalocean.com
     port: 443
     type: trojan
@@ -66,7 +79,7 @@ proxies:
       headers:
         Host: a.azadnet001.ddns-ip.net
     udp: true
-  - name: "|@azadnet| AHS -2.52"
+  - name: "|@azadnet| AHS -6.22"
     server: www.digitalocean.com
     port: 443
     type: trojan
@@ -83,10 +96,11 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@ovpn2| AHS -2.09"
-      - "|@yaney_01| AHS -408.59"
-      - "|@azadnet| AHS -2.66"
-      - "|@azadnet| AHS -2.52"
+      - "|@ovpn2| AHS -5.56"
+      - "|@yaney_01| AHS -162.59"
+      - "|@hope_net| AHS -5.47"
+      - "|@azadnet| AHS -6.2"
+      - "|@azadnet| AHS -6.22"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -97,28 +111,31 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@ovpn2| AHS -2.09"
-      - "|@yaney_01| AHS -408.59"
-      - "|@azadnet| AHS -2.66"
-      - "|@azadnet| AHS -2.52"
+      - "|@ovpn2| AHS -5.56"
+      - "|@yaney_01| AHS -162.59"
+      - "|@hope_net| AHS -5.47"
+      - "|@azadnet| AHS -6.2"
+      - "|@azadnet| AHS -6.22"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@ovpn2| AHS -2.09"
-      - "|@yaney_01| AHS -408.59"
-      - "|@azadnet| AHS -2.66"
-      - "|@azadnet| AHS -2.52"
+      - "|@ovpn2| AHS -5.56"
+      - "|@yaney_01| AHS -162.59"
+      - "|@hope_net| AHS -5.47"
+      - "|@azadnet| AHS -6.2"
+      - "|@azadnet| AHS -6.22"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@ovpn2| AHS -2.09"
-      - "|@yaney_01| AHS -408.59"
-      - "|@azadnet| AHS -2.66"
-      - "|@azadnet| AHS -2.52"
+      - "|@ovpn2| AHS -5.56"
+      - "|@yaney_01| AHS -162.59"
+      - "|@hope_net| AHS -5.47"
+      - "|@azadnet| AHS -6.2"
+      - "|@azadnet| AHS -6.22"
 rules:
   - MATCH,MANUAL
