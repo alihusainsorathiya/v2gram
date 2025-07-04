@@ -32,7 +32,15 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@PrivateVPNs| AHS -100.37"
+  - name: "|@PrivateVPNs| AHS -161.13"
+    server: 18.199.109.12
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@PrivateVPNs| AHS -159.43"
     server: 13.36.133.142
     port: 22222
     type: trojan
@@ -40,7 +48,15 @@ proxies:
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -96.18"
+  - name: "|@PrivateVPNs| AHS -151.87"
+    server: 13.36.105.66
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -222.99"
     server: 13.36.133.142
     port: 22223
     type: trojan
@@ -48,7 +64,15 @@ proxies:
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@v2ray1_ng| AHS -5.54"
+  - name: "|@DirectVPN| AHS -150.86"
+    server: 13.36.105.66
+    port: 22223
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@v2ray1_ng| AHS -2.19"
     server: 104.18.26.90
     port: 443
     type: trojan
@@ -61,7 +85,15 @@ proxies:
       headers:
         Host: s1.mitivpn.workers.dev
     udp: true
-  - name: "|@ovpn2| AHS -5.74"
+  - name: "|@v2ray1_ng| AHS -168.73"
+    server: 85.255.9.247
+    port: 1935
+    type: trojan
+    password: mZMgM1vKw5
+    skip-cert-verify: true
+    sni: x1-czech-aruba-v2.devefun.org
+    udp: true
+  - name: "|@ovpn2| AHS -1.77"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -74,7 +106,7 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
-  - name: "|@yaney_01| AHS -503.02"
+  - name: "|@yaney_01| AHS -106.08"
     server: df.xiguajiasu.xyz
     port: 46002
     type: trojan
@@ -82,7 +114,15 @@ proxies:
     skip-cert-verify: true
     sni: ""
     udp: true
-  - name: "|@azadnet| AHS -5.98"
+  - name: "|@hope_net| AHS -1.81"
+    server: 104.19.44.160
+    port: 443
+    type: trojan
+    password: NISHIKUITAN111
+    skip-cert-verify: true
+    sni: ""
+    udp: true
+  - name: "|@azadnet| AHS -2.61"
     server: www.digitalocean.com
     port: 443
     type: trojan
@@ -95,7 +135,7 @@ proxies:
       headers:
         Host: a.azadnet001.ddns-ip.net
     udp: true
-  - name: "|@azadnet| AHS -5.98 2"
+  - name: "|@azadnet| AHS -2.72"
     server: www.digitalocean.com
     port: 443
     type: trojan
@@ -108,26 +148,22 @@ proxies:
       headers:
         Host: azadnet-9ya.pages.dev
     udp: true
-  - name: "|@v2rayngrit| AHS -unavailable"
-    server: 85.255.9.247
-    port: 1935
-    type: trojan
-    password: mZMgM1vKw5
-    skip-cert-verify: true
-    sni: x1-czech-aruba-v2.devefun.org
-    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@PrivateVPNs| AHS -100.37"
-      - "|@DirectVPN| AHS -96.18"
-      - "|@v2ray1_ng| AHS -5.54"
-      - "|@ovpn2| AHS -5.74"
-      - "|@yaney_01| AHS -503.02"
-      - "|@azadnet| AHS -5.98"
-      - "|@azadnet| AHS -5.98 2"
-      - "|@v2rayngrit| AHS -unavailable"
+      - "|@PrivateVPNs| AHS -161.13"
+      - "|@PrivateVPNs| AHS -159.43"
+      - "|@PrivateVPNs| AHS -151.87"
+      - "|@DirectVPN| AHS -222.99"
+      - "|@DirectVPN| AHS -150.86"
+      - "|@v2ray1_ng| AHS -2.19"
+      - "|@v2ray1_ng| AHS -168.73"
+      - "|@ovpn2| AHS -1.77"
+      - "|@yaney_01| AHS -106.08"
+      - "|@hope_net| AHS -1.81"
+      - "|@azadnet| AHS -2.61"
+      - "|@azadnet| AHS -2.72"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -138,40 +174,52 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -100.37"
-      - "|@DirectVPN| AHS -96.18"
-      - "|@v2ray1_ng| AHS -5.54"
-      - "|@ovpn2| AHS -5.74"
-      - "|@yaney_01| AHS -503.02"
-      - "|@azadnet| AHS -5.98"
-      - "|@azadnet| AHS -5.98 2"
-      - "|@v2rayngrit| AHS -unavailable"
+      - "|@PrivateVPNs| AHS -161.13"
+      - "|@PrivateVPNs| AHS -159.43"
+      - "|@PrivateVPNs| AHS -151.87"
+      - "|@DirectVPN| AHS -222.99"
+      - "|@DirectVPN| AHS -150.86"
+      - "|@v2ray1_ng| AHS -2.19"
+      - "|@v2ray1_ng| AHS -168.73"
+      - "|@ovpn2| AHS -1.77"
+      - "|@yaney_01| AHS -106.08"
+      - "|@hope_net| AHS -1.81"
+      - "|@azadnet| AHS -2.61"
+      - "|@azadnet| AHS -2.72"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@PrivateVPNs| AHS -100.37"
-      - "|@DirectVPN| AHS -96.18"
-      - "|@v2ray1_ng| AHS -5.54"
-      - "|@ovpn2| AHS -5.74"
-      - "|@yaney_01| AHS -503.02"
-      - "|@azadnet| AHS -5.98"
-      - "|@azadnet| AHS -5.98 2"
-      - "|@v2rayngrit| AHS -unavailable"
+      - "|@PrivateVPNs| AHS -161.13"
+      - "|@PrivateVPNs| AHS -159.43"
+      - "|@PrivateVPNs| AHS -151.87"
+      - "|@DirectVPN| AHS -222.99"
+      - "|@DirectVPN| AHS -150.86"
+      - "|@v2ray1_ng| AHS -2.19"
+      - "|@v2ray1_ng| AHS -168.73"
+      - "|@ovpn2| AHS -1.77"
+      - "|@yaney_01| AHS -106.08"
+      - "|@hope_net| AHS -1.81"
+      - "|@azadnet| AHS -2.61"
+      - "|@azadnet| AHS -2.72"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -100.37"
-      - "|@DirectVPN| AHS -96.18"
-      - "|@v2ray1_ng| AHS -5.54"
-      - "|@ovpn2| AHS -5.74"
-      - "|@yaney_01| AHS -503.02"
-      - "|@azadnet| AHS -5.98"
-      - "|@azadnet| AHS -5.98 2"
-      - "|@v2rayngrit| AHS -unavailable"
+      - "|@PrivateVPNs| AHS -161.13"
+      - "|@PrivateVPNs| AHS -159.43"
+      - "|@PrivateVPNs| AHS -151.87"
+      - "|@DirectVPN| AHS -222.99"
+      - "|@DirectVPN| AHS -150.86"
+      - "|@v2ray1_ng| AHS -2.19"
+      - "|@v2ray1_ng| AHS -168.73"
+      - "|@ovpn2| AHS -1.77"
+      - "|@yaney_01| AHS -106.08"
+      - "|@hope_net| AHS -1.81"
+      - "|@azadnet| AHS -2.61"
+      - "|@azadnet| AHS -2.72"
 rules:
   - MATCH,MANUAL
