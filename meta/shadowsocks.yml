@@ -1,0 +1,116 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: "@free4allVPN| AHS -🇯🇵|105.17"
+    server: 149.22.87.204
+    port: 443
+    type: ss
+    cipher: aes-128-gcm
+    password: shadowsocks7
+    udp: true
+  - name: "@azadi_az_inja_migzare| AHS -🇵🇹|183.07"
+    server: 185.231.233.173
+    port: 989
+    type: ss
+    cipher: aes-256-cfb
+    password: f8f7aCzcPKbsF8p3
+    udp: true
+  - name: "@azadi_az_inja_migzare| AHS -🇹🇼|188.98"
+    server: 185.189.160.98
+    port: 64759
+    type: ss
+    cipher: aes-256-cfb
+    password: qwerREWQ@@
+    udp: true
+  - name: "@azadi_az_inja_migzare| AHS -🇭🇰|182.65"
+    server: 154.223.21.221
+    port: 989
+    type: ss
+    cipher: aes-256-cfb
+    password: f8f7aCzcPKbsF8p3
+    udp: true
+  - name: "@v2rayngrit| AHS -🇦🇪|208.54"
+    server: 89.35.119.87
+    port: 5904
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: 5TZnwPb23pQS39lIucspJw
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - "@free4allVPN| AHS -🇯🇵|105.17"
+      - "@azadi_az_inja_migzare| AHS -🇵🇹|183.07"
+      - "@azadi_az_inja_migzare| AHS -🇹🇼|188.98"
+      - "@azadi_az_inja_migzare| AHS -🇭🇰|182.65"
+      - "@v2rayngrit| AHS -🇦🇪|208.54"
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@free4allVPN| AHS -🇯🇵|105.17"
+      - "@azadi_az_inja_migzare| AHS -🇵🇹|183.07"
+      - "@azadi_az_inja_migzare| AHS -🇹🇼|188.98"
+      - "@azadi_az_inja_migzare| AHS -🇭🇰|182.65"
+      - "@v2rayngrit| AHS -🇦🇪|208.54"
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - "@free4allVPN| AHS -🇯🇵|105.17"
+      - "@azadi_az_inja_migzare| AHS -🇵🇹|183.07"
+      - "@azadi_az_inja_migzare| AHS -🇹🇼|188.98"
+      - "@azadi_az_inja_migzare| AHS -🇭🇰|182.65"
+      - "@v2rayngrit| AHS -🇦🇪|208.54"
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@free4allVPN| AHS -🇯🇵|105.17"
+      - "@azadi_az_inja_migzare| AHS -🇵🇹|183.07"
+      - "@azadi_az_inja_migzare| AHS -🇹🇼|188.98"
+      - "@azadi_az_inja_migzare| AHS -🇭🇰|182.65"
+      - "@v2rayngrit| AHS -🇦🇪|208.54"
+rules:
+  - MATCH,MANUAL
