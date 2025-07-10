@@ -32,31 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@PrivateVPNs| AHS -225.2"
-    server: 3.73.26.188
-    port: 22222
-    type: trojan
-    password: telegram-id-privatevpns
-    skip-cert-verify: true
-    sni: trojan.burgerip.co.uk
-    udp: true
-  - name: "|@DirectVPN| AHS -157.39"
-    server: 3.124.76.127
-    port: 22223
-    type: trojan
-    password: telegram-id-directvpn
-    skip-cert-verify: true
-    sni: trojan.burgerip.co.uk
-    udp: true
-  - name: "|@DirectVPN| AHS -168.6"
-    server: 3.73.26.188
-    port: 22223
-    type: trojan
-    password: telegram-id-directvpn
-    skip-cert-verify: true
-    sni: trojan.burgerip.co.uk
-    udp: true
-  - name: "|@v2ray1_ng| AHS -1.45"
+  - name: "|@v2ray1_ng| AHS -2.11"
     server: 109.234.211.66
     port: 8443
     type: trojan
@@ -69,7 +45,7 @@ proxies:
       headers:
         Host: store.timimi.dpdns.org
     udp: true
-  - name: "|@ovpn2| AHS -1.46"
+  - name: "|@ovpn2| AHS -2.78"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -82,23 +58,15 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
-  - name: "|@hope_net| AHS -105.94"
-    server: 57.182.167.184
-    port: 443
-    type: trojan
-    password: 243eab52-9ac1-405c-887c-eb112c0985b8
-    skip-cert-verify: true
-    sni: us02.trojanyyds.xyz
-    udp: true
-  - name: "|@hope_net| AHS -1.56"
-    server: 31.43.179.27
-    port: 443
+  - name: "|@hope_net| AHS -177.83"
+    server: 220.90.180.182
+    port: 50000
     type: trojan
     password: Aimer
     skip-cert-verify: true
     sni: ngepy.ambercc.filegear-sg.me
     udp: true
-  - name: "|@v2rayngrit| AHS -163.5"
+  - name: "|@v2rayngrit| AHS -unavailable"
     server: 85.255.9.247
     port: 1935
     type: trojan
@@ -106,18 +74,23 @@ proxies:
     skip-cert-verify: true
     sni: x1-czech-aruba-v2.devefun.org
     udp: true
+  - name: "|@v2rayngrit| AHS -109.78"
+    server: 104.248.18.1
+    port: 1935
+    type: trojan
+    password: 6gZh2JbfhQ
+    skip-cert-verify: true
+    sni: x1-germany-digitalocean-v2.devefun.org
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@PrivateVPNs| AHS -225.2"
-      - "|@DirectVPN| AHS -157.39"
-      - "|@DirectVPN| AHS -168.6"
-      - "|@v2ray1_ng| AHS -1.45"
-      - "|@ovpn2| AHS -1.46"
-      - "|@hope_net| AHS -105.94"
-      - "|@hope_net| AHS -1.56"
-      - "|@v2rayngrit| AHS -163.5"
+      - "|@v2ray1_ng| AHS -2.11"
+      - "|@ovpn2| AHS -2.78"
+      - "|@hope_net| AHS -177.83"
+      - "|@v2rayngrit| AHS -unavailable"
+      - "|@v2rayngrit| AHS -109.78"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -128,40 +101,31 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -225.2"
-      - "|@DirectVPN| AHS -157.39"
-      - "|@DirectVPN| AHS -168.6"
-      - "|@v2ray1_ng| AHS -1.45"
-      - "|@ovpn2| AHS -1.46"
-      - "|@hope_net| AHS -105.94"
-      - "|@hope_net| AHS -1.56"
-      - "|@v2rayngrit| AHS -163.5"
+      - "|@v2ray1_ng| AHS -2.11"
+      - "|@ovpn2| AHS -2.78"
+      - "|@hope_net| AHS -177.83"
+      - "|@v2rayngrit| AHS -unavailable"
+      - "|@v2rayngrit| AHS -109.78"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@PrivateVPNs| AHS -225.2"
-      - "|@DirectVPN| AHS -157.39"
-      - "|@DirectVPN| AHS -168.6"
-      - "|@v2ray1_ng| AHS -1.45"
-      - "|@ovpn2| AHS -1.46"
-      - "|@hope_net| AHS -105.94"
-      - "|@hope_net| AHS -1.56"
-      - "|@v2rayngrit| AHS -163.5"
+      - "|@v2ray1_ng| AHS -2.11"
+      - "|@ovpn2| AHS -2.78"
+      - "|@hope_net| AHS -177.83"
+      - "|@v2rayngrit| AHS -unavailable"
+      - "|@v2rayngrit| AHS -109.78"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -225.2"
-      - "|@DirectVPN| AHS -157.39"
-      - "|@DirectVPN| AHS -168.6"
-      - "|@v2ray1_ng| AHS -1.45"
-      - "|@ovpn2| AHS -1.46"
-      - "|@hope_net| AHS -105.94"
-      - "|@hope_net| AHS -1.56"
-      - "|@v2rayngrit| AHS -163.5"
+      - "|@v2ray1_ng| AHS -2.11"
+      - "|@ovpn2| AHS -2.78"
+      - "|@hope_net| AHS -177.83"
+      - "|@v2rayngrit| AHS -unavailable"
+      - "|@v2rayngrit| AHS -109.78"
 rules:
   - MATCH,MANUAL
