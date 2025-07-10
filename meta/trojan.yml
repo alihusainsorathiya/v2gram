@@ -32,7 +32,15 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@v2ray1_ng| AHS -2.11"
+  - name: "|@PrivateVPNs| AHS -94.38"
+    server: 3.78.152.130
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@v2ray1_ng| AHS -1.36"
     server: 109.234.211.66
     port: 8443
     type: trojan
@@ -45,7 +53,7 @@ proxies:
       headers:
         Host: store.timimi.dpdns.org
     udp: true
-  - name: "|@ovpn2| AHS -2.78"
+  - name: "|@ovpn2| AHS -1.11"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -58,15 +66,31 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
-  - name: "|@hope_net| AHS -177.83"
-    server: 220.90.180.182
-    port: 50000
+  - name: "|@hope_net| AHS -22.62"
+    server: 162.159.44.48
+    port: 443
     type: trojan
     password: Aimer
     skip-cert-verify: true
     sni: ngepy.ambercc.filegear-sg.me
     udp: true
-  - name: "|@v2rayngrit| AHS -unavailable"
+  - name: "|@hope_net| AHS -1.51"
+    server: 104.19.60.104
+    port: 2096
+    type: trojan
+    password: Aimer
+    skip-cert-verify: true
+    sni: ngepy.ambercc.filegear-sg.me
+    udp: true
+  - name: "|@hope_net| AHS -23.53"
+    server: ignacio.ns.cloudflare.com
+    port: 443
+    type: trojan
+    password: Aimer
+    skip-cert-verify: true
+    sni: ngepy.ambercc.filegear-sg.me
+    udp: true
+  - name: "|@v2rayngrit| AHS -99.35"
     server: 85.255.9.247
     port: 1935
     type: trojan
@@ -74,7 +98,7 @@ proxies:
     skip-cert-verify: true
     sni: x1-czech-aruba-v2.devefun.org
     udp: true
-  - name: "|@v2rayngrit| AHS -109.78"
+  - name: "|@v2rayngrit| AHS -91.64"
     server: 104.248.18.1
     port: 1935
     type: trojan
@@ -86,11 +110,14 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@v2ray1_ng| AHS -2.11"
-      - "|@ovpn2| AHS -2.78"
-      - "|@hope_net| AHS -177.83"
-      - "|@v2rayngrit| AHS -unavailable"
-      - "|@v2rayngrit| AHS -109.78"
+      - "|@PrivateVPNs| AHS -94.38"
+      - "|@v2ray1_ng| AHS -1.36"
+      - "|@ovpn2| AHS -1.11"
+      - "|@hope_net| AHS -22.62"
+      - "|@hope_net| AHS -1.51"
+      - "|@hope_net| AHS -23.53"
+      - "|@v2rayngrit| AHS -99.35"
+      - "|@v2rayngrit| AHS -91.64"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -101,31 +128,40 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@v2ray1_ng| AHS -2.11"
-      - "|@ovpn2| AHS -2.78"
-      - "|@hope_net| AHS -177.83"
-      - "|@v2rayngrit| AHS -unavailable"
-      - "|@v2rayngrit| AHS -109.78"
+      - "|@PrivateVPNs| AHS -94.38"
+      - "|@v2ray1_ng| AHS -1.36"
+      - "|@ovpn2| AHS -1.11"
+      - "|@hope_net| AHS -22.62"
+      - "|@hope_net| AHS -1.51"
+      - "|@hope_net| AHS -23.53"
+      - "|@v2rayngrit| AHS -99.35"
+      - "|@v2rayngrit| AHS -91.64"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@v2ray1_ng| AHS -2.11"
-      - "|@ovpn2| AHS -2.78"
-      - "|@hope_net| AHS -177.83"
-      - "|@v2rayngrit| AHS -unavailable"
-      - "|@v2rayngrit| AHS -109.78"
+      - "|@PrivateVPNs| AHS -94.38"
+      - "|@v2ray1_ng| AHS -1.36"
+      - "|@ovpn2| AHS -1.11"
+      - "|@hope_net| AHS -22.62"
+      - "|@hope_net| AHS -1.51"
+      - "|@hope_net| AHS -23.53"
+      - "|@v2rayngrit| AHS -99.35"
+      - "|@v2rayngrit| AHS -91.64"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@v2ray1_ng| AHS -2.11"
-      - "|@ovpn2| AHS -2.78"
-      - "|@hope_net| AHS -177.83"
-      - "|@v2rayngrit| AHS -unavailable"
-      - "|@v2rayngrit| AHS -109.78"
+      - "|@PrivateVPNs| AHS -94.38"
+      - "|@v2ray1_ng| AHS -1.36"
+      - "|@ovpn2| AHS -1.11"
+      - "|@hope_net| AHS -22.62"
+      - "|@hope_net| AHS -1.51"
+      - "|@hope_net| AHS -23.53"
+      - "|@v2rayngrit| AHS -99.35"
+      - "|@v2rayngrit| AHS -91.64"
 rules:
   - MATCH,MANUAL
