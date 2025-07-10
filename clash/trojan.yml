@@ -19,30 +19,33 @@ dns:
   fallback: [https://101.101.101.101/dns-query, https://public.dns.iij.jp/dns-query, https://208.67.220.220/dns-query]
   fallback-filter: {geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32, 223.75.236.241/32, 182.43.124.6/32, 106.74.25.198/32], domain: [+.bianyuan.xyz, +.happynothings031.xyz, +.jsdelivr.net, +.proton.me]}
 proxies:
-  - {name: "|@PrivateVPNs| AHS -222.8", server: 15.188.93.104, port: 22222, type: trojan, password: telegram-id-privatevpns, sni: trojan.burgerip.co.uk, skip-cert-verify: false, udp: true}
-  - {name: "|@DirectVPN| AHS -155.7", server: 15.188.93.104, port: 22223, type: trojan, password: telegram-id-directvpn, sni: trojan.burgerip.co.uk, skip-cert-verify: false, udp: true}
-  - {name: "|@v2ray1_ng| AHS -1.87", server: 109.234.211.66, port: 8443, type: trojan, password: trojan, sni: store.timimi.dpdns.org, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: store.timimi.dpdns.org}}, udp: true}
-  - {name: "|@ovpn2| AHS -2.36", server: 162.159.138.232, port: 443, type: trojan, password: dQDQCtns4R, sni: fadaei.movieland.top, skip-cert-verify: false, network: ws, ws-opts: {path: static34528, headers: {Host: fadaei.movieland.top}}, udp: true}
+  - {name: "|@v2ray1_ng| AHS -3.01", server: 109.234.211.66, port: 8443, type: trojan, password: trojan, sni: store.timimi.dpdns.org, skip-cert-verify: false, network: ws, ws-opts: {path: /, headers: {Host: store.timimi.dpdns.org}}, udp: true}
+  - {name: "|@ovpn2| AHS -1.94", server: 162.159.138.232, port: 443, type: trojan, password: dQDQCtns4R, sni: fadaei.movieland.top, skip-cert-verify: false, network: ws, ws-opts: {path: static34528, headers: {Host: fadaei.movieland.top}}, udp: true}
+  - {name: "|@hope_net| AHS -3.01", server: 172.67.65.113, port: 2083, type: trojan, password: Aimer, sni: ngepz.ambercc.filegear-sg.me, skip-cert-verify: false, udp: true}
+  - {name: "|@v2rayngrit| AHS -119.84", server: 85.255.9.247, port: 1935, type: trojan, password: mZMgM1vKw5, sni: x1-czech-aruba-v2.devefun.org, skip-cert-verify: false, udp: true}
+  - {name: "|@v2rayngrit| AHS -110.44", server: 104.248.18.1, port: 1935, type: trojan, password: 6gZh2JbfhQ, sni: x1-germany-digitalocean-v2.devefun.org, skip-cert-verify: false, udp: true}
 proxy-groups:
   - name: 🚀 MANUAL
     type: select
     proxies:
       - ♻️ AUTO SELECT
       - DIRECT
-      - "|@PrivateVPNs| AHS -222.8"
-      - "|@DirectVPN| AHS -155.7"
-      - "|@v2ray1_ng| AHS -1.87"
-      - "|@ovpn2| AHS -2.36"
+      - "|@v2ray1_ng| AHS -3.01"
+      - "|@ovpn2| AHS -1.94"
+      - "|@hope_net| AHS -3.01"
+      - "|@v2rayngrit| AHS -119.84"
+      - "|@v2rayngrit| AHS -110.44"
   - name: ♻️ AUTO SELECT
     type: url-test
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     proxies:
-      - "|@PrivateVPNs| AHS -222.8"
-      - "|@DirectVPN| AHS -155.7"
-      - "|@v2ray1_ng| AHS -1.87"
-      - "|@ovpn2| AHS -2.36"
+      - "|@v2ray1_ng| AHS -3.01"
+      - "|@ovpn2| AHS -1.94"
+      - "|@hope_net| AHS -3.01"
+      - "|@v2rayngrit| AHS -119.84"
+      - "|@v2rayngrit| AHS -110.44"
   - name: 🎯 GLOBAL DIRECT
     type: select
     proxies:
@@ -60,10 +63,11 @@ proxy-groups:
       - 🚀 MANUAL
       - 🎯 GLOBAL DIRECT
       - ♻️ AUTO SELECT
-      - "|@PrivateVPNs| AHS -222.8"
-      - "|@DirectVPN| AHS -155.7"
-      - "|@v2ray1_ng| AHS -1.87"
-      - "|@ovpn2| AHS -2.36"
+      - "|@v2ray1_ng| AHS -3.01"
+      - "|@ovpn2| AHS -1.94"
+      - "|@hope_net| AHS -3.01"
+      - "|@v2rayngrit| AHS -119.84"
+      - "|@v2rayngrit| AHS -110.44"
 rules:
   - DOMAIN-SUFFIX,acl4.ssr,🎯 GLOBAL DIRECT
   - DOMAIN-SUFFIX,ip6-localhost,🎯 GLOBAL DIRECT
