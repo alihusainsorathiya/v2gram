@@ -32,7 +32,23 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@v2ray1_ng| AHS -5.29"
+  - name: "|@PrivateVPNs| AHS -128.08"
+    server: 3.69.141.184
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -134.16"
+    server: 3.69.141.184
+    port: 22223
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@v2ray1_ng| AHS -5.19"
     server: 109.234.211.66
     port: 8443
     type: trojan
@@ -45,7 +61,7 @@ proxies:
       headers:
         Host: store.timimi.dpdns.org
     udp: true
-  - name: "|@ovpn2| AHS -6.1"
+  - name: "|@ovpn2| AHS -5.48"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -58,31 +74,31 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
-  - name: "|@hope_net| AHS -161.42"
-    server: 54.95.65.20
+  - name: "|@hope_net| AHS -5.57"
+    server: 141.11.203.168
     port: 443
     type: trojan
-    password: 243eab52-9ac1-405c-887c-eb112c0985b8
+    password: Aimer
     skip-cert-verify: true
-    sni: hk03.trojanyyds.xyz
+    sni: ngepy.ambercc.filegear-sg.me
     udp: true
-  - name: "|@hope_net| AHS -230.66"
-    server: 185.67.125.160
+  - name: "|@hope_net| AHS -7.04"
+    server: 192.200.160.15
+    port: 8443
+    type: trojan
+    password: Aimer
+    skip-cert-verify: true
+    sni: ngepy.ambercc.filegear-sg.me
+    udp: true
+  - name: "|@hope_net| AHS -26.14"
+    server: thaddeus.ns.cloudflare.com
     port: 443
     type: trojan
-    password: 3763495982449565696
+    password: Aimer
     skip-cert-verify: true
-    sni: topical-gibbon.goat627.mom
+    sni: ngepy.ambercc.filegear-sg.me
     udp: true
-  - name: "|@v2rayngrit| AHS -98.07"
-    server: 85.255.9.247
-    port: 1935
-    type: trojan
-    password: mZMgM1vKw5
-    skip-cert-verify: true
-    sni: x1-czech-aruba-v2.devefun.org
-    udp: true
-  - name: "|@v2rayngrit| AHS -89.48"
+  - name: "|@v2rayngrit| AHS -90.77"
     server: 104.248.18.1
     port: 1935
     type: trojan
@@ -94,12 +110,14 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@v2ray1_ng| AHS -5.29"
-      - "|@ovpn2| AHS -6.1"
-      - "|@hope_net| AHS -161.42"
-      - "|@hope_net| AHS -230.66"
-      - "|@v2rayngrit| AHS -98.07"
-      - "|@v2rayngrit| AHS -89.48"
+      - "|@PrivateVPNs| AHS -128.08"
+      - "|@DirectVPN| AHS -134.16"
+      - "|@v2ray1_ng| AHS -5.19"
+      - "|@ovpn2| AHS -5.48"
+      - "|@hope_net| AHS -5.57"
+      - "|@hope_net| AHS -7.04"
+      - "|@hope_net| AHS -26.14"
+      - "|@v2rayngrit| AHS -90.77"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -110,34 +128,40 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@v2ray1_ng| AHS -5.29"
-      - "|@ovpn2| AHS -6.1"
-      - "|@hope_net| AHS -161.42"
-      - "|@hope_net| AHS -230.66"
-      - "|@v2rayngrit| AHS -98.07"
-      - "|@v2rayngrit| AHS -89.48"
+      - "|@PrivateVPNs| AHS -128.08"
+      - "|@DirectVPN| AHS -134.16"
+      - "|@v2ray1_ng| AHS -5.19"
+      - "|@ovpn2| AHS -5.48"
+      - "|@hope_net| AHS -5.57"
+      - "|@hope_net| AHS -7.04"
+      - "|@hope_net| AHS -26.14"
+      - "|@v2rayngrit| AHS -90.77"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@v2ray1_ng| AHS -5.29"
-      - "|@ovpn2| AHS -6.1"
-      - "|@hope_net| AHS -161.42"
-      - "|@hope_net| AHS -230.66"
-      - "|@v2rayngrit| AHS -98.07"
-      - "|@v2rayngrit| AHS -89.48"
+      - "|@PrivateVPNs| AHS -128.08"
+      - "|@DirectVPN| AHS -134.16"
+      - "|@v2ray1_ng| AHS -5.19"
+      - "|@ovpn2| AHS -5.48"
+      - "|@hope_net| AHS -5.57"
+      - "|@hope_net| AHS -7.04"
+      - "|@hope_net| AHS -26.14"
+      - "|@v2rayngrit| AHS -90.77"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@v2ray1_ng| AHS -5.29"
-      - "|@ovpn2| AHS -6.1"
-      - "|@hope_net| AHS -161.42"
-      - "|@hope_net| AHS -230.66"
-      - "|@v2rayngrit| AHS -98.07"
-      - "|@v2rayngrit| AHS -89.48"
+      - "|@PrivateVPNs| AHS -128.08"
+      - "|@DirectVPN| AHS -134.16"
+      - "|@v2ray1_ng| AHS -5.19"
+      - "|@ovpn2| AHS -5.48"
+      - "|@hope_net| AHS -5.57"
+      - "|@hope_net| AHS -7.04"
+      - "|@hope_net| AHS -26.14"
+      - "|@v2rayngrit| AHS -90.77"
 rules:
   - MATCH,MANUAL
