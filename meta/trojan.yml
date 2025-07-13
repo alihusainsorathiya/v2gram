@@ -32,7 +32,15 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@NetAccount| AHS -8.53"
+  - name: "|@PrivateVPNs| AHS -105.67"
+    server: 13.37.253.14
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@NetAccount| AHS -2.91"
     server: 104.25.165.81
     port: 8443
     type: trojan
@@ -45,7 +53,7 @@ proxies:
       headers:
         Host: top-azx.pages.dev
     udp: true
-  - name: "|@ovpn2| AHS -8.88"
+  - name: "|@ovpn2| AHS -2.1"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -58,7 +66,7 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
-  - name: "|@v2rayngrit| AHS -unavailable"
+  - name: "|@v2rayngrit| AHS -109.32"
     server: 104.248.18.1
     port: 1935
     type: trojan
@@ -70,9 +78,10 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@NetAccount| AHS -8.53"
-      - "|@ovpn2| AHS -8.88"
-      - "|@v2rayngrit| AHS -unavailable"
+      - "|@PrivateVPNs| AHS -105.67"
+      - "|@NetAccount| AHS -2.91"
+      - "|@ovpn2| AHS -2.1"
+      - "|@v2rayngrit| AHS -109.32"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -83,25 +92,28 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@NetAccount| AHS -8.53"
-      - "|@ovpn2| AHS -8.88"
-      - "|@v2rayngrit| AHS -unavailable"
+      - "|@PrivateVPNs| AHS -105.67"
+      - "|@NetAccount| AHS -2.91"
+      - "|@ovpn2| AHS -2.1"
+      - "|@v2rayngrit| AHS -109.32"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@NetAccount| AHS -8.53"
-      - "|@ovpn2| AHS -8.88"
-      - "|@v2rayngrit| AHS -unavailable"
+      - "|@PrivateVPNs| AHS -105.67"
+      - "|@NetAccount| AHS -2.91"
+      - "|@ovpn2| AHS -2.1"
+      - "|@v2rayngrit| AHS -109.32"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@NetAccount| AHS -8.53"
-      - "|@ovpn2| AHS -8.88"
-      - "|@v2rayngrit| AHS -unavailable"
+      - "|@PrivateVPNs| AHS -105.67"
+      - "|@NetAccount| AHS -2.91"
+      - "|@ovpn2| AHS -2.1"
+      - "|@v2rayngrit| AHS -109.32"
 rules:
   - MATCH,MANUAL
