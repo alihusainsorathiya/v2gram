@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@v2ray1_ng| AHS -14.4"
+  - name: "|@v2ray1_ng| AHS -8.69"
     server: 104.25.165.81
     port: 8443
     type: trojan
@@ -45,15 +45,7 @@ proxies:
       headers:
         Host: top-azx.pages.dev
     udp: true
-  - name: "|@v2ray1_ng| AHS -unavailable"
-    server: 104.248.18.1
-    port: 1935
-    type: trojan
-    password: 6gZh2JbfhQ
-    skip-cert-verify: true
-    sni: x1-germany-digitalocean-v2.devefun.org
-    udp: true
-  - name: "|@ovpn2| AHS -14.34"
+  - name: "|@ovpn2| AHS -8.66"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -66,13 +58,21 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
+  - name: "|@hope_net| AHS -18.74"
+    server: connectwithemployers.online
+    port: 443
+    type: trojan
+    password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
+    skip-cert-verify: true
+    sni: ""
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@v2ray1_ng| AHS -14.4"
-      - "|@v2ray1_ng| AHS -unavailable"
-      - "|@ovpn2| AHS -14.34"
+      - "|@v2ray1_ng| AHS -8.69"
+      - "|@ovpn2| AHS -8.66"
+      - "|@hope_net| AHS -18.74"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -83,25 +83,25 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@v2ray1_ng| AHS -14.4"
-      - "|@v2ray1_ng| AHS -unavailable"
-      - "|@ovpn2| AHS -14.34"
+      - "|@v2ray1_ng| AHS -8.69"
+      - "|@ovpn2| AHS -8.66"
+      - "|@hope_net| AHS -18.74"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@v2ray1_ng| AHS -14.4"
-      - "|@v2ray1_ng| AHS -unavailable"
-      - "|@ovpn2| AHS -14.34"
+      - "|@v2ray1_ng| AHS -8.69"
+      - "|@ovpn2| AHS -8.66"
+      - "|@hope_net| AHS -18.74"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@v2ray1_ng| AHS -14.4"
-      - "|@v2ray1_ng| AHS -unavailable"
-      - "|@ovpn2| AHS -14.34"
+      - "|@v2ray1_ng| AHS -8.69"
+      - "|@ovpn2| AHS -8.66"
+      - "|@hope_net| AHS -18.74"
 rules:
   - MATCH,MANUAL
