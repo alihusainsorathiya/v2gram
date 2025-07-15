@@ -32,15 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@PrivateVPNs| AHS -85.51"
-    server: 52.47.142.216
-    port: 22222
-    type: trojan
-    password: telegram-id-privatevpns
-    skip-cert-verify: true
-    sni: trojan.burgerip.co.uk
-    udp: true
-  - name: "|@v2ray1_ng| AHS -2.02"
+  - name: "|@v2ray1_ng| AHS -2.17"
     server: 104.25.165.81
     port: 8443
     type: trojan
@@ -53,7 +45,7 @@ proxies:
       headers:
         Host: top-azx.pages.dev
     udp: true
-  - name: "|@ovpn2| AHS -1.62"
+  - name: "|@ovpn2| AHS -3.25"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -70,9 +62,8 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@PrivateVPNs| AHS -85.51"
-      - "|@v2ray1_ng| AHS -2.02"
-      - "|@ovpn2| AHS -1.62"
+      - "|@v2ray1_ng| AHS -2.17"
+      - "|@ovpn2| AHS -3.25"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -83,25 +74,22 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -85.51"
-      - "|@v2ray1_ng| AHS -2.02"
-      - "|@ovpn2| AHS -1.62"
+      - "|@v2ray1_ng| AHS -2.17"
+      - "|@ovpn2| AHS -3.25"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@PrivateVPNs| AHS -85.51"
-      - "|@v2ray1_ng| AHS -2.02"
-      - "|@ovpn2| AHS -1.62"
+      - "|@v2ray1_ng| AHS -2.17"
+      - "|@ovpn2| AHS -3.25"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -85.51"
-      - "|@v2ray1_ng| AHS -2.02"
-      - "|@ovpn2| AHS -1.62"
+      - "|@v2ray1_ng| AHS -2.17"
+      - "|@ovpn2| AHS -3.25"
 rules:
   - MATCH,MANUAL
