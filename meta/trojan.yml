@@ -32,7 +32,23 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@NetAccount| AHS -30.71"
+  - name: "|@PrivateVPNs| AHS -109.24"
+    server: 3.76.156.12
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -112.6"
+    server: 3.76.156.12
+    port: 22223
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@NetAccount| AHS -59.84"
     server: 51.81.203.233
     port: 443
     type: trojan
@@ -40,7 +56,7 @@ proxies:
     skip-cert-verify: true
     sni: rs4.freeguard.org
     udp: true
-  - name: "|@NetAccount| AHS -61.68"
+  - name: "|@NetAccount| AHS -14.98"
     server: 23.95.14.5
     port: 443
     type: trojan
@@ -48,7 +64,7 @@ proxies:
     skip-cert-verify: true
     sni: rc9.freeguard.org
     udp: true
-  - name: "|@v2ray1_ng| AHS -8.61"
+  - name: "|@v2ray1_ng| AHS -2.96"
     server: 104.25.165.81
     port: 8443
     type: trojan
@@ -61,7 +77,7 @@ proxies:
       headers:
         Host: top-azx.pages.dev
     udp: true
-  - name: "|@v2ray1_ng| AHS -8.73"
+  - name: "|@v2ray1_ng| AHS -2.96 2"
     server: 172.67.181.173
     port: 443
     type: trojan
@@ -74,7 +90,7 @@ proxies:
       headers:
         Host: vpn.stupidworld.web.id
     udp: true
-  - name: "|@ovpn2| AHS -8.82"
+  - name: "|@ovpn2| AHS -2.37"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -87,24 +103,26 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
-  - name: "|@hope_net| AHS -8.76"
-    server: 154.197.64.189
-    port: 2087
+  - name: "|@hope_net| AHS -2.9"
+    server: 188.164.159.174
+    port: 2053
     type: trojan
     password: Aimer
     skip-cert-verify: true
-    sni: ameqo.esslh.filegear-sg.me
+    sni: amepo.ambercc.filegear-sg.me
     udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@NetAccount| AHS -30.71"
-      - "|@NetAccount| AHS -61.68"
-      - "|@v2ray1_ng| AHS -8.61"
-      - "|@v2ray1_ng| AHS -8.73"
-      - "|@ovpn2| AHS -8.82"
-      - "|@hope_net| AHS -8.76"
+      - "|@PrivateVPNs| AHS -109.24"
+      - "|@DirectVPN| AHS -112.6"
+      - "|@NetAccount| AHS -59.84"
+      - "|@NetAccount| AHS -14.98"
+      - "|@v2ray1_ng| AHS -2.96"
+      - "|@v2ray1_ng| AHS -2.96 2"
+      - "|@ovpn2| AHS -2.37"
+      - "|@hope_net| AHS -2.9"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -115,34 +133,40 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@NetAccount| AHS -30.71"
-      - "|@NetAccount| AHS -61.68"
-      - "|@v2ray1_ng| AHS -8.61"
-      - "|@v2ray1_ng| AHS -8.73"
-      - "|@ovpn2| AHS -8.82"
-      - "|@hope_net| AHS -8.76"
+      - "|@PrivateVPNs| AHS -109.24"
+      - "|@DirectVPN| AHS -112.6"
+      - "|@NetAccount| AHS -59.84"
+      - "|@NetAccount| AHS -14.98"
+      - "|@v2ray1_ng| AHS -2.96"
+      - "|@v2ray1_ng| AHS -2.96 2"
+      - "|@ovpn2| AHS -2.37"
+      - "|@hope_net| AHS -2.9"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@NetAccount| AHS -30.71"
-      - "|@NetAccount| AHS -61.68"
-      - "|@v2ray1_ng| AHS -8.61"
-      - "|@v2ray1_ng| AHS -8.73"
-      - "|@ovpn2| AHS -8.82"
-      - "|@hope_net| AHS -8.76"
+      - "|@PrivateVPNs| AHS -109.24"
+      - "|@DirectVPN| AHS -112.6"
+      - "|@NetAccount| AHS -59.84"
+      - "|@NetAccount| AHS -14.98"
+      - "|@v2ray1_ng| AHS -2.96"
+      - "|@v2ray1_ng| AHS -2.96 2"
+      - "|@ovpn2| AHS -2.37"
+      - "|@hope_net| AHS -2.9"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@NetAccount| AHS -30.71"
-      - "|@NetAccount| AHS -61.68"
-      - "|@v2ray1_ng| AHS -8.61"
-      - "|@v2ray1_ng| AHS -8.73"
-      - "|@ovpn2| AHS -8.82"
-      - "|@hope_net| AHS -8.76"
+      - "|@PrivateVPNs| AHS -109.24"
+      - "|@DirectVPN| AHS -112.6"
+      - "|@NetAccount| AHS -59.84"
+      - "|@NetAccount| AHS -14.98"
+      - "|@v2ray1_ng| AHS -2.96"
+      - "|@v2ray1_ng| AHS -2.96 2"
+      - "|@ovpn2| AHS -2.37"
+      - "|@hope_net| AHS -2.9"
 rules:
   - MATCH,MANUAL
