@@ -32,23 +32,23 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@NetAccount| AHS -88.93"
-    server: 51.81.203.233
-    port: 443
+  - name: "|@PrivateVPNs| AHS -91.16"
+    server: 18.156.18.83
+    port: 22222
     type: trojan
-    password: 2ee85121-31de-4581-a492-eb00f606e392
+    password: telegram-id-privatevpns
     skip-cert-verify: true
-    sni: rs4.freeguard.org
+    sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@NetAccount| AHS -17.54"
-    server: 23.95.14.5
-    port: 443
+  - name: "|@DirectVPN| AHS -92.05"
+    server: 18.156.18.83
+    port: 22223
     type: trojan
-    password: 2ee85121-31de-4581-a492-eb00f606e392
+    password: telegram-id-directvpn
     skip-cert-verify: true
-    sni: rc9.freeguard.org
+    sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@v2ray1_ng| AHS -2.24"
+  - name: "|@v2ray1_ng| AHS -5.21"
     server: 104.25.165.81
     port: 8443
     type: trojan
@@ -61,7 +61,7 @@ proxies:
       headers:
         Host: top-azx.pages.dev
     udp: true
-  - name: "|@v2ray1_ng| AHS -1.53"
+  - name: "|@v2ray1_ng| AHS -5.25"
     server: 172.67.181.173
     port: 443
     type: trojan
@@ -74,7 +74,7 @@ proxies:
       headers:
         Host: vpn.stupidworld.web.id
     udp: true
-  - name: "|@v2ray1_ng| AHS -1.82"
+  - name: "|@v2ray1_ng| AHS -5.27"
     server: 172.67.181.173
     port: 443
     type: trojan
@@ -87,7 +87,7 @@ proxies:
       headers:
         Host: vpn.stupidworld.web.id
     udp: true
-  - name: "|@ovpn2| AHS -1.65"
+  - name: "|@ovpn2| AHS -5.22"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -104,12 +104,12 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@NetAccount| AHS -88.93"
-      - "|@NetAccount| AHS -17.54"
-      - "|@v2ray1_ng| AHS -2.24"
-      - "|@v2ray1_ng| AHS -1.53"
-      - "|@v2ray1_ng| AHS -1.82"
-      - "|@ovpn2| AHS -1.65"
+      - "|@PrivateVPNs| AHS -91.16"
+      - "|@DirectVPN| AHS -92.05"
+      - "|@v2ray1_ng| AHS -5.21"
+      - "|@v2ray1_ng| AHS -5.25"
+      - "|@v2ray1_ng| AHS -5.27"
+      - "|@ovpn2| AHS -5.22"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -120,34 +120,34 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@NetAccount| AHS -88.93"
-      - "|@NetAccount| AHS -17.54"
-      - "|@v2ray1_ng| AHS -2.24"
-      - "|@v2ray1_ng| AHS -1.53"
-      - "|@v2ray1_ng| AHS -1.82"
-      - "|@ovpn2| AHS -1.65"
+      - "|@PrivateVPNs| AHS -91.16"
+      - "|@DirectVPN| AHS -92.05"
+      - "|@v2ray1_ng| AHS -5.21"
+      - "|@v2ray1_ng| AHS -5.25"
+      - "|@v2ray1_ng| AHS -5.27"
+      - "|@ovpn2| AHS -5.22"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@NetAccount| AHS -88.93"
-      - "|@NetAccount| AHS -17.54"
-      - "|@v2ray1_ng| AHS -2.24"
-      - "|@v2ray1_ng| AHS -1.53"
-      - "|@v2ray1_ng| AHS -1.82"
-      - "|@ovpn2| AHS -1.65"
+      - "|@PrivateVPNs| AHS -91.16"
+      - "|@DirectVPN| AHS -92.05"
+      - "|@v2ray1_ng| AHS -5.21"
+      - "|@v2ray1_ng| AHS -5.25"
+      - "|@v2ray1_ng| AHS -5.27"
+      - "|@ovpn2| AHS -5.22"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@NetAccount| AHS -88.93"
-      - "|@NetAccount| AHS -17.54"
-      - "|@v2ray1_ng| AHS -2.24"
-      - "|@v2ray1_ng| AHS -1.53"
-      - "|@v2ray1_ng| AHS -1.82"
-      - "|@ovpn2| AHS -1.65"
+      - "|@PrivateVPNs| AHS -91.16"
+      - "|@DirectVPN| AHS -92.05"
+      - "|@v2ray1_ng| AHS -5.21"
+      - "|@v2ray1_ng| AHS -5.25"
+      - "|@v2ray1_ng| AHS -5.27"
+      - "|@ovpn2| AHS -5.22"
 rules:
   - MATCH,MANUAL
