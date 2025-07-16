@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@NetAccount| AHS -61.15"
+  - name: "|@NetAccount| AHS -88.93"
     server: 51.81.203.233
     port: 443
     type: trojan
@@ -40,7 +40,7 @@ proxies:
     skip-cert-verify: true
     sni: rs4.freeguard.org
     udp: true
-  - name: "|@NetAccount| AHS -14.68"
+  - name: "|@NetAccount| AHS -17.54"
     server: 23.95.14.5
     port: 443
     type: trojan
@@ -48,7 +48,7 @@ proxies:
     skip-cert-verify: true
     sni: rc9.freeguard.org
     udp: true
-  - name: "|@v2ray1_ng| AHS -2.26"
+  - name: "|@v2ray1_ng| AHS -2.24"
     server: 104.25.165.81
     port: 8443
     type: trojan
@@ -61,7 +61,7 @@ proxies:
       headers:
         Host: top-azx.pages.dev
     udp: true
-  - name: "|@v2ray1_ng| AHS -2.61"
+  - name: "|@v2ray1_ng| AHS -1.53"
     server: 172.67.181.173
     port: 443
     type: trojan
@@ -74,7 +74,20 @@ proxies:
       headers:
         Host: vpn.stupidworld.web.id
     udp: true
-  - name: "|@ovpn2| AHS -1.84"
+  - name: "|@v2ray1_ng| AHS -1.82"
+    server: 172.67.181.173
+    port: 443
+    type: trojan
+    password: f282b878-8711-45a1-8c69-5564172123c1
+    skip-cert-verify: true
+    sni: vpn.stupidworld.web.id
+    network: ws
+    ws-opts:
+      path: /Tel-@V2ray_Alpha
+      headers:
+        Host: vpn.stupidworld.web.id
+    udp: true
+  - name: "|@ovpn2| AHS -1.65"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -87,33 +100,16 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
-  - name: "|@hope_net| AHS -3.03"
-    server: 46.254.93.52
-    port: 8443
-    type: trojan
-    password: Aimer
-    skip-cert-verify: true
-    sni: amepo.ambercc.filegear-sg.me
-    udp: true
-  - name: "|@hope_net| AHS -2.54"
-    server: 154.197.64.173
-    port: 2053
-    type: trojan
-    password: Aimer
-    skip-cert-verify: true
-    sni: amepo.ambercc.filegear-sg.me
-    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@NetAccount| AHS -61.15"
-      - "|@NetAccount| AHS -14.68"
-      - "|@v2ray1_ng| AHS -2.26"
-      - "|@v2ray1_ng| AHS -2.61"
-      - "|@ovpn2| AHS -1.84"
-      - "|@hope_net| AHS -3.03"
-      - "|@hope_net| AHS -2.54"
+      - "|@NetAccount| AHS -88.93"
+      - "|@NetAccount| AHS -17.54"
+      - "|@v2ray1_ng| AHS -2.24"
+      - "|@v2ray1_ng| AHS -1.53"
+      - "|@v2ray1_ng| AHS -1.82"
+      - "|@ovpn2| AHS -1.65"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -124,37 +120,34 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@NetAccount| AHS -61.15"
-      - "|@NetAccount| AHS -14.68"
-      - "|@v2ray1_ng| AHS -2.26"
-      - "|@v2ray1_ng| AHS -2.61"
-      - "|@ovpn2| AHS -1.84"
-      - "|@hope_net| AHS -3.03"
-      - "|@hope_net| AHS -2.54"
+      - "|@NetAccount| AHS -88.93"
+      - "|@NetAccount| AHS -17.54"
+      - "|@v2ray1_ng| AHS -2.24"
+      - "|@v2ray1_ng| AHS -1.53"
+      - "|@v2ray1_ng| AHS -1.82"
+      - "|@ovpn2| AHS -1.65"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@NetAccount| AHS -61.15"
-      - "|@NetAccount| AHS -14.68"
-      - "|@v2ray1_ng| AHS -2.26"
-      - "|@v2ray1_ng| AHS -2.61"
-      - "|@ovpn2| AHS -1.84"
-      - "|@hope_net| AHS -3.03"
-      - "|@hope_net| AHS -2.54"
+      - "|@NetAccount| AHS -88.93"
+      - "|@NetAccount| AHS -17.54"
+      - "|@v2ray1_ng| AHS -2.24"
+      - "|@v2ray1_ng| AHS -1.53"
+      - "|@v2ray1_ng| AHS -1.82"
+      - "|@ovpn2| AHS -1.65"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@NetAccount| AHS -61.15"
-      - "|@NetAccount| AHS -14.68"
-      - "|@v2ray1_ng| AHS -2.26"
-      - "|@v2ray1_ng| AHS -2.61"
-      - "|@ovpn2| AHS -1.84"
-      - "|@hope_net| AHS -3.03"
-      - "|@hope_net| AHS -2.54"
+      - "|@NetAccount| AHS -88.93"
+      - "|@NetAccount| AHS -17.54"
+      - "|@v2ray1_ng| AHS -2.24"
+      - "|@v2ray1_ng| AHS -1.53"
+      - "|@v2ray1_ng| AHS -1.82"
+      - "|@ovpn2| AHS -1.65"
 rules:
   - MATCH,MANUAL
