@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@free4allVPN| AHS -🇨🇦|45.71"
+  - name: "@free4allVPN| AHS -🇨🇦|72.35"
     server: 51.79.102.253
     port: 80
     type: vmess
@@ -48,7 +48,23 @@ proxies:
       headers:
         Host: 51.79.102.253
     udp: true
-  - name: "@Jeyksatan| AHS -🇮🇷|365.54"
+  - name: "@vpnfail_v2ray| AHS -🇨🇦|33.1"
+    server: 23.162.200.227
+    port: 443
+    type: vmess
+    uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /linkvws
+      headers:
+        Host: ""
+    udp: true
+  - name: "@Jeyksatan| AHS -🇮🇷|326.06"
     server: s3.dns4wards.com
     port: 2089
     type: vmess
@@ -59,7 +75,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@Jeyksatan| AHS -🇮🇷|340.18"
+  - name: "@Jeyksatan| AHS -🇮🇷|350.36"
     server: s2.dns4wards.com
     port: 2088
     type: vmess
@@ -70,7 +86,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|14.48"
+  - name: "@v2rayvmess| AHS -🇺🇸|14.96"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -86,7 +102,7 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@hope_net| AHS -🚩|15.01"
+  - name: "@hope_net| AHS -🚩|14.58"
     server: s2.db-link02.top
     port: 8880
     type: vmess
@@ -102,7 +118,21 @@ proxies:
       headers:
         Host: 100-9-89-92.s2.db-link02.top
     udp: true
-  - name: "@v2ray_confings2| AHS -🇩🇪|413.95"
+  - name: "@hope_net| AHS -🚩|14.16"
+    server: 173.245.58.217
+    port: 2087
+    type: vmess
+    uuid: db5afae4-ac23-41a6-8378-f307a9a47436
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: ""
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "%2F"
+    udp: true
+  - name: "@v2ray_confings2| AHS -🇩🇪|203.4"
     server: 188.114.96.1
     port: 443
     type: vmess
@@ -122,12 +152,14 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@free4allVPN| AHS -🇨🇦|45.71"
-      - "@Jeyksatan| AHS -🇮🇷|365.54"
-      - "@Jeyksatan| AHS -🇮🇷|340.18"
-      - "@v2rayvmess| AHS -🇺🇸|14.48"
-      - "@hope_net| AHS -🚩|15.01"
-      - "@v2ray_confings2| AHS -🇩🇪|413.95"
+      - "@free4allVPN| AHS -🇨🇦|72.35"
+      - "@vpnfail_v2ray| AHS -🇨🇦|33.1"
+      - "@Jeyksatan| AHS -🇮🇷|326.06"
+      - "@Jeyksatan| AHS -🇮🇷|350.36"
+      - "@v2rayvmess| AHS -🇺🇸|14.96"
+      - "@hope_net| AHS -🚩|14.58"
+      - "@hope_net| AHS -🚩|14.16"
+      - "@v2ray_confings2| AHS -🇩🇪|203.4"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -138,34 +170,40 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@free4allVPN| AHS -🇨🇦|45.71"
-      - "@Jeyksatan| AHS -🇮🇷|365.54"
-      - "@Jeyksatan| AHS -🇮🇷|340.18"
-      - "@v2rayvmess| AHS -🇺🇸|14.48"
-      - "@hope_net| AHS -🚩|15.01"
-      - "@v2ray_confings2| AHS -🇩🇪|413.95"
+      - "@free4allVPN| AHS -🇨🇦|72.35"
+      - "@vpnfail_v2ray| AHS -🇨🇦|33.1"
+      - "@Jeyksatan| AHS -🇮🇷|326.06"
+      - "@Jeyksatan| AHS -🇮🇷|350.36"
+      - "@v2rayvmess| AHS -🇺🇸|14.96"
+      - "@hope_net| AHS -🚩|14.58"
+      - "@hope_net| AHS -🚩|14.16"
+      - "@v2ray_confings2| AHS -🇩🇪|203.4"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@free4allVPN| AHS -🇨🇦|45.71"
-      - "@Jeyksatan| AHS -🇮🇷|365.54"
-      - "@Jeyksatan| AHS -🇮🇷|340.18"
-      - "@v2rayvmess| AHS -🇺🇸|14.48"
-      - "@hope_net| AHS -🚩|15.01"
-      - "@v2ray_confings2| AHS -🇩🇪|413.95"
+      - "@free4allVPN| AHS -🇨🇦|72.35"
+      - "@vpnfail_v2ray| AHS -🇨🇦|33.1"
+      - "@Jeyksatan| AHS -🇮🇷|326.06"
+      - "@Jeyksatan| AHS -🇮🇷|350.36"
+      - "@v2rayvmess| AHS -🇺🇸|14.96"
+      - "@hope_net| AHS -🚩|14.58"
+      - "@hope_net| AHS -🚩|14.16"
+      - "@v2ray_confings2| AHS -🇩🇪|203.4"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@free4allVPN| AHS -🇨🇦|45.71"
-      - "@Jeyksatan| AHS -🇮🇷|365.54"
-      - "@Jeyksatan| AHS -🇮🇷|340.18"
-      - "@v2rayvmess| AHS -🇺🇸|14.48"
-      - "@hope_net| AHS -🚩|15.01"
-      - "@v2ray_confings2| AHS -🇩🇪|413.95"
+      - "@free4allVPN| AHS -🇨🇦|72.35"
+      - "@vpnfail_v2ray| AHS -🇨🇦|33.1"
+      - "@Jeyksatan| AHS -🇮🇷|326.06"
+      - "@Jeyksatan| AHS -🇮🇷|350.36"
+      - "@v2rayvmess| AHS -🇺🇸|14.96"
+      - "@hope_net| AHS -🚩|14.58"
+      - "@hope_net| AHS -🚩|14.16"
+      - "@v2ray_confings2| AHS -🇩🇪|203.4"
 rules:
   - MATCH,MANUAL
