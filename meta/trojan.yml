@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@v2ray1_ng| AHS -1.93"
+  - name: "|@v2ray1_ng| AHS -5.26"
     server: 172.67.181.173
     port: 443
     type: trojan
@@ -45,7 +45,7 @@ proxies:
       headers:
         Host: vpn.stupidworld.web.id
     udp: true
-  - name: "|@v2ray1_ng| AHS -8.04"
+  - name: "|@v2ray1_ng| AHS -5.27"
     server: 104.25.165.81
     port: 8443
     type: trojan
@@ -58,7 +58,7 @@ proxies:
       headers:
         Host: top-azx.pages.dev
     udp: true
-  - name: "|@ovpn2| AHS -1.91"
+  - name: "|@ovpn2| AHS -5.28"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -75,9 +75,9 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@v2ray1_ng| AHS -1.93"
-      - "|@v2ray1_ng| AHS -8.04"
-      - "|@ovpn2| AHS -1.91"
+      - "|@v2ray1_ng| AHS -5.26"
+      - "|@v2ray1_ng| AHS -5.27"
+      - "|@ovpn2| AHS -5.28"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -88,25 +88,25 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@v2ray1_ng| AHS -1.93"
-      - "|@v2ray1_ng| AHS -8.04"
-      - "|@ovpn2| AHS -1.91"
+      - "|@v2ray1_ng| AHS -5.26"
+      - "|@v2ray1_ng| AHS -5.27"
+      - "|@ovpn2| AHS -5.28"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@v2ray1_ng| AHS -1.93"
-      - "|@v2ray1_ng| AHS -8.04"
-      - "|@ovpn2| AHS -1.91"
+      - "|@v2ray1_ng| AHS -5.26"
+      - "|@v2ray1_ng| AHS -5.27"
+      - "|@ovpn2| AHS -5.28"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@v2ray1_ng| AHS -1.93"
-      - "|@v2ray1_ng| AHS -8.04"
-      - "|@ovpn2| AHS -1.91"
+      - "|@v2ray1_ng| AHS -5.26"
+      - "|@v2ray1_ng| AHS -5.27"
+      - "|@ovpn2| AHS -5.28"
 rules:
   - MATCH,MANUAL
