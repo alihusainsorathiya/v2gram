@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@free4allVPN| AHS -🇨🇦|106.03"
+  - name: "@free4allVPN| AHS -🇨🇦|105.8"
     server: 51.79.102.253
     port: 80
     type: vmess
@@ -48,18 +48,23 @@ proxies:
       headers:
         Host: 51.79.102.253
     udp: true
-  - name: "@vpnfail_v2ray| AHS -🇺🇸|63.05"
-    server: 66.94.114.122
-    port: 53503
+  - name: "@vpnfail_v2ray| AHS -🇨🇦|13.65"
+    server: 23.162.200.227
+    port: 443
     type: vmess
-    uuid: c9b9dea3-5868-477f-e54d-2c8f124f647d
+    uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
     alterId: 0
     cipher: auto
-    tls: false
+    tls: true
     skip-cert-verify: true
     servername: ""
+    network: ws
+    ws-opts:
+      path: /linkvws
+      headers:
+        Host: ""
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|2.37"
+  - name: "@v2rayvmess| AHS -🇺🇸|3.13"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -75,7 +80,7 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@ShadowProxy66| AHS -🇺🇸|2.88"
+  - name: "@ShadowProxy66| AHS -🇺🇸|17.31"
     server: 15.204.234.200
     port: 41100
     type: vmess
@@ -86,7 +91,23 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@v2rayngrit| AHS -🇩🇪|100.08"
+  - name: "@hope_net| AHS -🚩|3.29"
+    server: 194.59.5.221
+    port: 8443
+    type: vmess
+    uuid: 191babc5-2aaf-4fe5-a563-f14244aefb4e
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: lax1.ibgfw.top
+    network: ws
+    ws-opts:
+      path: /xrenvws
+      headers:
+        Host: lax1.ibgfw.top
+    udp: true
+  - name: "@v2rayngrit| AHS -🇩🇪|134.88"
     server: pro2.prgame.xyz
     port: 59442
     type: vmess
@@ -97,7 +118,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@v2ray_confings2| AHS -🇩🇪|122.87"
+  - name: "@v2ray_confings2| AHS -🇩🇪|169.22"
     server: 188.114.96.1
     port: 443
     type: vmess
@@ -117,12 +138,13 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@free4allVPN| AHS -🇨🇦|106.03"
-      - "@vpnfail_v2ray| AHS -🇺🇸|63.05"
-      - "@v2rayvmess| AHS -🇺🇸|2.37"
-      - "@ShadowProxy66| AHS -🇺🇸|2.88"
-      - "@v2rayngrit| AHS -🇩🇪|100.08"
-      - "@v2ray_confings2| AHS -🇩🇪|122.87"
+      - "@free4allVPN| AHS -🇨🇦|105.8"
+      - "@vpnfail_v2ray| AHS -🇨🇦|13.65"
+      - "@v2rayvmess| AHS -🇺🇸|3.13"
+      - "@ShadowProxy66| AHS -🇺🇸|17.31"
+      - "@hope_net| AHS -🚩|3.29"
+      - "@v2rayngrit| AHS -🇩🇪|134.88"
+      - "@v2ray_confings2| AHS -🇩🇪|169.22"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -133,34 +155,37 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@free4allVPN| AHS -🇨🇦|106.03"
-      - "@vpnfail_v2ray| AHS -🇺🇸|63.05"
-      - "@v2rayvmess| AHS -🇺🇸|2.37"
-      - "@ShadowProxy66| AHS -🇺🇸|2.88"
-      - "@v2rayngrit| AHS -🇩🇪|100.08"
-      - "@v2ray_confings2| AHS -🇩🇪|122.87"
+      - "@free4allVPN| AHS -🇨🇦|105.8"
+      - "@vpnfail_v2ray| AHS -🇨🇦|13.65"
+      - "@v2rayvmess| AHS -🇺🇸|3.13"
+      - "@ShadowProxy66| AHS -🇺🇸|17.31"
+      - "@hope_net| AHS -🚩|3.29"
+      - "@v2rayngrit| AHS -🇩🇪|134.88"
+      - "@v2ray_confings2| AHS -🇩🇪|169.22"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@free4allVPN| AHS -🇨🇦|106.03"
-      - "@vpnfail_v2ray| AHS -🇺🇸|63.05"
-      - "@v2rayvmess| AHS -🇺🇸|2.37"
-      - "@ShadowProxy66| AHS -🇺🇸|2.88"
-      - "@v2rayngrit| AHS -🇩🇪|100.08"
-      - "@v2ray_confings2| AHS -🇩🇪|122.87"
+      - "@free4allVPN| AHS -🇨🇦|105.8"
+      - "@vpnfail_v2ray| AHS -🇨🇦|13.65"
+      - "@v2rayvmess| AHS -🇺🇸|3.13"
+      - "@ShadowProxy66| AHS -🇺🇸|17.31"
+      - "@hope_net| AHS -🚩|3.29"
+      - "@v2rayngrit| AHS -🇩🇪|134.88"
+      - "@v2ray_confings2| AHS -🇩🇪|169.22"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@free4allVPN| AHS -🇨🇦|106.03"
-      - "@vpnfail_v2ray| AHS -🇺🇸|63.05"
-      - "@v2rayvmess| AHS -🇺🇸|2.37"
-      - "@ShadowProxy66| AHS -🇺🇸|2.88"
-      - "@v2rayngrit| AHS -🇩🇪|100.08"
-      - "@v2ray_confings2| AHS -🇩🇪|122.87"
+      - "@free4allVPN| AHS -🇨🇦|105.8"
+      - "@vpnfail_v2ray| AHS -🇨🇦|13.65"
+      - "@v2rayvmess| AHS -🇺🇸|3.13"
+      - "@ShadowProxy66| AHS -🇺🇸|17.31"
+      - "@hope_net| AHS -🚩|3.29"
+      - "@v2rayngrit| AHS -🇩🇪|134.88"
+      - "@v2ray_confings2| AHS -🇩🇪|169.22"
 rules:
   - MATCH,MANUAL
