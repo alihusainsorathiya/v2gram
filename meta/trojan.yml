@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@v2ray1_ng| AHS -5.42"
+  - name: "|@v2ray1_ng| AHS -1.79"
     server: 172.67.181.173
     port: 443
     type: trojan
@@ -45,7 +45,7 @@ proxies:
       headers:
         Host: vpn.stupidworld.web.id
     udp: true
-  - name: "|@v2ray1_ng| AHS -5.51"
+  - name: "|@v2ray1_ng| AHS -1.96"
     server: 104.25.165.81
     port: 8443
     type: trojan
@@ -58,7 +58,7 @@ proxies:
       headers:
         Host: top-azx.pages.dev
     udp: true
-  - name: "|@ovpn2| AHS -5.4"
+  - name: "|@ovpn2| AHS -1.92"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -71,13 +71,22 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
+  - name: "|@hope_net| AHS -11.39"
+    server: 104.17.147.22
+    port: 443
+    type: trojan
+    password: 4732adfa16c6450bbef87264e41332db
+    skip-cert-verify: true
+    sni: 1.1
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@v2ray1_ng| AHS -5.42"
-      - "|@v2ray1_ng| AHS -5.51"
-      - "|@ovpn2| AHS -5.4"
+      - "|@v2ray1_ng| AHS -1.79"
+      - "|@v2ray1_ng| AHS -1.96"
+      - "|@ovpn2| AHS -1.92"
+      - "|@hope_net| AHS -11.39"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -88,25 +97,28 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@v2ray1_ng| AHS -5.42"
-      - "|@v2ray1_ng| AHS -5.51"
-      - "|@ovpn2| AHS -5.4"
+      - "|@v2ray1_ng| AHS -1.79"
+      - "|@v2ray1_ng| AHS -1.96"
+      - "|@ovpn2| AHS -1.92"
+      - "|@hope_net| AHS -11.39"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@v2ray1_ng| AHS -5.42"
-      - "|@v2ray1_ng| AHS -5.51"
-      - "|@ovpn2| AHS -5.4"
+      - "|@v2ray1_ng| AHS -1.79"
+      - "|@v2ray1_ng| AHS -1.96"
+      - "|@ovpn2| AHS -1.92"
+      - "|@hope_net| AHS -11.39"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@v2ray1_ng| AHS -5.42"
-      - "|@v2ray1_ng| AHS -5.51"
-      - "|@ovpn2| AHS -5.4"
+      - "|@v2ray1_ng| AHS -1.79"
+      - "|@v2ray1_ng| AHS -1.96"
+      - "|@ovpn2| AHS -1.92"
+      - "|@hope_net| AHS -11.39"
 rules:
   - MATCH,MANUAL
