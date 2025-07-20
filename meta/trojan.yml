@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@DirectVPN| AHS -112.2"
+  - name: "|@DirectVPN| AHS -145.86"
     server: 18.156.59.108
     port: 22223
     type: trojan
@@ -40,7 +40,7 @@ proxies:
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@v2ray1_ng| AHS -2.71"
+  - name: "|@v2ray1_ng| AHS -8.75"
     server: 104.25.165.81
     port: 8443
     type: trojan
@@ -53,7 +53,7 @@ proxies:
       headers:
         Host: top-azx.pages.dev
     udp: true
-  - name: "|@ovpn2| AHS -2.49"
+  - name: "|@ovpn2| AHS -8.68"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -66,13 +66,22 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
+  - name: "|@hope_net| AHS -8.83"
+    server: 92.53.189.24
+    port: 443
+    type: trojan
+    password: blue2024
+    skip-cert-verify: true
+    sni: ta.promote.icu
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@DirectVPN| AHS -112.2"
-      - "|@v2ray1_ng| AHS -2.71"
-      - "|@ovpn2| AHS -2.49"
+      - "|@DirectVPN| AHS -145.86"
+      - "|@v2ray1_ng| AHS -8.75"
+      - "|@ovpn2| AHS -8.68"
+      - "|@hope_net| AHS -8.83"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -83,25 +92,28 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@DirectVPN| AHS -112.2"
-      - "|@v2ray1_ng| AHS -2.71"
-      - "|@ovpn2| AHS -2.49"
+      - "|@DirectVPN| AHS -145.86"
+      - "|@v2ray1_ng| AHS -8.75"
+      - "|@ovpn2| AHS -8.68"
+      - "|@hope_net| AHS -8.83"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@DirectVPN| AHS -112.2"
-      - "|@v2ray1_ng| AHS -2.71"
-      - "|@ovpn2| AHS -2.49"
+      - "|@DirectVPN| AHS -145.86"
+      - "|@v2ray1_ng| AHS -8.75"
+      - "|@ovpn2| AHS -8.68"
+      - "|@hope_net| AHS -8.83"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@DirectVPN| AHS -112.2"
-      - "|@v2ray1_ng| AHS -2.71"
-      - "|@ovpn2| AHS -2.49"
+      - "|@DirectVPN| AHS -145.86"
+      - "|@v2ray1_ng| AHS -8.75"
+      - "|@ovpn2| AHS -8.68"
+      - "|@hope_net| AHS -8.83"
 rules:
   - MATCH,MANUAL
