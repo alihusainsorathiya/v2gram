@@ -32,7 +32,20 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@ovpn2| AHS -2.38"
+  - name: "|@v2ray1_ng| AHS -5.54"
+    server: 104.25.165.81
+    port: 8443
+    type: trojan
+    password: 123456
+    skip-cert-verify: true
+    sni: top-azx.pages.dev
+    network: ws
+    ws-opts:
+      path: /Az1.vpn.33.TOP/?ed=2560
+      headers:
+        Host: top-azx.pages.dev
+    udp: true
+  - name: "|@ovpn2| AHS -5.61"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -45,29 +58,44 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
-  - name: "|@hope_net| AHS -1.91"
-    server: 168.100.6.46
+  - name: "|@hope_net| AHS -5.41"
+    server: 104.25.53.79
     port: 443
     type: trojan
     password: NISHIKUITAN111
     skip-cert-verify: true
     sni: ""
     udp: true
-  - name: "|@hope_net| AHS -1.99"
-    server: 104.24.183.134
+  - name: "|@hope_net| AHS -5.53"
+    server: 198.41.205.148
     port: 443
     type: trojan
     password: NISHIKUITAN111
     skip-cert-verify: true
     sni: ""
+    udp: true
+  - name: "|@hope_net| AHS -5.51"
+    server: 162.159.153.2
+    port: 80
+    type: trojan
+    password: trojan
+    skip-cert-verify: true
+    sni: rubika.ir.google.com.xn--cr8haaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.xn--cr8haaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.apaspeedtest.netrat.com.eu.com.shw914.ir.xn--cr8haaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.vpncustomize.iranibzai.com
+    network: ws
+    ws-opts:
+      path: /?ed=2560
+      headers:
+        Host: rubika.ir.google.com.xn--cr8haaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.xn--cr8haaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.apaspeedtest.netrat.com.eu.com.shw914.ir.xn--cr8haaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.vpncustomize.iranibzai.com
     udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@ovpn2| AHS -2.38"
-      - "|@hope_net| AHS -1.91"
-      - "|@hope_net| AHS -1.99"
+      - "|@v2ray1_ng| AHS -5.54"
+      - "|@ovpn2| AHS -5.61"
+      - "|@hope_net| AHS -5.41"
+      - "|@hope_net| AHS -5.53"
+      - "|@hope_net| AHS -5.51"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -78,25 +106,31 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@ovpn2| AHS -2.38"
-      - "|@hope_net| AHS -1.91"
-      - "|@hope_net| AHS -1.99"
+      - "|@v2ray1_ng| AHS -5.54"
+      - "|@ovpn2| AHS -5.61"
+      - "|@hope_net| AHS -5.41"
+      - "|@hope_net| AHS -5.53"
+      - "|@hope_net| AHS -5.51"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@ovpn2| AHS -2.38"
-      - "|@hope_net| AHS -1.91"
-      - "|@hope_net| AHS -1.99"
+      - "|@v2ray1_ng| AHS -5.54"
+      - "|@ovpn2| AHS -5.61"
+      - "|@hope_net| AHS -5.41"
+      - "|@hope_net| AHS -5.53"
+      - "|@hope_net| AHS -5.51"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@ovpn2| AHS -2.38"
-      - "|@hope_net| AHS -1.91"
-      - "|@hope_net| AHS -1.99"
+      - "|@v2ray1_ng| AHS -5.54"
+      - "|@ovpn2| AHS -5.61"
+      - "|@hope_net| AHS -5.41"
+      - "|@hope_net| AHS -5.53"
+      - "|@hope_net| AHS -5.51"
 rules:
   - MATCH,MANUAL
