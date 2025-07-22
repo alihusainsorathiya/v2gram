@@ -1,0 +1,171 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: REALITY|@ProxyFn|🇨🇭|119.8
+    server: 193.168.144.46
+    port: 443
+    type: vless
+    uuid: cdb38f5b-12c3-414b-eacd-a635dc633701
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: mega.io
+    network: grpc
+    grpc-opts:
+      grpc-service-name: /
+    udp: true
+  - name: REALITY|@prrofile_purple|🇩🇪|128.66
+    server: p.faraghost.sbs
+    port: 28338
+    type: vless
+    uuid: 5149735f-9aff-4379-800f-497b4d79be61
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: www.cloudflare.com
+    network: grpc
+    grpc-opts:
+      grpc-service-name: Telegram%3A%40Ghostray_Ng
+    udp: true
+  - name: REALITY|@WomanLifeFreedomVPN|🇺🇸|54.44
+    server: icloud.wlftest.xyz
+    port: 443
+    type: vless
+    uuid: 85399fea-2ee3-51b5-ad4e-d8b78a2cf1d9
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: www.icloud.com
+    udp: true
+  - name: REALITY|@internet4iran|🇩🇪|126.74
+    server: 128.140.49.220
+    port: 443
+    type: vless
+    uuid: a0660613-bab4-456f-91b7-b8923788ed3d
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: www.speedtest.net
+    udp: true
+  - name: REALITY|@proxystore11|🇩🇪|169.98
+    server: vip1.proxystore11.news
+    port: 10358
+    type: vless
+    uuid: 92c7897a-6494-4719-aefd-aea8280314ce
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: zula.ir
+    udp: true
+  - name: REALITY|@free1_vpn|🇷🇺|233.59
+    server: ru01-vlr01.tcp-reset-club.net
+    port: 443
+    type: vless
+    uuid: 2a02cb25-0f58-4b19-a7a6-8c205fdb9042
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: hls-svod.itunes.apple.com
+    udp: true
+  - name: REALITY|@v2rayngrit|🇩🇪|184.11
+    server: abzartun2.divartehran.online
+    port: 23737
+    type: vless
+    uuid: debf2a42-1ff4-4ea6-92a4-f6ac49595cc7
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: varzesh3.com
+    network: grpc
+    grpc-opts:
+      grpc-service-name: /
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - REALITY|@ProxyFn|🇨🇭|119.8
+      - REALITY|@prrofile_purple|🇩🇪|128.66
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|54.44
+      - REALITY|@internet4iran|🇩🇪|126.74
+      - REALITY|@proxystore11|🇩🇪|169.98
+      - REALITY|@free1_vpn|🇷🇺|233.59
+      - REALITY|@v2rayngrit|🇩🇪|184.11
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - REALITY|@ProxyFn|🇨🇭|119.8
+      - REALITY|@prrofile_purple|🇩🇪|128.66
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|54.44
+      - REALITY|@internet4iran|🇩🇪|126.74
+      - REALITY|@proxystore11|🇩🇪|169.98
+      - REALITY|@free1_vpn|🇷🇺|233.59
+      - REALITY|@v2rayngrit|🇩🇪|184.11
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - REALITY|@ProxyFn|🇨🇭|119.8
+      - REALITY|@prrofile_purple|🇩🇪|128.66
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|54.44
+      - REALITY|@internet4iran|🇩🇪|126.74
+      - REALITY|@proxystore11|🇩🇪|169.98
+      - REALITY|@free1_vpn|🇷🇺|233.59
+      - REALITY|@v2rayngrit|🇩🇪|184.11
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - REALITY|@ProxyFn|🇨🇭|119.8
+      - REALITY|@prrofile_purple|🇩🇪|128.66
+      - REALITY|@WomanLifeFreedomVPN|🇺🇸|54.44
+      - REALITY|@internet4iran|🇩🇪|126.74
+      - REALITY|@proxystore11|🇩🇪|169.98
+      - REALITY|@free1_vpn|🇷🇺|233.59
+      - REALITY|@v2rayngrit|🇩🇪|184.11
+rules:
+  - MATCH,MANUAL
