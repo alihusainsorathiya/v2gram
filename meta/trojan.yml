@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@ovpn2| AHS -5.42"
+  - name: "|@ovpn2| AHS -2.16"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -45,48 +45,38 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
-  - name: "|@hope_net| AHS -5.34"
-    server: 104.19.188.107
+  - name: "|@hope_net| AHS -2.68"
+    server: 104.20.8.252
     port: 443
     type: trojan
     password: NISHIKUITAN111
     skip-cert-verify: true
     sni: ""
     udp: true
-  - name: "|@hope_net| AHS -5.28"
-    server: 104.17.49.240
+  - name: "|@hope_net| AHS -1026.91"
+    server: 172.64.35.161
     port: 443
     type: trojan
-    password: WOeXShhJpL
+    password: blue2024
     skip-cert-verify: true
-    sni: 09jzus.zdzdzd.xyz
-    network: ws
-    ws-opts:
-      path: /juzigongyi
-      headers:
-        Host: 09jzus.zdzdzd.xyz
+    sni: tb.promote.icu
     udp: true
-  - name: "|@hope_net| AHS -5.53"
-    server: 198.41.202.175
+  - name: "|@hope_net| AHS -1.99"
+    server: 198.41.215.2
     port: 443
     type: trojan
-    password: bpb-trojan
+    password: NISHIKUITAN111
     skip-cert-verify: true
-    sni: bpb.my79801.com
-    network: ws
-    ws-opts:
-      path: /tr
-      headers:
-        Host: bpb.my79801.com
+    sni: ""
     udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@ovpn2| AHS -5.42"
-      - "|@hope_net| AHS -5.34"
-      - "|@hope_net| AHS -5.28"
-      - "|@hope_net| AHS -5.53"
+      - "|@ovpn2| AHS -2.16"
+      - "|@hope_net| AHS -2.68"
+      - "|@hope_net| AHS -1026.91"
+      - "|@hope_net| AHS -1.99"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -97,28 +87,28 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@ovpn2| AHS -5.42"
-      - "|@hope_net| AHS -5.34"
-      - "|@hope_net| AHS -5.28"
-      - "|@hope_net| AHS -5.53"
+      - "|@ovpn2| AHS -2.16"
+      - "|@hope_net| AHS -2.68"
+      - "|@hope_net| AHS -1026.91"
+      - "|@hope_net| AHS -1.99"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@ovpn2| AHS -5.42"
-      - "|@hope_net| AHS -5.34"
-      - "|@hope_net| AHS -5.28"
-      - "|@hope_net| AHS -5.53"
+      - "|@ovpn2| AHS -2.16"
+      - "|@hope_net| AHS -2.68"
+      - "|@hope_net| AHS -1026.91"
+      - "|@hope_net| AHS -1.99"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@ovpn2| AHS -5.42"
-      - "|@hope_net| AHS -5.34"
-      - "|@hope_net| AHS -5.28"
-      - "|@hope_net| AHS -5.53"
+      - "|@ovpn2| AHS -2.16"
+      - "|@hope_net| AHS -2.68"
+      - "|@hope_net| AHS -1026.91"
+      - "|@hope_net| AHS -1.99"
 rules:
   - MATCH,MANUAL
