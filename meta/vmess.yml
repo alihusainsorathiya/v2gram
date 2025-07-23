@@ -1,0 +1,249 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: "@free4allVPN| AHS -🇨🇦|80.44"
+    server: 51.79.102.253
+    port: 80
+    type: vmess
+    uuid: 58fe1542-5290-40ad-815a-77707a81afe5
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: 51.79.102.253
+    network: ws
+    ws-opts:
+      path: /IOebhLMhl1CTbFHbL95myfRX2
+      headers:
+        Host: 51.79.102.253
+    udp: true
+  - name: "@prrofile_purple| AHS -🇩🇪|111.31"
+    server: 159.89.22.229
+    port: 8080
+    type: vmess
+    uuid: ff5c50fc-0ca7-53f9-007c-5b3f6511f1e1
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: http
+    http-opts:
+      method: GET
+      path:
+        - /
+    udp: true
+  - name: "@prrofile_purple| AHS -🇷🇺|128.36"
+    server: meli_proxyy.vip-plan.org
+    port: 443
+    type: vmess
+    uuid: 2ed80266-0b0a-478c-86fd-278ffb84cd44
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: grpc
+    grpc-opts:
+      grpc-service-name: /
+    udp: true
+  - name: "@prrofile_purple| AHS -🇫🇷|104.81"
+    server: 51.68.191.233
+    port: 80
+    type: vmess
+    uuid: f0eda072-9ae8-494c-a495-215fa5729467
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /vmess/
+      headers:
+        Host: ""
+    udp: true
+  - name: "@vpnfail_v2ray| AHS -🇺🇸|51.03"
+    server: 15.204.11.190
+    port: 15361
+    type: vmess
+    uuid: 5d7bf9e3-415c-40f3-c66d-a54ea0fd860e
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@vpn_ioss| AHS -🇫🇷|96.45"
+    server: 185.142.53.63
+    port: 43585
+    type: vmess
+    uuid: 2babf34a-16f5-4e38-a885-738fdfc8eabf
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@Jeyksatan| AHS -🇮🇷|373.86"
+    server: s3.dns4wards.com
+    port: 2089
+    type: vmess
+    uuid: 14f5d66f-d3a7-420c-2931-299c8c25c153
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@Jeyksatan| AHS -🇮🇷|307.14"
+    server: s2.dns4wards.com
+    port: 2088
+    type: vmess
+    uuid: 493082ea-3964-41f4-6df5-9d7cf8e1d8d9
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|3.42"
+    server: id-lb.vhax.net
+    port: 80
+    type: vmess
+    uuid: 6fea1649-425b-4092-bf53-29792152c925
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: zoom.us
+    network: ws
+    ws-opts:
+      path: /sshkit/Arsham85231/6347d08022b91/
+      headers:
+        Host: zoom.us
+    udp: true
+  - name: "@ShadowProxy66| AHS -🇩🇪|119.67"
+    server: panel3.ipyar.org
+    port: 32017
+    type: vmess
+    uuid: c0ccdeb9-784c-4d67-b904-20dcaac9902a
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@v2rayngrit| AHS -🇩🇪|132.86"
+    server: pro2.prgame.xyz
+    port: 59442
+    type: vmess
+    uuid: 03547ff5-c16f-4b5f-b75c-48e9e0685716
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - "@free4allVPN| AHS -🇨🇦|80.44"
+      - "@prrofile_purple| AHS -🇩🇪|111.31"
+      - "@prrofile_purple| AHS -🇷🇺|128.36"
+      - "@prrofile_purple| AHS -🇫🇷|104.81"
+      - "@vpnfail_v2ray| AHS -🇺🇸|51.03"
+      - "@vpn_ioss| AHS -🇫🇷|96.45"
+      - "@Jeyksatan| AHS -🇮🇷|373.86"
+      - "@Jeyksatan| AHS -🇮🇷|307.14"
+      - "@v2rayvmess| AHS -🇺🇸|3.42"
+      - "@ShadowProxy66| AHS -🇩🇪|119.67"
+      - "@v2rayngrit| AHS -🇩🇪|132.86"
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@free4allVPN| AHS -🇨🇦|80.44"
+      - "@prrofile_purple| AHS -🇩🇪|111.31"
+      - "@prrofile_purple| AHS -🇷🇺|128.36"
+      - "@prrofile_purple| AHS -🇫🇷|104.81"
+      - "@vpnfail_v2ray| AHS -🇺🇸|51.03"
+      - "@vpn_ioss| AHS -🇫🇷|96.45"
+      - "@Jeyksatan| AHS -🇮🇷|373.86"
+      - "@Jeyksatan| AHS -🇮🇷|307.14"
+      - "@v2rayvmess| AHS -🇺🇸|3.42"
+      - "@ShadowProxy66| AHS -🇩🇪|119.67"
+      - "@v2rayngrit| AHS -🇩🇪|132.86"
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - "@free4allVPN| AHS -🇨🇦|80.44"
+      - "@prrofile_purple| AHS -🇩🇪|111.31"
+      - "@prrofile_purple| AHS -🇷🇺|128.36"
+      - "@prrofile_purple| AHS -🇫🇷|104.81"
+      - "@vpnfail_v2ray| AHS -🇺🇸|51.03"
+      - "@vpn_ioss| AHS -🇫🇷|96.45"
+      - "@Jeyksatan| AHS -🇮🇷|373.86"
+      - "@Jeyksatan| AHS -🇮🇷|307.14"
+      - "@v2rayvmess| AHS -🇺🇸|3.42"
+      - "@ShadowProxy66| AHS -🇩🇪|119.67"
+      - "@v2rayngrit| AHS -🇩🇪|132.86"
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@free4allVPN| AHS -🇨🇦|80.44"
+      - "@prrofile_purple| AHS -🇩🇪|111.31"
+      - "@prrofile_purple| AHS -🇷🇺|128.36"
+      - "@prrofile_purple| AHS -🇫🇷|104.81"
+      - "@vpnfail_v2ray| AHS -🇺🇸|51.03"
+      - "@vpn_ioss| AHS -🇫🇷|96.45"
+      - "@Jeyksatan| AHS -🇮🇷|373.86"
+      - "@Jeyksatan| AHS -🇮🇷|307.14"
+      - "@v2rayvmess| AHS -🇺🇸|3.42"
+      - "@ShadowProxy66| AHS -🇩🇪|119.67"
+      - "@v2rayngrit| AHS -🇩🇪|132.86"
+rules:
+  - MATCH,MANUAL
