@@ -32,39 +32,23 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@PrivateVPNs| AHS -93.3"
-    server: 52.29.188.244
+  - name: "|@PrivateVPNs| AHS -104.49"
+    server: 13.36.11.189
     port: 22222
     type: trojan
     password: telegram-id-privatevpns
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@PrivateVPNs| AHS -91.07"
-    server: 13.37.84.247
-    port: 22222
-    type: trojan
-    password: telegram-id-privatevpns
-    skip-cert-verify: true
-    sni: trojan.burgerip.co.uk
-    udp: true
-  - name: "|@DirectVPN| AHS -92.39"
-    server: 52.29.188.244
+  - name: "|@DirectVPN| AHS -104.52"
+    server: 13.36.11.189
     port: 22223
     type: trojan
     password: telegram-id-directvpn
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -86.72"
-    server: 13.37.84.247
-    port: 22223
-    type: trojan
-    password: telegram-id-directvpn
-    skip-cert-verify: true
-    sni: trojan.burgerip.co.uk
-    udp: true
-  - name: "|@ovpn2| AHS -1.78"
+  - name: "|@ovpn2| AHS -2.09"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -77,29 +61,8 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
-  - name: "|@hope_net| AHS -1.64"
-    server: 162.159.152.2
-    port: 443
-    type: trojan
-    password: bpb-trojan
-    skip-cert-verify: true
-    sni: visa.cn
-    udp: true
-  - name: "|@hope_net| AHS -1.72"
-    server: 198.41.214.224
-    port: 2052
-    type: trojan
-    password: f0d584bc-342f-4443-ba24-79e4d0e504b1
-    skip-cert-verify: true
-    sni: late-tooth.granzinhannah.workers.dev
-    network: ws
-    ws-opts:
-      path: /?ed=2560
-      headers:
-        Host: late-tooth.granzinhannah.workers.dev
-    udp: true
-  - name: "|@hope_net| AHS -1.65"
-    server: 198.41.196.208
+  - name: "|@hope_net| AHS -2.63"
+    server: 104.25.22.6
     port: 443
     type: trojan
     password: NISHIKUITAN111
@@ -110,14 +73,10 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@PrivateVPNs| AHS -93.3"
-      - "|@PrivateVPNs| AHS -91.07"
-      - "|@DirectVPN| AHS -92.39"
-      - "|@DirectVPN| AHS -86.72"
-      - "|@ovpn2| AHS -1.78"
-      - "|@hope_net| AHS -1.64"
-      - "|@hope_net| AHS -1.72"
-      - "|@hope_net| AHS -1.65"
+      - "|@PrivateVPNs| AHS -104.49"
+      - "|@DirectVPN| AHS -104.52"
+      - "|@ovpn2| AHS -2.09"
+      - "|@hope_net| AHS -2.63"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -128,40 +87,28 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -93.3"
-      - "|@PrivateVPNs| AHS -91.07"
-      - "|@DirectVPN| AHS -92.39"
-      - "|@DirectVPN| AHS -86.72"
-      - "|@ovpn2| AHS -1.78"
-      - "|@hope_net| AHS -1.64"
-      - "|@hope_net| AHS -1.72"
-      - "|@hope_net| AHS -1.65"
+      - "|@PrivateVPNs| AHS -104.49"
+      - "|@DirectVPN| AHS -104.52"
+      - "|@ovpn2| AHS -2.09"
+      - "|@hope_net| AHS -2.63"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@PrivateVPNs| AHS -93.3"
-      - "|@PrivateVPNs| AHS -91.07"
-      - "|@DirectVPN| AHS -92.39"
-      - "|@DirectVPN| AHS -86.72"
-      - "|@ovpn2| AHS -1.78"
-      - "|@hope_net| AHS -1.64"
-      - "|@hope_net| AHS -1.72"
-      - "|@hope_net| AHS -1.65"
+      - "|@PrivateVPNs| AHS -104.49"
+      - "|@DirectVPN| AHS -104.52"
+      - "|@ovpn2| AHS -2.09"
+      - "|@hope_net| AHS -2.63"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -93.3"
-      - "|@PrivateVPNs| AHS -91.07"
-      - "|@DirectVPN| AHS -92.39"
-      - "|@DirectVPN| AHS -86.72"
-      - "|@ovpn2| AHS -1.78"
-      - "|@hope_net| AHS -1.64"
-      - "|@hope_net| AHS -1.72"
-      - "|@hope_net| AHS -1.65"
+      - "|@PrivateVPNs| AHS -104.49"
+      - "|@DirectVPN| AHS -104.52"
+      - "|@ovpn2| AHS -2.09"
+      - "|@hope_net| AHS -2.63"
 rules:
   - MATCH,MANUAL
