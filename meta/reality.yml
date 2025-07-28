@@ -1,0 +1,205 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: REALITY|@ProxyFn|🇨🇭|113.05
+    server: 193.168.144.46
+    port: 443
+    type: vless
+    uuid: cdb38f5b-12c3-414b-eacd-a635dc633701
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: mega.io
+    network: grpc
+    grpc-opts:
+      grpc-service-name: /
+    udp: true
+  - name: REALITY|@prrofile_purple|🇧🇬|363.16
+    server: russiatest-tap2.servers807.ir
+    port: 2025
+    type: vless
+    uuid: ebac2049-8367-4eab-a1a5-8b742b2fd3b6
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: yahoo.com
+    network: grpc
+    grpc-opts:
+      grpc-service-name: das12327gsgsyu
+    udp: true
+  - name: REALITY|@internet4iran|🇩🇪|121.29
+    server: 128.140.49.220
+    port: 443
+    type: vless
+    uuid: a0660613-bab4-456f-91b7-b8923788ed3d
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: www.speedtest.net
+    udp: true
+  - name: REALITY|@vmessorg|🇷🇺|unavailable
+    server: ru01-vlr01.tcp-reset-club.net
+    port: 443
+    type: vless
+    uuid: 2a02cb25-0f58-4b19-a7a6-8c205fdb9042
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: hls-svod.itunes.apple.com
+    udp: true
+  - name: REALITY|@NIM_VPN_ir|🇨🇦|72.21
+    server: ca1.configlinepanel.com
+    port: 8443
+    type: vless
+    uuid: cd307b67-8180-491c-ad97-5dfd74cb38de
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: stackoverflow.com
+    udp: true
+  - name: REALITY|@VmessProtocol|🇳🇱|109.04
+    server: 185.209.21.36
+    port: 14066
+    type: vless
+    uuid: 64e1aa3b-42f7-4907-8348-556400918e73
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: tgju.org
+    udp: true
+  - name: REALITY|@v2_team|🇦🇪|177.22
+    server: gr.globalunlimitedinternet.xyz
+    port: 1911
+    type: vless
+    uuid: 56ac4f3a-8cbf-4748-966e-0e723317e0af
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: refersion.com
+    network: grpc
+    grpc-opts:
+      grpc-service-name: grpc.reality
+    udp: true
+  - name: REALITY|@proxy_kafee|🇺🇸|38.07
+    server: 45.82.161.120
+    port: 49415
+    type: vless
+    uuid: 0cf19093-ba67-4ff6-b8d0-aa12a9e968d8
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: microsoft.com
+    network: grpc
+    grpc-opts:
+      grpc-service-name: Tel%3A%20NT_Safe
+    udp: true
+  - name: REALITY|@v2rayngrit|🇩🇪|289.49
+    server: abzartun2.divartehran.online
+    port: 23737
+    type: vless
+    uuid: debf2a42-1ff4-4ea6-92a4-f6ac49595cc7
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: varzesh3.com
+    network: grpc
+    grpc-opts:
+      grpc-service-name: /
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - REALITY|@ProxyFn|🇨🇭|113.05
+      - REALITY|@prrofile_purple|🇧🇬|363.16
+      - REALITY|@internet4iran|🇩🇪|121.29
+      - REALITY|@vmessorg|🇷🇺|unavailable
+      - REALITY|@NIM_VPN_ir|🇨🇦|72.21
+      - REALITY|@VmessProtocol|🇳🇱|109.04
+      - REALITY|@v2_team|🇦🇪|177.22
+      - REALITY|@proxy_kafee|🇺🇸|38.07
+      - REALITY|@v2rayngrit|🇩🇪|289.49
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - REALITY|@ProxyFn|🇨🇭|113.05
+      - REALITY|@prrofile_purple|🇧🇬|363.16
+      - REALITY|@internet4iran|🇩🇪|121.29
+      - REALITY|@vmessorg|🇷🇺|unavailable
+      - REALITY|@NIM_VPN_ir|🇨🇦|72.21
+      - REALITY|@VmessProtocol|🇳🇱|109.04
+      - REALITY|@v2_team|🇦🇪|177.22
+      - REALITY|@proxy_kafee|🇺🇸|38.07
+      - REALITY|@v2rayngrit|🇩🇪|289.49
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - REALITY|@ProxyFn|🇨🇭|113.05
+      - REALITY|@prrofile_purple|🇧🇬|363.16
+      - REALITY|@internet4iran|🇩🇪|121.29
+      - REALITY|@vmessorg|🇷🇺|unavailable
+      - REALITY|@NIM_VPN_ir|🇨🇦|72.21
+      - REALITY|@VmessProtocol|🇳🇱|109.04
+      - REALITY|@v2_team|🇦🇪|177.22
+      - REALITY|@proxy_kafee|🇺🇸|38.07
+      - REALITY|@v2rayngrit|🇩🇪|289.49
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - REALITY|@ProxyFn|🇨🇭|113.05
+      - REALITY|@prrofile_purple|🇧🇬|363.16
+      - REALITY|@internet4iran|🇩🇪|121.29
+      - REALITY|@vmessorg|🇷🇺|unavailable
+      - REALITY|@NIM_VPN_ir|🇨🇦|72.21
+      - REALITY|@VmessProtocol|🇳🇱|109.04
+      - REALITY|@v2_team|🇦🇪|177.22
+      - REALITY|@proxy_kafee|🇺🇸|38.07
+      - REALITY|@v2rayngrit|🇩🇪|289.49
+rules:
+  - MATCH,MANUAL
