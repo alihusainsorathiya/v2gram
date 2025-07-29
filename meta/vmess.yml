@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@free4allVPN| AHS -🇨🇦|145.98"
+  - name: "@free4allVPN| AHS -🇨🇦|101.81"
     server: 51.79.102.253
     port: 80
     type: vmess
@@ -48,7 +48,7 @@ proxies:
       headers:
         Host: 51.79.102.253
     udp: true
-  - name: "@prrofile_purple| AHS -🇫🇷|155.47"
+  - name: "@prrofile_purple| AHS -🇫🇷|90.34"
     server: 51.68.191.233
     port: 80
     type: vmess
@@ -64,34 +64,45 @@ proxies:
       headers:
         Host: ""
     udp: true
-  - name: "@vpnfail_v2ray| AHS -🇮🇳|unavailable"
-    server: 94.136.185.230
-    port: 10534
+  - name: "@vpnfail_v2ray| AHS -🇨🇦|22.27"
+    server: 51.79.86.182
+    port: 42610
     type: vmess
-    uuid: b01c7ef9-33ec-41f6-bfbf-77ddc4d21649
+    uuid: e0957ca6-f613-4017-ff3c-effd1da8871a
     alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@vpnfail_v2ray| AHS -🇺🇸|8.98"
-    server: vc.fly.dev
+  - name: "@vpnfail_v2ray| AHS -🇫🇷|109.01"
+    server: 135.125.182.74
+    port: 28213
+    type: vmess
+    uuid: 81852771-76fb-4e94-e4f1-4e37a698a49a
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@vpnfail_v2ray| AHS -🇨🇦|26.48"
+    server: 23.162.200.227
     port: 443
     type: vmess
-    uuid: 35379219-6535-4f2e-a4fe-3e44f61e0eee
-    alterId: 32
+    uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+    alterId: 0
     cipher: auto
     tls: true
     skip-cert-verify: true
-    servername: vc.fly.dev
+    servername: ""
     network: ws
     ws-opts:
-      path: /
+      path: /linkvws
       headers:
-        Host: vc.fly.dev
+        Host: ""
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|2.05"
+  - name: "@v2rayvmess| AHS -🇺🇸|5.99"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -107,7 +118,7 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@v2rayngrit| AHS -🇩🇪|169.84"
+  - name: "@v2rayngrit| AHS -🇩🇪|104.38"
     server: pro2.prgame.xyz
     port: 59442
     type: vmess
@@ -122,12 +133,13 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@free4allVPN| AHS -🇨🇦|145.98"
-      - "@prrofile_purple| AHS -🇫🇷|155.47"
-      - "@vpnfail_v2ray| AHS -🇮🇳|unavailable"
-      - "@vpnfail_v2ray| AHS -🇺🇸|8.98"
-      - "@v2rayvmess| AHS -🇺🇸|2.05"
-      - "@v2rayngrit| AHS -🇩🇪|169.84"
+      - "@free4allVPN| AHS -🇨🇦|101.81"
+      - "@prrofile_purple| AHS -🇫🇷|90.34"
+      - "@vpnfail_v2ray| AHS -🇨🇦|22.27"
+      - "@vpnfail_v2ray| AHS -🇫🇷|109.01"
+      - "@vpnfail_v2ray| AHS -🇨🇦|26.48"
+      - "@v2rayvmess| AHS -🇺🇸|5.99"
+      - "@v2rayngrit| AHS -🇩🇪|104.38"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -138,34 +150,37 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@free4allVPN| AHS -🇨🇦|145.98"
-      - "@prrofile_purple| AHS -🇫🇷|155.47"
-      - "@vpnfail_v2ray| AHS -🇮🇳|unavailable"
-      - "@vpnfail_v2ray| AHS -🇺🇸|8.98"
-      - "@v2rayvmess| AHS -🇺🇸|2.05"
-      - "@v2rayngrit| AHS -🇩🇪|169.84"
+      - "@free4allVPN| AHS -🇨🇦|101.81"
+      - "@prrofile_purple| AHS -🇫🇷|90.34"
+      - "@vpnfail_v2ray| AHS -🇨🇦|22.27"
+      - "@vpnfail_v2ray| AHS -🇫🇷|109.01"
+      - "@vpnfail_v2ray| AHS -🇨🇦|26.48"
+      - "@v2rayvmess| AHS -🇺🇸|5.99"
+      - "@v2rayngrit| AHS -🇩🇪|104.38"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@free4allVPN| AHS -🇨🇦|145.98"
-      - "@prrofile_purple| AHS -🇫🇷|155.47"
-      - "@vpnfail_v2ray| AHS -🇮🇳|unavailable"
-      - "@vpnfail_v2ray| AHS -🇺🇸|8.98"
-      - "@v2rayvmess| AHS -🇺🇸|2.05"
-      - "@v2rayngrit| AHS -🇩🇪|169.84"
+      - "@free4allVPN| AHS -🇨🇦|101.81"
+      - "@prrofile_purple| AHS -🇫🇷|90.34"
+      - "@vpnfail_v2ray| AHS -🇨🇦|22.27"
+      - "@vpnfail_v2ray| AHS -🇫🇷|109.01"
+      - "@vpnfail_v2ray| AHS -🇨🇦|26.48"
+      - "@v2rayvmess| AHS -🇺🇸|5.99"
+      - "@v2rayngrit| AHS -🇩🇪|104.38"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@free4allVPN| AHS -🇨🇦|145.98"
-      - "@prrofile_purple| AHS -🇫🇷|155.47"
-      - "@vpnfail_v2ray| AHS -🇮🇳|unavailable"
-      - "@vpnfail_v2ray| AHS -🇺🇸|8.98"
-      - "@v2rayvmess| AHS -🇺🇸|2.05"
-      - "@v2rayngrit| AHS -🇩🇪|169.84"
+      - "@free4allVPN| AHS -🇨🇦|101.81"
+      - "@prrofile_purple| AHS -🇫🇷|90.34"
+      - "@vpnfail_v2ray| AHS -🇨🇦|22.27"
+      - "@vpnfail_v2ray| AHS -🇫🇷|109.01"
+      - "@vpnfail_v2ray| AHS -🇨🇦|26.48"
+      - "@v2rayvmess| AHS -🇺🇸|5.99"
+      - "@v2rayngrit| AHS -🇩🇪|104.38"
 rules:
   - MATCH,MANUAL
