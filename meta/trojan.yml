@@ -1,0 +1,162 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: "|@PrivateVPNs| AHS -111.72"
+    server: 63.178.77.69
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@PrivateVPNs| AHS -104.28"
+    server: 13.39.42.248
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@PrivateVPNs| AHS -104.52"
+    server: 13.39.117.250
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -109.58"
+    server: 63.178.77.69
+    port: 22223
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -104.02"
+    server: 13.39.42.248
+    port: 22223
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -104.44"
+    server: 13.39.117.250
+    port: 22223
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@ovpn2| AHS -3.32"
+    server: 162.159.138.232
+    port: 443
+    type: trojan
+    password: dQDQCtns4R
+    skip-cert-verify: true
+    sni: fadaei.movieland.top
+    network: ws
+    ws-opts:
+      path: static34528
+      headers:
+        Host: fadaei.movieland.top
+    udp: true
+  - name: "|@hope_net| AHS -2.19"
+    server: 188.114.97.150
+    port: 443
+    type: trojan
+    password: NISHIKUITAN111
+    skip-cert-verify: true
+    sni: ""
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - "|@PrivateVPNs| AHS -111.72"
+      - "|@PrivateVPNs| AHS -104.28"
+      - "|@PrivateVPNs| AHS -104.52"
+      - "|@DirectVPN| AHS -109.58"
+      - "|@DirectVPN| AHS -104.02"
+      - "|@DirectVPN| AHS -104.44"
+      - "|@ovpn2| AHS -3.32"
+      - "|@hope_net| AHS -2.19"
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "|@PrivateVPNs| AHS -111.72"
+      - "|@PrivateVPNs| AHS -104.28"
+      - "|@PrivateVPNs| AHS -104.52"
+      - "|@DirectVPN| AHS -109.58"
+      - "|@DirectVPN| AHS -104.02"
+      - "|@DirectVPN| AHS -104.44"
+      - "|@ovpn2| AHS -3.32"
+      - "|@hope_net| AHS -2.19"
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - "|@PrivateVPNs| AHS -111.72"
+      - "|@PrivateVPNs| AHS -104.28"
+      - "|@PrivateVPNs| AHS -104.52"
+      - "|@DirectVPN| AHS -109.58"
+      - "|@DirectVPN| AHS -104.02"
+      - "|@DirectVPN| AHS -104.44"
+      - "|@ovpn2| AHS -3.32"
+      - "|@hope_net| AHS -2.19"
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "|@PrivateVPNs| AHS -111.72"
+      - "|@PrivateVPNs| AHS -104.28"
+      - "|@PrivateVPNs| AHS -104.52"
+      - "|@DirectVPN| AHS -109.58"
+      - "|@DirectVPN| AHS -104.02"
+      - "|@DirectVPN| AHS -104.44"
+      - "|@ovpn2| AHS -3.32"
+      - "|@hope_net| AHS -2.19"
+rules:
+  - MATCH,MANUAL
