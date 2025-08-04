@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@ProxyFn|🇨🇭|152.37
+  - name: REALITY|@ProxyFn|🇨🇭|90.49
     server: 193.168.144.46
     port: 443
     type: vless
@@ -45,7 +45,7 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|157.26
+  - name: REALITY|@internet4iran|🇩🇪|100.53
     server: 128.140.49.220
     port: 443
     type: vless
@@ -56,17 +56,20 @@ proxies:
     skip-cert-verify: true
     servername: www.speedtest.net
     udp: true
-  - name: REALITY|@v2_team|🇩🇪|155.14
-    server: 91.99.236.193
-    port: 8880
+  - name: REALITY|@v2_team|🇦🇪|117.88
+    server: gr.globalunlimitedinternet.xyz
+    port: 1911
     type: vless
-    uuid: 99462fc1-30e0-4180-8a5d-3fb8fffe6a90
+    uuid: 21967761-73c8-4e93-8baf-adf41b072cfe
     cipher: auto
     tls: false
     skip-cert-verify: true
-    servername: www.apple.com.cn
+    servername: refersion.com
+    network: grpc
+    grpc-opts:
+      grpc-service-name: grpc.reality
     udp: true
-  - name: REALITY|@v2rayngrit|🇩🇪|320.5
+  - name: REALITY|@v2rayngrit|🇩🇪|311.6
     server: vpn_proxy_channel_vpn_proxy_channel.hohod.ir
     port: 443
     type: vless
@@ -80,10 +83,10 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|152.37
-      - REALITY|@internet4iran|🇩🇪|157.26
-      - REALITY|@v2_team|🇩🇪|155.14
-      - REALITY|@v2rayngrit|🇩🇪|320.5
+      - REALITY|@ProxyFn|🇨🇭|90.49
+      - REALITY|@internet4iran|🇩🇪|100.53
+      - REALITY|@v2_team|🇦🇪|117.88
+      - REALITY|@v2rayngrit|🇩🇪|311.6
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -94,28 +97,28 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|152.37
-      - REALITY|@internet4iran|🇩🇪|157.26
-      - REALITY|@v2_team|🇩🇪|155.14
-      - REALITY|@v2rayngrit|🇩🇪|320.5
+      - REALITY|@ProxyFn|🇨🇭|90.49
+      - REALITY|@internet4iran|🇩🇪|100.53
+      - REALITY|@v2_team|🇦🇪|117.88
+      - REALITY|@v2rayngrit|🇩🇪|311.6
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|152.37
-      - REALITY|@internet4iran|🇩🇪|157.26
-      - REALITY|@v2_team|🇩🇪|155.14
-      - REALITY|@v2rayngrit|🇩🇪|320.5
+      - REALITY|@ProxyFn|🇨🇭|90.49
+      - REALITY|@internet4iran|🇩🇪|100.53
+      - REALITY|@v2_team|🇦🇪|117.88
+      - REALITY|@v2rayngrit|🇩🇪|311.6
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|152.37
-      - REALITY|@internet4iran|🇩🇪|157.26
-      - REALITY|@v2_team|🇩🇪|155.14
-      - REALITY|@v2rayngrit|🇩🇪|320.5
+      - REALITY|@ProxyFn|🇨🇭|90.49
+      - REALITY|@internet4iran|🇩🇪|100.53
+      - REALITY|@v2_team|🇦🇪|117.88
+      - REALITY|@v2rayngrit|🇩🇪|311.6
 rules:
   - MATCH,MANUAL
