@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@ProxyFn|🇨🇭|160.79
+  - name: REALITY|@ProxyFn|🇨🇭|99.06
     server: 193.168.144.46
     port: 443
     type: vless
@@ -45,7 +45,7 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|156.65
+  - name: REALITY|@internet4iran|🇩🇪|92.38
     server: 128.140.49.220
     port: 443
     type: vless
@@ -56,24 +56,34 @@ proxies:
     skip-cert-verify: true
     servername: www.speedtest.net
     udp: true
-  - name: REALITY|@ShadowProxy66|🇦🇱|151.7
-    server: 78.159.131.107
+  - name: REALITY|@v2rayNG_Matsuri|🇳🇱|92.11
+    server: 85.234.65.120
     port: 443
     type: vless
-    uuid: 10f3650d-32f6-470a-b100-e29471cf3380
+    uuid: 2a562107-43a6-40a4-a35e-e01e6f21684e
     cipher: auto
     tls: false
-    flow: xtls-rprx-vision
     skip-cert-verify: true
-    servername: pingless.com
+    servername: www.speedtest.net
+    udp: true
+  - name: REALITY|@v2rayngrit|🇩🇪|unavailable
+    server: vpn_proxy_channel_vpn_proxy_channel.hohod.ir
+    port: 443
+    type: vless
+    uuid: 1584806e-f63d-4f9b-a0b3-abe64b35a09c
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
     udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|160.79
-      - REALITY|@internet4iran|🇩🇪|156.65
-      - REALITY|@ShadowProxy66|🇦🇱|151.7
+      - REALITY|@ProxyFn|🇨🇭|99.06
+      - REALITY|@internet4iran|🇩🇪|92.38
+      - REALITY|@v2rayNG_Matsuri|🇳🇱|92.11
+      - REALITY|@v2rayngrit|🇩🇪|unavailable
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -84,25 +94,28 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|160.79
-      - REALITY|@internet4iran|🇩🇪|156.65
-      - REALITY|@ShadowProxy66|🇦🇱|151.7
+      - REALITY|@ProxyFn|🇨🇭|99.06
+      - REALITY|@internet4iran|🇩🇪|92.38
+      - REALITY|@v2rayNG_Matsuri|🇳🇱|92.11
+      - REALITY|@v2rayngrit|🇩🇪|unavailable
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|160.79
-      - REALITY|@internet4iran|🇩🇪|156.65
-      - REALITY|@ShadowProxy66|🇦🇱|151.7
+      - REALITY|@ProxyFn|🇨🇭|99.06
+      - REALITY|@internet4iran|🇩🇪|92.38
+      - REALITY|@v2rayNG_Matsuri|🇳🇱|92.11
+      - REALITY|@v2rayngrit|🇩🇪|unavailable
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|160.79
-      - REALITY|@internet4iran|🇩🇪|156.65
-      - REALITY|@ShadowProxy66|🇦🇱|151.7
+      - REALITY|@ProxyFn|🇨🇭|99.06
+      - REALITY|@internet4iran|🇩🇪|92.38
+      - REALITY|@v2rayNG_Matsuri|🇳🇱|92.11
+      - REALITY|@v2rayngrit|🇩🇪|unavailable
 rules:
   - MATCH,MANUAL
