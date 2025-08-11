@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@ProxyFn|🇨🇭|108.14
+  - name: REALITY|@ProxyFn|🇨🇭|164.46
     server: 193.168.144.46
     port: 443
     type: vless
@@ -45,7 +45,7 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@prrofile_purple|🇫🇮|110.46
+  - name: REALITY|@prrofile_purple|🇫🇮|162.06
     server: 85.9.204.21
     port: 23328
     type: vless
@@ -56,7 +56,7 @@ proxies:
     skip-cert-verify: true
     servername: ilovepdf.com
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|116.83
+  - name: REALITY|@internet4iran|🇩🇪|159.87
     server: 128.140.49.220
     port: 443
     type: vless
@@ -67,7 +67,7 @@ proxies:
     skip-cert-verify: true
     servername: www.speedtest.net
     udp: true
-  - name: REALITY|@customv2ray|🇩🇪|106.78
+  - name: REALITY|@customv2ray|🇩🇪|160.53
     server: 109.61.16.89
     port: 30938
     type: vless
@@ -78,7 +78,7 @@ proxies:
     skip-cert-verify: true
     servername: indeed.com
     udp: true
-  - name: REALITY|@v2ray1_ng|🇩🇪|113.37
+  - name: REALITY|@v2ray1_ng|🇩🇪|157.42
     server: 89.58.1.98
     port: 44807
     type: vless
@@ -88,7 +88,18 @@ proxies:
     skip-cert-verify: true
     servername: yahoo.com
     udp: true
-  - name: REALITY|@v2_team|🇦🇪|149.22
+  - name: REALITY|@VmessProtocol|🇪🇸|170.85
+    server: 185.250.181.128
+    port: 16106
+    type: vless
+    uuid: aa1aac84-6a86-41b9-bd34-1a036e06976f
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: yahoo.com
+    udp: true
+  - name: REALITY|@v2_team|🇦🇪|unavailable
     server: gr.globalunlimitedinternet.xyz
     port: 1911
     type: vless
@@ -105,12 +116,13 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|108.14
-      - REALITY|@prrofile_purple|🇫🇮|110.46
-      - REALITY|@internet4iran|🇩🇪|116.83
-      - REALITY|@customv2ray|🇩🇪|106.78
-      - REALITY|@v2ray1_ng|🇩🇪|113.37
-      - REALITY|@v2_team|🇦🇪|149.22
+      - REALITY|@ProxyFn|🇨🇭|164.46
+      - REALITY|@prrofile_purple|🇫🇮|162.06
+      - REALITY|@internet4iran|🇩🇪|159.87
+      - REALITY|@customv2ray|🇩🇪|160.53
+      - REALITY|@v2ray1_ng|🇩🇪|157.42
+      - REALITY|@VmessProtocol|🇪🇸|170.85
+      - REALITY|@v2_team|🇦🇪|unavailable
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -121,34 +133,37 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|108.14
-      - REALITY|@prrofile_purple|🇫🇮|110.46
-      - REALITY|@internet4iran|🇩🇪|116.83
-      - REALITY|@customv2ray|🇩🇪|106.78
-      - REALITY|@v2ray1_ng|🇩🇪|113.37
-      - REALITY|@v2_team|🇦🇪|149.22
+      - REALITY|@ProxyFn|🇨🇭|164.46
+      - REALITY|@prrofile_purple|🇫🇮|162.06
+      - REALITY|@internet4iran|🇩🇪|159.87
+      - REALITY|@customv2ray|🇩🇪|160.53
+      - REALITY|@v2ray1_ng|🇩🇪|157.42
+      - REALITY|@VmessProtocol|🇪🇸|170.85
+      - REALITY|@v2_team|🇦🇪|unavailable
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|108.14
-      - REALITY|@prrofile_purple|🇫🇮|110.46
-      - REALITY|@internet4iran|🇩🇪|116.83
-      - REALITY|@customv2ray|🇩🇪|106.78
-      - REALITY|@v2ray1_ng|🇩🇪|113.37
-      - REALITY|@v2_team|🇦🇪|149.22
+      - REALITY|@ProxyFn|🇨🇭|164.46
+      - REALITY|@prrofile_purple|🇫🇮|162.06
+      - REALITY|@internet4iran|🇩🇪|159.87
+      - REALITY|@customv2ray|🇩🇪|160.53
+      - REALITY|@v2ray1_ng|🇩🇪|157.42
+      - REALITY|@VmessProtocol|🇪🇸|170.85
+      - REALITY|@v2_team|🇦🇪|unavailable
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|108.14
-      - REALITY|@prrofile_purple|🇫🇮|110.46
-      - REALITY|@internet4iran|🇩🇪|116.83
-      - REALITY|@customv2ray|🇩🇪|106.78
-      - REALITY|@v2ray1_ng|🇩🇪|113.37
-      - REALITY|@v2_team|🇦🇪|149.22
+      - REALITY|@ProxyFn|🇨🇭|164.46
+      - REALITY|@prrofile_purple|🇫🇮|162.06
+      - REALITY|@internet4iran|🇩🇪|159.87
+      - REALITY|@customv2ray|🇩🇪|160.53
+      - REALITY|@v2ray1_ng|🇩🇪|157.42
+      - REALITY|@VmessProtocol|🇪🇸|170.85
+      - REALITY|@v2_team|🇦🇪|unavailable
 rules:
   - MATCH,MANUAL
