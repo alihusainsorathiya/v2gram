@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@PrivateVPNs| AHS -130.01"
+  - name: "|@PrivateVPNs| AHS -119.44"
     server: 18.192.138.0
     port: 22222
     type: trojan
@@ -40,7 +40,7 @@ proxies:
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -122.61"
+  - name: "|@DirectVPN| AHS -141.91"
     server: 18.192.138.0
     port: 22223
     type: trojan
@@ -61,7 +61,7 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
-  - name: "|@hope_net| AHS -2.74"
+  - name: "|@hope_net| AHS -1.57"
     server: 104.18.62.116
     port: 443
     type: trojan
@@ -78,10 +78,10 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@PrivateVPNs| AHS -130.01"
-      - "|@DirectVPN| AHS -122.61"
+      - "|@PrivateVPNs| AHS -119.44"
+      - "|@DirectVPN| AHS -141.91"
       - "|@ovpn2| AHS -2.13"
-      - "|@hope_net| AHS -2.74"
+      - "|@hope_net| AHS -1.57"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -92,28 +92,28 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -130.01"
-      - "|@DirectVPN| AHS -122.61"
+      - "|@PrivateVPNs| AHS -119.44"
+      - "|@DirectVPN| AHS -141.91"
       - "|@ovpn2| AHS -2.13"
-      - "|@hope_net| AHS -2.74"
+      - "|@hope_net| AHS -1.57"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@PrivateVPNs| AHS -130.01"
-      - "|@DirectVPN| AHS -122.61"
+      - "|@PrivateVPNs| AHS -119.44"
+      - "|@DirectVPN| AHS -141.91"
       - "|@ovpn2| AHS -2.13"
-      - "|@hope_net| AHS -2.74"
+      - "|@hope_net| AHS -1.57"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -130.01"
-      - "|@DirectVPN| AHS -122.61"
+      - "|@PrivateVPNs| AHS -119.44"
+      - "|@DirectVPN| AHS -141.91"
       - "|@ovpn2| AHS -2.13"
-      - "|@hope_net| AHS -2.74"
+      - "|@hope_net| AHS -1.57"
 rules:
   - MATCH,MANUAL
