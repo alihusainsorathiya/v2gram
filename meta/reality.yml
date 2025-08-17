@@ -1,0 +1,136 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: REALITY|@ProxyFn|🇨🇭|138.03
+    server: 193.168.144.46
+    port: 443
+    type: vless
+    uuid: cdb38f5b-12c3-414b-eacd-a635dc633701
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: mega.io
+    network: grpc
+    grpc-opts:
+      grpc-service-name: /
+    udp: true
+  - name: REALITY|@internet4iran|🇩🇪|140.33
+    server: 128.140.49.220
+    port: 443
+    type: vless
+    uuid: a0660613-bab4-456f-91b7-b8923788ed3d
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: www.speedtest.net
+    udp: true
+  - name: REALITY|@VmessProtocol|🇺🇸|61.7
+    server: 172.233.201.9
+    port: 10001
+    type: vless
+    uuid: d9d3d089-ce03-43fc-ad40-4b96e045032a
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: yahoo.com
+    udp: true
+  - name: REALITY|@proxy_kafee|🇩🇪|135.03
+    server: 5.75.194.13
+    port: 80
+    type: vless
+    uuid: 50190347-9a85-4386-bd33-98bc5bc238cd
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: tgju.org
+    udp: true
+  - name: REALITY|@v2rayngrit|🇩🇪|145.06
+    server: 109.61.16.89
+    port: 30938
+    type: vless
+    uuid: 1068814a-6d43-40d9-a127-0f6b6b77ccfc
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: indeed.com
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - REALITY|@ProxyFn|🇨🇭|138.03
+      - REALITY|@internet4iran|🇩🇪|140.33
+      - REALITY|@VmessProtocol|🇺🇸|61.7
+      - REALITY|@proxy_kafee|🇩🇪|135.03
+      - REALITY|@v2rayngrit|🇩🇪|145.06
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - REALITY|@ProxyFn|🇨🇭|138.03
+      - REALITY|@internet4iran|🇩🇪|140.33
+      - REALITY|@VmessProtocol|🇺🇸|61.7
+      - REALITY|@proxy_kafee|🇩🇪|135.03
+      - REALITY|@v2rayngrit|🇩🇪|145.06
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - REALITY|@ProxyFn|🇨🇭|138.03
+      - REALITY|@internet4iran|🇩🇪|140.33
+      - REALITY|@VmessProtocol|🇺🇸|61.7
+      - REALITY|@proxy_kafee|🇩🇪|135.03
+      - REALITY|@v2rayngrit|🇩🇪|145.06
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - REALITY|@ProxyFn|🇨🇭|138.03
+      - REALITY|@internet4iran|🇩🇪|140.33
+      - REALITY|@VmessProtocol|🇺🇸|61.7
+      - REALITY|@proxy_kafee|🇩🇪|135.03
+      - REALITY|@v2rayngrit|🇩🇪|145.06
+rules:
+  - MATCH,MANUAL
