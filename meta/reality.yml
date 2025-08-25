@@ -32,7 +32,20 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@internet4iran|🇩🇪|136.69
+  - name: REALITY|@ProxyFn|🇨🇭|94.56
+    server: 193.168.144.46
+    port: 443
+    type: vless
+    uuid: cdb38f5b-12c3-414b-eacd-a635dc633701
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: mega.io
+    network: grpc
+    grpc-opts:
+      grpc-service-name: /
+    udp: true
+  - name: REALITY|@internet4iran|🇩🇪|95.54
     server: 128.140.49.220
     port: 443
     type: vless
@@ -43,18 +56,7 @@ proxies:
     skip-cert-verify: true
     servername: www.speedtest.net
     udp: true
-  - name: REALITY|@ConfigsHUB|🇦🇲|208.11
-    server: 85.90.207.45
-    port: 7021
-    type: vless
-    uuid: 7b5f4468-74e1-4cee-be76-80a6316deec9
-    cipher: auto
-    tls: false
-    flow: xtls-rprx-vision
-    skip-cert-verify: true
-    servername: journalofbigdata.springeropen.com
-    udp: true
-  - name: REALITY|@azadnet|🇬🇧|164.39
+  - name: REALITY|@azadnet|🇬🇧|85.61
     server: 185.33.24.229
     port: 28495
     type: vless
@@ -68,9 +70,9 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@internet4iran|🇩🇪|136.69
-      - REALITY|@ConfigsHUB|🇦🇲|208.11
-      - REALITY|@azadnet|🇬🇧|164.39
+      - REALITY|@ProxyFn|🇨🇭|94.56
+      - REALITY|@internet4iran|🇩🇪|95.54
+      - REALITY|@azadnet|🇬🇧|85.61
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -81,25 +83,25 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|136.69
-      - REALITY|@ConfigsHUB|🇦🇲|208.11
-      - REALITY|@azadnet|🇬🇧|164.39
+      - REALITY|@ProxyFn|🇨🇭|94.56
+      - REALITY|@internet4iran|🇩🇪|95.54
+      - REALITY|@azadnet|🇬🇧|85.61
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@internet4iran|🇩🇪|136.69
-      - REALITY|@ConfigsHUB|🇦🇲|208.11
-      - REALITY|@azadnet|🇬🇧|164.39
+      - REALITY|@ProxyFn|🇨🇭|94.56
+      - REALITY|@internet4iran|🇩🇪|95.54
+      - REALITY|@azadnet|🇬🇧|85.61
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|136.69
-      - REALITY|@ConfigsHUB|🇦🇲|208.11
-      - REALITY|@azadnet|🇬🇧|164.39
+      - REALITY|@ProxyFn|🇨🇭|94.56
+      - REALITY|@internet4iran|🇩🇪|95.54
+      - REALITY|@azadnet|🇬🇧|85.61
 rules:
   - MATCH,MANUAL
