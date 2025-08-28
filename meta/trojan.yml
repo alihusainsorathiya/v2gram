@@ -32,39 +32,23 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@PrivateVPNs| AHS -110.41"
-    server: 52.29.121.204
+  - name: "|@PrivateVPNs| AHS -92.15"
+    server: 63.179.11.66
     port: 22222
     type: trojan
     password: telegram-id-privatevpns
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@PrivateVPNs| AHS -109.1"
-    server: 35.159.254.111
-    port: 22222
-    type: trojan
-    password: telegram-id-privatevpns
-    skip-cert-verify: true
-    sni: trojan.burgerip.co.uk
-    udp: true
-  - name: "|@DirectVPN| AHS -109.16"
-    server: 52.29.121.204
+  - name: "|@DirectVPN| AHS -92.07"
+    server: 63.179.11.66
     port: 22223
     type: trojan
     password: telegram-id-directvpn
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -133.85"
-    server: 35.159.254.111
-    port: 22223
-    type: trojan
-    password: telegram-id-directvpn
-    skip-cert-verify: true
-    sni: trojan.burgerip.co.uk
-    udp: true
-  - name: "|@ovpn2| AHS -2.27"
+  - name: "|@ovpn2| AHS -7.8"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -77,43 +61,25 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
-  - name: "|@ConfigsHUB| AHS -2.43"
-    server: 188.114.98.12
+  - name: "|@ConfigsHUB| AHS -5.66"
+    server: 104.17.228.60
     port: 443
     type: trojan
-    password: bpb-trojan
+    password: b9e82117-ed3a-4098-8153-100ca12aa523
     skip-cert-verify: true
-    sni: fcspring.ggff.net
-    network: ws
-    ws-opts:
-      path: /tr?ed
-      headers:
-        Host: fcspring.ggff.net
-    udp: true
-  - name: "|@ConfigsHUB| AHS -2.18"
-    server: 108.162.195.135
-    port: 443
-    type: trojan
-    password: auto
-    skip-cert-verify: true
-    sni: trojanmz.pages.dev
-    network: ws
-    ws-opts:
-      path: ""
-      headers:
-        Host: trojanmz.pages.dev
+    sni: hdfy5persiaserverc1.afsharidempire.uk
+    network: grpc
+    grpc-opts:
+      grpc-service-name: /
     udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@PrivateVPNs| AHS -110.41"
-      - "|@PrivateVPNs| AHS -109.1"
-      - "|@DirectVPN| AHS -109.16"
-      - "|@DirectVPN| AHS -133.85"
-      - "|@ovpn2| AHS -2.27"
-      - "|@ConfigsHUB| AHS -2.43"
-      - "|@ConfigsHUB| AHS -2.18"
+      - "|@PrivateVPNs| AHS -92.15"
+      - "|@DirectVPN| AHS -92.07"
+      - "|@ovpn2| AHS -7.8"
+      - "|@ConfigsHUB| AHS -5.66"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -124,37 +90,28 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -110.41"
-      - "|@PrivateVPNs| AHS -109.1"
-      - "|@DirectVPN| AHS -109.16"
-      - "|@DirectVPN| AHS -133.85"
-      - "|@ovpn2| AHS -2.27"
-      - "|@ConfigsHUB| AHS -2.43"
-      - "|@ConfigsHUB| AHS -2.18"
+      - "|@PrivateVPNs| AHS -92.15"
+      - "|@DirectVPN| AHS -92.07"
+      - "|@ovpn2| AHS -7.8"
+      - "|@ConfigsHUB| AHS -5.66"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@PrivateVPNs| AHS -110.41"
-      - "|@PrivateVPNs| AHS -109.1"
-      - "|@DirectVPN| AHS -109.16"
-      - "|@DirectVPN| AHS -133.85"
-      - "|@ovpn2| AHS -2.27"
-      - "|@ConfigsHUB| AHS -2.43"
-      - "|@ConfigsHUB| AHS -2.18"
+      - "|@PrivateVPNs| AHS -92.15"
+      - "|@DirectVPN| AHS -92.07"
+      - "|@ovpn2| AHS -7.8"
+      - "|@ConfigsHUB| AHS -5.66"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -110.41"
-      - "|@PrivateVPNs| AHS -109.1"
-      - "|@DirectVPN| AHS -109.16"
-      - "|@DirectVPN| AHS -133.85"
-      - "|@ovpn2| AHS -2.27"
-      - "|@ConfigsHUB| AHS -2.43"
-      - "|@ConfigsHUB| AHS -2.18"
+      - "|@PrivateVPNs| AHS -92.15"
+      - "|@DirectVPN| AHS -92.07"
+      - "|@ovpn2| AHS -7.8"
+      - "|@ConfigsHUB| AHS -5.66"
 rules:
   - MATCH,MANUAL
