@@ -1,0 +1,179 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: REALITY|@ProxyFn|🇨🇭|110.18
+    server: 193.168.144.46
+    port: 443
+    type: vless
+    uuid: cdb38f5b-12c3-414b-eacd-a635dc633701
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: mega.io
+    network: grpc
+    grpc-opts:
+      grpc-service-name: /
+    udp: true
+  - name: REALITY|@Outline_Vpn|🇨🇿|116.41
+    server: 45.83.130.133
+    port: 34045
+    type: vless
+    uuid: d8dd94fd-540e-461d-b5d4-acebef02c22a
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: visit-this-invitation-link-to-join-tg-enkelte-notif.ekt.me
+    udp: true
+  - name: REALITY|@internet4iran|🇩🇪|113.9
+    server: 128.140.49.220
+    port: 443
+    type: vless
+    uuid: a0660613-bab4-456f-91b7-b8923788ed3d
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: www.speedtest.net
+    udp: true
+  - name: REALITY|@customv2ray|🇨🇭|110.41
+    server: 84.234.29.214
+    port: 8585
+    type: vless
+    uuid: 9eb0500f-c906-4731-90a6-08ad66122d74
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: telwebion.com
+    udp: true
+  - name: REALITY|@ShadowProxy66|🇳🇱|unavailable
+    server: 5.61.50.192
+    port: 34045
+    type: vless
+    uuid: d8dd94fd-540e-461d-b5d4-acebef02c22a
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: visit-this-invitation-link-to-join-tg-enkelte-notif.ekt.me
+    udp: true
+  - name: REALITY|@VmessProtocol|🇺🇸|49.82
+    server: 138.197.215.108
+    port: 443
+    type: vless
+    uuid: dead1bb8-e95a-4517-8ed2-e0694de80ba6
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: www.icloud.com
+    udp: true
+  - name: REALITY|@ConfigsHUB|🇷🇺|127.44
+    server: 94.26.228.10
+    port: 443
+    type: vless
+    uuid: 1a6fe500-59da-4598-8576-256f06765ffb
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: ru.sfasti.ru
+    udp: true
+  - name: REALITY|@v2rayngrit|🇷🇺|133.27
+    server: 194.55.235.202
+    port: 443
+    type: vless
+    uuid: 5a519368-9dbb-4ab4-8967-a30fb39a8881
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: mega.io
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - REALITY|@ProxyFn|🇨🇭|110.18
+      - REALITY|@Outline_Vpn|🇨🇿|116.41
+      - REALITY|@internet4iran|🇩🇪|113.9
+      - REALITY|@customv2ray|🇨🇭|110.41
+      - REALITY|@ShadowProxy66|🇳🇱|unavailable
+      - REALITY|@VmessProtocol|🇺🇸|49.82
+      - REALITY|@ConfigsHUB|🇷🇺|127.44
+      - REALITY|@v2rayngrit|🇷🇺|133.27
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - REALITY|@ProxyFn|🇨🇭|110.18
+      - REALITY|@Outline_Vpn|🇨🇿|116.41
+      - REALITY|@internet4iran|🇩🇪|113.9
+      - REALITY|@customv2ray|🇨🇭|110.41
+      - REALITY|@ShadowProxy66|🇳🇱|unavailable
+      - REALITY|@VmessProtocol|🇺🇸|49.82
+      - REALITY|@ConfigsHUB|🇷🇺|127.44
+      - REALITY|@v2rayngrit|🇷🇺|133.27
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - REALITY|@ProxyFn|🇨🇭|110.18
+      - REALITY|@Outline_Vpn|🇨🇿|116.41
+      - REALITY|@internet4iran|🇩🇪|113.9
+      - REALITY|@customv2ray|🇨🇭|110.41
+      - REALITY|@ShadowProxy66|🇳🇱|unavailable
+      - REALITY|@VmessProtocol|🇺🇸|49.82
+      - REALITY|@ConfigsHUB|🇷🇺|127.44
+      - REALITY|@v2rayngrit|🇷🇺|133.27
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - REALITY|@ProxyFn|🇨🇭|110.18
+      - REALITY|@Outline_Vpn|🇨🇿|116.41
+      - REALITY|@internet4iran|🇩🇪|113.9
+      - REALITY|@customv2ray|🇨🇭|110.41
+      - REALITY|@ShadowProxy66|🇳🇱|unavailable
+      - REALITY|@VmessProtocol|🇺🇸|49.82
+      - REALITY|@ConfigsHUB|🇷🇺|127.44
+      - REALITY|@v2rayngrit|🇷🇺|133.27
+rules:
+  - MATCH,MANUAL
