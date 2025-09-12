@@ -32,35 +32,49 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@vmess_vless_v2rayng| AHS -🇫🇮|163.88"
+  - name: "@vmess_vless_v2rayng| AHS -🇫🇮|140.35"
     server: 83.147.216.70
     port: 64519
     type: ss
     cipher: chacha20-ietf-poly1305
     password: UlT89D0rvcr05tKft1NB5a
     udp: true
-  - name: "@vmess_vless_v2rayng| AHS -🇱🇹|118.03"
+  - name: "@vmess_vless_v2rayng| AHS -🇱🇹|98.8"
     server: 45.87.175.171
     port: 8080
     type: ss
     cipher: chacha20-ietf-poly1305
     password: cvII85TrW6n0OGyfpHVS1u
     udp: true
-  - name: "@VmessProtocol| AHS -🇺🇸|157.41"
+  - name: "@VmessProtocol| AHS -🇺🇸|131.11"
     server: 94.131.22.134
     port: 40565
     type: ss
     cipher: chacha20-ietf-poly1305
     password: 2JK8CwhNFuy3uQo5yHwHvRuEXKLnnrKW7T3snXFQ25yt27PGLKoLXMFrSFFoVgB5SQMeAHx8ZaQXx9mAY55cYskUyVaP6Rum7
     udp: true
-  - name: "@hope_net| AHS -🇱🇹|128.55"
-    server: 45.87.175.188
-    port: 8080
+  - name: "@hope_net| AHS -🇬🇧|91.46"
+    server: 212.102.53.196
+    port: 443
     type: ss
-    cipher: chacha20-ietf-poly1305
-    password: 1RWwXhwfAB5gAEozU4G2Pg
+    cipher: aes-128-gcm
+    password: shadowsocks
     udp: true
-  - name: "@v2rayngrit| AHS -🇩🇪|130.6"
+  - name: "@hope_net| AHS -🇸🇬|205.91"
+    server: 13.229.212.209
+    port: 443
+    type: ss
+    cipher: aes-256-cfb
+    password: amazonskr05
+    udp: true
+  - name: "@hope_net| AHS -🇫🇷|102.95"
+    server: 195.154.169.198
+    port: 989
+    type: ss
+    cipher: aes-256-cfb
+    password: f8f7aCzcPKbsF8p3
+    udp: true
+  - name: "@v2rayngrit| AHS -🇩🇪|108.83"
     server: 91.107.134.230
     port: 50796
     type: ss
@@ -71,11 +85,13 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@vmess_vless_v2rayng| AHS -🇫🇮|163.88"
-      - "@vmess_vless_v2rayng| AHS -🇱🇹|118.03"
-      - "@VmessProtocol| AHS -🇺🇸|157.41"
-      - "@hope_net| AHS -🇱🇹|128.55"
-      - "@v2rayngrit| AHS -🇩🇪|130.6"
+      - "@vmess_vless_v2rayng| AHS -🇫🇮|140.35"
+      - "@vmess_vless_v2rayng| AHS -🇱🇹|98.8"
+      - "@VmessProtocol| AHS -🇺🇸|131.11"
+      - "@hope_net| AHS -🇬🇧|91.46"
+      - "@hope_net| AHS -🇸🇬|205.91"
+      - "@hope_net| AHS -🇫🇷|102.95"
+      - "@v2rayngrit| AHS -🇩🇪|108.83"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -86,31 +102,37 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@vmess_vless_v2rayng| AHS -🇫🇮|163.88"
-      - "@vmess_vless_v2rayng| AHS -🇱🇹|118.03"
-      - "@VmessProtocol| AHS -🇺🇸|157.41"
-      - "@hope_net| AHS -🇱🇹|128.55"
-      - "@v2rayngrit| AHS -🇩🇪|130.6"
+      - "@vmess_vless_v2rayng| AHS -🇫🇮|140.35"
+      - "@vmess_vless_v2rayng| AHS -🇱🇹|98.8"
+      - "@VmessProtocol| AHS -🇺🇸|131.11"
+      - "@hope_net| AHS -🇬🇧|91.46"
+      - "@hope_net| AHS -🇸🇬|205.91"
+      - "@hope_net| AHS -🇫🇷|102.95"
+      - "@v2rayngrit| AHS -🇩🇪|108.83"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@vmess_vless_v2rayng| AHS -🇫🇮|163.88"
-      - "@vmess_vless_v2rayng| AHS -🇱🇹|118.03"
-      - "@VmessProtocol| AHS -🇺🇸|157.41"
-      - "@hope_net| AHS -🇱🇹|128.55"
-      - "@v2rayngrit| AHS -🇩🇪|130.6"
+      - "@vmess_vless_v2rayng| AHS -🇫🇮|140.35"
+      - "@vmess_vless_v2rayng| AHS -🇱🇹|98.8"
+      - "@VmessProtocol| AHS -🇺🇸|131.11"
+      - "@hope_net| AHS -🇬🇧|91.46"
+      - "@hope_net| AHS -🇸🇬|205.91"
+      - "@hope_net| AHS -🇫🇷|102.95"
+      - "@v2rayngrit| AHS -🇩🇪|108.83"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@vmess_vless_v2rayng| AHS -🇫🇮|163.88"
-      - "@vmess_vless_v2rayng| AHS -🇱🇹|118.03"
-      - "@VmessProtocol| AHS -🇺🇸|157.41"
-      - "@hope_net| AHS -🇱🇹|128.55"
-      - "@v2rayngrit| AHS -🇩🇪|130.6"
+      - "@vmess_vless_v2rayng| AHS -🇫🇮|140.35"
+      - "@vmess_vless_v2rayng| AHS -🇱🇹|98.8"
+      - "@VmessProtocol| AHS -🇺🇸|131.11"
+      - "@hope_net| AHS -🇬🇧|91.46"
+      - "@hope_net| AHS -🇸🇬|205.91"
+      - "@hope_net| AHS -🇫🇷|102.95"
+      - "@v2rayngrit| AHS -🇩🇪|108.83"
 rules:
   - MATCH,MANUAL
