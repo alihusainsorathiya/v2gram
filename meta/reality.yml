@@ -32,7 +32,20 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@internet4iran|🇩🇪|157.98
+  - name: REALITY|@ProxyFn|🇨🇭|94.8
+    server: 193.168.144.46
+    port: 443
+    type: vless
+    uuid: cdb38f5b-12c3-414b-eacd-a635dc633701
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: mega.io
+    network: grpc
+    grpc-opts:
+      grpc-service-name: /
+    udp: true
+  - name: REALITY|@internet4iran|🇩🇪|94.39
     server: 128.140.49.220
     port: 443
     type: vless
@@ -43,7 +56,18 @@ proxies:
     skip-cert-verify: true
     servername: www.speedtest.net
     udp: true
-  - name: REALITY|@v2ray1_ng|🇩🇪|271.58
+  - name: REALITY|@ShadowProxy66|🇬🇧|unavailable
+    server: 64.227.32.13
+    port: 443
+    type: vless
+    uuid: c2c5b83f-4892-c49f-b9d1-7af232611820
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: www.latimes.com
+    udp: true
+  - name: REALITY|@v2ray1_ng|🇩🇪|96.64
     server: deu246.bypassall.org
     port: 443
     type: vless
@@ -54,7 +78,7 @@ proxies:
     skip-cert-verify: true
     servername: www.bing.com
     udp: true
-  - name: REALITY|@VmessProtocol|🇫🇷|319.65
+  - name: REALITY|@VmessProtocol|🇫🇷|183.74
     server: fr-node.vipclubiran.ir
     port: 47193
     type: vless
@@ -64,13 +88,27 @@ proxies:
     skip-cert-verify: true
     servername: refersion.com
     udp: true
+  - name: REALITY|@ConfigsHUB|🇷🇺|252.12
+    server: ru.sfasti.ru
+    port: 443
+    type: vless
+    uuid: 1a6fe500-59da-4598-8576-256f06765ffb
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: ru.sfasti.ru
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@internet4iran|🇩🇪|157.98
-      - REALITY|@v2ray1_ng|🇩🇪|271.58
-      - REALITY|@VmessProtocol|🇫🇷|319.65
+      - REALITY|@ProxyFn|🇨🇭|94.8
+      - REALITY|@internet4iran|🇩🇪|94.39
+      - REALITY|@ShadowProxy66|🇬🇧|unavailable
+      - REALITY|@v2ray1_ng|🇩🇪|96.64
+      - REALITY|@VmessProtocol|🇫🇷|183.74
+      - REALITY|@ConfigsHUB|🇷🇺|252.12
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -81,25 +119,34 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|157.98
-      - REALITY|@v2ray1_ng|🇩🇪|271.58
-      - REALITY|@VmessProtocol|🇫🇷|319.65
+      - REALITY|@ProxyFn|🇨🇭|94.8
+      - REALITY|@internet4iran|🇩🇪|94.39
+      - REALITY|@ShadowProxy66|🇬🇧|unavailable
+      - REALITY|@v2ray1_ng|🇩🇪|96.64
+      - REALITY|@VmessProtocol|🇫🇷|183.74
+      - REALITY|@ConfigsHUB|🇷🇺|252.12
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@internet4iran|🇩🇪|157.98
-      - REALITY|@v2ray1_ng|🇩🇪|271.58
-      - REALITY|@VmessProtocol|🇫🇷|319.65
+      - REALITY|@ProxyFn|🇨🇭|94.8
+      - REALITY|@internet4iran|🇩🇪|94.39
+      - REALITY|@ShadowProxy66|🇬🇧|unavailable
+      - REALITY|@v2ray1_ng|🇩🇪|96.64
+      - REALITY|@VmessProtocol|🇫🇷|183.74
+      - REALITY|@ConfigsHUB|🇷🇺|252.12
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|157.98
-      - REALITY|@v2ray1_ng|🇩🇪|271.58
-      - REALITY|@VmessProtocol|🇫🇷|319.65
+      - REALITY|@ProxyFn|🇨🇭|94.8
+      - REALITY|@internet4iran|🇩🇪|94.39
+      - REALITY|@ShadowProxy66|🇬🇧|unavailable
+      - REALITY|@v2ray1_ng|🇩🇪|96.64
+      - REALITY|@VmessProtocol|🇫🇷|183.74
+      - REALITY|@ConfigsHUB|🇷🇺|252.12
 rules:
   - MATCH,MANUAL
