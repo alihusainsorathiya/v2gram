@@ -32,15 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@PrivateVPNs| AHS -167.05"
-    server: 63.179.38.42
-    port: 22222
-    type: trojan
-    password: telegram-id-privatevpns
-    skip-cert-verify: true
-    sni: trojan.burgerip.co.uk
-    udp: true
-  - name: "|@PrivateVPNs| AHS -112.4"
+  - name: "|@PrivateVPNs| AHS -86.7"
     server: 13.37.27.224
     port: 22222
     type: trojan
@@ -48,7 +40,7 @@ proxies:
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@PrivateVPNs| AHS -157.26"
+  - name: "|@PrivateVPNs| AHS -102.5"
     server: 13.37.65.168
     port: 22222
     type: trojan
@@ -56,15 +48,15 @@ proxies:
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -137.12"
-    server: 63.179.38.42
-    port: 22223
+  - name: "|@PrivateVPNs| AHS -145.97"
+    server: 18.199.132.184
+    port: 22222
     type: trojan
-    password: telegram-id-directvpn
+    password: telegram-id-privatevpns
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -141.02"
+  - name: "|@DirectVPN| AHS -86.06"
     server: 13.37.27.224
     port: 22223
     type: trojan
@@ -72,7 +64,7 @@ proxies:
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -145.11"
+  - name: "|@DirectVPN| AHS -86.65"
     server: 13.37.65.168
     port: 22223
     type: trojan
@@ -80,7 +72,15 @@ proxies:
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@ovpn2| AHS -14.83"
+  - name: "|@DirectVPN| AHS -132.07"
+    server: 18.199.132.184
+    port: 22223
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@ovpn2| AHS -1.72"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -93,16 +93,34 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
-  - name: "|@hope_net| AHS -2.14"
-    server: 104.19.209.229
-    port: 2052
+  - name: "|@ConfigsHUB| AHS -1.82"
+    server: 192.0.63.195
+    port: 2096
     type: trojan
-    password: edcfbd77-d607-53a9-842c-32592c2504b2
+    password: slch2024
     skip-cert-verify: true
-    sni: www-domain.uk1.vless.sitespeedtest.net
+    sni: ocost-dy.wmlefl.cc
+    network: ws
+    ws-opts:
+      path: /由零开始
+      headers:
+        Host: ocost-dy.wmlefl.cc
     udp: true
-  - name: "|@hope_net| AHS -2.22"
+  - name: "|@hope_net| AHS -1.83"
     server: 104.20.21.199
+    port: 443
+    type: trojan
+    password: auto
+    skip-cert-verify: true
+    sni: b96ef9ae.trojanfree-76s.pages.dev
+    network: ws
+    ws-opts:
+      path: /b96ef9ae.trojanfree-76s.pages.dev/
+      headers:
+        Host: b96ef9ae.trojanfree-76s.pages.dev
+    udp: true
+  - name: "|@hope_net| AHS -1.96"
+    server: 104.20.22.57
     port: 443
     type: trojan
     password: auto
@@ -118,15 +136,16 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@PrivateVPNs| AHS -167.05"
-      - "|@PrivateVPNs| AHS -112.4"
-      - "|@PrivateVPNs| AHS -157.26"
-      - "|@DirectVPN| AHS -137.12"
-      - "|@DirectVPN| AHS -141.02"
-      - "|@DirectVPN| AHS -145.11"
-      - "|@ovpn2| AHS -14.83"
-      - "|@hope_net| AHS -2.14"
-      - "|@hope_net| AHS -2.22"
+      - "|@PrivateVPNs| AHS -86.7"
+      - "|@PrivateVPNs| AHS -102.5"
+      - "|@PrivateVPNs| AHS -145.97"
+      - "|@DirectVPN| AHS -86.06"
+      - "|@DirectVPN| AHS -86.65"
+      - "|@DirectVPN| AHS -132.07"
+      - "|@ovpn2| AHS -1.72"
+      - "|@ConfigsHUB| AHS -1.82"
+      - "|@hope_net| AHS -1.83"
+      - "|@hope_net| AHS -1.96"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -137,43 +156,46 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -167.05"
-      - "|@PrivateVPNs| AHS -112.4"
-      - "|@PrivateVPNs| AHS -157.26"
-      - "|@DirectVPN| AHS -137.12"
-      - "|@DirectVPN| AHS -141.02"
-      - "|@DirectVPN| AHS -145.11"
-      - "|@ovpn2| AHS -14.83"
-      - "|@hope_net| AHS -2.14"
-      - "|@hope_net| AHS -2.22"
+      - "|@PrivateVPNs| AHS -86.7"
+      - "|@PrivateVPNs| AHS -102.5"
+      - "|@PrivateVPNs| AHS -145.97"
+      - "|@DirectVPN| AHS -86.06"
+      - "|@DirectVPN| AHS -86.65"
+      - "|@DirectVPN| AHS -132.07"
+      - "|@ovpn2| AHS -1.72"
+      - "|@ConfigsHUB| AHS -1.82"
+      - "|@hope_net| AHS -1.83"
+      - "|@hope_net| AHS -1.96"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@PrivateVPNs| AHS -167.05"
-      - "|@PrivateVPNs| AHS -112.4"
-      - "|@PrivateVPNs| AHS -157.26"
-      - "|@DirectVPN| AHS -137.12"
-      - "|@DirectVPN| AHS -141.02"
-      - "|@DirectVPN| AHS -145.11"
-      - "|@ovpn2| AHS -14.83"
-      - "|@hope_net| AHS -2.14"
-      - "|@hope_net| AHS -2.22"
+      - "|@PrivateVPNs| AHS -86.7"
+      - "|@PrivateVPNs| AHS -102.5"
+      - "|@PrivateVPNs| AHS -145.97"
+      - "|@DirectVPN| AHS -86.06"
+      - "|@DirectVPN| AHS -86.65"
+      - "|@DirectVPN| AHS -132.07"
+      - "|@ovpn2| AHS -1.72"
+      - "|@ConfigsHUB| AHS -1.82"
+      - "|@hope_net| AHS -1.83"
+      - "|@hope_net| AHS -1.96"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -167.05"
-      - "|@PrivateVPNs| AHS -112.4"
-      - "|@PrivateVPNs| AHS -157.26"
-      - "|@DirectVPN| AHS -137.12"
-      - "|@DirectVPN| AHS -141.02"
-      - "|@DirectVPN| AHS -145.11"
-      - "|@ovpn2| AHS -14.83"
-      - "|@hope_net| AHS -2.14"
-      - "|@hope_net| AHS -2.22"
+      - "|@PrivateVPNs| AHS -86.7"
+      - "|@PrivateVPNs| AHS -102.5"
+      - "|@PrivateVPNs| AHS -145.97"
+      - "|@DirectVPN| AHS -86.06"
+      - "|@DirectVPN| AHS -86.65"
+      - "|@DirectVPN| AHS -132.07"
+      - "|@ovpn2| AHS -1.72"
+      - "|@ConfigsHUB| AHS -1.82"
+      - "|@hope_net| AHS -1.83"
+      - "|@hope_net| AHS -1.96"
 rules:
   - MATCH,MANUAL
