@@ -32,15 +32,23 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@DirectVPN| AHS -146.53"
-    server: 3.64.195.143
+  - name: "|@PrivateVPNs| AHS -107.08"
+    server: 63.179.34.202
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -108.6"
+    server: 63.179.34.202
     port: 22223
     type: trojan
     password: telegram-id-directvpn
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@ovpn2| AHS -8.27"
+  - name: "|@ovpn2| AHS -2.75"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -53,54 +61,27 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
-  - name: "|@hope_net| AHS -20.6"
-    server: www.visa.com
+  - name: "|@hope_net| AHS -2.75"
+    server: 135.84.79.80
     port: 443
     type: trojan
-    password: 1b3b276f-44b4-4c39-bfdf-67ff6337b41f
+    password: dns68
     skip-cert-verify: true
-    sni: POOrIaREd--persEPolIS.pAGEs.Dev
+    sni: trojan.putata.us.kg
     network: ws
     ws-opts:
-      path: /Telegram-@V2ray_Alpha/?ed=2560
+      path: /?ed=2560
       headers:
-        Host: poORiaReD--PErsePOlIs.PagES.DEv
-    udp: true
-  - name: "|@hope_net| AHS -8.3"
-    server: 162.159.153.2
-    port: 2053
-    type: trojan
-    password: BiA_dAiLY_COnfigS
-    skip-cert-verify: true
-    sni: kanale-daily-configs.blackoutconnection.ir
-    network: ws
-    ws-opts:
-      path: /TELEGRAM:@Daily_Configs?ed=2560
-      headers:
-        Host: kanale-daily-configs.blackoutconnection.ir
-    udp: true
-  - name: "|@hope_net| AHS -8.38"
-    server: 104.21.3.233
-    port: 8880
-    type: trojan
-    password: f0d584bc-342f-4443-ba24-79e4d0e504b1
-    skip-cert-verify: true
-    sni: late-tooth.granzinhannah.workers.dev
-    network: ws
-    ws-opts:
-      path: /Telegram@Linkvws?ed=2560
-      headers:
-        Host: late-tooth.granzinhannah.workers.dev
+        Host: trojan.putata.us.kg
     udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@DirectVPN| AHS -146.53"
-      - "|@ovpn2| AHS -8.27"
-      - "|@hope_net| AHS -20.6"
-      - "|@hope_net| AHS -8.3"
-      - "|@hope_net| AHS -8.38"
+      - "|@PrivateVPNs| AHS -107.08"
+      - "|@DirectVPN| AHS -108.6"
+      - "|@ovpn2| AHS -2.75"
+      - "|@hope_net| AHS -2.75"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -111,31 +92,28 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@DirectVPN| AHS -146.53"
-      - "|@ovpn2| AHS -8.27"
-      - "|@hope_net| AHS -20.6"
-      - "|@hope_net| AHS -8.3"
-      - "|@hope_net| AHS -8.38"
+      - "|@PrivateVPNs| AHS -107.08"
+      - "|@DirectVPN| AHS -108.6"
+      - "|@ovpn2| AHS -2.75"
+      - "|@hope_net| AHS -2.75"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@DirectVPN| AHS -146.53"
-      - "|@ovpn2| AHS -8.27"
-      - "|@hope_net| AHS -20.6"
-      - "|@hope_net| AHS -8.3"
-      - "|@hope_net| AHS -8.38"
+      - "|@PrivateVPNs| AHS -107.08"
+      - "|@DirectVPN| AHS -108.6"
+      - "|@ovpn2| AHS -2.75"
+      - "|@hope_net| AHS -2.75"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@DirectVPN| AHS -146.53"
-      - "|@ovpn2| AHS -8.27"
-      - "|@hope_net| AHS -20.6"
-      - "|@hope_net| AHS -8.3"
-      - "|@hope_net| AHS -8.38"
+      - "|@PrivateVPNs| AHS -107.08"
+      - "|@DirectVPN| AHS -108.6"
+      - "|@ovpn2| AHS -2.75"
+      - "|@hope_net| AHS -2.75"
 rules:
   - MATCH,MANUAL
