@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@ProxyFn|🇨🇭|134.19
+  - name: REALITY|@ProxyFn|🇨🇭|156.22
     server: 193.168.144.46
     port: 443
     type: vless
@@ -45,7 +45,7 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|133.7
+  - name: REALITY|@internet4iran|🇩🇪|158.37
     server: 128.140.49.220
     port: 443
     type: vless
@@ -56,7 +56,18 @@ proxies:
     skip-cert-verify: true
     servername: www.speedtest.net
     udp: true
-  - name: REALITY|@proxy_kafee|🇩🇪|277.13
+  - name: REALITY|@v2rayngvpn|🇩🇪|200.16
+    server: 141.95.105.99
+    port: 2053
+    type: vless
+    uuid: 7b8106a3-2942-4cd8-baf7-914aa33da887
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: mehrnews.com
+    udp: true
+  - name: REALITY|@proxy_kafee|🇩🇪|152.51
     server: deu44.unlockedworld.org
     port: 443
     type: vless
@@ -67,7 +78,18 @@ proxies:
     skip-cert-verify: true
     servername: yahoo.com
     udp: true
-  - name: REALITY|@azadnet|🇷🇺|153.73
+  - name: REALITY|@ConfigsHUB|🇷🇺|191.19
+    server: 212.41.11.152
+    port: 443
+    type: vless
+    uuid: 1a6fe500-59da-4598-8576-256f06765ffb
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: ru.sfasti.ru
+    udp: true
+  - name: REALITY|@azadnet|🇷🇺|180.77
     server: 82.148.21.174
     port: 443
     type: vless
@@ -78,7 +100,7 @@ proxies:
     skip-cert-verify: true
     servername: ru.sfasti.ru
     udp: true
-  - name: REALITY|@v2rayngrit|🇷🇺|167.24
+  - name: REALITY|@v2rayngrit|🇷🇺|183.33
     server: 176.114.86.241
     port: 443
     type: vless
@@ -93,11 +115,13 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|134.19
-      - REALITY|@internet4iran|🇩🇪|133.7
-      - REALITY|@proxy_kafee|🇩🇪|277.13
-      - REALITY|@azadnet|🇷🇺|153.73
-      - REALITY|@v2rayngrit|🇷🇺|167.24
+      - REALITY|@ProxyFn|🇨🇭|156.22
+      - REALITY|@internet4iran|🇩🇪|158.37
+      - REALITY|@v2rayngvpn|🇩🇪|200.16
+      - REALITY|@proxy_kafee|🇩🇪|152.51
+      - REALITY|@ConfigsHUB|🇷🇺|191.19
+      - REALITY|@azadnet|🇷🇺|180.77
+      - REALITY|@v2rayngrit|🇷🇺|183.33
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -108,31 +132,37 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|134.19
-      - REALITY|@internet4iran|🇩🇪|133.7
-      - REALITY|@proxy_kafee|🇩🇪|277.13
-      - REALITY|@azadnet|🇷🇺|153.73
-      - REALITY|@v2rayngrit|🇷🇺|167.24
+      - REALITY|@ProxyFn|🇨🇭|156.22
+      - REALITY|@internet4iran|🇩🇪|158.37
+      - REALITY|@v2rayngvpn|🇩🇪|200.16
+      - REALITY|@proxy_kafee|🇩🇪|152.51
+      - REALITY|@ConfigsHUB|🇷🇺|191.19
+      - REALITY|@azadnet|🇷🇺|180.77
+      - REALITY|@v2rayngrit|🇷🇺|183.33
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|134.19
-      - REALITY|@internet4iran|🇩🇪|133.7
-      - REALITY|@proxy_kafee|🇩🇪|277.13
-      - REALITY|@azadnet|🇷🇺|153.73
-      - REALITY|@v2rayngrit|🇷🇺|167.24
+      - REALITY|@ProxyFn|🇨🇭|156.22
+      - REALITY|@internet4iran|🇩🇪|158.37
+      - REALITY|@v2rayngvpn|🇩🇪|200.16
+      - REALITY|@proxy_kafee|🇩🇪|152.51
+      - REALITY|@ConfigsHUB|🇷🇺|191.19
+      - REALITY|@azadnet|🇷🇺|180.77
+      - REALITY|@v2rayngrit|🇷🇺|183.33
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|134.19
-      - REALITY|@internet4iran|🇩🇪|133.7
-      - REALITY|@proxy_kafee|🇩🇪|277.13
-      - REALITY|@azadnet|🇷🇺|153.73
-      - REALITY|@v2rayngrit|🇷🇺|167.24
+      - REALITY|@ProxyFn|🇨🇭|156.22
+      - REALITY|@internet4iran|🇩🇪|158.37
+      - REALITY|@v2rayngvpn|🇩🇪|200.16
+      - REALITY|@proxy_kafee|🇩🇪|152.51
+      - REALITY|@ConfigsHUB|🇷🇺|191.19
+      - REALITY|@azadnet|🇷🇺|180.77
+      - REALITY|@v2rayngrit|🇷🇺|183.33
 rules:
   - MATCH,MANUAL
