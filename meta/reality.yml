@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@V2rayNGn|🇮🇷|297.2
+  - name: REALITY|@V2rayNGn|🇮🇷|208
     server: hybrid.arvancloud.online
     port: 44443
     type: vless
@@ -43,7 +43,7 @@ proxies:
     skip-cert-verify: true
     servername: www.speedtest.net
     udp: true
-  - name: REALITY|@ProxyFn|🇨🇭|145.71
+  - name: REALITY|@ProxyFn|🇨🇭|111.12
     server: 193.168.144.46
     port: 443
     type: vless
@@ -56,7 +56,7 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|137.72
+  - name: REALITY|@internet4iran|🇩🇪|115.53
     server: 128.140.49.220
     port: 443
     type: vless
@@ -67,7 +67,20 @@ proxies:
     skip-cert-verify: true
     servername: www.speedtest.net
     udp: true
-  - name: REALITY|@azadnet|🇩🇪|135.94
+  - name: REALITY|@v2ray1_ng|🇩🇪|181.96
+    server: 155.254.35.78
+    port: 33811
+    type: vless
+    uuid: 3940e9ba-d0f6-4052-bd8e-f3c2a2a76599
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: miro.com
+    network: grpc
+    grpc-opts:
+      grpc-service-name: miro.com
+    udp: true
+  - name: REALITY|@azadnet|🇩🇪|114.37
     server: 5.75.192.6
     port: 443
     type: vless
@@ -82,10 +95,11 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@V2rayNGn|🇮🇷|297.2
-      - REALITY|@ProxyFn|🇨🇭|145.71
-      - REALITY|@internet4iran|🇩🇪|137.72
-      - REALITY|@azadnet|🇩🇪|135.94
+      - REALITY|@V2rayNGn|🇮🇷|208
+      - REALITY|@ProxyFn|🇨🇭|111.12
+      - REALITY|@internet4iran|🇩🇪|115.53
+      - REALITY|@v2ray1_ng|🇩🇪|181.96
+      - REALITY|@azadnet|🇩🇪|114.37
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -96,28 +110,31 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@V2rayNGn|🇮🇷|297.2
-      - REALITY|@ProxyFn|🇨🇭|145.71
-      - REALITY|@internet4iran|🇩🇪|137.72
-      - REALITY|@azadnet|🇩🇪|135.94
+      - REALITY|@V2rayNGn|🇮🇷|208
+      - REALITY|@ProxyFn|🇨🇭|111.12
+      - REALITY|@internet4iran|🇩🇪|115.53
+      - REALITY|@v2ray1_ng|🇩🇪|181.96
+      - REALITY|@azadnet|🇩🇪|114.37
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@V2rayNGn|🇮🇷|297.2
-      - REALITY|@ProxyFn|🇨🇭|145.71
-      - REALITY|@internet4iran|🇩🇪|137.72
-      - REALITY|@azadnet|🇩🇪|135.94
+      - REALITY|@V2rayNGn|🇮🇷|208
+      - REALITY|@ProxyFn|🇨🇭|111.12
+      - REALITY|@internet4iran|🇩🇪|115.53
+      - REALITY|@v2ray1_ng|🇩🇪|181.96
+      - REALITY|@azadnet|🇩🇪|114.37
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@V2rayNGn|🇮🇷|297.2
-      - REALITY|@ProxyFn|🇨🇭|145.71
-      - REALITY|@internet4iran|🇩🇪|137.72
-      - REALITY|@azadnet|🇩🇪|135.94
+      - REALITY|@V2rayNGn|🇮🇷|208
+      - REALITY|@ProxyFn|🇨🇭|111.12
+      - REALITY|@internet4iran|🇩🇪|115.53
+      - REALITY|@v2ray1_ng|🇩🇪|181.96
+      - REALITY|@azadnet|🇩🇪|114.37
 rules:
   - MATCH,MANUAL
