@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@V2rayNGn|🇮🇷|206.56
+  - name: REALITY|@V2rayNGn|🇮🇷|206.06
     server: hybrid.arvancloud.online
     port: 44443
     type: vless
@@ -43,7 +43,20 @@ proxies:
     skip-cert-verify: true
     servername: www.speedtest.net
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|115.85
+  - name: REALITY|@ProxyFn|🇨🇭|114.64
+    server: 193.168.144.46
+    port: 443
+    type: vless
+    uuid: cdb38f5b-12c3-414b-eacd-a635dc633701
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: mega.io
+    network: grpc
+    grpc-opts:
+      grpc-service-name: /
+    udp: true
+  - name: REALITY|@internet4iran|🇩🇪|114.19
     server: 128.140.49.220
     port: 443
     type: vless
@@ -58,8 +71,9 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@V2rayNGn|🇮🇷|206.56
-      - REALITY|@internet4iran|🇩🇪|115.85
+      - REALITY|@V2rayNGn|🇮🇷|206.06
+      - REALITY|@ProxyFn|🇨🇭|114.64
+      - REALITY|@internet4iran|🇩🇪|114.19
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -70,22 +84,25 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@V2rayNGn|🇮🇷|206.56
-      - REALITY|@internet4iran|🇩🇪|115.85
+      - REALITY|@V2rayNGn|🇮🇷|206.06
+      - REALITY|@ProxyFn|🇨🇭|114.64
+      - REALITY|@internet4iran|🇩🇪|114.19
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@V2rayNGn|🇮🇷|206.56
-      - REALITY|@internet4iran|🇩🇪|115.85
+      - REALITY|@V2rayNGn|🇮🇷|206.06
+      - REALITY|@ProxyFn|🇨🇭|114.64
+      - REALITY|@internet4iran|🇩🇪|114.19
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@V2rayNGn|🇮🇷|206.56
-      - REALITY|@internet4iran|🇩🇪|115.85
+      - REALITY|@V2rayNGn|🇮🇷|206.06
+      - REALITY|@ProxyFn|🇨🇭|114.64
+      - REALITY|@internet4iran|🇩🇪|114.19
 rules:
   - MATCH,MANUAL
