@@ -1,0 +1,148 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: "|@PrivateVPNs| AHS -127.76"
+    server: 15.237.240.118
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -128.24"
+    server: 15.237.240.118
+    port: 22223
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@vmess_vless_v2rayng| AHS -18.48"
+    server: creativecommons.org
+    port: 2053
+    type: trojan
+    password: YwuvGJk36B
+    skip-cert-verify: true
+    sni: kotlet.arshiacomplus.dpdns.org
+    network: ws
+    ws-opts:
+      path: /yamtekodasayahhh
+      headers:
+        Host: kotlet.arshiacomplus.dpdns.org
+    udp: true
+  - name: "|@ovpn2| AHS -17.95"
+    server: 162.159.138.232
+    port: 443
+    type: trojan
+    password: dQDQCtns4R
+    skip-cert-verify: true
+    sni: fadaei.movieland.top
+    network: ws
+    ws-opts:
+      path: static34528
+      headers:
+        Host: fadaei.movieland.top
+    udp: true
+  - name: "|@hope_net| AHS -565.38"
+    server: 162.159.44.188
+    port: 443
+    type: trojan
+    password: blue2024
+    skip-cert-verify: true
+    sni: ta.promote.icu
+    udp: true
+  - name: "|@hope_net| AHS -17.68"
+    server: 162.159.152.27
+    port: 443
+    type: trojan
+    password: tg-dns68
+    skip-cert-verify: true
+    sni: vip.putata.eu.org
+    network: ws
+    ws-opts:
+      path: ""
+      headers:
+        Host: vip.putata.eu.org
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - "|@PrivateVPNs| AHS -127.76"
+      - "|@DirectVPN| AHS -128.24"
+      - "|@vmess_vless_v2rayng| AHS -18.48"
+      - "|@ovpn2| AHS -17.95"
+      - "|@hope_net| AHS -565.38"
+      - "|@hope_net| AHS -17.68"
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "|@PrivateVPNs| AHS -127.76"
+      - "|@DirectVPN| AHS -128.24"
+      - "|@vmess_vless_v2rayng| AHS -18.48"
+      - "|@ovpn2| AHS -17.95"
+      - "|@hope_net| AHS -565.38"
+      - "|@hope_net| AHS -17.68"
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - "|@PrivateVPNs| AHS -127.76"
+      - "|@DirectVPN| AHS -128.24"
+      - "|@vmess_vless_v2rayng| AHS -18.48"
+      - "|@ovpn2| AHS -17.95"
+      - "|@hope_net| AHS -565.38"
+      - "|@hope_net| AHS -17.68"
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "|@PrivateVPNs| AHS -127.76"
+      - "|@DirectVPN| AHS -128.24"
+      - "|@vmess_vless_v2rayng| AHS -18.48"
+      - "|@ovpn2| AHS -17.95"
+      - "|@hope_net| AHS -565.38"
+      - "|@hope_net| AHS -17.68"
+rules:
+  - MATCH,MANUAL
