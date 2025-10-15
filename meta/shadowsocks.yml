@@ -1,0 +1,160 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: "@free4allVPN| AHS -🇪🇸|138.12"
+    server: 194.87.45.189
+    port: 443
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: 2jmKlUhNDQ3mUf7uaOLJYb
+    udp: true
+  - name: "@free4allVPN| AHS -🇵🇱|108.39"
+    server: 151.244.111.50
+    port: 57456
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: 360e21d21977dc11
+    udp: true
+  - name: "@free4allVPN| AHS -🇫🇮|106.34"
+    server: 185.193.102.7
+    port: 57456
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: 360e21d21977dc11
+    udp: true
+  - name: "@vmess_vless_v2rayng| AHS -🇫🇮|132.88"
+    server: 83.147.216.70
+    port: 64519
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: UlT89D0rvcr05tKft1NB5a
+    udp: true
+  - name: "@vmess_vless_v2rayng| AHS -🇱🇹|81.67"
+    server: 45.87.175.171
+    port: 8080
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: cvII85TrW6n0OGyfpHVS1u
+    udp: true
+  - name: "@VmessProtocol| AHS -🇹🇷|122.99"
+    server: 62.60.233.220
+    port: 18685
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: wh2K0qVVN6fTZAJFsbu6Dq
+    udp: true
+  - name: "@hope_net| AHS -🇨🇦|86.79"
+    server: 149.22.95.183
+    port: 443
+    type: ss
+    cipher: aes-128-gcm
+    password: shadowsocks
+    udp: true
+  - name: "@v2rayngrit| AHS -🇺🇸|118.92"
+    server: 94.131.22.134
+    port: 40565
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: 2JK8CwhNFuy3uQo5yHwHvRuEXKLnnrKW7T3snXFQ25yt27PGLKoLXMFrSFFoVgB5SQMeAHx8ZaQXx9mAY55cYskUyVaP6Rum7
+    udp: true
+  - name: "@v2rayngrit| AHS -🇺🇸|211.28"
+    server: imap.roomyinmita.name
+    port: 40565
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: 6NnsK7HSZMrygzXmKCtrFij2u4vAPgyYMDMSQfi8z2VRCFSzHXzrEZgwDir3iG1v5Uzei7pQjmpyZ8wjCyDnTRdxXLVX6gZA7
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - "@free4allVPN| AHS -🇪🇸|138.12"
+      - "@free4allVPN| AHS -🇵🇱|108.39"
+      - "@free4allVPN| AHS -🇫🇮|106.34"
+      - "@vmess_vless_v2rayng| AHS -🇫🇮|132.88"
+      - "@vmess_vless_v2rayng| AHS -🇱🇹|81.67"
+      - "@VmessProtocol| AHS -🇹🇷|122.99"
+      - "@hope_net| AHS -🇨🇦|86.79"
+      - "@v2rayngrit| AHS -🇺🇸|118.92"
+      - "@v2rayngrit| AHS -🇺🇸|211.28"
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@free4allVPN| AHS -🇪🇸|138.12"
+      - "@free4allVPN| AHS -🇵🇱|108.39"
+      - "@free4allVPN| AHS -🇫🇮|106.34"
+      - "@vmess_vless_v2rayng| AHS -🇫🇮|132.88"
+      - "@vmess_vless_v2rayng| AHS -🇱🇹|81.67"
+      - "@VmessProtocol| AHS -🇹🇷|122.99"
+      - "@hope_net| AHS -🇨🇦|86.79"
+      - "@v2rayngrit| AHS -🇺🇸|118.92"
+      - "@v2rayngrit| AHS -🇺🇸|211.28"
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - "@free4allVPN| AHS -🇪🇸|138.12"
+      - "@free4allVPN| AHS -🇵🇱|108.39"
+      - "@free4allVPN| AHS -🇫🇮|106.34"
+      - "@vmess_vless_v2rayng| AHS -🇫🇮|132.88"
+      - "@vmess_vless_v2rayng| AHS -🇱🇹|81.67"
+      - "@VmessProtocol| AHS -🇹🇷|122.99"
+      - "@hope_net| AHS -🇨🇦|86.79"
+      - "@v2rayngrit| AHS -🇺🇸|118.92"
+      - "@v2rayngrit| AHS -🇺🇸|211.28"
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@free4allVPN| AHS -🇪🇸|138.12"
+      - "@free4allVPN| AHS -🇵🇱|108.39"
+      - "@free4allVPN| AHS -🇫🇮|106.34"
+      - "@vmess_vless_v2rayng| AHS -🇫🇮|132.88"
+      - "@vmess_vless_v2rayng| AHS -🇱🇹|81.67"
+      - "@VmessProtocol| AHS -🇹🇷|122.99"
+      - "@hope_net| AHS -🇨🇦|86.79"
+      - "@v2rayngrit| AHS -🇺🇸|118.92"
+      - "@v2rayngrit| AHS -🇺🇸|211.28"
+rules:
+  - MATCH,MANUAL
