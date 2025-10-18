@@ -32,35 +32,49 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@free4allVPN| AHS -🇻🇳|233.63"
+  - name: "@free4allVPN| AHS -🇻🇳|225.37"
     server: 103.163.218.2
     port: 990
     type: ss
     cipher: chacha20-ietf-poly1305
     password: f8f7aCzcPKbsF8p3
     udp: true
-  - name: "@free4allVPN| AHS -🇦🇹|109.03"
+  - name: "@free4allVPN| AHS -🇦🇹|157.86"
     server: 95.163.176.37
     port: 8506
     type: ss
     cipher: chacha20-ietf-poly1305
     password: eUh4lSpi7nOYj0vSrqLUh0
     udp: true
-  - name: "@vmess_vless_v2rayng| AHS -🇱🇹|104.36"
+  - name: "@vmess_vless_v2rayng| AHS -🇫🇮|unavailable"
+    server: 83.147.216.70
+    port: 64519
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: UlT89D0rvcr05tKft1NB5a
+    udp: true
+  - name: "@vmess_vless_v2rayng| AHS -🇱🇹|148.79"
     server: 45.87.175.171
     port: 8080
     type: ss
     cipher: chacha20-ietf-poly1305
     password: cvII85TrW6n0OGyfpHVS1u
     udp: true
-  - name: "@v2rayngrit| AHS -🇺🇸|138.27"
+  - name: "@hope_net| AHS -🇬🇧|206.6"
+    server: 141.98.101.178
+    port: 443
+    type: ss
+    cipher: aes-128-gcm
+    password: shadowsocks
+    udp: true
+  - name: "@v2rayngrit| AHS -🇺🇸|247.71"
     server: 94.131.22.134
     port: 40565
     type: ss
     cipher: chacha20-ietf-poly1305
     password: 2JK8CwhNFuy3uQo5yHwHvRuEXKLnnrKW7T3snXFQ25yt27PGLKoLXMFrSFFoVgB5SQMeAHx8ZaQXx9mAY55cYskUyVaP6Rum7
     udp: true
-  - name: "@v2rayngrit| AHS -🇺🇸|135.57"
+  - name: "@v2rayngrit| AHS -🇺🇸|403.15"
     server: imap.roomyinmita.name
     port: 40565
     type: ss
@@ -71,11 +85,13 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@free4allVPN| AHS -🇻🇳|233.63"
-      - "@free4allVPN| AHS -🇦🇹|109.03"
-      - "@vmess_vless_v2rayng| AHS -🇱🇹|104.36"
-      - "@v2rayngrit| AHS -🇺🇸|138.27"
-      - "@v2rayngrit| AHS -🇺🇸|135.57"
+      - "@free4allVPN| AHS -🇻🇳|225.37"
+      - "@free4allVPN| AHS -🇦🇹|157.86"
+      - "@vmess_vless_v2rayng| AHS -🇫🇮|unavailable"
+      - "@vmess_vless_v2rayng| AHS -🇱🇹|148.79"
+      - "@hope_net| AHS -🇬🇧|206.6"
+      - "@v2rayngrit| AHS -🇺🇸|247.71"
+      - "@v2rayngrit| AHS -🇺🇸|403.15"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -86,31 +102,37 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@free4allVPN| AHS -🇻🇳|233.63"
-      - "@free4allVPN| AHS -🇦🇹|109.03"
-      - "@vmess_vless_v2rayng| AHS -🇱🇹|104.36"
-      - "@v2rayngrit| AHS -🇺🇸|138.27"
-      - "@v2rayngrit| AHS -🇺🇸|135.57"
+      - "@free4allVPN| AHS -🇻🇳|225.37"
+      - "@free4allVPN| AHS -🇦🇹|157.86"
+      - "@vmess_vless_v2rayng| AHS -🇫🇮|unavailable"
+      - "@vmess_vless_v2rayng| AHS -🇱🇹|148.79"
+      - "@hope_net| AHS -🇬🇧|206.6"
+      - "@v2rayngrit| AHS -🇺🇸|247.71"
+      - "@v2rayngrit| AHS -🇺🇸|403.15"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@free4allVPN| AHS -🇻🇳|233.63"
-      - "@free4allVPN| AHS -🇦🇹|109.03"
-      - "@vmess_vless_v2rayng| AHS -🇱🇹|104.36"
-      - "@v2rayngrit| AHS -🇺🇸|138.27"
-      - "@v2rayngrit| AHS -🇺🇸|135.57"
+      - "@free4allVPN| AHS -🇻🇳|225.37"
+      - "@free4allVPN| AHS -🇦🇹|157.86"
+      - "@vmess_vless_v2rayng| AHS -🇫🇮|unavailable"
+      - "@vmess_vless_v2rayng| AHS -🇱🇹|148.79"
+      - "@hope_net| AHS -🇬🇧|206.6"
+      - "@v2rayngrit| AHS -🇺🇸|247.71"
+      - "@v2rayngrit| AHS -🇺🇸|403.15"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@free4allVPN| AHS -🇻🇳|233.63"
-      - "@free4allVPN| AHS -🇦🇹|109.03"
-      - "@vmess_vless_v2rayng| AHS -🇱🇹|104.36"
-      - "@v2rayngrit| AHS -🇺🇸|138.27"
-      - "@v2rayngrit| AHS -🇺🇸|135.57"
+      - "@free4allVPN| AHS -🇻🇳|225.37"
+      - "@free4allVPN| AHS -🇦🇹|157.86"
+      - "@vmess_vless_v2rayng| AHS -🇫🇮|unavailable"
+      - "@vmess_vless_v2rayng| AHS -🇱🇹|148.79"
+      - "@hope_net| AHS -🇬🇧|206.6"
+      - "@v2rayngrit| AHS -🇺🇸|247.71"
+      - "@v2rayngrit| AHS -🇺🇸|403.15"
 rules:
   - MATCH,MANUAL
