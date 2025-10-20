@@ -1,0 +1,138 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: "@free4allVPN| AHS -🇦🇪|84.54"
+    server: 78.40.198.60
+    port: 47346
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: 67szB9204bjydiyQEaChON
+    udp: true
+  - name: "@customv2ray| AHS -🇬🇧|87.75"
+    server: 77.91.101.132
+    port: 43458
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: SSh5aoQdcX0nZXCAH5yF75
+    udp: true
+  - name: "@vmess_vless_v2rayng| AHS -🇫🇮|127.27"
+    server: 83.147.216.70
+    port: 64519
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: UlT89D0rvcr05tKft1NB5a
+    udp: true
+  - name: "@vmess_vless_v2rayng| AHS -🇱🇹|85.76"
+    server: 45.87.175.171
+    port: 8080
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: cvII85TrW6n0OGyfpHVS1u
+    udp: true
+  - name: "@azadnet| AHS -🇮🇳|274.08"
+    server: id.vpnsparta.pro
+    port: 57456
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: 360e21d21977dc11
+    udp: true
+  - name: "@v2rayngrit| AHS -🇺🇸|117.5"
+    server: 94.131.22.134
+    port: 40565
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: 2JK8CwhNFuy3uQo5yHwHvRuEXKLnnrKW7T3snXFQ25yt27PGLKoLXMFrSFFoVgB5SQMeAHx8ZaQXx9mAY55cYskUyVaP6Rum7
+    udp: true
+  - name: "@v2rayngrit| AHS -🇺🇸|118.67"
+    server: imap.roomyinmita.name
+    port: 40565
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: 6NnsK7HSZMrygzXmKCtrFij2u4vAPgyYMDMSQfi8z2VRCFSzHXzrEZgwDir3iG1v5Uzei7pQjmpyZ8wjCyDnTRdxXLVX6gZA7
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - "@free4allVPN| AHS -🇦🇪|84.54"
+      - "@customv2ray| AHS -🇬🇧|87.75"
+      - "@vmess_vless_v2rayng| AHS -🇫🇮|127.27"
+      - "@vmess_vless_v2rayng| AHS -🇱🇹|85.76"
+      - "@azadnet| AHS -🇮🇳|274.08"
+      - "@v2rayngrit| AHS -🇺🇸|117.5"
+      - "@v2rayngrit| AHS -🇺🇸|118.67"
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@free4allVPN| AHS -🇦🇪|84.54"
+      - "@customv2ray| AHS -🇬🇧|87.75"
+      - "@vmess_vless_v2rayng| AHS -🇫🇮|127.27"
+      - "@vmess_vless_v2rayng| AHS -🇱🇹|85.76"
+      - "@azadnet| AHS -🇮🇳|274.08"
+      - "@v2rayngrit| AHS -🇺🇸|117.5"
+      - "@v2rayngrit| AHS -🇺🇸|118.67"
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - "@free4allVPN| AHS -🇦🇪|84.54"
+      - "@customv2ray| AHS -🇬🇧|87.75"
+      - "@vmess_vless_v2rayng| AHS -🇫🇮|127.27"
+      - "@vmess_vless_v2rayng| AHS -🇱🇹|85.76"
+      - "@azadnet| AHS -🇮🇳|274.08"
+      - "@v2rayngrit| AHS -🇺🇸|117.5"
+      - "@v2rayngrit| AHS -🇺🇸|118.67"
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@free4allVPN| AHS -🇦🇪|84.54"
+      - "@customv2ray| AHS -🇬🇧|87.75"
+      - "@vmess_vless_v2rayng| AHS -🇫🇮|127.27"
+      - "@vmess_vless_v2rayng| AHS -🇱🇹|85.76"
+      - "@azadnet| AHS -🇮🇳|274.08"
+      - "@v2rayngrit| AHS -🇺🇸|117.5"
+      - "@v2rayngrit| AHS -🇺🇸|118.67"
+rules:
+  - MATCH,MANUAL
