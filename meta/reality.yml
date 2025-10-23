@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@ProxyFn|🇨🇭|90.26
+  - name: REALITY|@ProxyFn|🇨🇭|110.99
     server: 193.168.144.46
     port: 443
     type: vless
@@ -45,7 +45,7 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@prrofile_purple|🇨🇭|95.75
+  - name: REALITY|@prrofile_purple|🇨🇭|111.8
     server: 83.228.208.219
     port: 8443
     type: vless
@@ -56,7 +56,18 @@ proxies:
     skip-cert-verify: true
     servername: auto.quattro-tech.ru
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|96.97
+  - name: REALITY|@WomanLifeFreedomVPN|🇨🇦|76.19
+    server: icloud.wlftest.xyz
+    port: 443
+    type: vless
+    uuid: 85399fea-2ee3-51b5-ad4e-d8b78a2cf1d9
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: www.icloud.com
+    udp: true
+  - name: REALITY|@internet4iran|🇩🇪|118.34
     server: 128.140.49.220
     port: 443
     type: vless
@@ -67,37 +78,14 @@ proxies:
     skip-cert-verify: true
     servername: www.speedtest.net
     udp: true
-  - name: REALITY|@v2rayngvpn|🇩🇪|228.56
-    server: de.nitroo-tech.ru
-    port: 443
-    type: vless
-    uuid: cd79807f-bcef-46b8-93b6-229676a0c1a0
-    cipher: auto
-    tls: false
-    flow: xtls-rprx-vision
-    skip-cert-verify: true
-    servername: google.com
-    udp: true
-  - name: REALITY|@ConfigsHUB|🇳🇱|88
-    server: 93.183.89.244
-    port: 8443
-    type: vless
-    uuid: de840bba-e711-4c75-b3a8-a7d060b63aa8
-    cipher: auto
-    tls: false
-    flow: xtls-rprx-vision
-    skip-cert-verify: true
-    servername: isharing.us
-    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|90.26
-      - REALITY|@prrofile_purple|🇨🇭|95.75
-      - REALITY|@internet4iran|🇩🇪|96.97
-      - REALITY|@v2rayngvpn|🇩🇪|228.56
-      - REALITY|@ConfigsHUB|🇳🇱|88
+      - REALITY|@ProxyFn|🇨🇭|110.99
+      - REALITY|@prrofile_purple|🇨🇭|111.8
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|76.19
+      - REALITY|@internet4iran|🇩🇪|118.34
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -108,31 +96,28 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|90.26
-      - REALITY|@prrofile_purple|🇨🇭|95.75
-      - REALITY|@internet4iran|🇩🇪|96.97
-      - REALITY|@v2rayngvpn|🇩🇪|228.56
-      - REALITY|@ConfigsHUB|🇳🇱|88
+      - REALITY|@ProxyFn|🇨🇭|110.99
+      - REALITY|@prrofile_purple|🇨🇭|111.8
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|76.19
+      - REALITY|@internet4iran|🇩🇪|118.34
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|90.26
-      - REALITY|@prrofile_purple|🇨🇭|95.75
-      - REALITY|@internet4iran|🇩🇪|96.97
-      - REALITY|@v2rayngvpn|🇩🇪|228.56
-      - REALITY|@ConfigsHUB|🇳🇱|88
+      - REALITY|@ProxyFn|🇨🇭|110.99
+      - REALITY|@prrofile_purple|🇨🇭|111.8
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|76.19
+      - REALITY|@internet4iran|🇩🇪|118.34
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|90.26
-      - REALITY|@prrofile_purple|🇨🇭|95.75
-      - REALITY|@internet4iran|🇩🇪|96.97
-      - REALITY|@v2rayngvpn|🇩🇪|228.56
-      - REALITY|@ConfigsHUB|🇳🇱|88
+      - REALITY|@ProxyFn|🇨🇭|110.99
+      - REALITY|@prrofile_purple|🇨🇭|111.8
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|76.19
+      - REALITY|@internet4iran|🇩🇪|118.34
 rules:
   - MATCH,MANUAL
