@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@ProxyFn|🇨🇭|152.41
+  - name: REALITY|@ProxyFn|🇨🇭|90.08
     server: 193.168.144.46
     port: 443
     type: vless
@@ -45,7 +45,7 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@prrofile_purple|🇵🇱|168.47
+  - name: REALITY|@prrofile_purple|🇵🇱|102.77
     server: 77.83.246.235
     port: 443
     type: vless
@@ -56,7 +56,18 @@ proxies:
     skip-cert-verify: true
     servername: www.google.com
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|158.57
+  - name: REALITY|@WomanLifeFreedomVPN|🇨🇦|39.73
+    server: icloud.wlftest.xyz
+    port: 443
+    type: vless
+    uuid: 85399fea-2ee3-51b5-ad4e-d8b78a2cf1d9
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: www.icloud.com
+    udp: true
+  - name: REALITY|@internet4iran|🇩🇪|92.47
     server: 128.140.49.220
     port: 443
     type: vless
@@ -67,7 +78,20 @@ proxies:
     skip-cert-verify: true
     servername: www.speedtest.net
     udp: true
-  - name: REALITY|@v2ray1_ng|🇩🇪|158.22
+  - name: REALITY|@v2rayngvpn|🇩🇪|96.58
+    server: 91.107.179.151
+    port: 2096
+    type: vless
+    uuid: 6657edba-409f-4a3e-ace8-97cf961c377c
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: zula.ir
+    network: grpc
+    grpc-opts:
+      grpc-service-name: /
+    udp: true
+  - name: REALITY|@v2ray1_ng|🇩🇪|92.38
     server: 91.107.165.157
     port: 2096
     type: vless
@@ -80,7 +104,7 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@proxy_kafee|🇺🇸|461.69
+  - name: REALITY|@proxy_kafee|🇺🇸|161.32
     server: us.nitroo-tech.ru
     port: 443
     type: vless
@@ -95,11 +119,13 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|152.41
-      - REALITY|@prrofile_purple|🇵🇱|168.47
-      - REALITY|@internet4iran|🇩🇪|158.57
-      - REALITY|@v2ray1_ng|🇩🇪|158.22
-      - REALITY|@proxy_kafee|🇺🇸|461.69
+      - REALITY|@ProxyFn|🇨🇭|90.08
+      - REALITY|@prrofile_purple|🇵🇱|102.77
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|39.73
+      - REALITY|@internet4iran|🇩🇪|92.47
+      - REALITY|@v2rayngvpn|🇩🇪|96.58
+      - REALITY|@v2ray1_ng|🇩🇪|92.38
+      - REALITY|@proxy_kafee|🇺🇸|161.32
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -110,31 +136,37 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|152.41
-      - REALITY|@prrofile_purple|🇵🇱|168.47
-      - REALITY|@internet4iran|🇩🇪|158.57
-      - REALITY|@v2ray1_ng|🇩🇪|158.22
-      - REALITY|@proxy_kafee|🇺🇸|461.69
+      - REALITY|@ProxyFn|🇨🇭|90.08
+      - REALITY|@prrofile_purple|🇵🇱|102.77
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|39.73
+      - REALITY|@internet4iran|🇩🇪|92.47
+      - REALITY|@v2rayngvpn|🇩🇪|96.58
+      - REALITY|@v2ray1_ng|🇩🇪|92.38
+      - REALITY|@proxy_kafee|🇺🇸|161.32
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|152.41
-      - REALITY|@prrofile_purple|🇵🇱|168.47
-      - REALITY|@internet4iran|🇩🇪|158.57
-      - REALITY|@v2ray1_ng|🇩🇪|158.22
-      - REALITY|@proxy_kafee|🇺🇸|461.69
+      - REALITY|@ProxyFn|🇨🇭|90.08
+      - REALITY|@prrofile_purple|🇵🇱|102.77
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|39.73
+      - REALITY|@internet4iran|🇩🇪|92.47
+      - REALITY|@v2rayngvpn|🇩🇪|96.58
+      - REALITY|@v2ray1_ng|🇩🇪|92.38
+      - REALITY|@proxy_kafee|🇺🇸|161.32
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|152.41
-      - REALITY|@prrofile_purple|🇵🇱|168.47
-      - REALITY|@internet4iran|🇩🇪|158.57
-      - REALITY|@v2ray1_ng|🇩🇪|158.22
-      - REALITY|@proxy_kafee|🇺🇸|461.69
+      - REALITY|@ProxyFn|🇨🇭|90.08
+      - REALITY|@prrofile_purple|🇵🇱|102.77
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|39.73
+      - REALITY|@internet4iran|🇩🇪|92.47
+      - REALITY|@v2rayngvpn|🇩🇪|96.58
+      - REALITY|@v2ray1_ng|🇩🇪|92.38
+      - REALITY|@proxy_kafee|🇺🇸|161.32
 rules:
   - MATCH,MANUAL
