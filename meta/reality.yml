@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@ProxyFn|🇨🇭|116.04
+  - name: REALITY|@ProxyFn|🇨🇭|112.24
     server: 193.168.144.46
     port: 443
     type: vless
@@ -45,7 +45,7 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@Outline_Vpn|🇫🇷|108.47
+  - name: REALITY|@Outline_Vpn|🇫🇷|104.9
     server: 38.54.122.118
     port: 443
     type: vless
@@ -56,7 +56,7 @@ proxies:
     skip-cert-verify: true
     servername: dash.cloudflare.com
     udp: true
-  - name: REALITY|@WomanLifeFreedomVPN|🇨🇦|196.99
+  - name: REALITY|@WomanLifeFreedomVPN|🇨🇦|103.18
     server: icloud.wlftest.xyz
     port: 443
     type: vless
@@ -67,7 +67,7 @@ proxies:
     skip-cert-verify: true
     servername: www.icloud.com
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|119.49
+  - name: REALITY|@internet4iran|🇩🇪|108.79
     server: 128.140.49.220
     port: 443
     type: vless
@@ -78,7 +78,18 @@ proxies:
     skip-cert-verify: true
     servername: www.speedtest.net
     udp: true
-  - name: REALITY|@VmessProtocol|🇬🇧|124.82
+  - name: REALITY|@v2rayngvpn|🇩🇪|unavailable
+    server: pl.nnvpn.io
+    port: 443
+    type: vless
+    uuid: 83e57c25-1c8e-429f-974f-e3bde3fff12d
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: pl.nnvpn.io
+    udp: true
+  - name: REALITY|@VmessProtocol|🇬🇧|104.04
     server: 212.134.84.115
     port: 443
     type: vless
@@ -88,7 +99,7 @@ proxies:
     skip-cert-verify: true
     servername: pcmag.com
     udp: true
-  - name: REALITY|@azadnet|🇺🇸|136.9
+  - name: REALITY|@azadnet|🇺🇸|124.84
     server: 166.1.131.6
     port: 443
     type: vless
@@ -103,12 +114,13 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|116.04
-      - REALITY|@Outline_Vpn|🇫🇷|108.47
-      - REALITY|@WomanLifeFreedomVPN|🇨🇦|196.99
-      - REALITY|@internet4iran|🇩🇪|119.49
-      - REALITY|@VmessProtocol|🇬🇧|124.82
-      - REALITY|@azadnet|🇺🇸|136.9
+      - REALITY|@ProxyFn|🇨🇭|112.24
+      - REALITY|@Outline_Vpn|🇫🇷|104.9
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|103.18
+      - REALITY|@internet4iran|🇩🇪|108.79
+      - REALITY|@v2rayngvpn|🇩🇪|unavailable
+      - REALITY|@VmessProtocol|🇬🇧|104.04
+      - REALITY|@azadnet|🇺🇸|124.84
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -119,34 +131,37 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|116.04
-      - REALITY|@Outline_Vpn|🇫🇷|108.47
-      - REALITY|@WomanLifeFreedomVPN|🇨🇦|196.99
-      - REALITY|@internet4iran|🇩🇪|119.49
-      - REALITY|@VmessProtocol|🇬🇧|124.82
-      - REALITY|@azadnet|🇺🇸|136.9
+      - REALITY|@ProxyFn|🇨🇭|112.24
+      - REALITY|@Outline_Vpn|🇫🇷|104.9
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|103.18
+      - REALITY|@internet4iran|🇩🇪|108.79
+      - REALITY|@v2rayngvpn|🇩🇪|unavailable
+      - REALITY|@VmessProtocol|🇬🇧|104.04
+      - REALITY|@azadnet|🇺🇸|124.84
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|116.04
-      - REALITY|@Outline_Vpn|🇫🇷|108.47
-      - REALITY|@WomanLifeFreedomVPN|🇨🇦|196.99
-      - REALITY|@internet4iran|🇩🇪|119.49
-      - REALITY|@VmessProtocol|🇬🇧|124.82
-      - REALITY|@azadnet|🇺🇸|136.9
+      - REALITY|@ProxyFn|🇨🇭|112.24
+      - REALITY|@Outline_Vpn|🇫🇷|104.9
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|103.18
+      - REALITY|@internet4iran|🇩🇪|108.79
+      - REALITY|@v2rayngvpn|🇩🇪|unavailable
+      - REALITY|@VmessProtocol|🇬🇧|104.04
+      - REALITY|@azadnet|🇺🇸|124.84
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|116.04
-      - REALITY|@Outline_Vpn|🇫🇷|108.47
-      - REALITY|@WomanLifeFreedomVPN|🇨🇦|196.99
-      - REALITY|@internet4iran|🇩🇪|119.49
-      - REALITY|@VmessProtocol|🇬🇧|124.82
-      - REALITY|@azadnet|🇺🇸|136.9
+      - REALITY|@ProxyFn|🇨🇭|112.24
+      - REALITY|@Outline_Vpn|🇫🇷|104.9
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|103.18
+      - REALITY|@internet4iran|🇩🇪|108.79
+      - REALITY|@v2rayngvpn|🇩🇪|unavailable
+      - REALITY|@VmessProtocol|🇬🇧|104.04
+      - REALITY|@azadnet|🇺🇸|124.84
 rules:
   - MATCH,MANUAL
