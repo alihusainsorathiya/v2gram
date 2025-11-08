@@ -32,15 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@oneclickvpnkeys| AHS -153.62"
-    server: nl-1.tr202501.com
-    port: 443
-    type: trojan
-    password: Sv5AzeZjawJfSMrhhS
-    skip-cert-verify: true
-    sni: ""
-    udp: true
-  - name: "|@vmess_vless_v2rayng| AHS -3.35"
+  - name: "|@vmess_vless_v2rayng| AHS -2.73"
     server: creativecommons.org
     port: 2053
     type: trojan
@@ -53,7 +45,7 @@ proxies:
       headers:
         Host: kotlet.arshiacomplus.dpdns.org
     udp: true
-  - name: "|@ovpn2| AHS -5.88"
+  - name: "|@ovpn2| AHS -2.19"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -70,9 +62,8 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@oneclickvpnkeys| AHS -153.62"
-      - "|@vmess_vless_v2rayng| AHS -3.35"
-      - "|@ovpn2| AHS -5.88"
+      - "|@vmess_vless_v2rayng| AHS -2.73"
+      - "|@ovpn2| AHS -2.19"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -83,25 +74,22 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@oneclickvpnkeys| AHS -153.62"
-      - "|@vmess_vless_v2rayng| AHS -3.35"
-      - "|@ovpn2| AHS -5.88"
+      - "|@vmess_vless_v2rayng| AHS -2.73"
+      - "|@ovpn2| AHS -2.19"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@oneclickvpnkeys| AHS -153.62"
-      - "|@vmess_vless_v2rayng| AHS -3.35"
-      - "|@ovpn2| AHS -5.88"
+      - "|@vmess_vless_v2rayng| AHS -2.73"
+      - "|@ovpn2| AHS -2.19"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@oneclickvpnkeys| AHS -153.62"
-      - "|@vmess_vless_v2rayng| AHS -3.35"
-      - "|@ovpn2| AHS -5.88"
+      - "|@vmess_vless_v2rayng| AHS -2.73"
+      - "|@ovpn2| AHS -2.19"
 rules:
   - MATCH,MANUAL
