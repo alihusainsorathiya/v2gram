@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@ProxyFn|🇨🇭|160.19
+  - name: REALITY|@ProxyFn|🇨🇭|90.05
     server: 193.168.144.46
     port: 443
     type: vless
@@ -45,7 +45,18 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|158.02
+  - name: REALITY|@WomanLifeFreedomVPN|🇨🇦|65.53
+    server: icloud.wlftest.xyz
+    port: 443
+    type: vless
+    uuid: 85399fea-2ee3-51b5-ad4e-d8b78a2cf1d9
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: www.icloud.com
+    udp: true
+  - name: REALITY|@internet4iran|🇩🇪|92.79
     server: 128.140.49.220
     port: 443
     type: vless
@@ -56,7 +67,7 @@ proxies:
     skip-cert-verify: true
     servername: www.speedtest.net
     udp: true
-  - name: REALITY|@v2rayngvpn|🇩🇪|272.05
+  - name: REALITY|@v2rayngvpn|🇩🇪|95.72
     server: 7ygb3r6bw.royalcontl5h1i.lat
     port: 2052
     type: vless
@@ -69,7 +80,18 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@azadnet|🇦🇹|180.46
+  - name: REALITY|@ConfigsHUB|🇩🇪|139.77
+    server: 194.87.29.240
+    port: 443
+    type: vless
+    uuid: 0882a150-746a-4ba7-81b8-7922511894c5
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: cdnjs.com
+    udp: true
+  - name: REALITY|@azadnet|🇦🇹|105.96
     server: shadowshaman.fonixapp.org
     port: 50151
     type: vless
@@ -80,7 +102,7 @@ proxies:
     skip-cert-verify: true
     servername: steampowered.com
     udp: true
-  - name: REALITY|@v2rayngrit|🇩🇪|158.97
+  - name: REALITY|@v2rayngrit|🇩🇪|104.14
     server: darkterror.fonixapp.org
     port: 13718
     type: vless
@@ -95,11 +117,13 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|160.19
-      - REALITY|@internet4iran|🇩🇪|158.02
-      - REALITY|@v2rayngvpn|🇩🇪|272.05
-      - REALITY|@azadnet|🇦🇹|180.46
-      - REALITY|@v2rayngrit|🇩🇪|158.97
+      - REALITY|@ProxyFn|🇨🇭|90.05
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|65.53
+      - REALITY|@internet4iran|🇩🇪|92.79
+      - REALITY|@v2rayngvpn|🇩🇪|95.72
+      - REALITY|@ConfigsHUB|🇩🇪|139.77
+      - REALITY|@azadnet|🇦🇹|105.96
+      - REALITY|@v2rayngrit|🇩🇪|104.14
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -110,31 +134,37 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|160.19
-      - REALITY|@internet4iran|🇩🇪|158.02
-      - REALITY|@v2rayngvpn|🇩🇪|272.05
-      - REALITY|@azadnet|🇦🇹|180.46
-      - REALITY|@v2rayngrit|🇩🇪|158.97
+      - REALITY|@ProxyFn|🇨🇭|90.05
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|65.53
+      - REALITY|@internet4iran|🇩🇪|92.79
+      - REALITY|@v2rayngvpn|🇩🇪|95.72
+      - REALITY|@ConfigsHUB|🇩🇪|139.77
+      - REALITY|@azadnet|🇦🇹|105.96
+      - REALITY|@v2rayngrit|🇩🇪|104.14
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|160.19
-      - REALITY|@internet4iran|🇩🇪|158.02
-      - REALITY|@v2rayngvpn|🇩🇪|272.05
-      - REALITY|@azadnet|🇦🇹|180.46
-      - REALITY|@v2rayngrit|🇩🇪|158.97
+      - REALITY|@ProxyFn|🇨🇭|90.05
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|65.53
+      - REALITY|@internet4iran|🇩🇪|92.79
+      - REALITY|@v2rayngvpn|🇩🇪|95.72
+      - REALITY|@ConfigsHUB|🇩🇪|139.77
+      - REALITY|@azadnet|🇦🇹|105.96
+      - REALITY|@v2rayngrit|🇩🇪|104.14
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|160.19
-      - REALITY|@internet4iran|🇩🇪|158.02
-      - REALITY|@v2rayngvpn|🇩🇪|272.05
-      - REALITY|@azadnet|🇦🇹|180.46
-      - REALITY|@v2rayngrit|🇩🇪|158.97
+      - REALITY|@ProxyFn|🇨🇭|90.05
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|65.53
+      - REALITY|@internet4iran|🇩🇪|92.79
+      - REALITY|@v2rayngvpn|🇩🇪|95.72
+      - REALITY|@ConfigsHUB|🇩🇪|139.77
+      - REALITY|@azadnet|🇦🇹|105.96
+      - REALITY|@v2rayngrit|🇩🇪|104.14
 rules:
   - MATCH,MANUAL
