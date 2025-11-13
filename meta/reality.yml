@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@ProxyFn|🇨🇭|94.85
+  - name: REALITY|@ProxyFn|🇨🇭|154.73
     server: 193.168.144.46
     port: 443
     type: vless
@@ -45,7 +45,18 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|94.88
+  - name: REALITY|@WomanLifeFreedomVPN|🇨🇦|5065.63
+    server: icloud.wlftest.xyz
+    port: 443
+    type: vless
+    uuid: 85399fea-2ee3-51b5-ad4e-d8b78a2cf1d9
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: www.icloud.com
+    udp: true
+  - name: REALITY|@internet4iran|🇩🇪|159.86
     server: 128.140.49.220
     port: 443
     type: vless
@@ -56,7 +67,18 @@ proxies:
     skip-cert-verify: true
     servername: www.speedtest.net
     udp: true
-  - name: REALITY|@v2rayngrit|🇩🇪|178.21
+  - name: REALITY|@v2rayngvpn|🇮🇹|361.36
+    server: italy.pocomacho.ru
+    port: 443
+    type: vless
+    uuid: 678bbdc1-7307-4cf2-bec1-bcdbd8efdbe5
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: www.google.com
+    udp: true
+  - name: REALITY|@v2rayngrit|🇩🇪|176.17
     server: darkterror.fonixapp.org
     port: 13718
     type: vless
@@ -71,9 +93,11 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|94.85
-      - REALITY|@internet4iran|🇩🇪|94.88
-      - REALITY|@v2rayngrit|🇩🇪|178.21
+      - REALITY|@ProxyFn|🇨🇭|154.73
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|5065.63
+      - REALITY|@internet4iran|🇩🇪|159.86
+      - REALITY|@v2rayngvpn|🇮🇹|361.36
+      - REALITY|@v2rayngrit|🇩🇪|176.17
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -84,25 +108,31 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|94.85
-      - REALITY|@internet4iran|🇩🇪|94.88
-      - REALITY|@v2rayngrit|🇩🇪|178.21
+      - REALITY|@ProxyFn|🇨🇭|154.73
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|5065.63
+      - REALITY|@internet4iran|🇩🇪|159.86
+      - REALITY|@v2rayngvpn|🇮🇹|361.36
+      - REALITY|@v2rayngrit|🇩🇪|176.17
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|94.85
-      - REALITY|@internet4iran|🇩🇪|94.88
-      - REALITY|@v2rayngrit|🇩🇪|178.21
+      - REALITY|@ProxyFn|🇨🇭|154.73
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|5065.63
+      - REALITY|@internet4iran|🇩🇪|159.86
+      - REALITY|@v2rayngvpn|🇮🇹|361.36
+      - REALITY|@v2rayngrit|🇩🇪|176.17
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|94.85
-      - REALITY|@internet4iran|🇩🇪|94.88
-      - REALITY|@v2rayngrit|🇩🇪|178.21
+      - REALITY|@ProxyFn|🇨🇭|154.73
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|5065.63
+      - REALITY|@internet4iran|🇩🇪|159.86
+      - REALITY|@v2rayngvpn|🇮🇹|361.36
+      - REALITY|@v2rayngrit|🇩🇪|176.17
 rules:
   - MATCH,MANUAL
