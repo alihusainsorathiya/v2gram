@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@ProxyFn|🇨🇭|90.07
+  - name: REALITY|@ProxyFn|🇨🇭|108.85
     server: 193.168.144.46
     port: 443
     type: vless
@@ -45,7 +45,18 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|92.47
+  - name: REALITY|@WomanLifeFreedomVPN|🇨🇦|164.85
+    server: icloud.wlftest.xyz
+    port: 443
+    type: vless
+    uuid: 85399fea-2ee3-51b5-ad4e-d8b78a2cf1d9
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: www.icloud.com
+    udp: true
+  - name: REALITY|@internet4iran|🇩🇪|109.28
     server: 128.140.49.220
     port: 443
     type: vless
@@ -56,7 +67,7 @@ proxies:
     skip-cert-verify: true
     servername: www.speedtest.net
     udp: true
-  - name: REALITY|@VmessProtocol|🇦🇹|443.29
+  - name: REALITY|@VmessProtocol|🇦🇹|561.31
     server: at.monkeyisland.life
     port: 443
     type: vless
@@ -67,7 +78,17 @@ proxies:
     skip-cert-verify: true
     servername: at.monkeyisland.life
     udp: true
-  - name: REALITY|@azadnet|🇹🇭|277.64
+  - name: REALITY|@ConfigsHUB|🇨🇭|128.49
+    server: api2.farzadyek.ir
+    port: 8080
+    type: vless
+    uuid: 850f5eed-3a08-4911-8121-c65eb0203276
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: stackoverflow.com
+    udp: true
+  - name: REALITY|@azadnet|🇹🇭|238.85
     server: tg.kunlun01.com
     port: 18000
     type: vless
@@ -82,10 +103,12 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|90.07
-      - REALITY|@internet4iran|🇩🇪|92.47
-      - REALITY|@VmessProtocol|🇦🇹|443.29
-      - REALITY|@azadnet|🇹🇭|277.64
+      - REALITY|@ProxyFn|🇨🇭|108.85
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|164.85
+      - REALITY|@internet4iran|🇩🇪|109.28
+      - REALITY|@VmessProtocol|🇦🇹|561.31
+      - REALITY|@ConfigsHUB|🇨🇭|128.49
+      - REALITY|@azadnet|🇹🇭|238.85
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -96,28 +119,34 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|90.07
-      - REALITY|@internet4iran|🇩🇪|92.47
-      - REALITY|@VmessProtocol|🇦🇹|443.29
-      - REALITY|@azadnet|🇹🇭|277.64
+      - REALITY|@ProxyFn|🇨🇭|108.85
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|164.85
+      - REALITY|@internet4iran|🇩🇪|109.28
+      - REALITY|@VmessProtocol|🇦🇹|561.31
+      - REALITY|@ConfigsHUB|🇨🇭|128.49
+      - REALITY|@azadnet|🇹🇭|238.85
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|90.07
-      - REALITY|@internet4iran|🇩🇪|92.47
-      - REALITY|@VmessProtocol|🇦🇹|443.29
-      - REALITY|@azadnet|🇹🇭|277.64
+      - REALITY|@ProxyFn|🇨🇭|108.85
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|164.85
+      - REALITY|@internet4iran|🇩🇪|109.28
+      - REALITY|@VmessProtocol|🇦🇹|561.31
+      - REALITY|@ConfigsHUB|🇨🇭|128.49
+      - REALITY|@azadnet|🇹🇭|238.85
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|90.07
-      - REALITY|@internet4iran|🇩🇪|92.47
-      - REALITY|@VmessProtocol|🇦🇹|443.29
-      - REALITY|@azadnet|🇹🇭|277.64
+      - REALITY|@ProxyFn|🇨🇭|108.85
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|164.85
+      - REALITY|@internet4iran|🇩🇪|109.28
+      - REALITY|@VmessProtocol|🇦🇹|561.31
+      - REALITY|@ConfigsHUB|🇨🇭|128.49
+      - REALITY|@azadnet|🇹🇭|238.85
 rules:
   - MATCH,MANUAL
