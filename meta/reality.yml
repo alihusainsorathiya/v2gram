@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@ProxyFn|🇨🇭|90.12
+  - name: REALITY|@ProxyFn|🇨🇭|160.35
     server: 193.168.144.46
     port: 443
     type: vless
@@ -45,7 +45,18 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|92.16
+  - name: REALITY|@Outline_Vpn|🇮🇶|unavailable
+    server: auto.happvpn.com
+    port: 443
+    type: vless
+    uuid: d2de6d6d-4735-4fe3-b4b6-00a81ced69f5
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: cdnjs.com
+    udp: true
+  - name: REALITY|@internet4iran|🇩🇪|158.43
     server: 128.140.49.220
     port: 443
     type: vless
@@ -56,18 +67,28 @@ proxies:
     skip-cert-verify: true
     servername: www.speedtest.net
     udp: true
-  - name: REALITY|@v2rayngvpn|🇺🇸|unavailable
-    server: usa1.clear-vpn.org
+  - name: REALITY|@v2rayngvpn|🇨🇾|474.79
+    server: jp.nitroo-tech.ru
     port: 443
     type: vless
-    uuid: 83367474-3a42-4aa8-a74f-82e930370975
+    uuid: 3a8e9c56-0243-4b69-bd12-1018f7806cdc
     cipher: auto
     tls: false
     flow: xtls-rprx-vision
     skip-cert-verify: true
-    servername: usa1.clear-vpn.org
+    servername: mirror.yandex.ru
     udp: true
-  - name: REALITY|@azadnet|🇹🇭|262.09
+  - name: REALITY|@ConfigsHUB|🇪🇪|167.19
+    server: 185.252.177.178
+    port: 443
+    type: vless
+    uuid: 976ca394-7957-468f-8e09-7265e17ba98a
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: google.com
+    udp: true
+  - name: REALITY|@azadnet|🇹🇭|220.1
     server: tg.kunlun01.com
     port: 18000
     type: vless
@@ -82,10 +103,12 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|90.12
-      - REALITY|@internet4iran|🇩🇪|92.16
-      - REALITY|@v2rayngvpn|🇺🇸|unavailable
-      - REALITY|@azadnet|🇹🇭|262.09
+      - REALITY|@ProxyFn|🇨🇭|160.35
+      - REALITY|@Outline_Vpn|🇮🇶|unavailable
+      - REALITY|@internet4iran|🇩🇪|158.43
+      - REALITY|@v2rayngvpn|🇨🇾|474.79
+      - REALITY|@ConfigsHUB|🇪🇪|167.19
+      - REALITY|@azadnet|🇹🇭|220.1
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -96,28 +119,34 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|90.12
-      - REALITY|@internet4iran|🇩🇪|92.16
-      - REALITY|@v2rayngvpn|🇺🇸|unavailable
-      - REALITY|@azadnet|🇹🇭|262.09
+      - REALITY|@ProxyFn|🇨🇭|160.35
+      - REALITY|@Outline_Vpn|🇮🇶|unavailable
+      - REALITY|@internet4iran|🇩🇪|158.43
+      - REALITY|@v2rayngvpn|🇨🇾|474.79
+      - REALITY|@ConfigsHUB|🇪🇪|167.19
+      - REALITY|@azadnet|🇹🇭|220.1
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|90.12
-      - REALITY|@internet4iran|🇩🇪|92.16
-      - REALITY|@v2rayngvpn|🇺🇸|unavailable
-      - REALITY|@azadnet|🇹🇭|262.09
+      - REALITY|@ProxyFn|🇨🇭|160.35
+      - REALITY|@Outline_Vpn|🇮🇶|unavailable
+      - REALITY|@internet4iran|🇩🇪|158.43
+      - REALITY|@v2rayngvpn|🇨🇾|474.79
+      - REALITY|@ConfigsHUB|🇪🇪|167.19
+      - REALITY|@azadnet|🇹🇭|220.1
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|90.12
-      - REALITY|@internet4iran|🇩🇪|92.16
-      - REALITY|@v2rayngvpn|🇺🇸|unavailable
-      - REALITY|@azadnet|🇹🇭|262.09
+      - REALITY|@ProxyFn|🇨🇭|160.35
+      - REALITY|@Outline_Vpn|🇮🇶|unavailable
+      - REALITY|@internet4iran|🇩🇪|158.43
+      - REALITY|@v2rayngvpn|🇨🇾|474.79
+      - REALITY|@ConfigsHUB|🇪🇪|167.19
+      - REALITY|@azadnet|🇹🇭|220.1
 rules:
   - MATCH,MANUAL
