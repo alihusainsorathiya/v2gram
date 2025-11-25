@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@ProxyFn|🇨🇭|100.62
+  - name: REALITY|@ProxyFn|🇨🇭|104.75
     server: 193.168.144.46
     port: 443
     type: vless
@@ -45,7 +45,7 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@Outline_Vpn|🇩🇪|241.49
+  - name: REALITY|@Outline_Vpn|🇩🇪|225.72
     server: de.shvurgceo.online
     port: 14357
     type: vless
@@ -56,7 +56,18 @@ proxies:
     skip-cert-verify: true
     servername: vk.com
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|97.62
+  - name: REALITY|@WomanLifeFreedomVPN|🇨🇦|71.23
+    server: icloud.wlftest.xyz
+    port: 443
+    type: vless
+    uuid: 85399fea-2ee3-51b5-ad4e-d8b78a2cf1d9
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: www.icloud.com
+    udp: true
+  - name: REALITY|@internet4iran|🇩🇪|95.71
     server: 128.140.49.220
     port: 443
     type: vless
@@ -67,7 +78,7 @@ proxies:
     skip-cert-verify: true
     servername: www.speedtest.net
     udp: true
-  - name: REALITY|@proxy_kafee|🇹🇷|138.45
+  - name: REALITY|@proxy_kafee|🇹🇷|147
     server: Trk.originalproxy.sbs
     port: 20936
     type: vless
@@ -80,18 +91,18 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@ConfigsHUB|🇩🇪|110.25
-    server: al.spirako.com
+  - name: REALITY|@ConfigsHUB|🇳🇱|137.15
+    server: nl2.srv.happvpn.com
     port: 443
     type: vless
-    uuid: 2a30e90e-02be-4602-8c57-308eb4feff5b
+    uuid: 9a12e2e5-7038-4ed8-91f3-a94d9b2d465f
     cipher: auto
     tls: false
     flow: xtls-rprx-vision
     skip-cert-verify: true
-    servername: spirako.com
+    servername: cdnjs.com
     udp: true
-  - name: REALITY|@azadnet|🇺🇸|204.48
+  - name: REALITY|@azadnet|🇺🇸|110.61
     server: usa82.freednet.org
     port: 443
     type: vless
@@ -106,12 +117,13 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|100.62
-      - REALITY|@Outline_Vpn|🇩🇪|241.49
-      - REALITY|@internet4iran|🇩🇪|97.62
-      - REALITY|@proxy_kafee|🇹🇷|138.45
-      - REALITY|@ConfigsHUB|🇩🇪|110.25
-      - REALITY|@azadnet|🇺🇸|204.48
+      - REALITY|@ProxyFn|🇨🇭|104.75
+      - REALITY|@Outline_Vpn|🇩🇪|225.72
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|71.23
+      - REALITY|@internet4iran|🇩🇪|95.71
+      - REALITY|@proxy_kafee|🇹🇷|147
+      - REALITY|@ConfigsHUB|🇳🇱|137.15
+      - REALITY|@azadnet|🇺🇸|110.61
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -122,34 +134,37 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|100.62
-      - REALITY|@Outline_Vpn|🇩🇪|241.49
-      - REALITY|@internet4iran|🇩🇪|97.62
-      - REALITY|@proxy_kafee|🇹🇷|138.45
-      - REALITY|@ConfigsHUB|🇩🇪|110.25
-      - REALITY|@azadnet|🇺🇸|204.48
+      - REALITY|@ProxyFn|🇨🇭|104.75
+      - REALITY|@Outline_Vpn|🇩🇪|225.72
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|71.23
+      - REALITY|@internet4iran|🇩🇪|95.71
+      - REALITY|@proxy_kafee|🇹🇷|147
+      - REALITY|@ConfigsHUB|🇳🇱|137.15
+      - REALITY|@azadnet|🇺🇸|110.61
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|100.62
-      - REALITY|@Outline_Vpn|🇩🇪|241.49
-      - REALITY|@internet4iran|🇩🇪|97.62
-      - REALITY|@proxy_kafee|🇹🇷|138.45
-      - REALITY|@ConfigsHUB|🇩🇪|110.25
-      - REALITY|@azadnet|🇺🇸|204.48
+      - REALITY|@ProxyFn|🇨🇭|104.75
+      - REALITY|@Outline_Vpn|🇩🇪|225.72
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|71.23
+      - REALITY|@internet4iran|🇩🇪|95.71
+      - REALITY|@proxy_kafee|🇹🇷|147
+      - REALITY|@ConfigsHUB|🇳🇱|137.15
+      - REALITY|@azadnet|🇺🇸|110.61
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|100.62
-      - REALITY|@Outline_Vpn|🇩🇪|241.49
-      - REALITY|@internet4iran|🇩🇪|97.62
-      - REALITY|@proxy_kafee|🇹🇷|138.45
-      - REALITY|@ConfigsHUB|🇩🇪|110.25
-      - REALITY|@azadnet|🇺🇸|204.48
+      - REALITY|@ProxyFn|🇨🇭|104.75
+      - REALITY|@Outline_Vpn|🇩🇪|225.72
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|71.23
+      - REALITY|@internet4iran|🇩🇪|95.71
+      - REALITY|@proxy_kafee|🇹🇷|147
+      - REALITY|@ConfigsHUB|🇳🇱|137.15
+      - REALITY|@azadnet|🇺🇸|110.61
 rules:
   - MATCH,MANUAL
