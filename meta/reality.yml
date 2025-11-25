@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@ProxyFn|🇨🇭|112.38
+  - name: REALITY|@ProxyFn|🇨🇭|90.05
     server: 193.168.144.46
     port: 443
     type: vless
@@ -45,18 +45,7 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@WomanLifeFreedomVPN|🇨🇦|115.35
-    server: icloud.wlftest.xyz
-    port: 443
-    type: vless
-    uuid: 85399fea-2ee3-51b5-ad4e-d8b78a2cf1d9
-    cipher: auto
-    tls: false
-    flow: xtls-rprx-vision
-    skip-cert-verify: true
-    servername: www.icloud.com
-    udp: true
-  - name: REALITY|@internet4iran|🇩🇪|116.93
+  - name: REALITY|@internet4iran|🇩🇪|93.26
     server: 128.140.49.220
     port: 443
     type: vless
@@ -67,17 +56,40 @@ proxies:
     skip-cert-verify: true
     servername: www.speedtest.net
     udp: true
-  - name: REALITY|@proxy_kafee|🇷🇺|347.04
-    server: wolfy.ufavpn.ru
-    port: 27121
+  - name: REALITY|@v2rayngvpn|🇱🇻|242.25
+    server: lv.monkeyisland.xyz
+    port: 443
     type: vless
-    uuid: cbf1ec03-2cff-4b1f-9eb5-5929c13fc20c
+    uuid: 6184fcfb-52e0-40bb-a271-bbd097b70a8e
     cipher: auto
     tls: false
+    flow: xtls-rprx-vision
     skip-cert-verify: true
-    servername: www.ok.ru
+    servername: lv.monkeyisland.xyz
     udp: true
-  - name: REALITY|@azadnet|🇺🇸|304.16
+  - name: REALITY|@proxy_kafee|🇳🇱|106.11
+    server: nld26.luckernld.org
+    port: 443
+    type: vless
+    uuid: 40d7798a-6c76-4298-a9d4-9e6181cd2dd7
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: www.cybo.com
+    udp: true
+  - name: REALITY|@ConfigsHUB|🇰🇿|248.32
+    server: kazakhstan22.clearorbitllc.com
+    port: 443
+    type: vless
+    uuid: 6206bf1d-068d-4186-9eee-d534a01cb98e
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: kazakhstan22.clearorbitllc.com
+    udp: true
+  - name: REALITY|@azadnet|🇺🇸|310.9
     server: usa82.freednet.org
     port: 443
     type: vless
@@ -92,11 +104,12 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|112.38
-      - REALITY|@WomanLifeFreedomVPN|🇨🇦|115.35
-      - REALITY|@internet4iran|🇩🇪|116.93
-      - REALITY|@proxy_kafee|🇷🇺|347.04
-      - REALITY|@azadnet|🇺🇸|304.16
+      - REALITY|@ProxyFn|🇨🇭|90.05
+      - REALITY|@internet4iran|🇩🇪|93.26
+      - REALITY|@v2rayngvpn|🇱🇻|242.25
+      - REALITY|@proxy_kafee|🇳🇱|106.11
+      - REALITY|@ConfigsHUB|🇰🇿|248.32
+      - REALITY|@azadnet|🇺🇸|310.9
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -107,31 +120,34 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|112.38
-      - REALITY|@WomanLifeFreedomVPN|🇨🇦|115.35
-      - REALITY|@internet4iran|🇩🇪|116.93
-      - REALITY|@proxy_kafee|🇷🇺|347.04
-      - REALITY|@azadnet|🇺🇸|304.16
+      - REALITY|@ProxyFn|🇨🇭|90.05
+      - REALITY|@internet4iran|🇩🇪|93.26
+      - REALITY|@v2rayngvpn|🇱🇻|242.25
+      - REALITY|@proxy_kafee|🇳🇱|106.11
+      - REALITY|@ConfigsHUB|🇰🇿|248.32
+      - REALITY|@azadnet|🇺🇸|310.9
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|112.38
-      - REALITY|@WomanLifeFreedomVPN|🇨🇦|115.35
-      - REALITY|@internet4iran|🇩🇪|116.93
-      - REALITY|@proxy_kafee|🇷🇺|347.04
-      - REALITY|@azadnet|🇺🇸|304.16
+      - REALITY|@ProxyFn|🇨🇭|90.05
+      - REALITY|@internet4iran|🇩🇪|93.26
+      - REALITY|@v2rayngvpn|🇱🇻|242.25
+      - REALITY|@proxy_kafee|🇳🇱|106.11
+      - REALITY|@ConfigsHUB|🇰🇿|248.32
+      - REALITY|@azadnet|🇺🇸|310.9
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|112.38
-      - REALITY|@WomanLifeFreedomVPN|🇨🇦|115.35
-      - REALITY|@internet4iran|🇩🇪|116.93
-      - REALITY|@proxy_kafee|🇷🇺|347.04
-      - REALITY|@azadnet|🇺🇸|304.16
+      - REALITY|@ProxyFn|🇨🇭|90.05
+      - REALITY|@internet4iran|🇩🇪|93.26
+      - REALITY|@v2rayngvpn|🇱🇻|242.25
+      - REALITY|@proxy_kafee|🇳🇱|106.11
+      - REALITY|@ConfigsHUB|🇰🇿|248.32
+      - REALITY|@azadnet|🇺🇸|310.9
 rules:
   - MATCH,MANUAL
