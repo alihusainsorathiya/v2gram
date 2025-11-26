@@ -32,31 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@PrivateVPNs| AHS -169.49"
-    server: 13.38.179.73
-    port: 22222
-    type: trojan
-    password: telegram-id-privatevpns
-    skip-cert-verify: true
-    sni: trojan.burgerip.co.uk
-    udp: true
-  - name: "|@DirectVPN| AHS -162.68"
-    server: 13.37.149.144
-    port: 22223
-    type: trojan
-    password: telegram-id-directvpn
-    skip-cert-verify: true
-    sni: trojan.burgerip.co.uk
-    udp: true
-  - name: "|@DirectVPN| AHS -172.04"
-    server: 13.38.179.73
-    port: 22223
-    type: trojan
-    password: telegram-id-directvpn
-    skip-cert-verify: true
-    sni: trojan.burgerip.co.uk
-    udp: true
-  - name: "|@oneclickvpnkeys| AHS -160.31"
+  - name: "|@oneclickvpnkeys| AHS -124.51"
     server: 5.188.108.13
     port: 11790
     type: trojan
@@ -64,7 +40,7 @@ proxies:
     skip-cert-verify: true
     sni: runningshoes.purpletornado.click
     udp: true
-  - name: "|@v2ray1_ng| AHS -123.48"
+  - name: "|@v2ray1_ng| AHS -143.21"
     server: 160.16.150.76
     port: 3093
     type: trojan
@@ -72,7 +48,7 @@ proxies:
     skip-cert-verify: true
     sni: www.nintendogames.net
     udp: true
-  - name: "|@v2ray1_ng| AHS -214.78"
+  - name: "|@v2ray1_ng| AHS -219.14"
     server: 36.50.90.241
     port: 35951
     type: trojan
@@ -85,7 +61,20 @@ proxies:
       headers:
         Host: joss.gpj1.web.id
     udp: true
-  - name: "|@vmess_vless_v2rayng| AHS -18.86"
+  - name: "|@v2ray1_ng| AHS -unavailable"
+    server: 46.183.186.57
+    port: 443
+    type: trojan
+    password: 3c6c2cac-7e0a-462b-ae19-2e5e264d7fdf
+    skip-cert-verify: true
+    sni: joss.gpj1.web.id
+    network: ws
+    ws-opts:
+      path: /Free-VPN-CF-Geo-Project/46.183.186.57=443
+      headers:
+        Host: joss.gpj1.web.id
+    udp: true
+  - name: "|@vmess_vless_v2rayng| AHS -2.61"
     server: creativecommons.org
     port: 2053
     type: trojan
@@ -98,7 +87,7 @@ proxies:
       headers:
         Host: kotlet.arshiacomplus.dpdns.org
     udp: true
-  - name: "|@VmessProtocol| AHS -157.22"
+  - name: "|@VmessProtocol| AHS -124.68"
     server: 5.188.108.13
     port: 11790
     type: trojan
@@ -106,7 +95,7 @@ proxies:
     skip-cert-verify: true
     sni: runningshoes.purpletornado.click
     udp: true
-  - name: "|@ovpn2| AHS -21.87"
+  - name: "|@ovpn2| AHS -2.48"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -119,7 +108,7 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
-  - name: "|@hope_net| AHS -20.83"
+  - name: "|@hope_net| AHS -1.71"
     server: 162.159.136.232
     port: 8443
     type: trojan
@@ -127,7 +116,15 @@ proxies:
     skip-cert-verify: true
     sni: e9464f45.trauma-2r4.pages.dev
     udp: true
-  - name: "|@v2rayngrit| AHS -135.93"
+  - name: "|@hope_net| AHS -2.59"
+    server: 172.66.44.131
+    port: 443
+    type: trojan
+    password: auto
+    skip-cert-verify: true
+    sni: e9464f45.trauma-2r4.pages.dev
+    udp: true
+  - name: "|@v2rayngrit| AHS -127.87"
     server: 145.223.70.115
     port: 25365
     type: trojan
@@ -142,17 +139,16 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@PrivateVPNs| AHS -169.49"
-      - "|@DirectVPN| AHS -162.68"
-      - "|@DirectVPN| AHS -172.04"
-      - "|@oneclickvpnkeys| AHS -160.31"
-      - "|@v2ray1_ng| AHS -123.48"
-      - "|@v2ray1_ng| AHS -214.78"
-      - "|@vmess_vless_v2rayng| AHS -18.86"
-      - "|@VmessProtocol| AHS -157.22"
-      - "|@ovpn2| AHS -21.87"
-      - "|@hope_net| AHS -20.83"
-      - "|@v2rayngrit| AHS -135.93"
+      - "|@oneclickvpnkeys| AHS -124.51"
+      - "|@v2ray1_ng| AHS -143.21"
+      - "|@v2ray1_ng| AHS -219.14"
+      - "|@v2ray1_ng| AHS -unavailable"
+      - "|@vmess_vless_v2rayng| AHS -2.61"
+      - "|@VmessProtocol| AHS -124.68"
+      - "|@ovpn2| AHS -2.48"
+      - "|@hope_net| AHS -1.71"
+      - "|@hope_net| AHS -2.59"
+      - "|@v2rayngrit| AHS -127.87"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -163,49 +159,46 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -169.49"
-      - "|@DirectVPN| AHS -162.68"
-      - "|@DirectVPN| AHS -172.04"
-      - "|@oneclickvpnkeys| AHS -160.31"
-      - "|@v2ray1_ng| AHS -123.48"
-      - "|@v2ray1_ng| AHS -214.78"
-      - "|@vmess_vless_v2rayng| AHS -18.86"
-      - "|@VmessProtocol| AHS -157.22"
-      - "|@ovpn2| AHS -21.87"
-      - "|@hope_net| AHS -20.83"
-      - "|@v2rayngrit| AHS -135.93"
+      - "|@oneclickvpnkeys| AHS -124.51"
+      - "|@v2ray1_ng| AHS -143.21"
+      - "|@v2ray1_ng| AHS -219.14"
+      - "|@v2ray1_ng| AHS -unavailable"
+      - "|@vmess_vless_v2rayng| AHS -2.61"
+      - "|@VmessProtocol| AHS -124.68"
+      - "|@ovpn2| AHS -2.48"
+      - "|@hope_net| AHS -1.71"
+      - "|@hope_net| AHS -2.59"
+      - "|@v2rayngrit| AHS -127.87"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@PrivateVPNs| AHS -169.49"
-      - "|@DirectVPN| AHS -162.68"
-      - "|@DirectVPN| AHS -172.04"
-      - "|@oneclickvpnkeys| AHS -160.31"
-      - "|@v2ray1_ng| AHS -123.48"
-      - "|@v2ray1_ng| AHS -214.78"
-      - "|@vmess_vless_v2rayng| AHS -18.86"
-      - "|@VmessProtocol| AHS -157.22"
-      - "|@ovpn2| AHS -21.87"
-      - "|@hope_net| AHS -20.83"
-      - "|@v2rayngrit| AHS -135.93"
+      - "|@oneclickvpnkeys| AHS -124.51"
+      - "|@v2ray1_ng| AHS -143.21"
+      - "|@v2ray1_ng| AHS -219.14"
+      - "|@v2ray1_ng| AHS -unavailable"
+      - "|@vmess_vless_v2rayng| AHS -2.61"
+      - "|@VmessProtocol| AHS -124.68"
+      - "|@ovpn2| AHS -2.48"
+      - "|@hope_net| AHS -1.71"
+      - "|@hope_net| AHS -2.59"
+      - "|@v2rayngrit| AHS -127.87"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -169.49"
-      - "|@DirectVPN| AHS -162.68"
-      - "|@DirectVPN| AHS -172.04"
-      - "|@oneclickvpnkeys| AHS -160.31"
-      - "|@v2ray1_ng| AHS -123.48"
-      - "|@v2ray1_ng| AHS -214.78"
-      - "|@vmess_vless_v2rayng| AHS -18.86"
-      - "|@VmessProtocol| AHS -157.22"
-      - "|@ovpn2| AHS -21.87"
-      - "|@hope_net| AHS -20.83"
-      - "|@v2rayngrit| AHS -135.93"
+      - "|@oneclickvpnkeys| AHS -124.51"
+      - "|@v2ray1_ng| AHS -143.21"
+      - "|@v2ray1_ng| AHS -219.14"
+      - "|@v2ray1_ng| AHS -unavailable"
+      - "|@vmess_vless_v2rayng| AHS -2.61"
+      - "|@VmessProtocol| AHS -124.68"
+      - "|@ovpn2| AHS -2.48"
+      - "|@hope_net| AHS -1.71"
+      - "|@hope_net| AHS -2.59"
+      - "|@v2rayngrit| AHS -127.87"
 rules:
   - MATCH,MANUAL
