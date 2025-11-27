@@ -1,0 +1,168 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: REALITY|@ProxyFn|🇨🇭|153.64
+    server: 193.168.144.46
+    port: 443
+    type: vless
+    uuid: cdb38f5b-12c3-414b-eacd-a635dc633701
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: mega.io
+    network: grpc
+    grpc-opts:
+      grpc-service-name: /
+    udp: true
+  - name: REALITY|@internet4iran|🇩🇪|158.61
+    server: 128.140.49.220
+    port: 443
+    type: vless
+    uuid: a0660613-bab4-456f-91b7-b8923788ed3d
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: www.speedtest.net
+    udp: true
+  - name: REALITY|@v2rayngvpn|🇹🇷|215.24
+    server: napanel.mreza1088.com
+    port: 31374
+    type: vless
+    uuid: 8dca3cf6-0e6d-4ca3-a5e5-cdc2efa7e5a6
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: www.apple.com
+    udp: true
+  - name: REALITY|@v2ray1_ng|🇩🇪|159.64
+    server: 178.17.51.244
+    port: 443
+    type: vless
+    uuid: b127d2d2-277a-491e-bf80-2e8688fa85e2
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: firebase.com
+    udp: true
+  - name: REALITY|@proxy_kafee|🇳🇱|144.68
+    server: nld26.luckernld.org
+    port: 443
+    type: vless
+    uuid: 40d7798a-6c76-4298-a9d4-9e6181cd2dd7
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: www.cybo.com
+    udp: true
+  - name: REALITY|@ConfigsHUB|🇬🇧|157.89
+    server: 5.181.21.72
+    port: 443
+    type: vless
+    uuid: e4b8df56-b680-4a34-ab47-5bf5738ed718
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: www.google.com
+    udp: true
+  - name: REALITY|@azadnet|🇺🇸|310.55
+    server: usa82.freednet.org
+    port: 443
+    type: vless
+    uuid: 4e5a0939-483c-4571-a1b1-fccbfe053923
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: www.utexas.edu
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - REALITY|@ProxyFn|🇨🇭|153.64
+      - REALITY|@internet4iran|🇩🇪|158.61
+      - REALITY|@v2rayngvpn|🇹🇷|215.24
+      - REALITY|@v2ray1_ng|🇩🇪|159.64
+      - REALITY|@proxy_kafee|🇳🇱|144.68
+      - REALITY|@ConfigsHUB|🇬🇧|157.89
+      - REALITY|@azadnet|🇺🇸|310.55
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - REALITY|@ProxyFn|🇨🇭|153.64
+      - REALITY|@internet4iran|🇩🇪|158.61
+      - REALITY|@v2rayngvpn|🇹🇷|215.24
+      - REALITY|@v2ray1_ng|🇩🇪|159.64
+      - REALITY|@proxy_kafee|🇳🇱|144.68
+      - REALITY|@ConfigsHUB|🇬🇧|157.89
+      - REALITY|@azadnet|🇺🇸|310.55
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - REALITY|@ProxyFn|🇨🇭|153.64
+      - REALITY|@internet4iran|🇩🇪|158.61
+      - REALITY|@v2rayngvpn|🇹🇷|215.24
+      - REALITY|@v2ray1_ng|🇩🇪|159.64
+      - REALITY|@proxy_kafee|🇳🇱|144.68
+      - REALITY|@ConfigsHUB|🇬🇧|157.89
+      - REALITY|@azadnet|🇺🇸|310.55
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - REALITY|@ProxyFn|🇨🇭|153.64
+      - REALITY|@internet4iran|🇩🇪|158.61
+      - REALITY|@v2rayngvpn|🇹🇷|215.24
+      - REALITY|@v2ray1_ng|🇩🇪|159.64
+      - REALITY|@proxy_kafee|🇳🇱|144.68
+      - REALITY|@ConfigsHUB|🇬🇧|157.89
+      - REALITY|@azadnet|🇺🇸|310.55
+rules:
+  - MATCH,MANUAL
