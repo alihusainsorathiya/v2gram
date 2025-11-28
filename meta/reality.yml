@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@ProxyFn|🇨🇭|143.51
+  - name: REALITY|@ProxyFn|🇨🇭|120.76
     server: 193.168.144.46
     port: 443
     type: vless
@@ -45,7 +45,7 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|127.99
+  - name: REALITY|@internet4iran|🇩🇪|125.15
     server: 128.140.49.220
     port: 443
     type: vless
@@ -56,7 +56,7 @@ proxies:
     skip-cert-verify: true
     servername: www.speedtest.net
     udp: true
-  - name: REALITY|@v2rayNG_Matsuri|🇩🇪|140.33
+  - name: REALITY|@v2rayNG_Matsuri|🇩🇪|126.52
     server: 85.192.63.57
     port: 443
     type: vless
@@ -67,7 +67,7 @@ proxies:
     skip-cert-verify: true
     servername: web.max.ru
     udp: true
-  - name: REALITY|@proxy_kafee|🇷🇺|197.95
+  - name: REALITY|@proxy_kafee|🇷🇺|344.24
     server: wolfy.ufavpn.ru
     port: 27121
     type: vless
@@ -77,14 +77,28 @@ proxies:
     skip-cert-verify: true
     servername: www.ok.ru
     udp: true
+  - name: REALITY|@ConfigsHUB|🇩🇪|124.15
+    server: 91.107.143.3
+    port: 443
+    type: vless
+    uuid: 299b2817-019f-4891-9adc-9200e591852f
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: tabdeal.org
+    network: grpc
+    grpc-opts:
+      grpc-service-name: /
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|143.51
-      - REALITY|@internet4iran|🇩🇪|127.99
-      - REALITY|@v2rayNG_Matsuri|🇩🇪|140.33
-      - REALITY|@proxy_kafee|🇷🇺|197.95
+      - REALITY|@ProxyFn|🇨🇭|120.76
+      - REALITY|@internet4iran|🇩🇪|125.15
+      - REALITY|@v2rayNG_Matsuri|🇩🇪|126.52
+      - REALITY|@proxy_kafee|🇷🇺|344.24
+      - REALITY|@ConfigsHUB|🇩🇪|124.15
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -95,28 +109,31 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|143.51
-      - REALITY|@internet4iran|🇩🇪|127.99
-      - REALITY|@v2rayNG_Matsuri|🇩🇪|140.33
-      - REALITY|@proxy_kafee|🇷🇺|197.95
+      - REALITY|@ProxyFn|🇨🇭|120.76
+      - REALITY|@internet4iran|🇩🇪|125.15
+      - REALITY|@v2rayNG_Matsuri|🇩🇪|126.52
+      - REALITY|@proxy_kafee|🇷🇺|344.24
+      - REALITY|@ConfigsHUB|🇩🇪|124.15
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|143.51
-      - REALITY|@internet4iran|🇩🇪|127.99
-      - REALITY|@v2rayNG_Matsuri|🇩🇪|140.33
-      - REALITY|@proxy_kafee|🇷🇺|197.95
+      - REALITY|@ProxyFn|🇨🇭|120.76
+      - REALITY|@internet4iran|🇩🇪|125.15
+      - REALITY|@v2rayNG_Matsuri|🇩🇪|126.52
+      - REALITY|@proxy_kafee|🇷🇺|344.24
+      - REALITY|@ConfigsHUB|🇩🇪|124.15
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|143.51
-      - REALITY|@internet4iran|🇩🇪|127.99
-      - REALITY|@v2rayNG_Matsuri|🇩🇪|140.33
-      - REALITY|@proxy_kafee|🇷🇺|197.95
+      - REALITY|@ProxyFn|🇨🇭|120.76
+      - REALITY|@internet4iran|🇩🇪|125.15
+      - REALITY|@v2rayNG_Matsuri|🇩🇪|126.52
+      - REALITY|@proxy_kafee|🇷🇺|344.24
+      - REALITY|@ConfigsHUB|🇩🇪|124.15
 rules:
   - MATCH,MANUAL
