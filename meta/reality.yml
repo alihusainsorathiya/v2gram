@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@ProxyFn|🇨🇭|156
+  - name: REALITY|@ProxyFn|🇨🇭|111.05
     server: 193.168.144.46
     port: 443
     type: vless
@@ -45,7 +45,18 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|176.16
+  - name: REALITY|@WomanLifeFreedomVPN|🇨🇦|179.45
+    server: icloud.wlftest.xyz
+    port: 443
+    type: vless
+    uuid: 85399fea-2ee3-51b5-ad4e-d8b78a2cf1d9
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: www.icloud.com
+    udp: true
+  - name: REALITY|@internet4iran|🇩🇪|108.8
     server: 128.140.49.220
     port: 443
     type: vless
@@ -56,7 +67,18 @@ proxies:
     skip-cert-verify: true
     servername: www.speedtest.net
     udp: true
-  - name: REALITY|@proxy_kafee|🇷🇺|391.87
+  - name: REALITY|@v2rayNG_Matsuri|🇩🇪|102.93
+    server: 85.192.63.57
+    port: 443
+    type: vless
+    uuid: 5da1b2d1-5367-46fd-a905-5ff5e0bd2f1e
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: web.max.ru
+    udp: true
+  - name: REALITY|@proxy_kafee|🇷🇺|307.93
     server: wolfy.ufavpn.ru
     port: 27121
     type: vless
@@ -66,25 +88,15 @@ proxies:
     skip-cert-verify: true
     servername: www.ok.ru
     udp: true
-  - name: REALITY|@hope_net|🇳🇴|156.77
-    server: 185.14.97.152
-    port: 443
-    type: vless
-    uuid: 30839e94-8a2f-495b-a20d-d49828160500
-    cipher: auto
-    tls: false
-    flow: xtls-rprx-vision
-    skip-cert-verify: true
-    servername: cloudflare.com
-    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|156
-      - REALITY|@internet4iran|🇩🇪|176.16
-      - REALITY|@proxy_kafee|🇷🇺|391.87
-      - REALITY|@hope_net|🇳🇴|156.77
+      - REALITY|@ProxyFn|🇨🇭|111.05
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|179.45
+      - REALITY|@internet4iran|🇩🇪|108.8
+      - REALITY|@v2rayNG_Matsuri|🇩🇪|102.93
+      - REALITY|@proxy_kafee|🇷🇺|307.93
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -95,28 +107,31 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|156
-      - REALITY|@internet4iran|🇩🇪|176.16
-      - REALITY|@proxy_kafee|🇷🇺|391.87
-      - REALITY|@hope_net|🇳🇴|156.77
+      - REALITY|@ProxyFn|🇨🇭|111.05
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|179.45
+      - REALITY|@internet4iran|🇩🇪|108.8
+      - REALITY|@v2rayNG_Matsuri|🇩🇪|102.93
+      - REALITY|@proxy_kafee|🇷🇺|307.93
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|156
-      - REALITY|@internet4iran|🇩🇪|176.16
-      - REALITY|@proxy_kafee|🇷🇺|391.87
-      - REALITY|@hope_net|🇳🇴|156.77
+      - REALITY|@ProxyFn|🇨🇭|111.05
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|179.45
+      - REALITY|@internet4iran|🇩🇪|108.8
+      - REALITY|@v2rayNG_Matsuri|🇩🇪|102.93
+      - REALITY|@proxy_kafee|🇷🇺|307.93
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|156
-      - REALITY|@internet4iran|🇩🇪|176.16
-      - REALITY|@proxy_kafee|🇷🇺|391.87
-      - REALITY|@hope_net|🇳🇴|156.77
+      - REALITY|@ProxyFn|🇨🇭|111.05
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|179.45
+      - REALITY|@internet4iran|🇩🇪|108.8
+      - REALITY|@v2rayNG_Matsuri|🇩🇪|102.93
+      - REALITY|@proxy_kafee|🇷🇺|307.93
 rules:
   - MATCH,MANUAL
