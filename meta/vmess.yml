@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@v2rayvmess| AHS -🇺🇸|17.9"
+  - name: "@v2rayvmess| AHS -🇺🇸|18.4"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -48,7 +48,7 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@v2ray1_ng| AHS -🇷🇺|172.54"
+  - name: "@v2ray1_ng| AHS -🇷🇺|167.81"
     server: 45.136.244.201
     port: 49934
     type: vmess
@@ -59,41 +59,46 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@ConfigsHUB| AHS -🇩🇪|134.65"
-    server: 5.231.56.98
-    port: 3721
+  - name: "@vpn_tehran| AHS -🇺🇸|33.62"
+    server: 57.129.59.195
+    port: 443
     type: vmess
-    uuid: 5f2f0765-f331-4d1e-8560-d2fb533dd6fe
+    uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
     alterId: 0
     cipher: auto
-    tls: false
+    tls: true
     skip-cert-verify: true
-    servername: ""
+    servername: kampong.org
     network: ws
     ws-opts:
-      path: /
+      path: linkvws
       headers:
-        Host: ""
+        Host: kampong.org
     udp: true
-  - name: "@ConfigsHUB| AHS -🇮🇷|214.21"
-    server: s4.cloudflare4wards.com
-    port: 2090
+  - name: "@ConfigsHUB| AHS -🇳🇱|124.26"
+    server: 178.62.220.64
+    port: 35416
     type: vmess
-    uuid: 89de0d98-042b-42ef-9717-b808144fc034
+    uuid: e017d65d-6da7-4cfe-bfaa-85b46158b82e
     alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: true
     servername: ""
+    network: http
+    http-opts:
+      method: GET
+      path:
+        - /
     udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|17.9"
-      - "@v2ray1_ng| AHS -🇷🇺|172.54"
-      - "@ConfigsHUB| AHS -🇩🇪|134.65"
-      - "@ConfigsHUB| AHS -🇮🇷|214.21"
+      - "@v2rayvmess| AHS -🇺🇸|18.4"
+      - "@v2ray1_ng| AHS -🇷🇺|167.81"
+      - "@vpn_tehran| AHS -🇺🇸|33.62"
+      - "@ConfigsHUB| AHS -🇳🇱|124.26"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -104,28 +109,28 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|17.9"
-      - "@v2ray1_ng| AHS -🇷🇺|172.54"
-      - "@ConfigsHUB| AHS -🇩🇪|134.65"
-      - "@ConfigsHUB| AHS -🇮🇷|214.21"
+      - "@v2rayvmess| AHS -🇺🇸|18.4"
+      - "@v2ray1_ng| AHS -🇷🇺|167.81"
+      - "@vpn_tehran| AHS -🇺🇸|33.62"
+      - "@ConfigsHUB| AHS -🇳🇱|124.26"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|17.9"
-      - "@v2ray1_ng| AHS -🇷🇺|172.54"
-      - "@ConfigsHUB| AHS -🇩🇪|134.65"
-      - "@ConfigsHUB| AHS -🇮🇷|214.21"
+      - "@v2rayvmess| AHS -🇺🇸|18.4"
+      - "@v2ray1_ng| AHS -🇷🇺|167.81"
+      - "@vpn_tehran| AHS -🇺🇸|33.62"
+      - "@ConfigsHUB| AHS -🇳🇱|124.26"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|17.9"
-      - "@v2ray1_ng| AHS -🇷🇺|172.54"
-      - "@ConfigsHUB| AHS -🇩🇪|134.65"
-      - "@ConfigsHUB| AHS -🇮🇷|214.21"
+      - "@v2rayvmess| AHS -🇺🇸|18.4"
+      - "@v2ray1_ng| AHS -🇷🇺|167.81"
+      - "@vpn_tehran| AHS -🇺🇸|33.62"
+      - "@ConfigsHUB| AHS -🇳🇱|124.26"
 rules:
   - MATCH,MANUAL
