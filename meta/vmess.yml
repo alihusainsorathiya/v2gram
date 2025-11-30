@@ -32,50 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@oneclickvpnkeys| AHS -🇺🇸|65.77"
-    server: 209.54.104.219
-    port: 43966
-    type: vmess
-    uuid: 0e3606ae-321a-4d0b-85ec-5f4352f4bc24
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: ""
-    udp: true
-  - name: "@oneclickvpnkeys| AHS -🇺🇸|60.94"
-    server: 209.126.84.189
-    port: 443
-    type: vmess
-    uuid: 2c981164-9b93-4bca-94ff-b78d3f8498d7
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: 209.126.84.189
-    network: ws
-    ws-opts:
-      path: /vmessws
-      headers:
-        Host: 209.126.84.189
-    udp: true
-  - name: "@oneclickvpnkeys| AHS -🇺🇸|239.36"
-    server: v2ray.codefyinc.com
-    port: 443
-    type: vmess
-    uuid: 2c981164-9b93-4bca-94ff-b78d3f8498d7
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: v2ray.codefyinc.com
-    network: ws
-    ws-opts:
-      path: /vmessws
-      headers:
-        Host: v2ray.codefyinc.com
-    udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|2.91"
+  - name: "@v2rayvmess| AHS -🇺🇸|12.98"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -91,7 +48,18 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@vpn_tehran| AHS -🇺🇸|37.08"
+  - name: "@v2ray1_ng| AHS -🇷🇺|154.89"
+    server: 45.136.244.201
+    port: 49934
+    type: vmess
+    uuid: 90afa47d-341a-497d-ae25-1d81258804d5
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@vpn_tehran| AHS -🇺🇸|88.24"
     server: 57.129.59.195
     port: 443
     type: vmess
@@ -107,27 +75,13 @@ proxies:
       headers:
         Host: kampong.org
     udp: true
-  - name: "@free1_vpn| AHS -🇷🇺|129.5"
-    server: 45.136.244.201
-    port: 49934
-    type: vmess
-    uuid: 90afa47d-341a-497d-ae25-1d81258804d5
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: ""
-    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@oneclickvpnkeys| AHS -🇺🇸|65.77"
-      - "@oneclickvpnkeys| AHS -🇺🇸|60.94"
-      - "@oneclickvpnkeys| AHS -🇺🇸|239.36"
-      - "@v2rayvmess| AHS -🇺🇸|2.91"
-      - "@vpn_tehran| AHS -🇺🇸|37.08"
-      - "@free1_vpn| AHS -🇷🇺|129.5"
+      - "@v2rayvmess| AHS -🇺🇸|12.98"
+      - "@v2ray1_ng| AHS -🇷🇺|154.89"
+      - "@vpn_tehran| AHS -🇺🇸|88.24"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -138,34 +92,25 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@oneclickvpnkeys| AHS -🇺🇸|65.77"
-      - "@oneclickvpnkeys| AHS -🇺🇸|60.94"
-      - "@oneclickvpnkeys| AHS -🇺🇸|239.36"
-      - "@v2rayvmess| AHS -🇺🇸|2.91"
-      - "@vpn_tehran| AHS -🇺🇸|37.08"
-      - "@free1_vpn| AHS -🇷🇺|129.5"
+      - "@v2rayvmess| AHS -🇺🇸|12.98"
+      - "@v2ray1_ng| AHS -🇷🇺|154.89"
+      - "@vpn_tehran| AHS -🇺🇸|88.24"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@oneclickvpnkeys| AHS -🇺🇸|65.77"
-      - "@oneclickvpnkeys| AHS -🇺🇸|60.94"
-      - "@oneclickvpnkeys| AHS -🇺🇸|239.36"
-      - "@v2rayvmess| AHS -🇺🇸|2.91"
-      - "@vpn_tehran| AHS -🇺🇸|37.08"
-      - "@free1_vpn| AHS -🇷🇺|129.5"
+      - "@v2rayvmess| AHS -🇺🇸|12.98"
+      - "@v2ray1_ng| AHS -🇷🇺|154.89"
+      - "@vpn_tehran| AHS -🇺🇸|88.24"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@oneclickvpnkeys| AHS -🇺🇸|65.77"
-      - "@oneclickvpnkeys| AHS -🇺🇸|60.94"
-      - "@oneclickvpnkeys| AHS -🇺🇸|239.36"
-      - "@v2rayvmess| AHS -🇺🇸|2.91"
-      - "@vpn_tehran| AHS -🇺🇸|37.08"
-      - "@free1_vpn| AHS -🇷🇺|129.5"
+      - "@v2rayvmess| AHS -🇺🇸|12.98"
+      - "@v2ray1_ng| AHS -🇷🇺|154.89"
+      - "@vpn_tehran| AHS -🇺🇸|88.24"
 rules:
   - MATCH,MANUAL
