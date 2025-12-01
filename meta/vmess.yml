@@ -32,7 +32,29 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@v2rayvmess| AHS -🇺🇸|15.15"
+  - name: "@oneclickvpnkeys| AHS -🇩🇪|594.86"
+    server: cpanel.navar1.ir
+    port: 100
+    type: vmess
+    uuid: 26402bc7-7895-4dd0-ae6e-151a00c71145
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@oneclickvpnkeys| AHS -🇲🇽|42.25"
+    server: 216.238.89.53
+    port: 57283
+    type: vmess
+    uuid: 1a5aafc0-6482-451d-fe76-6875b7818579
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|9.53"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -48,7 +70,7 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@vpn_tehran| AHS -🇺🇸|205.29"
+  - name: "@vpn_tehran| AHS -🇺🇸|121.13"
     server: 57.129.59.195
     port: 443
     type: vmess
@@ -64,12 +86,26 @@ proxies:
       headers:
         Host: kampong.org
     udp: true
+  - name: "@ConfigsHUB| AHS -🇩🇪|8.99"
+    server: 82.198.246.97
+    port: 180
+    type: vmess
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|15.15"
-      - "@vpn_tehran| AHS -🇺🇸|205.29"
+      - "@oneclickvpnkeys| AHS -🇩🇪|594.86"
+      - "@oneclickvpnkeys| AHS -🇲🇽|42.25"
+      - "@v2rayvmess| AHS -🇺🇸|9.53"
+      - "@vpn_tehran| AHS -🇺🇸|121.13"
+      - "@ConfigsHUB| AHS -🇩🇪|8.99"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -80,22 +116,31 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|15.15"
-      - "@vpn_tehran| AHS -🇺🇸|205.29"
+      - "@oneclickvpnkeys| AHS -🇩🇪|594.86"
+      - "@oneclickvpnkeys| AHS -🇲🇽|42.25"
+      - "@v2rayvmess| AHS -🇺🇸|9.53"
+      - "@vpn_tehran| AHS -🇺🇸|121.13"
+      - "@ConfigsHUB| AHS -🇩🇪|8.99"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|15.15"
-      - "@vpn_tehran| AHS -🇺🇸|205.29"
+      - "@oneclickvpnkeys| AHS -🇩🇪|594.86"
+      - "@oneclickvpnkeys| AHS -🇲🇽|42.25"
+      - "@v2rayvmess| AHS -🇺🇸|9.53"
+      - "@vpn_tehran| AHS -🇺🇸|121.13"
+      - "@ConfigsHUB| AHS -🇩🇪|8.99"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|15.15"
-      - "@vpn_tehran| AHS -🇺🇸|205.29"
+      - "@oneclickvpnkeys| AHS -🇩🇪|594.86"
+      - "@oneclickvpnkeys| AHS -🇲🇽|42.25"
+      - "@v2rayvmess| AHS -🇺🇸|9.53"
+      - "@vpn_tehran| AHS -🇺🇸|121.13"
+      - "@ConfigsHUB| AHS -🇩🇪|8.99"
 rules:
   - MATCH,MANUAL
