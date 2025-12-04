@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@oneclickvpnkeys| AHS -🇩🇪|156.46"
+  - name: "@oneclickvpnkeys| AHS -🇩🇪|163.27"
     server: 85.195.101.122
     port: 40878
     type: vmess
@@ -43,7 +43,23 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|2.15"
+  - name: "@oneclickvpnkeys| AHS -🇭🇰|158.43"
+    server: 8.210.134.183
+    port: 3721
+    type: vmess
+    uuid: e72f5c6b-220f-40b3-a115-2d81473458cf
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: ""
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|2.44"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -59,7 +75,7 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@v2ray1_ng| AHS -🇸🇬|228.27"
+  - name: "@v2ray1_ng| AHS -🇸🇬|235.81"
     server: 82.197.69.131
     port: 39674
     type: vmess
@@ -70,7 +86,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@vpn_tehran| AHS -🇺🇸|287.06"
+  - name: "@vpn_tehran| AHS -🇺🇸|105.32"
     server: 57.129.59.195
     port: 443
     type: vmess
@@ -90,10 +106,11 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@oneclickvpnkeys| AHS -🇩🇪|156.46"
-      - "@v2rayvmess| AHS -🇺🇸|2.15"
-      - "@v2ray1_ng| AHS -🇸🇬|228.27"
-      - "@vpn_tehran| AHS -🇺🇸|287.06"
+      - "@oneclickvpnkeys| AHS -🇩🇪|163.27"
+      - "@oneclickvpnkeys| AHS -🇭🇰|158.43"
+      - "@v2rayvmess| AHS -🇺🇸|2.44"
+      - "@v2ray1_ng| AHS -🇸🇬|235.81"
+      - "@vpn_tehran| AHS -🇺🇸|105.32"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -104,28 +121,31 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@oneclickvpnkeys| AHS -🇩🇪|156.46"
-      - "@v2rayvmess| AHS -🇺🇸|2.15"
-      - "@v2ray1_ng| AHS -🇸🇬|228.27"
-      - "@vpn_tehran| AHS -🇺🇸|287.06"
+      - "@oneclickvpnkeys| AHS -🇩🇪|163.27"
+      - "@oneclickvpnkeys| AHS -🇭🇰|158.43"
+      - "@v2rayvmess| AHS -🇺🇸|2.44"
+      - "@v2ray1_ng| AHS -🇸🇬|235.81"
+      - "@vpn_tehran| AHS -🇺🇸|105.32"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@oneclickvpnkeys| AHS -🇩🇪|156.46"
-      - "@v2rayvmess| AHS -🇺🇸|2.15"
-      - "@v2ray1_ng| AHS -🇸🇬|228.27"
-      - "@vpn_tehran| AHS -🇺🇸|287.06"
+      - "@oneclickvpnkeys| AHS -🇩🇪|163.27"
+      - "@oneclickvpnkeys| AHS -🇭🇰|158.43"
+      - "@v2rayvmess| AHS -🇺🇸|2.44"
+      - "@v2ray1_ng| AHS -🇸🇬|235.81"
+      - "@vpn_tehran| AHS -🇺🇸|105.32"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@oneclickvpnkeys| AHS -🇩🇪|156.46"
-      - "@v2rayvmess| AHS -🇺🇸|2.15"
-      - "@v2ray1_ng| AHS -🇸🇬|228.27"
-      - "@vpn_tehran| AHS -🇺🇸|287.06"
+      - "@oneclickvpnkeys| AHS -🇩🇪|163.27"
+      - "@oneclickvpnkeys| AHS -🇭🇰|158.43"
+      - "@v2rayvmess| AHS -🇺🇸|2.44"
+      - "@v2ray1_ng| AHS -🇸🇬|235.81"
+      - "@vpn_tehran| AHS -🇺🇸|105.32"
 rules:
   - MATCH,MANUAL
