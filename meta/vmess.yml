@@ -32,23 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@oneclickvpnkeys| AHS -🇭🇰|208.56"
-    server: 8.218.215.94
-    port: 4728
-    type: vmess
-    uuid: 640be4ab-e4d8-4385-aaf2-23296333bd77
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: ""
-    network: ws
-    ws-opts:
-      path: /
-      headers:
-        Host: ""
-    udp: true
-  - name: "@oneclickvpnkeys| AHS -🇭🇰|207.39"
+  - name: "@oneclickvpnkeys| AHS -🇭🇰|205.45"
     server: 8.218.215.94
     port: 3721
     type: vmess
@@ -64,7 +48,34 @@ proxies:
       headers:
         Host: ""
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|2.97"
+  - name: "@oneclickvpnkeys| AHS -🇳🇱|95.06"
+    server: cg1c13.waimaojd.com
+    port: 443
+    type: vmess
+    uuid: 091e7354-f07f-44aa-a443-4ad43f51a9f9
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: cg1c13.waimaojd.com
+    network: ws
+    ws-opts:
+      path: /api/v1/graphql
+      headers:
+        Host: cg1c13.waimaojd.com
+    udp: true
+  - name: "@oneclickvpnkeys| AHS -🇪🇸|73.56"
+    server: 208.76.223.218
+    port: 40433
+    type: vmess
+    uuid: d8fd8955-78db-49ba-d86f-3e4729f6ac4d
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|6.06"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -80,30 +91,48 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@hope_net| AHS -🇩🇪|194.4"
-    server: 172.67.219.194
+  - name: "@v2ray1_ng| AHS -🇺🇸|132.41"
+    server: 209.126.84.189
     port: 443
     type: vmess
-    uuid: b321fd5d-e6ec-4293-a644-164e3885f52e
+    uuid: 2c981164-9b93-4bca-94ff-b78d3f8498d7
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: 209.126.84.189
+    network: ws
+    ws-opts:
+      path: /vmessws
+      headers:
+        Host: 209.126.84.189
+    udp: true
+  - name: "@hope_net| AHS -🇩🇪|93.91"
+    server: 104.21.82.17
+    port: 443
+    type: vmess
+    uuid: bc864078-dcf3-4bf4-8dbf-ca9f200b56be
     alterId: 0
     cipher: auto
     tls: true
     skip-cert-verify: true
-    servername: adenc36v.xtooltech.cfd
+    servername: gwdef.sbs
     network: ws
     ws-opts:
       path: /linkws
       headers:
-        Host: adenc36v.xtooltech.cfd
+        Host: gwdef.sbs
     udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@oneclickvpnkeys| AHS -🇭🇰|208.56"
-      - "@oneclickvpnkeys| AHS -🇭🇰|207.39"
-      - "@v2rayvmess| AHS -🇺🇸|2.97"
-      - "@hope_net| AHS -🇩🇪|194.4"
+      - "@oneclickvpnkeys| AHS -🇭🇰|205.45"
+      - "@oneclickvpnkeys| AHS -🇳🇱|95.06"
+      - "@oneclickvpnkeys| AHS -🇪🇸|73.56"
+      - "@v2rayvmess| AHS -🇺🇸|6.06"
+      - "@v2ray1_ng| AHS -🇺🇸|132.41"
+      - "@hope_net| AHS -🇩🇪|93.91"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -114,28 +143,34 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@oneclickvpnkeys| AHS -🇭🇰|208.56"
-      - "@oneclickvpnkeys| AHS -🇭🇰|207.39"
-      - "@v2rayvmess| AHS -🇺🇸|2.97"
-      - "@hope_net| AHS -🇩🇪|194.4"
+      - "@oneclickvpnkeys| AHS -🇭🇰|205.45"
+      - "@oneclickvpnkeys| AHS -🇳🇱|95.06"
+      - "@oneclickvpnkeys| AHS -🇪🇸|73.56"
+      - "@v2rayvmess| AHS -🇺🇸|6.06"
+      - "@v2ray1_ng| AHS -🇺🇸|132.41"
+      - "@hope_net| AHS -🇩🇪|93.91"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@oneclickvpnkeys| AHS -🇭🇰|208.56"
-      - "@oneclickvpnkeys| AHS -🇭🇰|207.39"
-      - "@v2rayvmess| AHS -🇺🇸|2.97"
-      - "@hope_net| AHS -🇩🇪|194.4"
+      - "@oneclickvpnkeys| AHS -🇭🇰|205.45"
+      - "@oneclickvpnkeys| AHS -🇳🇱|95.06"
+      - "@oneclickvpnkeys| AHS -🇪🇸|73.56"
+      - "@v2rayvmess| AHS -🇺🇸|6.06"
+      - "@v2ray1_ng| AHS -🇺🇸|132.41"
+      - "@hope_net| AHS -🇩🇪|93.91"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@oneclickvpnkeys| AHS -🇭🇰|208.56"
-      - "@oneclickvpnkeys| AHS -🇭🇰|207.39"
-      - "@v2rayvmess| AHS -🇺🇸|2.97"
-      - "@hope_net| AHS -🇩🇪|194.4"
+      - "@oneclickvpnkeys| AHS -🇭🇰|205.45"
+      - "@oneclickvpnkeys| AHS -🇳🇱|95.06"
+      - "@oneclickvpnkeys| AHS -🇪🇸|73.56"
+      - "@v2rayvmess| AHS -🇺🇸|6.06"
+      - "@v2ray1_ng| AHS -🇺🇸|132.41"
+      - "@hope_net| AHS -🇩🇪|93.91"
 rules:
   - MATCH,MANUAL
