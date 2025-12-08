@@ -32,7 +32,39 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@oneclickvpnkeys| AHS -🇪🇸|140.25"
+  - name: "@oneclickvpnkeys| AHS -🇭🇰|204.86"
+    server: 8.218.215.94
+    port: 3721
+    type: vmess
+    uuid: aa4fa400-f2d3-4e52-94a4-a28fbc8295f3
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: ""
+    udp: true
+  - name: "@oneclickvpnkeys| AHS -🇳🇱|104.39"
+    server: cg1c13.waimaojd.com
+    port: 443
+    type: vmess
+    uuid: 091e7354-f07f-44aa-a443-4ad43f51a9f9
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: cg1c13.waimaojd.com
+    network: ws
+    ws-opts:
+      path: /api/v1/graphql
+      headers:
+        Host: cg1c13.waimaojd.com
+    udp: true
+  - name: "@oneclickvpnkeys| AHS -🇪🇸|73.97"
     server: 208.76.223.218
     port: 40433
     type: vmess
@@ -43,7 +75,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|2.53"
+  - name: "@v2rayvmess| AHS -🇺🇸|6.74"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -59,7 +91,7 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@v2ray1_ng| AHS -🇺🇸|143.22"
+  - name: "@v2ray1_ng| AHS -🇺🇸|127.81"
     server: 209.126.84.189
     port: 443
     type: vmess
@@ -75,7 +107,18 @@ proxies:
       headers:
         Host: 209.126.84.189
     udp: true
-  - name: "@hope_net| AHS -🇩🇪|527.34"
+  - name: "@ConfigsHUB| AHS -🇮🇷|286.17"
+    server: s5.cloudflare4wards.com
+    port: 2091
+    type: vmess
+    uuid: 0df52bd8-b1c0-43d5-b1a4-bb3b2f0419e2
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@hope_net| AHS -🇩🇪|303.43"
     server: 104.21.82.17
     port: 443
     type: vmess
@@ -95,10 +138,13 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@oneclickvpnkeys| AHS -🇪🇸|140.25"
-      - "@v2rayvmess| AHS -🇺🇸|2.53"
-      - "@v2ray1_ng| AHS -🇺🇸|143.22"
-      - "@hope_net| AHS -🇩🇪|527.34"
+      - "@oneclickvpnkeys| AHS -🇭🇰|204.86"
+      - "@oneclickvpnkeys| AHS -🇳🇱|104.39"
+      - "@oneclickvpnkeys| AHS -🇪🇸|73.97"
+      - "@v2rayvmess| AHS -🇺🇸|6.74"
+      - "@v2ray1_ng| AHS -🇺🇸|127.81"
+      - "@ConfigsHUB| AHS -🇮🇷|286.17"
+      - "@hope_net| AHS -🇩🇪|303.43"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -109,28 +155,37 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@oneclickvpnkeys| AHS -🇪🇸|140.25"
-      - "@v2rayvmess| AHS -🇺🇸|2.53"
-      - "@v2ray1_ng| AHS -🇺🇸|143.22"
-      - "@hope_net| AHS -🇩🇪|527.34"
+      - "@oneclickvpnkeys| AHS -🇭🇰|204.86"
+      - "@oneclickvpnkeys| AHS -🇳🇱|104.39"
+      - "@oneclickvpnkeys| AHS -🇪🇸|73.97"
+      - "@v2rayvmess| AHS -🇺🇸|6.74"
+      - "@v2ray1_ng| AHS -🇺🇸|127.81"
+      - "@ConfigsHUB| AHS -🇮🇷|286.17"
+      - "@hope_net| AHS -🇩🇪|303.43"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@oneclickvpnkeys| AHS -🇪🇸|140.25"
-      - "@v2rayvmess| AHS -🇺🇸|2.53"
-      - "@v2ray1_ng| AHS -🇺🇸|143.22"
-      - "@hope_net| AHS -🇩🇪|527.34"
+      - "@oneclickvpnkeys| AHS -🇭🇰|204.86"
+      - "@oneclickvpnkeys| AHS -🇳🇱|104.39"
+      - "@oneclickvpnkeys| AHS -🇪🇸|73.97"
+      - "@v2rayvmess| AHS -🇺🇸|6.74"
+      - "@v2ray1_ng| AHS -🇺🇸|127.81"
+      - "@ConfigsHUB| AHS -🇮🇷|286.17"
+      - "@hope_net| AHS -🇩🇪|303.43"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@oneclickvpnkeys| AHS -🇪🇸|140.25"
-      - "@v2rayvmess| AHS -🇺🇸|2.53"
-      - "@v2ray1_ng| AHS -🇺🇸|143.22"
-      - "@hope_net| AHS -🇩🇪|527.34"
+      - "@oneclickvpnkeys| AHS -🇭🇰|204.86"
+      - "@oneclickvpnkeys| AHS -🇳🇱|104.39"
+      - "@oneclickvpnkeys| AHS -🇪🇸|73.97"
+      - "@v2rayvmess| AHS -🇺🇸|6.74"
+      - "@v2ray1_ng| AHS -🇺🇸|127.81"
+      - "@ConfigsHUB| AHS -🇮🇷|286.17"
+      - "@hope_net| AHS -🇩🇪|303.43"
 rules:
   - MATCH,MANUAL
