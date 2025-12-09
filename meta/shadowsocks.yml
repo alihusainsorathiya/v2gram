@@ -1,0 +1,138 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: "@customv2ray| AHS -🇬🇧|134.79"
+    server: 82.38.31.217
+    port: 8080
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: "@vmess_vless_v2rayng| AHS -🇱🇹|139.62"
+    server: 45.87.175.171
+    port: 8080
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: cvII85TrW6n0OGyfpHVS1u
+    udp: true
+  - name: "@OutlineVpnOfficial| AHS -🇲🇰|165.82"
+    server: 46.183.185.37
+    port: 990
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: ARgvGZywA+gacgGV26Bvmu05+wZmRW/j+AdU+Z8Bt44=
+    udp: true
+  - name: "@OutlineVpnOfficial| AHS -🇲🇩|138.74"
+    server: 178.23.190.238
+    port: 443
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: uo7EbtqIwgZXXHmMv5LbLcOxptyPlNkh
+    udp: true
+  - name: "@OutlineVpnOfficial| AHS -🇱🇹|130.3"
+    server: 45.87.175.181
+    port: 8080
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: 4a2rfixophdjffa8KVA4Aa
+    udp: true
+  - name: "@v2rayngrit| AHS -🇨🇾|193.26"
+    server: 134.255.210.49
+    port: 990
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: f8f7aCzcPKbsF8p3
+    udp: true
+  - name: "@v2rayngrit| AHS -🇺🇸|19.54"
+    server: 71.19.148.143
+    port: 443
+    type: ss
+    cipher: chacha20-ietf-poly1305
+    password: p78naCf2EfOlRSLTX0wFVx
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - "@customv2ray| AHS -🇬🇧|134.79"
+      - "@vmess_vless_v2rayng| AHS -🇱🇹|139.62"
+      - "@OutlineVpnOfficial| AHS -🇲🇰|165.82"
+      - "@OutlineVpnOfficial| AHS -🇲🇩|138.74"
+      - "@OutlineVpnOfficial| AHS -🇱🇹|130.3"
+      - "@v2rayngrit| AHS -🇨🇾|193.26"
+      - "@v2rayngrit| AHS -🇺🇸|19.54"
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@customv2ray| AHS -🇬🇧|134.79"
+      - "@vmess_vless_v2rayng| AHS -🇱🇹|139.62"
+      - "@OutlineVpnOfficial| AHS -🇲🇰|165.82"
+      - "@OutlineVpnOfficial| AHS -🇲🇩|138.74"
+      - "@OutlineVpnOfficial| AHS -🇱🇹|130.3"
+      - "@v2rayngrit| AHS -🇨🇾|193.26"
+      - "@v2rayngrit| AHS -🇺🇸|19.54"
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - "@customv2ray| AHS -🇬🇧|134.79"
+      - "@vmess_vless_v2rayng| AHS -🇱🇹|139.62"
+      - "@OutlineVpnOfficial| AHS -🇲🇰|165.82"
+      - "@OutlineVpnOfficial| AHS -🇲🇩|138.74"
+      - "@OutlineVpnOfficial| AHS -🇱🇹|130.3"
+      - "@v2rayngrit| AHS -🇨🇾|193.26"
+      - "@v2rayngrit| AHS -🇺🇸|19.54"
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "@customv2ray| AHS -🇬🇧|134.79"
+      - "@vmess_vless_v2rayng| AHS -🇱🇹|139.62"
+      - "@OutlineVpnOfficial| AHS -🇲🇰|165.82"
+      - "@OutlineVpnOfficial| AHS -🇲🇩|138.74"
+      - "@OutlineVpnOfficial| AHS -🇱🇹|130.3"
+      - "@v2rayngrit| AHS -🇨🇾|193.26"
+      - "@v2rayngrit| AHS -🇺🇸|19.54"
+rules:
+  - MATCH,MANUAL
