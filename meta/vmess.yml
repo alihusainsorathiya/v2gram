@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@v2rayvmess| AHS -🇺🇸|9.75"
+  - name: "@v2rayvmess| AHS -🇺🇸|13.26"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -48,7 +48,7 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@free1_vpn| AHS -🇺🇸|128.61"
+  - name: "@v2ray1_ng| AHS -🇺🇸|126.43"
     server: 209.126.84.189
     port: 443
     type: vmess
@@ -64,12 +64,29 @@ proxies:
       headers:
         Host: 209.126.84.189
     udp: true
+  - name: "@hope_net| AHS -🚩|14.09"
+    server: 104.18.202.250
+    port: 2052
+    type: vmess
+    uuid: 6c168fcc-2231-4f3b-8c1e-f6391692df4a
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: erfannewfreenodes.vdmmswyzmzigonvnjk443.workers.dev
+    network: ws
+    ws-opts:
+      path: /hms02.fxiaomi.sbs/link
+      headers:
+        Host: erfannewfreenodes.vdmmswyzmzigonvnjk443.workers.dev
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|9.75"
-      - "@free1_vpn| AHS -🇺🇸|128.61"
+      - "@v2rayvmess| AHS -🇺🇸|13.26"
+      - "@v2ray1_ng| AHS -🇺🇸|126.43"
+      - "@hope_net| AHS -🚩|14.09"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -80,22 +97,25 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|9.75"
-      - "@free1_vpn| AHS -🇺🇸|128.61"
+      - "@v2rayvmess| AHS -🇺🇸|13.26"
+      - "@v2ray1_ng| AHS -🇺🇸|126.43"
+      - "@hope_net| AHS -🚩|14.09"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|9.75"
-      - "@free1_vpn| AHS -🇺🇸|128.61"
+      - "@v2rayvmess| AHS -🇺🇸|13.26"
+      - "@v2ray1_ng| AHS -🇺🇸|126.43"
+      - "@hope_net| AHS -🚩|14.09"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|9.75"
-      - "@free1_vpn| AHS -🇺🇸|128.61"
+      - "@v2rayvmess| AHS -🇺🇸|13.26"
+      - "@v2ray1_ng| AHS -🇺🇸|126.43"
+      - "@hope_net| AHS -🚩|14.09"
 rules:
   - MATCH,MANUAL
