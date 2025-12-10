@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@ProxyFn|🇨🇭|142.09
+  - name: REALITY|@ProxyFn|🇨🇭|156.44
     server: 193.168.144.46
     port: 443
     type: vless
@@ -45,7 +45,7 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@Outline_Vpn|🇳🇱|136.31
+  - name: REALITY|@Outline_Vpn|🇳🇱|153.8
     server: 72.56.74.98
     port: 443
     type: vless
@@ -56,7 +56,7 @@ proxies:
     skip-cert-verify: true
     servername: sun6-22.userapi.com
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|140.37
+  - name: REALITY|@internet4iran|🇩🇪|158.51
     server: 128.140.49.220
     port: 443
     type: vless
@@ -67,7 +67,18 @@ proxies:
     skip-cert-verify: true
     servername: www.speedtest.net
     udp: true
-  - name: REALITY|@VmessProtocol|🇷🇺|179.39
+  - name: REALITY|@v2rayNG_Matsuri|🇳🇱|146.47
+    server: 91.84.118.16
+    port: 4443
+    type: vless
+    uuid: 3121850a-24aa-41f9-936d-dbdf10a3b31f
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: github.com
+    udp: true
+  - name: REALITY|@VmessProtocol|🇷🇺|180.22
     server: 89.23.123.17
     port: 4443
     type: vless
@@ -78,14 +89,27 @@ proxies:
     skip-cert-verify: true
     servername: github.com
     udp: true
+  - name: REALITY|@ConfigsHUB|🇩🇪|149.65
+    server: 50.7.156.62
+    port: 443
+    type: vless
+    uuid: 1b87c0be-ecf7-4737-b986-bdf40c607869
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: static.ngenix.net
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|142.09
-      - REALITY|@Outline_Vpn|🇳🇱|136.31
-      - REALITY|@internet4iran|🇩🇪|140.37
-      - REALITY|@VmessProtocol|🇷🇺|179.39
+      - REALITY|@ProxyFn|🇨🇭|156.44
+      - REALITY|@Outline_Vpn|🇳🇱|153.8
+      - REALITY|@internet4iran|🇩🇪|158.51
+      - REALITY|@v2rayNG_Matsuri|🇳🇱|146.47
+      - REALITY|@VmessProtocol|🇷🇺|180.22
+      - REALITY|@ConfigsHUB|🇩🇪|149.65
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -96,28 +120,34 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|142.09
-      - REALITY|@Outline_Vpn|🇳🇱|136.31
-      - REALITY|@internet4iran|🇩🇪|140.37
-      - REALITY|@VmessProtocol|🇷🇺|179.39
+      - REALITY|@ProxyFn|🇨🇭|156.44
+      - REALITY|@Outline_Vpn|🇳🇱|153.8
+      - REALITY|@internet4iran|🇩🇪|158.51
+      - REALITY|@v2rayNG_Matsuri|🇳🇱|146.47
+      - REALITY|@VmessProtocol|🇷🇺|180.22
+      - REALITY|@ConfigsHUB|🇩🇪|149.65
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|142.09
-      - REALITY|@Outline_Vpn|🇳🇱|136.31
-      - REALITY|@internet4iran|🇩🇪|140.37
-      - REALITY|@VmessProtocol|🇷🇺|179.39
+      - REALITY|@ProxyFn|🇨🇭|156.44
+      - REALITY|@Outline_Vpn|🇳🇱|153.8
+      - REALITY|@internet4iran|🇩🇪|158.51
+      - REALITY|@v2rayNG_Matsuri|🇳🇱|146.47
+      - REALITY|@VmessProtocol|🇷🇺|180.22
+      - REALITY|@ConfigsHUB|🇩🇪|149.65
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|142.09
-      - REALITY|@Outline_Vpn|🇳🇱|136.31
-      - REALITY|@internet4iran|🇩🇪|140.37
-      - REALITY|@VmessProtocol|🇷🇺|179.39
+      - REALITY|@ProxyFn|🇨🇭|156.44
+      - REALITY|@Outline_Vpn|🇳🇱|153.8
+      - REALITY|@internet4iran|🇩🇪|158.51
+      - REALITY|@v2rayNG_Matsuri|🇳🇱|146.47
+      - REALITY|@VmessProtocol|🇷🇺|180.22
+      - REALITY|@ConfigsHUB|🇩🇪|149.65
 rules:
   - MATCH,MANUAL
