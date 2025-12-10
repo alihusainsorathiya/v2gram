@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@v2rayvmess| AHS -🇺🇸|2.17"
+  - name: "@v2rayvmess| AHS -🇺🇸|2.07"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -48,7 +48,7 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@v2ray1_ng| AHS -🇺🇸|148.28"
+  - name: "@v2ray1_ng| AHS -🇺🇸|107.39"
     server: 209.126.84.189
     port: 443
     type: vmess
@@ -64,7 +64,18 @@ proxies:
       headers:
         Host: 209.126.84.189
     udp: true
-  - name: "@hope_net| AHS -🚩|2.49"
+  - name: "@ConfigsHUB| AHS -🇩🇪|120.01"
+    server: 91.99.27.55
+    port: 8880
+    type: vmess
+    uuid: f3025961-167b-4f49-e4e3-86505fe980fd
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@hope_net| AHS -🚩|2.81"
     server: Back.MsV2ray.online
     port: 80
     type: vmess
@@ -80,13 +91,31 @@ proxies:
       headers:
         Host: d396-flower-d396.megare7260.workers.dev
     udp: true
+  - name: "@hope_net| AHS -🚩|3.14"
+    server: 104.19.45.34
+    port: 2095
+    type: vmess
+    uuid: 7a737f41-b792-4260-94ff-3d864da67b80
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: onea.flha.ru
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: onea.flha.ru
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|2.17"
-      - "@v2ray1_ng| AHS -🇺🇸|148.28"
-      - "@hope_net| AHS -🚩|2.49"
+      - "@v2rayvmess| AHS -🇺🇸|2.07"
+      - "@v2ray1_ng| AHS -🇺🇸|107.39"
+      - "@ConfigsHUB| AHS -🇩🇪|120.01"
+      - "@hope_net| AHS -🚩|2.81"
+      - "@hope_net| AHS -🚩|3.14"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -97,25 +126,31 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|2.17"
-      - "@v2ray1_ng| AHS -🇺🇸|148.28"
-      - "@hope_net| AHS -🚩|2.49"
+      - "@v2rayvmess| AHS -🇺🇸|2.07"
+      - "@v2ray1_ng| AHS -🇺🇸|107.39"
+      - "@ConfigsHUB| AHS -🇩🇪|120.01"
+      - "@hope_net| AHS -🚩|2.81"
+      - "@hope_net| AHS -🚩|3.14"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|2.17"
-      - "@v2ray1_ng| AHS -🇺🇸|148.28"
-      - "@hope_net| AHS -🚩|2.49"
+      - "@v2rayvmess| AHS -🇺🇸|2.07"
+      - "@v2ray1_ng| AHS -🇺🇸|107.39"
+      - "@ConfigsHUB| AHS -🇩🇪|120.01"
+      - "@hope_net| AHS -🚩|2.81"
+      - "@hope_net| AHS -🚩|3.14"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|2.17"
-      - "@v2ray1_ng| AHS -🇺🇸|148.28"
-      - "@hope_net| AHS -🚩|2.49"
+      - "@v2rayvmess| AHS -🇺🇸|2.07"
+      - "@v2ray1_ng| AHS -🇺🇸|107.39"
+      - "@ConfigsHUB| AHS -🇩🇪|120.01"
+      - "@hope_net| AHS -🚩|2.81"
+      - "@hope_net| AHS -🚩|3.14"
 rules:
   - MATCH,MANUAL
