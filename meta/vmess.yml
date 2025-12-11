@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@oneclickvpnkeys| AHS -🇧🇷|152.21"
+  - name: "@oneclickvpnkeys| AHS -🇧🇷|135.38"
     server: 38.180.16.86
     port: 38039
     type: vmess
@@ -43,7 +43,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@oneclickvpnkeys| AHS -🇧🇷|152.7"
+  - name: "@oneclickvpnkeys| AHS -🇧🇷|132.9"
     server: 38.180.16.86
     port: 36236
     type: vmess
@@ -54,7 +54,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|18.37"
+  - name: "@v2rayvmess| AHS -🇺🇸|2.81"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -70,30 +70,54 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@hope_net| AHS -🚩|19.44"
-    server: 104.19.45.7
-    port: 2095
+  - name: "@ConfigsHUB| AHS -🇩🇪|66.86"
+    server: 82.198.246.97
+    port: 180
     type: vmess
-    uuid: 7a737f41-b792-4260-94ff-3d864da67b80
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
     alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: true
-    servername: onea.flha.ru
+    servername: ""
+    udp: true
+  - name: "@ConfigsHUB| AHS -🇰🇷|207.74"
+    server: seoul03.zgjok.com
+    port: 443
+    type: vmess
+    uuid: 72a0dac4-9689-4a57-b164-5c65bfa94772
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: seoul03.zgjok.com
     network: ws
     ws-opts:
       path: /
       headers:
-        Host: onea.flha.ru
+        Host: seoul03.zgjok.com
+    udp: true
+  - name: "@ConfigsHUB| AHS -🇩🇪|135.31"
+    server: a.confignor.site
+    port: 7443
+    type: vmess
+    uuid: efb1c287-3d68-4ee8-b139-865f7b9a04ce
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
     udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@oneclickvpnkeys| AHS -🇧🇷|152.21"
-      - "@oneclickvpnkeys| AHS -🇧🇷|152.7"
-      - "@v2rayvmess| AHS -🇺🇸|18.37"
-      - "@hope_net| AHS -🚩|19.44"
+      - "@oneclickvpnkeys| AHS -🇧🇷|135.38"
+      - "@oneclickvpnkeys| AHS -🇧🇷|132.9"
+      - "@v2rayvmess| AHS -🇺🇸|2.81"
+      - "@ConfigsHUB| AHS -🇩🇪|66.86"
+      - "@ConfigsHUB| AHS -🇰🇷|207.74"
+      - "@ConfigsHUB| AHS -🇩🇪|135.31"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -104,28 +128,34 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@oneclickvpnkeys| AHS -🇧🇷|152.21"
-      - "@oneclickvpnkeys| AHS -🇧🇷|152.7"
-      - "@v2rayvmess| AHS -🇺🇸|18.37"
-      - "@hope_net| AHS -🚩|19.44"
+      - "@oneclickvpnkeys| AHS -🇧🇷|135.38"
+      - "@oneclickvpnkeys| AHS -🇧🇷|132.9"
+      - "@v2rayvmess| AHS -🇺🇸|2.81"
+      - "@ConfigsHUB| AHS -🇩🇪|66.86"
+      - "@ConfigsHUB| AHS -🇰🇷|207.74"
+      - "@ConfigsHUB| AHS -🇩🇪|135.31"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@oneclickvpnkeys| AHS -🇧🇷|152.21"
-      - "@oneclickvpnkeys| AHS -🇧🇷|152.7"
-      - "@v2rayvmess| AHS -🇺🇸|18.37"
-      - "@hope_net| AHS -🚩|19.44"
+      - "@oneclickvpnkeys| AHS -🇧🇷|135.38"
+      - "@oneclickvpnkeys| AHS -🇧🇷|132.9"
+      - "@v2rayvmess| AHS -🇺🇸|2.81"
+      - "@ConfigsHUB| AHS -🇩🇪|66.86"
+      - "@ConfigsHUB| AHS -🇰🇷|207.74"
+      - "@ConfigsHUB| AHS -🇩🇪|135.31"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@oneclickvpnkeys| AHS -🇧🇷|152.21"
-      - "@oneclickvpnkeys| AHS -🇧🇷|152.7"
-      - "@v2rayvmess| AHS -🇺🇸|18.37"
-      - "@hope_net| AHS -🚩|19.44"
+      - "@oneclickvpnkeys| AHS -🇧🇷|135.38"
+      - "@oneclickvpnkeys| AHS -🇧🇷|132.9"
+      - "@v2rayvmess| AHS -🇺🇸|2.81"
+      - "@ConfigsHUB| AHS -🇩🇪|66.86"
+      - "@ConfigsHUB| AHS -🇰🇷|207.74"
+      - "@ConfigsHUB| AHS -🇩🇪|135.31"
 rules:
   - MATCH,MANUAL
