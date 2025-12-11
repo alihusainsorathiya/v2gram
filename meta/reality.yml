@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@ProxyFn|🇨🇭|112.23
+  - name: REALITY|@ProxyFn|🇨🇭|90.38
     server: 193.168.144.46
     port: 443
     type: vless
@@ -45,7 +45,7 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|110.97
+  - name: REALITY|@internet4iran|🇩🇪|92.27
     server: 128.140.49.220
     port: 443
     type: vless
@@ -56,7 +56,7 @@ proxies:
     skip-cert-verify: true
     servername: www.speedtest.net
     udp: true
-  - name: REALITY|@v2ray1_ng|🇳🇱|460.12
+  - name: REALITY|@v2ray1_ng|🇳🇱|354.11
     server: hels3.vlessok.store
     port: 443
     type: vless
@@ -67,7 +67,7 @@ proxies:
     skip-cert-verify: true
     servername: disk.yandex.ru
     udp: true
-  - name: REALITY|@VmessProtocol|🇷🇺|143.7
+  - name: REALITY|@VmessProtocol|🇷🇺|129.68
     server: 217.16.18.50
     port: 443
     type: vless
@@ -78,7 +78,18 @@ proxies:
     skip-cert-verify: true
     servername: ozon.ru
     udp: true
-  - name: REALITY|@azadnet|🇷🇺|134.02
+  - name: REALITY|@proxy_kafee|🇷🇺|117.33
+    server: 89.23.123.17
+    port: 4443
+    type: vless
+    uuid: 3121850a-24aa-41f9-936d-dbdf10a3b31f
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: github.com
+    udp: true
+  - name: REALITY|@azadnet|🇷🇺|121.89
     server: 212.60.21.104
     port: 4443
     type: vless
@@ -93,11 +104,12 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|112.23
-      - REALITY|@internet4iran|🇩🇪|110.97
-      - REALITY|@v2ray1_ng|🇳🇱|460.12
-      - REALITY|@VmessProtocol|🇷🇺|143.7
-      - REALITY|@azadnet|🇷🇺|134.02
+      - REALITY|@ProxyFn|🇨🇭|90.38
+      - REALITY|@internet4iran|🇩🇪|92.27
+      - REALITY|@v2ray1_ng|🇳🇱|354.11
+      - REALITY|@VmessProtocol|🇷🇺|129.68
+      - REALITY|@proxy_kafee|🇷🇺|117.33
+      - REALITY|@azadnet|🇷🇺|121.89
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -108,31 +120,34 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|112.23
-      - REALITY|@internet4iran|🇩🇪|110.97
-      - REALITY|@v2ray1_ng|🇳🇱|460.12
-      - REALITY|@VmessProtocol|🇷🇺|143.7
-      - REALITY|@azadnet|🇷🇺|134.02
+      - REALITY|@ProxyFn|🇨🇭|90.38
+      - REALITY|@internet4iran|🇩🇪|92.27
+      - REALITY|@v2ray1_ng|🇳🇱|354.11
+      - REALITY|@VmessProtocol|🇷🇺|129.68
+      - REALITY|@proxy_kafee|🇷🇺|117.33
+      - REALITY|@azadnet|🇷🇺|121.89
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|112.23
-      - REALITY|@internet4iran|🇩🇪|110.97
-      - REALITY|@v2ray1_ng|🇳🇱|460.12
-      - REALITY|@VmessProtocol|🇷🇺|143.7
-      - REALITY|@azadnet|🇷🇺|134.02
+      - REALITY|@ProxyFn|🇨🇭|90.38
+      - REALITY|@internet4iran|🇩🇪|92.27
+      - REALITY|@v2ray1_ng|🇳🇱|354.11
+      - REALITY|@VmessProtocol|🇷🇺|129.68
+      - REALITY|@proxy_kafee|🇷🇺|117.33
+      - REALITY|@azadnet|🇷🇺|121.89
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|112.23
-      - REALITY|@internet4iran|🇩🇪|110.97
-      - REALITY|@v2ray1_ng|🇳🇱|460.12
-      - REALITY|@VmessProtocol|🇷🇺|143.7
-      - REALITY|@azadnet|🇷🇺|134.02
+      - REALITY|@ProxyFn|🇨🇭|90.38
+      - REALITY|@internet4iran|🇩🇪|92.27
+      - REALITY|@v2ray1_ng|🇳🇱|354.11
+      - REALITY|@VmessProtocol|🇷🇺|129.68
+      - REALITY|@proxy_kafee|🇷🇺|117.33
+      - REALITY|@azadnet|🇷🇺|121.89
 rules:
   - MATCH,MANUAL
