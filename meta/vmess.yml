@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@oneclickvpnkeys| AHS -🇫🇷|138.03"
+  - name: "@oneclickvpnkeys| AHS -🇫🇷|74.25"
     server: 57.128.189.143
     port: 443
     type: vmess
@@ -48,7 +48,7 @@ proxies:
       headers:
         Host: ""
     udp: true
-  - name: "@oneclickvpnkeys| AHS -🇫🇷|137.69"
+  - name: "@oneclickvpnkeys| AHS -🇫🇷|76.03"
     server: 57.128.189.227
     port: 443
     type: vmess
@@ -64,7 +64,7 @@ proxies:
       headers:
         Host: ""
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|9.64"
+  - name: "@v2rayvmess| AHS -🇺🇸|2.62"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -80,7 +80,7 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@ConfigsHUB| AHS -🇩🇪|445.24"
+  - name: "@ConfigsHUB| AHS -🇩🇪|451.68"
     server: cpanel.navar1.ir
     port: 100
     type: vmess
@@ -89,16 +89,33 @@ proxies:
     cipher: auto
     tls: false
     skip-cert-verify: true
-    servername: cpanel.navar1.ir
+    servername: ""
+    udp: true
+  - name: "@hope_net| AHS -🚩|2.8"
+    server: 104.19.45.178
+    port: 2095
+    type: vmess
+    uuid: 7a737f41-b792-4260-94ff-3d864da67b80
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: onea.flha.ru
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: onea.flha.ru
     udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@oneclickvpnkeys| AHS -🇫🇷|138.03"
-      - "@oneclickvpnkeys| AHS -🇫🇷|137.69"
-      - "@v2rayvmess| AHS -🇺🇸|9.64"
-      - "@ConfigsHUB| AHS -🇩🇪|445.24"
+      - "@oneclickvpnkeys| AHS -🇫🇷|74.25"
+      - "@oneclickvpnkeys| AHS -🇫🇷|76.03"
+      - "@v2rayvmess| AHS -🇺🇸|2.62"
+      - "@ConfigsHUB| AHS -🇩🇪|451.68"
+      - "@hope_net| AHS -🚩|2.8"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -109,28 +126,31 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@oneclickvpnkeys| AHS -🇫🇷|138.03"
-      - "@oneclickvpnkeys| AHS -🇫🇷|137.69"
-      - "@v2rayvmess| AHS -🇺🇸|9.64"
-      - "@ConfigsHUB| AHS -🇩🇪|445.24"
+      - "@oneclickvpnkeys| AHS -🇫🇷|74.25"
+      - "@oneclickvpnkeys| AHS -🇫🇷|76.03"
+      - "@v2rayvmess| AHS -🇺🇸|2.62"
+      - "@ConfigsHUB| AHS -🇩🇪|451.68"
+      - "@hope_net| AHS -🚩|2.8"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@oneclickvpnkeys| AHS -🇫🇷|138.03"
-      - "@oneclickvpnkeys| AHS -🇫🇷|137.69"
-      - "@v2rayvmess| AHS -🇺🇸|9.64"
-      - "@ConfigsHUB| AHS -🇩🇪|445.24"
+      - "@oneclickvpnkeys| AHS -🇫🇷|74.25"
+      - "@oneclickvpnkeys| AHS -🇫🇷|76.03"
+      - "@v2rayvmess| AHS -🇺🇸|2.62"
+      - "@ConfigsHUB| AHS -🇩🇪|451.68"
+      - "@hope_net| AHS -🚩|2.8"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@oneclickvpnkeys| AHS -🇫🇷|138.03"
-      - "@oneclickvpnkeys| AHS -🇫🇷|137.69"
-      - "@v2rayvmess| AHS -🇺🇸|9.64"
-      - "@ConfigsHUB| AHS -🇩🇪|445.24"
+      - "@oneclickvpnkeys| AHS -🇫🇷|74.25"
+      - "@oneclickvpnkeys| AHS -🇫🇷|76.03"
+      - "@v2rayvmess| AHS -🇺🇸|2.62"
+      - "@ConfigsHUB| AHS -🇩🇪|451.68"
+      - "@hope_net| AHS -🚩|2.8"
 rules:
   - MATCH,MANUAL
