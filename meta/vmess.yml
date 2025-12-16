@@ -32,23 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@oneclickvpnkeys| AHS -🇷🇺|406.39"
-    server: 57.128.189.206
-    port: 443
-    type: vmess
-    uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: ads.x5.ru
-    network: ws
-    ws-opts:
-      path: /linkvws
-      headers:
-        Host: ads.x5.ru
-    udp: true
-  - name: "@oneclickvpnkeys| AHS -🇺🇸|7.73"
+  - name: "@oneclickvpnkeys| AHS -🇺🇸|21.08"
     server: 57.128.189.222
     port: 443
     type: vmess
@@ -64,7 +48,7 @@ proxies:
       headers:
         Host: github.com
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|6.54"
+  - name: "@v2rayvmess| AHS -🇺🇸|2.42"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -84,9 +68,8 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@oneclickvpnkeys| AHS -🇷🇺|406.39"
-      - "@oneclickvpnkeys| AHS -🇺🇸|7.73"
-      - "@v2rayvmess| AHS -🇺🇸|6.54"
+      - "@oneclickvpnkeys| AHS -🇺🇸|21.08"
+      - "@v2rayvmess| AHS -🇺🇸|2.42"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -97,25 +80,22 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@oneclickvpnkeys| AHS -🇷🇺|406.39"
-      - "@oneclickvpnkeys| AHS -🇺🇸|7.73"
-      - "@v2rayvmess| AHS -🇺🇸|6.54"
+      - "@oneclickvpnkeys| AHS -🇺🇸|21.08"
+      - "@v2rayvmess| AHS -🇺🇸|2.42"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@oneclickvpnkeys| AHS -🇷🇺|406.39"
-      - "@oneclickvpnkeys| AHS -🇺🇸|7.73"
-      - "@v2rayvmess| AHS -🇺🇸|6.54"
+      - "@oneclickvpnkeys| AHS -🇺🇸|21.08"
+      - "@v2rayvmess| AHS -🇺🇸|2.42"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@oneclickvpnkeys| AHS -🇷🇺|406.39"
-      - "@oneclickvpnkeys| AHS -🇺🇸|7.73"
-      - "@v2rayvmess| AHS -🇺🇸|6.54"
+      - "@oneclickvpnkeys| AHS -🇺🇸|21.08"
+      - "@v2rayvmess| AHS -🇺🇸|2.42"
 rules:
   - MATCH,MANUAL
