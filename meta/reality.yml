@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@ProxyFn|🇨🇭|93.92
+  - name: REALITY|@ProxyFn|🇨🇭|90.22
     server: 193.168.144.46
     port: 443
     type: vless
@@ -45,7 +45,18 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|92.61
+  - name: REALITY|@WomanLifeFreedomVPN|🇨🇦|70.67
+    server: icloud.wlftest.xyz
+    port: 443
+    type: vless
+    uuid: 85399fea-2ee3-51b5-ad4e-d8b78a2cf1d9
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: www.icloud.com
+    udp: true
+  - name: REALITY|@internet4iran|🇩🇪|92.76
     server: 128.140.49.220
     port: 443
     type: vless
@@ -56,7 +67,18 @@ proxies:
     skip-cert-verify: true
     servername: www.speedtest.net
     udp: true
-  - name: REALITY|@VmessProtocol|🇷🇺|133.83
+  - name: REALITY|@v2ray1_ng|🇩🇪|92.75
+    server: 91.99.106.117
+    port: 443
+    type: vless
+    uuid: 309fa273-6579-4cb2-9143-7cad50401eba
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: www.cloudflare.com
+    udp: true
+  - name: REALITY|@VmessProtocol|🇷🇺|125.33
     server: 192.144.57.246
     port: 4443
     type: vless
@@ -67,7 +89,7 @@ proxies:
     skip-cert-verify: true
     servername: github.com
     udp: true
-  - name: REALITY|@proxy_kafee|🇺🇸|97.36
+  - name: REALITY|@proxy_kafee|🇺🇸|102.62
     server: 64.188.115.181
     port: 26968
     type: vless
@@ -77,14 +99,28 @@ proxies:
     skip-cert-verify: true
     servername: stackoverflow.com
     udp: true
+  - name: REALITY|@ConfigsHUB|🇯🇵|270.41
+    server: t14.qifei.app
+    port: 443
+    type: vless
+    uuid: b98d4c6e-6770-4a31-8256-a4750cdea0e7
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: www.amazon.com
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|93.92
-      - REALITY|@internet4iran|🇩🇪|92.61
-      - REALITY|@VmessProtocol|🇷🇺|133.83
-      - REALITY|@proxy_kafee|🇺🇸|97.36
+      - REALITY|@ProxyFn|🇨🇭|90.22
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|70.67
+      - REALITY|@internet4iran|🇩🇪|92.76
+      - REALITY|@v2ray1_ng|🇩🇪|92.75
+      - REALITY|@VmessProtocol|🇷🇺|125.33
+      - REALITY|@proxy_kafee|🇺🇸|102.62
+      - REALITY|@ConfigsHUB|🇯🇵|270.41
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -95,28 +131,37 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|93.92
-      - REALITY|@internet4iran|🇩🇪|92.61
-      - REALITY|@VmessProtocol|🇷🇺|133.83
-      - REALITY|@proxy_kafee|🇺🇸|97.36
+      - REALITY|@ProxyFn|🇨🇭|90.22
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|70.67
+      - REALITY|@internet4iran|🇩🇪|92.76
+      - REALITY|@v2ray1_ng|🇩🇪|92.75
+      - REALITY|@VmessProtocol|🇷🇺|125.33
+      - REALITY|@proxy_kafee|🇺🇸|102.62
+      - REALITY|@ConfigsHUB|🇯🇵|270.41
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|93.92
-      - REALITY|@internet4iran|🇩🇪|92.61
-      - REALITY|@VmessProtocol|🇷🇺|133.83
-      - REALITY|@proxy_kafee|🇺🇸|97.36
+      - REALITY|@ProxyFn|🇨🇭|90.22
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|70.67
+      - REALITY|@internet4iran|🇩🇪|92.76
+      - REALITY|@v2ray1_ng|🇩🇪|92.75
+      - REALITY|@VmessProtocol|🇷🇺|125.33
+      - REALITY|@proxy_kafee|🇺🇸|102.62
+      - REALITY|@ConfigsHUB|🇯🇵|270.41
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|93.92
-      - REALITY|@internet4iran|🇩🇪|92.61
-      - REALITY|@VmessProtocol|🇷🇺|133.83
-      - REALITY|@proxy_kafee|🇺🇸|97.36
+      - REALITY|@ProxyFn|🇨🇭|90.22
+      - REALITY|@WomanLifeFreedomVPN|🇨🇦|70.67
+      - REALITY|@internet4iran|🇩🇪|92.76
+      - REALITY|@v2ray1_ng|🇩🇪|92.75
+      - REALITY|@VmessProtocol|🇷🇺|125.33
+      - REALITY|@proxy_kafee|🇺🇸|102.62
+      - REALITY|@ConfigsHUB|🇯🇵|270.41
 rules:
   - MATCH,MANUAL
