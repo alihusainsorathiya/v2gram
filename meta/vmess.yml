@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@oneclickvpnkeys| AHS -🇺🇸|20.3"
+  - name: "@oneclickvpnkeys| AHS -🇺🇸|25.75"
     server: 57.128.189.222
     port: 443
     type: vmess
@@ -48,7 +48,7 @@ proxies:
       headers:
         Host: github.com
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|2.11"
+  - name: "@v2rayvmess| AHS -🇺🇸|3.15"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -64,12 +64,29 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
+  - name: "@hope_net| AHS -🇭🇰|227.14"
+    server: 210.0.158.219
+    port: 12909
+    type: vmess
+    uuid: 8259cb1c-dd6c-4739-9c88-af550d977525
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: 19.lwdh.us
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: 19.lwdh.us
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@oneclickvpnkeys| AHS -🇺🇸|20.3"
-      - "@v2rayvmess| AHS -🇺🇸|2.11"
+      - "@oneclickvpnkeys| AHS -🇺🇸|25.75"
+      - "@v2rayvmess| AHS -🇺🇸|3.15"
+      - "@hope_net| AHS -🇭🇰|227.14"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -80,22 +97,25 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@oneclickvpnkeys| AHS -🇺🇸|20.3"
-      - "@v2rayvmess| AHS -🇺🇸|2.11"
+      - "@oneclickvpnkeys| AHS -🇺🇸|25.75"
+      - "@v2rayvmess| AHS -🇺🇸|3.15"
+      - "@hope_net| AHS -🇭🇰|227.14"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@oneclickvpnkeys| AHS -🇺🇸|20.3"
-      - "@v2rayvmess| AHS -🇺🇸|2.11"
+      - "@oneclickvpnkeys| AHS -🇺🇸|25.75"
+      - "@v2rayvmess| AHS -🇺🇸|3.15"
+      - "@hope_net| AHS -🇭🇰|227.14"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@oneclickvpnkeys| AHS -🇺🇸|20.3"
-      - "@v2rayvmess| AHS -🇺🇸|2.11"
+      - "@oneclickvpnkeys| AHS -🇺🇸|25.75"
+      - "@v2rayvmess| AHS -🇺🇸|3.15"
+      - "@hope_net| AHS -🇭🇰|227.14"
 rules:
   - MATCH,MANUAL
