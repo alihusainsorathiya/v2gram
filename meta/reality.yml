@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@ProxyFn|🇨🇭|141.38
+  - name: REALITY|@ProxyFn|🇨🇭|135.26
     server: 193.168.144.46
     port: 443
     type: vless
@@ -45,7 +45,7 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|136.78
+  - name: REALITY|@internet4iran|🇩🇪|136.97
     server: 128.140.49.220
     port: 443
     type: vless
@@ -56,8 +56,8 @@ proxies:
     skip-cert-verify: true
     servername: www.speedtest.net
     udp: true
-  - name: REALITY|@v2rayngvpn|🇳🇱|128.65
-    server: 165.140.119.117
+  - name: REALITY|@v2rayngvpn|🇵🇱|385.05
+    server: pl.srv.oplcdn.link
     port: 6443
     type: vless
     uuid: 3116cc23-0c39-4bb6-8154-d3f332e9017e
@@ -67,7 +67,7 @@ proxies:
     skip-cert-verify: true
     servername: debug.resolvertest.doh.umbrella.com
     udp: true
-  - name: REALITY|@VmessProtocol|🇷🇺|176.58
+  - name: REALITY|@VmessProtocol|🇷🇺|177.5
     server: 192.144.57.246
     port: 4443
     type: vless
@@ -78,7 +78,7 @@ proxies:
     skip-cert-verify: true
     servername: github.com
     udp: true
-  - name: REALITY|@proxy_kafee|🇩🇪|132.2
+  - name: REALITY|@proxy_kafee|🇩🇪|140.78
     server: movivoolom.movementvip.ir
     port: 2025
     type: vless
@@ -88,7 +88,17 @@ proxies:
     skip-cert-verify: true
     servername: movivoolom.movementvip.ir
     udp: true
-  - name: REALITY|@v2rayngrit|🇩🇪|370.59
+  - name: REALITY|@ConfigsHUB|🇫🇷|142.23
+    server: fra.germany-14.com
+    port: 2087
+    type: vless
+    uuid: 2b7ff221-0ea2-4474-ab4e-686e6a11dc65
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: tgju.org
+    udp: true
+  - name: REALITY|@v2rayngrit|🇩🇪|445.94
     server: 91.99.106.117
     port: 443
     type: vless
@@ -103,12 +113,13 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|141.38
-      - REALITY|@internet4iran|🇩🇪|136.78
-      - REALITY|@v2rayngvpn|🇳🇱|128.65
-      - REALITY|@VmessProtocol|🇷🇺|176.58
-      - REALITY|@proxy_kafee|🇩🇪|132.2
-      - REALITY|@v2rayngrit|🇩🇪|370.59
+      - REALITY|@ProxyFn|🇨🇭|135.26
+      - REALITY|@internet4iran|🇩🇪|136.97
+      - REALITY|@v2rayngvpn|🇵🇱|385.05
+      - REALITY|@VmessProtocol|🇷🇺|177.5
+      - REALITY|@proxy_kafee|🇩🇪|140.78
+      - REALITY|@ConfigsHUB|🇫🇷|142.23
+      - REALITY|@v2rayngrit|🇩🇪|445.94
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -119,34 +130,37 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|141.38
-      - REALITY|@internet4iran|🇩🇪|136.78
-      - REALITY|@v2rayngvpn|🇳🇱|128.65
-      - REALITY|@VmessProtocol|🇷🇺|176.58
-      - REALITY|@proxy_kafee|🇩🇪|132.2
-      - REALITY|@v2rayngrit|🇩🇪|370.59
+      - REALITY|@ProxyFn|🇨🇭|135.26
+      - REALITY|@internet4iran|🇩🇪|136.97
+      - REALITY|@v2rayngvpn|🇵🇱|385.05
+      - REALITY|@VmessProtocol|🇷🇺|177.5
+      - REALITY|@proxy_kafee|🇩🇪|140.78
+      - REALITY|@ConfigsHUB|🇫🇷|142.23
+      - REALITY|@v2rayngrit|🇩🇪|445.94
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|141.38
-      - REALITY|@internet4iran|🇩🇪|136.78
-      - REALITY|@v2rayngvpn|🇳🇱|128.65
-      - REALITY|@VmessProtocol|🇷🇺|176.58
-      - REALITY|@proxy_kafee|🇩🇪|132.2
-      - REALITY|@v2rayngrit|🇩🇪|370.59
+      - REALITY|@ProxyFn|🇨🇭|135.26
+      - REALITY|@internet4iran|🇩🇪|136.97
+      - REALITY|@v2rayngvpn|🇵🇱|385.05
+      - REALITY|@VmessProtocol|🇷🇺|177.5
+      - REALITY|@proxy_kafee|🇩🇪|140.78
+      - REALITY|@ConfigsHUB|🇫🇷|142.23
+      - REALITY|@v2rayngrit|🇩🇪|445.94
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|141.38
-      - REALITY|@internet4iran|🇩🇪|136.78
-      - REALITY|@v2rayngvpn|🇳🇱|128.65
-      - REALITY|@VmessProtocol|🇷🇺|176.58
-      - REALITY|@proxy_kafee|🇩🇪|132.2
-      - REALITY|@v2rayngrit|🇩🇪|370.59
+      - REALITY|@ProxyFn|🇨🇭|135.26
+      - REALITY|@internet4iran|🇩🇪|136.97
+      - REALITY|@v2rayngvpn|🇵🇱|385.05
+      - REALITY|@VmessProtocol|🇷🇺|177.5
+      - REALITY|@proxy_kafee|🇩🇪|140.78
+      - REALITY|@ConfigsHUB|🇫🇷|142.23
+      - REALITY|@v2rayngrit|🇩🇪|445.94
 rules:
   - MATCH,MANUAL
