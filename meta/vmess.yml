@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@v2rayvmess| AHS -🇺🇸|6.49"
+  - name: "@v2rayvmess| AHS -🇺🇸|6.22"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -48,11 +48,23 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
+  - name: "@azadnet| AHS -🇮🇳|242.9"
+    server: 103.97.203.220
+    port: 550
+    type: vmess
+    uuid: 9e0e83ca-0fbc-44b1-8024-0eb8f9414156
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|6.49"
+      - "@v2rayvmess| AHS -🇺🇸|6.22"
+      - "@azadnet| AHS -🇮🇳|242.9"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -63,19 +75,22 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|6.49"
+      - "@v2rayvmess| AHS -🇺🇸|6.22"
+      - "@azadnet| AHS -🇮🇳|242.9"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|6.49"
+      - "@v2rayvmess| AHS -🇺🇸|6.22"
+      - "@azadnet| AHS -🇮🇳|242.9"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|6.49"
+      - "@v2rayvmess| AHS -🇺🇸|6.22"
+      - "@azadnet| AHS -🇮🇳|242.9"
 rules:
   - MATCH,MANUAL
