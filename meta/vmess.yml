@@ -32,7 +32,18 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@v2rayvmess| AHS -🇺🇸|3.03"
+  - name: "@oneclickvpnkeys| AHS -🇺🇸|67.46"
+    server: 38.14.99.179
+    port: 59807
+    type: vmess
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|6.67"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -48,11 +59,11 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@ConfigsHUB| AHS -🇩🇪|218.4"
-    server: a.confignor.site
-    port: 7443
+  - name: "@azadnet| AHS -🇮🇳|243.51"
+    server: 103.97.203.220
+    port: 550
     type: vmess
-    uuid: aa01c120-607e-4884-800e-602a4afe85f8
+    uuid: 9e0e83ca-0fbc-44b1-8024-0eb8f9414156
     alterId: 0
     cipher: auto
     tls: false
@@ -63,8 +74,9 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|3.03"
-      - "@ConfigsHUB| AHS -🇩🇪|218.4"
+      - "@oneclickvpnkeys| AHS -🇺🇸|67.46"
+      - "@v2rayvmess| AHS -🇺🇸|6.67"
+      - "@azadnet| AHS -🇮🇳|243.51"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -75,22 +87,25 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|3.03"
-      - "@ConfigsHUB| AHS -🇩🇪|218.4"
+      - "@oneclickvpnkeys| AHS -🇺🇸|67.46"
+      - "@v2rayvmess| AHS -🇺🇸|6.67"
+      - "@azadnet| AHS -🇮🇳|243.51"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|3.03"
-      - "@ConfigsHUB| AHS -🇩🇪|218.4"
+      - "@oneclickvpnkeys| AHS -🇺🇸|67.46"
+      - "@v2rayvmess| AHS -🇺🇸|6.67"
+      - "@azadnet| AHS -🇮🇳|243.51"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|3.03"
-      - "@ConfigsHUB| AHS -🇩🇪|218.4"
+      - "@oneclickvpnkeys| AHS -🇺🇸|67.46"
+      - "@v2rayvmess| AHS -🇺🇸|6.67"
+      - "@azadnet| AHS -🇮🇳|243.51"
 rules:
   - MATCH,MANUAL
