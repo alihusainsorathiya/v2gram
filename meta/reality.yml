@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@ProxyFn|🇨🇭|138.4
+  - name: REALITY|@ProxyFn|🇨🇭|154.27
     server: 193.168.144.46
     port: 443
     type: vless
@@ -45,7 +45,7 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|139.6
+  - name: REALITY|@internet4iran|🇩🇪|162.04
     server: 128.140.49.220
     port: 443
     type: vless
@@ -56,7 +56,18 @@ proxies:
     skip-cert-verify: true
     servername: www.speedtest.net
     udp: true
-  - name: REALITY|@vmess_vless_v2rayng|🇩🇪|178.47
+  - name: REALITY|@v2rayngvpn|🇷🇺|193.87
+    server: 193.160.209.95
+    port: 4443
+    type: vless
+    uuid: 0a587061-6ccb-407c-86b8-c7d78b6bee5e
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: github.com
+    udp: true
+  - name: REALITY|@vmess_vless_v2rayng|🇩🇪|186.05
     server: de2.srv.oplcdn.link
     port: 8443
     type: vless
@@ -67,18 +78,20 @@ proxies:
     skip-cert-verify: true
     servername: ign.com
     udp: true
-  - name: REALITY|@ConfigsHUB|🇬🇧|129.39
-    server: 212.134.174.249
-    port: 48778
+  - name: REALITY|@ConfigsHUB|🇩🇪|158.27
+    server: 46.224.141.141
+    port: 2025
     type: vless
-    uuid: 92d12a33-19c1-487c-b7e0-122014793fce
+    uuid: 49b3e9b9-dedb-4abd-ac4d-05bc64e7edcb
     cipher: auto
     tls: false
-    flow: xtls-rprx-vision
     skip-cert-verify: true
-    servername: apple.com
+    servername: miro.com
+    network: grpc
+    grpc-opts:
+      grpc-service-name: Join---Arshiavpn12---Join---Arshiavpn12---Join---Arshiavpn12---Join---Arshiavpn12---Join---Arshiavpn12---Join---Arshiavpn12---Join---Arshiavpn12---Join---Arshiavpn12---Join---Arshiavpn12---Join---Arshiavpn12---Join---Arshiavpn12---Join---Arshiavpn12---Join---Arshiavpn12---Join---Arshiavpn12---Join---Arshiavpn12---Join---Arshiavpn12---Join---Arshiavpn12
     udp: true
-  - name: REALITY|@v2rayngrit|🇩🇪|152.64
+  - name: REALITY|@v2rayngrit|🇩🇪|158.21
     server: 91.99.106.117
     port: 443
     type: vless
@@ -93,11 +106,12 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|138.4
-      - REALITY|@internet4iran|🇩🇪|139.6
-      - REALITY|@vmess_vless_v2rayng|🇩🇪|178.47
-      - REALITY|@ConfigsHUB|🇬🇧|129.39
-      - REALITY|@v2rayngrit|🇩🇪|152.64
+      - REALITY|@ProxyFn|🇨🇭|154.27
+      - REALITY|@internet4iran|🇩🇪|162.04
+      - REALITY|@v2rayngvpn|🇷🇺|193.87
+      - REALITY|@vmess_vless_v2rayng|🇩🇪|186.05
+      - REALITY|@ConfigsHUB|🇩🇪|158.27
+      - REALITY|@v2rayngrit|🇩🇪|158.21
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -108,31 +122,34 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|138.4
-      - REALITY|@internet4iran|🇩🇪|139.6
-      - REALITY|@vmess_vless_v2rayng|🇩🇪|178.47
-      - REALITY|@ConfigsHUB|🇬🇧|129.39
-      - REALITY|@v2rayngrit|🇩🇪|152.64
+      - REALITY|@ProxyFn|🇨🇭|154.27
+      - REALITY|@internet4iran|🇩🇪|162.04
+      - REALITY|@v2rayngvpn|🇷🇺|193.87
+      - REALITY|@vmess_vless_v2rayng|🇩🇪|186.05
+      - REALITY|@ConfigsHUB|🇩🇪|158.27
+      - REALITY|@v2rayngrit|🇩🇪|158.21
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|138.4
-      - REALITY|@internet4iran|🇩🇪|139.6
-      - REALITY|@vmess_vless_v2rayng|🇩🇪|178.47
-      - REALITY|@ConfigsHUB|🇬🇧|129.39
-      - REALITY|@v2rayngrit|🇩🇪|152.64
+      - REALITY|@ProxyFn|🇨🇭|154.27
+      - REALITY|@internet4iran|🇩🇪|162.04
+      - REALITY|@v2rayngvpn|🇷🇺|193.87
+      - REALITY|@vmess_vless_v2rayng|🇩🇪|186.05
+      - REALITY|@ConfigsHUB|🇩🇪|158.27
+      - REALITY|@v2rayngrit|🇩🇪|158.21
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|138.4
-      - REALITY|@internet4iran|🇩🇪|139.6
-      - REALITY|@vmess_vless_v2rayng|🇩🇪|178.47
-      - REALITY|@ConfigsHUB|🇬🇧|129.39
-      - REALITY|@v2rayngrit|🇩🇪|152.64
+      - REALITY|@ProxyFn|🇨🇭|154.27
+      - REALITY|@internet4iran|🇩🇪|162.04
+      - REALITY|@v2rayngvpn|🇷🇺|193.87
+      - REALITY|@vmess_vless_v2rayng|🇩🇪|186.05
+      - REALITY|@ConfigsHUB|🇩🇪|158.27
+      - REALITY|@v2rayngrit|🇩🇪|158.21
 rules:
   - MATCH,MANUAL
