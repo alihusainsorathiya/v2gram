@@ -32,7 +32,18 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@v2rayvmess| AHS -🇺🇸|9.56"
+  - name: "@oneclickvpnkeys| AHS -🇺🇸|3.85"
+    server: 38.14.99.179
+    port: 59807
+    type: vmess
+    uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|2.37"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -48,28 +59,24 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@hope_net| AHS -🚩|9.61"
-    server: lol.ps
-    port: 2052
+  - name: "@azadnet| AHS -🇮🇳|243.29"
+    server: 103.97.203.220
+    port: 550
     type: vmess
-    uuid: f584de15-2034-4170-a723-f48c2bae5e0f
+    uuid: 9e0e83ca-0fbc-44b1-8024-0eb8f9414156
     alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: true
-    servername: mysan2.jaquay22.workers.dev
-    network: ws
-    ws-opts:
-      path: /afrhms16v.bestxray.buzz/linkws
-      headers:
-        Host: mysan2.jaquay22.workers.dev
+    servername: ""
     udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|9.56"
-      - "@hope_net| AHS -🚩|9.61"
+      - "@oneclickvpnkeys| AHS -🇺🇸|3.85"
+      - "@v2rayvmess| AHS -🇺🇸|2.37"
+      - "@azadnet| AHS -🇮🇳|243.29"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -80,22 +87,25 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|9.56"
-      - "@hope_net| AHS -🚩|9.61"
+      - "@oneclickvpnkeys| AHS -🇺🇸|3.85"
+      - "@v2rayvmess| AHS -🇺🇸|2.37"
+      - "@azadnet| AHS -🇮🇳|243.29"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|9.56"
-      - "@hope_net| AHS -🚩|9.61"
+      - "@oneclickvpnkeys| AHS -🇺🇸|3.85"
+      - "@v2rayvmess| AHS -🇺🇸|2.37"
+      - "@azadnet| AHS -🇮🇳|243.29"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|9.56"
-      - "@hope_net| AHS -🚩|9.61"
+      - "@oneclickvpnkeys| AHS -🇺🇸|3.85"
+      - "@v2rayvmess| AHS -🇺🇸|2.37"
+      - "@azadnet| AHS -🇮🇳|243.29"
 rules:
   - MATCH,MANUAL
