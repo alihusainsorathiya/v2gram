@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@ProxyFn|🇨🇭|112.59
+  - name: REALITY|@ProxyFn|🇨🇭|90.28
     server: 193.168.144.46
     port: 443
     type: vless
@@ -45,7 +45,7 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|114.98
+  - name: REALITY|@internet4iran|🇩🇪|94.66
     server: 128.140.49.220
     port: 443
     type: vless
@@ -56,20 +56,18 @@ proxies:
     skip-cert-verify: true
     servername: www.speedtest.net
     udp: true
-  - name: REALITY|@v2rayngvpn|🇩🇪|114.28
-    server: a.confignor.site
-    port: 35493
+  - name: REALITY|@v2rayngvpn|🇲🇩|97.22
+    server: 45.67.228.11
+    port: 443
     type: vless
-    uuid: 3228d8b6-bafd-439f-bdac-0f3111a8e8f2
+    uuid: 309fa273-6579-4cb2-9143-7cad50401eba
     cipher: auto
     tls: false
+    flow: xtls-rprx-vision
     skip-cert-verify: true
-    servername: www.cdn77.com
-    network: grpc
-    grpc-opts:
-      grpc-service-name: "%DA%86%D9%86%D9%84%20%D8%B3%D8%A7%D8%B2%D9%86%D8%AF%D9%87%20%D8%A7%D8%B5%D9%84%DB%8C%20%DA%A9%D8%A7%D9%86%D9%81%DB%8C%DA%AF%20%40ConfigFree"
+    servername: www.cloudflare.com
     udp: true
-  - name: REALITY|@vmess_vless_v2rayng|🇩🇪|175.83
+  - name: REALITY|@vmess_vless_v2rayng|🇩🇪|151.38
     server: de2.srv.oplcdn.link
     port: 8443
     type: vless
@@ -80,7 +78,7 @@ proxies:
     skip-cert-verify: true
     servername: ign.com
     udp: true
-  - name: REALITY|@v2_team|🇩🇪|226.61
+  - name: REALITY|@v2_team|🇩🇪|252.76
     server: parsonline.aparat-movies-download.ir
     port: 4450
     type: vless
@@ -91,7 +89,18 @@ proxies:
     skip-cert-verify: true
     servername: tgju.org
     udp: true
-  - name: REALITY|@v2rayngrit|🇩🇪|114.62
+  - name: REALITY|@ConfigsHUB|🇩🇪|219.69
+    server: de2.tunnely.ru
+    port: 443
+    type: vless
+    uuid: aee540f8-fb73-4ee7-98f9-125d4d1d41ff
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: de2.tunnely.ru
+    udp: true
+  - name: REALITY|@v2rayngrit|🇩🇪|118.85
     server: 91.99.106.117
     port: 443
     type: vless
@@ -106,12 +115,13 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|112.59
-      - REALITY|@internet4iran|🇩🇪|114.98
-      - REALITY|@v2rayngvpn|🇩🇪|114.28
-      - REALITY|@vmess_vless_v2rayng|🇩🇪|175.83
-      - REALITY|@v2_team|🇩🇪|226.61
-      - REALITY|@v2rayngrit|🇩🇪|114.62
+      - REALITY|@ProxyFn|🇨🇭|90.28
+      - REALITY|@internet4iran|🇩🇪|94.66
+      - REALITY|@v2rayngvpn|🇲🇩|97.22
+      - REALITY|@vmess_vless_v2rayng|🇩🇪|151.38
+      - REALITY|@v2_team|🇩🇪|252.76
+      - REALITY|@ConfigsHUB|🇩🇪|219.69
+      - REALITY|@v2rayngrit|🇩🇪|118.85
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -122,34 +132,37 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|112.59
-      - REALITY|@internet4iran|🇩🇪|114.98
-      - REALITY|@v2rayngvpn|🇩🇪|114.28
-      - REALITY|@vmess_vless_v2rayng|🇩🇪|175.83
-      - REALITY|@v2_team|🇩🇪|226.61
-      - REALITY|@v2rayngrit|🇩🇪|114.62
+      - REALITY|@ProxyFn|🇨🇭|90.28
+      - REALITY|@internet4iran|🇩🇪|94.66
+      - REALITY|@v2rayngvpn|🇲🇩|97.22
+      - REALITY|@vmess_vless_v2rayng|🇩🇪|151.38
+      - REALITY|@v2_team|🇩🇪|252.76
+      - REALITY|@ConfigsHUB|🇩🇪|219.69
+      - REALITY|@v2rayngrit|🇩🇪|118.85
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|112.59
-      - REALITY|@internet4iran|🇩🇪|114.98
-      - REALITY|@v2rayngvpn|🇩🇪|114.28
-      - REALITY|@vmess_vless_v2rayng|🇩🇪|175.83
-      - REALITY|@v2_team|🇩🇪|226.61
-      - REALITY|@v2rayngrit|🇩🇪|114.62
+      - REALITY|@ProxyFn|🇨🇭|90.28
+      - REALITY|@internet4iran|🇩🇪|94.66
+      - REALITY|@v2rayngvpn|🇲🇩|97.22
+      - REALITY|@vmess_vless_v2rayng|🇩🇪|151.38
+      - REALITY|@v2_team|🇩🇪|252.76
+      - REALITY|@ConfigsHUB|🇩🇪|219.69
+      - REALITY|@v2rayngrit|🇩🇪|118.85
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|112.59
-      - REALITY|@internet4iran|🇩🇪|114.98
-      - REALITY|@v2rayngvpn|🇩🇪|114.28
-      - REALITY|@vmess_vless_v2rayng|🇩🇪|175.83
-      - REALITY|@v2_team|🇩🇪|226.61
-      - REALITY|@v2rayngrit|🇩🇪|114.62
+      - REALITY|@ProxyFn|🇨🇭|90.28
+      - REALITY|@internet4iran|🇩🇪|94.66
+      - REALITY|@v2rayngvpn|🇲🇩|97.22
+      - REALITY|@vmess_vless_v2rayng|🇩🇪|151.38
+      - REALITY|@v2_team|🇩🇪|252.76
+      - REALITY|@ConfigsHUB|🇩🇪|219.69
+      - REALITY|@v2rayngrit|🇩🇪|118.85
 rules:
   - MATCH,MANUAL
