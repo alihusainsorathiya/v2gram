@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@v2rayvmess| AHS -🇺🇸|6.64"
+  - name: "@v2rayvmess| AHS -🇺🇸|9.56"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -48,23 +48,28 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@azadnet| AHS -🇮🇳|209.34"
-    server: 103.97.203.220
-    port: 550
+  - name: "@hope_net| AHS -🚩|9.61"
+    server: lol.ps
+    port: 2052
     type: vmess
-    uuid: 9e0e83ca-0fbc-44b1-8024-0eb8f9414156
+    uuid: f584de15-2034-4170-a723-f48c2bae5e0f
     alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: true
-    servername: ""
+    servername: mysan2.jaquay22.workers.dev
+    network: ws
+    ws-opts:
+      path: /afrhms16v.bestxray.buzz/linkws
+      headers:
+        Host: mysan2.jaquay22.workers.dev
     udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|6.64"
-      - "@azadnet| AHS -🇮🇳|209.34"
+      - "@v2rayvmess| AHS -🇺🇸|9.56"
+      - "@hope_net| AHS -🚩|9.61"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -75,22 +80,22 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|6.64"
-      - "@azadnet| AHS -🇮🇳|209.34"
+      - "@v2rayvmess| AHS -🇺🇸|9.56"
+      - "@hope_net| AHS -🚩|9.61"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|6.64"
-      - "@azadnet| AHS -🇮🇳|209.34"
+      - "@v2rayvmess| AHS -🇺🇸|9.56"
+      - "@hope_net| AHS -🚩|9.61"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|6.64"
-      - "@azadnet| AHS -🇮🇳|209.34"
+      - "@v2rayvmess| AHS -🇺🇸|9.56"
+      - "@hope_net| AHS -🚩|9.61"
 rules:
   - MATCH,MANUAL
