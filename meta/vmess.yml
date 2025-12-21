@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@v2rayvmess| AHS -🇺🇸|20.94"
+  - name: "@v2rayvmess| AHS -🇺🇸|6.63"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -48,11 +48,45 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
+  - name: "@ConfigsHUB| AHS -🇯🇵|249.49"
+    server: 172.111.146.64
+    port: 80
+    type: vmess
+    uuid: 05b8c783-7f59-47f9-9923-06a465679f6a
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /vmess/
+      headers:
+        Host: ""
+    udp: true
+  - name: "@hope_net| AHS -🇩🇪|440.27"
+    server: 172.67.204.84
+    port: 443
+    type: vmess
+    uuid: 950db6aa-4926-4616-816e-ec0312dcb87b
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: jahfkjha.cfd
+    network: ws
+    ws-opts:
+      path: /linkws
+      headers:
+        Host: jahfkjha.cfd
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|20.94"
+      - "@v2rayvmess| AHS -🇺🇸|6.63"
+      - "@ConfigsHUB| AHS -🇯🇵|249.49"
+      - "@hope_net| AHS -🇩🇪|440.27"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -63,19 +97,25 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|20.94"
+      - "@v2rayvmess| AHS -🇺🇸|6.63"
+      - "@ConfigsHUB| AHS -🇯🇵|249.49"
+      - "@hope_net| AHS -🇩🇪|440.27"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|20.94"
+      - "@v2rayvmess| AHS -🇺🇸|6.63"
+      - "@ConfigsHUB| AHS -🇯🇵|249.49"
+      - "@hope_net| AHS -🇩🇪|440.27"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|20.94"
+      - "@v2rayvmess| AHS -🇺🇸|6.63"
+      - "@ConfigsHUB| AHS -🇯🇵|249.49"
+      - "@hope_net| AHS -🇩🇪|440.27"
 rules:
   - MATCH,MANUAL
