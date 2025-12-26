@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@v2rayvmess| AHS -🇺🇸|9.3"
+  - name: "@v2rayvmess| AHS -🇺🇸|2.04"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -48,7 +48,7 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@ConfigsHUB| AHS -🇩🇪|unavailable"
+  - name: "@ConfigsHUB| AHS -🇩🇪|158.97"
     server: 91.107.243.172
     port: 27587
     type: vmess
@@ -59,7 +59,23 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@azadnet| AHS -🇲🇩|unavailable"
+  - name: "@hope_net| AHS -🇺🇸|48.55"
+    server: gt021.bestforxray.buzz
+    port: 443
+    type: vmess
+    uuid: c1fd780a-3408-4f48-a932-5832a28ce9f6
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: ausgt02.bestforxray.buzz
+    network: ws
+    ws-opts:
+      path: /linkws
+      headers:
+        Host: ausgt02.bestforxray.buzz
+    udp: true
+  - name: "@azadnet| AHS -🇲🇩|205.42"
     server: 94.131.108.36
     port: 443
     type: vmess
@@ -79,9 +95,10 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|9.3"
-      - "@ConfigsHUB| AHS -🇩🇪|unavailable"
-      - "@azadnet| AHS -🇲🇩|unavailable"
+      - "@v2rayvmess| AHS -🇺🇸|2.04"
+      - "@ConfigsHUB| AHS -🇩🇪|158.97"
+      - "@hope_net| AHS -🇺🇸|48.55"
+      - "@azadnet| AHS -🇲🇩|205.42"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -92,25 +109,28 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|9.3"
-      - "@ConfigsHUB| AHS -🇩🇪|unavailable"
-      - "@azadnet| AHS -🇲🇩|unavailable"
+      - "@v2rayvmess| AHS -🇺🇸|2.04"
+      - "@ConfigsHUB| AHS -🇩🇪|158.97"
+      - "@hope_net| AHS -🇺🇸|48.55"
+      - "@azadnet| AHS -🇲🇩|205.42"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|9.3"
-      - "@ConfigsHUB| AHS -🇩🇪|unavailable"
-      - "@azadnet| AHS -🇲🇩|unavailable"
+      - "@v2rayvmess| AHS -🇺🇸|2.04"
+      - "@ConfigsHUB| AHS -🇩🇪|158.97"
+      - "@hope_net| AHS -🇺🇸|48.55"
+      - "@azadnet| AHS -🇲🇩|205.42"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|9.3"
-      - "@ConfigsHUB| AHS -🇩🇪|unavailable"
-      - "@azadnet| AHS -🇲🇩|unavailable"
+      - "@v2rayvmess| AHS -🇺🇸|2.04"
+      - "@ConfigsHUB| AHS -🇩🇪|158.97"
+      - "@hope_net| AHS -🇺🇸|48.55"
+      - "@azadnet| AHS -🇲🇩|205.42"
 rules:
   - MATCH,MANUAL
