@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@v2rayvmess| AHS -🇺🇸|2.74"
+  - name: "@v2rayvmess| AHS -🇺🇸|6.56"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -48,7 +48,7 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@v2ray1_ng| AHS -🚩|2.48"
+  - name: "@v2ray1_ng| AHS -🚩|6.4"
     server: 104.26.15.141
     port: 8080
     type: vmess
@@ -64,12 +64,63 @@ proxies:
       headers:
         Host: pn2w1nweb.sigmachemicals.ir
     udp: true
+  - name: "@hope_net| AHS -🇨🇦|24.71"
+    server: 158.51.121.36
+    port: 443
+    type: vmess
+    uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: ""
+    udp: true
+  - name: "@hope_net| AHS -🚩|6.56"
+    server: npmjs.com
+    port: 443
+    type: vmess
+    uuid: 6b880b07-e952-4c0b-b4a3-6c9ac4cf9d3f
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: hdfy1c2.freeairlaines.com
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: hdfy1c2.freeairlaines.com
+    udp: true
+  - name: "@hope_net| AHS -🚩|7.26"
+    server: 104.16.67.38
+    port: 8080
+    type: vmess
+    uuid: edbb1059-1633-4271-b66e-ed4fba47a1bf
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: square-snowflake-486a.beshir-beisel.workers.dev
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: square-snowflake-486a.beshir-beisel.workers.dev
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|2.74"
-      - "@v2ray1_ng| AHS -🚩|2.48"
+      - "@v2rayvmess| AHS -🇺🇸|6.56"
+      - "@v2ray1_ng| AHS -🚩|6.4"
+      - "@hope_net| AHS -🇨🇦|24.71"
+      - "@hope_net| AHS -🚩|6.56"
+      - "@hope_net| AHS -🚩|7.26"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -80,22 +131,31 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|2.74"
-      - "@v2ray1_ng| AHS -🚩|2.48"
+      - "@v2rayvmess| AHS -🇺🇸|6.56"
+      - "@v2ray1_ng| AHS -🚩|6.4"
+      - "@hope_net| AHS -🇨🇦|24.71"
+      - "@hope_net| AHS -🚩|6.56"
+      - "@hope_net| AHS -🚩|7.26"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|2.74"
-      - "@v2ray1_ng| AHS -🚩|2.48"
+      - "@v2rayvmess| AHS -🇺🇸|6.56"
+      - "@v2ray1_ng| AHS -🚩|6.4"
+      - "@hope_net| AHS -🇨🇦|24.71"
+      - "@hope_net| AHS -🚩|6.56"
+      - "@hope_net| AHS -🚩|7.26"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|2.74"
-      - "@v2ray1_ng| AHS -🚩|2.48"
+      - "@v2rayvmess| AHS -🇺🇸|6.56"
+      - "@v2ray1_ng| AHS -🚩|6.4"
+      - "@hope_net| AHS -🇨🇦|24.71"
+      - "@hope_net| AHS -🚩|6.56"
+      - "@hope_net| AHS -🚩|7.26"
 rules:
   - MATCH,MANUAL
