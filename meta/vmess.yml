@@ -32,23 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@prrofile_purple| AHS -🇮🇷|259.01"
-    server: s8.rookari.com
-    port: 9016
-    type: vmess
-    uuid: cf1d3cd8-c544-47db-b074-49641b026e83
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: ""
-    network: http
-    http-opts:
-      method: GET
-      path:
-        - /
-    udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|2.16"
+  - name: "@v2rayvmess| AHS -🇺🇸|2.69"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -64,7 +48,7 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@ConfigsHUB| AHS -🚩|2.12"
+  - name: "@ConfigsHUB| AHS -🚩|2.53"
     server: zula.ir
     port: 8080
     type: vmess
@@ -84,9 +68,8 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|259.01"
-      - "@v2rayvmess| AHS -🇺🇸|2.16"
-      - "@ConfigsHUB| AHS -🚩|2.12"
+      - "@v2rayvmess| AHS -🇺🇸|2.69"
+      - "@ConfigsHUB| AHS -🚩|2.53"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -97,25 +80,22 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|259.01"
-      - "@v2rayvmess| AHS -🇺🇸|2.16"
-      - "@ConfigsHUB| AHS -🚩|2.12"
+      - "@v2rayvmess| AHS -🇺🇸|2.69"
+      - "@ConfigsHUB| AHS -🚩|2.53"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|259.01"
-      - "@v2rayvmess| AHS -🇺🇸|2.16"
-      - "@ConfigsHUB| AHS -🚩|2.12"
+      - "@v2rayvmess| AHS -🇺🇸|2.69"
+      - "@ConfigsHUB| AHS -🚩|2.53"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|259.01"
-      - "@v2rayvmess| AHS -🇺🇸|2.16"
-      - "@ConfigsHUB| AHS -🚩|2.12"
+      - "@v2rayvmess| AHS -🇺🇸|2.69"
+      - "@ConfigsHUB| AHS -🚩|2.53"
 rules:
   - MATCH,MANUAL
