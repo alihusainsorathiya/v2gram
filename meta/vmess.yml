@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@prrofile_purple| AHS -🇮🇷|252.43"
+  - name: "@prrofile_purple| AHS -🇮🇷|199.04"
     server: s8.rookari.com
     port: 9016
     type: vmess
@@ -48,7 +48,7 @@ proxies:
       path:
         - /
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|18.39"
+  - name: "@v2rayvmess| AHS -🇺🇸|2.94"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -64,24 +64,29 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@free1_vpn| AHS -🇫🇷|128.2"
-    server: 162.19.248.238
-    port: 550
+  - name: "@ConfigsHUB| AHS -🚩|91.27"
+    server: zula.ir
+    port: 8080
     type: vmess
-    uuid: ede27a79-b039-490b-932c-495de4b68880
+    uuid: nasnet
     alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: true
-    servername: ""
+    servername: nasnet-511952424.mcitel.co
+    network: ws
+    ws-opts:
+      path: /nasnet/cdn?ed=2560
+      headers:
+        Host: nasnet-511952424.mcitel.co
     udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|252.43"
-      - "@v2rayvmess| AHS -🇺🇸|18.39"
-      - "@free1_vpn| AHS -🇫🇷|128.2"
+      - "@prrofile_purple| AHS -🇮🇷|199.04"
+      - "@v2rayvmess| AHS -🇺🇸|2.94"
+      - "@ConfigsHUB| AHS -🚩|91.27"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -92,25 +97,25 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|252.43"
-      - "@v2rayvmess| AHS -🇺🇸|18.39"
-      - "@free1_vpn| AHS -🇫🇷|128.2"
+      - "@prrofile_purple| AHS -🇮🇷|199.04"
+      - "@v2rayvmess| AHS -🇺🇸|2.94"
+      - "@ConfigsHUB| AHS -🚩|91.27"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|252.43"
-      - "@v2rayvmess| AHS -🇺🇸|18.39"
-      - "@free1_vpn| AHS -🇫🇷|128.2"
+      - "@prrofile_purple| AHS -🇮🇷|199.04"
+      - "@v2rayvmess| AHS -🇺🇸|2.94"
+      - "@ConfigsHUB| AHS -🚩|91.27"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|252.43"
-      - "@v2rayvmess| AHS -🇺🇸|18.39"
-      - "@free1_vpn| AHS -🇫🇷|128.2"
+      - "@prrofile_purple| AHS -🇮🇷|199.04"
+      - "@v2rayvmess| AHS -🇺🇸|2.94"
+      - "@ConfigsHUB| AHS -🚩|91.27"
 rules:
   - MATCH,MANUAL
