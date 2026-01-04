@@ -32,7 +32,23 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@v2rayvmess| AHS -🇺🇸|2.69"
+  - name: "@prrofile_purple| AHS -🇮🇷|213.4"
+    server: s8.rookari.com
+    port: 9016
+    type: vmess
+    uuid: cf1d3cd8-c544-47db-b074-49641b026e83
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: http
+    http-opts:
+      method: GET
+      path:
+        - /
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|2.66"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -48,28 +64,12 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@ConfigsHUB| AHS -🚩|2.53"
-    server: zula.ir
-    port: 8080
-    type: vmess
-    uuid: nasnet
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: nasnet-511952424.mcitel.co
-    network: ws
-    ws-opts:
-      path: /nasnet/cdn?ed=2560
-      headers:
-        Host: nasnet-511952424.mcitel.co
-    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|2.69"
-      - "@ConfigsHUB| AHS -🚩|2.53"
+      - "@prrofile_purple| AHS -🇮🇷|213.4"
+      - "@v2rayvmess| AHS -🇺🇸|2.66"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -80,22 +80,22 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|2.69"
-      - "@ConfigsHUB| AHS -🚩|2.53"
+      - "@prrofile_purple| AHS -🇮🇷|213.4"
+      - "@v2rayvmess| AHS -🇺🇸|2.66"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|2.69"
-      - "@ConfigsHUB| AHS -🚩|2.53"
+      - "@prrofile_purple| AHS -🇮🇷|213.4"
+      - "@v2rayvmess| AHS -🇺🇸|2.66"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|2.69"
-      - "@ConfigsHUB| AHS -🚩|2.53"
+      - "@prrofile_purple| AHS -🇮🇷|213.4"
+      - "@v2rayvmess| AHS -🇺🇸|2.66"
 rules:
   - MATCH,MANUAL
