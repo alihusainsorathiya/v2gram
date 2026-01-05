@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@prrofile_purple| AHS -🇮🇷|236.68"
+  - name: "@prrofile_purple| AHS -🇮🇷|309.52"
     server: s8.rookari.com
     port: 9016
     type: vmess
@@ -48,7 +48,7 @@ proxies:
       path:
         - /
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|3.01"
+  - name: "@v2rayvmess| AHS -🇺🇸|2.31"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -64,29 +64,12 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@ConfigsHUB| AHS -🇮🇷|248.89"
-    server: 185.215.228.27
-    port: 29129
-    type: vmess
-    uuid: 5e617edc-6eeb-4a40-9319-ea8147ee547d
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: ""
-    network: http
-    http-opts:
-      method: GET
-      path:
-        - /
-    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|236.68"
-      - "@v2rayvmess| AHS -🇺🇸|3.01"
-      - "@ConfigsHUB| AHS -🇮🇷|248.89"
+      - "@prrofile_purple| AHS -🇮🇷|309.52"
+      - "@v2rayvmess| AHS -🇺🇸|2.31"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -97,25 +80,22 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|236.68"
-      - "@v2rayvmess| AHS -🇺🇸|3.01"
-      - "@ConfigsHUB| AHS -🇮🇷|248.89"
+      - "@prrofile_purple| AHS -🇮🇷|309.52"
+      - "@v2rayvmess| AHS -🇺🇸|2.31"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|236.68"
-      - "@v2rayvmess| AHS -🇺🇸|3.01"
-      - "@ConfigsHUB| AHS -🇮🇷|248.89"
+      - "@prrofile_purple| AHS -🇮🇷|309.52"
+      - "@v2rayvmess| AHS -🇺🇸|2.31"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|236.68"
-      - "@v2rayvmess| AHS -🇺🇸|3.01"
-      - "@ConfigsHUB| AHS -🇮🇷|248.89"
+      - "@prrofile_purple| AHS -🇮🇷|309.52"
+      - "@v2rayvmess| AHS -🇺🇸|2.31"
 rules:
   - MATCH,MANUAL
