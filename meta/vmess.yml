@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@prrofile_purple| AHS -🇮🇷|277"
+  - name: "@prrofile_purple| AHS -🇮🇷|197.74"
     server: s8.rookari.com
     port: 9016
     type: vmess
@@ -48,7 +48,7 @@ proxies:
       path:
         - /
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|2.11"
+  - name: "@v2rayvmess| AHS -🇺🇸|2.53"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -64,41 +64,46 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@free1_vpn| AHS -🇹🇷|193.62"
-    server: fast38.funfil.link
-    port: 31541
+  - name: "@ConfigsHUB| AHS -🇸🇬|206.86"
+    server: 150.109.11.193
+    port: 80
     type: vmess
-    uuid: 41792324-68e1-413b-be71-f26a28213e21
+    uuid: b7118dcc-a234-4784-e487-4064c2920808
     alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: true
     servername: ""
-    udp: true
-  - name: "@hope_net| AHS -🇺🇸|41.97"
-    server: 172.67.244.191
-    port: 443
-    type: vmess
-    uuid: bc864078-dcf3-4bf4-8dbf-ca9f200b56be
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: gwdef.sbs
     network: ws
     ws-opts:
-      path: /linkws
+      path: /
       headers:
-        Host: gwdef.sbs
+        Host: ""
+    udp: true
+  - name: "@hope_net| AHS -🚩|2.11"
+    server: 104.16.60.8
+    port: 2086
+    type: vmess
+    uuid: 76221bfb-e92f-4e80-81c5-6fe48f50ac0b
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: 1c11-muddy-rice-1c11.vetanex501.workers.dev
+    network: ws
+    ws-opts:
+      path: /glweidf.sbs/linkws
+      headers:
+        Host: 1c11-muddy-rice-1c11.vetanex501.workers.dev
     udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|277"
-      - "@v2rayvmess| AHS -🇺🇸|2.11"
-      - "@free1_vpn| AHS -🇹🇷|193.62"
-      - "@hope_net| AHS -🇺🇸|41.97"
+      - "@prrofile_purple| AHS -🇮🇷|197.74"
+      - "@v2rayvmess| AHS -🇺🇸|2.53"
+      - "@ConfigsHUB| AHS -🇸🇬|206.86"
+      - "@hope_net| AHS -🚩|2.11"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -109,28 +114,28 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|277"
-      - "@v2rayvmess| AHS -🇺🇸|2.11"
-      - "@free1_vpn| AHS -🇹🇷|193.62"
-      - "@hope_net| AHS -🇺🇸|41.97"
+      - "@prrofile_purple| AHS -🇮🇷|197.74"
+      - "@v2rayvmess| AHS -🇺🇸|2.53"
+      - "@ConfigsHUB| AHS -🇸🇬|206.86"
+      - "@hope_net| AHS -🚩|2.11"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|277"
-      - "@v2rayvmess| AHS -🇺🇸|2.11"
-      - "@free1_vpn| AHS -🇹🇷|193.62"
-      - "@hope_net| AHS -🇺🇸|41.97"
+      - "@prrofile_purple| AHS -🇮🇷|197.74"
+      - "@v2rayvmess| AHS -🇺🇸|2.53"
+      - "@ConfigsHUB| AHS -🇸🇬|206.86"
+      - "@hope_net| AHS -🚩|2.11"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|277"
-      - "@v2rayvmess| AHS -🇺🇸|2.11"
-      - "@free1_vpn| AHS -🇹🇷|193.62"
-      - "@hope_net| AHS -🇺🇸|41.97"
+      - "@prrofile_purple| AHS -🇮🇷|197.74"
+      - "@v2rayvmess| AHS -🇺🇸|2.53"
+      - "@ConfigsHUB| AHS -🇸🇬|206.86"
+      - "@hope_net| AHS -🚩|2.11"
 rules:
   - MATCH,MANUAL
