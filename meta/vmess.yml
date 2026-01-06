@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@prrofile_purple| AHS -🇮🇷|225.2"
+  - name: "@prrofile_purple| AHS -🇮🇷|254.37"
     server: s8.rookari.com
     port: 9016
     type: vmess
@@ -48,7 +48,7 @@ proxies:
       path:
         - /
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|2.14"
+  - name: "@v2rayvmess| AHS -🇺🇸|2.44"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -64,24 +64,12 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@ConfigsHUB| AHS -🇳🇱|158.92"
-    server: fast38.funfil.link
-    port: 31541
-    type: vmess
-    uuid: 41792324-68e1-413b-be71-f26a28213e21
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: ""
-    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|225.2"
-      - "@v2rayvmess| AHS -🇺🇸|2.14"
-      - "@ConfigsHUB| AHS -🇳🇱|158.92"
+      - "@prrofile_purple| AHS -🇮🇷|254.37"
+      - "@v2rayvmess| AHS -🇺🇸|2.44"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -92,25 +80,22 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|225.2"
-      - "@v2rayvmess| AHS -🇺🇸|2.14"
-      - "@ConfigsHUB| AHS -🇳🇱|158.92"
+      - "@prrofile_purple| AHS -🇮🇷|254.37"
+      - "@v2rayvmess| AHS -🇺🇸|2.44"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|225.2"
-      - "@v2rayvmess| AHS -🇺🇸|2.14"
-      - "@ConfigsHUB| AHS -🇳🇱|158.92"
+      - "@prrofile_purple| AHS -🇮🇷|254.37"
+      - "@v2rayvmess| AHS -🇺🇸|2.44"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|225.2"
-      - "@v2rayvmess| AHS -🇺🇸|2.14"
-      - "@ConfigsHUB| AHS -🇳🇱|158.92"
+      - "@prrofile_purple| AHS -🇮🇷|254.37"
+      - "@v2rayvmess| AHS -🇺🇸|2.44"
 rules:
   - MATCH,MANUAL
