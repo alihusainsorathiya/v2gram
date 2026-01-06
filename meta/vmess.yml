@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@prrofile_purple| AHS -🇮🇷|228.44"
+  - name: "@prrofile_purple| AHS -🇮🇷|375.05"
     server: s8.rookari.com
     port: 9016
     type: vmess
@@ -48,7 +48,7 @@ proxies:
       path:
         - /
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|2.36"
+  - name: "@v2rayvmess| AHS -🇺🇸|15.08"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -64,24 +64,29 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@ConfigsHUB| AHS -🇹🇷|159.09"
-    server: fast38.funfil.link
-    port: 31541
+  - name: "@hope_net| AHS -🚩|14.98"
+    server: zula.ir
+    port: 2096
     type: vmess
-    uuid: 41792324-68e1-413b-be71-f26a28213e21
+    uuid: 30cab746-5ca5-46ef-aa9b-537f20f6a40c
     alterId: 0
     cipher: auto
-    tls: false
+    tls: true
     skip-cert-verify: true
-    servername: ""
+    servername: kingo.hightechservice.ir
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: kingo.hightechservice.ir
     udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|228.44"
-      - "@v2rayvmess| AHS -🇺🇸|2.36"
-      - "@ConfigsHUB| AHS -🇹🇷|159.09"
+      - "@prrofile_purple| AHS -🇮🇷|375.05"
+      - "@v2rayvmess| AHS -🇺🇸|15.08"
+      - "@hope_net| AHS -🚩|14.98"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -92,25 +97,25 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|228.44"
-      - "@v2rayvmess| AHS -🇺🇸|2.36"
-      - "@ConfigsHUB| AHS -🇹🇷|159.09"
+      - "@prrofile_purple| AHS -🇮🇷|375.05"
+      - "@v2rayvmess| AHS -🇺🇸|15.08"
+      - "@hope_net| AHS -🚩|14.98"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|228.44"
-      - "@v2rayvmess| AHS -🇺🇸|2.36"
-      - "@ConfigsHUB| AHS -🇹🇷|159.09"
+      - "@prrofile_purple| AHS -🇮🇷|375.05"
+      - "@v2rayvmess| AHS -🇺🇸|15.08"
+      - "@hope_net| AHS -🚩|14.98"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|228.44"
-      - "@v2rayvmess| AHS -🇺🇸|2.36"
-      - "@ConfigsHUB| AHS -🇹🇷|159.09"
+      - "@prrofile_purple| AHS -🇮🇷|375.05"
+      - "@v2rayvmess| AHS -🇺🇸|15.08"
+      - "@hope_net| AHS -🚩|14.98"
 rules:
   - MATCH,MANUAL
