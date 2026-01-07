@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@v2rayvmess| AHS -🇺🇸|6.39"
+  - name: "@v2rayvmess| AHS -🇺🇸|2.68"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -48,7 +48,7 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@v2ray1_ng| AHS -🇹🇷|177.76"
+  - name: "@v2ray1_ng| AHS -🇹🇷|159.39"
     server: fast38.funfil.link
     port: 31541
     type: vmess
@@ -59,24 +59,41 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@ConfigsHUB| AHS -🇺🇸|5.31"
-    server: 172.234.132.232
-    port: 10001
+  - name: "@v2ray1_ng| AHS -🇫🇷|101.4"
+    server: 217.69.5.32
+    port: 443
     type: vmess
-    uuid: a6b99c05-8e0a-4f7e-bf7b-e4b9febb9589
+    uuid: ec4c349c-b3c6-4cff-be63-01eaad1dc098
     alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: true
     servername: ""
     udp: true
+  - name: "@hope_net| AHS -🇺🇸|55.03"
+    server: 172.232.43.29
+    port: 443
+    type: vmess
+    uuid: b321fd5d-e6ec-4293-a644-164e3885f52e
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: adenc36v.xtooltech.cfd
+    network: ws
+    ws-opts:
+      path: /linkws
+      headers:
+        Host: adenc36v.xtooltech.cfd
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|6.39"
-      - "@v2ray1_ng| AHS -🇹🇷|177.76"
-      - "@ConfigsHUB| AHS -🇺🇸|5.31"
+      - "@v2rayvmess| AHS -🇺🇸|2.68"
+      - "@v2ray1_ng| AHS -🇹🇷|159.39"
+      - "@v2ray1_ng| AHS -🇫🇷|101.4"
+      - "@hope_net| AHS -🇺🇸|55.03"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -87,25 +104,28 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|6.39"
-      - "@v2ray1_ng| AHS -🇹🇷|177.76"
-      - "@ConfigsHUB| AHS -🇺🇸|5.31"
+      - "@v2rayvmess| AHS -🇺🇸|2.68"
+      - "@v2ray1_ng| AHS -🇹🇷|159.39"
+      - "@v2ray1_ng| AHS -🇫🇷|101.4"
+      - "@hope_net| AHS -🇺🇸|55.03"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|6.39"
-      - "@v2ray1_ng| AHS -🇹🇷|177.76"
-      - "@ConfigsHUB| AHS -🇺🇸|5.31"
+      - "@v2rayvmess| AHS -🇺🇸|2.68"
+      - "@v2ray1_ng| AHS -🇹🇷|159.39"
+      - "@v2ray1_ng| AHS -🇫🇷|101.4"
+      - "@hope_net| AHS -🇺🇸|55.03"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|6.39"
-      - "@v2ray1_ng| AHS -🇹🇷|177.76"
-      - "@ConfigsHUB| AHS -🇺🇸|5.31"
+      - "@v2rayvmess| AHS -🇺🇸|2.68"
+      - "@v2ray1_ng| AHS -🇹🇷|159.39"
+      - "@v2ray1_ng| AHS -🇫🇷|101.4"
+      - "@hope_net| AHS -🇺🇸|55.03"
 rules:
   - MATCH,MANUAL
