@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@v2rayvmess| AHS -🇺🇸|10.37"
+  - name: "@v2rayvmess| AHS -🇺🇸|9.55"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -48,7 +48,7 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@free1_vpn| AHS -🇫🇷|104.49"
+  - name: "@free1_vpn| AHS -🇫🇷|120.24"
     server: 217.69.5.32
     port: 443
     type: vmess
@@ -59,27 +59,11 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@hope_net| AHS -🚩|15.22"
-    server: 104.19.45.15
+  - name: "@hope_net| AHS -🚩|13.72"
+    server: 104.19.46.233
     port: 2086
     type: vmess
-    uuid: e9e3cc13-db48-4cc1-8c24-7626439a5339
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: ""
-    network: ws
-    ws-opts:
-      path: /
-      headers:
-        Host: ""
-    udp: true
-  - name: "@hope_net| AHS -🚩|9.34"
-    server: 104.19.47.32
-    port: 2086
-    type: vmess
-    uuid: e9e3cc13-db48-4cc1-8c24-7626439a5339
+    uuid: 29eebb60-b27b-4a9d-bba5-947763d9205e
     alterId: 0
     cipher: auto
     tls: false
@@ -95,10 +79,9 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|10.37"
-      - "@free1_vpn| AHS -🇫🇷|104.49"
-      - "@hope_net| AHS -🚩|15.22"
-      - "@hope_net| AHS -🚩|9.34"
+      - "@v2rayvmess| AHS -🇺🇸|9.55"
+      - "@free1_vpn| AHS -🇫🇷|120.24"
+      - "@hope_net| AHS -🚩|13.72"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -109,28 +92,25 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|10.37"
-      - "@free1_vpn| AHS -🇫🇷|104.49"
-      - "@hope_net| AHS -🚩|15.22"
-      - "@hope_net| AHS -🚩|9.34"
+      - "@v2rayvmess| AHS -🇺🇸|9.55"
+      - "@free1_vpn| AHS -🇫🇷|120.24"
+      - "@hope_net| AHS -🚩|13.72"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|10.37"
-      - "@free1_vpn| AHS -🇫🇷|104.49"
-      - "@hope_net| AHS -🚩|15.22"
-      - "@hope_net| AHS -🚩|9.34"
+      - "@v2rayvmess| AHS -🇺🇸|9.55"
+      - "@free1_vpn| AHS -🇫🇷|120.24"
+      - "@hope_net| AHS -🚩|13.72"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|10.37"
-      - "@free1_vpn| AHS -🇫🇷|104.49"
-      - "@hope_net| AHS -🚩|15.22"
-      - "@hope_net| AHS -🚩|9.34"
+      - "@v2rayvmess| AHS -🇺🇸|9.55"
+      - "@free1_vpn| AHS -🇫🇷|120.24"
+      - "@hope_net| AHS -🚩|13.72"
 rules:
   - MATCH,MANUAL
