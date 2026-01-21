@@ -32,23 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@oneclickvpnkeys| AHS -🇩🇪|182.03"
-    server: frankfurt01.zgjok.com
-    port: 443
-    type: vmess
-    uuid: b71579b1-6593-426d-90ac-f002fa96ade1
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: frankfurt01.zgjok.com
-    network: ws
-    ws-opts:
-      path: /
-      headers:
-        Host: frankfurt01.zgjok.com
-    udp: true
-  - name: "@oneclickvpnkeys| AHS -🇷🇺|192.84"
+  - name: "@oneclickvpnkeys| AHS -🇷🇺|187.02"
     server: 45.89.52.207
     port: 39651
     type: vmess
@@ -59,7 +43,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|2.3"
+  - name: "@v2rayvmess| AHS -🇺🇸|2.21"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -79,9 +63,8 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@oneclickvpnkeys| AHS -🇩🇪|182.03"
-      - "@oneclickvpnkeys| AHS -🇷🇺|192.84"
-      - "@v2rayvmess| AHS -🇺🇸|2.3"
+      - "@oneclickvpnkeys| AHS -🇷🇺|187.02"
+      - "@v2rayvmess| AHS -🇺🇸|2.21"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -92,25 +75,22 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@oneclickvpnkeys| AHS -🇩🇪|182.03"
-      - "@oneclickvpnkeys| AHS -🇷🇺|192.84"
-      - "@v2rayvmess| AHS -🇺🇸|2.3"
+      - "@oneclickvpnkeys| AHS -🇷🇺|187.02"
+      - "@v2rayvmess| AHS -🇺🇸|2.21"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@oneclickvpnkeys| AHS -🇩🇪|182.03"
-      - "@oneclickvpnkeys| AHS -🇷🇺|192.84"
-      - "@v2rayvmess| AHS -🇺🇸|2.3"
+      - "@oneclickvpnkeys| AHS -🇷🇺|187.02"
+      - "@v2rayvmess| AHS -🇺🇸|2.21"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@oneclickvpnkeys| AHS -🇩🇪|182.03"
-      - "@oneclickvpnkeys| AHS -🇷🇺|192.84"
-      - "@v2rayvmess| AHS -🇺🇸|2.3"
+      - "@oneclickvpnkeys| AHS -🇷🇺|187.02"
+      - "@v2rayvmess| AHS -🇺🇸|2.21"
 rules:
   - MATCH,MANUAL
