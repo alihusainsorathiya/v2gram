@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@oneclickvpnkeys| AHS -🇷🇺|121.99"
+  - name: "@oneclickvpnkeys| AHS -🇷🇺|158.33"
     server: 45.89.52.207
     port: 39651
     type: vmess
@@ -43,7 +43,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|3.45"
+  - name: "@v2rayvmess| AHS -🇺🇸|18.41"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -59,12 +59,29 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
+  - name: "@ConfigsHUB| AHS -🚩|18.75"
+    server: chatgpt.com
+    port: 443
+    type: vmess
+    uuid: ac158da9-7ec9-4e23-a6d7-80836da39895
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: dl3.hupcloud.com
+    network: ws
+    ws-opts:
+      path: ?ed=2048
+      headers:
+        Host: dl3.hupcloud.com
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@oneclickvpnkeys| AHS -🇷🇺|121.99"
-      - "@v2rayvmess| AHS -🇺🇸|3.45"
+      - "@oneclickvpnkeys| AHS -🇷🇺|158.33"
+      - "@v2rayvmess| AHS -🇺🇸|18.41"
+      - "@ConfigsHUB| AHS -🚩|18.75"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -75,22 +92,25 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@oneclickvpnkeys| AHS -🇷🇺|121.99"
-      - "@v2rayvmess| AHS -🇺🇸|3.45"
+      - "@oneclickvpnkeys| AHS -🇷🇺|158.33"
+      - "@v2rayvmess| AHS -🇺🇸|18.41"
+      - "@ConfigsHUB| AHS -🚩|18.75"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@oneclickvpnkeys| AHS -🇷🇺|121.99"
-      - "@v2rayvmess| AHS -🇺🇸|3.45"
+      - "@oneclickvpnkeys| AHS -🇷🇺|158.33"
+      - "@v2rayvmess| AHS -🇺🇸|18.41"
+      - "@ConfigsHUB| AHS -🚩|18.75"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@oneclickvpnkeys| AHS -🇷🇺|121.99"
-      - "@v2rayvmess| AHS -🇺🇸|3.45"
+      - "@oneclickvpnkeys| AHS -🇷🇺|158.33"
+      - "@v2rayvmess| AHS -🇺🇸|18.41"
+      - "@ConfigsHUB| AHS -🚩|18.75"
 rules:
   - MATCH,MANUAL
