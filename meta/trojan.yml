@@ -32,23 +32,36 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@PrivateVPNs| AHS -130.73"
-    server: 51.44.124.96
+  - name: "|@PrivateVPNs| AHS -91.86"
+    server: 18.196.155.223
     port: 22222
     type: trojan
     password: telegram-id-privatevpns
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -130.78"
-    server: 51.44.124.96
+  - name: "|@DirectVPN| AHS -93.83"
+    server: 18.196.155.223
     port: 22223
     type: trojan
     password: telegram-id-directvpn
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@oneclickvpnkeys| AHS -182.14"
+  - name: "|@NetAccount| AHS -1.94"
+    server: 162.159.152.4
+    port: 443
+    type: trojan
+    password: d70747aa-305f-44eb-9fbd-ba3a2d7c27aa
+    skip-cert-verify: true
+    sni: floralwhite.qzz.io
+    network: ws
+    ws-opts:
+      path: /93.152.217.80=443
+      headers:
+        Host: floralwhite.qzz.io
+    udp: true
+  - name: "|@oneclickvpnkeys| AHS -138.68"
     server: 217.12.204.110
     port: 8443
     type: trojan
@@ -56,7 +69,7 @@ proxies:
     skip-cert-verify: true
     sni: chat.speedload.ru
     udp: true
-  - name: "|@oneclickvpnkeys| AHS -129.79"
+  - name: "|@oneclickvpnkeys| AHS -92.94"
     server: 45.32.158.138
     port: 20994
     type: trojan
@@ -64,7 +77,7 @@ proxies:
     skip-cert-verify: true
     sni: ads.x5.ru
     udp: true
-  - name: "|@oneclickvpnkeys| AHS -136.35"
+  - name: "|@oneclickvpnkeys| AHS -94.04"
     server: 94.103.169.70
     port: 8443
     type: trojan
@@ -72,7 +85,7 @@ proxies:
     skip-cert-verify: true
     sni: chat.speedload.ru
     udp: true
-  - name: "|@vmess_vless_v2rayng| AHS -18.47"
+  - name: "|@vmess_vless_v2rayng| AHS -3.42"
     server: creativecommons.org
     port: 2053
     type: trojan
@@ -85,7 +98,7 @@ proxies:
       headers:
         Host: kotlet.arshiacomplus.dpdns.org
     udp: true
-  - name: "|@ovpn2| AHS -17.69"
+  - name: "|@ovpn2| AHS -2.55"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -98,17 +111,46 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
+  - name: "|@ConfigsHUB| AHS -2.49"
+    server: 8.6.112.0
+    port: 443
+    type: trojan
+    password: XPpvt[^S(|&fn8Fe
+    skip-cert-verify: true
+    sni: NAmElesS-Frost-7431.aCCMAsIh.WORkers.Dev
+    network: ws
+    ws-opts:
+      path: /eyJqdW5rIjoiNnl6dWtOekdJVlcyblFxeSIsInByb3RvY29sIjoidHIiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=?ed=2560
+      headers:
+        Host: nameless-frost-7431.accmasih.workers.dev
+    udp: true
+  - name: "|@ConfigsHUB| AHS -9.16"
+    server: 162.159.152.4
+    port: 443
+    type: trojan
+    password: XPpvt[^S(|&fn8Fe
+    skip-cert-verify: true
+    sni: NAmElesS-Frost-7431.aCCMAsIh.WORkers.Dev
+    network: ws
+    ws-opts:
+      path: /eyJqdW5rIjoiNnl6dWtOekdJVlcyblFxeSIsInByb3RvY29sIjoidHIiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0=?ed=2560
+      headers:
+        Host: nameless-frost-7431.accmasih.workers.dev
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@PrivateVPNs| AHS -130.73"
-      - "|@DirectVPN| AHS -130.78"
-      - "|@oneclickvpnkeys| AHS -182.14"
-      - "|@oneclickvpnkeys| AHS -129.79"
-      - "|@oneclickvpnkeys| AHS -136.35"
-      - "|@vmess_vless_v2rayng| AHS -18.47"
-      - "|@ovpn2| AHS -17.69"
+      - "|@PrivateVPNs| AHS -91.86"
+      - "|@DirectVPN| AHS -93.83"
+      - "|@NetAccount| AHS -1.94"
+      - "|@oneclickvpnkeys| AHS -138.68"
+      - "|@oneclickvpnkeys| AHS -92.94"
+      - "|@oneclickvpnkeys| AHS -94.04"
+      - "|@vmess_vless_v2rayng| AHS -3.42"
+      - "|@ovpn2| AHS -2.55"
+      - "|@ConfigsHUB| AHS -2.49"
+      - "|@ConfigsHUB| AHS -9.16"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -119,37 +161,46 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -130.73"
-      - "|@DirectVPN| AHS -130.78"
-      - "|@oneclickvpnkeys| AHS -182.14"
-      - "|@oneclickvpnkeys| AHS -129.79"
-      - "|@oneclickvpnkeys| AHS -136.35"
-      - "|@vmess_vless_v2rayng| AHS -18.47"
-      - "|@ovpn2| AHS -17.69"
+      - "|@PrivateVPNs| AHS -91.86"
+      - "|@DirectVPN| AHS -93.83"
+      - "|@NetAccount| AHS -1.94"
+      - "|@oneclickvpnkeys| AHS -138.68"
+      - "|@oneclickvpnkeys| AHS -92.94"
+      - "|@oneclickvpnkeys| AHS -94.04"
+      - "|@vmess_vless_v2rayng| AHS -3.42"
+      - "|@ovpn2| AHS -2.55"
+      - "|@ConfigsHUB| AHS -2.49"
+      - "|@ConfigsHUB| AHS -9.16"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@PrivateVPNs| AHS -130.73"
-      - "|@DirectVPN| AHS -130.78"
-      - "|@oneclickvpnkeys| AHS -182.14"
-      - "|@oneclickvpnkeys| AHS -129.79"
-      - "|@oneclickvpnkeys| AHS -136.35"
-      - "|@vmess_vless_v2rayng| AHS -18.47"
-      - "|@ovpn2| AHS -17.69"
+      - "|@PrivateVPNs| AHS -91.86"
+      - "|@DirectVPN| AHS -93.83"
+      - "|@NetAccount| AHS -1.94"
+      - "|@oneclickvpnkeys| AHS -138.68"
+      - "|@oneclickvpnkeys| AHS -92.94"
+      - "|@oneclickvpnkeys| AHS -94.04"
+      - "|@vmess_vless_v2rayng| AHS -3.42"
+      - "|@ovpn2| AHS -2.55"
+      - "|@ConfigsHUB| AHS -2.49"
+      - "|@ConfigsHUB| AHS -9.16"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -130.73"
-      - "|@DirectVPN| AHS -130.78"
-      - "|@oneclickvpnkeys| AHS -182.14"
-      - "|@oneclickvpnkeys| AHS -129.79"
-      - "|@oneclickvpnkeys| AHS -136.35"
-      - "|@vmess_vless_v2rayng| AHS -18.47"
-      - "|@ovpn2| AHS -17.69"
+      - "|@PrivateVPNs| AHS -91.86"
+      - "|@DirectVPN| AHS -93.83"
+      - "|@NetAccount| AHS -1.94"
+      - "|@oneclickvpnkeys| AHS -138.68"
+      - "|@oneclickvpnkeys| AHS -92.94"
+      - "|@oneclickvpnkeys| AHS -94.04"
+      - "|@vmess_vless_v2rayng| AHS -3.42"
+      - "|@ovpn2| AHS -2.55"
+      - "|@ConfigsHUB| AHS -2.49"
+      - "|@ConfigsHUB| AHS -9.16"
 rules:
   - MATCH,MANUAL
