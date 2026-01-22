@@ -32,23 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@prrofile_purple| AHS -🇺🇸|147.84"
-    server: 162.159.152.4
-    port: 443
-    type: vmess
-    uuid: 2c981164-9b93-4bca-94ff-b78d3f8498d7
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: v2ray.codefyinc.com
-    network: ws
-    ws-opts:
-      path: /vmessws
-      headers:
-        Host: v2ray.codefyinc.com
-    udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|10.41"
+  - name: "@v2rayvmess| AHS -🇺🇸|17.94"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -64,7 +48,7 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@vpn_tehran| AHS -🇺🇸|175.61"
+  - name: "@vpn_tehran| AHS -🇺🇸|235.81"
     server: 57.129.59.195
     port: 443
     type: vmess
@@ -84,9 +68,8 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@prrofile_purple| AHS -🇺🇸|147.84"
-      - "@v2rayvmess| AHS -🇺🇸|10.41"
-      - "@vpn_tehran| AHS -🇺🇸|175.61"
+      - "@v2rayvmess| AHS -🇺🇸|17.94"
+      - "@vpn_tehran| AHS -🇺🇸|235.81"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -97,25 +80,22 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@prrofile_purple| AHS -🇺🇸|147.84"
-      - "@v2rayvmess| AHS -🇺🇸|10.41"
-      - "@vpn_tehran| AHS -🇺🇸|175.61"
+      - "@v2rayvmess| AHS -🇺🇸|17.94"
+      - "@vpn_tehran| AHS -🇺🇸|235.81"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@prrofile_purple| AHS -🇺🇸|147.84"
-      - "@v2rayvmess| AHS -🇺🇸|10.41"
-      - "@vpn_tehran| AHS -🇺🇸|175.61"
+      - "@v2rayvmess| AHS -🇺🇸|17.94"
+      - "@vpn_tehran| AHS -🇺🇸|235.81"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@prrofile_purple| AHS -🇺🇸|147.84"
-      - "@v2rayvmess| AHS -🇺🇸|10.41"
-      - "@vpn_tehran| AHS -🇺🇸|175.61"
+      - "@v2rayvmess| AHS -🇺🇸|17.94"
+      - "@vpn_tehran| AHS -🇺🇸|235.81"
 rules:
   - MATCH,MANUAL
