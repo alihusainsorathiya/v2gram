@@ -32,18 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@oneclickvpnkeys| AHS -🇷🇺|147.06"
-    server: 45.89.52.207
-    port: 39651
-    type: vmess
-    uuid: ac4c12c5-45f2-4398-a718-9983941ede2b
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: ""
-    udp: true
-  - name: "@prrofile_purple| AHS -🚩|2.63"
+  - name: "@prrofile_purple| AHS -🚩|15.03"
     server: 8.6.112.0
     port: 443
     type: vmess
@@ -59,7 +48,7 @@ proxies:
       headers:
         Host: hk.nbee.pp.ua
     udp: true
-  - name: "@prrofile_purple| AHS -🇺🇸|131.3"
+  - name: "@prrofile_purple| AHS -🇺🇸|177.02"
     server: 162.159.152.4
     port: 443
     type: vmess
@@ -75,7 +64,7 @@ proxies:
       headers:
         Host: v2ray.codefyinc.com
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|3.32"
+  - name: "@v2rayvmess| AHS -🇺🇸|21.3"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -91,14 +80,47 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
+  - name: "@ConfigsHUB| AHS -🇫🇷|180.31"
+    server: 162.159.152.4
+    port: 443
+    type: vmess
+    uuid: e510d718-26b8-4b0e-e768-600dd8db7321
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: amirzaplus.alsahoarvi.cfd
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: amirzaplus.alsahoarvi.cfd
+    udp: true
+  - name: "@ConfigsHUB| AHS -🚩|15.45"
+    server: 8.6.112.0
+    port: 2083
+    type: vmess
+    uuid: e6395c20-4571-4b34-d6b1-55a5d36e49ea
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: hgtrojan.zabc.net
+    network: ws
+    ws-opts:
+      path: /e6395c20
+      headers:
+        Host: hgtrojan.zabc.net
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@oneclickvpnkeys| AHS -🇷🇺|147.06"
-      - "@prrofile_purple| AHS -🚩|2.63"
-      - "@prrofile_purple| AHS -🇺🇸|131.3"
-      - "@v2rayvmess| AHS -🇺🇸|3.32"
+      - "@prrofile_purple| AHS -🚩|15.03"
+      - "@prrofile_purple| AHS -🇺🇸|177.02"
+      - "@v2rayvmess| AHS -🇺🇸|21.3"
+      - "@ConfigsHUB| AHS -🇫🇷|180.31"
+      - "@ConfigsHUB| AHS -🚩|15.45"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -109,28 +131,31 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@oneclickvpnkeys| AHS -🇷🇺|147.06"
-      - "@prrofile_purple| AHS -🚩|2.63"
-      - "@prrofile_purple| AHS -🇺🇸|131.3"
-      - "@v2rayvmess| AHS -🇺🇸|3.32"
+      - "@prrofile_purple| AHS -🚩|15.03"
+      - "@prrofile_purple| AHS -🇺🇸|177.02"
+      - "@v2rayvmess| AHS -🇺🇸|21.3"
+      - "@ConfigsHUB| AHS -🇫🇷|180.31"
+      - "@ConfigsHUB| AHS -🚩|15.45"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@oneclickvpnkeys| AHS -🇷🇺|147.06"
-      - "@prrofile_purple| AHS -🚩|2.63"
-      - "@prrofile_purple| AHS -🇺🇸|131.3"
-      - "@v2rayvmess| AHS -🇺🇸|3.32"
+      - "@prrofile_purple| AHS -🚩|15.03"
+      - "@prrofile_purple| AHS -🇺🇸|177.02"
+      - "@v2rayvmess| AHS -🇺🇸|21.3"
+      - "@ConfigsHUB| AHS -🇫🇷|180.31"
+      - "@ConfigsHUB| AHS -🚩|15.45"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@oneclickvpnkeys| AHS -🇷🇺|147.06"
-      - "@prrofile_purple| AHS -🚩|2.63"
-      - "@prrofile_purple| AHS -🇺🇸|131.3"
-      - "@v2rayvmess| AHS -🇺🇸|3.32"
+      - "@prrofile_purple| AHS -🚩|15.03"
+      - "@prrofile_purple| AHS -🇺🇸|177.02"
+      - "@v2rayvmess| AHS -🇺🇸|21.3"
+      - "@ConfigsHUB| AHS -🇫🇷|180.31"
+      - "@ConfigsHUB| AHS -🚩|15.45"
 rules:
   - MATCH,MANUAL
