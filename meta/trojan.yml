@@ -32,23 +32,15 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@PrivateVPNs| AHS -103.11"
-    server: 51.44.124.96
+  - name: "|@PrivateVPNs| AHS -114.26"
+    server: 15.236.185.25
     port: 22222
     type: trojan
     password: telegram-id-privatevpns
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@PrivateVPNs| AHS -113.28"
-    server: 3.70.150.185
-    port: 22222
-    type: trojan
-    password: telegram-id-privatevpns
-    skip-cert-verify: true
-    sni: trojan.burgerip.co.uk
-    udp: true
-  - name: "|@DirectVPN| AHS -108.31"
+  - name: "|@DirectVPN| AHS -123.34"
     server: 3.70.150.185
     port: 22223
     type: trojan
@@ -56,7 +48,15 @@ proxies:
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@NetAccount| AHS -2.54"
+  - name: "|@DirectVPN| AHS -116.57"
+    server: 15.236.185.25
+    port: 22223
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@NetAccount| AHS -14.89"
     server: 162.159.152.4
     port: 443
     type: trojan
@@ -69,7 +69,7 @@ proxies:
       headers:
         Host: gainsboro.qzz.io
     udp: true
-  - name: "|@NetAccount| AHS -191.63"
+  - name: "|@NetAccount| AHS -154.94"
     server: zzula.ir
     port: 443
     type: trojan
@@ -82,7 +82,7 @@ proxies:
       headers:
         Host: amerie.qzz.io
     udp: true
-  - name: "|@NetAccount| AHS -7.94"
+  - name: "|@NetAccount| AHS -147.13"
     server: zzula.ir
     port: 443
     type: trojan
@@ -95,7 +95,7 @@ proxies:
       headers:
         Host: tly.qzz.io
     udp: true
-  - name: "|@oneclickvpnkeys| AHS -101.87"
+  - name: "|@oneclickvpnkeys| AHS -117.6"
     server: 45.32.158.138
     port: 20994
     type: trojan
@@ -103,15 +103,23 @@ proxies:
     skip-cert-verify: true
     sni: ads.x5.ru
     udp: true
-  - name: "|@oneclickvpnkeys| AHS -112.36"
-    server: 94.103.169.70
-    port: 8443
+  - name: "|@oneclickvpnkeys| AHS -344.95"
+    server: fi2.nnvpn.io
+    port: 443
     type: trojan
-    password: nbBv30KKn2tVJB6u33PuotT0t-ghHk
+    password: Pe_dQrCQ4QbnntuVrqHN3dsKhCBpqvxr
     skip-cert-verify: true
-    sni: chat.speedload.ru
+    sni: fi2.nnvpn.io
     udp: true
-  - name: "|@vmess_vless_v2rayng| AHS -3.06"
+  - name: "|@oneclickvpnkeys| AHS -126.92"
+    server: 37.235.49.209
+    port: 28099
+    type: trojan
+    password: qmBSKnAl6LYi9=z23Rs.Z
+    skip-cert-verify: true
+    sni: celestialcorset.crystalhamster.click
+    udp: true
+  - name: "|@vmess_vless_v2rayng| AHS -13.35"
     server: creativecommons.org
     port: 2053
     type: trojan
@@ -124,7 +132,7 @@ proxies:
       headers:
         Host: kotlet.arshiacomplus.dpdns.org
     udp: true
-  - name: "|@ovpn2| AHS -2.6"
+  - name: "|@ovpn2| AHS -14.51"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -141,16 +149,17 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@PrivateVPNs| AHS -103.11"
-      - "|@PrivateVPNs| AHS -113.28"
-      - "|@DirectVPN| AHS -108.31"
-      - "|@NetAccount| AHS -2.54"
-      - "|@NetAccount| AHS -191.63"
-      - "|@NetAccount| AHS -7.94"
-      - "|@oneclickvpnkeys| AHS -101.87"
-      - "|@oneclickvpnkeys| AHS -112.36"
-      - "|@vmess_vless_v2rayng| AHS -3.06"
-      - "|@ovpn2| AHS -2.6"
+      - "|@PrivateVPNs| AHS -114.26"
+      - "|@DirectVPN| AHS -123.34"
+      - "|@DirectVPN| AHS -116.57"
+      - "|@NetAccount| AHS -14.89"
+      - "|@NetAccount| AHS -154.94"
+      - "|@NetAccount| AHS -147.13"
+      - "|@oneclickvpnkeys| AHS -117.6"
+      - "|@oneclickvpnkeys| AHS -344.95"
+      - "|@oneclickvpnkeys| AHS -126.92"
+      - "|@vmess_vless_v2rayng| AHS -13.35"
+      - "|@ovpn2| AHS -14.51"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -161,46 +170,49 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -103.11"
-      - "|@PrivateVPNs| AHS -113.28"
-      - "|@DirectVPN| AHS -108.31"
-      - "|@NetAccount| AHS -2.54"
-      - "|@NetAccount| AHS -191.63"
-      - "|@NetAccount| AHS -7.94"
-      - "|@oneclickvpnkeys| AHS -101.87"
-      - "|@oneclickvpnkeys| AHS -112.36"
-      - "|@vmess_vless_v2rayng| AHS -3.06"
-      - "|@ovpn2| AHS -2.6"
+      - "|@PrivateVPNs| AHS -114.26"
+      - "|@DirectVPN| AHS -123.34"
+      - "|@DirectVPN| AHS -116.57"
+      - "|@NetAccount| AHS -14.89"
+      - "|@NetAccount| AHS -154.94"
+      - "|@NetAccount| AHS -147.13"
+      - "|@oneclickvpnkeys| AHS -117.6"
+      - "|@oneclickvpnkeys| AHS -344.95"
+      - "|@oneclickvpnkeys| AHS -126.92"
+      - "|@vmess_vless_v2rayng| AHS -13.35"
+      - "|@ovpn2| AHS -14.51"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@PrivateVPNs| AHS -103.11"
-      - "|@PrivateVPNs| AHS -113.28"
-      - "|@DirectVPN| AHS -108.31"
-      - "|@NetAccount| AHS -2.54"
-      - "|@NetAccount| AHS -191.63"
-      - "|@NetAccount| AHS -7.94"
-      - "|@oneclickvpnkeys| AHS -101.87"
-      - "|@oneclickvpnkeys| AHS -112.36"
-      - "|@vmess_vless_v2rayng| AHS -3.06"
-      - "|@ovpn2| AHS -2.6"
+      - "|@PrivateVPNs| AHS -114.26"
+      - "|@DirectVPN| AHS -123.34"
+      - "|@DirectVPN| AHS -116.57"
+      - "|@NetAccount| AHS -14.89"
+      - "|@NetAccount| AHS -154.94"
+      - "|@NetAccount| AHS -147.13"
+      - "|@oneclickvpnkeys| AHS -117.6"
+      - "|@oneclickvpnkeys| AHS -344.95"
+      - "|@oneclickvpnkeys| AHS -126.92"
+      - "|@vmess_vless_v2rayng| AHS -13.35"
+      - "|@ovpn2| AHS -14.51"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -103.11"
-      - "|@PrivateVPNs| AHS -113.28"
-      - "|@DirectVPN| AHS -108.31"
-      - "|@NetAccount| AHS -2.54"
-      - "|@NetAccount| AHS -191.63"
-      - "|@NetAccount| AHS -7.94"
-      - "|@oneclickvpnkeys| AHS -101.87"
-      - "|@oneclickvpnkeys| AHS -112.36"
-      - "|@vmess_vless_v2rayng| AHS -3.06"
-      - "|@ovpn2| AHS -2.6"
+      - "|@PrivateVPNs| AHS -114.26"
+      - "|@DirectVPN| AHS -123.34"
+      - "|@DirectVPN| AHS -116.57"
+      - "|@NetAccount| AHS -14.89"
+      - "|@NetAccount| AHS -154.94"
+      - "|@NetAccount| AHS -147.13"
+      - "|@oneclickvpnkeys| AHS -117.6"
+      - "|@oneclickvpnkeys| AHS -344.95"
+      - "|@oneclickvpnkeys| AHS -126.92"
+      - "|@vmess_vless_v2rayng| AHS -13.35"
+      - "|@ovpn2| AHS -14.51"
 rules:
   - MATCH,MANUAL
