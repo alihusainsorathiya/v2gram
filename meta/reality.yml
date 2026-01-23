@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@ProxyFn|🇨🇭|125.84
+  - name: REALITY|@ProxyFn|🇨🇭|111.64
     server: 193.168.144.46
     port: 443
     type: vless
@@ -45,7 +45,7 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@Outline_Vpn|🇯🇵|134.58
+  - name: REALITY|@Outline_Vpn|🇯🇵|162.53
     server: japan.geodema.network
     port: 443
     type: vless
@@ -56,7 +56,20 @@ proxies:
     skip-cert-verify: true
     servername: japan.geodema.network
     udp: true
-  - name: REALITY|@vmessorg|🇹🇷|153.39
+  - name: REALITY|@azadi_az_inja_migzare|🇦🇺|unavailable
+    server: 158.179.19.112
+    port: 10232
+    type: vless
+    uuid: e53cc5db-77b5-4c14-9cd5-3d4994dda363
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: nobitex.ir
+    network: grpc
+    grpc-opts:
+      grpc-service-name: "%40azadi_az_inja_migzare"
+    udp: true
+  - name: REALITY|@vmessorg|🇹🇷|139.22
     server: 156.146.52.113
     port: 8443
     type: vless
@@ -67,7 +80,7 @@ proxies:
     skip-cert-verify: true
     servername: tradingview.com
     udp: true
-  - name: REALITY|@v2rayNG_Matsuri|🇷🇺|272.29
+  - name: REALITY|@v2rayNG_Matsuri|🇷🇺|347.33
     server: mos-xt.aminv.ir
     port: 25443
     type: vless
@@ -78,7 +91,7 @@ proxies:
     skip-cert-verify: true
     servername: stackoverflow.com
     udp: true
-  - name: REALITY|@NIM_VPN_ir|🇬🇧|234.36
+  - name: REALITY|@NIM_VPN_ir|🇬🇧|297.95
     server: abpanirsonati.cookierp.ir
     port: 1016
     type: vless
@@ -88,17 +101,18 @@ proxies:
     skip-cert-verify: true
     servername: chess.com
     udp: true
-  - name: REALITY|@ConfigsHUB|🇫🇷|153.04
-    server: see.happyclosedats.com
-    port: 7854
+  - name: REALITY|@v2ray1_ng|🇷🇺|145.99
+    server: 146.185.241.5
+    port: 52006
     type: vless
-    uuid: 1f1096d3-a717-4af3-8c2f-580c772a4148
+    uuid: 62770d79-dc4d-07d0-b01c-ea30399725aa
     cipher: auto
     tls: false
+    flow: xtls-rprx-vision
     skip-cert-verify: true
-    servername: www.latimes.com
+    servername: max.ru
     udp: true
-  - name: REALITY|@v2rayngrit|🇩🇪|119.61
+  - name: REALITY|@v2rayngrit|🇩🇪|108.25
     server: 91.99.106.117
     port: 443
     type: vless
@@ -113,13 +127,14 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|125.84
-      - REALITY|@Outline_Vpn|🇯🇵|134.58
-      - REALITY|@vmessorg|🇹🇷|153.39
-      - REALITY|@v2rayNG_Matsuri|🇷🇺|272.29
-      - REALITY|@NIM_VPN_ir|🇬🇧|234.36
-      - REALITY|@ConfigsHUB|🇫🇷|153.04
-      - REALITY|@v2rayngrit|🇩🇪|119.61
+      - REALITY|@ProxyFn|🇨🇭|111.64
+      - REALITY|@Outline_Vpn|🇯🇵|162.53
+      - REALITY|@azadi_az_inja_migzare|🇦🇺|unavailable
+      - REALITY|@vmessorg|🇹🇷|139.22
+      - REALITY|@v2rayNG_Matsuri|🇷🇺|347.33
+      - REALITY|@NIM_VPN_ir|🇬🇧|297.95
+      - REALITY|@v2ray1_ng|🇷🇺|145.99
+      - REALITY|@v2rayngrit|🇩🇪|108.25
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -130,37 +145,40 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|125.84
-      - REALITY|@Outline_Vpn|🇯🇵|134.58
-      - REALITY|@vmessorg|🇹🇷|153.39
-      - REALITY|@v2rayNG_Matsuri|🇷🇺|272.29
-      - REALITY|@NIM_VPN_ir|🇬🇧|234.36
-      - REALITY|@ConfigsHUB|🇫🇷|153.04
-      - REALITY|@v2rayngrit|🇩🇪|119.61
+      - REALITY|@ProxyFn|🇨🇭|111.64
+      - REALITY|@Outline_Vpn|🇯🇵|162.53
+      - REALITY|@azadi_az_inja_migzare|🇦🇺|unavailable
+      - REALITY|@vmessorg|🇹🇷|139.22
+      - REALITY|@v2rayNG_Matsuri|🇷🇺|347.33
+      - REALITY|@NIM_VPN_ir|🇬🇧|297.95
+      - REALITY|@v2ray1_ng|🇷🇺|145.99
+      - REALITY|@v2rayngrit|🇩🇪|108.25
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|125.84
-      - REALITY|@Outline_Vpn|🇯🇵|134.58
-      - REALITY|@vmessorg|🇹🇷|153.39
-      - REALITY|@v2rayNG_Matsuri|🇷🇺|272.29
-      - REALITY|@NIM_VPN_ir|🇬🇧|234.36
-      - REALITY|@ConfigsHUB|🇫🇷|153.04
-      - REALITY|@v2rayngrit|🇩🇪|119.61
+      - REALITY|@ProxyFn|🇨🇭|111.64
+      - REALITY|@Outline_Vpn|🇯🇵|162.53
+      - REALITY|@azadi_az_inja_migzare|🇦🇺|unavailable
+      - REALITY|@vmessorg|🇹🇷|139.22
+      - REALITY|@v2rayNG_Matsuri|🇷🇺|347.33
+      - REALITY|@NIM_VPN_ir|🇬🇧|297.95
+      - REALITY|@v2ray1_ng|🇷🇺|145.99
+      - REALITY|@v2rayngrit|🇩🇪|108.25
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|125.84
-      - REALITY|@Outline_Vpn|🇯🇵|134.58
-      - REALITY|@vmessorg|🇹🇷|153.39
-      - REALITY|@v2rayNG_Matsuri|🇷🇺|272.29
-      - REALITY|@NIM_VPN_ir|🇬🇧|234.36
-      - REALITY|@ConfigsHUB|🇫🇷|153.04
-      - REALITY|@v2rayngrit|🇩🇪|119.61
+      - REALITY|@ProxyFn|🇨🇭|111.64
+      - REALITY|@Outline_Vpn|🇯🇵|162.53
+      - REALITY|@azadi_az_inja_migzare|🇦🇺|unavailable
+      - REALITY|@vmessorg|🇹🇷|139.22
+      - REALITY|@v2rayNG_Matsuri|🇷🇺|347.33
+      - REALITY|@NIM_VPN_ir|🇬🇧|297.95
+      - REALITY|@v2ray1_ng|🇷🇺|145.99
+      - REALITY|@v2rayngrit|🇩🇪|108.25
 rules:
   - MATCH,MANUAL
