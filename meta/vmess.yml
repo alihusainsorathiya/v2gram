@@ -32,7 +32,23 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@v2rayvmess| AHS -🇺🇸|13.49"
+  - name: "@oneclickvpnkeys| AHS -🇭🇰|186.23"
+    server: 172.66.40.229
+    port: 8443
+    type: vmess
+    uuid: f9227d36-b630-4758-8805-cf16a47e4e63
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: lithusha.riyon.cfd
+    network: ws
+    ws-opts:
+      path: /lithusha
+      headers:
+        Host: lithusha.riyon.cfd
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|9.13"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -48,28 +64,29 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@hope_net| AHS -🚩|14.68"
-    server: 104.19.45.191
-    port: 2095
+  - name: "@hope_net| AHS -🚩|9.9"
+    server: zula.ir
+    port: 2096
     type: vmess
-    uuid: 7a737f41-b792-4260-94ff-3d864da67b80
+    uuid: 30cab746-5ca5-46ef-aa9b-537f20f6a40c
     alterId: 0
     cipher: auto
-    tls: false
+    tls: true
     skip-cert-verify: true
-    servername: onea.flha.ru
+    servername: kingo.hightechservice.ir
     network: ws
     ws-opts:
       path: /
       headers:
-        Host: onea.flha.ru
+        Host: kingo.hightechservice.ir
     udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|13.49"
-      - "@hope_net| AHS -🚩|14.68"
+      - "@oneclickvpnkeys| AHS -🇭🇰|186.23"
+      - "@v2rayvmess| AHS -🇺🇸|9.13"
+      - "@hope_net| AHS -🚩|9.9"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -80,22 +97,25 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|13.49"
-      - "@hope_net| AHS -🚩|14.68"
+      - "@oneclickvpnkeys| AHS -🇭🇰|186.23"
+      - "@v2rayvmess| AHS -🇺🇸|9.13"
+      - "@hope_net| AHS -🚩|9.9"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|13.49"
-      - "@hope_net| AHS -🚩|14.68"
+      - "@oneclickvpnkeys| AHS -🇭🇰|186.23"
+      - "@v2rayvmess| AHS -🇺🇸|9.13"
+      - "@hope_net| AHS -🚩|9.9"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|13.49"
-      - "@hope_net| AHS -🚩|14.68"
+      - "@oneclickvpnkeys| AHS -🇭🇰|186.23"
+      - "@v2rayvmess| AHS -🇺🇸|9.13"
+      - "@hope_net| AHS -🚩|9.9"
 rules:
   - MATCH,MANUAL
