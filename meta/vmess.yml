@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@oneclickvpnkeys| AHS -🇭🇰|374.29"
+  - name: "@oneclickvpnkeys| AHS -🇭🇰|190.52"
     server: 172.66.40.229
     port: 8443
     type: vmess
@@ -48,7 +48,18 @@ proxies:
       headers:
         Host: lithusha.riyon.cfd
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|3.89"
+  - name: "@prrofile_purple| AHS -🇺🇸|unavailable"
+    server: 172.234.132.232
+    port: 10001
+    type: vmess
+    uuid: a6b99c05-8e0a-4f7e-bf7b-e4b9febb9589
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|11.8"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -68,8 +79,9 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@oneclickvpnkeys| AHS -🇭🇰|374.29"
-      - "@v2rayvmess| AHS -🇺🇸|3.89"
+      - "@oneclickvpnkeys| AHS -🇭🇰|190.52"
+      - "@prrofile_purple| AHS -🇺🇸|unavailable"
+      - "@v2rayvmess| AHS -🇺🇸|11.8"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -80,22 +92,25 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@oneclickvpnkeys| AHS -🇭🇰|374.29"
-      - "@v2rayvmess| AHS -🇺🇸|3.89"
+      - "@oneclickvpnkeys| AHS -🇭🇰|190.52"
+      - "@prrofile_purple| AHS -🇺🇸|unavailable"
+      - "@v2rayvmess| AHS -🇺🇸|11.8"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@oneclickvpnkeys| AHS -🇭🇰|374.29"
-      - "@v2rayvmess| AHS -🇺🇸|3.89"
+      - "@oneclickvpnkeys| AHS -🇭🇰|190.52"
+      - "@prrofile_purple| AHS -🇺🇸|unavailable"
+      - "@v2rayvmess| AHS -🇺🇸|11.8"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@oneclickvpnkeys| AHS -🇭🇰|374.29"
-      - "@v2rayvmess| AHS -🇺🇸|3.89"
+      - "@oneclickvpnkeys| AHS -🇭🇰|190.52"
+      - "@prrofile_purple| AHS -🇺🇸|unavailable"
+      - "@v2rayvmess| AHS -🇺🇸|11.8"
 rules:
   - MATCH,MANUAL
