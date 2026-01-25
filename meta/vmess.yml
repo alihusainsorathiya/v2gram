@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@v2rayvmess| AHS -🇺🇸|12.44"
+  - name: "@v2rayvmess| AHS -🇺🇸|9.37"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -48,11 +48,33 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@ConfigsHUB| AHS -🇺🇸|75.2"
-    server: 172.233.229.91
-    port: 14102
+  - name: "@SafeNet_Server| AHS -🇷🇴|unavailable"
+    server: 85.204.107.33
+    port: 110
     type: vmess
-    uuid: 27ba87fc-583f-4763-9060-83cf0b9264db
+    uuid: 53e0eda6-2a9e-4a76-bd44-30e509f6350e
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@ConfigsHUB| AHS -🇫🇮|135.88"
+    server: 85.9.212.45
+    port: 80
+    type: vmess
+    uuid: 83d42453-3971-4e8e-93fc-0156324881da
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@ConfigsHUB| AHS -🇫🇮|64.54"
+    server: 85.9.192.188
+    port: 80
+    type: vmess
+    uuid: 83d42453-3971-4e8e-93fc-0156324881da
     alterId: 0
     cipher: auto
     tls: false
@@ -63,8 +85,10 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|12.44"
-      - "@ConfigsHUB| AHS -🇺🇸|75.2"
+      - "@v2rayvmess| AHS -🇺🇸|9.37"
+      - "@SafeNet_Server| AHS -🇷🇴|unavailable"
+      - "@ConfigsHUB| AHS -🇫🇮|135.88"
+      - "@ConfigsHUB| AHS -🇫🇮|64.54"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -75,22 +99,28 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|12.44"
-      - "@ConfigsHUB| AHS -🇺🇸|75.2"
+      - "@v2rayvmess| AHS -🇺🇸|9.37"
+      - "@SafeNet_Server| AHS -🇷🇴|unavailable"
+      - "@ConfigsHUB| AHS -🇫🇮|135.88"
+      - "@ConfigsHUB| AHS -🇫🇮|64.54"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|12.44"
-      - "@ConfigsHUB| AHS -🇺🇸|75.2"
+      - "@v2rayvmess| AHS -🇺🇸|9.37"
+      - "@SafeNet_Server| AHS -🇷🇴|unavailable"
+      - "@ConfigsHUB| AHS -🇫🇮|135.88"
+      - "@ConfigsHUB| AHS -🇫🇮|64.54"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|12.44"
-      - "@ConfigsHUB| AHS -🇺🇸|75.2"
+      - "@v2rayvmess| AHS -🇺🇸|9.37"
+      - "@SafeNet_Server| AHS -🇷🇴|unavailable"
+      - "@ConfigsHUB| AHS -🇫🇮|135.88"
+      - "@ConfigsHUB| AHS -🇫🇮|64.54"
 rules:
   - MATCH,MANUAL
