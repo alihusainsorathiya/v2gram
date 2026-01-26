@@ -32,18 +32,55 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@prrofile_purple| AHS -🇺🇸|68.59"
-    server: 172.233.229.91
-    port: 14102
+  - name: "@oneclickvpnkeys| AHS -🚩|2.84"
+    server: 104.21.69.44
+    port: 8080
     type: vmess
-    uuid: 27ba87fc-583f-4763-9060-83cf0b9264db
+    uuid: nasnet
     alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: true
-    servername: ""
+    servername: nasnet-511952424.mcitel.co
+    network: ws
+    ws-opts:
+      path: /nasnet/cdn
+      headers:
+        Host: nasnet-511952424.mcitel.co
     udp: true
-  - name: "@prrofile_purple| AHS -🇨🇦|66.86"
+  - name: "@oneclickvpnkeys| AHS -🇺🇸|118.04"
+    server: 162.159.152.4
+    port: 443
+    type: vmess
+    uuid: 2c981164-9b93-4bca-94ff-b78d3f8498d7
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: v2ray.codefyinc.com
+    network: ws
+    ws-opts:
+      path: /vmessws
+      headers:
+        Host: v2ray.codefyinc.com
+    udp: true
+  - name: "@oneclickvpnkeys| AHS -🚩|2.58"
+    server: t1.620720.xyz
+    port: 8443
+    type: vmess
+    uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: t1.620720.xyz
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: t1.620720.xyz
+    udp: true
+  - name: "@prrofile_purple| AHS -🇨🇦|66.78"
     server: knd.balouliangzhimao.xyz
     port: 10151
     type: vmess
@@ -54,7 +91,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@prrofile_purple| AHS -🇺🇸|159.24"
+  - name: "@prrofile_purple| AHS -🇺🇸|159.35"
     server: 149.30.232.103
     port: 31469
     type: vmess
@@ -70,7 +107,7 @@ proxies:
       headers:
         Host: ""
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|2.12"
+  - name: "@v2rayvmess| AHS -🇺🇸|2.26"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -90,10 +127,12 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@prrofile_purple| AHS -🇺🇸|68.59"
-      - "@prrofile_purple| AHS -🇨🇦|66.86"
-      - "@prrofile_purple| AHS -🇺🇸|159.24"
-      - "@v2rayvmess| AHS -🇺🇸|2.12"
+      - "@oneclickvpnkeys| AHS -🚩|2.84"
+      - "@oneclickvpnkeys| AHS -🇺🇸|118.04"
+      - "@oneclickvpnkeys| AHS -🚩|2.58"
+      - "@prrofile_purple| AHS -🇨🇦|66.78"
+      - "@prrofile_purple| AHS -🇺🇸|159.35"
+      - "@v2rayvmess| AHS -🇺🇸|2.26"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -104,28 +143,34 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@prrofile_purple| AHS -🇺🇸|68.59"
-      - "@prrofile_purple| AHS -🇨🇦|66.86"
-      - "@prrofile_purple| AHS -🇺🇸|159.24"
-      - "@v2rayvmess| AHS -🇺🇸|2.12"
+      - "@oneclickvpnkeys| AHS -🚩|2.84"
+      - "@oneclickvpnkeys| AHS -🇺🇸|118.04"
+      - "@oneclickvpnkeys| AHS -🚩|2.58"
+      - "@prrofile_purple| AHS -🇨🇦|66.78"
+      - "@prrofile_purple| AHS -🇺🇸|159.35"
+      - "@v2rayvmess| AHS -🇺🇸|2.26"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@prrofile_purple| AHS -🇺🇸|68.59"
-      - "@prrofile_purple| AHS -🇨🇦|66.86"
-      - "@prrofile_purple| AHS -🇺🇸|159.24"
-      - "@v2rayvmess| AHS -🇺🇸|2.12"
+      - "@oneclickvpnkeys| AHS -🚩|2.84"
+      - "@oneclickvpnkeys| AHS -🇺🇸|118.04"
+      - "@oneclickvpnkeys| AHS -🚩|2.58"
+      - "@prrofile_purple| AHS -🇨🇦|66.78"
+      - "@prrofile_purple| AHS -🇺🇸|159.35"
+      - "@v2rayvmess| AHS -🇺🇸|2.26"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@prrofile_purple| AHS -🇺🇸|68.59"
-      - "@prrofile_purple| AHS -🇨🇦|66.86"
-      - "@prrofile_purple| AHS -🇺🇸|159.24"
-      - "@v2rayvmess| AHS -🇺🇸|2.12"
+      - "@oneclickvpnkeys| AHS -🚩|2.84"
+      - "@oneclickvpnkeys| AHS -🇺🇸|118.04"
+      - "@oneclickvpnkeys| AHS -🚩|2.58"
+      - "@prrofile_purple| AHS -🇨🇦|66.78"
+      - "@prrofile_purple| AHS -🇺🇸|159.35"
+      - "@v2rayvmess| AHS -🇺🇸|2.26"
 rules:
   - MATCH,MANUAL
