@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@ProxyFn|🇨🇭|160.44
+  - name: REALITY|@ProxyFn|🇨🇭|171.38
     server: 193.168.144.46
     port: 443
     type: vless
@@ -45,7 +45,7 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@Outline_Vpn|🇱🇹|166.97
+  - name: REALITY|@Outline_Vpn|🇱🇹|177.49
     server: 5.199.162.232
     port: 2083
     type: vless
@@ -58,7 +58,17 @@ proxies:
     grpc-opts:
       grpc-service-name: UpdateService
     udp: true
-  - name: REALITY|@kiava|🇩🇪|154.22
+  - name: REALITY|@customv2ray|🇦🇪|240.97
+    server: 85.237.211.139
+    port: 8009
+    type: vless
+    uuid: 49b8d2a1-b44f-4f0f-909d-28ea0f5c1f48
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: refersion.com
+    udp: true
+  - name: REALITY|@kiava|🇩🇪|162.41
     server: 178.162.241.204
     port: 443
     type: vless
@@ -69,7 +79,7 @@ proxies:
     skip-cert-verify: true
     servername: www.samsung.com
     udp: true
-  - name: REALITY|@proxystore11|🇵🇱|179.95
+  - name: REALITY|@proxystore11|🇵🇱|226.46
     server: pl.spirako.com
     port: 443
     type: vless
@@ -80,7 +90,7 @@ proxies:
     skip-cert-verify: true
     servername: website.com
     udp: true
-  - name: REALITY|@v2rayngrit|🇩🇪|153.56
+  - name: REALITY|@v2rayngrit|🇩🇪|157.72
     server: 91.99.106.117
     port: 443
     type: vless
@@ -95,11 +105,12 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|160.44
-      - REALITY|@Outline_Vpn|🇱🇹|166.97
-      - REALITY|@kiava|🇩🇪|154.22
-      - REALITY|@proxystore11|🇵🇱|179.95
-      - REALITY|@v2rayngrit|🇩🇪|153.56
+      - REALITY|@ProxyFn|🇨🇭|171.38
+      - REALITY|@Outline_Vpn|🇱🇹|177.49
+      - REALITY|@customv2ray|🇦🇪|240.97
+      - REALITY|@kiava|🇩🇪|162.41
+      - REALITY|@proxystore11|🇵🇱|226.46
+      - REALITY|@v2rayngrit|🇩🇪|157.72
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -110,31 +121,34 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|160.44
-      - REALITY|@Outline_Vpn|🇱🇹|166.97
-      - REALITY|@kiava|🇩🇪|154.22
-      - REALITY|@proxystore11|🇵🇱|179.95
-      - REALITY|@v2rayngrit|🇩🇪|153.56
+      - REALITY|@ProxyFn|🇨🇭|171.38
+      - REALITY|@Outline_Vpn|🇱🇹|177.49
+      - REALITY|@customv2ray|🇦🇪|240.97
+      - REALITY|@kiava|🇩🇪|162.41
+      - REALITY|@proxystore11|🇵🇱|226.46
+      - REALITY|@v2rayngrit|🇩🇪|157.72
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|160.44
-      - REALITY|@Outline_Vpn|🇱🇹|166.97
-      - REALITY|@kiava|🇩🇪|154.22
-      - REALITY|@proxystore11|🇵🇱|179.95
-      - REALITY|@v2rayngrit|🇩🇪|153.56
+      - REALITY|@ProxyFn|🇨🇭|171.38
+      - REALITY|@Outline_Vpn|🇱🇹|177.49
+      - REALITY|@customv2ray|🇦🇪|240.97
+      - REALITY|@kiava|🇩🇪|162.41
+      - REALITY|@proxystore11|🇵🇱|226.46
+      - REALITY|@v2rayngrit|🇩🇪|157.72
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|160.44
-      - REALITY|@Outline_Vpn|🇱🇹|166.97
-      - REALITY|@kiava|🇩🇪|154.22
-      - REALITY|@proxystore11|🇵🇱|179.95
-      - REALITY|@v2rayngrit|🇩🇪|153.56
+      - REALITY|@ProxyFn|🇨🇭|171.38
+      - REALITY|@Outline_Vpn|🇱🇹|177.49
+      - REALITY|@customv2ray|🇦🇪|240.97
+      - REALITY|@kiava|🇩🇪|162.41
+      - REALITY|@proxystore11|🇵🇱|226.46
+      - REALITY|@v2rayngrit|🇩🇪|157.72
 rules:
   - MATCH,MANUAL
