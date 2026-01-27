@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@ProxyFn|🇨🇭|110.99
+  - name: REALITY|@ProxyFn|🇨🇭|104.5
     server: 193.168.144.46
     port: 443
     type: vless
@@ -45,7 +45,18 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@vmessorg|🇬🇧|98.35
+  - name: REALITY|@Outline_Vpn|🇩🇪|95.02
+    server: 94.141.123.137
+    port: 443
+    type: vless
+    uuid: f3f6f19f-c68a-462c-a534-9b388663fffa
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: de2.mcqueenconnection.ru
+    udp: true
+  - name: REALITY|@vmessorg|🇬🇧|unavailable
     server: uk.nationalldt.com
     port: 30443
     type: vless
@@ -55,7 +66,18 @@ proxies:
     skip-cert-verify: true
     servername: tgju.org
     udp: true
-  - name: REALITY|@DarkVPNpro|🇷🇺|128.7
+  - name: REALITY|@kiava|🇷🇺|unavailable
+    server: 84.201.178.109
+    port: 8443
+    type: vless
+    uuid: 435c03fd-f139-4a9a-9516-74fa81d983d1
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: api-maps.yandex.ru
+    udp: true
+  - name: REALITY|@DarkVPNpro|🇷🇺|331.22
     server: ru.githuub.ir
     port: 32016
     type: vless
@@ -65,13 +87,27 @@ proxies:
     skip-cert-verify: true
     servername: google.com
     udp: true
+  - name: REALITY|@ConfigsHUB|🇪🇸|251.46
+    server: es-1.seemsflower.ru
+    port: 8443
+    type: vless
+    uuid: df7f9ba3-ea64-4275-b2aa-d4fef07d9ab7
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: samsung.com
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|110.99
-      - REALITY|@vmessorg|🇬🇧|98.35
-      - REALITY|@DarkVPNpro|🇷🇺|128.7
+      - REALITY|@ProxyFn|🇨🇭|104.5
+      - REALITY|@Outline_Vpn|🇩🇪|95.02
+      - REALITY|@vmessorg|🇬🇧|unavailable
+      - REALITY|@kiava|🇷🇺|unavailable
+      - REALITY|@DarkVPNpro|🇷🇺|331.22
+      - REALITY|@ConfigsHUB|🇪🇸|251.46
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -82,25 +118,34 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|110.99
-      - REALITY|@vmessorg|🇬🇧|98.35
-      - REALITY|@DarkVPNpro|🇷🇺|128.7
+      - REALITY|@ProxyFn|🇨🇭|104.5
+      - REALITY|@Outline_Vpn|🇩🇪|95.02
+      - REALITY|@vmessorg|🇬🇧|unavailable
+      - REALITY|@kiava|🇷🇺|unavailable
+      - REALITY|@DarkVPNpro|🇷🇺|331.22
+      - REALITY|@ConfigsHUB|🇪🇸|251.46
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|110.99
-      - REALITY|@vmessorg|🇬🇧|98.35
-      - REALITY|@DarkVPNpro|🇷🇺|128.7
+      - REALITY|@ProxyFn|🇨🇭|104.5
+      - REALITY|@Outline_Vpn|🇩🇪|95.02
+      - REALITY|@vmessorg|🇬🇧|unavailable
+      - REALITY|@kiava|🇷🇺|unavailable
+      - REALITY|@DarkVPNpro|🇷🇺|331.22
+      - REALITY|@ConfigsHUB|🇪🇸|251.46
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|110.99
-      - REALITY|@vmessorg|🇬🇧|98.35
-      - REALITY|@DarkVPNpro|🇷🇺|128.7
+      - REALITY|@ProxyFn|🇨🇭|104.5
+      - REALITY|@Outline_Vpn|🇩🇪|95.02
+      - REALITY|@vmessorg|🇬🇧|unavailable
+      - REALITY|@kiava|🇷🇺|unavailable
+      - REALITY|@DarkVPNpro|🇷🇺|331.22
+      - REALITY|@ConfigsHUB|🇪🇸|251.46
 rules:
   - MATCH,MANUAL
