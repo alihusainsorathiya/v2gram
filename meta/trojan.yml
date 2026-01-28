@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@PrivateVPNs| AHS -87.17"
+  - name: "|@PrivateVPNs| AHS -110.74"
     server: 13.36.112.231
     port: 22222
     type: trojan
@@ -40,7 +40,7 @@ proxies:
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -87.65"
+  - name: "|@DirectVPN| AHS -104.71"
     server: 13.36.112.231
     port: 22223
     type: trojan
@@ -48,7 +48,7 @@ proxies:
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@oneclickvpnkeys| AHS -10.9"
+  - name: "|@oneclickvpnkeys| AHS -3.95"
     server: mfyousheng.nl.eu.org
     port: 443
     type: trojan
@@ -61,7 +61,7 @@ proxies:
       headers:
         Host: mfyousheng.nl.eu.org
     udp: true
-  - name: "|@vmess_vless_v2rayng| AHS -3.63"
+  - name: "|@vmess_vless_v2rayng| AHS -4.31"
     server: creativecommons.org
     port: 2053
     type: trojan
@@ -74,7 +74,7 @@ proxies:
       headers:
         Host: kotlet.arshiacomplus.dpdns.org
     udp: true
-  - name: "|@ovpn2| AHS -2.83"
+  - name: "|@ovpn2| AHS -2.53"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -87,7 +87,7 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
-  - name: "|@vpn_tehran| AHS -2.4"
+  - name: "|@vpn_tehran| AHS -3.14"
     server: 104.17.163.123
     port: 8443
     type: trojan
@@ -100,7 +100,7 @@ proxies:
       headers:
         Host: fflved5b71of0dhntg2ier40sswwuydkqf.zjde5.de5.net
     udp: true
-  - name: "|@vpn_tehran| AHS -2.61"
+  - name: "|@vpn_tehran| AHS -2.08"
     server: 104.17.163.123
     port: 8443
     type: trojan
@@ -113,17 +113,45 @@ proxies:
       headers:
         Host: y98fk7q84z0wfcjuirh.zjde5.de5.net
     udp: true
+  - name: "|@ConfigsHUB| AHS -1.65"
+    server: 104.17.163.123
+    port: 8443
+    type: trojan
+    password: n875vm39ii96
+    skip-cert-verify: true
+    sni: fflved5b71of0dhntg2ier40sswwuydkqf.zjde5.de5.net
+    network: ws
+    ws-opts:
+      path: ""
+      headers:
+        Host: fflved5b71of0dhntg2ier40sswwuydkqf.zjde5.de5.net
+    udp: true
+  - name: "|@ConfigsHUB| AHS -2.81"
+    server: 104.17.162.123
+    port: 8443
+    type: trojan
+    password: u2k1jh0og5vn
+    skip-cert-verify: true
+    sni: oq788320mz7kfruyec7b0q1l4bojfire1bp9lmu7.zjde5.de5.net
+    network: ws
+    ws-opts:
+      path: ""
+      headers:
+        Host: oq788320mz7kfruyec7b0q1l4bojfire1bp9lmu7.zjde5.de5.net
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@PrivateVPNs| AHS -87.17"
-      - "|@DirectVPN| AHS -87.65"
-      - "|@oneclickvpnkeys| AHS -10.9"
-      - "|@vmess_vless_v2rayng| AHS -3.63"
-      - "|@ovpn2| AHS -2.83"
-      - "|@vpn_tehran| AHS -2.4"
-      - "|@vpn_tehran| AHS -2.61"
+      - "|@PrivateVPNs| AHS -110.74"
+      - "|@DirectVPN| AHS -104.71"
+      - "|@oneclickvpnkeys| AHS -3.95"
+      - "|@vmess_vless_v2rayng| AHS -4.31"
+      - "|@ovpn2| AHS -2.53"
+      - "|@vpn_tehran| AHS -3.14"
+      - "|@vpn_tehran| AHS -2.08"
+      - "|@ConfigsHUB| AHS -1.65"
+      - "|@ConfigsHUB| AHS -2.81"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -134,37 +162,43 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -87.17"
-      - "|@DirectVPN| AHS -87.65"
-      - "|@oneclickvpnkeys| AHS -10.9"
-      - "|@vmess_vless_v2rayng| AHS -3.63"
-      - "|@ovpn2| AHS -2.83"
-      - "|@vpn_tehran| AHS -2.4"
-      - "|@vpn_tehran| AHS -2.61"
+      - "|@PrivateVPNs| AHS -110.74"
+      - "|@DirectVPN| AHS -104.71"
+      - "|@oneclickvpnkeys| AHS -3.95"
+      - "|@vmess_vless_v2rayng| AHS -4.31"
+      - "|@ovpn2| AHS -2.53"
+      - "|@vpn_tehran| AHS -3.14"
+      - "|@vpn_tehran| AHS -2.08"
+      - "|@ConfigsHUB| AHS -1.65"
+      - "|@ConfigsHUB| AHS -2.81"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@PrivateVPNs| AHS -87.17"
-      - "|@DirectVPN| AHS -87.65"
-      - "|@oneclickvpnkeys| AHS -10.9"
-      - "|@vmess_vless_v2rayng| AHS -3.63"
-      - "|@ovpn2| AHS -2.83"
-      - "|@vpn_tehran| AHS -2.4"
-      - "|@vpn_tehran| AHS -2.61"
+      - "|@PrivateVPNs| AHS -110.74"
+      - "|@DirectVPN| AHS -104.71"
+      - "|@oneclickvpnkeys| AHS -3.95"
+      - "|@vmess_vless_v2rayng| AHS -4.31"
+      - "|@ovpn2| AHS -2.53"
+      - "|@vpn_tehran| AHS -3.14"
+      - "|@vpn_tehran| AHS -2.08"
+      - "|@ConfigsHUB| AHS -1.65"
+      - "|@ConfigsHUB| AHS -2.81"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -87.17"
-      - "|@DirectVPN| AHS -87.65"
-      - "|@oneclickvpnkeys| AHS -10.9"
-      - "|@vmess_vless_v2rayng| AHS -3.63"
-      - "|@ovpn2| AHS -2.83"
-      - "|@vpn_tehran| AHS -2.4"
-      - "|@vpn_tehran| AHS -2.61"
+      - "|@PrivateVPNs| AHS -110.74"
+      - "|@DirectVPN| AHS -104.71"
+      - "|@oneclickvpnkeys| AHS -3.95"
+      - "|@vmess_vless_v2rayng| AHS -4.31"
+      - "|@ovpn2| AHS -2.53"
+      - "|@vpn_tehran| AHS -3.14"
+      - "|@vpn_tehran| AHS -2.08"
+      - "|@ConfigsHUB| AHS -1.65"
+      - "|@ConfigsHUB| AHS -2.81"
 rules:
   - MATCH,MANUAL
