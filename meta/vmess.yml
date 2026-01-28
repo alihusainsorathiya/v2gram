@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@oneclickvpnkeys| AHS -🇺🇸|55.27"
+  - name: "@oneclickvpnkeys| AHS -🇺🇸|26.57"
     server: 165.227.63.55
     port: 443
     type: vmess
@@ -48,7 +48,7 @@ proxies:
       headers:
         Host: cg1c14.waimaojd.com
     udp: true
-  - name: "@oneclickvpnkeys| AHS -🇨🇦|22.33"
+  - name: "@oneclickvpnkeys| AHS -🇨🇦|65.86"
     server: 134.195.198.147
     port: 443
     type: vmess
@@ -64,7 +64,7 @@ proxies:
       headers:
         Host: ""
     udp: true
-  - name: "@prrofile_purple| AHS -🚩|48.99"
+  - name: "@prrofile_purple| AHS -🚩|2.36"
     server: 172.67.204.84
     port: 8080
     type: vmess
@@ -80,7 +80,7 @@ proxies:
       headers:
         Host: nasnet-511952424.mcitel.co
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|2.37"
+  - name: "@v2rayvmess| AHS -🇺🇸|1.97"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -96,31 +96,48 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@hope_net| AHS -🇺🇸|204.21"
-    server: 172.67.131.108
-    port: 443
+  - name: "@vpn_tehran| AHS -🇮🇷|unavailable"
+    server: 79.175.162.227
+    port: 80
     type: vmess
-    uuid: 1052f24e-7b09-45eb-b0c5-d858eb124192
+    uuid: 93498eac-c93a-41a5-b6b8-8bf33ed8bacc
     alterId: 0
     cipher: auto
-    tls: true
+    tls: false
     skip-cert-verify: true
-    servername: glweidf.cfd
+    servername: ""
     network: ws
     ws-opts:
-      path: /linkws
+      path: /
       headers:
-        Host: glweidf.cfd
+        Host: ""
+    udp: true
+  - name: "@ConfigsHUB| AHS -🇸🇪|162.64"
+    server: 46.246.126.154
+    port: 443
+    type: vmess
+    uuid: f2fd0786-1059-4f64-d54e-3f3a568c6c68
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: ""
     udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@oneclickvpnkeys| AHS -🇺🇸|55.27"
-      - "@oneclickvpnkeys| AHS -🇨🇦|22.33"
-      - "@prrofile_purple| AHS -🚩|48.99"
-      - "@v2rayvmess| AHS -🇺🇸|2.37"
-      - "@hope_net| AHS -🇺🇸|204.21"
+      - "@oneclickvpnkeys| AHS -🇺🇸|26.57"
+      - "@oneclickvpnkeys| AHS -🇨🇦|65.86"
+      - "@prrofile_purple| AHS -🚩|2.36"
+      - "@v2rayvmess| AHS -🇺🇸|1.97"
+      - "@vpn_tehran| AHS -🇮🇷|unavailable"
+      - "@ConfigsHUB| AHS -🇸🇪|162.64"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -131,31 +148,34 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@oneclickvpnkeys| AHS -🇺🇸|55.27"
-      - "@oneclickvpnkeys| AHS -🇨🇦|22.33"
-      - "@prrofile_purple| AHS -🚩|48.99"
-      - "@v2rayvmess| AHS -🇺🇸|2.37"
-      - "@hope_net| AHS -🇺🇸|204.21"
+      - "@oneclickvpnkeys| AHS -🇺🇸|26.57"
+      - "@oneclickvpnkeys| AHS -🇨🇦|65.86"
+      - "@prrofile_purple| AHS -🚩|2.36"
+      - "@v2rayvmess| AHS -🇺🇸|1.97"
+      - "@vpn_tehran| AHS -🇮🇷|unavailable"
+      - "@ConfigsHUB| AHS -🇸🇪|162.64"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@oneclickvpnkeys| AHS -🇺🇸|55.27"
-      - "@oneclickvpnkeys| AHS -🇨🇦|22.33"
-      - "@prrofile_purple| AHS -🚩|48.99"
-      - "@v2rayvmess| AHS -🇺🇸|2.37"
-      - "@hope_net| AHS -🇺🇸|204.21"
+      - "@oneclickvpnkeys| AHS -🇺🇸|26.57"
+      - "@oneclickvpnkeys| AHS -🇨🇦|65.86"
+      - "@prrofile_purple| AHS -🚩|2.36"
+      - "@v2rayvmess| AHS -🇺🇸|1.97"
+      - "@vpn_tehran| AHS -🇮🇷|unavailable"
+      - "@ConfigsHUB| AHS -🇸🇪|162.64"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@oneclickvpnkeys| AHS -🇺🇸|55.27"
-      - "@oneclickvpnkeys| AHS -🇨🇦|22.33"
-      - "@prrofile_purple| AHS -🚩|48.99"
-      - "@v2rayvmess| AHS -🇺🇸|2.37"
-      - "@hope_net| AHS -🇺🇸|204.21"
+      - "@oneclickvpnkeys| AHS -🇺🇸|26.57"
+      - "@oneclickvpnkeys| AHS -🇨🇦|65.86"
+      - "@prrofile_purple| AHS -🚩|2.36"
+      - "@v2rayvmess| AHS -🇺🇸|1.97"
+      - "@vpn_tehran| AHS -🇮🇷|unavailable"
+      - "@ConfigsHUB| AHS -🇸🇪|162.64"
 rules:
   - MATCH,MANUAL
