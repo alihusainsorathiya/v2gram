@@ -32,7 +32,23 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@prrofile_purple| AHS -🇺🇸|6.44"
+  - name: "@oneclickvpnkeys| AHS -🚩|15.11"
+    server: digitalocean.com
+    port: 8080
+    type: vmess
+    uuid: nasnet
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: nasnet-571299667.rahavard365.co
+    network: ws
+    ws-opts:
+      path: /NASNET/cdn?ed=2560
+      headers:
+        Host: nasnet-571299667.rahavard365.co
+    udp: true
+  - name: "@prrofile_purple| AHS -🇺🇸|13.19"
     server: d2fog4flcfgb8c.cloudfront.net
     port: 443
     type: vmess
@@ -48,7 +64,7 @@ proxies:
       headers:
         Host: ""
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|6.51"
+  - name: "@v2rayvmess| AHS -🇺🇸|14.86"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -64,29 +80,13 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@hope_net| AHS -🚩|6.26"
-    server: zula.ir
-    port: 2096
-    type: vmess
-    uuid: 26b9c4ce-1a25-4d8e-b265-17ed45ac5f12
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: kingo.hightechservice.ir
-    network: ws
-    ws-opts:
-      path: /
-      headers:
-        Host: kingo.hightechservice.ir
-    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@prrofile_purple| AHS -🇺🇸|6.44"
-      - "@v2rayvmess| AHS -🇺🇸|6.51"
-      - "@hope_net| AHS -🚩|6.26"
+      - "@oneclickvpnkeys| AHS -🚩|15.11"
+      - "@prrofile_purple| AHS -🇺🇸|13.19"
+      - "@v2rayvmess| AHS -🇺🇸|14.86"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -97,25 +97,25 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@prrofile_purple| AHS -🇺🇸|6.44"
-      - "@v2rayvmess| AHS -🇺🇸|6.51"
-      - "@hope_net| AHS -🚩|6.26"
+      - "@oneclickvpnkeys| AHS -🚩|15.11"
+      - "@prrofile_purple| AHS -🇺🇸|13.19"
+      - "@v2rayvmess| AHS -🇺🇸|14.86"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@prrofile_purple| AHS -🇺🇸|6.44"
-      - "@v2rayvmess| AHS -🇺🇸|6.51"
-      - "@hope_net| AHS -🚩|6.26"
+      - "@oneclickvpnkeys| AHS -🚩|15.11"
+      - "@prrofile_purple| AHS -🇺🇸|13.19"
+      - "@v2rayvmess| AHS -🇺🇸|14.86"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@prrofile_purple| AHS -🇺🇸|6.44"
-      - "@v2rayvmess| AHS -🇺🇸|6.51"
-      - "@hope_net| AHS -🚩|6.26"
+      - "@oneclickvpnkeys| AHS -🚩|15.11"
+      - "@prrofile_purple| AHS -🇺🇸|13.19"
+      - "@v2rayvmess| AHS -🇺🇸|14.86"
 rules:
   - MATCH,MANUAL
