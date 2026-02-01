@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@prrofile_purple| AHS -🇺🇸|6.55"
+  - name: "@prrofile_purple| AHS -🇺🇸|2.94"
     server: d2fog4flcfgb8c.cloudfront.net
     port: 443
     type: vmess
@@ -48,7 +48,7 @@ proxies:
       headers:
         Host: ""
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|6.76"
+  - name: "@v2rayvmess| AHS -🇺🇸|3.08"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -64,29 +64,12 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@hope_net| AHS -🚩|6.45"
-    server: 104.19.45.226
-    port: 2095
-    type: vmess
-    uuid: 7a737f41-b792-4260-94ff-3d864da67b80
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: onea.flha.ru
-    network: ws
-    ws-opts:
-      path: /
-      headers:
-        Host: onea.flha.ru
-    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@prrofile_purple| AHS -🇺🇸|6.55"
-      - "@v2rayvmess| AHS -🇺🇸|6.76"
-      - "@hope_net| AHS -🚩|6.45"
+      - "@prrofile_purple| AHS -🇺🇸|2.94"
+      - "@v2rayvmess| AHS -🇺🇸|3.08"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -97,25 +80,22 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@prrofile_purple| AHS -🇺🇸|6.55"
-      - "@v2rayvmess| AHS -🇺🇸|6.76"
-      - "@hope_net| AHS -🚩|6.45"
+      - "@prrofile_purple| AHS -🇺🇸|2.94"
+      - "@v2rayvmess| AHS -🇺🇸|3.08"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@prrofile_purple| AHS -🇺🇸|6.55"
-      - "@v2rayvmess| AHS -🇺🇸|6.76"
-      - "@hope_net| AHS -🚩|6.45"
+      - "@prrofile_purple| AHS -🇺🇸|2.94"
+      - "@v2rayvmess| AHS -🇺🇸|3.08"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@prrofile_purple| AHS -🇺🇸|6.55"
-      - "@v2rayvmess| AHS -🇺🇸|6.76"
-      - "@hope_net| AHS -🚩|6.45"
+      - "@prrofile_purple| AHS -🇺🇸|2.94"
+      - "@v2rayvmess| AHS -🇺🇸|3.08"
 rules:
   - MATCH,MANUAL
