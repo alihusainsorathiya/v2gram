@@ -32,7 +32,23 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@v2rayvmess| AHS -🇺🇸|2.17"
+  - name: "@prrofile_purple| AHS -🇺🇸|6.55"
+    server: d2fog4flcfgb8c.cloudfront.net
+    port: 443
+    type: vmess
+    uuid: e070e567-7996-45a9-9016-0143420946ef
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /8536cb1926c24bbc99d7bd93350ec564
+      headers:
+        Host: ""
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|6.76"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -48,8 +64,8 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@hope_net| AHS -🚩|2.92"
-    server: 104.19.45.70
+  - name: "@hope_net| AHS -🚩|6.45"
+    server: 104.19.45.226
     port: 2095
     type: vmess
     uuid: 7a737f41-b792-4260-94ff-3d864da67b80
@@ -68,8 +84,9 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|2.17"
-      - "@hope_net| AHS -🚩|2.92"
+      - "@prrofile_purple| AHS -🇺🇸|6.55"
+      - "@v2rayvmess| AHS -🇺🇸|6.76"
+      - "@hope_net| AHS -🚩|6.45"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -80,22 +97,25 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|2.17"
-      - "@hope_net| AHS -🚩|2.92"
+      - "@prrofile_purple| AHS -🇺🇸|6.55"
+      - "@v2rayvmess| AHS -🇺🇸|6.76"
+      - "@hope_net| AHS -🚩|6.45"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|2.17"
-      - "@hope_net| AHS -🚩|2.92"
+      - "@prrofile_purple| AHS -🇺🇸|6.55"
+      - "@v2rayvmess| AHS -🇺🇸|6.76"
+      - "@hope_net| AHS -🚩|6.45"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|2.17"
-      - "@hope_net| AHS -🚩|2.92"
+      - "@prrofile_purple| AHS -🇺🇸|6.55"
+      - "@v2rayvmess| AHS -🇺🇸|6.76"
+      - "@hope_net| AHS -🚩|6.45"
 rules:
   - MATCH,MANUAL
