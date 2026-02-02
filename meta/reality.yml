@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@ProxyFn|🇨🇭|129.19
+  - name: REALITY|@ProxyFn|🇨🇭|134.32
     server: 193.168.144.46
     port: 443
     type: vless
@@ -45,18 +45,40 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@UnlimitedDev|🇺🇸|46.39
-    server: 137.184.218.169
-    port: 36925
+  - name: REALITY|@Outline_Vpn|🇺🇸|24.39
+    server: 47.251.25.74
+    port: 443
     type: vless
-    uuid: c9fd0fb1-8251-4106-b09a-f4b426736f67
+    uuid: 18805ff3-b420-45de-af18-93be14024ae8
     cipher: auto
     tls: false
     flow: xtls-rprx-vision
     skip-cert-verify: true
-    servername: www.cloudflare.com
+    servername: www.amazon.com
     udp: true
-  - name: REALITY|@kiava|🇩🇪|203.03
+  - name: REALITY|@UnlimitedDev|🇳🇱|154.56
+    server: 51.158.206.93
+    port: 23576
+    type: vless
+    uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: fuck.rkn
+    udp: true
+  - name: REALITY|@customv2ray|🇰🇿|unavailable
+    server: 212.111.84.187
+    port: 443
+    type: vless
+    uuid: d4d031ec-0ba6-486a-aa0c-dce2b7cb8933
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: m.vk.ru
+    udp: true
+  - name: REALITY|@kiava|🇩🇪|203.79
     server: prime.dissertationhelpspecialist.com
     port: 8443
     type: vless
@@ -69,7 +91,18 @@ proxies:
     grpc-opts:
       grpc-service-name: netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet
     udp: true
-  - name: REALITY|@v2rayngrit|🇷🇺|212.93
+  - name: REALITY|@v2ray1_ng|🇰🇿|232.87
+    server: 212.111.85.1
+    port: 51102
+    type: vless
+    uuid: d4d031ec-0ba6-486a-aa0c-dce2b7cb8933
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: m.vk.ru
+    udp: true
+  - name: REALITY|@v2rayngrit|🇷🇺|213.84
     server: 130.193.59.133
     port: 443
     type: vless
@@ -84,10 +117,13 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|129.19
-      - REALITY|@UnlimitedDev|🇺🇸|46.39
-      - REALITY|@kiava|🇩🇪|203.03
-      - REALITY|@v2rayngrit|🇷🇺|212.93
+      - REALITY|@ProxyFn|🇨🇭|134.32
+      - REALITY|@Outline_Vpn|🇺🇸|24.39
+      - REALITY|@UnlimitedDev|🇳🇱|154.56
+      - REALITY|@customv2ray|🇰🇿|unavailable
+      - REALITY|@kiava|🇩🇪|203.79
+      - REALITY|@v2ray1_ng|🇰🇿|232.87
+      - REALITY|@v2rayngrit|🇷🇺|213.84
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -98,28 +134,37 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|129.19
-      - REALITY|@UnlimitedDev|🇺🇸|46.39
-      - REALITY|@kiava|🇩🇪|203.03
-      - REALITY|@v2rayngrit|🇷🇺|212.93
+      - REALITY|@ProxyFn|🇨🇭|134.32
+      - REALITY|@Outline_Vpn|🇺🇸|24.39
+      - REALITY|@UnlimitedDev|🇳🇱|154.56
+      - REALITY|@customv2ray|🇰🇿|unavailable
+      - REALITY|@kiava|🇩🇪|203.79
+      - REALITY|@v2ray1_ng|🇰🇿|232.87
+      - REALITY|@v2rayngrit|🇷🇺|213.84
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|129.19
-      - REALITY|@UnlimitedDev|🇺🇸|46.39
-      - REALITY|@kiava|🇩🇪|203.03
-      - REALITY|@v2rayngrit|🇷🇺|212.93
+      - REALITY|@ProxyFn|🇨🇭|134.32
+      - REALITY|@Outline_Vpn|🇺🇸|24.39
+      - REALITY|@UnlimitedDev|🇳🇱|154.56
+      - REALITY|@customv2ray|🇰🇿|unavailable
+      - REALITY|@kiava|🇩🇪|203.79
+      - REALITY|@v2ray1_ng|🇰🇿|232.87
+      - REALITY|@v2rayngrit|🇷🇺|213.84
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|129.19
-      - REALITY|@UnlimitedDev|🇺🇸|46.39
-      - REALITY|@kiava|🇩🇪|203.03
-      - REALITY|@v2rayngrit|🇷🇺|212.93
+      - REALITY|@ProxyFn|🇨🇭|134.32
+      - REALITY|@Outline_Vpn|🇺🇸|24.39
+      - REALITY|@UnlimitedDev|🇳🇱|154.56
+      - REALITY|@customv2ray|🇰🇿|unavailable
+      - REALITY|@kiava|🇩🇪|203.79
+      - REALITY|@v2ray1_ng|🇰🇿|232.87
+      - REALITY|@v2rayngrit|🇷🇺|213.84
 rules:
   - MATCH,MANUAL
