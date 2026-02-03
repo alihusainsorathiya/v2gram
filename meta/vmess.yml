@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@prrofile_purple| AHS -🇮🇷|194.83"
+  - name: "@prrofile_purple| AHS -🇮🇷|307.07"
     server: sr2.qirvo.fun
     port: 8880
     type: vmess
@@ -43,7 +43,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@prrofile_purple| AHS -🇮🇷|427.32"
+  - name: "@prrofile_purple| AHS -🇮🇷|457.05"
     server: sr6.vopnik.fun
     port: 8080
     type: vmess
@@ -54,7 +54,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@prrofile_purple| AHS -🇮🇷|330.77"
+  - name: "@prrofile_purple| AHS -🇮🇷|348.78"
     server: force12.goldspeed.org
     port: 40872
     type: vmess
@@ -70,7 +70,7 @@ proxies:
       headers:
         Host: ""
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|6.51"
+  - name: "@v2rayvmess| AHS -🇺🇸|9.25"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -86,7 +86,7 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@vpn_tehran| AHS -🚩|6.68"
+  - name: "@vpn_tehran| AHS -🚩|9.96"
     server: 104.18.32.47
     port: 443
     type: vmess
@@ -102,15 +102,32 @@ proxies:
       headers:
         Host: vmess.lionandsunflag.com
     udp: true
+  - name: "@hope_net| AHS -🚩|9.4"
+    server: 104.19.45.34
+    port: 2095
+    type: vmess
+    uuid: 7a737f41-b792-4260-94ff-3d864da67b80
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: onea.flha.ru
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: onea.flha.ru
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|194.83"
-      - "@prrofile_purple| AHS -🇮🇷|427.32"
-      - "@prrofile_purple| AHS -🇮🇷|330.77"
-      - "@v2rayvmess| AHS -🇺🇸|6.51"
-      - "@vpn_tehran| AHS -🚩|6.68"
+      - "@prrofile_purple| AHS -🇮🇷|307.07"
+      - "@prrofile_purple| AHS -🇮🇷|457.05"
+      - "@prrofile_purple| AHS -🇮🇷|348.78"
+      - "@v2rayvmess| AHS -🇺🇸|9.25"
+      - "@vpn_tehran| AHS -🚩|9.96"
+      - "@hope_net| AHS -🚩|9.4"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -121,31 +138,34 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|194.83"
-      - "@prrofile_purple| AHS -🇮🇷|427.32"
-      - "@prrofile_purple| AHS -🇮🇷|330.77"
-      - "@v2rayvmess| AHS -🇺🇸|6.51"
-      - "@vpn_tehran| AHS -🚩|6.68"
+      - "@prrofile_purple| AHS -🇮🇷|307.07"
+      - "@prrofile_purple| AHS -🇮🇷|457.05"
+      - "@prrofile_purple| AHS -🇮🇷|348.78"
+      - "@v2rayvmess| AHS -🇺🇸|9.25"
+      - "@vpn_tehran| AHS -🚩|9.96"
+      - "@hope_net| AHS -🚩|9.4"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|194.83"
-      - "@prrofile_purple| AHS -🇮🇷|427.32"
-      - "@prrofile_purple| AHS -🇮🇷|330.77"
-      - "@v2rayvmess| AHS -🇺🇸|6.51"
-      - "@vpn_tehran| AHS -🚩|6.68"
+      - "@prrofile_purple| AHS -🇮🇷|307.07"
+      - "@prrofile_purple| AHS -🇮🇷|457.05"
+      - "@prrofile_purple| AHS -🇮🇷|348.78"
+      - "@v2rayvmess| AHS -🇺🇸|9.25"
+      - "@vpn_tehran| AHS -🚩|9.96"
+      - "@hope_net| AHS -🚩|9.4"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|194.83"
-      - "@prrofile_purple| AHS -🇮🇷|427.32"
-      - "@prrofile_purple| AHS -🇮🇷|330.77"
-      - "@v2rayvmess| AHS -🇺🇸|6.51"
-      - "@vpn_tehran| AHS -🚩|6.68"
+      - "@prrofile_purple| AHS -🇮🇷|307.07"
+      - "@prrofile_purple| AHS -🇮🇷|457.05"
+      - "@prrofile_purple| AHS -🇮🇷|348.78"
+      - "@v2rayvmess| AHS -🇺🇸|9.25"
+      - "@vpn_tehran| AHS -🚩|9.96"
+      - "@hope_net| AHS -🚩|9.4"
 rules:
   - MATCH,MANUAL
