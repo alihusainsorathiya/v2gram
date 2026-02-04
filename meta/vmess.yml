@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@prrofile_purple| AHS -🇮🇷|279.22"
+  - name: "@prrofile_purple| AHS -🇮🇷|280.63"
     server: force12.goldspeed.org
     port: 40872
     type: vmess
@@ -48,7 +48,18 @@ proxies:
       headers:
         Host: ""
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|12.85"
+  - name: "@prrofile_purple| AHS -🇮🇷|290.12"
+    server: gold6.goldspeed.org
+    port: 40973
+    type: vmess
+    uuid: a7918501-9245-42f5-9393-f6e84bda9497
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|3.08"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -64,7 +75,50 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@vpn_tehran| AHS -🇺🇸|37.85"
+  - name: "@server01012| AHS -🇭🇰|183.4"
+    server: 8.217.151.26
+    port: 36405
+    type: vmess
+    uuid: 0cd8ea78-7125-413a-bfd3-daf36326a217
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@v2ray1_ng| AHS -🚩|3.24"
+    server: 104.21.69.44
+    port: 8080
+    type: vmess
+    uuid: nasnet
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: nasnet-511952424.mcitel.co
+    network: ws
+    ws-opts:
+      path: /nasnet/cdn
+      headers:
+        Host: nasnet-511952424.mcitel.co
+    udp: true
+  - name: "@v2ray1_ng| AHS -🚩|3.34"
+    server: 172.67.204.84
+    port: 8080
+    type: vmess
+    uuid: nasnet
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: nasnet-511952424.mcitel.co
+    network: ws
+    ws-opts:
+      path: /nasnet/cdn
+      headers:
+        Host: nasnet-511952424.mcitel.co
+    udp: true
+  - name: "@vpn_tehran| AHS -🇺🇸|50.71"
     server: 68.167.181.220
     port: 10010
     type: vmess
@@ -75,7 +129,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@hope_net| AHS -🚩|15.05"
+  - name: "@hope_net| AHS -🚩|2.86"
     server: 104.16.60.8
     port: 8443
     type: vmess
@@ -95,10 +149,14 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|279.22"
-      - "@v2rayvmess| AHS -🇺🇸|12.85"
-      - "@vpn_tehran| AHS -🇺🇸|37.85"
-      - "@hope_net| AHS -🚩|15.05"
+      - "@prrofile_purple| AHS -🇮🇷|280.63"
+      - "@prrofile_purple| AHS -🇮🇷|290.12"
+      - "@v2rayvmess| AHS -🇺🇸|3.08"
+      - "@server01012| AHS -🇭🇰|183.4"
+      - "@v2ray1_ng| AHS -🚩|3.24"
+      - "@v2ray1_ng| AHS -🚩|3.34"
+      - "@vpn_tehran| AHS -🇺🇸|50.71"
+      - "@hope_net| AHS -🚩|2.86"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -109,28 +167,40 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|279.22"
-      - "@v2rayvmess| AHS -🇺🇸|12.85"
-      - "@vpn_tehran| AHS -🇺🇸|37.85"
-      - "@hope_net| AHS -🚩|15.05"
+      - "@prrofile_purple| AHS -🇮🇷|280.63"
+      - "@prrofile_purple| AHS -🇮🇷|290.12"
+      - "@v2rayvmess| AHS -🇺🇸|3.08"
+      - "@server01012| AHS -🇭🇰|183.4"
+      - "@v2ray1_ng| AHS -🚩|3.24"
+      - "@v2ray1_ng| AHS -🚩|3.34"
+      - "@vpn_tehran| AHS -🇺🇸|50.71"
+      - "@hope_net| AHS -🚩|2.86"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|279.22"
-      - "@v2rayvmess| AHS -🇺🇸|12.85"
-      - "@vpn_tehran| AHS -🇺🇸|37.85"
-      - "@hope_net| AHS -🚩|15.05"
+      - "@prrofile_purple| AHS -🇮🇷|280.63"
+      - "@prrofile_purple| AHS -🇮🇷|290.12"
+      - "@v2rayvmess| AHS -🇺🇸|3.08"
+      - "@server01012| AHS -🇭🇰|183.4"
+      - "@v2ray1_ng| AHS -🚩|3.24"
+      - "@v2ray1_ng| AHS -🚩|3.34"
+      - "@vpn_tehran| AHS -🇺🇸|50.71"
+      - "@hope_net| AHS -🚩|2.86"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|279.22"
-      - "@v2rayvmess| AHS -🇺🇸|12.85"
-      - "@vpn_tehran| AHS -🇺🇸|37.85"
-      - "@hope_net| AHS -🚩|15.05"
+      - "@prrofile_purple| AHS -🇮🇷|280.63"
+      - "@prrofile_purple| AHS -🇮🇷|290.12"
+      - "@v2rayvmess| AHS -🇺🇸|3.08"
+      - "@server01012| AHS -🇭🇰|183.4"
+      - "@v2ray1_ng| AHS -🚩|3.24"
+      - "@v2ray1_ng| AHS -🚩|3.34"
+      - "@vpn_tehran| AHS -🇺🇸|50.71"
+      - "@hope_net| AHS -🚩|2.86"
 rules:
   - MATCH,MANUAL
