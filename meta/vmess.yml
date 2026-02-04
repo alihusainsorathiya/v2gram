@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@prrofile_purple| AHS -🇮🇷|325.93"
+  - name: "@prrofile_purple| AHS -🇮🇷|279.22"
     server: force12.goldspeed.org
     port: 40872
     type: vmess
@@ -48,7 +48,7 @@ proxies:
       headers:
         Host: ""
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|2.94"
+  - name: "@v2rayvmess| AHS -🇺🇸|12.85"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -64,7 +64,7 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@vpn_tehran| AHS -🇺🇸|65.27"
+  - name: "@vpn_tehran| AHS -🇺🇸|37.85"
     server: 68.167.181.220
     port: 10010
     type: vmess
@@ -75,13 +75,30 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
+  - name: "@hope_net| AHS -🚩|15.05"
+    server: 104.16.60.8
+    port: 8443
+    type: vmess
+    uuid: 441da342-ce90-441e-bff9-d2ceb55e68ca
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: 8eh-band-d994.gijica5932.workers.dev
+    network: ws
+    ws-opts:
+      path: /ivideos.sbs/linkws
+      headers:
+        Host: 8eh-band-d994.gijica5932.workers.dev
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|325.93"
-      - "@v2rayvmess| AHS -🇺🇸|2.94"
-      - "@vpn_tehran| AHS -🇺🇸|65.27"
+      - "@prrofile_purple| AHS -🇮🇷|279.22"
+      - "@v2rayvmess| AHS -🇺🇸|12.85"
+      - "@vpn_tehran| AHS -🇺🇸|37.85"
+      - "@hope_net| AHS -🚩|15.05"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -92,25 +109,28 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|325.93"
-      - "@v2rayvmess| AHS -🇺🇸|2.94"
-      - "@vpn_tehran| AHS -🇺🇸|65.27"
+      - "@prrofile_purple| AHS -🇮🇷|279.22"
+      - "@v2rayvmess| AHS -🇺🇸|12.85"
+      - "@vpn_tehran| AHS -🇺🇸|37.85"
+      - "@hope_net| AHS -🚩|15.05"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|325.93"
-      - "@v2rayvmess| AHS -🇺🇸|2.94"
-      - "@vpn_tehran| AHS -🇺🇸|65.27"
+      - "@prrofile_purple| AHS -🇮🇷|279.22"
+      - "@v2rayvmess| AHS -🇺🇸|12.85"
+      - "@vpn_tehran| AHS -🇺🇸|37.85"
+      - "@hope_net| AHS -🚩|15.05"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|325.93"
-      - "@v2rayvmess| AHS -🇺🇸|2.94"
-      - "@vpn_tehran| AHS -🇺🇸|65.27"
+      - "@prrofile_purple| AHS -🇮🇷|279.22"
+      - "@v2rayvmess| AHS -🇺🇸|12.85"
+      - "@vpn_tehran| AHS -🇺🇸|37.85"
+      - "@hope_net| AHS -🚩|15.05"
 rules:
   - MATCH,MANUAL
