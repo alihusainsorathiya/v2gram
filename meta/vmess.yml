@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@oneclickvpnkeys| AHS -🇺🇸|2.61"
+  - name: "@oneclickvpnkeys| AHS -🇺🇸|2.32"
     server: 51.79.103.76
     port: 80
     type: vmess
@@ -48,7 +48,7 @@ proxies:
       headers:
         Host: google.com
     udp: true
-  - name: "@prrofile_purple| AHS -🇺🇸|1.86"
+  - name: "@prrofile_purple| AHS -🇺🇸|2.05"
     server: 57.129.132.223
     port: 80
     type: vmess
@@ -64,7 +64,7 @@ proxies:
       headers:
         Host: google.com
     udp: true
-  - name: "@prrofile_purple| AHS -🇺🇸|62.42"
+  - name: "@prrofile_purple| AHS -🇺🇸|68.87"
     server: 172.233.229.91
     port: 14102
     type: vmess
@@ -75,7 +75,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|2.27"
+  - name: "@v2rayvmess| AHS -🇺🇸|2.41"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -91,14 +91,31 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
+  - name: "@hope_net| AHS -🚩|8.96"
+    server: br1.vmessvh.site
+    port: 443
+    type: vmess
+    uuid: 7f3f875f-09b7-4773-ac61-21842170bba0
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: discord.com
+    network: ws
+    ws-opts:
+      path: /vmess
+      headers:
+        Host: br1.vmessvh.site
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@oneclickvpnkeys| AHS -🇺🇸|2.61"
-      - "@prrofile_purple| AHS -🇺🇸|1.86"
-      - "@prrofile_purple| AHS -🇺🇸|62.42"
-      - "@v2rayvmess| AHS -🇺🇸|2.27"
+      - "@oneclickvpnkeys| AHS -🇺🇸|2.32"
+      - "@prrofile_purple| AHS -🇺🇸|2.05"
+      - "@prrofile_purple| AHS -🇺🇸|68.87"
+      - "@v2rayvmess| AHS -🇺🇸|2.41"
+      - "@hope_net| AHS -🚩|8.96"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -109,28 +126,31 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@oneclickvpnkeys| AHS -🇺🇸|2.61"
-      - "@prrofile_purple| AHS -🇺🇸|1.86"
-      - "@prrofile_purple| AHS -🇺🇸|62.42"
-      - "@v2rayvmess| AHS -🇺🇸|2.27"
+      - "@oneclickvpnkeys| AHS -🇺🇸|2.32"
+      - "@prrofile_purple| AHS -🇺🇸|2.05"
+      - "@prrofile_purple| AHS -🇺🇸|68.87"
+      - "@v2rayvmess| AHS -🇺🇸|2.41"
+      - "@hope_net| AHS -🚩|8.96"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@oneclickvpnkeys| AHS -🇺🇸|2.61"
-      - "@prrofile_purple| AHS -🇺🇸|1.86"
-      - "@prrofile_purple| AHS -🇺🇸|62.42"
-      - "@v2rayvmess| AHS -🇺🇸|2.27"
+      - "@oneclickvpnkeys| AHS -🇺🇸|2.32"
+      - "@prrofile_purple| AHS -🇺🇸|2.05"
+      - "@prrofile_purple| AHS -🇺🇸|68.87"
+      - "@v2rayvmess| AHS -🇺🇸|2.41"
+      - "@hope_net| AHS -🚩|8.96"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@oneclickvpnkeys| AHS -🇺🇸|2.61"
-      - "@prrofile_purple| AHS -🇺🇸|1.86"
-      - "@prrofile_purple| AHS -🇺🇸|62.42"
-      - "@v2rayvmess| AHS -🇺🇸|2.27"
+      - "@oneclickvpnkeys| AHS -🇺🇸|2.32"
+      - "@prrofile_purple| AHS -🇺🇸|2.05"
+      - "@prrofile_purple| AHS -🇺🇸|68.87"
+      - "@v2rayvmess| AHS -🇺🇸|2.41"
+      - "@hope_net| AHS -🚩|8.96"
 rules:
   - MATCH,MANUAL
