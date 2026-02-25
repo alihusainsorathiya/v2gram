@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@ProxyFn|🇨🇭|106.84
+  - name: REALITY|@ProxyFn|🇨🇭|105.73
     server: 193.168.144.46
     port: 443
     type: vless
@@ -45,7 +45,17 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|96.05
+  - name: REALITY|@ShadowSocks_s|🇲🇩|149.38
+    server: 185.234.57.216
+    port: 443
+    type: vless
+    uuid: b824f264-8cc3-4669-9f60-47b51ed1aa11
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: yahoo.com
+    udp: true
+  - name: REALITY|@internet4iran|🇩🇪|98.07
     server: 88.99.121.221
     port: 443
     type: vless
@@ -56,7 +66,7 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@kiava|🇩🇪|110.45
+  - name: REALITY|@kiava|🇩🇪|127.73
     server: partners.dissertationhelpspecialist.com
     port: 8443
     type: vless
@@ -69,7 +79,18 @@ proxies:
     grpc-opts:
       grpc-service-name: netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet
     udp: true
-  - name: REALITY|@vpn_tehran|🇫🇷|192.39
+  - name: REALITY|@NIM_VPN_ir|🇩🇪|92.25
+    server: 80.75.212.10
+    port: 443
+    type: vless
+    uuid: eb071647-72a6-46be-8e89-ff3d228d52f6
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: nl.jojack.ru
+    udp: true
+  - name: REALITY|@vpn_tehran|🇫🇷|500.9
     server: wolfa21.timevip.ir
     port: 8080
     type: vless
@@ -80,7 +101,7 @@ proxies:
     skip-cert-verify: true
     servername: chatgpt.com
     udp: true
-  - name: REALITY|@v2rayngrit|🇷🇺|183.85
+  - name: REALITY|@v2rayngrit|🇷🇺|188.94
     server: 158.160.105.121
     port: 51102
     type: vless
@@ -95,11 +116,13 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|106.84
-      - REALITY|@internet4iran|🇩🇪|96.05
-      - REALITY|@kiava|🇩🇪|110.45
-      - REALITY|@vpn_tehran|🇫🇷|192.39
-      - REALITY|@v2rayngrit|🇷🇺|183.85
+      - REALITY|@ProxyFn|🇨🇭|105.73
+      - REALITY|@ShadowSocks_s|🇲🇩|149.38
+      - REALITY|@internet4iran|🇩🇪|98.07
+      - REALITY|@kiava|🇩🇪|127.73
+      - REALITY|@NIM_VPN_ir|🇩🇪|92.25
+      - REALITY|@vpn_tehran|🇫🇷|500.9
+      - REALITY|@v2rayngrit|🇷🇺|188.94
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -110,31 +133,37 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|106.84
-      - REALITY|@internet4iran|🇩🇪|96.05
-      - REALITY|@kiava|🇩🇪|110.45
-      - REALITY|@vpn_tehran|🇫🇷|192.39
-      - REALITY|@v2rayngrit|🇷🇺|183.85
+      - REALITY|@ProxyFn|🇨🇭|105.73
+      - REALITY|@ShadowSocks_s|🇲🇩|149.38
+      - REALITY|@internet4iran|🇩🇪|98.07
+      - REALITY|@kiava|🇩🇪|127.73
+      - REALITY|@NIM_VPN_ir|🇩🇪|92.25
+      - REALITY|@vpn_tehran|🇫🇷|500.9
+      - REALITY|@v2rayngrit|🇷🇺|188.94
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|106.84
-      - REALITY|@internet4iran|🇩🇪|96.05
-      - REALITY|@kiava|🇩🇪|110.45
-      - REALITY|@vpn_tehran|🇫🇷|192.39
-      - REALITY|@v2rayngrit|🇷🇺|183.85
+      - REALITY|@ProxyFn|🇨🇭|105.73
+      - REALITY|@ShadowSocks_s|🇲🇩|149.38
+      - REALITY|@internet4iran|🇩🇪|98.07
+      - REALITY|@kiava|🇩🇪|127.73
+      - REALITY|@NIM_VPN_ir|🇩🇪|92.25
+      - REALITY|@vpn_tehran|🇫🇷|500.9
+      - REALITY|@v2rayngrit|🇷🇺|188.94
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|106.84
-      - REALITY|@internet4iran|🇩🇪|96.05
-      - REALITY|@kiava|🇩🇪|110.45
-      - REALITY|@vpn_tehran|🇫🇷|192.39
-      - REALITY|@v2rayngrit|🇷🇺|183.85
+      - REALITY|@ProxyFn|🇨🇭|105.73
+      - REALITY|@ShadowSocks_s|🇲🇩|149.38
+      - REALITY|@internet4iran|🇩🇪|98.07
+      - REALITY|@kiava|🇩🇪|127.73
+      - REALITY|@NIM_VPN_ir|🇩🇪|92.25
+      - REALITY|@vpn_tehran|🇫🇷|500.9
+      - REALITY|@v2rayngrit|🇷🇺|188.94
 rules:
   - MATCH,MANUAL
