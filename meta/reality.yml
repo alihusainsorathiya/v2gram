@@ -1,0 +1,155 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: REALITY|@ProxyFn|🇨🇭|105.84
+    server: 193.168.144.46
+    port: 443
+    type: vless
+    uuid: cdb38f5b-12c3-414b-eacd-a635dc633701
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: mega.io
+    network: grpc
+    grpc-opts:
+      grpc-service-name: /
+    udp: true
+  - name: REALITY|@Outline_Vpn|🇳🇱|88.05
+    server: 45.149.115.148
+    port: 443
+    type: vless
+    uuid: 8b648e4c-ac38-4809-951b-e1c8862b13d1
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: google.com
+    udp: true
+  - name: REALITY|@internet4iran|🇩🇪|92.25
+    server: 88.99.121.221
+    port: 443
+    type: vless
+    uuid: 418e0595-b419-4fc3-85c0-7980b90dab3b
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: www.openoffice.org
+    udp: true
+  - name: REALITY|@kiava|🇩🇪|119.1
+    server: partners.dissertationhelpspecialist.com
+    port: 8443
+    type: vless
+    uuid: 24a4185b-2f90-4d17-99ba-d04663d28c75
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: tgju.org
+    network: grpc
+    grpc-opts:
+      grpc-service-name: netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet-netmet
+    udp: true
+  - name: REALITY|@NIM_VPN_ir|🇩🇪|92.91
+    server: 80.75.212.10
+    port: 443
+    type: vless
+    uuid: eb071647-72a6-46be-8e89-ff3d228d52f6
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: nl.jojack.ru
+    udp: true
+  - name: REALITY|@vpn_tehran|🇫🇷|264.67
+    server: wolfa21.timevip.ir
+    port: 8080
+    type: vless
+    uuid: 639355ae-d9ef-4470-aa8a-8154f637cf52
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: chatgpt.com
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - REALITY|@ProxyFn|🇨🇭|105.84
+      - REALITY|@Outline_Vpn|🇳🇱|88.05
+      - REALITY|@internet4iran|🇩🇪|92.25
+      - REALITY|@kiava|🇩🇪|119.1
+      - REALITY|@NIM_VPN_ir|🇩🇪|92.91
+      - REALITY|@vpn_tehran|🇫🇷|264.67
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - REALITY|@ProxyFn|🇨🇭|105.84
+      - REALITY|@Outline_Vpn|🇳🇱|88.05
+      - REALITY|@internet4iran|🇩🇪|92.25
+      - REALITY|@kiava|🇩🇪|119.1
+      - REALITY|@NIM_VPN_ir|🇩🇪|92.91
+      - REALITY|@vpn_tehran|🇫🇷|264.67
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - REALITY|@ProxyFn|🇨🇭|105.84
+      - REALITY|@Outline_Vpn|🇳🇱|88.05
+      - REALITY|@internet4iran|🇩🇪|92.25
+      - REALITY|@kiava|🇩🇪|119.1
+      - REALITY|@NIM_VPN_ir|🇩🇪|92.91
+      - REALITY|@vpn_tehran|🇫🇷|264.67
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - REALITY|@ProxyFn|🇨🇭|105.84
+      - REALITY|@Outline_Vpn|🇳🇱|88.05
+      - REALITY|@internet4iran|🇩🇪|92.25
+      - REALITY|@kiava|🇩🇪|119.1
+      - REALITY|@NIM_VPN_ir|🇩🇪|92.91
+      - REALITY|@vpn_tehran|🇫🇷|264.67
+rules:
+  - MATCH,MANUAL
