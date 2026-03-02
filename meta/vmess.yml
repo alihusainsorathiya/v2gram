@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@v2rayvmess| AHS -🇺🇸|18.28"
+  - name: "@v2rayvmess| AHS -🇺🇸|3.5"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -48,23 +48,11 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@hope_net| AHS -🇨🇦|99.3"
-    server: ca-v2ray.ipracevpn.com
-    port: 443
-    type: vmess
-    uuid: 1b3d460b-91cc-46f9-909d-73823128ee0a
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: ca-v2ray.ipracevpn.com
-    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|18.28"
-      - "@hope_net| AHS -🇨🇦|99.3"
+      - "@v2rayvmess| AHS -🇺🇸|3.5"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -75,22 +63,19 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|18.28"
-      - "@hope_net| AHS -🇨🇦|99.3"
+      - "@v2rayvmess| AHS -🇺🇸|3.5"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|18.28"
-      - "@hope_net| AHS -🇨🇦|99.3"
+      - "@v2rayvmess| AHS -🇺🇸|3.5"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|18.28"
-      - "@hope_net| AHS -🇨🇦|99.3"
+      - "@v2rayvmess| AHS -🇺🇸|3.5"
 rules:
   - MATCH,MANUAL
