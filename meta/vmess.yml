@@ -32,39 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@vpnfail_v2ray| AHS -🇺🇸|31.84"
-    server: 141.94.155.228
-    port: 443
-    type: vmess
-    uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: kampong.org
-    network: ws
-    ws-opts:
-      path: linkvws
-      headers:
-        Host: kampong.org
-    udp: true
-  - name: "@vpnfail_v2ray| AHS -🇷🇺|416.87"
-    server: 57.128.189.206
-    port: 443
-    type: vmess
-    uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: ads.x5.ru
-    network: ws
-    ws-opts:
-      path: /linkvws
-      headers:
-        Host: ads.x5.ru
-    udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|6.55"
+  - name: "@v2rayvmess| AHS -🇺🇸|2.83"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -84,9 +52,7 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@vpnfail_v2ray| AHS -🇺🇸|31.84"
-      - "@vpnfail_v2ray| AHS -🇷🇺|416.87"
-      - "@v2rayvmess| AHS -🇺🇸|6.55"
+      - "@v2rayvmess| AHS -🇺🇸|2.83"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -97,25 +63,19 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@vpnfail_v2ray| AHS -🇺🇸|31.84"
-      - "@vpnfail_v2ray| AHS -🇷🇺|416.87"
-      - "@v2rayvmess| AHS -🇺🇸|6.55"
+      - "@v2rayvmess| AHS -🇺🇸|2.83"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@vpnfail_v2ray| AHS -🇺🇸|31.84"
-      - "@vpnfail_v2ray| AHS -🇷🇺|416.87"
-      - "@v2rayvmess| AHS -🇺🇸|6.55"
+      - "@v2rayvmess| AHS -🇺🇸|2.83"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@vpnfail_v2ray| AHS -🇺🇸|31.84"
-      - "@vpnfail_v2ray| AHS -🇷🇺|416.87"
-      - "@v2rayvmess| AHS -🇺🇸|6.55"
+      - "@v2rayvmess| AHS -🇺🇸|2.83"
 rules:
   - MATCH,MANUAL
