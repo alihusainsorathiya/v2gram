@@ -32,8 +32,8 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@vpnfail_v2ray| AHS -🇺🇸|28.1"
-    server: 57.129.24.131
+  - name: "@vpnfail_v2ray| AHS -🇨🇦|28.21"
+    server: 23.162.200.227
     port: 443
     type: vmess
     uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
@@ -41,14 +41,14 @@ proxies:
     cipher: auto
     tls: true
     skip-cert-verify: true
-    servername: kampong.org
+    servername: ""
     network: ws
     ws-opts:
-      path: /
+      path: /linkvws
       headers:
-        Host: kampong.org
+        Host: ""
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|2.45"
+  - name: "@v2rayvmess| AHS -🇺🇸|2.83"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -64,7 +64,7 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@hope_net| AHS -🇺🇸|2.32"
+  - name: "@hope_net| AHS -🇺🇸|1.83"
     server: 77.83.141.171
     port: 443
     type: vmess
@@ -84,9 +84,9 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@vpnfail_v2ray| AHS -🇺🇸|28.1"
-      - "@v2rayvmess| AHS -🇺🇸|2.45"
-      - "@hope_net| AHS -🇺🇸|2.32"
+      - "@vpnfail_v2ray| AHS -🇨🇦|28.21"
+      - "@v2rayvmess| AHS -🇺🇸|2.83"
+      - "@hope_net| AHS -🇺🇸|1.83"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -97,25 +97,25 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@vpnfail_v2ray| AHS -🇺🇸|28.1"
-      - "@v2rayvmess| AHS -🇺🇸|2.45"
-      - "@hope_net| AHS -🇺🇸|2.32"
+      - "@vpnfail_v2ray| AHS -🇨🇦|28.21"
+      - "@v2rayvmess| AHS -🇺🇸|2.83"
+      - "@hope_net| AHS -🇺🇸|1.83"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@vpnfail_v2ray| AHS -🇺🇸|28.1"
-      - "@v2rayvmess| AHS -🇺🇸|2.45"
-      - "@hope_net| AHS -🇺🇸|2.32"
+      - "@vpnfail_v2ray| AHS -🇨🇦|28.21"
+      - "@v2rayvmess| AHS -🇺🇸|2.83"
+      - "@hope_net| AHS -🇺🇸|1.83"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@vpnfail_v2ray| AHS -🇺🇸|28.1"
-      - "@v2rayvmess| AHS -🇺🇸|2.45"
-      - "@hope_net| AHS -🇺🇸|2.32"
+      - "@vpnfail_v2ray| AHS -🇨🇦|28.21"
+      - "@v2rayvmess| AHS -🇺🇸|2.83"
+      - "@hope_net| AHS -🇺🇸|1.83"
 rules:
   - MATCH,MANUAL
