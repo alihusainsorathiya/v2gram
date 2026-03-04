@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@ProxyFn|🇨🇭|105.4
+  - name: REALITY|@ProxyFn|🇨🇭|164.65
     server: 193.168.144.46
     port: 443
     type: vless
@@ -45,7 +45,7 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@Outline_Vpn|🇳🇱|95.97
+  - name: REALITY|@Outline_Vpn|🇳🇱|144.99
     server: 45.149.115.148
     port: 443
     type: vless
@@ -56,7 +56,18 @@ proxies:
     skip-cert-verify: true
     servername: google.com
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|94.33
+  - name: REALITY|@prrofile_purple|🇩🇪|163.66
+    server: 62.141.32.238
+    port: 8443
+    type: vless
+    uuid: c19fb567-74a9-454f-9757-e612fc4be371
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: dropbox.com
+    udp: true
+  - name: REALITY|@internet4iran|🇩🇪|157.85
     server: 88.99.121.221
     port: 443
     type: vless
@@ -67,7 +78,7 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@kiava|🇩🇪|123.6
+  - name: REALITY|@kiava|🇩🇪|164.01
     server: partners.dissertationhelpspecialist.com
     port: 8443
     type: vless
@@ -84,10 +95,11 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|105.4
-      - REALITY|@Outline_Vpn|🇳🇱|95.97
-      - REALITY|@internet4iran|🇩🇪|94.33
-      - REALITY|@kiava|🇩🇪|123.6
+      - REALITY|@ProxyFn|🇨🇭|164.65
+      - REALITY|@Outline_Vpn|🇳🇱|144.99
+      - REALITY|@prrofile_purple|🇩🇪|163.66
+      - REALITY|@internet4iran|🇩🇪|157.85
+      - REALITY|@kiava|🇩🇪|164.01
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -98,28 +110,31 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|105.4
-      - REALITY|@Outline_Vpn|🇳🇱|95.97
-      - REALITY|@internet4iran|🇩🇪|94.33
-      - REALITY|@kiava|🇩🇪|123.6
+      - REALITY|@ProxyFn|🇨🇭|164.65
+      - REALITY|@Outline_Vpn|🇳🇱|144.99
+      - REALITY|@prrofile_purple|🇩🇪|163.66
+      - REALITY|@internet4iran|🇩🇪|157.85
+      - REALITY|@kiava|🇩🇪|164.01
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|105.4
-      - REALITY|@Outline_Vpn|🇳🇱|95.97
-      - REALITY|@internet4iran|🇩🇪|94.33
-      - REALITY|@kiava|🇩🇪|123.6
+      - REALITY|@ProxyFn|🇨🇭|164.65
+      - REALITY|@Outline_Vpn|🇳🇱|144.99
+      - REALITY|@prrofile_purple|🇩🇪|163.66
+      - REALITY|@internet4iran|🇩🇪|157.85
+      - REALITY|@kiava|🇩🇪|164.01
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|105.4
-      - REALITY|@Outline_Vpn|🇳🇱|95.97
-      - REALITY|@internet4iran|🇩🇪|94.33
-      - REALITY|@kiava|🇩🇪|123.6
+      - REALITY|@ProxyFn|🇨🇭|164.65
+      - REALITY|@Outline_Vpn|🇳🇱|144.99
+      - REALITY|@prrofile_purple|🇩🇪|163.66
+      - REALITY|@internet4iran|🇩🇪|157.85
+      - REALITY|@kiava|🇩🇪|164.01
 rules:
   - MATCH,MANUAL
