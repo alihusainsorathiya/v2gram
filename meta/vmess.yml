@@ -32,7 +32,34 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@v2rayvmess| AHS -🇺🇸|6.25"
+  - name: "@vpnfail_v2ray| AHS -🇺🇸|109.69"
+    server: 57.129.24.131
+    port: 443
+    type: vmess
+    uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: kampong.org
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: kampong.org
+    udp: true
+  - name: "@vpnfail_v2ray| AHS -🇩🇪|143.47"
+    server: 92.246.87.170
+    port: 18355
+    type: vmess
+    uuid: caf921c7-ac63-40bc-faa1-cda097fd7e42
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|2.58"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -52,7 +79,9 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|6.25"
+      - "@vpnfail_v2ray| AHS -🇺🇸|109.69"
+      - "@vpnfail_v2ray| AHS -🇩🇪|143.47"
+      - "@v2rayvmess| AHS -🇺🇸|2.58"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -63,19 +92,25 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|6.25"
+      - "@vpnfail_v2ray| AHS -🇺🇸|109.69"
+      - "@vpnfail_v2ray| AHS -🇩🇪|143.47"
+      - "@v2rayvmess| AHS -🇺🇸|2.58"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|6.25"
+      - "@vpnfail_v2ray| AHS -🇺🇸|109.69"
+      - "@vpnfail_v2ray| AHS -🇩🇪|143.47"
+      - "@v2rayvmess| AHS -🇺🇸|2.58"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|6.25"
+      - "@vpnfail_v2ray| AHS -🇺🇸|109.69"
+      - "@vpnfail_v2ray| AHS -🇩🇪|143.47"
+      - "@v2rayvmess| AHS -🇺🇸|2.58"
 rules:
   - MATCH,MANUAL
