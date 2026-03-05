@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@prrofile_purple| AHS -🇮🇷|404.54"
+  - name: "@prrofile_purple| AHS -🇮🇷|218.88"
     server: user5507.login.karim2000.ir
     port: 10036
     type: vmess
@@ -43,7 +43,39 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|2.39"
+  - name: "@vpnfail_v2ray| AHS -🇺🇸|182.65"
+    server: 57.129.59.195
+    port: 443
+    type: vmess
+    uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: kampong.org
+    network: ws
+    ws-opts:
+      path: linkvws
+      headers:
+        Host: kampong.org
+    udp: true
+  - name: "@vpnfail_v2ray| AHS -🇲🇾|208.15"
+    server: 47.250.45.234
+    port: 43063
+    type: vmess
+    uuid: c77f48f5-4be3-4461-b52b-49998e7b897b
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: ""
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|2.3"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -63,8 +95,10 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|404.54"
-      - "@v2rayvmess| AHS -🇺🇸|2.39"
+      - "@prrofile_purple| AHS -🇮🇷|218.88"
+      - "@vpnfail_v2ray| AHS -🇺🇸|182.65"
+      - "@vpnfail_v2ray| AHS -🇲🇾|208.15"
+      - "@v2rayvmess| AHS -🇺🇸|2.3"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -75,22 +109,28 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|404.54"
-      - "@v2rayvmess| AHS -🇺🇸|2.39"
+      - "@prrofile_purple| AHS -🇮🇷|218.88"
+      - "@vpnfail_v2ray| AHS -🇺🇸|182.65"
+      - "@vpnfail_v2ray| AHS -🇲🇾|208.15"
+      - "@v2rayvmess| AHS -🇺🇸|2.3"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|404.54"
-      - "@v2rayvmess| AHS -🇺🇸|2.39"
+      - "@prrofile_purple| AHS -🇮🇷|218.88"
+      - "@vpnfail_v2ray| AHS -🇺🇸|182.65"
+      - "@vpnfail_v2ray| AHS -🇲🇾|208.15"
+      - "@v2rayvmess| AHS -🇺🇸|2.3"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|404.54"
-      - "@v2rayvmess| AHS -🇺🇸|2.39"
+      - "@prrofile_purple| AHS -🇮🇷|218.88"
+      - "@vpnfail_v2ray| AHS -🇺🇸|182.65"
+      - "@vpnfail_v2ray| AHS -🇲🇾|208.15"
+      - "@v2rayvmess| AHS -🇺🇸|2.3"
 rules:
   - MATCH,MANUAL
