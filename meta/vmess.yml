@@ -32,18 +32,23 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@prrofile_purple| AHS -🇮🇷|319.07"
-    server: user5507.login.karim2000.ir
-    port: 10036
+  - name: "@vpnfail_v2ray| AHS -🚩|2.77"
+    server: cf.090227.xyz
+    port: 443
     type: vmess
-    uuid: aa8458e9-1983-49e2-a42c-29fb9ea453f7
+    uuid: 290cc691-3ac6-4387-98a1-25c8eb8ca2ea
     alterId: 0
     cipher: auto
-    tls: false
+    tls: true
     skip-cert-verify: true
-    servername: ""
+    servername: sgal.dagrate.eu.org
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: sgal.dagrate.eu.org
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|2.54"
+  - name: "@v2rayvmess| AHS -🇺🇸|2.51"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -63,8 +68,8 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|319.07"
-      - "@v2rayvmess| AHS -🇺🇸|2.54"
+      - "@vpnfail_v2ray| AHS -🚩|2.77"
+      - "@v2rayvmess| AHS -🇺🇸|2.51"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -75,22 +80,22 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|319.07"
-      - "@v2rayvmess| AHS -🇺🇸|2.54"
+      - "@vpnfail_v2ray| AHS -🚩|2.77"
+      - "@v2rayvmess| AHS -🇺🇸|2.51"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|319.07"
-      - "@v2rayvmess| AHS -🇺🇸|2.54"
+      - "@vpnfail_v2ray| AHS -🚩|2.77"
+      - "@v2rayvmess| AHS -🇺🇸|2.51"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|319.07"
-      - "@v2rayvmess| AHS -🇺🇸|2.54"
+      - "@vpnfail_v2ray| AHS -🚩|2.77"
+      - "@v2rayvmess| AHS -🇺🇸|2.51"
 rules:
   - MATCH,MANUAL
