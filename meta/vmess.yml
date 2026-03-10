@@ -32,7 +32,58 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@v2rayvmess| AHS -🇺🇸|3.18"
+  - name: "@prrofile_purple| AHS -🇺🇸|297.95"
+    server: snapp.ir.bmi.ir.mobato-mobile.com
+    port: 80
+    type: vmess
+    uuid: 820a9e42-e18d-43e4-859f-d1c2f6b8600a
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: excoino.com
+    network: http
+    http-opts:
+      method: GET
+      path:
+        - /6DP57Rm2r87r2hUg6l2
+      headers:
+        Host:
+          - excoino.com
+    udp: true
+  - name: "@prrofile_purple| AHS -🇺🇸|2.56"
+    server: 143.204.111.65
+    port: 80
+    type: vmess
+    uuid: 7d969bec-ed21-40ae-8cca-1963e9a61316
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: d34r735owjqb9a.cloudfront.net
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: d34r735owjqb9a.cloudfront.net
+    udp: true
+  - name: "@prrofile_purple| AHS -🇺🇸|51.13"
+    server: 15.235.85.156
+    port: 443
+    type: vmess
+    uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: kampong.org
+    network: ws
+    ws-opts:
+      path: linkvws
+      headers:
+        Host: kampong.org
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|3.21"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -52,7 +103,10 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|3.18"
+      - "@prrofile_purple| AHS -🇺🇸|297.95"
+      - "@prrofile_purple| AHS -🇺🇸|2.56"
+      - "@prrofile_purple| AHS -🇺🇸|51.13"
+      - "@v2rayvmess| AHS -🇺🇸|3.21"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -63,19 +117,28 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|3.18"
+      - "@prrofile_purple| AHS -🇺🇸|297.95"
+      - "@prrofile_purple| AHS -🇺🇸|2.56"
+      - "@prrofile_purple| AHS -🇺🇸|51.13"
+      - "@v2rayvmess| AHS -🇺🇸|3.21"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|3.18"
+      - "@prrofile_purple| AHS -🇺🇸|297.95"
+      - "@prrofile_purple| AHS -🇺🇸|2.56"
+      - "@prrofile_purple| AHS -🇺🇸|51.13"
+      - "@v2rayvmess| AHS -🇺🇸|3.21"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|3.18"
+      - "@prrofile_purple| AHS -🇺🇸|297.95"
+      - "@prrofile_purple| AHS -🇺🇸|2.56"
+      - "@prrofile_purple| AHS -🇺🇸|51.13"
+      - "@v2rayvmess| AHS -🇺🇸|3.21"
 rules:
   - MATCH,MANUAL
