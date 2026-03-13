@@ -32,34 +32,18 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@vpnfail_v2ray| AHS -🚩|18.48"
-    server: cf.090227.xyz
-    port: 443
+  - name: "@vpnfail_v2ray| AHS -🇭🇰|223"
+    server: v10.hdacd.com
+    port: 30807
     type: vmess
-    uuid: 290cc691-3ac6-4387-98a1-25c8eb8ca2ea
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: sgal.dagrate.eu.org
-    network: ws
-    ws-opts:
-      path: /
-      headers:
-        Host: sgal.dagrate.eu.org
-    udp: true
-  - name: "@vpnfail_v2ray| AHS -🇩🇪|33.13"
-    server: 82.198.246.97
-    port: 180
-    type: vmess
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
-    alterId: 0
+    uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+    alterId: 2
     cipher: auto
     tls: false
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|18.34"
+  - name: "@v2rayvmess| AHS -🇺🇸|6.81"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -79,9 +63,8 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@vpnfail_v2ray| AHS -🚩|18.48"
-      - "@vpnfail_v2ray| AHS -🇩🇪|33.13"
-      - "@v2rayvmess| AHS -🇺🇸|18.34"
+      - "@vpnfail_v2ray| AHS -🇭🇰|223"
+      - "@v2rayvmess| AHS -🇺🇸|6.81"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -92,25 +75,22 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@vpnfail_v2ray| AHS -🚩|18.48"
-      - "@vpnfail_v2ray| AHS -🇩🇪|33.13"
-      - "@v2rayvmess| AHS -🇺🇸|18.34"
+      - "@vpnfail_v2ray| AHS -🇭🇰|223"
+      - "@v2rayvmess| AHS -🇺🇸|6.81"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@vpnfail_v2ray| AHS -🚩|18.48"
-      - "@vpnfail_v2ray| AHS -🇩🇪|33.13"
-      - "@v2rayvmess| AHS -🇺🇸|18.34"
+      - "@vpnfail_v2ray| AHS -🇭🇰|223"
+      - "@v2rayvmess| AHS -🇺🇸|6.81"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@vpnfail_v2ray| AHS -🚩|18.48"
-      - "@vpnfail_v2ray| AHS -🇩🇪|33.13"
-      - "@v2rayvmess| AHS -🇺🇸|18.34"
+      - "@vpnfail_v2ray| AHS -🇭🇰|223"
+      - "@v2rayvmess| AHS -🇺🇸|6.81"
 rules:
   - MATCH,MANUAL
