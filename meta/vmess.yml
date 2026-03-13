@@ -32,38 +32,27 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@vpnfail_v2ray| AHS -🇩🇪|64.05"
-    server: 82.198.246.97
-    port: 180
+  - name: "@vpnfail_v2ray| AHS -🇱🇺|150.42"
+    server: 107.189.7.176
+    port: 53469
     type: vmess
-    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    uuid: 2d7f32b9-5722-4d12-9325-6a4ef95c78df
     alterId: 0
     cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: ""
-    udp: true
-  - name: "@vpnfail_v2ray| AHS -🇳🇱|106.32"
-    server: 51.158.151.24
-    port: 20104
-    type: vmess
-    uuid: 40e306a6-7cab-40ac-a085-a961895eb11b
-    alterId: 0
-    cipher: auto
-    tls: false
+    tls: true
     skip-cert-verify: true
     servername: ""
     network: ws
     ws-opts:
-      path: /arki
+      path: /
       headers:
         Host: ""
     udp: true
-  - name: "@vpnfail_v2ray| AHS -🇲🇾|208.33"
+  - name: "@vpnfail_v2ray| AHS -🇲🇾|232.38"
     server: 47.250.45.234
-    port: 8613
+    port: 43063
     type: vmess
-    uuid: 80039b4d-bac0-4f89-82c7-54fad3b0a1ea
+    uuid: c77f48f5-4be3-4461-b52b-49998e7b897b
     alterId: 0
     cipher: auto
     tls: false
@@ -75,7 +64,23 @@ proxies:
       headers:
         Host: ""
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|2.42"
+  - name: "@vpnfail_v2ray| AHS -🇭🇰|202.33"
+    server: 47.244.120.197
+    port: 36703
+    type: vmess
+    uuid: 45b83519-9c4f-4052-a11b-02e017b636d4
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: ""
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|3.33"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -95,10 +100,10 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@vpnfail_v2ray| AHS -🇩🇪|64.05"
-      - "@vpnfail_v2ray| AHS -🇳🇱|106.32"
-      - "@vpnfail_v2ray| AHS -🇲🇾|208.33"
-      - "@v2rayvmess| AHS -🇺🇸|2.42"
+      - "@vpnfail_v2ray| AHS -🇱🇺|150.42"
+      - "@vpnfail_v2ray| AHS -🇲🇾|232.38"
+      - "@vpnfail_v2ray| AHS -🇭🇰|202.33"
+      - "@v2rayvmess| AHS -🇺🇸|3.33"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -109,28 +114,28 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@vpnfail_v2ray| AHS -🇩🇪|64.05"
-      - "@vpnfail_v2ray| AHS -🇳🇱|106.32"
-      - "@vpnfail_v2ray| AHS -🇲🇾|208.33"
-      - "@v2rayvmess| AHS -🇺🇸|2.42"
+      - "@vpnfail_v2ray| AHS -🇱🇺|150.42"
+      - "@vpnfail_v2ray| AHS -🇲🇾|232.38"
+      - "@vpnfail_v2ray| AHS -🇭🇰|202.33"
+      - "@v2rayvmess| AHS -🇺🇸|3.33"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@vpnfail_v2ray| AHS -🇩🇪|64.05"
-      - "@vpnfail_v2ray| AHS -🇳🇱|106.32"
-      - "@vpnfail_v2ray| AHS -🇲🇾|208.33"
-      - "@v2rayvmess| AHS -🇺🇸|2.42"
+      - "@vpnfail_v2ray| AHS -🇱🇺|150.42"
+      - "@vpnfail_v2ray| AHS -🇲🇾|232.38"
+      - "@vpnfail_v2ray| AHS -🇭🇰|202.33"
+      - "@v2rayvmess| AHS -🇺🇸|3.33"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@vpnfail_v2ray| AHS -🇩🇪|64.05"
-      - "@vpnfail_v2ray| AHS -🇳🇱|106.32"
-      - "@vpnfail_v2ray| AHS -🇲🇾|208.33"
-      - "@v2rayvmess| AHS -🇺🇸|2.42"
+      - "@vpnfail_v2ray| AHS -🇱🇺|150.42"
+      - "@vpnfail_v2ray| AHS -🇲🇾|232.38"
+      - "@vpnfail_v2ray| AHS -🇭🇰|202.33"
+      - "@v2rayvmess| AHS -🇺🇸|3.33"
 rules:
   - MATCH,MANUAL
