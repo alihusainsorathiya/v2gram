@@ -32,7 +32,15 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@PrivateVPNs| AHS -122.89"
+  - name: "|@PrivateVPNs| AHS -121.78"
+    server: 63.176.237.255
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@PrivateVPNs| AHS -121.27"
     server: 15.188.103.210
     port: 22222
     type: trojan
@@ -40,7 +48,15 @@ proxies:
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -122.69"
+  - name: "|@DirectVPN| AHS -123.84"
+    server: 63.176.237.255
+    port: 22223
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -114.74"
     server: 15.188.103.210
     port: 22223
     type: trojan
@@ -48,7 +64,7 @@ proxies:
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@vmess_vless_v2rayng| AHS -18.13"
+  - name: "|@vmess_vless_v2rayng| AHS -14.31"
     server: 172.64.152.23
     port: 443
     type: trojan
@@ -61,7 +77,7 @@ proxies:
       headers:
         Host: www.creationlong.org
     udp: true
-  - name: "|@vmess_vless_v2rayng| AHS -19.24"
+  - name: "|@vmess_vless_v2rayng| AHS -15.32"
     server: v1.dabache.top
     port: 443
     type: trojan
@@ -74,7 +90,7 @@ proxies:
       headers:
         Host: www.multiplydose.com
     udp: true
-  - name: "|@vmess_vless_v2rayng| AHS -18.14"
+  - name: "|@vmess_vless_v2rayng| AHS -14.41"
     server: 104.18.32.47
     port: 443
     type: trojan
@@ -87,7 +103,7 @@ proxies:
       headers:
         Host: www.calmlunch.com
     udp: true
-  - name: "|@ovpn2| AHS -17.57"
+  - name: "|@ovpn2| AHS -14.25"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -100,7 +116,7 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
-  - name: "|@vpn_tehran| AHS -17.99"
+  - name: "|@vpn_tehran| AHS -15.43"
     server: 104.18.32.37
     port: 443
     type: trojan
@@ -113,7 +129,7 @@ proxies:
       headers:
         Host: www.gossipglove.com
     udp: true
-  - name: "|@vpn_tehran| AHS -18.03"
+  - name: "|@vpn_tehran| AHS -14.4"
     server: 104.18.32.47
     port: 443
     type: trojan
@@ -126,7 +142,7 @@ proxies:
       headers:
         Host: www.multiplydose.com
     udp: true
-  - name: "|@v2rayngrit| AHS -39.73"
+  - name: "|@v2rayngrit| AHS -22"
     server: www.visa.com
     port: 8443
     type: trojan
@@ -139,7 +155,7 @@ proxies:
       headers:
         Host: xgsj0wf7y0r94f.zjde5.de5.net
     udp: true
-  - name: "|@v2rayngrit| AHS -17.98"
+  - name: "|@v2rayngrit| AHS -14.27"
     server: 185.18.250.245
     port: 443
     type: trojan
@@ -156,16 +172,18 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@PrivateVPNs| AHS -122.89"
-      - "|@DirectVPN| AHS -122.69"
-      - "|@vmess_vless_v2rayng| AHS -18.13"
-      - "|@vmess_vless_v2rayng| AHS -19.24"
-      - "|@vmess_vless_v2rayng| AHS -18.14"
-      - "|@ovpn2| AHS -17.57"
-      - "|@vpn_tehran| AHS -17.99"
-      - "|@vpn_tehran| AHS -18.03"
-      - "|@v2rayngrit| AHS -39.73"
-      - "|@v2rayngrit| AHS -17.98"
+      - "|@PrivateVPNs| AHS -121.78"
+      - "|@PrivateVPNs| AHS -121.27"
+      - "|@DirectVPN| AHS -123.84"
+      - "|@DirectVPN| AHS -114.74"
+      - "|@vmess_vless_v2rayng| AHS -14.31"
+      - "|@vmess_vless_v2rayng| AHS -15.32"
+      - "|@vmess_vless_v2rayng| AHS -14.41"
+      - "|@ovpn2| AHS -14.25"
+      - "|@vpn_tehran| AHS -15.43"
+      - "|@vpn_tehran| AHS -14.4"
+      - "|@v2rayngrit| AHS -22"
+      - "|@v2rayngrit| AHS -14.27"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -176,46 +194,52 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -122.89"
-      - "|@DirectVPN| AHS -122.69"
-      - "|@vmess_vless_v2rayng| AHS -18.13"
-      - "|@vmess_vless_v2rayng| AHS -19.24"
-      - "|@vmess_vless_v2rayng| AHS -18.14"
-      - "|@ovpn2| AHS -17.57"
-      - "|@vpn_tehran| AHS -17.99"
-      - "|@vpn_tehran| AHS -18.03"
-      - "|@v2rayngrit| AHS -39.73"
-      - "|@v2rayngrit| AHS -17.98"
+      - "|@PrivateVPNs| AHS -121.78"
+      - "|@PrivateVPNs| AHS -121.27"
+      - "|@DirectVPN| AHS -123.84"
+      - "|@DirectVPN| AHS -114.74"
+      - "|@vmess_vless_v2rayng| AHS -14.31"
+      - "|@vmess_vless_v2rayng| AHS -15.32"
+      - "|@vmess_vless_v2rayng| AHS -14.41"
+      - "|@ovpn2| AHS -14.25"
+      - "|@vpn_tehran| AHS -15.43"
+      - "|@vpn_tehran| AHS -14.4"
+      - "|@v2rayngrit| AHS -22"
+      - "|@v2rayngrit| AHS -14.27"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@PrivateVPNs| AHS -122.89"
-      - "|@DirectVPN| AHS -122.69"
-      - "|@vmess_vless_v2rayng| AHS -18.13"
-      - "|@vmess_vless_v2rayng| AHS -19.24"
-      - "|@vmess_vless_v2rayng| AHS -18.14"
-      - "|@ovpn2| AHS -17.57"
-      - "|@vpn_tehran| AHS -17.99"
-      - "|@vpn_tehran| AHS -18.03"
-      - "|@v2rayngrit| AHS -39.73"
-      - "|@v2rayngrit| AHS -17.98"
+      - "|@PrivateVPNs| AHS -121.78"
+      - "|@PrivateVPNs| AHS -121.27"
+      - "|@DirectVPN| AHS -123.84"
+      - "|@DirectVPN| AHS -114.74"
+      - "|@vmess_vless_v2rayng| AHS -14.31"
+      - "|@vmess_vless_v2rayng| AHS -15.32"
+      - "|@vmess_vless_v2rayng| AHS -14.41"
+      - "|@ovpn2| AHS -14.25"
+      - "|@vpn_tehran| AHS -15.43"
+      - "|@vpn_tehran| AHS -14.4"
+      - "|@v2rayngrit| AHS -22"
+      - "|@v2rayngrit| AHS -14.27"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -122.89"
-      - "|@DirectVPN| AHS -122.69"
-      - "|@vmess_vless_v2rayng| AHS -18.13"
-      - "|@vmess_vless_v2rayng| AHS -19.24"
-      - "|@vmess_vless_v2rayng| AHS -18.14"
-      - "|@ovpn2| AHS -17.57"
-      - "|@vpn_tehran| AHS -17.99"
-      - "|@vpn_tehran| AHS -18.03"
-      - "|@v2rayngrit| AHS -39.73"
-      - "|@v2rayngrit| AHS -17.98"
+      - "|@PrivateVPNs| AHS -121.78"
+      - "|@PrivateVPNs| AHS -121.27"
+      - "|@DirectVPN| AHS -123.84"
+      - "|@DirectVPN| AHS -114.74"
+      - "|@vmess_vless_v2rayng| AHS -14.31"
+      - "|@vmess_vless_v2rayng| AHS -15.32"
+      - "|@vmess_vless_v2rayng| AHS -14.41"
+      - "|@ovpn2| AHS -14.25"
+      - "|@vpn_tehran| AHS -15.43"
+      - "|@vpn_tehran| AHS -14.4"
+      - "|@v2rayngrit| AHS -22"
+      - "|@v2rayngrit| AHS -14.27"
 rules:
   - MATCH,MANUAL
