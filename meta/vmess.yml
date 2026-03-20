@@ -32,23 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@vpnfail_v2ray| AHS -🇺🇸|3.92"
-    server: 135.181.35.169
-    port: 80
-    type: vmess
-    uuid: 2aac77de-b3e4-4017-845c-ca1380f2e8d0
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: google.com
-    network: ws
-    ws-opts:
-      path: /telegram-id-@privatevpns
-      headers:
-        Host: google.com
-    udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|2.74"
+  - name: "@v2rayvmess| AHS -🇺🇸|18.47"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -68,8 +52,7 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@vpnfail_v2ray| AHS -🇺🇸|3.92"
-      - "@v2rayvmess| AHS -🇺🇸|2.74"
+      - "@v2rayvmess| AHS -🇺🇸|18.47"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -80,22 +63,19 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@vpnfail_v2ray| AHS -🇺🇸|3.92"
-      - "@v2rayvmess| AHS -🇺🇸|2.74"
+      - "@v2rayvmess| AHS -🇺🇸|18.47"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@vpnfail_v2ray| AHS -🇺🇸|3.92"
-      - "@v2rayvmess| AHS -🇺🇸|2.74"
+      - "@v2rayvmess| AHS -🇺🇸|18.47"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@vpnfail_v2ray| AHS -🇺🇸|3.92"
-      - "@v2rayvmess| AHS -🇺🇸|2.74"
+      - "@v2rayvmess| AHS -🇺🇸|18.47"
 rules:
   - MATCH,MANUAL
