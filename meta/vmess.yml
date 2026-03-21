@@ -32,23 +32,26 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@vpnfail_v2ray| AHS -🇺🇸|2.12"
-    server: 135.181.35.169
+  - name: "@vpnfail_v2ray| AHS -🇺🇸|426.71"
+    server: snapp.ir.bmi.ir.mobato-mobile.com
     port: 80
     type: vmess
-    uuid: 2aac77de-b3e4-4017-845c-ca1380f2e8d0
+    uuid: 820a9e42-e18d-43e4-859f-d1c2f6b8600a
     alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: true
-    servername: google.com
-    network: ws
-    ws-opts:
-      path: /telegram-id-@privatevpns
+    servername: excoino.com
+    network: http
+    http-opts:
+      method: GET
+      path:
+        - /6DP57Rm2r87r2hUg6l2
       headers:
-        Host: google.com
+        Host:
+          - excoino.com
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|3.18"
+  - name: "@v2rayvmess| AHS -🇺🇸|18.34"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -68,8 +71,8 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@vpnfail_v2ray| AHS -🇺🇸|2.12"
-      - "@v2rayvmess| AHS -🇺🇸|3.18"
+      - "@vpnfail_v2ray| AHS -🇺🇸|426.71"
+      - "@v2rayvmess| AHS -🇺🇸|18.34"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -80,22 +83,22 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@vpnfail_v2ray| AHS -🇺🇸|2.12"
-      - "@v2rayvmess| AHS -🇺🇸|3.18"
+      - "@vpnfail_v2ray| AHS -🇺🇸|426.71"
+      - "@v2rayvmess| AHS -🇺🇸|18.34"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@vpnfail_v2ray| AHS -🇺🇸|2.12"
-      - "@v2rayvmess| AHS -🇺🇸|3.18"
+      - "@vpnfail_v2ray| AHS -🇺🇸|426.71"
+      - "@v2rayvmess| AHS -🇺🇸|18.34"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@vpnfail_v2ray| AHS -🇺🇸|2.12"
-      - "@v2rayvmess| AHS -🇺🇸|3.18"
+      - "@vpnfail_v2ray| AHS -🇺🇸|426.71"
+      - "@v2rayvmess| AHS -🇺🇸|18.34"
 rules:
   - MATCH,MANUAL
