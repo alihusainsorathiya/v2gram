@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@oneclickvpnkeys| AHS -🇩🇪|128.11"
+  - name: "@oneclickvpnkeys| AHS -🇩🇪|107.32"
     server: 46.225.54.75
     port: 10410
     type: vmess
@@ -43,7 +43,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@oneclickvpnkeys| AHS -🇮🇹|104.07"
+  - name: "@oneclickvpnkeys| AHS -🇮🇹|107.23"
     server: 45.92.70.236
     port: 22324
     type: vmess
@@ -54,7 +54,18 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|19.54"
+  - name: "@vpnfail_v2ray| AHS -🇧🇬|128.98"
+    server: 45.39.241.51
+    port: 38543
+    type: vmess
+    uuid: f54778cc-ce26-4f8d-923f-f8e62b090cde
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|3.21"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -74,9 +85,10 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@oneclickvpnkeys| AHS -🇩🇪|128.11"
-      - "@oneclickvpnkeys| AHS -🇮🇹|104.07"
-      - "@v2rayvmess| AHS -🇺🇸|19.54"
+      - "@oneclickvpnkeys| AHS -🇩🇪|107.32"
+      - "@oneclickvpnkeys| AHS -🇮🇹|107.23"
+      - "@vpnfail_v2ray| AHS -🇧🇬|128.98"
+      - "@v2rayvmess| AHS -🇺🇸|3.21"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -87,25 +99,28 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@oneclickvpnkeys| AHS -🇩🇪|128.11"
-      - "@oneclickvpnkeys| AHS -🇮🇹|104.07"
-      - "@v2rayvmess| AHS -🇺🇸|19.54"
+      - "@oneclickvpnkeys| AHS -🇩🇪|107.32"
+      - "@oneclickvpnkeys| AHS -🇮🇹|107.23"
+      - "@vpnfail_v2ray| AHS -🇧🇬|128.98"
+      - "@v2rayvmess| AHS -🇺🇸|3.21"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@oneclickvpnkeys| AHS -🇩🇪|128.11"
-      - "@oneclickvpnkeys| AHS -🇮🇹|104.07"
-      - "@v2rayvmess| AHS -🇺🇸|19.54"
+      - "@oneclickvpnkeys| AHS -🇩🇪|107.32"
+      - "@oneclickvpnkeys| AHS -🇮🇹|107.23"
+      - "@vpnfail_v2ray| AHS -🇧🇬|128.98"
+      - "@v2rayvmess| AHS -🇺🇸|3.21"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@oneclickvpnkeys| AHS -🇩🇪|128.11"
-      - "@oneclickvpnkeys| AHS -🇮🇹|104.07"
-      - "@v2rayvmess| AHS -🇺🇸|19.54"
+      - "@oneclickvpnkeys| AHS -🇩🇪|107.32"
+      - "@oneclickvpnkeys| AHS -🇮🇹|107.23"
+      - "@vpnfail_v2ray| AHS -🇧🇬|128.98"
+      - "@v2rayvmess| AHS -🇺🇸|3.21"
 rules:
   - MATCH,MANUAL
