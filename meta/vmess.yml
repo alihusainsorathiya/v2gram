@@ -32,7 +32,23 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@v2rayvmess| AHS -🇺🇸|6.57"
+  - name: "@vpnfail_v2ray| AHS -🇹🇷|199.04"
+    server: chatgpt.com
+    port: 8443
+    type: vmess
+    uuid: 35312035-3420-4535-a031-303220353420
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: tr-1.stunnel.cc
+    network: ws
+    ws-opts:
+      path: /ws
+      headers:
+        Host: tr-1.stunnel.cc
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|1.9"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -52,7 +68,8 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|6.57"
+      - "@vpnfail_v2ray| AHS -🇹🇷|199.04"
+      - "@v2rayvmess| AHS -🇺🇸|1.9"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -63,19 +80,22 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|6.57"
+      - "@vpnfail_v2ray| AHS -🇹🇷|199.04"
+      - "@v2rayvmess| AHS -🇺🇸|1.9"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|6.57"
+      - "@vpnfail_v2ray| AHS -🇹🇷|199.04"
+      - "@v2rayvmess| AHS -🇺🇸|1.9"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|6.57"
+      - "@vpnfail_v2ray| AHS -🇹🇷|199.04"
+      - "@v2rayvmess| AHS -🇺🇸|1.9"
 rules:
   - MATCH,MANUAL
