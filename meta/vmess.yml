@@ -32,23 +32,26 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@vpnfail_v2ray| AHS -🇹🇷|121.77"
-    server: chatgpt.com
-    port: 8443
+  - name: "@vpnfail_v2ray| AHS -🇺🇸|559.99"
+    server: snapp.ir.bmi.ir.mobato-mobile.com
+    port: 80
     type: vmess
-    uuid: 35312035-3420-4535-a031-303220353420
+    uuid: 820a9e42-e18d-43e4-859f-d1c2f6b8600a
     alterId: 0
     cipher: auto
-    tls: true
+    tls: false
     skip-cert-verify: true
-    servername: tr-1.stunnel.cc
-    network: ws
-    ws-opts:
-      path: /ws
+    servername: excoino.com
+    network: http
+    http-opts:
+      method: GET
+      path:
+        - /6DP57Rm2r87r2hUg6l2
       headers:
-        Host: tr-1.stunnel.cc
+        Host:
+          - excoino.com
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|6.37"
+  - name: "@v2rayvmess| AHS -🇺🇸|3.24"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -68,8 +71,8 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@vpnfail_v2ray| AHS -🇹🇷|121.77"
-      - "@v2rayvmess| AHS -🇺🇸|6.37"
+      - "@vpnfail_v2ray| AHS -🇺🇸|559.99"
+      - "@v2rayvmess| AHS -🇺🇸|3.24"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -80,22 +83,22 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@vpnfail_v2ray| AHS -🇹🇷|121.77"
-      - "@v2rayvmess| AHS -🇺🇸|6.37"
+      - "@vpnfail_v2ray| AHS -🇺🇸|559.99"
+      - "@v2rayvmess| AHS -🇺🇸|3.24"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@vpnfail_v2ray| AHS -🇹🇷|121.77"
-      - "@v2rayvmess| AHS -🇺🇸|6.37"
+      - "@vpnfail_v2ray| AHS -🇺🇸|559.99"
+      - "@v2rayvmess| AHS -🇺🇸|3.24"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@vpnfail_v2ray| AHS -🇹🇷|121.77"
-      - "@v2rayvmess| AHS -🇺🇸|6.37"
+      - "@vpnfail_v2ray| AHS -🇺🇸|559.99"
+      - "@v2rayvmess| AHS -🇺🇸|3.24"
 rules:
   - MATCH,MANUAL
