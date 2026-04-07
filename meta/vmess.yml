@@ -32,7 +32,23 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@v2rayvmess| AHS -🇺🇸|3.38"
+  - name: "@vpnfail_v2ray| AHS -🇹🇼|150.92"
+    server: 103.229.124.3
+    port: 20521
+    type: vmess
+    uuid: 292e9c90-25b3-4ff5-b98a-9ef5877714ab
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: ""
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|2.26"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -52,7 +68,8 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|3.38"
+      - "@vpnfail_v2ray| AHS -🇹🇼|150.92"
+      - "@v2rayvmess| AHS -🇺🇸|2.26"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -63,19 +80,22 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|3.38"
+      - "@vpnfail_v2ray| AHS -🇹🇼|150.92"
+      - "@v2rayvmess| AHS -🇺🇸|2.26"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|3.38"
+      - "@vpnfail_v2ray| AHS -🇹🇼|150.92"
+      - "@v2rayvmess| AHS -🇺🇸|2.26"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|3.38"
+      - "@vpnfail_v2ray| AHS -🇹🇼|150.92"
+      - "@v2rayvmess| AHS -🇺🇸|2.26"
 rules:
   - MATCH,MANUAL
