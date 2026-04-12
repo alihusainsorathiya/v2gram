@@ -32,7 +32,23 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@v2rayvmess| AHS -🇺🇸|2.66"
+  - name: "@vpnfail_v2ray| AHS -🇩🇪|224.71"
+    server: 104.18.12.149
+    port: 443
+    type: vmess
+    uuid: 6cc103a1-3e49-4c8e-a2c1-f70d24b19c65
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: backfall.azadiconfig.top
+    network: ws
+    ws-opts:
+      path: /store
+      headers:
+        Host: backfall.azadiconfig.top
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|19.02"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -52,7 +68,8 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|2.66"
+      - "@vpnfail_v2ray| AHS -🇩🇪|224.71"
+      - "@v2rayvmess| AHS -🇺🇸|19.02"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -63,19 +80,22 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|2.66"
+      - "@vpnfail_v2ray| AHS -🇩🇪|224.71"
+      - "@v2rayvmess| AHS -🇺🇸|19.02"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|2.66"
+      - "@vpnfail_v2ray| AHS -🇩🇪|224.71"
+      - "@v2rayvmess| AHS -🇺🇸|19.02"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|2.66"
+      - "@vpnfail_v2ray| AHS -🇩🇪|224.71"
+      - "@v2rayvmess| AHS -🇺🇸|19.02"
 rules:
   - MATCH,MANUAL
