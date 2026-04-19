@@ -32,7 +32,23 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@v2rayvmess| AHS -🇺🇸|3.26"
+  - name: "@vpnfail_v2ray| AHS -🇮🇷|138.05"
+    server: www.arvancloud.ir
+    port: 8080
+    type: vmess
+    uuid: 72906a55-9f0a-4aff-83b9-3385677a7495
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: doyouundestand-whatis-myproducttorunotthinkaboutme.reserp.ir
+    network: ws
+    ws-opts:
+      path: /varzesh3
+      headers:
+        Host: doyouundestand-whatis-myproducttorunotthinkaboutme.reserp.ir
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|20.4"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -52,7 +68,8 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|3.26"
+      - "@vpnfail_v2ray| AHS -🇮🇷|138.05"
+      - "@v2rayvmess| AHS -🇺🇸|20.4"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -63,19 +80,22 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|3.26"
+      - "@vpnfail_v2ray| AHS -🇮🇷|138.05"
+      - "@v2rayvmess| AHS -🇺🇸|20.4"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|3.26"
+      - "@vpnfail_v2ray| AHS -🇮🇷|138.05"
+      - "@v2rayvmess| AHS -🇺🇸|20.4"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|3.26"
+      - "@vpnfail_v2ray| AHS -🇮🇷|138.05"
+      - "@v2rayvmess| AHS -🇺🇸|20.4"
 rules:
   - MATCH,MANUAL
