@@ -32,7 +32,23 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@v2rayvmess| AHS -🇺🇸|10.44"
+  - name: "@vpnfail_v2ray| AHS -🇩🇪|240.44"
+    server: u8.huvicloud.com
+    port: 443
+    type: vmess
+    uuid: 6796611b-260e-4d63-9016-20c27b12e420
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: u8.huvicloud.com
+    network: ws
+    ws-opts:
+      path: /6796611b-260e-4d63-9016-20c27b12e420
+      headers:
+        Host: u8.huvicloud.com
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|18.38"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -52,7 +68,8 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|10.44"
+      - "@vpnfail_v2ray| AHS -🇩🇪|240.44"
+      - "@v2rayvmess| AHS -🇺🇸|18.38"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -63,19 +80,22 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|10.44"
+      - "@vpnfail_v2ray| AHS -🇩🇪|240.44"
+      - "@v2rayvmess| AHS -🇺🇸|18.38"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|10.44"
+      - "@vpnfail_v2ray| AHS -🇩🇪|240.44"
+      - "@v2rayvmess| AHS -🇺🇸|18.38"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|10.44"
+      - "@vpnfail_v2ray| AHS -🇩🇪|240.44"
+      - "@v2rayvmess| AHS -🇺🇸|18.38"
 rules:
   - MATCH,MANUAL
