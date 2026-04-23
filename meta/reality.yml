@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@ProxyFn|🇨🇭|143.26
+  - name: REALITY|@ProxyFn|🇨🇭|139.86
     server: 193.168.144.46
     port: 443
     type: vless
@@ -45,7 +45,7 @@ proxies:
     grpc-opts:
       grpc-service-name: /
     udp: true
-  - name: REALITY|@Outline_Vpn|🇳🇱|139.22
+  - name: REALITY|@Outline_Vpn|🇳🇱|112.05
     server: 45.149.115.148
     port: 443
     type: vless
@@ -56,7 +56,7 @@ proxies:
     skip-cert-verify: true
     servername: google.com
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|134.14
+  - name: REALITY|@internet4iran|🇩🇪|124.38
     server: 88.99.121.221
     port: 443
     type: vless
@@ -67,24 +67,13 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@vpn_tehran|🇭🇺|149.84
-    server: 5.182.38.91
-    port: 17267
-    type: vless
-    uuid: 1c7fcc38-e6be-43c5-875f-b8de2516b9f2
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: yahoo.com
-    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|143.26
-      - REALITY|@Outline_Vpn|🇳🇱|139.22
-      - REALITY|@internet4iran|🇩🇪|134.14
-      - REALITY|@vpn_tehran|🇭🇺|149.84
+      - REALITY|@ProxyFn|🇨🇭|139.86
+      - REALITY|@Outline_Vpn|🇳🇱|112.05
+      - REALITY|@internet4iran|🇩🇪|124.38
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -95,28 +84,25 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|143.26
-      - REALITY|@Outline_Vpn|🇳🇱|139.22
-      - REALITY|@internet4iran|🇩🇪|134.14
-      - REALITY|@vpn_tehran|🇭🇺|149.84
+      - REALITY|@ProxyFn|🇨🇭|139.86
+      - REALITY|@Outline_Vpn|🇳🇱|112.05
+      - REALITY|@internet4iran|🇩🇪|124.38
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|143.26
-      - REALITY|@Outline_Vpn|🇳🇱|139.22
-      - REALITY|@internet4iran|🇩🇪|134.14
-      - REALITY|@vpn_tehran|🇭🇺|149.84
+      - REALITY|@ProxyFn|🇨🇭|139.86
+      - REALITY|@Outline_Vpn|🇳🇱|112.05
+      - REALITY|@internet4iran|🇩🇪|124.38
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@ProxyFn|🇨🇭|143.26
-      - REALITY|@Outline_Vpn|🇳🇱|139.22
-      - REALITY|@internet4iran|🇩🇪|134.14
-      - REALITY|@vpn_tehran|🇭🇺|149.84
+      - REALITY|@ProxyFn|🇨🇭|139.86
+      - REALITY|@Outline_Vpn|🇳🇱|112.05
+      - REALITY|@internet4iran|🇩🇪|124.38
 rules:
   - MATCH,MANUAL
