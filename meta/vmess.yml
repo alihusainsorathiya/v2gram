@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@prrofile_purple| AHS -🇮🇷|128.9"
+  - name: "@prrofile_purple| AHS -🇮🇷|438.72"
     server: cdn.ip-static.com
     port: 80
     type: vmess
@@ -48,7 +48,23 @@ proxies:
       headers:
         Host: FIN003.midasnet.work
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|18.55"
+  - name: "@vpnfail_v2ray| AHS -🇮🇷|608.37"
+    server: 185.143.233.235
+    port: 80
+    type: vmess
+    uuid: ba6d9b39-0bae-4179-9b9b-824b9bb27dc4
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: n3.multiservers.ir
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: n3.multiservers.ir
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|2.68"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -68,8 +84,9 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|128.9"
-      - "@v2rayvmess| AHS -🇺🇸|18.55"
+      - "@prrofile_purple| AHS -🇮🇷|438.72"
+      - "@vpnfail_v2ray| AHS -🇮🇷|608.37"
+      - "@v2rayvmess| AHS -🇺🇸|2.68"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -80,22 +97,25 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|128.9"
-      - "@v2rayvmess| AHS -🇺🇸|18.55"
+      - "@prrofile_purple| AHS -🇮🇷|438.72"
+      - "@vpnfail_v2ray| AHS -🇮🇷|608.37"
+      - "@v2rayvmess| AHS -🇺🇸|2.68"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|128.9"
-      - "@v2rayvmess| AHS -🇺🇸|18.55"
+      - "@prrofile_purple| AHS -🇮🇷|438.72"
+      - "@vpnfail_v2ray| AHS -🇮🇷|608.37"
+      - "@v2rayvmess| AHS -🇺🇸|2.68"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@prrofile_purple| AHS -🇮🇷|128.9"
-      - "@v2rayvmess| AHS -🇺🇸|18.55"
+      - "@prrofile_purple| AHS -🇮🇷|438.72"
+      - "@vpnfail_v2ray| AHS -🇮🇷|608.37"
+      - "@v2rayvmess| AHS -🇺🇸|2.68"
 rules:
   - MATCH,MANUAL
