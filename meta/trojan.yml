@@ -32,7 +32,23 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@NetAccount| AHS -2.24"
+  - name: "|@PrivateVPNs| AHS -159.38"
+    server: 13.37.186.112
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -168.61"
+    server: 13.37.186.112
+    port: 22223
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@NetAccount| AHS -18.44"
     server: 104.16.7.70
     port: 443
     type: trojan
@@ -45,7 +61,7 @@ proxies:
       headers:
         Host: Koma-YT.PAGeS.Dev
     udp: true
-  - name: "|@NetAccount| AHS -2.41"
+  - name: "|@NetAccount| AHS -18.52"
     server: 8.6.112.6
     port: 443
     type: trojan
@@ -58,7 +74,7 @@ proxies:
       headers:
         Host: www.calmloud.com
     udp: true
-  - name: "|@NetAccount| AHS -3.66"
+  - name: "|@NetAccount| AHS -20.01"
     server: 172.66.47.69
     port: 443
     type: trojan
@@ -71,7 +87,7 @@ proxies:
       headers:
         Host: www.multiplydose.com
     udp: true
-  - name: "|@ovpn2| AHS -4.74"
+  - name: "|@ovpn2| AHS -18.35"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -84,7 +100,7 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
-  - name: "|@v2rayngrit| AHS -21.78"
+  - name: "|@v2rayngrit| AHS -43.64"
     server: www.visa.com
     port: 8443
     type: trojan
@@ -97,7 +113,7 @@ proxies:
       headers:
         Host: xgsj0wf7y0r94f.zjde5.de5.net
     udp: true
-  - name: "|@v2rayngrit| AHS -2.47"
+  - name: "|@v2rayngrit| AHS -18.27"
     server: 185.18.250.245
     port: 443
     type: trojan
@@ -114,12 +130,14 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@NetAccount| AHS -2.24"
-      - "|@NetAccount| AHS -2.41"
-      - "|@NetAccount| AHS -3.66"
-      - "|@ovpn2| AHS -4.74"
-      - "|@v2rayngrit| AHS -21.78"
-      - "|@v2rayngrit| AHS -2.47"
+      - "|@PrivateVPNs| AHS -159.38"
+      - "|@DirectVPN| AHS -168.61"
+      - "|@NetAccount| AHS -18.44"
+      - "|@NetAccount| AHS -18.52"
+      - "|@NetAccount| AHS -20.01"
+      - "|@ovpn2| AHS -18.35"
+      - "|@v2rayngrit| AHS -43.64"
+      - "|@v2rayngrit| AHS -18.27"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -130,34 +148,40 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@NetAccount| AHS -2.24"
-      - "|@NetAccount| AHS -2.41"
-      - "|@NetAccount| AHS -3.66"
-      - "|@ovpn2| AHS -4.74"
-      - "|@v2rayngrit| AHS -21.78"
-      - "|@v2rayngrit| AHS -2.47"
+      - "|@PrivateVPNs| AHS -159.38"
+      - "|@DirectVPN| AHS -168.61"
+      - "|@NetAccount| AHS -18.44"
+      - "|@NetAccount| AHS -18.52"
+      - "|@NetAccount| AHS -20.01"
+      - "|@ovpn2| AHS -18.35"
+      - "|@v2rayngrit| AHS -43.64"
+      - "|@v2rayngrit| AHS -18.27"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@NetAccount| AHS -2.24"
-      - "|@NetAccount| AHS -2.41"
-      - "|@NetAccount| AHS -3.66"
-      - "|@ovpn2| AHS -4.74"
-      - "|@v2rayngrit| AHS -21.78"
-      - "|@v2rayngrit| AHS -2.47"
+      - "|@PrivateVPNs| AHS -159.38"
+      - "|@DirectVPN| AHS -168.61"
+      - "|@NetAccount| AHS -18.44"
+      - "|@NetAccount| AHS -18.52"
+      - "|@NetAccount| AHS -20.01"
+      - "|@ovpn2| AHS -18.35"
+      - "|@v2rayngrit| AHS -43.64"
+      - "|@v2rayngrit| AHS -18.27"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@NetAccount| AHS -2.24"
-      - "|@NetAccount| AHS -2.41"
-      - "|@NetAccount| AHS -3.66"
-      - "|@ovpn2| AHS -4.74"
-      - "|@v2rayngrit| AHS -21.78"
-      - "|@v2rayngrit| AHS -2.47"
+      - "|@PrivateVPNs| AHS -159.38"
+      - "|@DirectVPN| AHS -168.61"
+      - "|@NetAccount| AHS -18.44"
+      - "|@NetAccount| AHS -18.52"
+      - "|@NetAccount| AHS -20.01"
+      - "|@ovpn2| AHS -18.35"
+      - "|@v2rayngrit| AHS -43.64"
+      - "|@v2rayngrit| AHS -18.27"
 rules:
   - MATCH,MANUAL
