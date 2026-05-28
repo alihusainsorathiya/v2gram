@@ -32,18 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@Outline_Vpn|🇺🇸|55.68
-    server: 137.184.218.169
-    port: 36925
-    type: vless
-    uuid: c9fd0fb1-8251-4106-b09a-f4b426736f67
-    cipher: auto
-    tls: false
-    flow: xtls-rprx-vision
-    skip-cert-verify: true
-    servername: www.cloudflare.com
-    udp: true
-  - name: REALITY|@internet4iran|🇩🇪|151.87
+  - name: REALITY|@internet4iran|🇩🇪|98.64
     server: 88.99.121.221
     port: 443
     type: vless
@@ -54,12 +43,25 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
+  - name: REALITY|@proxy_kafee|🇲🇩|99.36
+    server: 185.248.144.70
+    port: 10549
+    type: vless
+    uuid: 46d74f41-89fb-41a9-801d-75945f388879
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: xp.apple.com
+    network: grpc
+    grpc-opts:
+      grpc-service-name: grpc
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@Outline_Vpn|🇺🇸|55.68
-      - REALITY|@internet4iran|🇩🇪|151.87
+      - REALITY|@internet4iran|🇩🇪|98.64
+      - REALITY|@proxy_kafee|🇲🇩|99.36
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -70,22 +72,22 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@Outline_Vpn|🇺🇸|55.68
-      - REALITY|@internet4iran|🇩🇪|151.87
+      - REALITY|@internet4iran|🇩🇪|98.64
+      - REALITY|@proxy_kafee|🇲🇩|99.36
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@Outline_Vpn|🇺🇸|55.68
-      - REALITY|@internet4iran|🇩🇪|151.87
+      - REALITY|@internet4iran|🇩🇪|98.64
+      - REALITY|@proxy_kafee|🇲🇩|99.36
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@Outline_Vpn|🇺🇸|55.68
-      - REALITY|@internet4iran|🇩🇪|151.87
+      - REALITY|@internet4iran|🇩🇪|98.64
+      - REALITY|@proxy_kafee|🇲🇩|99.36
 rules:
   - MATCH,MANUAL
