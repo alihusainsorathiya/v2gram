@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@internet4iran|🇩🇪|92.94
+  - name: REALITY|@internet4iran|🇩🇪|137.48
     server: 88.99.121.221
     port: 443
     type: vless
@@ -43,25 +43,22 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@proxy_kafee|🇲🇩|106.77
-    server: 185.248.144.70
-    port: 10549
+  - name: REALITY|@proxy_kafee|🇮🇱|147.43
+    server: 45.140.204.121
+    port: 443
     type: vless
-    uuid: 46d74f41-89fb-41a9-801d-75945f388879
+    uuid: 416560bf-9ebb-4a43-96b6-e353e3d3572a
     cipher: auto
     tls: false
     skip-cert-verify: true
-    servername: xp.apple.com
-    network: grpc
-    grpc-opts:
-      grpc-service-name: grpc
+    servername: yahoo.com
     udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@internet4iran|🇩🇪|92.94
-      - REALITY|@proxy_kafee|🇲🇩|106.77
+      - REALITY|@internet4iran|🇩🇪|137.48
+      - REALITY|@proxy_kafee|🇮🇱|147.43
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -72,22 +69,22 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|92.94
-      - REALITY|@proxy_kafee|🇲🇩|106.77
+      - REALITY|@internet4iran|🇩🇪|137.48
+      - REALITY|@proxy_kafee|🇮🇱|147.43
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@internet4iran|🇩🇪|92.94
-      - REALITY|@proxy_kafee|🇲🇩|106.77
+      - REALITY|@internet4iran|🇩🇪|137.48
+      - REALITY|@proxy_kafee|🇮🇱|147.43
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|92.94
-      - REALITY|@proxy_kafee|🇲🇩|106.77
+      - REALITY|@internet4iran|🇩🇪|137.48
+      - REALITY|@proxy_kafee|🇮🇱|147.43
 rules:
   - MATCH,MANUAL
