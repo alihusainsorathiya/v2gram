@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@internet4iran|🇩🇪|147.88
+  - name: REALITY|@internet4iran|🇩🇪|113.2
     server: 88.99.121.221
     port: 443
     type: vless
@@ -43,7 +43,7 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@v2ray1_ng|🇨🇿|169.45
+  - name: REALITY|@v2ray1_ng|🇨🇿|126.27
     server: vip.starservices.lol
     port: 3082
     type: vless
@@ -53,7 +53,7 @@ proxies:
     skip-cert-verify: true
     servername: www.nvidia.com
     udp: true
-  - name: REALITY|@SafeNet_Server|🇹🇷|396.12
+  - name: REALITY|@SafeNet_Server|🇹🇷|202.48
     server: panel.panel.pythash.tr
     port: 443
     type: vless
@@ -64,13 +64,25 @@ proxies:
     skip-cert-verify: true
     servername: www.yahoo.com
     udp: true
+  - name: REALITY|@proxy_kafee|🇦🇱|150.18
+    server: 144.31.131.33
+    port: 443
+    type: vless
+    uuid: ae852d97-85f5-45cf-82a4-254eba345480
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: cdn.cdnjst.org
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@internet4iran|🇩🇪|147.88
-      - REALITY|@v2ray1_ng|🇨🇿|169.45
-      - REALITY|@SafeNet_Server|🇹🇷|396.12
+      - REALITY|@internet4iran|🇩🇪|113.2
+      - REALITY|@v2ray1_ng|🇨🇿|126.27
+      - REALITY|@SafeNet_Server|🇹🇷|202.48
+      - REALITY|@proxy_kafee|🇦🇱|150.18
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -81,25 +93,28 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|147.88
-      - REALITY|@v2ray1_ng|🇨🇿|169.45
-      - REALITY|@SafeNet_Server|🇹🇷|396.12
+      - REALITY|@internet4iran|🇩🇪|113.2
+      - REALITY|@v2ray1_ng|🇨🇿|126.27
+      - REALITY|@SafeNet_Server|🇹🇷|202.48
+      - REALITY|@proxy_kafee|🇦🇱|150.18
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@internet4iran|🇩🇪|147.88
-      - REALITY|@v2ray1_ng|🇨🇿|169.45
-      - REALITY|@SafeNet_Server|🇹🇷|396.12
+      - REALITY|@internet4iran|🇩🇪|113.2
+      - REALITY|@v2ray1_ng|🇨🇿|126.27
+      - REALITY|@SafeNet_Server|🇹🇷|202.48
+      - REALITY|@proxy_kafee|🇦🇱|150.18
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|147.88
-      - REALITY|@v2ray1_ng|🇨🇿|169.45
-      - REALITY|@SafeNet_Server|🇹🇷|396.12
+      - REALITY|@internet4iran|🇩🇪|113.2
+      - REALITY|@v2ray1_ng|🇨🇿|126.27
+      - REALITY|@SafeNet_Server|🇹🇷|202.48
+      - REALITY|@proxy_kafee|🇦🇱|150.18
 rules:
   - MATCH,MANUAL
