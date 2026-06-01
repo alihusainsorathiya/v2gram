@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@internet4iran|🇩🇪|154.24
+  - name: REALITY|@internet4iran|🇩🇪|154.53
     server: 88.99.121.221
     port: 443
     type: vless
@@ -43,18 +43,18 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@v2rayngvpn|🇳🇱|147.93
-    server: 146.0.73.104
-    port: 8443
+  - name: REALITY|@v2rayngvpn|🇳🇱|144.91
+    server: 88.218.120.60
+    port: 4443
     type: vless
-    uuid: af194c0e-95c3-417b-85bf-9ac3027f903e
+    uuid: 41b903e0-7d0a-45d0-9b29-83086024a88b
     cipher: auto
     tls: false
     flow: xtls-rprx-vision
     skip-cert-verify: true
-    servername: ads.5ka.ru
+    servername: sni4.streisand.lt
     udp: true
-  - name: REALITY|@v2ray1_ng|🇨🇿|180.79
+  - name: REALITY|@v2ray1_ng|🇨🇿|176.86
     server: vip.starservices.lol
     port: 3082
     type: vless
@@ -64,7 +64,7 @@ proxies:
     skip-cert-verify: true
     servername: www.nvidia.com
     udp: true
-  - name: REALITY|@SafeNet_Server|🇹🇷|218.42
+  - name: REALITY|@SafeNet_Server|🇹🇷|360.42
     server: panel.panel.pythash.tr
     port: 443
     type: vless
@@ -75,14 +75,26 @@ proxies:
     skip-cert-verify: true
     servername: www.yahoo.com
     udp: true
+  - name: REALITY|@proxy_kafee|🇷🇺|211
+    server: ctt.phantom.direct
+    port: 443
+    type: vless
+    uuid: d1aa0bc6-8b4f-45a8-8917-4664b3cab074
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: yandex.ru
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@internet4iran|🇩🇪|154.24
-      - REALITY|@v2rayngvpn|🇳🇱|147.93
-      - REALITY|@v2ray1_ng|🇨🇿|180.79
-      - REALITY|@SafeNet_Server|🇹🇷|218.42
+      - REALITY|@internet4iran|🇩🇪|154.53
+      - REALITY|@v2rayngvpn|🇳🇱|144.91
+      - REALITY|@v2ray1_ng|🇨🇿|176.86
+      - REALITY|@SafeNet_Server|🇹🇷|360.42
+      - REALITY|@proxy_kafee|🇷🇺|211
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -93,28 +105,31 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|154.24
-      - REALITY|@v2rayngvpn|🇳🇱|147.93
-      - REALITY|@v2ray1_ng|🇨🇿|180.79
-      - REALITY|@SafeNet_Server|🇹🇷|218.42
+      - REALITY|@internet4iran|🇩🇪|154.53
+      - REALITY|@v2rayngvpn|🇳🇱|144.91
+      - REALITY|@v2ray1_ng|🇨🇿|176.86
+      - REALITY|@SafeNet_Server|🇹🇷|360.42
+      - REALITY|@proxy_kafee|🇷🇺|211
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@internet4iran|🇩🇪|154.24
-      - REALITY|@v2rayngvpn|🇳🇱|147.93
-      - REALITY|@v2ray1_ng|🇨🇿|180.79
-      - REALITY|@SafeNet_Server|🇹🇷|218.42
+      - REALITY|@internet4iran|🇩🇪|154.53
+      - REALITY|@v2rayngvpn|🇳🇱|144.91
+      - REALITY|@v2ray1_ng|🇨🇿|176.86
+      - REALITY|@SafeNet_Server|🇹🇷|360.42
+      - REALITY|@proxy_kafee|🇷🇺|211
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|154.24
-      - REALITY|@v2rayngvpn|🇳🇱|147.93
-      - REALITY|@v2ray1_ng|🇨🇿|180.79
-      - REALITY|@SafeNet_Server|🇹🇷|218.42
+      - REALITY|@internet4iran|🇩🇪|154.53
+      - REALITY|@v2rayngvpn|🇳🇱|144.91
+      - REALITY|@v2ray1_ng|🇨🇿|176.86
+      - REALITY|@SafeNet_Server|🇹🇷|360.42
+      - REALITY|@proxy_kafee|🇷🇺|211
 rules:
   - MATCH,MANUAL
