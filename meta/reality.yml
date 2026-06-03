@@ -32,7 +32,18 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@internet4iran|🇩🇪|97.74
+  - name: REALITY|@prrofile_purple|🇹🇷|135.66
+    server: 213.156.152.186
+    port: 443
+    type: vless
+    uuid: 6a3b21e8-3d68-4f5d-8f53-5bf8f9735920
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: aws.amazon.com
+    udp: true
+  - name: REALITY|@internet4iran|🇩🇪|110.21
     server: 88.99.121.221
     port: 443
     type: vless
@@ -43,7 +54,7 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@vmessorg|🇺🇸|82.1
+  - name: REALITY|@vmessorg|🇺🇸|50.55
     server: 15.204.97.216
     port: 23576
     type: vless
@@ -54,24 +65,13 @@ proxies:
     skip-cert-verify: true
     servername: fuck.rkn
     udp: true
-  - name: REALITY|@proxy_kafee|🇵🇱|189.95
-    server: pl.healthy-connected.com
-    port: 443
-    type: vless
-    uuid: 4405aeb6-84fc-49ba-a42b-948a3b1ed13c
-    cipher: auto
-    tls: false
-    flow: xtls-rprx-vision
-    skip-cert-verify: true
-    servername: pl.healthy-connected.com
-    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@internet4iran|🇩🇪|97.74
-      - REALITY|@vmessorg|🇺🇸|82.1
-      - REALITY|@proxy_kafee|🇵🇱|189.95
+      - REALITY|@prrofile_purple|🇹🇷|135.66
+      - REALITY|@internet4iran|🇩🇪|110.21
+      - REALITY|@vmessorg|🇺🇸|50.55
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -82,25 +82,25 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|97.74
-      - REALITY|@vmessorg|🇺🇸|82.1
-      - REALITY|@proxy_kafee|🇵🇱|189.95
+      - REALITY|@prrofile_purple|🇹🇷|135.66
+      - REALITY|@internet4iran|🇩🇪|110.21
+      - REALITY|@vmessorg|🇺🇸|50.55
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@internet4iran|🇩🇪|97.74
-      - REALITY|@vmessorg|🇺🇸|82.1
-      - REALITY|@proxy_kafee|🇵🇱|189.95
+      - REALITY|@prrofile_purple|🇹🇷|135.66
+      - REALITY|@internet4iran|🇩🇪|110.21
+      - REALITY|@vmessorg|🇺🇸|50.55
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|97.74
-      - REALITY|@vmessorg|🇺🇸|82.1
-      - REALITY|@proxy_kafee|🇵🇱|189.95
+      - REALITY|@prrofile_purple|🇹🇷|135.66
+      - REALITY|@internet4iran|🇩🇪|110.21
+      - REALITY|@vmessorg|🇺🇸|50.55
 rules:
   - MATCH,MANUAL
