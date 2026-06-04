@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@internet4iran|🇩🇪|94.96
+  - name: REALITY|@internet4iran|🇩🇪|92.7
     server: 88.99.121.221
     port: 443
     type: vless
@@ -43,7 +43,7 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@vmessorg|🇫🇮|114.11
+  - name: REALITY|@vmessorg|🇫🇮|118.91
     server: 62.238.32.25
     port: 443
     type: vless
@@ -53,12 +53,24 @@ proxies:
     skip-cert-verify: true
     servername: yastatic.net
     udp: true
+  - name: REALITY|@v2rayngvpn|🇳🇱|86.73
+    server: 194.127.179.220
+    port: 443
+    type: vless
+    uuid: 146eb6cf-a99c-4022-85ca-022cf81502dc
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: web.max.ru
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@internet4iran|🇩🇪|94.96
-      - REALITY|@vmessorg|🇫🇮|114.11
+      - REALITY|@internet4iran|🇩🇪|92.7
+      - REALITY|@vmessorg|🇫🇮|118.91
+      - REALITY|@v2rayngvpn|🇳🇱|86.73
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -69,22 +81,25 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|94.96
-      - REALITY|@vmessorg|🇫🇮|114.11
+      - REALITY|@internet4iran|🇩🇪|92.7
+      - REALITY|@vmessorg|🇫🇮|118.91
+      - REALITY|@v2rayngvpn|🇳🇱|86.73
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@internet4iran|🇩🇪|94.96
-      - REALITY|@vmessorg|🇫🇮|114.11
+      - REALITY|@internet4iran|🇩🇪|92.7
+      - REALITY|@vmessorg|🇫🇮|118.91
+      - REALITY|@v2rayngvpn|🇳🇱|86.73
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|94.96
-      - REALITY|@vmessorg|🇫🇮|114.11
+      - REALITY|@internet4iran|🇩🇪|92.7
+      - REALITY|@vmessorg|🇫🇮|118.91
+      - REALITY|@v2rayngvpn|🇳🇱|86.73
 rules:
   - MATCH,MANUAL
