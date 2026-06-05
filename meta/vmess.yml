@@ -32,23 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@vpnfail_v2ray| AHS -🚩|6.47"
-    server: 104.21.224.5
-    port: 8443
-    type: vmess
-    uuid: c1a8dee0-bdad-4b6d-9926-5e15c3c8ed7d
-    alterId: 0
-    cipher: auto
-    tls: true
-    skip-cert-verify: true
-    servername: marco-visibility-tops-estimate.trycloudflare.com
-    network: ws
-    ws-opts:
-      path: /c1a8dee0-bdad-4b6d-9926-5e15c3c8ed7d-vm
-      headers:
-        Host: marco-visibility-tops-estimate.trycloudflare.com
-    udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|5.94"
+  - name: "@v2rayvmess| AHS -🇺🇸|3.8"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -64,7 +48,7 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@SafeNet_Server| AHS -🇨🇦|77.58"
+  - name: "@SafeNet_Server| AHS -🇨🇦|23.94"
     server: 158.69.208.120
     port: 80
     type: vmess
@@ -80,7 +64,23 @@ proxies:
       headers:
         Host: ""
     udp: true
-  - name: "@v2ray_confings2| AHS -🇺🇸|74.53"
+  - name: "@free1_vpn| AHS -🇫🇷|117.19"
+    server: 51.195.91.135
+    port: 10000
+    type: vmess
+    uuid: 533ae32c-5dda-11f1-a6eb-23a176880b5a
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /vpnjantit
+      headers:
+        Host: ""
+    udp: true
+  - name: "@v2ray_confings2| AHS -🇺🇸|102.5"
     server: 188.114.96.1
     port: 443
     type: vmess
@@ -100,10 +100,10 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@vpnfail_v2ray| AHS -🚩|6.47"
-      - "@v2rayvmess| AHS -🇺🇸|5.94"
-      - "@SafeNet_Server| AHS -🇨🇦|77.58"
-      - "@v2ray_confings2| AHS -🇺🇸|74.53"
+      - "@v2rayvmess| AHS -🇺🇸|3.8"
+      - "@SafeNet_Server| AHS -🇨🇦|23.94"
+      - "@free1_vpn| AHS -🇫🇷|117.19"
+      - "@v2ray_confings2| AHS -🇺🇸|102.5"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -114,28 +114,28 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@vpnfail_v2ray| AHS -🚩|6.47"
-      - "@v2rayvmess| AHS -🇺🇸|5.94"
-      - "@SafeNet_Server| AHS -🇨🇦|77.58"
-      - "@v2ray_confings2| AHS -🇺🇸|74.53"
+      - "@v2rayvmess| AHS -🇺🇸|3.8"
+      - "@SafeNet_Server| AHS -🇨🇦|23.94"
+      - "@free1_vpn| AHS -🇫🇷|117.19"
+      - "@v2ray_confings2| AHS -🇺🇸|102.5"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@vpnfail_v2ray| AHS -🚩|6.47"
-      - "@v2rayvmess| AHS -🇺🇸|5.94"
-      - "@SafeNet_Server| AHS -🇨🇦|77.58"
-      - "@v2ray_confings2| AHS -🇺🇸|74.53"
+      - "@v2rayvmess| AHS -🇺🇸|3.8"
+      - "@SafeNet_Server| AHS -🇨🇦|23.94"
+      - "@free1_vpn| AHS -🇫🇷|117.19"
+      - "@v2ray_confings2| AHS -🇺🇸|102.5"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@vpnfail_v2ray| AHS -🚩|6.47"
-      - "@v2rayvmess| AHS -🇺🇸|5.94"
-      - "@SafeNet_Server| AHS -🇨🇦|77.58"
-      - "@v2ray_confings2| AHS -🇺🇸|74.53"
+      - "@v2rayvmess| AHS -🇺🇸|3.8"
+      - "@SafeNet_Server| AHS -🇨🇦|23.94"
+      - "@free1_vpn| AHS -🇫🇷|117.19"
+      - "@v2ray_confings2| AHS -🇺🇸|102.5"
 rules:
   - MATCH,MANUAL
