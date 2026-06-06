@@ -32,7 +32,18 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@internet4iran|🇩🇪|157.06
+  - name: REALITY|@Outline_Vpn|🇫🇷|151.65
+    server: 151.241.228.254
+    port: 34754
+    type: vless
+    uuid: 35762c02-ff2b-4526-b41b-e96e5d99528b
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: yahoo.com
+    udp: true
+  - name: REALITY|@internet4iran|🇩🇪|154.81
     server: 88.99.121.221
     port: 443
     type: vless
@@ -43,7 +54,7 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@vmessorg|🇫🇮|180.35
+  - name: REALITY|@vmessorg|🇫🇮|173.78
     server: 62.238.32.25
     port: 443
     type: vless
@@ -53,7 +64,7 @@ proxies:
     skip-cert-verify: true
     servername: yastatic.net
     udp: true
-  - name: REALITY|@VmessProtocol|🇩🇪|unavailable
+  - name: REALITY|@VmessProtocol|🇩🇪|148.16
     server: 85.208.139.98
     port: 8444
     type: vless
@@ -68,9 +79,10 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@internet4iran|🇩🇪|157.06
-      - REALITY|@vmessorg|🇫🇮|180.35
-      - REALITY|@VmessProtocol|🇩🇪|unavailable
+      - REALITY|@Outline_Vpn|🇫🇷|151.65
+      - REALITY|@internet4iran|🇩🇪|154.81
+      - REALITY|@vmessorg|🇫🇮|173.78
+      - REALITY|@VmessProtocol|🇩🇪|148.16
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -81,25 +93,28 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|157.06
-      - REALITY|@vmessorg|🇫🇮|180.35
-      - REALITY|@VmessProtocol|🇩🇪|unavailable
+      - REALITY|@Outline_Vpn|🇫🇷|151.65
+      - REALITY|@internet4iran|🇩🇪|154.81
+      - REALITY|@vmessorg|🇫🇮|173.78
+      - REALITY|@VmessProtocol|🇩🇪|148.16
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@internet4iran|🇩🇪|157.06
-      - REALITY|@vmessorg|🇫🇮|180.35
-      - REALITY|@VmessProtocol|🇩🇪|unavailable
+      - REALITY|@Outline_Vpn|🇫🇷|151.65
+      - REALITY|@internet4iran|🇩🇪|154.81
+      - REALITY|@vmessorg|🇫🇮|173.78
+      - REALITY|@VmessProtocol|🇩🇪|148.16
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|157.06
-      - REALITY|@vmessorg|🇫🇮|180.35
-      - REALITY|@VmessProtocol|🇩🇪|unavailable
+      - REALITY|@Outline_Vpn|🇫🇷|151.65
+      - REALITY|@internet4iran|🇩🇪|154.81
+      - REALITY|@vmessorg|🇫🇮|173.78
+      - REALITY|@VmessProtocol|🇩🇪|148.16
 rules:
   - MATCH,MANUAL
