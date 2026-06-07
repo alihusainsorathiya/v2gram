@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@prrofile_purple|🇳🇱|117.79
+  - name: REALITY|@prrofile_purple|🇳🇱|123.7
     server: 130.12.242.102
     port: 7443
     type: vless
@@ -43,7 +43,7 @@ proxies:
     skip-cert-verify: true
     servername: www.microsoft.com
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|116.72
+  - name: REALITY|@internet4iran|🇩🇪|123.3
     server: 88.99.121.221
     port: 443
     type: vless
@@ -54,7 +54,7 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@vmessorg|🇫🇮|147.77
+  - name: REALITY|@vmessorg|🇫🇮|145.55
     server: 62.238.32.25
     port: 443
     type: vless
@@ -64,24 +64,49 @@ proxies:
     skip-cert-verify: true
     servername: yastatic.net
     udp: true
-  - name: REALITY|@proxy_kafee|🇩🇪|115.2
-    server: 89.117.1.112
-    port: 4433
+  - name: REALITY|@v2rayngvpn|🇷🇺|187.2
+    server: b3aa11az-k15gg1.ru.y-tun.com
+    port: 8443
     type: vless
-    uuid: 38608efb-885a-4bb3-a344-9724ae4402c0
+    uuid: 0ee7eb22-e4e3-414b-bb01-3006ef852861
     cipher: auto
     tls: false
+    flow: xtls-rprx-vision
     skip-cert-verify: true
-    servername: www.microsoft.com
+    servername: api-maps.yandex.ru
+    udp: true
+  - name: REALITY|@v2ray1_ng|🇳🇱|128.1
+    server: 185.245.40.71
+    port: 7443
+    type: vless
+    uuid: 10484bee-8516-400a-9b1e-efb5144ad324
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: stackoverflow.com
+    udp: true
+  - name: REALITY|@VmessProtocol|🇩🇪|120.28
+    server: 85.208.139.98
+    port: 8444
+    type: vless
+    uuid: c931f737-cafe-4e4f-998a-a65517941256
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: cdnjs.com
     udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@prrofile_purple|🇳🇱|117.79
-      - REALITY|@internet4iran|🇩🇪|116.72
-      - REALITY|@vmessorg|🇫🇮|147.77
-      - REALITY|@proxy_kafee|🇩🇪|115.2
+      - REALITY|@prrofile_purple|🇳🇱|123.7
+      - REALITY|@internet4iran|🇩🇪|123.3
+      - REALITY|@vmessorg|🇫🇮|145.55
+      - REALITY|@v2rayngvpn|🇷🇺|187.2
+      - REALITY|@v2ray1_ng|🇳🇱|128.1
+      - REALITY|@VmessProtocol|🇩🇪|120.28
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -92,28 +117,34 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@prrofile_purple|🇳🇱|117.79
-      - REALITY|@internet4iran|🇩🇪|116.72
-      - REALITY|@vmessorg|🇫🇮|147.77
-      - REALITY|@proxy_kafee|🇩🇪|115.2
+      - REALITY|@prrofile_purple|🇳🇱|123.7
+      - REALITY|@internet4iran|🇩🇪|123.3
+      - REALITY|@vmessorg|🇫🇮|145.55
+      - REALITY|@v2rayngvpn|🇷🇺|187.2
+      - REALITY|@v2ray1_ng|🇳🇱|128.1
+      - REALITY|@VmessProtocol|🇩🇪|120.28
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@prrofile_purple|🇳🇱|117.79
-      - REALITY|@internet4iran|🇩🇪|116.72
-      - REALITY|@vmessorg|🇫🇮|147.77
-      - REALITY|@proxy_kafee|🇩🇪|115.2
+      - REALITY|@prrofile_purple|🇳🇱|123.7
+      - REALITY|@internet4iran|🇩🇪|123.3
+      - REALITY|@vmessorg|🇫🇮|145.55
+      - REALITY|@v2rayngvpn|🇷🇺|187.2
+      - REALITY|@v2ray1_ng|🇳🇱|128.1
+      - REALITY|@VmessProtocol|🇩🇪|120.28
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@prrofile_purple|🇳🇱|117.79
-      - REALITY|@internet4iran|🇩🇪|116.72
-      - REALITY|@vmessorg|🇫🇮|147.77
-      - REALITY|@proxy_kafee|🇩🇪|115.2
+      - REALITY|@prrofile_purple|🇳🇱|123.7
+      - REALITY|@internet4iran|🇩🇪|123.3
+      - REALITY|@vmessorg|🇫🇮|145.55
+      - REALITY|@v2rayngvpn|🇷🇺|187.2
+      - REALITY|@v2ray1_ng|🇳🇱|128.1
+      - REALITY|@VmessProtocol|🇩🇪|120.28
 rules:
   - MATCH,MANUAL
