@@ -32,23 +32,23 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@vpnfail_v2ray| AHS -🇨🇦|unavailable"
-    server: 23.162.200.227
+  - name: "@vpnfail_v2ray| AHS -🚩|4.21"
+    server: aris.arisping-ir.store
     port: 443
     type: vmess
-    uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
+    uuid: 67f79907-6163-475c-b5ba-2a3faa0c02c5
     alterId: 0
     cipher: auto
     tls: true
     skip-cert-verify: true
-    servername: ""
+    servername: cdn.arisping-ir.store
     network: ws
     ws-opts:
       path: /
       headers:
-        Host: ""
+        Host: cdn.arisping-ir.store
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|18.63"
+  - name: "@v2rayvmess| AHS -🇺🇸|30.16"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -64,7 +64,7 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@v2ray1_ng| AHS -🇧🇷|151.4"
+  - name: "@v2ray1_ng| AHS -🇧🇷|130.15"
     server: 172.233.17.76
     port: 22324
     type: vmess
@@ -75,7 +75,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@SafeNet_Server| AHS -🇨🇦|50.19"
+  - name: "@SafeNet_Server| AHS -🇨🇦|30.86"
     server: 158.69.208.120
     port: 80
     type: vmess
@@ -91,7 +91,7 @@ proxies:
       headers:
         Host: ""
     udp: true
-  - name: "@SafeNet_Server| AHS -🇧🇷|152.3"
+  - name: "@SafeNet_Server| AHS -🇧🇷|130.35"
     server: 172.233.17.76
     port: 22324
     type: vmess
@@ -102,7 +102,23 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@v2ray_confings2| AHS -🇺🇸|197.29"
+  - name: "@hope_net| AHS -🚩|5.82"
+    server: 104.19.47.79
+    port: 2086
+    type: vmess
+    uuid: e9e3cc13-db48-4cc1-8c24-7626439a5339
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: ""
+    udp: true
+  - name: "@v2ray_confings2| AHS -🇺🇸|111.58"
     server: 188.114.96.1
     port: 443
     type: vmess
@@ -122,12 +138,13 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@vpnfail_v2ray| AHS -🇨🇦|unavailable"
-      - "@v2rayvmess| AHS -🇺🇸|18.63"
-      - "@v2ray1_ng| AHS -🇧🇷|151.4"
-      - "@SafeNet_Server| AHS -🇨🇦|50.19"
-      - "@SafeNet_Server| AHS -🇧🇷|152.3"
-      - "@v2ray_confings2| AHS -🇺🇸|197.29"
+      - "@vpnfail_v2ray| AHS -🚩|4.21"
+      - "@v2rayvmess| AHS -🇺🇸|30.16"
+      - "@v2ray1_ng| AHS -🇧🇷|130.15"
+      - "@SafeNet_Server| AHS -🇨🇦|30.86"
+      - "@SafeNet_Server| AHS -🇧🇷|130.35"
+      - "@hope_net| AHS -🚩|5.82"
+      - "@v2ray_confings2| AHS -🇺🇸|111.58"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -138,34 +155,37 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@vpnfail_v2ray| AHS -🇨🇦|unavailable"
-      - "@v2rayvmess| AHS -🇺🇸|18.63"
-      - "@v2ray1_ng| AHS -🇧🇷|151.4"
-      - "@SafeNet_Server| AHS -🇨🇦|50.19"
-      - "@SafeNet_Server| AHS -🇧🇷|152.3"
-      - "@v2ray_confings2| AHS -🇺🇸|197.29"
+      - "@vpnfail_v2ray| AHS -🚩|4.21"
+      - "@v2rayvmess| AHS -🇺🇸|30.16"
+      - "@v2ray1_ng| AHS -🇧🇷|130.15"
+      - "@SafeNet_Server| AHS -🇨🇦|30.86"
+      - "@SafeNet_Server| AHS -🇧🇷|130.35"
+      - "@hope_net| AHS -🚩|5.82"
+      - "@v2ray_confings2| AHS -🇺🇸|111.58"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@vpnfail_v2ray| AHS -🇨🇦|unavailable"
-      - "@v2rayvmess| AHS -🇺🇸|18.63"
-      - "@v2ray1_ng| AHS -🇧🇷|151.4"
-      - "@SafeNet_Server| AHS -🇨🇦|50.19"
-      - "@SafeNet_Server| AHS -🇧🇷|152.3"
-      - "@v2ray_confings2| AHS -🇺🇸|197.29"
+      - "@vpnfail_v2ray| AHS -🚩|4.21"
+      - "@v2rayvmess| AHS -🇺🇸|30.16"
+      - "@v2ray1_ng| AHS -🇧🇷|130.15"
+      - "@SafeNet_Server| AHS -🇨🇦|30.86"
+      - "@SafeNet_Server| AHS -🇧🇷|130.35"
+      - "@hope_net| AHS -🚩|5.82"
+      - "@v2ray_confings2| AHS -🇺🇸|111.58"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@vpnfail_v2ray| AHS -🇨🇦|unavailable"
-      - "@v2rayvmess| AHS -🇺🇸|18.63"
-      - "@v2ray1_ng| AHS -🇧🇷|151.4"
-      - "@SafeNet_Server| AHS -🇨🇦|50.19"
-      - "@SafeNet_Server| AHS -🇧🇷|152.3"
-      - "@v2ray_confings2| AHS -🇺🇸|197.29"
+      - "@vpnfail_v2ray| AHS -🚩|4.21"
+      - "@v2rayvmess| AHS -🇺🇸|30.16"
+      - "@v2ray1_ng| AHS -🇧🇷|130.15"
+      - "@SafeNet_Server| AHS -🇨🇦|30.86"
+      - "@SafeNet_Server| AHS -🇧🇷|130.35"
+      - "@hope_net| AHS -🚩|5.82"
+      - "@v2ray_confings2| AHS -🇺🇸|111.58"
 rules:
   - MATCH,MANUAL
