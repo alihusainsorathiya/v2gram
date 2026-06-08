@@ -32,18 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@prrofile_purple|🇷🇺|163.01
-    server: b3aa11az-k15gg1.ru.y-tun.com
-    port: 8443
-    type: vless
-    uuid: 17172b99-16ae-4453-99f9-bd15191228a9
-    cipher: auto
-    tls: false
-    flow: xtls-rprx-vision
-    skip-cert-verify: true
-    servername: api-maps.yandex.ru
-    udp: true
-  - name: REALITY|@internet4iran|🇩🇪|101.08
+  - name: REALITY|@internet4iran|🇩🇪|159.33
     server: 88.99.121.221
     port: 443
     type: vless
@@ -54,7 +43,7 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@vmessorg|🇩🇪|114.98
+  - name: REALITY|@vmessorg|🇩🇪|158.72
     server: vpn.masiresabz.xyz
     port: 443
     type: vless
@@ -64,8 +53,8 @@ proxies:
     skip-cert-verify: true
     servername: www.nvidia.com
     udp: true
-  - name: REALITY|@v2rayngvpn|🇬🇧|459.87
-    server: uk.riotvpn.eu
+  - name: REALITY|@v2rayngvpn|🇵🇱|229.25
+    server: pl.riotvpn.eu
     port: 443
     type: vless
     uuid: 30bbbfc5-6a24-4348-8f3b-d44331b6aab8
@@ -75,7 +64,18 @@ proxies:
     skip-cert-verify: true
     servername: ads.x5.ru
     udp: true
-  - name: REALITY|@v2ray_vpn_ir|🇹🇷|126.85
+  - name: REALITY|@VmessProtocol|🇩🇪|152.02
+    server: 85.208.139.98
+    port: 8444
+    type: vless
+    uuid: c931f737-cafe-4e4f-998a-a65517941256
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: cdnjs.com
+    udp: true
+  - name: REALITY|@v2ray_vpn_ir|🇹🇷|187.2
     server: 141.98.118.70
     port: 443
     type: vless
@@ -85,15 +85,29 @@ proxies:
     skip-cert-verify: true
     servername: www.google.com
     udp: true
+  - name: REALITY|@proxy_kafee|🇳🇱|150.56
+    server: 141.98.6.113
+    port: 603
+    type: vless
+    uuid: bae2fd3a-55fb-4094-99f6-c94e25d7d15d
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: www.amd.com
+    network: grpc
+    grpc-opts:
+      grpc-service-name: /
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@prrofile_purple|🇷🇺|163.01
-      - REALITY|@internet4iran|🇩🇪|101.08
-      - REALITY|@vmessorg|🇩🇪|114.98
-      - REALITY|@v2rayngvpn|🇬🇧|459.87
-      - REALITY|@v2ray_vpn_ir|🇹🇷|126.85
+      - REALITY|@internet4iran|🇩🇪|159.33
+      - REALITY|@vmessorg|🇩🇪|158.72
+      - REALITY|@v2rayngvpn|🇵🇱|229.25
+      - REALITY|@VmessProtocol|🇩🇪|152.02
+      - REALITY|@v2ray_vpn_ir|🇹🇷|187.2
+      - REALITY|@proxy_kafee|🇳🇱|150.56
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -104,31 +118,34 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@prrofile_purple|🇷🇺|163.01
-      - REALITY|@internet4iran|🇩🇪|101.08
-      - REALITY|@vmessorg|🇩🇪|114.98
-      - REALITY|@v2rayngvpn|🇬🇧|459.87
-      - REALITY|@v2ray_vpn_ir|🇹🇷|126.85
+      - REALITY|@internet4iran|🇩🇪|159.33
+      - REALITY|@vmessorg|🇩🇪|158.72
+      - REALITY|@v2rayngvpn|🇵🇱|229.25
+      - REALITY|@VmessProtocol|🇩🇪|152.02
+      - REALITY|@v2ray_vpn_ir|🇹🇷|187.2
+      - REALITY|@proxy_kafee|🇳🇱|150.56
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@prrofile_purple|🇷🇺|163.01
-      - REALITY|@internet4iran|🇩🇪|101.08
-      - REALITY|@vmessorg|🇩🇪|114.98
-      - REALITY|@v2rayngvpn|🇬🇧|459.87
-      - REALITY|@v2ray_vpn_ir|🇹🇷|126.85
+      - REALITY|@internet4iran|🇩🇪|159.33
+      - REALITY|@vmessorg|🇩🇪|158.72
+      - REALITY|@v2rayngvpn|🇵🇱|229.25
+      - REALITY|@VmessProtocol|🇩🇪|152.02
+      - REALITY|@v2ray_vpn_ir|🇹🇷|187.2
+      - REALITY|@proxy_kafee|🇳🇱|150.56
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@prrofile_purple|🇷🇺|163.01
-      - REALITY|@internet4iran|🇩🇪|101.08
-      - REALITY|@vmessorg|🇩🇪|114.98
-      - REALITY|@v2rayngvpn|🇬🇧|459.87
-      - REALITY|@v2ray_vpn_ir|🇹🇷|126.85
+      - REALITY|@internet4iran|🇩🇪|159.33
+      - REALITY|@vmessorg|🇩🇪|158.72
+      - REALITY|@v2rayngvpn|🇵🇱|229.25
+      - REALITY|@VmessProtocol|🇩🇪|152.02
+      - REALITY|@v2ray_vpn_ir|🇹🇷|187.2
+      - REALITY|@proxy_kafee|🇳🇱|150.56
 rules:
   - MATCH,MANUAL
