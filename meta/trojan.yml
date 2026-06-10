@@ -32,39 +32,55 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@PrivateVPNs| AHS -84"
-    server: 52.47.70.99
+  - name: "|@PrivateVPNs| AHS -146.93"
+    server: 52.57.0.56
     port: 22222
     type: trojan
     password: telegram-id-privatevpns
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@PrivateVPNs| AHS -89.34"
-    server: 52.59.53.96
+  - name: "|@PrivateVPNs| AHS -148.73"
+    server: 13.37.194.137
     port: 22222
     type: trojan
     password: telegram-id-privatevpns
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -83.95"
-    server: 52.47.70.99
+  - name: "|@PrivateVPNs| AHS -148.69"
+    server: 13.38.194.86
+    port: 22222
+    type: trojan
+    password: telegram-id-privatevpns
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@DirectVPN| AHS -149.28"
+    server: 52.57.0.56
     port: 22223
     type: trojan
     password: telegram-id-directvpn
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@DirectVPN| AHS -89.29"
-    server: 52.59.53.96
+  - name: "|@DirectVPN| AHS -146.49"
+    server: 13.37.194.137
     port: 22223
     type: trojan
     password: telegram-id-directvpn
     skip-cert-verify: true
     sni: trojan.burgerip.co.uk
     udp: true
-  - name: "|@oneclickvpnkeys| AHS -20.75"
+  - name: "|@DirectVPN| AHS -142.24"
+    server: 13.38.194.86
+    port: 22223
+    type: trojan
+    password: telegram-id-directvpn
+    skip-cert-verify: true
+    sni: trojan.burgerip.co.uk
+    udp: true
+  - name: "|@oneclickvpnkeys| AHS -61.66"
     server: 172.105.9.126
     port: 443
     type: trojan
@@ -72,7 +88,7 @@ proxies:
     skip-cert-verify: true
     sni: ""
     udp: true
-  - name: "|@oneclickvpnkeys| AHS -7.34"
+  - name: "|@oneclickvpnkeys| AHS -2.4"
     server: www.ignitelimit.com
     port: 443
     type: trojan
@@ -85,15 +101,7 @@ proxies:
       headers:
         Host: ""
     udp: true
-  - name: "|@oneclickvpnkeys| AHS -32.6"
-    server: 45.79.8.17
-    port: 443
-    type: trojan
-    password: rXyShM8Jni 5Sbq3k4gkyr5Lq0zOMRL2Uf
-    skip-cert-verify: true
-    sni: ""
-    udp: true
-  - name: "|@VmessProtocol| AHS -6.09"
+  - name: "|@VmessProtocol| AHS -2.09"
     server: 104.19.229.21
     port: 443
     type: trojan
@@ -106,7 +114,7 @@ proxies:
       headers:
         Host: www.calmloud.com
     udp: true
-  - name: "|@ovpn2| AHS -6.81"
+  - name: "|@ovpn2| AHS -1.89"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -119,7 +127,7 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
-  - name: "|@v2rayngrit| AHS -6.16"
+  - name: "|@v2rayngrit| AHS -1.8"
     server: 185.18.250.252
     port: 443
     type: trojan
@@ -132,7 +140,7 @@ proxies:
       headers:
         Host: www.multiplydose.com
     udp: true
-  - name: "|@v2rayngrit| AHS -6.21"
+  - name: "|@v2rayngrit| AHS -2.06"
     server: 141.193.213.10
     port: 443
     type: trojan
@@ -149,17 +157,18 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@PrivateVPNs| AHS -84"
-      - "|@PrivateVPNs| AHS -89.34"
-      - "|@DirectVPN| AHS -83.95"
-      - "|@DirectVPN| AHS -89.29"
-      - "|@oneclickvpnkeys| AHS -20.75"
-      - "|@oneclickvpnkeys| AHS -7.34"
-      - "|@oneclickvpnkeys| AHS -32.6"
-      - "|@VmessProtocol| AHS -6.09"
-      - "|@ovpn2| AHS -6.81"
-      - "|@v2rayngrit| AHS -6.16"
-      - "|@v2rayngrit| AHS -6.21"
+      - "|@PrivateVPNs| AHS -146.93"
+      - "|@PrivateVPNs| AHS -148.73"
+      - "|@PrivateVPNs| AHS -148.69"
+      - "|@DirectVPN| AHS -149.28"
+      - "|@DirectVPN| AHS -146.49"
+      - "|@DirectVPN| AHS -142.24"
+      - "|@oneclickvpnkeys| AHS -61.66"
+      - "|@oneclickvpnkeys| AHS -2.4"
+      - "|@VmessProtocol| AHS -2.09"
+      - "|@ovpn2| AHS -1.89"
+      - "|@v2rayngrit| AHS -1.8"
+      - "|@v2rayngrit| AHS -2.06"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -170,49 +179,52 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -84"
-      - "|@PrivateVPNs| AHS -89.34"
-      - "|@DirectVPN| AHS -83.95"
-      - "|@DirectVPN| AHS -89.29"
-      - "|@oneclickvpnkeys| AHS -20.75"
-      - "|@oneclickvpnkeys| AHS -7.34"
-      - "|@oneclickvpnkeys| AHS -32.6"
-      - "|@VmessProtocol| AHS -6.09"
-      - "|@ovpn2| AHS -6.81"
-      - "|@v2rayngrit| AHS -6.16"
-      - "|@v2rayngrit| AHS -6.21"
+      - "|@PrivateVPNs| AHS -146.93"
+      - "|@PrivateVPNs| AHS -148.73"
+      - "|@PrivateVPNs| AHS -148.69"
+      - "|@DirectVPN| AHS -149.28"
+      - "|@DirectVPN| AHS -146.49"
+      - "|@DirectVPN| AHS -142.24"
+      - "|@oneclickvpnkeys| AHS -61.66"
+      - "|@oneclickvpnkeys| AHS -2.4"
+      - "|@VmessProtocol| AHS -2.09"
+      - "|@ovpn2| AHS -1.89"
+      - "|@v2rayngrit| AHS -1.8"
+      - "|@v2rayngrit| AHS -2.06"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@PrivateVPNs| AHS -84"
-      - "|@PrivateVPNs| AHS -89.34"
-      - "|@DirectVPN| AHS -83.95"
-      - "|@DirectVPN| AHS -89.29"
-      - "|@oneclickvpnkeys| AHS -20.75"
-      - "|@oneclickvpnkeys| AHS -7.34"
-      - "|@oneclickvpnkeys| AHS -32.6"
-      - "|@VmessProtocol| AHS -6.09"
-      - "|@ovpn2| AHS -6.81"
-      - "|@v2rayngrit| AHS -6.16"
-      - "|@v2rayngrit| AHS -6.21"
+      - "|@PrivateVPNs| AHS -146.93"
+      - "|@PrivateVPNs| AHS -148.73"
+      - "|@PrivateVPNs| AHS -148.69"
+      - "|@DirectVPN| AHS -149.28"
+      - "|@DirectVPN| AHS -146.49"
+      - "|@DirectVPN| AHS -142.24"
+      - "|@oneclickvpnkeys| AHS -61.66"
+      - "|@oneclickvpnkeys| AHS -2.4"
+      - "|@VmessProtocol| AHS -2.09"
+      - "|@ovpn2| AHS -1.89"
+      - "|@v2rayngrit| AHS -1.8"
+      - "|@v2rayngrit| AHS -2.06"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@PrivateVPNs| AHS -84"
-      - "|@PrivateVPNs| AHS -89.34"
-      - "|@DirectVPN| AHS -83.95"
-      - "|@DirectVPN| AHS -89.29"
-      - "|@oneclickvpnkeys| AHS -20.75"
-      - "|@oneclickvpnkeys| AHS -7.34"
-      - "|@oneclickvpnkeys| AHS -32.6"
-      - "|@VmessProtocol| AHS -6.09"
-      - "|@ovpn2| AHS -6.81"
-      - "|@v2rayngrit| AHS -6.16"
-      - "|@v2rayngrit| AHS -6.21"
+      - "|@PrivateVPNs| AHS -146.93"
+      - "|@PrivateVPNs| AHS -148.73"
+      - "|@PrivateVPNs| AHS -148.69"
+      - "|@DirectVPN| AHS -149.28"
+      - "|@DirectVPN| AHS -146.49"
+      - "|@DirectVPN| AHS -142.24"
+      - "|@oneclickvpnkeys| AHS -61.66"
+      - "|@oneclickvpnkeys| AHS -2.4"
+      - "|@VmessProtocol| AHS -2.09"
+      - "|@ovpn2| AHS -1.89"
+      - "|@v2rayngrit| AHS -1.8"
+      - "|@v2rayngrit| AHS -2.06"
 rules:
   - MATCH,MANUAL

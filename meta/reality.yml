@@ -32,7 +32,18 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@internet4iran|🇩🇪|94.07
+  - name: REALITY|@Outline_Vpn|🇸🇬|169.44
+    server: 46.137.225.209
+    port: 32946
+    type: vless
+    uuid: 0ff7989d-59b3-4cbd-a2e4-960ac02fb2f1
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: www.amd.com
+    udp: true
+  - name: REALITY|@internet4iran|🇩🇪|153.88
     server: 88.99.121.221
     port: 443
     type: vless
@@ -43,17 +54,17 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@vmessorg|🇩🇪|126.17
-    server: vpn.masiresabz.xyz
-    port: 443
+  - name: REALITY|@v2rayngvpn|🇩🇪|305.93
+    server: newyorkcity.instasup.ir
+    port: 1005
     type: vless
-    uuid: d49fc9b7-c025-48f6-9adf-b2a90645593b
+    uuid: ad356e93-cc14-417d-9f4e-32376d03f5b7
     cipher: auto
     tls: false
     skip-cert-verify: true
-    servername: www.nvidia.com
+    servername: yahoo.com
     udp: true
-  - name: REALITY|@VmessProtocol|🇩🇪|118.75
+  - name: REALITY|@VmessProtocol|🇩🇪|158.48
     server: 64.188.71.108
     port: 26426
     type: vless
@@ -68,9 +79,10 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@internet4iran|🇩🇪|94.07
-      - REALITY|@vmessorg|🇩🇪|126.17
-      - REALITY|@VmessProtocol|🇩🇪|118.75
+      - REALITY|@Outline_Vpn|🇸🇬|169.44
+      - REALITY|@internet4iran|🇩🇪|153.88
+      - REALITY|@v2rayngvpn|🇩🇪|305.93
+      - REALITY|@VmessProtocol|🇩🇪|158.48
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -81,25 +93,28 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|94.07
-      - REALITY|@vmessorg|🇩🇪|126.17
-      - REALITY|@VmessProtocol|🇩🇪|118.75
+      - REALITY|@Outline_Vpn|🇸🇬|169.44
+      - REALITY|@internet4iran|🇩🇪|153.88
+      - REALITY|@v2rayngvpn|🇩🇪|305.93
+      - REALITY|@VmessProtocol|🇩🇪|158.48
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@internet4iran|🇩🇪|94.07
-      - REALITY|@vmessorg|🇩🇪|126.17
-      - REALITY|@VmessProtocol|🇩🇪|118.75
+      - REALITY|@Outline_Vpn|🇸🇬|169.44
+      - REALITY|@internet4iran|🇩🇪|153.88
+      - REALITY|@v2rayngvpn|🇩🇪|305.93
+      - REALITY|@VmessProtocol|🇩🇪|158.48
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|94.07
-      - REALITY|@vmessorg|🇩🇪|126.17
-      - REALITY|@VmessProtocol|🇩🇪|118.75
+      - REALITY|@Outline_Vpn|🇸🇬|169.44
+      - REALITY|@internet4iran|🇩🇪|153.88
+      - REALITY|@v2rayngvpn|🇩🇪|305.93
+      - REALITY|@VmessProtocol|🇩🇪|158.48
 rules:
   - MATCH,MANUAL
