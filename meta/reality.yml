@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@Outline_Vpn|🇸🇬|241.76
+  - name: REALITY|@Outline_Vpn|🇸🇬|223
     server: 46.137.225.209
     port: 32946
     type: vless
@@ -43,7 +43,7 @@ proxies:
     skip-cert-verify: true
     servername: www.amd.com
     udp: true
-  - name: REALITY|@prrofile_purple|🇷🇺|137.57
+  - name: REALITY|@prrofile_purple|🇷🇺|145.28
     server: 89.169.39.55
     port: 443
     type: vless
@@ -54,7 +54,7 @@ proxies:
     skip-cert-verify: true
     servername: max.ru
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|97.84
+  - name: REALITY|@internet4iran|🇩🇪|97.77
     server: 88.99.121.221
     port: 443
     type: vless
@@ -65,13 +65,25 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
+  - name: REALITY|@proxy_kafee|🇩🇪|136.87
+    server: 31.56.188.15
+    port: 7443
+    type: vless
+    uuid: 1c0277ad-bb4d-496f-bc0c-40ccee03fca5
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: mi.com
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@Outline_Vpn|🇸🇬|241.76
-      - REALITY|@prrofile_purple|🇷🇺|137.57
-      - REALITY|@internet4iran|🇩🇪|97.84
+      - REALITY|@Outline_Vpn|🇸🇬|223
+      - REALITY|@prrofile_purple|🇷🇺|145.28
+      - REALITY|@internet4iran|🇩🇪|97.77
+      - REALITY|@proxy_kafee|🇩🇪|136.87
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -82,25 +94,28 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@Outline_Vpn|🇸🇬|241.76
-      - REALITY|@prrofile_purple|🇷🇺|137.57
-      - REALITY|@internet4iran|🇩🇪|97.84
+      - REALITY|@Outline_Vpn|🇸🇬|223
+      - REALITY|@prrofile_purple|🇷🇺|145.28
+      - REALITY|@internet4iran|🇩🇪|97.77
+      - REALITY|@proxy_kafee|🇩🇪|136.87
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@Outline_Vpn|🇸🇬|241.76
-      - REALITY|@prrofile_purple|🇷🇺|137.57
-      - REALITY|@internet4iran|🇩🇪|97.84
+      - REALITY|@Outline_Vpn|🇸🇬|223
+      - REALITY|@prrofile_purple|🇷🇺|145.28
+      - REALITY|@internet4iran|🇩🇪|97.77
+      - REALITY|@proxy_kafee|🇩🇪|136.87
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@Outline_Vpn|🇸🇬|241.76
-      - REALITY|@prrofile_purple|🇷🇺|137.57
-      - REALITY|@internet4iran|🇩🇪|97.84
+      - REALITY|@Outline_Vpn|🇸🇬|223
+      - REALITY|@prrofile_purple|🇷🇺|145.28
+      - REALITY|@internet4iran|🇩🇪|97.77
+      - REALITY|@proxy_kafee|🇩🇪|136.87
 rules:
   - MATCH,MANUAL
