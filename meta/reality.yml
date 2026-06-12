@@ -32,18 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@prrofile_purple|🇷🇺|189.52
-    server: 89.169.39.55
-    port: 443
-    type: vless
-    uuid: c61ec320-29f1-4e00-9272-8b676e6957b4
-    cipher: auto
-    tls: false
-    flow: xtls-rprx-vision
-    skip-cert-verify: true
-    servername: max.ru
-    udp: true
-  - name: REALITY|@internet4iran|🇩🇪|156.92
+  - name: REALITY|@internet4iran|🇩🇪|137.51
     server: 88.99.121.221
     port: 443
     type: vless
@@ -54,12 +43,23 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
+  - name: REALITY|@v2rayngvpn|🇩🇪|279.86
+    server: ge3.pandaonline.org
+    port: 443
+    type: vless
+    uuid: bf038412-931e-4b18-a6a7-32d09304f333
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: ge3.pandaonline.org
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@prrofile_purple|🇷🇺|189.52
-      - REALITY|@internet4iran|🇩🇪|156.92
+      - REALITY|@internet4iran|🇩🇪|137.51
+      - REALITY|@v2rayngvpn|🇩🇪|279.86
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -70,22 +70,22 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@prrofile_purple|🇷🇺|189.52
-      - REALITY|@internet4iran|🇩🇪|156.92
+      - REALITY|@internet4iran|🇩🇪|137.51
+      - REALITY|@v2rayngvpn|🇩🇪|279.86
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@prrofile_purple|🇷🇺|189.52
-      - REALITY|@internet4iran|🇩🇪|156.92
+      - REALITY|@internet4iran|🇩🇪|137.51
+      - REALITY|@v2rayngvpn|🇩🇪|279.86
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@prrofile_purple|🇷🇺|189.52
-      - REALITY|@internet4iran|🇩🇪|156.92
+      - REALITY|@internet4iran|🇩🇪|137.51
+      - REALITY|@v2rayngvpn|🇩🇪|279.86
 rules:
   - MATCH,MANUAL
