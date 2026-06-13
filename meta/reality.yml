@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@internet4iran|🇩🇪|92.95
+  - name: REALITY|@internet4iran|🇩🇪|109.37
     server: 88.99.121.221
     port: 443
     type: vless
@@ -43,11 +43,22 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@proxy_kafee|🇸🇨|596.38
-    server: bypass.fr-gt-01.com
+  - name: REALITY|@v2rayngvpn|🇵🇱|139.76
+    server: pl-2.pandaonline.org
+    port: 443
+    type: vless
+    uuid: 84539eef-b551-4d41-b85f-4b07c83db922
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: pl-2.pandaonline.org
+    udp: true
+  - name: REALITY|@proxy_kafee|🇸🇨|630
+    server: bypass.uk-gthost-01.com
     port: 8443
     type: vless
-    uuid: 356ccb34-22cc-4446-a137-072bc60d65ca
+    uuid: 52faee73-e0fe-4661-992d-67259257170f
     cipher: auto
     tls: false
     flow: xtls-rprx-vision
@@ -58,8 +69,9 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@internet4iran|🇩🇪|92.95
-      - REALITY|@proxy_kafee|🇸🇨|596.38
+      - REALITY|@internet4iran|🇩🇪|109.37
+      - REALITY|@v2rayngvpn|🇵🇱|139.76
+      - REALITY|@proxy_kafee|🇸🇨|630
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -70,22 +82,25 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|92.95
-      - REALITY|@proxy_kafee|🇸🇨|596.38
+      - REALITY|@internet4iran|🇩🇪|109.37
+      - REALITY|@v2rayngvpn|🇵🇱|139.76
+      - REALITY|@proxy_kafee|🇸🇨|630
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@internet4iran|🇩🇪|92.95
-      - REALITY|@proxy_kafee|🇸🇨|596.38
+      - REALITY|@internet4iran|🇩🇪|109.37
+      - REALITY|@v2rayngvpn|🇵🇱|139.76
+      - REALITY|@proxy_kafee|🇸🇨|630
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|92.95
-      - REALITY|@proxy_kafee|🇸🇨|596.38
+      - REALITY|@internet4iran|🇩🇪|109.37
+      - REALITY|@v2rayngvpn|🇵🇱|139.76
+      - REALITY|@proxy_kafee|🇸🇨|630
 rules:
   - MATCH,MANUAL
