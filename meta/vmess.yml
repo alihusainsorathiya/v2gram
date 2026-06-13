@@ -32,7 +32,23 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@v2rayvmess| AHS -🇺🇸|2.73"
+  - name: "@vpnfail_v2ray| AHS -🚩|18.71"
+    server: t1.620720.xyz
+    port: 8443
+    type: vmess
+    uuid: 516d8a7a-3f0b-41d3-bad0-246116381516
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: t1.620720.xyz
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: t1.620720.xyz
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|18.65"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -48,7 +64,7 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@SafeNet_Server| AHS -🇧🇷|112.58"
+  - name: "@SafeNet_Server| AHS -🇧🇷|151.23"
     server: 172.233.17.76
     port: 22324
     type: vmess
@@ -59,23 +75,23 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@hope_net| AHS -🇺🇸|21.03"
-    server: mycfwork.herokuapp.com
-    port: 443
+  - name: "@hope_net| AHS -🇺🇸|85.7"
+    server: 331tw.fans8.xyz
+    port: 80
     type: vmess
-    uuid: 07a3a1e3-d52e-4acc-958e-c301681b5f09
-    alterId: 4
+    uuid: 7f4ff2e1-c08f-35bd-afe7-4a6a386907aa
+    alterId: 2
     cipher: auto
     tls: true
     skip-cert-verify: true
-    servername: mycfwork.herokuapp.com
+    servername: 331tw.fans8.xyz
     network: ws
     ws-opts:
       path: /
       headers:
-        Host: mycfwork.herokuapp.com
+        Host: 331tw.fans8.xyz
     udp: true
-  - name: "@v2ray_confings2| AHS -🇺🇸|130.05"
+  - name: "@v2ray_confings2| AHS -🇺🇸|89.15"
     server: 188.114.96.1
     port: 443
     type: vmess
@@ -95,10 +111,11 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|2.73"
-      - "@SafeNet_Server| AHS -🇧🇷|112.58"
-      - "@hope_net| AHS -🇺🇸|21.03"
-      - "@v2ray_confings2| AHS -🇺🇸|130.05"
+      - "@vpnfail_v2ray| AHS -🚩|18.71"
+      - "@v2rayvmess| AHS -🇺🇸|18.65"
+      - "@SafeNet_Server| AHS -🇧🇷|151.23"
+      - "@hope_net| AHS -🇺🇸|85.7"
+      - "@v2ray_confings2| AHS -🇺🇸|89.15"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -109,28 +126,31 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|2.73"
-      - "@SafeNet_Server| AHS -🇧🇷|112.58"
-      - "@hope_net| AHS -🇺🇸|21.03"
-      - "@v2ray_confings2| AHS -🇺🇸|130.05"
+      - "@vpnfail_v2ray| AHS -🚩|18.71"
+      - "@v2rayvmess| AHS -🇺🇸|18.65"
+      - "@SafeNet_Server| AHS -🇧🇷|151.23"
+      - "@hope_net| AHS -🇺🇸|85.7"
+      - "@v2ray_confings2| AHS -🇺🇸|89.15"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|2.73"
-      - "@SafeNet_Server| AHS -🇧🇷|112.58"
-      - "@hope_net| AHS -🇺🇸|21.03"
-      - "@v2ray_confings2| AHS -🇺🇸|130.05"
+      - "@vpnfail_v2ray| AHS -🚩|18.71"
+      - "@v2rayvmess| AHS -🇺🇸|18.65"
+      - "@SafeNet_Server| AHS -🇧🇷|151.23"
+      - "@hope_net| AHS -🇺🇸|85.7"
+      - "@v2ray_confings2| AHS -🇺🇸|89.15"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|2.73"
-      - "@SafeNet_Server| AHS -🇧🇷|112.58"
-      - "@hope_net| AHS -🇺🇸|21.03"
-      - "@v2ray_confings2| AHS -🇺🇸|130.05"
+      - "@vpnfail_v2ray| AHS -🚩|18.71"
+      - "@v2rayvmess| AHS -🇺🇸|18.65"
+      - "@SafeNet_Server| AHS -🇧🇷|151.23"
+      - "@hope_net| AHS -🇺🇸|85.7"
+      - "@v2ray_confings2| AHS -🇺🇸|89.15"
 rules:
   - MATCH,MANUAL
