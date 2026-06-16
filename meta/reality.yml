@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@internet4iran|🇩🇪|152.18
+  - name: REALITY|@internet4iran|🇩🇪|95.24
     server: 88.99.121.221
     port: 443
     type: vless
@@ -43,7 +43,18 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@v2ray1_ng|🇩🇪|139.75
+  - name: REALITY|@ShadowProxy66|🇸🇨|435.24
+    server: fr-gt-01.com
+    port: 8443
+    type: vless
+    uuid: ac2d70ef-eceb-4f98-9477-f0f27a18aad0
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: storage.yandex.net
+    udp: true
+  - name: REALITY|@v2ray1_ng|🇩🇪|83.54
     server: 178.18.147.252
     port: 2053
     type: vless
@@ -58,8 +69,9 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@internet4iran|🇩🇪|152.18
-      - REALITY|@v2ray1_ng|🇩🇪|139.75
+      - REALITY|@internet4iran|🇩🇪|95.24
+      - REALITY|@ShadowProxy66|🇸🇨|435.24
+      - REALITY|@v2ray1_ng|🇩🇪|83.54
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -70,22 +82,25 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|152.18
-      - REALITY|@v2ray1_ng|🇩🇪|139.75
+      - REALITY|@internet4iran|🇩🇪|95.24
+      - REALITY|@ShadowProxy66|🇸🇨|435.24
+      - REALITY|@v2ray1_ng|🇩🇪|83.54
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@internet4iran|🇩🇪|152.18
-      - REALITY|@v2ray1_ng|🇩🇪|139.75
+      - REALITY|@internet4iran|🇩🇪|95.24
+      - REALITY|@ShadowProxy66|🇸🇨|435.24
+      - REALITY|@v2ray1_ng|🇩🇪|83.54
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|152.18
-      - REALITY|@v2ray1_ng|🇩🇪|139.75
+      - REALITY|@internet4iran|🇩🇪|95.24
+      - REALITY|@ShadowProxy66|🇸🇨|435.24
+      - REALITY|@v2ray1_ng|🇩🇪|83.54
 rules:
   - MATCH,MANUAL
