@@ -1,0 +1,250 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: "|@oneclickvpnkeys| AHS -12.37"
+    server: 164.38.155.135
+    port: 443
+    type: trojan
+    password: MITIVPN
+    skip-cert-verify: true
+    sni: 95r.ir
+    network: ws
+    ws-opts:
+      path: /MiTiVPN=De
+      headers:
+        Host: 95r.ir
+    udp: true
+  - name: "|@oneclickvpnkeys| AHS -12.7"
+    server: 198.62.62.162
+    port: 443
+    type: trojan
+    password: MiTiVPN
+    skip-cert-verify: true
+    sni: 95r.ir
+    network: ws
+    ws-opts:
+      path: /MiTiVPN=NL
+      headers:
+        Host: 95r.ir
+    udp: true
+  - name: "|@oneclickvpnkeys| AHS -14.85"
+    server: 45.130.125.126
+    port: 443
+    type: trojan
+    password: 86957ec0-b213-433b-a43b-51f2175e0ec3
+    skip-cert-verify: true
+    sni: space.byu.id.yxls.eu.cc
+    network: ws
+    ws-opts:
+      path: /au-do
+      headers:
+        Host: space.byu.id.yxls.eu.cc
+    udp: true
+  - name: "|@VmessProtocol| AHS -14.63"
+    server: 141.193.213.21
+    port: 443
+    type: trojan
+    password: humanity
+    skip-cert-verify: true
+    sni: www.calmloud.com
+    network: ws
+    ws-opts:
+      path: /assignment
+      headers:
+        Host: www.calmloud.com
+    udp: true
+  - name: "|@ovpn2| AHS -14.89"
+    server: 162.159.138.232
+    port: 443
+    type: trojan
+    password: dQDQCtns4R
+    skip-cert-verify: true
+    sni: fadaei.movieland.top
+    network: ws
+    ws-opts:
+      path: static34528
+      headers:
+        Host: fadaei.movieland.top
+    udp: true
+  - name: "|@vpn_tehran| AHS -14.29"
+    server: 172.64.152.23
+    port: 443
+    type: trojan
+    password: humanity
+    skip-cert-verify: true
+    sni: www.gossipglove.com
+    network: ws
+    ws-opts:
+      path: /assignment
+      headers:
+        Host: www.gossipglove.com
+    udp: true
+  - name: "|@vpn_tehran| AHS -14.51"
+    server: 104.18.32.47
+    port: 443
+    type: trojan
+    password: humanity
+    skip-cert-verify: true
+    sni: www.calmlunch.com
+    network: ws
+    ws-opts:
+      path: /assignment
+      headers:
+        Host: www.calmlunch.com
+    udp: true
+  - name: "|@vpn_tehran| AHS -11.93"
+    server: 45.130.125.2
+    port: 443
+    type: trojan
+    password: rdC7DTr5wK
+    skip-cert-verify: true
+    sni: si.farxmode.ir
+    network: ws
+    ws-opts:
+      path: /da
+      headers:
+        Host: si.farxmode.ir
+    udp: true
+  - name: "|@hope_net| AHS -14.53"
+    server: 162.159.152.138
+    port: 443
+    type: trojan
+    password: tg-dns68
+    skip-cert-verify: true
+    sni: vip.putata.eu.org
+    network: ws
+    ws-opts:
+      path: ""
+      headers:
+        Host: vip.putata.eu.org
+    udp: true
+  - name: "|@v2rayngrit| AHS -120.81"
+    server: 185.137.157.59
+    port: 443
+    type: trojan
+    password: fFj7MAGy1VlAWmB_gMBG_27oPYTSHvV6MX
+    skip-cert-verify: true
+    sni: www.lateralio.click
+    udp: true
+  - name: "|@v2rayngrit| AHS -119.87"
+    server: 185.137.157.142
+    port: 443
+    type: trojan
+    password: dh-Ws-YoJIgTYLZ-A5VljeduVse-vhDl7Q
+    skip-cert-verify: true
+    sni: ""
+    udp: true
+  - name: "|@v2rayngrit| AHS -233.16"
+    server: 38.60.202.163
+    port: 443
+    type: trojan
+    password: ZfhGKkAmGl.hxRfIUI0LUU.MuK3hkQdxed
+    skip-cert-verify: true
+    sni: 38.60.202.163
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - "|@oneclickvpnkeys| AHS -12.37"
+      - "|@oneclickvpnkeys| AHS -12.7"
+      - "|@oneclickvpnkeys| AHS -14.85"
+      - "|@VmessProtocol| AHS -14.63"
+      - "|@ovpn2| AHS -14.89"
+      - "|@vpn_tehran| AHS -14.29"
+      - "|@vpn_tehran| AHS -14.51"
+      - "|@vpn_tehran| AHS -11.93"
+      - "|@hope_net| AHS -14.53"
+      - "|@v2rayngrit| AHS -120.81"
+      - "|@v2rayngrit| AHS -119.87"
+      - "|@v2rayngrit| AHS -233.16"
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "|@oneclickvpnkeys| AHS -12.37"
+      - "|@oneclickvpnkeys| AHS -12.7"
+      - "|@oneclickvpnkeys| AHS -14.85"
+      - "|@VmessProtocol| AHS -14.63"
+      - "|@ovpn2| AHS -14.89"
+      - "|@vpn_tehran| AHS -14.29"
+      - "|@vpn_tehran| AHS -14.51"
+      - "|@vpn_tehran| AHS -11.93"
+      - "|@hope_net| AHS -14.53"
+      - "|@v2rayngrit| AHS -120.81"
+      - "|@v2rayngrit| AHS -119.87"
+      - "|@v2rayngrit| AHS -233.16"
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - "|@oneclickvpnkeys| AHS -12.37"
+      - "|@oneclickvpnkeys| AHS -12.7"
+      - "|@oneclickvpnkeys| AHS -14.85"
+      - "|@VmessProtocol| AHS -14.63"
+      - "|@ovpn2| AHS -14.89"
+      - "|@vpn_tehran| AHS -14.29"
+      - "|@vpn_tehran| AHS -14.51"
+      - "|@vpn_tehran| AHS -11.93"
+      - "|@hope_net| AHS -14.53"
+      - "|@v2rayngrit| AHS -120.81"
+      - "|@v2rayngrit| AHS -119.87"
+      - "|@v2rayngrit| AHS -233.16"
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - "|@oneclickvpnkeys| AHS -12.37"
+      - "|@oneclickvpnkeys| AHS -12.7"
+      - "|@oneclickvpnkeys| AHS -14.85"
+      - "|@VmessProtocol| AHS -14.63"
+      - "|@ovpn2| AHS -14.89"
+      - "|@vpn_tehran| AHS -14.29"
+      - "|@vpn_tehran| AHS -14.51"
+      - "|@vpn_tehran| AHS -11.93"
+      - "|@hope_net| AHS -14.53"
+      - "|@v2rayngrit| AHS -120.81"
+      - "|@v2rayngrit| AHS -119.87"
+      - "|@v2rayngrit| AHS -233.16"
+rules:
+  - MATCH,MANUAL
