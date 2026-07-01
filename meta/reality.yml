@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@prrofile_purple|🇱🇹|116.63
+  - name: REALITY|@prrofile_purple|🇱🇹|206.13
     server: cherry-lt-01.live
     port: 8443
     type: vless
@@ -43,7 +43,7 @@ proxies:
     skip-cert-verify: true
     servername: storage.yandex.net
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|97.39
+  - name: REALITY|@internet4iran|🇩🇪|154.9
     server: 88.99.121.221
     port: 443
     type: vless
@@ -54,7 +54,29 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@v2rayngrit|🇫🇷|84.9
+  - name: REALITY|@v2ray1_ng|🇸🇨|268.65
+    server: 45.195.137.185
+    port: 8443
+    type: vless
+    uuid: 7f89560c-b9f0-4c56-b3e0-1b1bdafe0b08
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: storage.yandex.net
+    udp: true
+  - name: REALITY|@proxy_kafee|🇫🇮|160.45
+    server: 217.217.247.248
+    port: 443
+    type: vless
+    uuid: 8ca5cbd3-ec16-4728-bedc-2bc0d82f0922
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: enterprisekitten.com
+    udp: true
+  - name: REALITY|@v2rayngrit|🇫🇷|138.92
     server: 45.13.119.3
     port: 8443
     type: vless
@@ -68,9 +90,11 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@prrofile_purple|🇱🇹|116.63
-      - REALITY|@internet4iran|🇩🇪|97.39
-      - REALITY|@v2rayngrit|🇫🇷|84.9
+      - REALITY|@prrofile_purple|🇱🇹|206.13
+      - REALITY|@internet4iran|🇩🇪|154.9
+      - REALITY|@v2ray1_ng|🇸🇨|268.65
+      - REALITY|@proxy_kafee|🇫🇮|160.45
+      - REALITY|@v2rayngrit|🇫🇷|138.92
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -81,25 +105,31 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@prrofile_purple|🇱🇹|116.63
-      - REALITY|@internet4iran|🇩🇪|97.39
-      - REALITY|@v2rayngrit|🇫🇷|84.9
+      - REALITY|@prrofile_purple|🇱🇹|206.13
+      - REALITY|@internet4iran|🇩🇪|154.9
+      - REALITY|@v2ray1_ng|🇸🇨|268.65
+      - REALITY|@proxy_kafee|🇫🇮|160.45
+      - REALITY|@v2rayngrit|🇫🇷|138.92
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@prrofile_purple|🇱🇹|116.63
-      - REALITY|@internet4iran|🇩🇪|97.39
-      - REALITY|@v2rayngrit|🇫🇷|84.9
+      - REALITY|@prrofile_purple|🇱🇹|206.13
+      - REALITY|@internet4iran|🇩🇪|154.9
+      - REALITY|@v2ray1_ng|🇸🇨|268.65
+      - REALITY|@proxy_kafee|🇫🇮|160.45
+      - REALITY|@v2rayngrit|🇫🇷|138.92
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@prrofile_purple|🇱🇹|116.63
-      - REALITY|@internet4iran|🇩🇪|97.39
-      - REALITY|@v2rayngrit|🇫🇷|84.9
+      - REALITY|@prrofile_purple|🇱🇹|206.13
+      - REALITY|@internet4iran|🇩🇪|154.9
+      - REALITY|@v2ray1_ng|🇸🇨|268.65
+      - REALITY|@proxy_kafee|🇫🇮|160.45
+      - REALITY|@v2rayngrit|🇫🇷|138.92
 rules:
   - MATCH,MANUAL
