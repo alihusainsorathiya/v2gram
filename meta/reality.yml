@@ -1,0 +1,148 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: REALITY|@Outline_Vpn|🇩🇪|214.31
+    server: all112.allenshop66245.ir
+    port: 443
+    type: vless
+    uuid: 36644091-0cec-47fe-9955-97c3f424baf7
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: play.google.com
+    udp: true
+  - name: REALITY|@prrofile_purple|🇵🇱|98.35
+    server: 83.168.71.216
+    port: 443
+    type: vless
+    uuid: a18f7c2d-9e45-4b8a-af3c-1d5e7f9c8b2a
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ads.x5.ru
+    udp: true
+  - name: REALITY|@internet4iran|🇩🇪|92.82
+    server: 88.99.121.221
+    port: 443
+    type: vless
+    uuid: 418e0595-b419-4fc3-85c0-7980b90dab3b
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: www.openoffice.org
+    udp: true
+  - name: REALITY|@VmessProtocol|🇩🇪|89.88
+    server: 84.32.223.22
+    port: 443
+    type: vless
+    uuid: 63d34c62-c655-498f-81e1-1bdd964a2611
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: cherry-de1.t1n2.com
+    udp: true
+  - name: REALITY|@vpnsal|🇩🇪|193.04
+    server: falkoraz.sav-savteam.iR
+    port: 55555
+    type: vless
+    uuid: 2d4aeaaa-36fd-410b-bb8e-c930a8e10108
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: yahoo.com.
+    udp: true
+  - name: REALITY|@v2rayngrit|🇩🇪|352.6
+    server: de2-unlimited.pavilof.ir
+    port: 1020
+    type: vless
+    uuid: af0ed84b-b07f-4b6f-8ca7-59560f2bc8fc
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: yahoo.com
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - REALITY|@Outline_Vpn|🇩🇪|214.31
+      - REALITY|@prrofile_purple|🇵🇱|98.35
+      - REALITY|@internet4iran|🇩🇪|92.82
+      - REALITY|@VmessProtocol|🇩🇪|89.88
+      - REALITY|@vpnsal|🇩🇪|193.04
+      - REALITY|@v2rayngrit|🇩🇪|352.6
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - REALITY|@Outline_Vpn|🇩🇪|214.31
+      - REALITY|@prrofile_purple|🇵🇱|98.35
+      - REALITY|@internet4iran|🇩🇪|92.82
+      - REALITY|@VmessProtocol|🇩🇪|89.88
+      - REALITY|@vpnsal|🇩🇪|193.04
+      - REALITY|@v2rayngrit|🇩🇪|352.6
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - REALITY|@Outline_Vpn|🇩🇪|214.31
+      - REALITY|@prrofile_purple|🇵🇱|98.35
+      - REALITY|@internet4iran|🇩🇪|92.82
+      - REALITY|@VmessProtocol|🇩🇪|89.88
+      - REALITY|@vpnsal|🇩🇪|193.04
+      - REALITY|@v2rayngrit|🇩🇪|352.6
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - REALITY|@Outline_Vpn|🇩🇪|214.31
+      - REALITY|@prrofile_purple|🇵🇱|98.35
+      - REALITY|@internet4iran|🇩🇪|92.82
+      - REALITY|@VmessProtocol|🇩🇪|89.88
+      - REALITY|@vpnsal|🇩🇪|193.04
+      - REALITY|@v2rayngrit|🇩🇪|352.6
+rules:
+  - MATCH,MANUAL
