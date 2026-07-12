@@ -32,17 +32,20 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@prrofile_purple|🇵🇱|115.9
-    server: 83.168.71.216
-    port: 443
+  - name: REALITY|@prrofile_purple|🇵🇱|109.58
+    server: 152.233.43.77
+    port: 16923
     type: vless
-    uuid: a18f7c2d-9e45-4b8a-af3c-1d5e7f9c8b2a
+    uuid: c065e1bb-cb56-41e5-b043-9dfd15b67565
     cipher: auto
     tls: false
     skip-cert-verify: true
-    servername: ads.x5.ru
+    servername: api-maps.yandex.ru
+    network: grpc
+    grpc-opts:
+      grpc-service-name: neurex
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|106.6
+  - name: REALITY|@internet4iran|🇩🇪|101.26
     server: 88.99.121.221
     port: 443
     type: vless
@@ -53,7 +56,7 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@VmessProtocol|🇩🇪|103.65
+  - name: REALITY|@VmessProtocol|🇩🇪|89.59
     server: 84.32.223.22
     port: 443
     type: vless
@@ -64,7 +67,7 @@ proxies:
     skip-cert-verify: true
     servername: cherry-de1.t1n2.com
     udp: true
-  - name: REALITY|@lrnbymaa|🇦🇲|158.87
+  - name: REALITY|@lrnbymaa|🇦🇲|144.8
     server: 87.121.47.237
     port: 443
     type: vless
@@ -75,17 +78,18 @@ proxies:
     skip-cert-verify: true
     servername: am-1.alpha-ai-studio.com
     udp: true
-  - name: REALITY|@proxy_kafee|🇩🇪|207.41
-    server: TakeHost-Ger.ShaKhle.ir
-    port: 22000
+  - name: REALITY|@vpnsal|🇫🇮|unavailable
+    server: five.neobo-tooth.ru
+    port: 2053
     type: vless
-    uuid: c50b50c9-6868-4231-859a-691da85a2e60
+    uuid: 0c6b632a-cd96-4b74-9b51-151e3b5697db
     cipher: auto
     tls: false
+    flow: xtls-rprx-vision
     skip-cert-verify: true
-    servername: www.yahoo.com
+    servername: vk.ru
     udp: true
-  - name: REALITY|@v2rayngrit|🇸🇨|104.16
+  - name: REALITY|@v2rayngrit|🇸🇨|91.03
     server: 45.196.224.79
     port: 8443
     type: vless
@@ -100,12 +104,12 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@prrofile_purple|🇵🇱|115.9
-      - REALITY|@internet4iran|🇩🇪|106.6
-      - REALITY|@VmessProtocol|🇩🇪|103.65
-      - REALITY|@lrnbymaa|🇦🇲|158.87
-      - REALITY|@proxy_kafee|🇩🇪|207.41
-      - REALITY|@v2rayngrit|🇸🇨|104.16
+      - REALITY|@prrofile_purple|🇵🇱|109.58
+      - REALITY|@internet4iran|🇩🇪|101.26
+      - REALITY|@VmessProtocol|🇩🇪|89.59
+      - REALITY|@lrnbymaa|🇦🇲|144.8
+      - REALITY|@vpnsal|🇫🇮|unavailable
+      - REALITY|@v2rayngrit|🇸🇨|91.03
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -116,34 +120,34 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@prrofile_purple|🇵🇱|115.9
-      - REALITY|@internet4iran|🇩🇪|106.6
-      - REALITY|@VmessProtocol|🇩🇪|103.65
-      - REALITY|@lrnbymaa|🇦🇲|158.87
-      - REALITY|@proxy_kafee|🇩🇪|207.41
-      - REALITY|@v2rayngrit|🇸🇨|104.16
+      - REALITY|@prrofile_purple|🇵🇱|109.58
+      - REALITY|@internet4iran|🇩🇪|101.26
+      - REALITY|@VmessProtocol|🇩🇪|89.59
+      - REALITY|@lrnbymaa|🇦🇲|144.8
+      - REALITY|@vpnsal|🇫🇮|unavailable
+      - REALITY|@v2rayngrit|🇸🇨|91.03
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@prrofile_purple|🇵🇱|115.9
-      - REALITY|@internet4iran|🇩🇪|106.6
-      - REALITY|@VmessProtocol|🇩🇪|103.65
-      - REALITY|@lrnbymaa|🇦🇲|158.87
-      - REALITY|@proxy_kafee|🇩🇪|207.41
-      - REALITY|@v2rayngrit|🇸🇨|104.16
+      - REALITY|@prrofile_purple|🇵🇱|109.58
+      - REALITY|@internet4iran|🇩🇪|101.26
+      - REALITY|@VmessProtocol|🇩🇪|89.59
+      - REALITY|@lrnbymaa|🇦🇲|144.8
+      - REALITY|@vpnsal|🇫🇮|unavailable
+      - REALITY|@v2rayngrit|🇸🇨|91.03
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@prrofile_purple|🇵🇱|115.9
-      - REALITY|@internet4iran|🇩🇪|106.6
-      - REALITY|@VmessProtocol|🇩🇪|103.65
-      - REALITY|@lrnbymaa|🇦🇲|158.87
-      - REALITY|@proxy_kafee|🇩🇪|207.41
-      - REALITY|@v2rayngrit|🇸🇨|104.16
+      - REALITY|@prrofile_purple|🇵🇱|109.58
+      - REALITY|@internet4iran|🇩🇪|101.26
+      - REALITY|@VmessProtocol|🇩🇪|89.59
+      - REALITY|@lrnbymaa|🇦🇲|144.8
+      - REALITY|@vpnsal|🇫🇮|unavailable
+      - REALITY|@v2rayngrit|🇸🇨|91.03
 rules:
   - MATCH,MANUAL
