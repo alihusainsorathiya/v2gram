@@ -1,0 +1,138 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: REALITY|@internet4iran|🇩🇪|124.16
+    server: 88.99.121.221
+    port: 443
+    type: vless
+    uuid: 418e0595-b419-4fc3-85c0-7980b90dab3b
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: www.openoffice.org
+    udp: true
+  - name: REALITY|@v2rayNG_Matsuri|🇷🇺|150.06
+    server: 186.246.0.111
+    port: 443
+    type: vless
+    uuid: 18167dd6-2c24-4f6b-a416-64bac693127a
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: optim.tildacdn.pub
+    network: grpc
+    grpc-opts:
+      grpc-service-name: ebl
+    udp: true
+  - name: REALITY|@lrnbymaa|🇦🇲|180.35
+    server: 87.121.47.237
+    port: 443
+    type: vless
+    uuid: cde6db10-61db-418f-9ea1-52f7c13404a9
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: am-1.alpha-ai-studio.com
+    udp: true
+  - name: REALITY|@vpnsal|🇩🇪|291.32
+    server: af48e9533d6a23ed.mbmovietime.ir
+    port: 50567
+    type: vless
+    uuid: d7955f3f-dfa3-45a0-a3ef-9693df439a0f
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: play.google.com
+    udp: true
+  - name: REALITY|@v2rayngrit|🇸🇨|127.33
+    server: 45.196.224.79
+    port: 8443
+    type: vless
+    uuid: 356ccb34-22cc-4446-a137-072bc60d65ca
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: storage.yandex.net
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - REALITY|@internet4iran|🇩🇪|124.16
+      - REALITY|@v2rayNG_Matsuri|🇷🇺|150.06
+      - REALITY|@lrnbymaa|🇦🇲|180.35
+      - REALITY|@vpnsal|🇩🇪|291.32
+      - REALITY|@v2rayngrit|🇸🇨|127.33
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - REALITY|@internet4iran|🇩🇪|124.16
+      - REALITY|@v2rayNG_Matsuri|🇷🇺|150.06
+      - REALITY|@lrnbymaa|🇦🇲|180.35
+      - REALITY|@vpnsal|🇩🇪|291.32
+      - REALITY|@v2rayngrit|🇸🇨|127.33
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - REALITY|@internet4iran|🇩🇪|124.16
+      - REALITY|@v2rayNG_Matsuri|🇷🇺|150.06
+      - REALITY|@lrnbymaa|🇦🇲|180.35
+      - REALITY|@vpnsal|🇩🇪|291.32
+      - REALITY|@v2rayngrit|🇸🇨|127.33
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - REALITY|@internet4iran|🇩🇪|124.16
+      - REALITY|@v2rayNG_Matsuri|🇷🇺|150.06
+      - REALITY|@lrnbymaa|🇦🇲|180.35
+      - REALITY|@vpnsal|🇩🇪|291.32
+      - REALITY|@v2rayngrit|🇸🇨|127.33
+rules:
+  - MATCH,MANUAL
