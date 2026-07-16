@@ -32,7 +32,18 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@v2rayvmess| AHS -🇺🇸|3.35"
+  - name: "@vpnfail_v2ray| AHS -🇩🇪|8.53"
+    server: 82.198.246.9
+    port: 180
+    type: vmess
+    uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|2.24"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -48,7 +59,7 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@v2ray1_ng| AHS -🇺🇸|90.53"
+  - name: "@v2ray1_ng| AHS -🇺🇸|150.2"
     server: 31.77.149.131
     port: 110
     type: vmess
@@ -59,7 +70,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@v2ray_confings2| AHS -🇺🇸|136.56"
+  - name: "@v2ray_confings2| AHS -🇺🇸|27.38"
     server: 188.114.96.1
     port: 443
     type: vmess
@@ -79,9 +90,10 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|3.35"
-      - "@v2ray1_ng| AHS -🇺🇸|90.53"
-      - "@v2ray_confings2| AHS -🇺🇸|136.56"
+      - "@vpnfail_v2ray| AHS -🇩🇪|8.53"
+      - "@v2rayvmess| AHS -🇺🇸|2.24"
+      - "@v2ray1_ng| AHS -🇺🇸|150.2"
+      - "@v2ray_confings2| AHS -🇺🇸|27.38"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -92,25 +104,28 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|3.35"
-      - "@v2ray1_ng| AHS -🇺🇸|90.53"
-      - "@v2ray_confings2| AHS -🇺🇸|136.56"
+      - "@vpnfail_v2ray| AHS -🇩🇪|8.53"
+      - "@v2rayvmess| AHS -🇺🇸|2.24"
+      - "@v2ray1_ng| AHS -🇺🇸|150.2"
+      - "@v2ray_confings2| AHS -🇺🇸|27.38"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|3.35"
-      - "@v2ray1_ng| AHS -🇺🇸|90.53"
-      - "@v2ray_confings2| AHS -🇺🇸|136.56"
+      - "@vpnfail_v2ray| AHS -🇩🇪|8.53"
+      - "@v2rayvmess| AHS -🇺🇸|2.24"
+      - "@v2ray1_ng| AHS -🇺🇸|150.2"
+      - "@v2ray_confings2| AHS -🇺🇸|27.38"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|3.35"
-      - "@v2ray1_ng| AHS -🇺🇸|90.53"
-      - "@v2ray_confings2| AHS -🇺🇸|136.56"
+      - "@vpnfail_v2ray| AHS -🇩🇪|8.53"
+      - "@v2rayvmess| AHS -🇺🇸|2.24"
+      - "@v2ray1_ng| AHS -🇺🇸|150.2"
+      - "@v2ray_confings2| AHS -🇺🇸|27.38"
 rules:
   - MATCH,MANUAL
