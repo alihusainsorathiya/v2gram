@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@v2rayvmess| AHS -🇺🇸|5.48"
+  - name: "@v2rayvmess| AHS -🇺🇸|7.05"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -48,7 +48,7 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@Napsternetvirani| AHS -🇩🇪|158.13"
+  - name: "@Napsternetvirani| AHS -🇩🇪|125.08"
     server: 91.107.139.186
     port: 51459
     type: vmess
@@ -59,7 +59,23 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@v2ray_confings2| AHS -🇺🇸|34.93"
+  - name: "@v2rayngrit| AHS -🇫🇷|141.61"
+    server: node-uk.connectsuite.org
+    port: 2052
+    type: vmess
+    uuid: 40b25dc2-8e1a-4889-b334-e3376ab3d865
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    network: http
+    http-opts:
+      method: GET
+      path:
+        - /
+    udp: true
+  - name: "@v2ray_confings2| AHS -🇺🇸|120"
     server: 188.114.96.1
     port: 443
     type: vmess
@@ -79,9 +95,10 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|5.48"
-      - "@Napsternetvirani| AHS -🇩🇪|158.13"
-      - "@v2ray_confings2| AHS -🇺🇸|34.93"
+      - "@v2rayvmess| AHS -🇺🇸|7.05"
+      - "@Napsternetvirani| AHS -🇩🇪|125.08"
+      - "@v2rayngrit| AHS -🇫🇷|141.61"
+      - "@v2ray_confings2| AHS -🇺🇸|120"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -92,25 +109,28 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|5.48"
-      - "@Napsternetvirani| AHS -🇩🇪|158.13"
-      - "@v2ray_confings2| AHS -🇺🇸|34.93"
+      - "@v2rayvmess| AHS -🇺🇸|7.05"
+      - "@Napsternetvirani| AHS -🇩🇪|125.08"
+      - "@v2rayngrit| AHS -🇫🇷|141.61"
+      - "@v2ray_confings2| AHS -🇺🇸|120"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|5.48"
-      - "@Napsternetvirani| AHS -🇩🇪|158.13"
-      - "@v2ray_confings2| AHS -🇺🇸|34.93"
+      - "@v2rayvmess| AHS -🇺🇸|7.05"
+      - "@Napsternetvirani| AHS -🇩🇪|125.08"
+      - "@v2rayngrit| AHS -🇫🇷|141.61"
+      - "@v2ray_confings2| AHS -🇺🇸|120"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|5.48"
-      - "@Napsternetvirani| AHS -🇩🇪|158.13"
-      - "@v2ray_confings2| AHS -🇺🇸|34.93"
+      - "@v2rayvmess| AHS -🇺🇸|7.05"
+      - "@Napsternetvirani| AHS -🇩🇪|125.08"
+      - "@v2rayngrit| AHS -🇫🇷|141.61"
+      - "@v2ray_confings2| AHS -🇺🇸|120"
 rules:
   - MATCH,MANUAL
