@@ -32,7 +32,29 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@v2rayvmess| AHS -🇺🇸|2.76"
+  - name: "@vpnfail_v2ray| AHS -🇺🇸|221.92"
+    server: status.nixonbhost.top
+    port: 33550
+    type: vmess
+    uuid: 6f276b57-2b72-4e00-b441-b0ae47487a59
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@vpnfail_v2ray| AHS -🇩🇪|142.68"
+    server: 91.107.139.186
+    port: 51459
+    type: vmess
+    uuid: 500cdc83-b189-4d79-b06b-139c7972a57f
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|9.1"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -48,7 +70,7 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@v2ray1_ng| AHS -🇩🇪|97.04"
+  - name: "@v2ray1_ng| AHS -🇩🇪|148.12"
     server: 91.107.139.186
     port: 51459
     type: vmess
@@ -59,7 +81,23 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@v2rayngrit| AHS -🇫🇷|118.37"
+  - name: "@v2ray1_ng| AHS -🇭🇰|583.76"
+    server: uk1.levikogjgfdd.ir
+    port: 443
+    type: vmess
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: lcv8v9l7OyamxxfZ.v.3dns.vip
+    network: ws
+    ws-opts:
+      path: /ws-vmess
+      headers:
+        Host: lcv8v9l7OyamxxfZ.v.3dns.vip
+    udp: true
+  - name: "@v2rayngrit| AHS -🇫🇷|187.21"
     server: node-uk.connectsuite.org
     port: 2052
     type: vmess
@@ -75,7 +113,7 @@ proxies:
       path:
         - /
     udp: true
-  - name: "@v2ray_confings2| AHS -🇺🇸|151.62"
+  - name: "@v2ray_confings2| AHS -🇺🇸|23.64"
     server: 188.114.96.1
     port: 443
     type: vmess
@@ -95,10 +133,13 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|2.76"
-      - "@v2ray1_ng| AHS -🇩🇪|97.04"
-      - "@v2rayngrit| AHS -🇫🇷|118.37"
-      - "@v2ray_confings2| AHS -🇺🇸|151.62"
+      - "@vpnfail_v2ray| AHS -🇺🇸|221.92"
+      - "@vpnfail_v2ray| AHS -🇩🇪|142.68"
+      - "@v2rayvmess| AHS -🇺🇸|9.1"
+      - "@v2ray1_ng| AHS -🇩🇪|148.12"
+      - "@v2ray1_ng| AHS -🇭🇰|583.76"
+      - "@v2rayngrit| AHS -🇫🇷|187.21"
+      - "@v2ray_confings2| AHS -🇺🇸|23.64"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -109,28 +150,37 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|2.76"
-      - "@v2ray1_ng| AHS -🇩🇪|97.04"
-      - "@v2rayngrit| AHS -🇫🇷|118.37"
-      - "@v2ray_confings2| AHS -🇺🇸|151.62"
+      - "@vpnfail_v2ray| AHS -🇺🇸|221.92"
+      - "@vpnfail_v2ray| AHS -🇩🇪|142.68"
+      - "@v2rayvmess| AHS -🇺🇸|9.1"
+      - "@v2ray1_ng| AHS -🇩🇪|148.12"
+      - "@v2ray1_ng| AHS -🇭🇰|583.76"
+      - "@v2rayngrit| AHS -🇫🇷|187.21"
+      - "@v2ray_confings2| AHS -🇺🇸|23.64"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|2.76"
-      - "@v2ray1_ng| AHS -🇩🇪|97.04"
-      - "@v2rayngrit| AHS -🇫🇷|118.37"
-      - "@v2ray_confings2| AHS -🇺🇸|151.62"
+      - "@vpnfail_v2ray| AHS -🇺🇸|221.92"
+      - "@vpnfail_v2ray| AHS -🇩🇪|142.68"
+      - "@v2rayvmess| AHS -🇺🇸|9.1"
+      - "@v2ray1_ng| AHS -🇩🇪|148.12"
+      - "@v2ray1_ng| AHS -🇭🇰|583.76"
+      - "@v2rayngrit| AHS -🇫🇷|187.21"
+      - "@v2ray_confings2| AHS -🇺🇸|23.64"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|2.76"
-      - "@v2ray1_ng| AHS -🇩🇪|97.04"
-      - "@v2rayngrit| AHS -🇫🇷|118.37"
-      - "@v2ray_confings2| AHS -🇺🇸|151.62"
+      - "@vpnfail_v2ray| AHS -🇺🇸|221.92"
+      - "@vpnfail_v2ray| AHS -🇩🇪|142.68"
+      - "@v2rayvmess| AHS -🇺🇸|9.1"
+      - "@v2ray1_ng| AHS -🇩🇪|148.12"
+      - "@v2ray1_ng| AHS -🇭🇰|583.76"
+      - "@v2rayngrit| AHS -🇫🇷|187.21"
+      - "@v2ray_confings2| AHS -🇺🇸|23.64"
 rules:
   - MATCH,MANUAL
