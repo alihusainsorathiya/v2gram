@@ -32,7 +32,18 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@v2rayvmess| AHS -🇺🇸|9.53"
+  - name: "@vpnfail_v2ray| AHS -🇺🇸|30.67"
+    server: 216.106.185.141
+    port: 22324
+    type: vmess
+    uuid: 04621bae-ab36-11ec-b909-0242ac120002
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@v2rayvmess| AHS -🇺🇸|58.12"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -48,7 +59,7 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@hope_net| AHS -🚩|6.89"
+  - name: "@hope_net| AHS -🚩|58.59"
     server: zula.ir
     port: 2096
     type: vmess
@@ -64,7 +75,39 @@ proxies:
       headers:
         Host: kingo.hightechservice.ir
     udp: true
-  - name: "@v2rayngrit| AHS -🇫🇷|235.81"
+  - name: "@hope_net| AHS -🚩|56.31"
+    server: zula.ir
+    port: 2096
+    type: vmess
+    uuid: 6647660f-9cfb-4ba3-8ca3-6214cfcdb8f0
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: kingo.hightechservice.ir
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: kingo.hightechservice.ir
+    udp: true
+  - name: "@hope_net| AHS -🚩|54.36"
+    server: zula.ir
+    port: 2096
+    type: vmess
+    uuid: a8205f07-37bf-4882-acff-88c83c5695fa
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: kingo.hightechservice.ir
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: kingo.hightechservice.ir
+    udp: true
+  - name: "@v2rayngrit| AHS -🇫🇷|197.7"
     server: node-uk.connectsuite.org
     port: 2052
     type: vmess
@@ -80,7 +123,7 @@ proxies:
       path:
         - /
     udp: true
-  - name: "@v2ray_confings2| AHS -🇺🇸|142.09"
+  - name: "@v2ray_confings2| AHS -🇺🇸|154.19"
     server: 188.114.96.1
     port: 443
     type: vmess
@@ -100,10 +143,13 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|9.53"
-      - "@hope_net| AHS -🚩|6.89"
-      - "@v2rayngrit| AHS -🇫🇷|235.81"
-      - "@v2ray_confings2| AHS -🇺🇸|142.09"
+      - "@vpnfail_v2ray| AHS -🇺🇸|30.67"
+      - "@v2rayvmess| AHS -🇺🇸|58.12"
+      - "@hope_net| AHS -🚩|58.59"
+      - "@hope_net| AHS -🚩|56.31"
+      - "@hope_net| AHS -🚩|54.36"
+      - "@v2rayngrit| AHS -🇫🇷|197.7"
+      - "@v2ray_confings2| AHS -🇺🇸|154.19"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -114,28 +160,37 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|9.53"
-      - "@hope_net| AHS -🚩|6.89"
-      - "@v2rayngrit| AHS -🇫🇷|235.81"
-      - "@v2ray_confings2| AHS -🇺🇸|142.09"
+      - "@vpnfail_v2ray| AHS -🇺🇸|30.67"
+      - "@v2rayvmess| AHS -🇺🇸|58.12"
+      - "@hope_net| AHS -🚩|58.59"
+      - "@hope_net| AHS -🚩|56.31"
+      - "@hope_net| AHS -🚩|54.36"
+      - "@v2rayngrit| AHS -🇫🇷|197.7"
+      - "@v2ray_confings2| AHS -🇺🇸|154.19"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|9.53"
-      - "@hope_net| AHS -🚩|6.89"
-      - "@v2rayngrit| AHS -🇫🇷|235.81"
-      - "@v2ray_confings2| AHS -🇺🇸|142.09"
+      - "@vpnfail_v2ray| AHS -🇺🇸|30.67"
+      - "@v2rayvmess| AHS -🇺🇸|58.12"
+      - "@hope_net| AHS -🚩|58.59"
+      - "@hope_net| AHS -🚩|56.31"
+      - "@hope_net| AHS -🚩|54.36"
+      - "@v2rayngrit| AHS -🇫🇷|197.7"
+      - "@v2ray_confings2| AHS -🇺🇸|154.19"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@v2rayvmess| AHS -🇺🇸|9.53"
-      - "@hope_net| AHS -🚩|6.89"
-      - "@v2rayngrit| AHS -🇫🇷|235.81"
-      - "@v2ray_confings2| AHS -🇺🇸|142.09"
+      - "@vpnfail_v2ray| AHS -🇺🇸|30.67"
+      - "@v2rayvmess| AHS -🇺🇸|58.12"
+      - "@hope_net| AHS -🚩|58.59"
+      - "@hope_net| AHS -🚩|56.31"
+      - "@hope_net| AHS -🚩|54.36"
+      - "@v2rayngrit| AHS -🇫🇷|197.7"
+      - "@v2ray_confings2| AHS -🇺🇸|154.19"
 rules:
   - MATCH,MANUAL
