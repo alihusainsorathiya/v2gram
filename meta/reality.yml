@@ -32,7 +32,18 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@internet4iran|🇩🇪|94.47
+  - name: REALITY|@Outline_Vpn|🇺🇸|153.9
+    server: 144.31.65.68
+    port: 443
+    type: vless
+    uuid: 564082ff-cf3c-48db-9e10-8ad2312847b4
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: node18.mxvpn.dev
+    udp: true
+  - name: REALITY|@internet4iran|🇩🇪|152.29
     server: 88.99.121.221
     port: 443
     type: vless
@@ -43,7 +54,18 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@vpnsal|🇩🇪|109.76
+  - name: REALITY|@v2ray1_ng|🇸🇨|163.03
+    server: deconverter.teddylink.com
+    port: 443
+    type: vless
+    uuid: 7a3fa6b9-e862-4b3f-b742-a9168c4fa3b6
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: deconverter.teddylink.com
+    udp: true
+  - name: REALITY|@vpnsal|🇩🇪|151.96
     server: 31.76.119.198
     port: 443
     type: vless
@@ -54,7 +76,20 @@ proxies:
     skip-cert-verify: true
     servername: www.akamai.com
     udp: true
-  - name: REALITY|@v2rayngrit|🇬🇧|144.06
+  - name: REALITY|@azadnet|🇬🇧|156.75
+    server: 144.31.213.172
+    port: 443
+    type: vless
+    uuid: f692629b-3557-488a-9c9b-60775331e423
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: fi1-cosmostechnology.ru
+    network: grpc
+    grpc-opts:
+      grpc-service-name: fi1cosmos
+    udp: true
+  - name: REALITY|@v2rayngrit|🇬🇧|208.03
     server: 87.239.249.137
     port: 443
     type: vless
@@ -69,9 +104,12 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@internet4iran|🇩🇪|94.47
-      - REALITY|@vpnsal|🇩🇪|109.76
-      - REALITY|@v2rayngrit|🇬🇧|144.06
+      - REALITY|@Outline_Vpn|🇺🇸|153.9
+      - REALITY|@internet4iran|🇩🇪|152.29
+      - REALITY|@v2ray1_ng|🇸🇨|163.03
+      - REALITY|@vpnsal|🇩🇪|151.96
+      - REALITY|@azadnet|🇬🇧|156.75
+      - REALITY|@v2rayngrit|🇬🇧|208.03
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -82,25 +120,34 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|94.47
-      - REALITY|@vpnsal|🇩🇪|109.76
-      - REALITY|@v2rayngrit|🇬🇧|144.06
+      - REALITY|@Outline_Vpn|🇺🇸|153.9
+      - REALITY|@internet4iran|🇩🇪|152.29
+      - REALITY|@v2ray1_ng|🇸🇨|163.03
+      - REALITY|@vpnsal|🇩🇪|151.96
+      - REALITY|@azadnet|🇬🇧|156.75
+      - REALITY|@v2rayngrit|🇬🇧|208.03
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@internet4iran|🇩🇪|94.47
-      - REALITY|@vpnsal|🇩🇪|109.76
-      - REALITY|@v2rayngrit|🇬🇧|144.06
+      - REALITY|@Outline_Vpn|🇺🇸|153.9
+      - REALITY|@internet4iran|🇩🇪|152.29
+      - REALITY|@v2ray1_ng|🇸🇨|163.03
+      - REALITY|@vpnsal|🇩🇪|151.96
+      - REALITY|@azadnet|🇬🇧|156.75
+      - REALITY|@v2rayngrit|🇬🇧|208.03
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|94.47
-      - REALITY|@vpnsal|🇩🇪|109.76
-      - REALITY|@v2rayngrit|🇬🇧|144.06
+      - REALITY|@Outline_Vpn|🇺🇸|153.9
+      - REALITY|@internet4iran|🇩🇪|152.29
+      - REALITY|@v2ray1_ng|🇸🇨|163.03
+      - REALITY|@vpnsal|🇩🇪|151.96
+      - REALITY|@azadnet|🇬🇧|156.75
+      - REALITY|@v2rayngrit|🇬🇧|208.03
 rules:
   - MATCH,MANUAL
