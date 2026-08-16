@@ -32,18 +32,18 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@Outline_Vpn|🇺🇸|150.54
-    server: 144.31.65.68
+  - name: REALITY|@Outline_Vpn|🇩🇪|18.98
+    server: 169.40.42.232
     port: 443
     type: vless
-    uuid: 564082ff-cf3c-48db-9e10-8ad2312847b4
+    uuid: d65cc14c-f53f-4fe2-b262-97856601319c
     cipher: auto
     tls: false
     flow: xtls-rprx-vision
     skip-cert-verify: true
-    servername: node18.mxvpn.dev
+    servername: yahoo.com
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|157.89
+  - name: REALITY|@internet4iran|🇩🇪|110.15
     server: 88.99.121.221
     port: 443
     type: vless
@@ -54,7 +54,7 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@v2rayNG_Matsuri|🇫🇷|157.32
+  - name: REALITY|@v2rayNG_Matsuri|🇫🇷|105.7
     server: 162.19.156.14
     port: 6800
     type: vless
@@ -64,17 +64,29 @@ proxies:
     skip-cert-verify: true
     servername: play.google.com
     udp: true
-  - name: REALITY|@ConfigsHUB|🇫🇮|442.95
-    server: s1.orangesms.ir
-    port: 3389
+  - name: REALITY|@v2ray1_ng|🇳🇱|94.71
+    server: 212.118.40.187
+    port: 443
     type: vless
-    uuid: 7b3f2b09-11e2-4bdd-9e42-946c0a41447f
+    uuid: ee71862e-816b-4d26-97d2-f200898e385d
     cipher: auto
     tls: false
+    flow: xtls-rprx-vision
     skip-cert-verify: true
-    servername: delivery.mp.microsoft.com
+    servername: www.cisco.com
     udp: true
-  - name: REALITY|@vpnsal|🇩🇪|149.78
+  - name: REALITY|@proxy_kafee|🇳🇱|96.97
+    server: 95.85.247.155
+    port: 443
+    type: vless
+    uuid: 423b1d79-08c4-403f-9d5e-c541f791b55f
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: eu-west.cendora.ru
+    udp: true
+  - name: REALITY|@vpnsal|🇩🇪|103.55
     server: 31.76.119.198
     port: 443
     type: vless
@@ -85,7 +97,7 @@ proxies:
     skip-cert-verify: true
     servername: www.akamai.com
     udp: true
-  - name: REALITY|@azadnet|🇬🇧|147.93
+  - name: REALITY|@azadnet|🇬🇧|111.85
     server: 144.31.213.172
     port: 443
     type: vless
@@ -98,7 +110,7 @@ proxies:
     grpc-opts:
       grpc-service-name: fi1cosmos
     udp: true
-  - name: REALITY|@v2rayngrit|🇬🇧|194.62
+  - name: REALITY|@v2rayngrit|🇬🇧|148.14
     server: 87.239.249.137
     port: 443
     type: vless
@@ -113,13 +125,14 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@Outline_Vpn|🇺🇸|150.54
-      - REALITY|@internet4iran|🇩🇪|157.89
-      - REALITY|@v2rayNG_Matsuri|🇫🇷|157.32
-      - REALITY|@ConfigsHUB|🇫🇮|442.95
-      - REALITY|@vpnsal|🇩🇪|149.78
-      - REALITY|@azadnet|🇬🇧|147.93
-      - REALITY|@v2rayngrit|🇬🇧|194.62
+      - REALITY|@Outline_Vpn|🇩🇪|18.98
+      - REALITY|@internet4iran|🇩🇪|110.15
+      - REALITY|@v2rayNG_Matsuri|🇫🇷|105.7
+      - REALITY|@v2ray1_ng|🇳🇱|94.71
+      - REALITY|@proxy_kafee|🇳🇱|96.97
+      - REALITY|@vpnsal|🇩🇪|103.55
+      - REALITY|@azadnet|🇬🇧|111.85
+      - REALITY|@v2rayngrit|🇬🇧|148.14
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -130,37 +143,40 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@Outline_Vpn|🇺🇸|150.54
-      - REALITY|@internet4iran|🇩🇪|157.89
-      - REALITY|@v2rayNG_Matsuri|🇫🇷|157.32
-      - REALITY|@ConfigsHUB|🇫🇮|442.95
-      - REALITY|@vpnsal|🇩🇪|149.78
-      - REALITY|@azadnet|🇬🇧|147.93
-      - REALITY|@v2rayngrit|🇬🇧|194.62
+      - REALITY|@Outline_Vpn|🇩🇪|18.98
+      - REALITY|@internet4iran|🇩🇪|110.15
+      - REALITY|@v2rayNG_Matsuri|🇫🇷|105.7
+      - REALITY|@v2ray1_ng|🇳🇱|94.71
+      - REALITY|@proxy_kafee|🇳🇱|96.97
+      - REALITY|@vpnsal|🇩🇪|103.55
+      - REALITY|@azadnet|🇬🇧|111.85
+      - REALITY|@v2rayngrit|🇬🇧|148.14
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@Outline_Vpn|🇺🇸|150.54
-      - REALITY|@internet4iran|🇩🇪|157.89
-      - REALITY|@v2rayNG_Matsuri|🇫🇷|157.32
-      - REALITY|@ConfigsHUB|🇫🇮|442.95
-      - REALITY|@vpnsal|🇩🇪|149.78
-      - REALITY|@azadnet|🇬🇧|147.93
-      - REALITY|@v2rayngrit|🇬🇧|194.62
+      - REALITY|@Outline_Vpn|🇩🇪|18.98
+      - REALITY|@internet4iran|🇩🇪|110.15
+      - REALITY|@v2rayNG_Matsuri|🇫🇷|105.7
+      - REALITY|@v2ray1_ng|🇳🇱|94.71
+      - REALITY|@proxy_kafee|🇳🇱|96.97
+      - REALITY|@vpnsal|🇩🇪|103.55
+      - REALITY|@azadnet|🇬🇧|111.85
+      - REALITY|@v2rayngrit|🇬🇧|148.14
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@Outline_Vpn|🇺🇸|150.54
-      - REALITY|@internet4iran|🇩🇪|157.89
-      - REALITY|@v2rayNG_Matsuri|🇫🇷|157.32
-      - REALITY|@ConfigsHUB|🇫🇮|442.95
-      - REALITY|@vpnsal|🇩🇪|149.78
-      - REALITY|@azadnet|🇬🇧|147.93
-      - REALITY|@v2rayngrit|🇬🇧|194.62
+      - REALITY|@Outline_Vpn|🇩🇪|18.98
+      - REALITY|@internet4iran|🇩🇪|110.15
+      - REALITY|@v2rayNG_Matsuri|🇫🇷|105.7
+      - REALITY|@v2ray1_ng|🇳🇱|94.71
+      - REALITY|@proxy_kafee|🇳🇱|96.97
+      - REALITY|@vpnsal|🇩🇪|103.55
+      - REALITY|@azadnet|🇬🇧|111.85
+      - REALITY|@v2rayngrit|🇬🇧|148.14
 rules:
   - MATCH,MANUAL
