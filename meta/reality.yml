@@ -1,0 +1,169 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7895
+ipv6: false
+mode: rule
+log-level: silent
+allow-lan: true
+external-controller: 0.0.0.0:9090
+secret: ""
+bind-address: "*"
+unified-delay: true
+profile:
+  store-selected: true
+dns:
+  enable: true
+  ipv6: false
+  enhanced-mode: redir-host
+  listen: 0.0.0.0:7874
+  nameserver:
+    - 8.8.8.8
+    - 1.0.0.1
+    - https://dns.google/dns-query
+  fallback:
+    - 1.1.1.1
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query
+    - 112.215.203.254
+  default-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+    - 112.215.203.254
+proxies:
+  - name: REALITY|@internet4iran|🇩🇪|92.84
+    server: 88.99.121.221
+    port: 443
+    type: vless
+    uuid: 418e0595-b419-4fc3-85c0-7980b90dab3b
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: www.openoffice.org
+    udp: true
+  - name: REALITY|@v2ray1_ng|🇸🇪|103.72
+    server: 185.113.11.136
+    port: 1443
+    type: vless
+    uuid: 4984930f-4a7a-4dfa-8edc-5d21bbf5ca13
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: sw.pubconverter.com
+    network: grpc
+    grpc-opts:
+      grpc-service-name: grpc
+    udp: true
+  - name: REALITY|@vpn_tehran|🇬🇧|91.24
+    server: 164.37.104.234
+    port: 443
+    type: vless
+    uuid: a6f6d9c9-9d43-4d0e-bf95-4b87cc5bbaac
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: gb1.murhost.network
+    udp: true
+  - name: REALITY|@ConfigsHUB|🇮🇹|283.47
+    server: ita.montago-shop.ir
+    port: 443
+    type: vless
+    uuid: 9ffc5514-c744-4259-a270-8509918c9217
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: amp-api-edge.apps.apple.com
+    udp: true
+  - name: REALITY|@vpnsal|🇬🇧|91.36
+    server: 164.37.104.234
+    port: 443
+    type: vless
+    uuid: a6f6d9c9-9d43-4d0e-bf95-4b87cc5bbaac
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: gb1.murhost.network
+    udp: true
+  - name: REALITY|@azadnet|🇬🇧|96.45
+    server: 144.31.213.172
+    port: 443
+    type: vless
+    uuid: f692629b-3557-488a-9c9b-60775331e423
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: fi1-cosmostechnology.ru
+    network: grpc
+    grpc-opts:
+      grpc-service-name: fi1cosmos
+    udp: true
+  - name: REALITY|@v2rayngrit|🇬🇧|149.9
+    server: 87.239.249.137
+    port: 443
+    type: vless
+    uuid: 67eb6b17-7797-4ded-bf52-423c4c5f6cbd
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: www.foxsports.com
+    udp: true
+proxy-groups:
+  - name: MANUAL
+    type: select
+    proxies:
+      - REALITY|@internet4iran|🇩🇪|92.84
+      - REALITY|@v2ray1_ng|🇸🇪|103.72
+      - REALITY|@vpn_tehran|🇬🇧|91.24
+      - REALITY|@ConfigsHUB|🇮🇹|283.47
+      - REALITY|@vpnsal|🇬🇧|91.36
+      - REALITY|@azadnet|🇬🇧|96.45
+      - REALITY|@v2rayngrit|🇬🇧|149.9
+      - LOAD-BALANCE
+      - BEST-PING
+      - FALLBACK
+      - DIRECT
+  - name: LOAD-BALANCE
+    type: load-balance
+    strategy: consistent-hashing
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - REALITY|@internet4iran|🇩🇪|92.84
+      - REALITY|@v2ray1_ng|🇸🇪|103.72
+      - REALITY|@vpn_tehran|🇬🇧|91.24
+      - REALITY|@ConfigsHUB|🇮🇹|283.47
+      - REALITY|@vpnsal|🇬🇧|91.36
+      - REALITY|@azadnet|🇬🇧|96.45
+      - REALITY|@v2rayngrit|🇬🇧|149.9
+  - name: BEST-PING
+    type: url-test
+    url: http://hi.bonds.id/ping
+    interval: 300
+    tolerance: 50
+    proxies:
+      - REALITY|@internet4iran|🇩🇪|92.84
+      - REALITY|@v2ray1_ng|🇸🇪|103.72
+      - REALITY|@vpn_tehran|🇬🇧|91.24
+      - REALITY|@ConfigsHUB|🇮🇹|283.47
+      - REALITY|@vpnsal|🇬🇧|91.36
+      - REALITY|@azadnet|🇬🇧|96.45
+      - REALITY|@v2rayngrit|🇬🇧|149.9
+  - name: FALLBACK
+    type: fallback
+    url: http://hi.bonds.id/ping
+    interval: 300
+    proxies:
+      - REALITY|@internet4iran|🇩🇪|92.84
+      - REALITY|@v2ray1_ng|🇸🇪|103.72
+      - REALITY|@vpn_tehran|🇬🇧|91.24
+      - REALITY|@ConfigsHUB|🇮🇹|283.47
+      - REALITY|@vpnsal|🇬🇧|91.36
+      - REALITY|@azadnet|🇬🇧|96.45
+      - REALITY|@v2rayngrit|🇬🇧|149.9
+rules:
+  - MATCH,MANUAL
