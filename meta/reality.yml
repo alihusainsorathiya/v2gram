@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@internet4iran|🇩🇪|124.96
+  - name: REALITY|@internet4iran|🇩🇪|97.46
     server: 88.99.121.221
     port: 443
     type: vless
@@ -43,7 +43,7 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@vpn_tehran|🇬🇧|111.51
+  - name: REALITY|@vpn_tehran|🇬🇧|88.51
     server: 164.37.104.234
     port: 443
     type: vless
@@ -54,7 +54,20 @@ proxies:
     skip-cert-verify: true
     servername: gb1.murhost.network
     udp: true
-  - name: REALITY|@ConfigsHUB|🇬🇧|256.59
+  - name: REALITY|@proxy_kafee|🇺🇸|unavailable
+    server: 205.172.59.52
+    port: 33843
+    type: vless
+    uuid: 139aa859-0297-4235-82fb-41678653978e
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: timeline.www.cloudflare.com
+    network: grpc
+    grpc-opts:
+      grpc-service-name: grpc
+    udp: true
+  - name: REALITY|@ConfigsHUB|🇬🇧|183.12
     server: gb1.murhost.network
     port: 443
     type: vless
@@ -65,7 +78,7 @@ proxies:
     skip-cert-verify: true
     servername: gb1.murhost.network
     udp: true
-  - name: REALITY|@vpnsal|🇳🇱|122.59
+  - name: REALITY|@vpnsal|🇳🇱|88.93
     server: 147.45.50.24
     port: 13868
     type: vless
@@ -76,7 +89,7 @@ proxies:
     skip-cert-verify: true
     servername: booking.com
     udp: true
-  - name: REALITY|@azadnet|🇬🇧|133.02
+  - name: REALITY|@azadnet|🇬🇧|89.61
     server: 144.31.213.172
     port: 443
     type: vless
@@ -89,7 +102,7 @@ proxies:
     grpc-opts:
       grpc-service-name: fi1cosmos
     udp: true
-  - name: REALITY|@v2rayngrit|🇬🇧|179.14
+  - name: REALITY|@v2rayngrit|🇬🇧|120.25
     server: 87.239.249.137
     port: 443
     type: vless
@@ -104,12 +117,13 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@internet4iran|🇩🇪|124.96
-      - REALITY|@vpn_tehran|🇬🇧|111.51
-      - REALITY|@ConfigsHUB|🇬🇧|256.59
-      - REALITY|@vpnsal|🇳🇱|122.59
-      - REALITY|@azadnet|🇬🇧|133.02
-      - REALITY|@v2rayngrit|🇬🇧|179.14
+      - REALITY|@internet4iran|🇩🇪|97.46
+      - REALITY|@vpn_tehran|🇬🇧|88.51
+      - REALITY|@proxy_kafee|🇺🇸|unavailable
+      - REALITY|@ConfigsHUB|🇬🇧|183.12
+      - REALITY|@vpnsal|🇳🇱|88.93
+      - REALITY|@azadnet|🇬🇧|89.61
+      - REALITY|@v2rayngrit|🇬🇧|120.25
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -120,34 +134,37 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|124.96
-      - REALITY|@vpn_tehran|🇬🇧|111.51
-      - REALITY|@ConfigsHUB|🇬🇧|256.59
-      - REALITY|@vpnsal|🇳🇱|122.59
-      - REALITY|@azadnet|🇬🇧|133.02
-      - REALITY|@v2rayngrit|🇬🇧|179.14
+      - REALITY|@internet4iran|🇩🇪|97.46
+      - REALITY|@vpn_tehran|🇬🇧|88.51
+      - REALITY|@proxy_kafee|🇺🇸|unavailable
+      - REALITY|@ConfigsHUB|🇬🇧|183.12
+      - REALITY|@vpnsal|🇳🇱|88.93
+      - REALITY|@azadnet|🇬🇧|89.61
+      - REALITY|@v2rayngrit|🇬🇧|120.25
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@internet4iran|🇩🇪|124.96
-      - REALITY|@vpn_tehran|🇬🇧|111.51
-      - REALITY|@ConfigsHUB|🇬🇧|256.59
-      - REALITY|@vpnsal|🇳🇱|122.59
-      - REALITY|@azadnet|🇬🇧|133.02
-      - REALITY|@v2rayngrit|🇬🇧|179.14
+      - REALITY|@internet4iran|🇩🇪|97.46
+      - REALITY|@vpn_tehran|🇬🇧|88.51
+      - REALITY|@proxy_kafee|🇺🇸|unavailable
+      - REALITY|@ConfigsHUB|🇬🇧|183.12
+      - REALITY|@vpnsal|🇳🇱|88.93
+      - REALITY|@azadnet|🇬🇧|89.61
+      - REALITY|@v2rayngrit|🇬🇧|120.25
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@internet4iran|🇩🇪|124.96
-      - REALITY|@vpn_tehran|🇬🇧|111.51
-      - REALITY|@ConfigsHUB|🇬🇧|256.59
-      - REALITY|@vpnsal|🇳🇱|122.59
-      - REALITY|@azadnet|🇬🇧|133.02
-      - REALITY|@v2rayngrit|🇬🇧|179.14
+      - REALITY|@internet4iran|🇩🇪|97.46
+      - REALITY|@vpn_tehran|🇬🇧|88.51
+      - REALITY|@proxy_kafee|🇺🇸|unavailable
+      - REALITY|@ConfigsHUB|🇬🇧|183.12
+      - REALITY|@vpnsal|🇳🇱|88.93
+      - REALITY|@azadnet|🇬🇧|89.61
+      - REALITY|@v2rayngrit|🇬🇧|120.25
 rules:
   - MATCH,MANUAL
