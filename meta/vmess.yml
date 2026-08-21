@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@vpn_ioss| AHS -🇩🇪|23.81"
+  - name: "@vpn_ioss| AHS -🇩🇪|61.39"
     server: 82.198.246.233
     port: 180
     type: vmess
@@ -43,7 +43,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|149.61"
+  - name: "@v2rayvmess| AHS -🇺🇸|3.2"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -59,7 +59,7 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@vpn_tehran| AHS -🇩🇪|23.75"
+  - name: "@vpn_tehran| AHS -🇩🇪|56.78"
     server: 82.198.246.37
     port: 180
     type: vmess
@@ -70,7 +70,23 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@v2rayngrit| AHS -🇩🇪|23.66"
+  - name: "@hope_net| AHS -🚩|3.08"
+    server: 104.19.45.85
+    port: 2095
+    type: vmess
+    uuid: 7a737f41-b792-4260-94ff-3d864da67b80
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: onea.flha.ru
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: onea.flha.ru
+    udp: true
+  - name: "@v2rayngrit| AHS -🇩🇪|57.63"
     server: 82.198.246.97
     port: 180
     type: vmess
@@ -81,7 +97,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@v2rayngrit| AHS -🇩🇪|23.97"
+  - name: "@v2rayngrit| AHS -🇩🇪|60.56"
     server: 82.198.246.250
     port: 180
     type: vmess
@@ -92,7 +108,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@v2ray_confings2| AHS -🇺🇸|75.86"
+  - name: "@v2ray_confings2| AHS -🇺🇸|132.26"
     server: 188.114.96.1
     port: 443
     type: vmess
@@ -112,12 +128,13 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@vpn_ioss| AHS -🇩🇪|23.81"
-      - "@v2rayvmess| AHS -🇺🇸|149.61"
-      - "@vpn_tehran| AHS -🇩🇪|23.75"
-      - "@v2rayngrit| AHS -🇩🇪|23.66"
-      - "@v2rayngrit| AHS -🇩🇪|23.97"
-      - "@v2ray_confings2| AHS -🇺🇸|75.86"
+      - "@vpn_ioss| AHS -🇩🇪|61.39"
+      - "@v2rayvmess| AHS -🇺🇸|3.2"
+      - "@vpn_tehran| AHS -🇩🇪|56.78"
+      - "@hope_net| AHS -🚩|3.08"
+      - "@v2rayngrit| AHS -🇩🇪|57.63"
+      - "@v2rayngrit| AHS -🇩🇪|60.56"
+      - "@v2ray_confings2| AHS -🇺🇸|132.26"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -128,34 +145,37 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@vpn_ioss| AHS -🇩🇪|23.81"
-      - "@v2rayvmess| AHS -🇺🇸|149.61"
-      - "@vpn_tehran| AHS -🇩🇪|23.75"
-      - "@v2rayngrit| AHS -🇩🇪|23.66"
-      - "@v2rayngrit| AHS -🇩🇪|23.97"
-      - "@v2ray_confings2| AHS -🇺🇸|75.86"
+      - "@vpn_ioss| AHS -🇩🇪|61.39"
+      - "@v2rayvmess| AHS -🇺🇸|3.2"
+      - "@vpn_tehran| AHS -🇩🇪|56.78"
+      - "@hope_net| AHS -🚩|3.08"
+      - "@v2rayngrit| AHS -🇩🇪|57.63"
+      - "@v2rayngrit| AHS -🇩🇪|60.56"
+      - "@v2ray_confings2| AHS -🇺🇸|132.26"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@vpn_ioss| AHS -🇩🇪|23.81"
-      - "@v2rayvmess| AHS -🇺🇸|149.61"
-      - "@vpn_tehran| AHS -🇩🇪|23.75"
-      - "@v2rayngrit| AHS -🇩🇪|23.66"
-      - "@v2rayngrit| AHS -🇩🇪|23.97"
-      - "@v2ray_confings2| AHS -🇺🇸|75.86"
+      - "@vpn_ioss| AHS -🇩🇪|61.39"
+      - "@v2rayvmess| AHS -🇺🇸|3.2"
+      - "@vpn_tehran| AHS -🇩🇪|56.78"
+      - "@hope_net| AHS -🚩|3.08"
+      - "@v2rayngrit| AHS -🇩🇪|57.63"
+      - "@v2rayngrit| AHS -🇩🇪|60.56"
+      - "@v2ray_confings2| AHS -🇺🇸|132.26"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@vpn_ioss| AHS -🇩🇪|23.81"
-      - "@v2rayvmess| AHS -🇺🇸|149.61"
-      - "@vpn_tehran| AHS -🇩🇪|23.75"
-      - "@v2rayngrit| AHS -🇩🇪|23.66"
-      - "@v2rayngrit| AHS -🇩🇪|23.97"
-      - "@v2ray_confings2| AHS -🇺🇸|75.86"
+      - "@vpn_ioss| AHS -🇩🇪|61.39"
+      - "@v2rayvmess| AHS -🇺🇸|3.2"
+      - "@vpn_tehran| AHS -🇩🇪|56.78"
+      - "@hope_net| AHS -🚩|3.08"
+      - "@v2rayngrit| AHS -🇩🇪|57.63"
+      - "@v2rayngrit| AHS -🇩🇪|60.56"
+      - "@v2ray_confings2| AHS -🇺🇸|132.26"
 rules:
   - MATCH,MANUAL
