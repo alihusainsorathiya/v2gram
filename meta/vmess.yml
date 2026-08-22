@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@vpn_ioss| AHS -🇺🇸|42.62"
+  - name: "@vpn_ioss| AHS -🇺🇸|71.46"
     server: 165.140.216.142
     port: 443
     type: vmess
@@ -43,7 +43,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|18.8"
+  - name: "@v2rayvmess| AHS -🇺🇸|3.71"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -59,7 +59,18 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@vpn_tehran| AHS -🇩🇪|28.01"
+  - name: "@v2ray1_ng| AHS -🇸🇬|224.97"
+    server: 43.228.126.187
+    port: 47630
+    type: vmess
+    uuid: 9e5c6ebf-35f9-49a3-9f12-cba2b7cdbccb
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@vpn_tehran| AHS -🇩🇪|57.85"
     server: 82.198.246.233
     port: 180
     type: vmess
@@ -70,7 +81,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@v2rayngrit| AHS -🇩🇪|24.46"
+  - name: "@v2rayngrit| AHS -🇩🇪|56.99"
     server: 82.198.246.97
     port: 180
     type: vmess
@@ -81,7 +92,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@v2rayngrit| AHS -🇩🇪|24.05"
+  - name: "@v2rayngrit| AHS -🇩🇪|57.09"
     server: 82.198.246.250
     port: 180
     type: vmess
@@ -92,7 +103,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@v2rayngrit| AHS -🇬🇧|125.12"
+  - name: "@v2rayngrit| AHS -🇬🇧|87.86"
     server: 66.163.117.58
     port: 22324
     type: vmess
@@ -103,7 +114,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@v2ray_confings2| AHS -🇺🇸|73.6"
+  - name: "@v2ray_confings2| AHS -🇺🇸|128.64"
     server: 188.114.96.1
     port: 443
     type: vmess
@@ -123,13 +134,14 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@vpn_ioss| AHS -🇺🇸|42.62"
-      - "@v2rayvmess| AHS -🇺🇸|18.8"
-      - "@vpn_tehran| AHS -🇩🇪|28.01"
-      - "@v2rayngrit| AHS -🇩🇪|24.46"
-      - "@v2rayngrit| AHS -🇩🇪|24.05"
-      - "@v2rayngrit| AHS -🇬🇧|125.12"
-      - "@v2ray_confings2| AHS -🇺🇸|73.6"
+      - "@vpn_ioss| AHS -🇺🇸|71.46"
+      - "@v2rayvmess| AHS -🇺🇸|3.71"
+      - "@v2ray1_ng| AHS -🇸🇬|224.97"
+      - "@vpn_tehran| AHS -🇩🇪|57.85"
+      - "@v2rayngrit| AHS -🇩🇪|56.99"
+      - "@v2rayngrit| AHS -🇩🇪|57.09"
+      - "@v2rayngrit| AHS -🇬🇧|87.86"
+      - "@v2ray_confings2| AHS -🇺🇸|128.64"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -140,37 +152,40 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@vpn_ioss| AHS -🇺🇸|42.62"
-      - "@v2rayvmess| AHS -🇺🇸|18.8"
-      - "@vpn_tehran| AHS -🇩🇪|28.01"
-      - "@v2rayngrit| AHS -🇩🇪|24.46"
-      - "@v2rayngrit| AHS -🇩🇪|24.05"
-      - "@v2rayngrit| AHS -🇬🇧|125.12"
-      - "@v2ray_confings2| AHS -🇺🇸|73.6"
+      - "@vpn_ioss| AHS -🇺🇸|71.46"
+      - "@v2rayvmess| AHS -🇺🇸|3.71"
+      - "@v2ray1_ng| AHS -🇸🇬|224.97"
+      - "@vpn_tehran| AHS -🇩🇪|57.85"
+      - "@v2rayngrit| AHS -🇩🇪|56.99"
+      - "@v2rayngrit| AHS -🇩🇪|57.09"
+      - "@v2rayngrit| AHS -🇬🇧|87.86"
+      - "@v2ray_confings2| AHS -🇺🇸|128.64"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@vpn_ioss| AHS -🇺🇸|42.62"
-      - "@v2rayvmess| AHS -🇺🇸|18.8"
-      - "@vpn_tehran| AHS -🇩🇪|28.01"
-      - "@v2rayngrit| AHS -🇩🇪|24.46"
-      - "@v2rayngrit| AHS -🇩🇪|24.05"
-      - "@v2rayngrit| AHS -🇬🇧|125.12"
-      - "@v2ray_confings2| AHS -🇺🇸|73.6"
+      - "@vpn_ioss| AHS -🇺🇸|71.46"
+      - "@v2rayvmess| AHS -🇺🇸|3.71"
+      - "@v2ray1_ng| AHS -🇸🇬|224.97"
+      - "@vpn_tehran| AHS -🇩🇪|57.85"
+      - "@v2rayngrit| AHS -🇩🇪|56.99"
+      - "@v2rayngrit| AHS -🇩🇪|57.09"
+      - "@v2rayngrit| AHS -🇬🇧|87.86"
+      - "@v2ray_confings2| AHS -🇺🇸|128.64"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@vpn_ioss| AHS -🇺🇸|42.62"
-      - "@v2rayvmess| AHS -🇺🇸|18.8"
-      - "@vpn_tehran| AHS -🇩🇪|28.01"
-      - "@v2rayngrit| AHS -🇩🇪|24.46"
-      - "@v2rayngrit| AHS -🇩🇪|24.05"
-      - "@v2rayngrit| AHS -🇬🇧|125.12"
-      - "@v2ray_confings2| AHS -🇺🇸|73.6"
+      - "@vpn_ioss| AHS -🇺🇸|71.46"
+      - "@v2rayvmess| AHS -🇺🇸|3.71"
+      - "@v2ray1_ng| AHS -🇸🇬|224.97"
+      - "@vpn_tehran| AHS -🇩🇪|57.85"
+      - "@v2rayngrit| AHS -🇩🇪|56.99"
+      - "@v2rayngrit| AHS -🇩🇪|57.09"
+      - "@v2rayngrit| AHS -🇬🇧|87.86"
+      - "@v2ray_confings2| AHS -🇺🇸|128.64"
 rules:
   - MATCH,MANUAL
