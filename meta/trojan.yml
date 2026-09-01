@@ -32,20 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@oneclickvpnkeys| AHS -17.42"
-    server: 167.68.4.199
-    port: 2053
-    type: trojan
-    password: Aimer
-    skip-cert-verify: true
-    sni: epge.muarua.filegear-sg.me
-    network: ws
-    ws-opts:
-      path: /?proxyip=ts.hpc.tw
-      headers:
-        Host: epge.muarua.filegear-sg.me
-    udp: true
-  - name: "|@oneclickvpnkeys| AHS -13.98"
+  - name: "|@oneclickvpnkeys| AHS -4.2"
     server: 45.130.125.160
     port: 443
     type: trojan
@@ -58,7 +45,29 @@ proxies:
       headers:
         Host: www.calmlunch.com
     udp: true
-  - name: "|@v2ray1_ng| AHS -17.61"
+  - name: "|@oneclickvpnkeys| AHS -141.83"
+    server: 178.172.227.178
+    port: 500
+    type: trojan
+    password: 8qCNZU2XdtefT7uB4uPxgRR839btqMG8
+    skip-cert-verify: true
+    sni: by01.botovod.space
+    network: grpc
+    grpc-opts:
+      grpc-service-name: /
+    udp: true
+  - name: "|@oneclickvpnkeys| AHS -161.85"
+    server: by01.botovod.space
+    port: 500
+    type: trojan
+    password: 8qCNZU2XdtefT7uB4uPxgRR839btqMG8
+    skip-cert-verify: true
+    sni: ""
+    network: grpc
+    grpc-opts:
+      grpc-service-name: /
+    udp: true
+  - name: "|@v2ray1_ng| AHS -13.02"
     server: render.com
     port: 443
     type: trojan
@@ -71,7 +80,7 @@ proxies:
       headers:
         Host: www.ignitelimit.com
     udp: true
-  - name: "|@v2ray1_ng| AHS -65.52"
+  - name: "|@v2ray1_ng| AHS -1.86"
     server: 188.114.97.7
     port: 443
     type: trojan
@@ -84,7 +93,7 @@ proxies:
       headers:
         Host: www.ignitelimit.com
     udp: true
-  - name: "|@v2ray1_ng| AHS -70.75"
+  - name: "|@v2ray1_ng| AHS -1.93"
     server: 172.67.149.60
     port: 443
     type: trojan
@@ -97,7 +106,7 @@ proxies:
       headers:
         Host: www.ignitelimit.com
     udp: true
-  - name: "|@VmessProtocol| AHS -301.19"
+  - name: "|@VmessProtocol| AHS -181.64"
     server: moral-dolphin.rooster465.autos
     port: 443
     type: trojan
@@ -105,7 +114,7 @@ proxies:
     skip-cert-verify: true
     sni: ""
     udp: true
-  - name: "|@ovpn2| AHS -13.42"
+  - name: "|@ovpn2| AHS -2.38"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -118,7 +127,7 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
-  - name: "|@v2rayngrit| AHS -159.72"
+  - name: "|@v2rayngrit| AHS -109.62"
     server: 185.36.141.81
     port: 443
     type: trojan
@@ -135,14 +144,15 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@oneclickvpnkeys| AHS -17.42"
-      - "|@oneclickvpnkeys| AHS -13.98"
-      - "|@v2ray1_ng| AHS -17.61"
-      - "|@v2ray1_ng| AHS -65.52"
-      - "|@v2ray1_ng| AHS -70.75"
-      - "|@VmessProtocol| AHS -301.19"
-      - "|@ovpn2| AHS -13.42"
-      - "|@v2rayngrit| AHS -159.72"
+      - "|@oneclickvpnkeys| AHS -4.2"
+      - "|@oneclickvpnkeys| AHS -141.83"
+      - "|@oneclickvpnkeys| AHS -161.85"
+      - "|@v2ray1_ng| AHS -13.02"
+      - "|@v2ray1_ng| AHS -1.86"
+      - "|@v2ray1_ng| AHS -1.93"
+      - "|@VmessProtocol| AHS -181.64"
+      - "|@ovpn2| AHS -2.38"
+      - "|@v2rayngrit| AHS -109.62"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -153,40 +163,43 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@oneclickvpnkeys| AHS -17.42"
-      - "|@oneclickvpnkeys| AHS -13.98"
-      - "|@v2ray1_ng| AHS -17.61"
-      - "|@v2ray1_ng| AHS -65.52"
-      - "|@v2ray1_ng| AHS -70.75"
-      - "|@VmessProtocol| AHS -301.19"
-      - "|@ovpn2| AHS -13.42"
-      - "|@v2rayngrit| AHS -159.72"
+      - "|@oneclickvpnkeys| AHS -4.2"
+      - "|@oneclickvpnkeys| AHS -141.83"
+      - "|@oneclickvpnkeys| AHS -161.85"
+      - "|@v2ray1_ng| AHS -13.02"
+      - "|@v2ray1_ng| AHS -1.86"
+      - "|@v2ray1_ng| AHS -1.93"
+      - "|@VmessProtocol| AHS -181.64"
+      - "|@ovpn2| AHS -2.38"
+      - "|@v2rayngrit| AHS -109.62"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@oneclickvpnkeys| AHS -17.42"
-      - "|@oneclickvpnkeys| AHS -13.98"
-      - "|@v2ray1_ng| AHS -17.61"
-      - "|@v2ray1_ng| AHS -65.52"
-      - "|@v2ray1_ng| AHS -70.75"
-      - "|@VmessProtocol| AHS -301.19"
-      - "|@ovpn2| AHS -13.42"
-      - "|@v2rayngrit| AHS -159.72"
+      - "|@oneclickvpnkeys| AHS -4.2"
+      - "|@oneclickvpnkeys| AHS -141.83"
+      - "|@oneclickvpnkeys| AHS -161.85"
+      - "|@v2ray1_ng| AHS -13.02"
+      - "|@v2ray1_ng| AHS -1.86"
+      - "|@v2ray1_ng| AHS -1.93"
+      - "|@VmessProtocol| AHS -181.64"
+      - "|@ovpn2| AHS -2.38"
+      - "|@v2rayngrit| AHS -109.62"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@oneclickvpnkeys| AHS -17.42"
-      - "|@oneclickvpnkeys| AHS -13.98"
-      - "|@v2ray1_ng| AHS -17.61"
-      - "|@v2ray1_ng| AHS -65.52"
-      - "|@v2ray1_ng| AHS -70.75"
-      - "|@VmessProtocol| AHS -301.19"
-      - "|@ovpn2| AHS -13.42"
-      - "|@v2rayngrit| AHS -159.72"
+      - "|@oneclickvpnkeys| AHS -4.2"
+      - "|@oneclickvpnkeys| AHS -141.83"
+      - "|@oneclickvpnkeys| AHS -161.85"
+      - "|@v2ray1_ng| AHS -13.02"
+      - "|@v2ray1_ng| AHS -1.86"
+      - "|@v2ray1_ng| AHS -1.93"
+      - "|@VmessProtocol| AHS -181.64"
+      - "|@ovpn2| AHS -2.38"
+      - "|@v2rayngrit| AHS -109.62"
 rules:
   - MATCH,MANUAL
