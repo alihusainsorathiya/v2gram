@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@Outline_Vpn|🇸🇪|675.21
+  - name: REALITY|@Outline_Vpn|🇸🇪|233.45
     server: sv14.betust.net
     port: 443
     type: vless
@@ -43,7 +43,7 @@ proxies:
     skip-cert-verify: true
     servername: apiv14.betust.net
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|138.96
+  - name: REALITY|@internet4iran|🇩🇪|95.43
     server: 88.99.121.221
     port: 443
     type: vless
@@ -54,7 +54,7 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@v2rayNG_Matsuri|🇪🇸|145.98
+  - name: REALITY|@v2rayNG_Matsuri|🇪🇸|101.24
     server: 213.193.197.80
     port: 443
     type: vless
@@ -65,7 +65,7 @@ proxies:
     skip-cert-verify: true
     servername: api-ne.data-media-social.org
     udp: true
-  - name: REALITY|@v2ray1_ng|🇧🇬|199.01
+  - name: REALITY|@v2ray1_ng|🇧🇬|126.52
     server: 45.9.156.27
     port: 443
     type: vless
@@ -78,7 +78,7 @@ proxies:
     grpc-opts:
       grpc-service-name: home.v1.ApiService
     udp: true
-  - name: REALITY|@VmessProtocol|🇺🇸|48.83
+  - name: REALITY|@VmessProtocol|🇺🇸|15.23
     server: 2.24.124.64
     port: 443
     type: vless
@@ -89,18 +89,31 @@ proxies:
     skip-cert-verify: true
     servername: www.cloudflare.com
     udp: true
-  - name: REALITY|@vpn_tehran|🇺🇸|unavailable
-    server: 47.89.186.170
-    port: 55861
+  - name: REALITY|@vpn_tehran|🇳🇱|88.63
+    server: 95.211.164.115
+    port: 443
     type: vless
-    uuid: d51ed55c-d6dd-400b-aaf6-017c33969bfe
+    uuid: d7430ae7-320c-4658-808b-3006d0627d82
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: mx.ubuntuhosting.host
+    network: grpc
+    grpc-opts:
+      grpc-service-name: gun
+    udp: true
+  - name: REALITY|@ConfigsHUB|🇳🇱|92.28
+    server: 104.238.31.71
+    port: 443
+    type: vless
+    uuid: b783c6d6-3a0f-4c13-bbd1-86bf1ec4d94d
     cipher: auto
     tls: false
     flow: xtls-rprx-vision
     skip-cert-verify: true
-    servername: www.intel.com
+    servername: unitbook.net
     udp: true
-  - name: REALITY|@v2rayngrit|🇹🇷|164.61
+  - name: REALITY|@v2rayngrit|🇹🇷|122.82
     server: 62.133.63.253
     port: 443
     type: vless
@@ -115,13 +128,14 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@Outline_Vpn|🇸🇪|675.21
-      - REALITY|@internet4iran|🇩🇪|138.96
-      - REALITY|@v2rayNG_Matsuri|🇪🇸|145.98
-      - REALITY|@v2ray1_ng|🇧🇬|199.01
-      - REALITY|@VmessProtocol|🇺🇸|48.83
-      - REALITY|@vpn_tehran|🇺🇸|unavailable
-      - REALITY|@v2rayngrit|🇹🇷|164.61
+      - REALITY|@Outline_Vpn|🇸🇪|233.45
+      - REALITY|@internet4iran|🇩🇪|95.43
+      - REALITY|@v2rayNG_Matsuri|🇪🇸|101.24
+      - REALITY|@v2ray1_ng|🇧🇬|126.52
+      - REALITY|@VmessProtocol|🇺🇸|15.23
+      - REALITY|@vpn_tehran|🇳🇱|88.63
+      - REALITY|@ConfigsHUB|🇳🇱|92.28
+      - REALITY|@v2rayngrit|🇹🇷|122.82
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -132,37 +146,40 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@Outline_Vpn|🇸🇪|675.21
-      - REALITY|@internet4iran|🇩🇪|138.96
-      - REALITY|@v2rayNG_Matsuri|🇪🇸|145.98
-      - REALITY|@v2ray1_ng|🇧🇬|199.01
-      - REALITY|@VmessProtocol|🇺🇸|48.83
-      - REALITY|@vpn_tehran|🇺🇸|unavailable
-      - REALITY|@v2rayngrit|🇹🇷|164.61
+      - REALITY|@Outline_Vpn|🇸🇪|233.45
+      - REALITY|@internet4iran|🇩🇪|95.43
+      - REALITY|@v2rayNG_Matsuri|🇪🇸|101.24
+      - REALITY|@v2ray1_ng|🇧🇬|126.52
+      - REALITY|@VmessProtocol|🇺🇸|15.23
+      - REALITY|@vpn_tehran|🇳🇱|88.63
+      - REALITY|@ConfigsHUB|🇳🇱|92.28
+      - REALITY|@v2rayngrit|🇹🇷|122.82
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@Outline_Vpn|🇸🇪|675.21
-      - REALITY|@internet4iran|🇩🇪|138.96
-      - REALITY|@v2rayNG_Matsuri|🇪🇸|145.98
-      - REALITY|@v2ray1_ng|🇧🇬|199.01
-      - REALITY|@VmessProtocol|🇺🇸|48.83
-      - REALITY|@vpn_tehran|🇺🇸|unavailable
-      - REALITY|@v2rayngrit|🇹🇷|164.61
+      - REALITY|@Outline_Vpn|🇸🇪|233.45
+      - REALITY|@internet4iran|🇩🇪|95.43
+      - REALITY|@v2rayNG_Matsuri|🇪🇸|101.24
+      - REALITY|@v2ray1_ng|🇧🇬|126.52
+      - REALITY|@VmessProtocol|🇺🇸|15.23
+      - REALITY|@vpn_tehran|🇳🇱|88.63
+      - REALITY|@ConfigsHUB|🇳🇱|92.28
+      - REALITY|@v2rayngrit|🇹🇷|122.82
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@Outline_Vpn|🇸🇪|675.21
-      - REALITY|@internet4iran|🇩🇪|138.96
-      - REALITY|@v2rayNG_Matsuri|🇪🇸|145.98
-      - REALITY|@v2ray1_ng|🇧🇬|199.01
-      - REALITY|@VmessProtocol|🇺🇸|48.83
-      - REALITY|@vpn_tehran|🇺🇸|unavailable
-      - REALITY|@v2rayngrit|🇹🇷|164.61
+      - REALITY|@Outline_Vpn|🇸🇪|233.45
+      - REALITY|@internet4iran|🇩🇪|95.43
+      - REALITY|@v2rayNG_Matsuri|🇪🇸|101.24
+      - REALITY|@v2ray1_ng|🇧🇬|126.52
+      - REALITY|@VmessProtocol|🇺🇸|15.23
+      - REALITY|@vpn_tehran|🇳🇱|88.63
+      - REALITY|@ConfigsHUB|🇳🇱|92.28
+      - REALITY|@v2rayngrit|🇹🇷|122.82
 rules:
   - MATCH,MANUAL
