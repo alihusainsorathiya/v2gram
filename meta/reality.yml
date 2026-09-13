@@ -32,17 +32,20 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@Outline_Vpn|🇩🇪|385.11
-    server: de9.bexait.ir
-    port: 2434
+  - name: REALITY|@Outline_Vpn|🇪🇸|154.8
+    server: 170.168.97.8
+    port: 8443
     type: vless
-    uuid: 3a5a2bfd-97d5-4a35-bd9f-abb117b79f40
+    uuid: 4350213a-b4e7-262a-0bd7-bd16957cf71a
     cipher: auto
     tls: false
     skip-cert-verify: true
-    servername: icloud.com
+    servername: www.hp.com
+    network: grpc
+    grpc-opts:
+      grpc-service-name: TunService
     udp: true
-  - name: REALITY|@prrofile_purple|🇷🇺|158.52
+  - name: REALITY|@prrofile_purple|🇷🇺|169.69
     server: 200.165.235.78
     port: 443
     type: vless
@@ -53,7 +56,7 @@ proxies:
     skip-cert-verify: true
     servername: api8.eaglors.com
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|138.5
+  - name: REALITY|@internet4iran|🇩🇪|136.13
     server: 88.99.121.221
     port: 443
     type: vless
@@ -64,20 +67,18 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@v2rayNG_Matsuri|🇷🇺|unavailable
-    server: 31.131.255.35
-    port: 9894
+  - name: REALITY|@v2rayNG_Matsuri|🇷🇺|174.45
+    server: s98.cdn.tbotapi.ru
+    port: 443
     type: vless
-    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+    uuid: 624208cf-54e0-4341-823b-1bee6595fce9
     cipher: auto
     tls: false
+    flow: xtls-rprx-vision
     skip-cert-verify: true
-    servername: dl.google.com
-    network: grpc
-    grpc-opts:
-      grpc-service-name: grpc-tunnel
+    servername: s98.cdn.tbotapi.ru
     udp: true
-  - name: REALITY|@v2ray1_ng|🇷🇺|169.57
+  - name: REALITY|@v2ray1_ng|🇷🇺|192.26
     server: tgfree.rush-server.com
     port: 443
     type: vless
@@ -88,7 +89,7 @@ proxies:
     skip-cert-verify: true
     servername: anyfile2file.com
     udp: true
-  - name: REALITY|@VmessProtocol|🇳🇱|150.44
+  - name: REALITY|@VmessProtocol|🇳🇱|297.35
     server: pl.cloudtechone.org
     port: 443
     type: vless
@@ -99,7 +100,7 @@ proxies:
     skip-cert-verify: true
     servername: pl.cloudtechone.org
     udp: true
-  - name: REALITY|@vpn_tehran|🇬🇧|115.16
+  - name: REALITY|@vpn_tehran|🇬🇧|133.81
     server: 51.38.70.192
     port: 443
     type: vless
@@ -109,7 +110,7 @@ proxies:
     skip-cert-verify: true
     servername: play.google.com
     udp: true
-  - name: REALITY|@proxy_kafee|🇳🇱|114.36
+  - name: REALITY|@proxy_kafee|🇳🇱|130.14
     server: 77.233.213.106
     port: 40443
     type: vless
@@ -120,30 +121,18 @@ proxies:
     skip-cert-verify: true
     servername: deepl.com
     udp: true
-  - name: REALITY|@vpnsal|🇷🇺|170.74
-    server: 195.133.73.65
-    port: 443
-    type: vless
-    uuid: ebd1c0d6-7ff4-4b9f-8692-237517a27a64
-    cipher: auto
-    tls: false
-    flow: xtls-rprx-vision
-    skip-cert-verify: true
-    servername: anyfile2file.com
-    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@Outline_Vpn|🇩🇪|385.11
-      - REALITY|@prrofile_purple|🇷🇺|158.52
-      - REALITY|@internet4iran|🇩🇪|138.5
-      - REALITY|@v2rayNG_Matsuri|🇷🇺|unavailable
-      - REALITY|@v2ray1_ng|🇷🇺|169.57
-      - REALITY|@VmessProtocol|🇳🇱|150.44
-      - REALITY|@vpn_tehran|🇬🇧|115.16
-      - REALITY|@proxy_kafee|🇳🇱|114.36
-      - REALITY|@vpnsal|🇷🇺|170.74
+      - REALITY|@Outline_Vpn|🇪🇸|154.8
+      - REALITY|@prrofile_purple|🇷🇺|169.69
+      - REALITY|@internet4iran|🇩🇪|136.13
+      - REALITY|@v2rayNG_Matsuri|🇷🇺|174.45
+      - REALITY|@v2ray1_ng|🇷🇺|192.26
+      - REALITY|@VmessProtocol|🇳🇱|297.35
+      - REALITY|@vpn_tehran|🇬🇧|133.81
+      - REALITY|@proxy_kafee|🇳🇱|130.14
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -154,43 +143,40 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@Outline_Vpn|🇩🇪|385.11
-      - REALITY|@prrofile_purple|🇷🇺|158.52
-      - REALITY|@internet4iran|🇩🇪|138.5
-      - REALITY|@v2rayNG_Matsuri|🇷🇺|unavailable
-      - REALITY|@v2ray1_ng|🇷🇺|169.57
-      - REALITY|@VmessProtocol|🇳🇱|150.44
-      - REALITY|@vpn_tehran|🇬🇧|115.16
-      - REALITY|@proxy_kafee|🇳🇱|114.36
-      - REALITY|@vpnsal|🇷🇺|170.74
+      - REALITY|@Outline_Vpn|🇪🇸|154.8
+      - REALITY|@prrofile_purple|🇷🇺|169.69
+      - REALITY|@internet4iran|🇩🇪|136.13
+      - REALITY|@v2rayNG_Matsuri|🇷🇺|174.45
+      - REALITY|@v2ray1_ng|🇷🇺|192.26
+      - REALITY|@VmessProtocol|🇳🇱|297.35
+      - REALITY|@vpn_tehran|🇬🇧|133.81
+      - REALITY|@proxy_kafee|🇳🇱|130.14
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@Outline_Vpn|🇩🇪|385.11
-      - REALITY|@prrofile_purple|🇷🇺|158.52
-      - REALITY|@internet4iran|🇩🇪|138.5
-      - REALITY|@v2rayNG_Matsuri|🇷🇺|unavailable
-      - REALITY|@v2ray1_ng|🇷🇺|169.57
-      - REALITY|@VmessProtocol|🇳🇱|150.44
-      - REALITY|@vpn_tehran|🇬🇧|115.16
-      - REALITY|@proxy_kafee|🇳🇱|114.36
-      - REALITY|@vpnsal|🇷🇺|170.74
+      - REALITY|@Outline_Vpn|🇪🇸|154.8
+      - REALITY|@prrofile_purple|🇷🇺|169.69
+      - REALITY|@internet4iran|🇩🇪|136.13
+      - REALITY|@v2rayNG_Matsuri|🇷🇺|174.45
+      - REALITY|@v2ray1_ng|🇷🇺|192.26
+      - REALITY|@VmessProtocol|🇳🇱|297.35
+      - REALITY|@vpn_tehran|🇬🇧|133.81
+      - REALITY|@proxy_kafee|🇳🇱|130.14
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@Outline_Vpn|🇩🇪|385.11
-      - REALITY|@prrofile_purple|🇷🇺|158.52
-      - REALITY|@internet4iran|🇩🇪|138.5
-      - REALITY|@v2rayNG_Matsuri|🇷🇺|unavailable
-      - REALITY|@v2ray1_ng|🇷🇺|169.57
-      - REALITY|@VmessProtocol|🇳🇱|150.44
-      - REALITY|@vpn_tehran|🇬🇧|115.16
-      - REALITY|@proxy_kafee|🇳🇱|114.36
-      - REALITY|@vpnsal|🇷🇺|170.74
+      - REALITY|@Outline_Vpn|🇪🇸|154.8
+      - REALITY|@prrofile_purple|🇷🇺|169.69
+      - REALITY|@internet4iran|🇩🇪|136.13
+      - REALITY|@v2rayNG_Matsuri|🇷🇺|174.45
+      - REALITY|@v2ray1_ng|🇷🇺|192.26
+      - REALITY|@VmessProtocol|🇳🇱|297.35
+      - REALITY|@vpn_tehran|🇬🇧|133.81
+      - REALITY|@proxy_kafee|🇳🇱|130.14
 rules:
   - MATCH,MANUAL
