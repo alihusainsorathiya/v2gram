@@ -32,40 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@Outline_Vpn|🇳🇱|88.26
-    server: 77.233.213.106
-    port: 40443
-    type: vless
-    uuid: 279a8eef-898f-44ef-b4f5-67a494f4b542
-    cipher: auto
-    tls: false
-    flow: xtls-rprx-vision
-    skip-cert-verify: true
-    servername: deepl.com
-    udp: true
-  - name: REALITY|@internet4iran|🇩🇪|100.21
-    server: 88.99.121.221
-    port: 443
-    type: vless
-    uuid: 418e0595-b419-4fc3-85c0-7980b90dab3b
-    cipher: auto
-    tls: false
-    flow: xtls-rprx-vision
-    skip-cert-verify: true
-    servername: www.openoffice.org
-    udp: true
-  - name: REALITY|@VmessProtocol|🇳🇱|105.14
-    server: pl.cloudtechone.org
-    port: 443
-    type: vless
-    uuid: 2b2ea9d8-501e-4b79-8fd9-19bff6ed5cf5
-    cipher: auto
-    tls: false
-    flow: xtls-rprx-vision
-    skip-cert-verify: true
-    servername: pl.cloudtechone.org
-    udp: true
-  - name: REALITY|@proxy_kafee|🇩🇪|343.19
+  - name: REALITY|@Outline_Vpn|🇩🇪|91.13
     server: new3.smart-cats.ru
     port: 2053
     type: vless
@@ -78,20 +45,18 @@ proxies:
     grpc-opts:
       grpc-service-name: grpc
     udp: true
-  - name: REALITY|@ConfigsHUB|🇪🇪|126.28
-    server: 185.174.135.250
+  - name: REALITY|@internet4iran|🇩🇪|94.92
+    server: 88.99.121.221
     port: 443
     type: vless
-    uuid: b3a11068-1a7e-4643-85de-7c82cce46943
+    uuid: 418e0595-b419-4fc3-85c0-7980b90dab3b
     cipher: auto
     tls: false
+    flow: xtls-rprx-vision
     skip-cert-verify: true
-    servername: www.google.com
-    network: grpc
-    grpc-opts:
-      grpc-service-name: TunService
+    servername: www.openoffice.org
     udp: true
-  - name: REALITY|@vpnsal|🇺🇸|108.09
+  - name: REALITY|@vpnsal|🇺🇸|105.91
     server: 2.27.201.10
     port: 443
     type: vless
@@ -106,12 +71,9 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@Outline_Vpn|🇳🇱|88.26
-      - REALITY|@internet4iran|🇩🇪|100.21
-      - REALITY|@VmessProtocol|🇳🇱|105.14
-      - REALITY|@proxy_kafee|🇩🇪|343.19
-      - REALITY|@ConfigsHUB|🇪🇪|126.28
-      - REALITY|@vpnsal|🇺🇸|108.09
+      - REALITY|@Outline_Vpn|🇩🇪|91.13
+      - REALITY|@internet4iran|🇩🇪|94.92
+      - REALITY|@vpnsal|🇺🇸|105.91
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -122,34 +84,25 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@Outline_Vpn|🇳🇱|88.26
-      - REALITY|@internet4iran|🇩🇪|100.21
-      - REALITY|@VmessProtocol|🇳🇱|105.14
-      - REALITY|@proxy_kafee|🇩🇪|343.19
-      - REALITY|@ConfigsHUB|🇪🇪|126.28
-      - REALITY|@vpnsal|🇺🇸|108.09
+      - REALITY|@Outline_Vpn|🇩🇪|91.13
+      - REALITY|@internet4iran|🇩🇪|94.92
+      - REALITY|@vpnsal|🇺🇸|105.91
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@Outline_Vpn|🇳🇱|88.26
-      - REALITY|@internet4iran|🇩🇪|100.21
-      - REALITY|@VmessProtocol|🇳🇱|105.14
-      - REALITY|@proxy_kafee|🇩🇪|343.19
-      - REALITY|@ConfigsHUB|🇪🇪|126.28
-      - REALITY|@vpnsal|🇺🇸|108.09
+      - REALITY|@Outline_Vpn|🇩🇪|91.13
+      - REALITY|@internet4iran|🇩🇪|94.92
+      - REALITY|@vpnsal|🇺🇸|105.91
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@Outline_Vpn|🇳🇱|88.26
-      - REALITY|@internet4iran|🇩🇪|100.21
-      - REALITY|@VmessProtocol|🇳🇱|105.14
-      - REALITY|@proxy_kafee|🇩🇪|343.19
-      - REALITY|@ConfigsHUB|🇪🇪|126.28
-      - REALITY|@vpnsal|🇺🇸|108.09
+      - REALITY|@Outline_Vpn|🇩🇪|91.13
+      - REALITY|@internet4iran|🇩🇪|94.92
+      - REALITY|@vpnsal|🇺🇸|105.91
 rules:
   - MATCH,MANUAL
