@@ -32,7 +32,7 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@Outline_Vpn|🇩🇪|121.69
+  - name: REALITY|@Outline_Vpn|🇩🇪|147.72
     server: 150.241.79.210
     port: 443
     type: vless
@@ -43,7 +43,7 @@ proxies:
     skip-cert-verify: true
     servername: rutube.ru
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|126.64
+  - name: REALITY|@internet4iran|🇩🇪|155.66
     server: 88.99.121.221
     port: 443
     type: vless
@@ -54,20 +54,18 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@v2rayNG_Matsuri|🇩🇪|112.87
-    server: 31.184.244.219
-    port: 2053
+  - name: REALITY|@v2rayNG_Matsuri|🇷🇺|237.16
+    server: 195.133.73.65
+    port: 443
     type: vless
-    uuid: 60a361f9-3c45-4954-9e4c-92a85bda243d
+    uuid: ebd1c0d6-7ff4-4b9f-8692-237517a27a64
     cipher: auto
     tls: false
+    flow: xtls-rprx-vision
     skip-cert-verify: true
-    servername: www.google.com
-    network: grpc
-    grpc-opts:
-      grpc-service-name: grpc
+    servername: anyfile2file.com
     udp: true
-  - name: REALITY|@vpn_tehran|🇺🇸|49.8
+  - name: REALITY|@vpn_tehran|🇺🇸|64.14
     server: 45.91.138.179
     port: 443
     type: vless
@@ -78,14 +76,26 @@ proxies:
     skip-cert-verify: true
     servername: us05.shifor01.life
     udp: true
+  - name: REALITY|@ConfigsHUB|🇷🇺|187.98
+    server: bridge6.maxleshax.icu
+    port: 443
+    type: vless
+    uuid: c3834468-15bc-4263-bfc2-487479604d70
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: bridge6.maxleshax.icu
+    udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@Outline_Vpn|🇩🇪|121.69
-      - REALITY|@internet4iran|🇩🇪|126.64
-      - REALITY|@v2rayNG_Matsuri|🇩🇪|112.87
-      - REALITY|@vpn_tehran|🇺🇸|49.8
+      - REALITY|@Outline_Vpn|🇩🇪|147.72
+      - REALITY|@internet4iran|🇩🇪|155.66
+      - REALITY|@v2rayNG_Matsuri|🇷🇺|237.16
+      - REALITY|@vpn_tehran|🇺🇸|64.14
+      - REALITY|@ConfigsHUB|🇷🇺|187.98
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -96,28 +106,31 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@Outline_Vpn|🇩🇪|121.69
-      - REALITY|@internet4iran|🇩🇪|126.64
-      - REALITY|@v2rayNG_Matsuri|🇩🇪|112.87
-      - REALITY|@vpn_tehran|🇺🇸|49.8
+      - REALITY|@Outline_Vpn|🇩🇪|147.72
+      - REALITY|@internet4iran|🇩🇪|155.66
+      - REALITY|@v2rayNG_Matsuri|🇷🇺|237.16
+      - REALITY|@vpn_tehran|🇺🇸|64.14
+      - REALITY|@ConfigsHUB|🇷🇺|187.98
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@Outline_Vpn|🇩🇪|121.69
-      - REALITY|@internet4iran|🇩🇪|126.64
-      - REALITY|@v2rayNG_Matsuri|🇩🇪|112.87
-      - REALITY|@vpn_tehran|🇺🇸|49.8
+      - REALITY|@Outline_Vpn|🇩🇪|147.72
+      - REALITY|@internet4iran|🇩🇪|155.66
+      - REALITY|@v2rayNG_Matsuri|🇷🇺|237.16
+      - REALITY|@vpn_tehran|🇺🇸|64.14
+      - REALITY|@ConfigsHUB|🇷🇺|187.98
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@Outline_Vpn|🇩🇪|121.69
-      - REALITY|@internet4iran|🇩🇪|126.64
-      - REALITY|@v2rayNG_Matsuri|🇩🇪|112.87
-      - REALITY|@vpn_tehran|🇺🇸|49.8
+      - REALITY|@Outline_Vpn|🇩🇪|147.72
+      - REALITY|@internet4iran|🇩🇪|155.66
+      - REALITY|@v2rayNG_Matsuri|🇷🇺|237.16
+      - REALITY|@vpn_tehran|🇺🇸|64.14
+      - REALITY|@ConfigsHUB|🇷🇺|187.98
 rules:
   - MATCH,MANUAL
