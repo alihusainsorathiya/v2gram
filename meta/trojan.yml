@@ -32,20 +32,46 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "|@v2ray1_ng| AHS -2.23"
-    server: 188.114.97.6
+  - name: "|@oneclickvpnkeys| AHS -2.65"
+    server: 45.131.4.118
+    port: 443
+    type: trojan
+    password: f18d6149-e214-8554-e737-f7523c8b2eea
+    skip-cert-verify: true
+    sni: 0403.infinityconfig4.workers.dev
+    network: ws
+    ws-opts:
+      path: /sync
+      headers:
+        Host: 0403.infinityconfig4.workers.dev
+    udp: true
+  - name: "|@v2ray1_ng| AHS -2.46"
+    server: 188.114.97.7
     port: 443
     type: trojan
     password: humanity
     skip-cert-verify: true
-    sni: www.pleadcourt.org
+    sni: www.ignitelimit.com
     network: ws
     ws-opts:
       path: /assignment
       headers:
-        Host: www.pleadcourt.org
+        Host: www.ignitelimit.com
     udp: true
-  - name: "|@v2ray1_ng| AHS -8.13"
+  - name: "|@v2ray1_ng| AHS -1.73"
+    server: 172.67.149.60
+    port: 443
+    type: trojan
+    password: humanity
+    skip-cert-verify: true
+    sni: www.ignitelimit.com
+    network: ws
+    ws-opts:
+      path: /assignment
+      headers:
+        Host: www.ignitelimit.com
+    udp: true
+  - name: "|@v2ray1_ng| AHS -6.55"
     server: render.com
     port: 443
     type: trojan
@@ -58,7 +84,7 @@ proxies:
       headers:
         Host: www.ignitelimit.com
     udp: true
-  - name: "|@ovpn2| AHS -2.95"
+  - name: "|@ovpn2| AHS -3.28"
     server: 162.159.138.232
     port: 443
     type: trojan
@@ -71,7 +97,7 @@ proxies:
       headers:
         Host: fadaei.movieland.top
     udp: true
-  - name: "|@vpn_tehran| AHS -2.05"
+  - name: "|@vpn_tehran| AHS -2.48"
     server: 188.42.145.180
     port: 443
     type: trojan
@@ -84,7 +110,7 @@ proxies:
       headers:
         Host: www.volumeroot.com
     udp: true
-  - name: "|@vpn_tehran| AHS -1.9"
+  - name: "|@vpn_tehran| AHS -2.54"
     server: 8.47.69.0
     port: 443
     type: trojan
@@ -97,7 +123,7 @@ proxies:
       headers:
         Host: www.pleadcourt.org
     udp: true
-  - name: "|@vpn_tehran| AHS -2.91"
+  - name: "|@vpn_tehran| AHS -2.02"
     server: 8.47.69.0
     port: 443
     type: trojan
@@ -110,30 +136,32 @@ proxies:
       headers:
         Host: www.pleadcourt.org
     udp: true
-  - name: "|@ConfigsHUB| AHS -1.53"
-    server: 151.101.110.219
+  - name: "|@ConfigsHUB| AHS -2.52"
+    server: 162.159.244.91
     port: 443
     type: trojan
-    password: Mitivpn
+    password: humanity
     skip-cert-verify: true
-    sni: global.fastly.com
+    sni: www.calmlunch.com
     network: ws
     ws-opts:
-      path: /de
+      path: /assignment
       headers:
-        Host: 3-mitivpn.global.ssl.fastly.net
+        Host: www.calmlunch.com
     udp: true
 proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "|@v2ray1_ng| AHS -2.23"
-      - "|@v2ray1_ng| AHS -8.13"
-      - "|@ovpn2| AHS -2.95"
-      - "|@vpn_tehran| AHS -2.05"
-      - "|@vpn_tehran| AHS -1.9"
-      - "|@vpn_tehran| AHS -2.91"
-      - "|@ConfigsHUB| AHS -1.53"
+      - "|@oneclickvpnkeys| AHS -2.65"
+      - "|@v2ray1_ng| AHS -2.46"
+      - "|@v2ray1_ng| AHS -1.73"
+      - "|@v2ray1_ng| AHS -6.55"
+      - "|@ovpn2| AHS -3.28"
+      - "|@vpn_tehran| AHS -2.48"
+      - "|@vpn_tehran| AHS -2.54"
+      - "|@vpn_tehran| AHS -2.02"
+      - "|@ConfigsHUB| AHS -2.52"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -144,37 +172,43 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@v2ray1_ng| AHS -2.23"
-      - "|@v2ray1_ng| AHS -8.13"
-      - "|@ovpn2| AHS -2.95"
-      - "|@vpn_tehran| AHS -2.05"
-      - "|@vpn_tehran| AHS -1.9"
-      - "|@vpn_tehran| AHS -2.91"
-      - "|@ConfigsHUB| AHS -1.53"
+      - "|@oneclickvpnkeys| AHS -2.65"
+      - "|@v2ray1_ng| AHS -2.46"
+      - "|@v2ray1_ng| AHS -1.73"
+      - "|@v2ray1_ng| AHS -6.55"
+      - "|@ovpn2| AHS -3.28"
+      - "|@vpn_tehran| AHS -2.48"
+      - "|@vpn_tehran| AHS -2.54"
+      - "|@vpn_tehran| AHS -2.02"
+      - "|@ConfigsHUB| AHS -2.52"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "|@v2ray1_ng| AHS -2.23"
-      - "|@v2ray1_ng| AHS -8.13"
-      - "|@ovpn2| AHS -2.95"
-      - "|@vpn_tehran| AHS -2.05"
-      - "|@vpn_tehran| AHS -1.9"
-      - "|@vpn_tehran| AHS -2.91"
-      - "|@ConfigsHUB| AHS -1.53"
+      - "|@oneclickvpnkeys| AHS -2.65"
+      - "|@v2ray1_ng| AHS -2.46"
+      - "|@v2ray1_ng| AHS -1.73"
+      - "|@v2ray1_ng| AHS -6.55"
+      - "|@ovpn2| AHS -3.28"
+      - "|@vpn_tehran| AHS -2.48"
+      - "|@vpn_tehran| AHS -2.54"
+      - "|@vpn_tehran| AHS -2.02"
+      - "|@ConfigsHUB| AHS -2.52"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "|@v2ray1_ng| AHS -2.23"
-      - "|@v2ray1_ng| AHS -8.13"
-      - "|@ovpn2| AHS -2.95"
-      - "|@vpn_tehran| AHS -2.05"
-      - "|@vpn_tehran| AHS -1.9"
-      - "|@vpn_tehran| AHS -2.91"
-      - "|@ConfigsHUB| AHS -1.53"
+      - "|@oneclickvpnkeys| AHS -2.65"
+      - "|@v2ray1_ng| AHS -2.46"
+      - "|@v2ray1_ng| AHS -1.73"
+      - "|@v2ray1_ng| AHS -6.55"
+      - "|@ovpn2| AHS -3.28"
+      - "|@vpn_tehran| AHS -2.48"
+      - "|@vpn_tehran| AHS -2.54"
+      - "|@vpn_tehran| AHS -2.02"
+      - "|@ConfigsHUB| AHS -2.52"
 rules:
   - MATCH,MANUAL
