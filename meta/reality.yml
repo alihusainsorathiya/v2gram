@@ -32,20 +32,18 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: REALITY|@Outline_Vpn|🇷🇺|208.68
-    server: 176.109.106.182
-    port: 9881
+  - name: REALITY|@Outline_Vpn|🇸🇨|177.52
+    server: gesmankos.sadiepinki.com
+    port: 443
     type: vless
-    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+    uuid: c5694dc5-39fd-4a92-8430-3837baa522a3
     cipher: auto
     tls: false
+    flow: xtls-rprx-vision
     skip-cert-verify: true
-    servername: dl.google.com
-    network: grpc
-    grpc-opts:
-      grpc-service-name: grpc-tunnel
+    servername: gesmankos.sadiepinki.com
     udp: true
-  - name: REALITY|@internet4iran|🇩🇪|151.86
+  - name: REALITY|@internet4iran|🇩🇪|95.85
     server: 88.99.121.221
     port: 443
     type: vless
@@ -56,7 +54,7 @@ proxies:
     skip-cert-verify: true
     servername: www.openoffice.org
     udp: true
-  - name: REALITY|@vmessorg|🇮🇷|727.78
+  - name: REALITY|@vmessorg|🇮🇷|671.25
     server: jsv-ir2.jmovies.ir
     port: 443
     type: vless
@@ -66,7 +64,29 @@ proxies:
     skip-cert-verify: true
     servername: aparat.com
     udp: true
-  - name: REALITY|@vpnsal|🇩🇪|154.06
+  - name: REALITY|@v2rayNG_Matsuri|🇺🇸|90.71
+    server: 2.26.11.234
+    port: 9543
+    type: vless
+    uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: storage.yandexcloud.net
+    udp: true
+  - name: REALITY|@v2ray1_ng|🇳🇱|89.77
+    server: 89.124.69.148
+    port: 8443
+    type: vless
+    uuid: ff6d2dda-7b90-404e-9951-34b3124bfdfa
+    cipher: auto
+    tls: false
+    flow: xtls-rprx-vision
+    skip-cert-verify: true
+    servername: storage.yandexcloud.net
+    udp: true
+  - name: REALITY|@vpnsal|🇩🇪|101.2
     server: 185.255.179.54
     port: 56789
     type: vless
@@ -81,10 +101,12 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - REALITY|@Outline_Vpn|🇷🇺|208.68
-      - REALITY|@internet4iran|🇩🇪|151.86
-      - REALITY|@vmessorg|🇮🇷|727.78
-      - REALITY|@vpnsal|🇩🇪|154.06
+      - REALITY|@Outline_Vpn|🇸🇨|177.52
+      - REALITY|@internet4iran|🇩🇪|95.85
+      - REALITY|@vmessorg|🇮🇷|671.25
+      - REALITY|@v2rayNG_Matsuri|🇺🇸|90.71
+      - REALITY|@v2ray1_ng|🇳🇱|89.77
+      - REALITY|@vpnsal|🇩🇪|101.2
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -95,28 +117,34 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@Outline_Vpn|🇷🇺|208.68
-      - REALITY|@internet4iran|🇩🇪|151.86
-      - REALITY|@vmessorg|🇮🇷|727.78
-      - REALITY|@vpnsal|🇩🇪|154.06
+      - REALITY|@Outline_Vpn|🇸🇨|177.52
+      - REALITY|@internet4iran|🇩🇪|95.85
+      - REALITY|@vmessorg|🇮🇷|671.25
+      - REALITY|@v2rayNG_Matsuri|🇺🇸|90.71
+      - REALITY|@v2ray1_ng|🇳🇱|89.77
+      - REALITY|@vpnsal|🇩🇪|101.2
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - REALITY|@Outline_Vpn|🇷🇺|208.68
-      - REALITY|@internet4iran|🇩🇪|151.86
-      - REALITY|@vmessorg|🇮🇷|727.78
-      - REALITY|@vpnsal|🇩🇪|154.06
+      - REALITY|@Outline_Vpn|🇸🇨|177.52
+      - REALITY|@internet4iran|🇩🇪|95.85
+      - REALITY|@vmessorg|🇮🇷|671.25
+      - REALITY|@v2rayNG_Matsuri|🇺🇸|90.71
+      - REALITY|@v2ray1_ng|🇳🇱|89.77
+      - REALITY|@vpnsal|🇩🇪|101.2
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - REALITY|@Outline_Vpn|🇷🇺|208.68
-      - REALITY|@internet4iran|🇩🇪|151.86
-      - REALITY|@vmessorg|🇮🇷|727.78
-      - REALITY|@vpnsal|🇩🇪|154.06
+      - REALITY|@Outline_Vpn|🇸🇨|177.52
+      - REALITY|@internet4iran|🇩🇪|95.85
+      - REALITY|@vmessorg|🇮🇷|671.25
+      - REALITY|@v2rayNG_Matsuri|🇺🇸|90.71
+      - REALITY|@v2ray1_ng|🇳🇱|89.77
+      - REALITY|@vpnsal|🇩🇪|101.2
 rules:
   - MATCH,MANUAL
