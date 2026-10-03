@@ -32,7 +32,18 @@ dns:
     - 1.1.1.1
     - 112.215.203.254
 proxies:
-  - name: "@vpn_ioss| AHS -🇫🇷|430.48"
+  - name: "@vpnfail_v2ray| AHS -🇩🇪|92.6"
+    server: 91.107.162.63
+    port: 8080
+    type: vmess
+    uuid: 0232607c-5100-4a10-a387-33a6a42b1f22
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: ""
+    udp: true
+  - name: "@vpn_ioss| AHS -🇫🇷|430.03"
     server: 188.114.96.19
     port: 80
     type: vmess
@@ -48,7 +59,7 @@ proxies:
       headers:
         Host: google.whatsapp.snapp.torob.basalam.hesanid8.ir.
     udp: true
-  - name: "@v2rayvmess| AHS -🇺🇸|5.9"
+  - name: "@v2rayvmess| AHS -🇺🇸|6.19"
     server: id-lb.vhax.net
     port: 80
     type: vmess
@@ -64,18 +75,7 @@ proxies:
       headers:
         Host: zoom.us
     udp: true
-  - name: "@v2ray1_ng| AHS -🇹🇷|211.5"
-    server: supervpn.armanspeed.ir
-    port: 443
-    type: vmess
-    uuid: 9e316d2c-3f46-4f47-a3bd-cad429b8eb2a
-    alterId: 0
-    cipher: auto
-    tls: false
-    skip-cert-verify: true
-    servername: supervpn.armanspeed.ir
-    udp: true
-  - name: "@v2ray1_ng| AHS -🇺🇸|44.28"
+  - name: "@v2ray1_ng| AHS -🇺🇸|31.6"
     server: 167.88.62.124
     port: 22324
     type: vmess
@@ -86,7 +86,7 @@ proxies:
     skip-cert-verify: true
     servername: ""
     udp: true
-  - name: "@vpn_tehran| AHS -🇫🇷|489.7"
+  - name: "@v2ray1_ng| AHS -🇫🇷|398.61"
     server: 188.114.96.19
     port: 80
     type: vmess
@@ -102,18 +102,39 @@ proxies:
       headers:
         Host: google.whatsapp.snapp.torob.basalam.hesanid8.ir.
     udp: true
-  - name: "@ConfigsHUB| AHS -🇩🇪|153.26"
-    server: 91.107.162.63
-    port: 8080
+  - name: "@vpn_tehran| AHS -🇫🇷|232.36"
+    server: 188.114.96.19
+    port: 80
     type: vmess
-    uuid: d3a71f9c5e248b06c7f142e9a56d30b8
+    uuid: aed88e79-5762-4d2f-86fa-f438f32a7654
     alterId: 0
     cipher: auto
     tls: false
     skip-cert-verify: true
-    servername: ""
+    servername: google.whatsapp.snapp.torob.basalam.hesanid8.ir.
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: google.whatsapp.snapp.torob.basalam.hesanid8.ir.
     udp: true
-  - name: "@v2ray_confings2| AHS -🇺🇸|68.17"
+  - name: "@v2rayngrit| AHS -🇫🇷|280.17"
+    server: 188.114.96.19
+    port: 80
+    type: vmess
+    uuid: 479526cd-5011-43cf-a788-504da95e07c2
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    servername: google.whatsapp.snapp.torob.basalam.fortresshost.ir.
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: google.whatsapp.snapp.torob.basalam.fortresshost.ir.
+    udp: true
+  - name: "@v2ray_confings2| AHS -🇺🇸|130.5"
     server: 188.114.96.1
     port: 443
     type: vmess
@@ -133,13 +154,14 @@ proxy-groups:
   - name: MANUAL
     type: select
     proxies:
-      - "@vpn_ioss| AHS -🇫🇷|430.48"
-      - "@v2rayvmess| AHS -🇺🇸|5.9"
-      - "@v2ray1_ng| AHS -🇹🇷|211.5"
-      - "@v2ray1_ng| AHS -🇺🇸|44.28"
-      - "@vpn_tehran| AHS -🇫🇷|489.7"
-      - "@ConfigsHUB| AHS -🇩🇪|153.26"
-      - "@v2ray_confings2| AHS -🇺🇸|68.17"
+      - "@vpnfail_v2ray| AHS -🇩🇪|92.6"
+      - "@vpn_ioss| AHS -🇫🇷|430.03"
+      - "@v2rayvmess| AHS -🇺🇸|6.19"
+      - "@v2ray1_ng| AHS -🇺🇸|31.6"
+      - "@v2ray1_ng| AHS -🇫🇷|398.61"
+      - "@vpn_tehran| AHS -🇫🇷|232.36"
+      - "@v2rayngrit| AHS -🇫🇷|280.17"
+      - "@v2ray_confings2| AHS -🇺🇸|130.5"
       - LOAD-BALANCE
       - BEST-PING
       - FALLBACK
@@ -150,37 +172,40 @@ proxy-groups:
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@vpn_ioss| AHS -🇫🇷|430.48"
-      - "@v2rayvmess| AHS -🇺🇸|5.9"
-      - "@v2ray1_ng| AHS -🇹🇷|211.5"
-      - "@v2ray1_ng| AHS -🇺🇸|44.28"
-      - "@vpn_tehran| AHS -🇫🇷|489.7"
-      - "@ConfigsHUB| AHS -🇩🇪|153.26"
-      - "@v2ray_confings2| AHS -🇺🇸|68.17"
+      - "@vpnfail_v2ray| AHS -🇩🇪|92.6"
+      - "@vpn_ioss| AHS -🇫🇷|430.03"
+      - "@v2rayvmess| AHS -🇺🇸|6.19"
+      - "@v2ray1_ng| AHS -🇺🇸|31.6"
+      - "@v2ray1_ng| AHS -🇫🇷|398.61"
+      - "@vpn_tehran| AHS -🇫🇷|232.36"
+      - "@v2rayngrit| AHS -🇫🇷|280.17"
+      - "@v2ray_confings2| AHS -🇺🇸|130.5"
   - name: BEST-PING
     type: url-test
     url: http://hi.bonds.id/ping
     interval: 300
     tolerance: 50
     proxies:
-      - "@vpn_ioss| AHS -🇫🇷|430.48"
-      - "@v2rayvmess| AHS -🇺🇸|5.9"
-      - "@v2ray1_ng| AHS -🇹🇷|211.5"
-      - "@v2ray1_ng| AHS -🇺🇸|44.28"
-      - "@vpn_tehran| AHS -🇫🇷|489.7"
-      - "@ConfigsHUB| AHS -🇩🇪|153.26"
-      - "@v2ray_confings2| AHS -🇺🇸|68.17"
+      - "@vpnfail_v2ray| AHS -🇩🇪|92.6"
+      - "@vpn_ioss| AHS -🇫🇷|430.03"
+      - "@v2rayvmess| AHS -🇺🇸|6.19"
+      - "@v2ray1_ng| AHS -🇺🇸|31.6"
+      - "@v2ray1_ng| AHS -🇫🇷|398.61"
+      - "@vpn_tehran| AHS -🇫🇷|232.36"
+      - "@v2rayngrit| AHS -🇫🇷|280.17"
+      - "@v2ray_confings2| AHS -🇺🇸|130.5"
   - name: FALLBACK
     type: fallback
     url: http://hi.bonds.id/ping
     interval: 300
     proxies:
-      - "@vpn_ioss| AHS -🇫🇷|430.48"
-      - "@v2rayvmess| AHS -🇺🇸|5.9"
-      - "@v2ray1_ng| AHS -🇹🇷|211.5"
-      - "@v2ray1_ng| AHS -🇺🇸|44.28"
-      - "@vpn_tehran| AHS -🇫🇷|489.7"
-      - "@ConfigsHUB| AHS -🇩🇪|153.26"
-      - "@v2ray_confings2| AHS -🇺🇸|68.17"
+      - "@vpnfail_v2ray| AHS -🇩🇪|92.6"
+      - "@vpn_ioss| AHS -🇫🇷|430.03"
+      - "@v2rayvmess| AHS -🇺🇸|6.19"
+      - "@v2ray1_ng| AHS -🇺🇸|31.6"
+      - "@v2ray1_ng| AHS -🇫🇷|398.61"
+      - "@vpn_tehran| AHS -🇫🇷|232.36"
+      - "@v2rayngrit| AHS -🇫🇷|280.17"
+      - "@v2ray_confings2| AHS -🇺🇸|130.5"
 rules:
   - MATCH,MANUAL
